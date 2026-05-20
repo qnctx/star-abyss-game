@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0reprototype000000000000000001"]
+
+[ext_resource type="Script" uid="uid://c0reprototype000000000000000010" path="res://scripts/player.gd" id="1_player_script"]
+[ext_resource type="Script" uid="uid://c0reprototype000000000000000020" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.102, 0.039, 0.18, 1)
+fog_enabled = true
+fog_mode = 0
+fog_density = 0.02
+fog_light_color = Color(0.176, 0.106, 0.306, 1)
+glow_enabled = true
+glow_intensity = 0.3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ground"]
+albedo_color = Color(0.2, 0.2, 0.267, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_base"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_base"]
+albedo_color = Color(0.267, 1, 0.267, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_player"]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_player"]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_player"]
+albedo_color = Color(0.267, 0.533, 1, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
+light_intensity = 0.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 20, 0)
+projection = 1
+size = 30.0
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_ground")
+
+[node name="BasePosition" type="Node3D" parent="."]
+
+[node name="BaseMesh" type="MeshInstance3D" parent="BasePosition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_base")
+surface_material_override/0 = SubResource("StandardMaterial3D_base")
+
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_player_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CylinderShape3D_player")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CylinderMesh_player")
+surface_material_override/0 = SubResource("StandardMaterial3D_player")
+
+[node name="OxygenUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_oxygen_ui_script")
+
+[node name="ProgressBar" type="ProgressBar" parent="OxygenUI"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 50.0
+value = 100.0
+
+[node name="Label" type="Label" parent="OxygenUI"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 55.0
+offset_right = 300.0
+offset_bottom = 75.0
+text = "O2: 100%"
+horizontal_alignment = 1

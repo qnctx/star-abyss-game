@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0reprototypeoxygenui0000000001"]
+
+[ext_resource type="Script" uid="uid://c0reprototypeoxygenui0000000010" path="res://scripts/oxygen_ui.gd" id="1_script"]
+
+[node name="OxygenUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 50.0
+value = 100.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 55.0
+offset_right = 300.0
+offset_bottom = 75.0
+text = "O₂: 100%"
+horizontal_alignment = 1
