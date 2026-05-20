@@ -58,7 +58,7 @@ func die():
 func respawn():
 	is_dead = false
 	current_oxygen = max_oxygen
-	position = Vector3(0, 1, 0)  # Respawn at base
+	position = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
 	oxygen_changed.emit(current_oxygen, max_oxygen)
 
 
@@ -71,8 +71,9 @@ func _try_teleport():
 	if not tm:
 		return
 	var zone = ZoneManager.ZONE_NAMES.get(ZoneManager.current_zone, "crash")
+	var base_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
 	if not tm.beacons.is_empty():
-		if position.distance_to(Vector3(0, 1, 0)) < 3.0:
+		if position.distance_to(base_pos) < 3.0:
 			# At base — teleport to first beacon
 			tm.teleport_to_beacon(self, zone)
 		else:

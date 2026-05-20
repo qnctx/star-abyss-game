@@ -19,6 +19,7 @@ GameManager="*res://scripts/game_manager.gd"
 InventoryManager="*res://scripts/inventory_manager.gd"
 ZoneManager="*res://scripts/zone_manager.gd"
 SerumRecipes="*res://scripts/serum_recipes.gd"
+WorldGenerator="*res://scripts/world_generator.gd"
 
 [input]
 move_forward={

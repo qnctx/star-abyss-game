@@ -1,22 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://c0reprototype000000000000000001"]
+[gd_scene load_steps=13 format=3 uid="uid://c0reprototype000000000000000001"]
 
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000010" path="res://scripts/player.gd" id="1_player_script"]
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000020" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
-[ext_resource type="PackedScene" uid="uid://turretscene000000000000000000001" path="res://scenes/turret.tscn" id="3_turret_scene"]
-[ext_resource type="Material" uid="uid://rockmaterial00000000000000000001" path="res://assets/rock_material.tres" id="6_rock_mat"]
-[ext_resource type="Material" uid="uid://crystalmaterial00000000000000001" path="res://assets/crystal_material.tres" id="5_crystal_mat"]
-[ext_resource type="PackedScene" uid="uid://basepodscene0000000000000000001" path="res://scenes/base_pod.tscn" id="8_base_pod"]
 [ext_resource type="PackedScene" uid="uid://playermodelscene000000000000001" path="res://scenes/player_model.tscn" id="7_player_model"]
-[ext_resource type="PackedScene" uid="uid://sporesvfx00000000000000000001" path="res://scenes/vfx_toxic_spores.tscn" id="9_spores"]
 [ext_resource type="PackedScene" uid="uid://forgeuiscene0000000000000000001" path="res://scenes/ui/forge_ui.tscn" id="10_forge_ui_scene"]
 [ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="11_weapon_controller"]
 [ext_resource type="Script" path="res://scripts/resource_hud.gd" id="12_resource_hud"]
 [ext_resource type="Script" path="res://scripts/weapon_hud.gd" id="13_weapon_hud"]
-[ext_resource type="Script" path="res://scripts/zone_trigger.gd" id="14_zone_trigger"]
 [ext_resource type="Script" path="res://scripts/serum_ui.gd" id="15_serum_ui"]
 [ext_resource type="Script" path="res://scripts/teleport_manager.gd" id="16_teleport_manager"]
-[ext_resource type="Script" path="res://scripts/weapon_hud.gd" id="13_weapon_hud"]
-[ext_resource type="Script" path="res://scripts/forge_trigger.gd" id="14_forge_trigger"]
+[ext_resource type="Script" path="res://scripts/world_generator.gd" id="17_world_generator"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -49,73 +42,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 20,
 projection = 1
 size = 30.0
 
-[node name="Ground" type="Node3D" parent="."]
-
-[node name="GroundBox" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
-size = Vector3(20, 0.3, 20)
-material = ExtResource("4_ground_mat")
-
-[node name="Rock1" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0, 0.15, 2.0)
-radius = 0.4
-material = ExtResource("6_rock_mat")
-
-[node name="Rock2" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0, 0.2, -1.5)
-radius = 0.55
-material = ExtResource("6_rock_mat")
-
-[node name="Rock3" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.12, 3.5)
-radius = 0.3
-material = ExtResource("6_rock_mat")
-
-[node name="Rock4" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0, 0.18, -3.0)
-radius = 0.45
-material = ExtResource("6_rock_mat")
-
-[node name="Rock5" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.1, 2.5)
-radius = 0.25
-material = ExtResource("6_rock_mat")
-
-[node name="Rock6" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0.15, -5.0)
-radius = 0.35
-material = ExtResource("6_rock_mat")
-
-[node name="Rock7" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0, 0.22, -4.0)
-radius = 0.5
-material = ExtResource("6_rock_mat")
-
-[node name="Rock8" type="CSGSphere3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.08, 4.0)
-radius = 0.28
-material = ExtResource("6_rock_mat")
-
-[node name="Crystal1" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 1.0)
-size = Vector3(0.12, 0.5, 0.12)
-material = ExtResource("5_crystal_mat")
-
-[node name="Crystal2" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0, 0.4, -2.0)
-size = Vector3(0.1, 0.35, 0.1)
-material = ExtResource("5_crystal_mat")
-
-[node name="Crystal3" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0, 0.55, -3.5)
-size = Vector3(0.08, 0.6, 0.08)
-material = ExtResource("5_crystal_mat")
-
-[node name="BasePosition" type="Node3D" parent="."]
-
-[node name="BasePod" parent="BasePosition" instance=ExtResource("8_base_pod")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_player_script")
@@ -130,50 +56,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
 script = ExtResource("11_weapon_controller")
 
-[node name="Turret" parent="." instance=ExtResource("3_turret_scene")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
-
 [node name="PointLight_Base" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 light_color = Color(1, 0.85, 0.6, 1)
 light_intensity = 0.6
 light_range = 5.0
-
-[node name="PointLight_Turret" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.0, 2)
-light_color = Color(0.3, 0.5, 0.9, 1)
-light_intensity = 0.5
-light_range = 4.0
-
-[node name="PointLight_Crystal" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.8, 1.0)
-light_color = Color(0.5, 0.15, 0.7, 1)
-light_intensity = 0.4
-light_range = 2.5
-
-[node name="Spores1" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 5)
-
-[node name="Spores2" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -5)
-
-[node name="Spores3" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -5)
-
-[node name="Spores4" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 5)
-
-[node name="Spores5" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 0)
-
-[node name="Spores6" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 0)
-
-[node name="Spores7" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 7)
-
-[node name="Spores8" parent="." instance=ExtResource("9_spores")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -7)
 
 [node name="OxygenUI" type="Control" parent="."]
 layout_mode = 3
@@ -221,57 +108,6 @@ grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("13_weapon_hud")
 
-[node name="ColdZone" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-
-[node name="ColdGround" type="CSGBox3D" parent="ColdZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-size = Vector3(6, 0.2, 3)
-
-[node name="ColdArch" type="CSGBox3D" parent="ColdZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.5)
-size = Vector3(3, 3, 0.2)
-
-[node name="ColdTrigger" type="Area3D" parent="ColdZone"]
-script = ExtResource("14_zone_trigger")
-
-[node name="ColdCollision" type="CollisionShape3D" parent="ColdZone/ColdTrigger"]
-shape = SubResource("BoxShape3D_cold")
-
-[node name="HeatZone" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-
-[node name="HeatGround" type="CSGBox3D" parent="HeatZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-size = Vector3(3, 0.2, 6)
-
-[node name="HeatArch" type="CSGBox3D" parent="HeatZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
-size = Vector3(0.2, 3, 3)
-
-[node name="HeatTrigger" type="Area3D" parent="HeatZone"]
-script = ExtResource("14_zone_trigger")
-
-[node name="HeatCollision" type="CollisionShape3D" parent="HeatZone/HeatTrigger"]
-shape = SubResource("BoxShape3D_heat")
-
-[node name="GravityZone" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="GravGround" type="CSGBox3D" parent="GravityZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-size = Vector3(6, 0.2, 3)
-
-[node name="GravArch" type="CSGBox3D" parent="GravityZone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.5)
-size = Vector3(3, 3, 0.2)
-
-[node name="GravityTrigger" type="Area3D" parent="GravityZone"]
-script = ExtResource("14_zone_trigger")
-
-[node name="GravCollision" type="CollisionShape3D" parent="GravityZone/GravityTrigger"]
-shape = SubResource("BoxShape3D_grav")
-
 [node name="SerumUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -284,3 +120,6 @@ script = ExtResource("15_serum_ui")
 
 [node name="TeleportManager" type="Node" parent="."]
 script = ExtResource("16_teleport_manager")
+
+[node name="World" type="Node" parent="."]
+script = ExtResource("17_world_generator")

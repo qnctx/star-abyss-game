@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://crashzoneentrance0000000000001"]
+
+[ext_resource type="Script" path="res://scripts/zone_trigger.gd" id="1_zone_trigger"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_metal"]
+albedo_color = Color(0.25, 0.25, 0.28, 1)
+roughness = 0.3
+metallic = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trigger"]
+size = Vector3(4, 5, 3)
+
+[node name="CrashZoneEntrance" type="Node3D"]
+
+[node name="WallFrame" type="CSGCombiner3D" parent="."]
+
+[node name="FrameLeft" type="CSGBox3D" parent="WallFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 0)
+size = Vector3(1, 6, 2)
+material = SubResource("StandardMaterial3D_metal")
+
+[node name="FrameRight" type="CSGBox3D" parent="WallFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+size = Vector3(1, 6, 2)
+material = SubResource("StandardMaterial3D_metal")
+
+[node name="FrameTop" type="CSGBox3D" parent="WallFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(5, 0.5, 2)
+material = SubResource("StandardMaterial3D_metal")
+
+[node name="SealedDoor" type="CSGBox3D" parent="WallFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+size = Vector3(4.5, 5, 0.3)
+material = SubResource("StandardMaterial3D_metal")
+
+[node name="WarningLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -1.5)
+light_color = Color(1, 0.1, 0.05, 1)
+light_energy = 2.5
+light_range = 8.0
+
+[node name="LockedLabel" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 7, 0)
+text = "🔒 Requires 3 Boss Keys"
+font_size = 28
+modulate = Color(1, 0.2, 0.1, 1)
+billboard = 1
+render_priority = 10
+
+[node name="ZoneTrigger" type="Area3D" parent="."]
+script = ExtResource("1_zone_trigger")
+zone_type = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_trigger")
