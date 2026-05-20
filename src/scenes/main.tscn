@@ -1,17 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0reprototype000000000000000001"]
+[gd_scene load_steps=16 format=3 uid="uid://c0reprototype000000000000000001"]
 
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000010" path="res://scripts/player.gd" id="1_player_script"]
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000020" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
 [ext_resource type="PackedScene" uid="uid://turretscene000000000000000000001" path="res://scenes/turret.tscn" id="3_turret_scene"]
-[ext_resource type="Material" path="res://assets/ground_material.tres" id="4_ground_mat"]
-[ext_resource type="Material" path="res://assets/crystal_material.tres" id="5_crystal_mat"]
-[ext_resource type="Material" path="res://assets/rock_material.tres" id="6_rock_mat"]
-[ext_resource type="PackedScene" path="res://scenes/player_model.tscn" id="7_player_model"]
-[ext_resource type="PackedScene" path="res://scenes/base_pod.tscn" id="8_base_pod"]
-[ext_resource type="PackedScene" path="res://scenes/vfx_toxic_spores.tscn" id="9_spores"]
-[ext_resource type="PackedScene" path="res://scenes/ui/forge_ui.tscn" id="10_forge_ui_scene"]
+[ext_resource type="Material" uid="uid://rockmaterial00000000000000000001" path="res://assets/rock_material.tres" id="6_rock_mat"]
+[ext_resource type="Material" uid="uid://crystalmaterial00000000000000001" path="res://assets/crystal_material.tres" id="5_crystal_mat"]
+[ext_resource type="PackedScene" uid="uid://basepodscene0000000000000000001" path="res://scenes/base_pod.tscn" id="8_base_pod"]
+[ext_resource type="PackedScene" uid="uid://playermodelscene000000000000001" path="res://scenes/player_model.tscn" id="7_player_model"]
+[ext_resource type="PackedScene" uid="uid://sporesvfx00000000000000000001" path="res://scenes/vfx_toxic_spores.tscn" id="9_spores"]
+[ext_resource type="PackedScene" uid="uid://forgeuiscene0000000000000000001" path="res://scenes/ui/forge_ui.tscn" id="10_forge_ui_scene"]
 [ext_resource type="Script" path="res://scripts/weapon_controller.gd" id="11_weapon_controller"]
 [ext_resource type="Script" path="res://scripts/resource_hud.gd" id="12_resource_hud"]
+[ext_resource type="Script" path="res://scripts/weapon_hud.gd" id="13_weapon_hud"]
+[ext_resource type="Script" path="res://scripts/zone_trigger.gd" id="14_zone_trigger"]
+[ext_resource type="Script" path="res://scripts/serum_ui.gd" id="15_serum_ui"]
+[ext_resource type="Script" path="res://scripts/teleport_manager.gd" id="16_teleport_manager"]
 [ext_resource type="Script" path="res://scripts/weapon_hud.gd" id="13_weapon_hud"]
 [ext_resource type="Script" path="res://scripts/forge_trigger.gd" id="14_forge_trigger"]
 
@@ -217,3 +220,67 @@ anchor_bottom = 1.0
 grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("13_weapon_hud")
+
+[node name="ColdZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="ColdGround" type="CSGBox3D" parent="ColdZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+size = Vector3(6, 0.2, 3)
+
+[node name="ColdArch" type="CSGBox3D" parent="ColdZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.5)
+size = Vector3(3, 3, 0.2)
+
+[node name="ColdTrigger" type="Area3D" parent="ColdZone"]
+script = ExtResource("14_zone_trigger")
+
+[node name="ColdCollision" type="CollisionShape3D" parent="ColdZone/ColdTrigger"]
+shape = SubResource("BoxShape3D_cold")
+
+[node name="HeatZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="HeatGround" type="CSGBox3D" parent="HeatZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+size = Vector3(3, 0.2, 6)
+
+[node name="HeatArch" type="CSGBox3D" parent="HeatZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
+size = Vector3(0.2, 3, 3)
+
+[node name="HeatTrigger" type="Area3D" parent="HeatZone"]
+script = ExtResource("14_zone_trigger")
+
+[node name="HeatCollision" type="CollisionShape3D" parent="HeatZone/HeatTrigger"]
+shape = SubResource("BoxShape3D_heat")
+
+[node name="GravityZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="GravGround" type="CSGBox3D" parent="GravityZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+size = Vector3(6, 0.2, 3)
+
+[node name="GravArch" type="CSGBox3D" parent="GravityZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.5)
+size = Vector3(3, 3, 0.2)
+
+[node name="GravityTrigger" type="Area3D" parent="GravityZone"]
+script = ExtResource("14_zone_trigger")
+
+[node name="GravCollision" type="CollisionShape3D" parent="GravityZone/GravityTrigger"]
+shape = SubResource("BoxShape3D_grav")
+
+[node name="SerumUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("15_serum_ui")
+
+[node name="TeleportManager" type="Node" parent="."]
+script = ExtResource("16_teleport_manager")

@@ -21,6 +21,10 @@ func _physics_process(delta):
 	if is_dead:
 		return
 
+	# Teleport
+	if Input.is_action_just_pressed("teleport"):
+		_try_teleport()
+
 	# Movement
 	var input_dir = Input.get_vector("move_left", "move_right", "move_back", "move_forward")
 	var is_sprinting = Input.is_action_pressed("sprint")
@@ -33,7 +37,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Oxygen drain
-	var drain = sprint_drain_rate if is_sprinting else oxygen_drain_rate
+	var mult = ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
+	var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
 	current_oxygen -= drain * delta
 	current_oxygen = max(current_oxygen, 0.0)
 	oxygen_changed.emit(current_oxygen, max_oxygen)
@@ -60,3 +65,16 @@ func respawn():
 func refill_oxygen():
 	current_oxygen = max_oxygen
 	oxygen_changed.emit(current_oxygen, max_oxygen)
+
+func _try_teleport():
+	var tm = get_tree().current_scene.get_node_or_null("TeleportManager")
+	if not tm:
+		return
+	var zone = ZoneManager.ZONE_NAMES.get(ZoneManager.current_zone, "crash")
+	if not tm.beacons.is_empty():
+		if position.distance_to(Vector3(0, 1, 0)) < 3.0:
+			# At base — teleport to first beacon
+			tm.teleport_to_beacon(self, zone)
+		else:
+			# In the field — teleport to base
+			tm.teleport_to_base(self, zone)
