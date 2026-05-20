@@ -24,6 +24,7 @@ func start_day():
 	wave_number = 0
 	enemies_alive = 0
 	day_started.emit()
+	spawn_resources()
 	await get_tree().create_timer(DAY_DURATION).timeout
 	start_night()
 
@@ -76,6 +77,20 @@ func _on_base_reached(damage: float):
 	base_health -= damage
 	if base_health <= 0:
 		game_over()
+
+
+func spawn_resources():
+	var count = 15
+	var types = ["iron", "iron", "iron", "iron", "void_crystal", "void_crystal", "biomass", "biomass", "biomass"]
+	for i in range(count):
+		var angle = randf_range(0, TAU)
+		var distance = randf_range(3.0, 12.0)
+		var pos = Vector3(cos(angle) * distance, 0.3, sin(angle) * distance)
+		var node = load("res://scenes/resource_node.tscn").instantiate()
+		node.position = pos
+		node.resource_type = types[i % types.size()]
+		node.amount = randi_range(1, 3)
+		get_tree().current_scene.add_child(node)
 
 
 func game_over():

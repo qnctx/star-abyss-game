@@ -1,0 +1,131 @@
+extends Node3D
+
+signal weapon_fired()
+signal weapon_changed(weapon_name: String, ammo_count: int)
+signal ammo_changed(weapon_name: String, ammo_count: int)
+
+@export var current_weapon: String = "pistol"
+
+var weapon_data = {
+	"pistol": {"damage": 10, "fire_rate": 2.0, "spread": 0.05, "projectile_speed": 20.0, "ammo_per_shot": 0, "label": "手枪"},
+	"shotgun": {"damage": 8, "fire_rate": 0.8, "spread": 0.3, "projectile_speed": 15.0, "ammo_per_shot": 1, "pellets": 5, "label": "霰弹枪"},
+	"rifle": {"damage": 25, "fire_rate": 3.0, "spread": 0.02, "projectile_speed": 30.0, "ammo_per_shot": 1, "label": "步枪"},
+	"flamethrower": {"damage": 5, "fire_rate": 10.0, "spread": 0.4, "projectile_speed": 8.0, "ammo_per_shot": 1, "label": "火焰喷射器"},
+	"ice_ray": {"damage": 15, "fire_rate": 1.5, "spread": 0.01, "projectile_speed": 25.0, "ammo_per_shot": 1, "slow_amount": 0.5, "label": "冰冻射线"},
+}
+
+const QUALITY_NAMES = ["normal", "fine", "rare", "epic", "legendary"]
+const QUALITY_MULTIPLIERS = {"normal": 1.0, "fine": 1.3, "rare": 1.6, "epic": 2.0, "legendary": 2.5}
+
+var weapon_quality: String = "normal"
+var can_fire: bool = true
+var ammo = {"rifle": 30, "shotgun": 15, "flamethrower": 50, "ice_ray": 20}
+var infinite_ammo_weapons = ["pistol"]
+var unlocked_weapons = ["pistol", "rifle", "shotgun"]
+
+const PROJECTILE_SCENE_PATH = "res://scenes/player_projectile.tscn"
+var projectile_scene = null
+
+
+func _ready():
+	projectile_scene = load(PROJECTILE_SCENE_PATH)
+	weapon_changed.emit(current_weapon, _get_current_ammo())
+
+
+func _process(_delta):
+	if Input.is_action_pressed("shoot") and can_fire:
+		fire()
+
+	# Weapon switching
+	for i in range(5):
+		if Input.is_action_just_pressed("weapon_switch_" + str(i + 1)):
+			var weapons = unlocked_weapons
+			if i < weapons.size():
+				switch_weapon(weapons[i])
+
+
+func fire():
+	var data = weapon_data[current_weapon]
+	var pellets = data.get("pellets", 1)
+
+	for pellet_i in range(pellets):
+		var spread_angle = randf_range(-data.spread, data.spread)
+		var aim_dir = get_aim_direction()
+		if aim_dir == Vector3.ZERO:
+			aim_dir = Vector3.FORWARD
+
+		# Apply spread as rotation around Y axis
+		var spread_offset = aim_dir.rotated(Vector3.UP, spread_angle)
+
+		var proj = projectile_scene.instantiate()
+		proj.global_position = global_position + Vector3(0, 0.5, 0)
+		proj.direction = spread_offset.normalized()
+		proj.speed = data.projectile_speed
+		proj.damage = data.damage * QUALITY_MULTIPLIERS[weapon_quality]
+		proj.slow_amount = data.get("slow_amount", 0)
+		proj.weapon_type = current_weapon
+		get_tree().current_scene.add_child(proj)
+
+	# Ammo consumption
+	if current_weapon not in infinite_ammo_weapons:
+		ammo[current_weapon] -= data.ammo_per_shot
+		ammo_changed.emit(current_weapon, ammo[current_weapon])
+		if ammo[current_weapon] <= 0:
+			switch_weapon("pistol")
+			return
+
+	can_fire = false
+	weapon_fired.emit()
+	await get_tree().create_timer(1.0 / data.fire_rate).timeout
+	can_fire = true
+
+
+func get_aim_direction() -> Vector3:
+	var mouse_pos = get_viewport().get_mouse_position()
+	var camera = get_viewport().get_camera_3d()
+	if not camera:
+		return (get_global_transform().basis * Vector3.FORWARD).normalized()
+
+	var from = camera.project_ray_origin(mouse_pos)
+	var dir = camera.project_ray_normal(mouse_pos)
+	if dir.y > -0.01:
+		return (get_global_transform().basis * Vector3.FORWARD).normalized()
+
+	var t = -from.y / dir.y
+	var hit_point = from + dir * t
+	hit_point.y = global_position.y
+	return (hit_point - global_position).normalized()
+
+
+func switch_weapon(weapon_name: String):
+	if weapon_name in weapon_data and weapon_name in unlocked_weapons:
+		current_weapon = weapon_name
+		weapon_changed.emit(current_weapon, _get_current_ammo())
+
+
+func get_quality_damage_mult() -> float:
+	return QUALITY_MULTIPLIERS[weapon_quality]
+
+
+func get_label() -> String:
+	return weapon_data[current_weapon].get("label", current_weapon)
+
+
+func _get_current_ammo() -> int:
+	if current_weapon in infinite_ammo_weapons:
+		return -1  # infinite
+	return ammo.get(current_weapon, 0)
+
+
+func get_weapon_unlock_status(weapon_name: String) -> bool:
+	return weapon_name in unlocked_weapons
+
+
+func unlock_weapon(weapon_name: String):
+	if weapon_name in weapon_data and weapon_name not in unlocked_weapons:
+		unlocked_weapons.append(weapon_name)
+
+
+func apply_quality_upgrade(weapon_name: String, new_quality: String):
+	if weapon_name == current_weapon:
+		weapon_quality = new_quality
