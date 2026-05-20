@@ -1,0 +1,40 @@
+# Engine
+[Uu]nreal/
+[Bb]uild/
+[Bb]inaries/
+[Dd]erivedDataCache/
+[Ii]ntermediate/
+[Ss]aved/
+
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+*.csproj
+*.sln
+
+# Godot
+.godot/
+*.import
+*.translation
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Builds
+/dist/
+/build/
+/export/
+
+# Secrets
+.env
+*.p12
+*.keystore
