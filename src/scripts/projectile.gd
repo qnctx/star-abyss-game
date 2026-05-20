@@ -13,6 +13,10 @@ func _physics_process(delta):
 	var direction = (target.global_position - global_position).normalized()
 	global_position += direction * speed * delta
 
+	var bolt_node = get_node_or_null("ProjectileBolt")
+	if bolt_node:
+		bolt_node.rotate_z(10.0 * delta)
+
 	if global_position.distance_to(target.global_position) < 0.5:
 		if target.has_method("take_damage"):
 			target.take_damage(damage)

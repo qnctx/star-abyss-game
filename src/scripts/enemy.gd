@@ -34,4 +34,11 @@ func take_damage(amount: float):
 
 func die():
 	enemy_died.emit()
+	var explosion = load("res://scenes/vfx_explosion.tscn").instantiate()
+	explosion.global_position = global_position
+	get_tree().current_scene.add_child(explosion)
+	explosion.emitting = true
+	await get_tree().create_timer(0.5).timeout
+	if is_instance_valid(explosion):
+		explosion.queue_free()
 	queue_free()

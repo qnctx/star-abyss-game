@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_body"]
+albedo_color = Color(0.29, 0.1, 0.1, 1)
+roughness = 0.6
+metallic = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_legs"]
+albedo_color = Color(0.165, 0.063, 0.063, 1)
+roughness = 0.7
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyes"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.5
+roughness = 0.05
+metallic = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bone"]
+albedo_color = Color(0.8, 0.78, 0.7, 1)
+roughness = 0.4
+metallic = 0.05
+
+[node name="EnemyBug" type="CSGCombiner3D"]
+
+[node name="Body" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.4, 0)
+radius = 0.4
+material = SubResource("StandardMaterial3D_body")
+
+[node name="Leg1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -0.3, 0.3, -0.25)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="Leg2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, 0.3, 0.3, -0.25)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="Leg3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.15)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="Leg4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.3, 0.15)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="Leg5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -0.3, 0.3, 0.55)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="Leg6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, 0.3, 0.3, 0.55)
+radius = 0.05
+height = 0.4
+material = SubResource("StandardMaterial3D_legs")
+
+[node name="LeftEye" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.5, 0.5)
+radius = 0.1
+material = SubResource("StandardMaterial3D_eyes")
+
+[node name="RightEye" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.5, 0.5)
+radius = 0.1
+material = SubResource("StandardMaterial3D_eyes")
+
+[node name="LeftMandible" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.985, 0, -0.174, 0.174, 0, 0.985, 0, -1, 0, -0.08, 0.38, 0.56)
+radius = 0.03
+height = 0.25
+material = SubResource("StandardMaterial3D_bone")
+
+[node name="RightMandible" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.985, 0, 0.174, -0.174, 0, 0.985, 0, -1, 0, 0.08, 0.38, 0.56)
+radius = 0.03
+height = 0.25
+material = SubResource("StandardMaterial3D_bone")
+
+[node name="Spike1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -0.1)
+radius = 0.04
+height = 0.15
+material = SubResource("StandardMaterial3D_bone")
+
+[node name="Spike2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.6, -0.25)
+radius = 0.04
+height = 0.15
+material = SubResource("StandardMaterial3D_bone")
+
+[node name="Spike3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.6, -0.25)
+radius = 0.04
+height = 0.15
+material = SubResource("StandardMaterial3D_bone")

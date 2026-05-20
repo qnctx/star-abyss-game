@@ -58,6 +58,14 @@ func fire_projectile():
 	proj.damage = damage
 	get_tree().current_scene.add_child(proj)
 
+	var flash = load("res://scenes/vfx_muzzle_flash.tscn").instantiate()
+	flash.global_position = global_position + Vector3(0, 0.85, 0) + (-global_transform.basis.z * 1.3)
+	get_tree().current_scene.add_child(flash)
+	flash.emitting = true
+	await get_tree().create_timer(0.3).timeout
+	if is_instance_valid(flash):
+		flash.queue_free()
+
 
 func _on_body_entered(body):
 	if body.is_in_group("enemies"):

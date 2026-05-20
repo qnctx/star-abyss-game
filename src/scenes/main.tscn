@@ -3,46 +3,35 @@
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000010" path="res://scripts/player.gd" id="1_player_script"]
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000020" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
 [ext_resource type="PackedScene" uid="uid://turretscene000000000000000000001" path="res://scenes/turret.tscn" id="3_turret_scene"]
+[ext_resource type="Material" path="res://assets/ground_material.tres" id="4_ground_mat"]
+[ext_resource type="Material" path="res://assets/crystal_material.tres" id="5_crystal_mat"]
+[ext_resource type="Material" path="res://assets/rock_material.tres" id="6_rock_mat"]
+[ext_resource type="PackedScene" path="res://scenes/player_model.tscn" id="7_player_model"]
+[ext_resource type="PackedScene" path="res://scenes/base_pod.tscn" id="8_base_pod"]
+[ext_resource type="PackedScene" path="res://scenes/vfx_toxic_spores.tscn" id="9_spores"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
-background_color = Color(0.102, 0.039, 0.18, 1)
+background_color = Color(0.04, 0.02, 0.08, 1)
 fog_enabled = true
 fog_mode = 0
-fog_density = 0.02
-fog_light_color = Color(0.176, 0.106, 0.306, 1)
+fog_density = 0.018
+fog_light_color = Color(0.24, 0.11, 0.37, 1)
 glow_enabled = true
-glow_intensity = 0.3
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
-size = Vector2(20, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ground"]
-albedo_color = Color(0.2, 0.2, 0.267, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_base"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_base"]
-albedo_color = Color(0.267, 1, 0.267, 1)
+glow_intensity = 0.5
+glow_bloom = 0.3
+glow_hdr_threshold = 0.9
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_player"]
 radius = 0.5
 height = 1.0
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_player"]
-top_radius = 0.5
-bottom_radius = 0.5
-height = 2.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_player"]
-albedo_color = Color(0.267, 0.533, 1, 1)
-
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
-light_intensity = 0.8
+light_intensity = 0.6
+light_color = Color(1, 0.95, 0.85, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_main")
@@ -54,17 +43,70 @@ size = 30.0
 
 [node name="Ground" type="Node3D" parent="."]
 
-[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("PlaneMesh_ground")
-surface_material_override/0 = SubResource("StandardMaterial3D_ground")
+[node name="GroundBox" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+size = Vector3(20, 0.3, 20)
+material = ExtResource("4_ground_mat")
+
+[node name="Rock1" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0, 0.15, 2.0)
+radius = 0.4
+material = ExtResource("6_rock_mat")
+
+[node name="Rock2" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0, 0.2, -1.5)
+radius = 0.55
+material = ExtResource("6_rock_mat")
+
+[node name="Rock3" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.12, 3.5)
+radius = 0.3
+material = ExtResource("6_rock_mat")
+
+[node name="Rock4" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0, 0.18, -3.0)
+radius = 0.45
+material = ExtResource("6_rock_mat")
+
+[node name="Rock5" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.1, 2.5)
+radius = 0.25
+material = ExtResource("6_rock_mat")
+
+[node name="Rock6" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0, 0.15, -5.0)
+radius = 0.35
+material = ExtResource("6_rock_mat")
+
+[node name="Rock7" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0, 0.22, -4.0)
+radius = 0.5
+material = ExtResource("6_rock_mat")
+
+[node name="Rock8" type="CSGSphere3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.08, 4.0)
+radius = 0.28
+material = ExtResource("6_rock_mat")
+
+[node name="Crystal1" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 1.0)
+size = Vector3(0.12, 0.5, 0.12)
+material = ExtResource("5_crystal_mat")
+
+[node name="Crystal2" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0, 0.4, -2.0)
+size = Vector3(0.1, 0.35, 0.1)
+material = ExtResource("5_crystal_mat")
+
+[node name="Crystal3" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0, 0.55, -3.5)
+size = Vector3(0.08, 0.6, 0.08)
+material = ExtResource("5_crystal_mat")
 
 [node name="BasePosition" type="Node3D" parent="."]
 
-[node name="BaseMesh" type="MeshInstance3D" parent="BasePosition"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("BoxMesh_base")
-surface_material_override/0 = SubResource("StandardMaterial3D_base")
+[node name="BasePod" parent="BasePosition" instance=ExtResource("8_base_pod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -73,13 +115,53 @@ script = ExtResource("1_player_script")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CylinderShape3D_player")
 
-[node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
+[node name="PlayerModel" parent="Player" instance=ExtResource("7_player_model")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("CylinderMesh_player")
-surface_material_override/0 = SubResource("StandardMaterial3D_player")
 
 [node name="Turret" parent="." instance=ExtResource("3_turret_scene")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="PointLight_Base" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+light_color = Color(1, 0.85, 0.6, 1)
+light_intensity = 0.6
+light_range = 5.0
+
+[node name="PointLight_Turret" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.0, 2)
+light_color = Color(0.3, 0.5, 0.9, 1)
+light_intensity = 0.5
+light_range = 4.0
+
+[node name="PointLight_Crystal" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.8, 1.0)
+light_color = Color(0.5, 0.15, 0.7, 1)
+light_intensity = 0.4
+light_range = 2.5
+
+[node name="Spores1" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 5)
+
+[node name="Spores2" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -5)
+
+[node name="Spores3" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -5)
+
+[node name="Spores4" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 5)
+
+[node name="Spores5" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.5, 0)
+
+[node name="Spores6" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 0)
+
+[node name="Spores7" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 7)
+
+[node name="Spores8" parent="." instance=ExtResource("9_spores")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -7)
 
 [node name="OxygenUI" type="Control" parent="."]
 layout_mode = 3

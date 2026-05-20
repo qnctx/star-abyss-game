@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" path="res://assets/bolt_material.tres" id="1_bolt_mat"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trail"]
+albedo_color = Color(1, 0.533, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.533, 0, 1)
+emission_energy_multiplier = 0.8
+roughness = 0.0
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_particle"]
+albedo_color = Color(1, 0.867, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.867, 0, 1)
+emission_energy_multiplier = 0.6
+roughness = 0.0
+metallic = 0.0
+transparency = 1
+use_point_size = true
+particle_size = 0.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_particle"]
+radius = 0.03
+height = 0.06
+
+[node name="ProjectileBolt" type="Node3D"]
+
+[node name="Core" type="CSGSphere3D" parent="."]
+radius = 0.12
+material = ExtResource("1_bolt_mat")
+
+[node name="Trail" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35)
+radius = 0.06
+height = 0.5
+material = SubResource("StandardMaterial3D_trail")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = true
+amount = 20
+lifetime = 0.3
+one_shot = false
+explosiveness = 0.0
+process_material = null
+draw_pass_1 = SubResource("SphereMesh_particle")
+draw_pass_1_material = SubResource("StandardMaterial3D_particle")

@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_body"]
+albedo_color = Color(0.75, 0.75, 0.78, 1)
+roughness = 0.4
+metallic = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nose"]
+albedo_color = Color(0.2, 0.2, 0.22, 1)
+roughness = 0.3
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hatch_border"]
+albedo_color = Color(0.9, 0.4, 0.05, 1)
+emission_enabled = true
+emission = Color(0.9, 0.4, 0.05, 1)
+emission_energy_multiplier = 0.4
+roughness = 0.2
+metallic = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hatch"]
+albedo_color = Color(0.3, 0.3, 0.32, 1)
+roughness = 0.3
+metallic = 0.6
+
+[node name="BasePod" type="CSGCombiner3D"]
+
+[node name="MainBody" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.966, 0, 0.259, 0, 1, 0, -0.259, 0, 0.966, 0, 0.8, 0)
+radius = 0.8
+height = 1.5
+material = SubResource("StandardMaterial3D_body")
+
+[node name="NoseCone" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.4)
+radius = 0.8
+material = SubResource("StandardMaterial3D_nose")
+
+[node name="HatchBorder" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.72)
+size = Vector3(0.05, 0.6, 0.3)
+material = SubResource("StandardMaterial3D_hatch_border")
+
+[node name="HatchDoor" type="CSGBox3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, 0.3, 0.6, 0.78)
+size = Vector3(0.05, 0.55, 0.28)
+material = SubResource("StandardMaterial3D_hatch")
+
+[node name="Scorch1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.5, -0.6)
+radius = 0.06
+height = 0.05
+material = SubResource("StandardMaterial3D_nose")
+
+[node name="Scorch2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.1, -0.5)
+radius = 0.08
+height = 0.05
+material = SubResource("StandardMaterial3D_nose")
+
+[node name="Scorch3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.3, -0.7)
+radius = 0.05
+height = 0.04
+material = SubResource("StandardMaterial3D_nose")
+
+[node name="FlickerLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.9)
+light_color = Color(1, 0.6, 0.2, 1)
+light_intensity = 0.8
+light_range = 2.0

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flash"]
+albedo_color = Color(1, 0.867, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.867, 0, 1)
+emission_energy_multiplier = 1.0
+roughness = 0.0
+metallic = 0.0
+transparency = 1
+use_point_size = true
+particle_size = 1.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_flash"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_flash"]
+lifetime_randomness = 0.3
+trail_enabled = false
+direction = Vector3(0, 0, -1)
+spread = 15.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = 0.0
+angular_velocity_max = 0.0
+scale_min = 1.0
+scale_max = 1.0
+color = Gradient.new()
+color.offsets = PackedFloat32Array(0, 0.5, 1)
+color.colors = PackedColorArray(Color(1, 0.867, 0, 1), Color(1, 0.533, 0, 1), Color(0.1, 0.05, 0, 0))
+emission_shape = 0
+emission_box_extents = Vector3(0, 0, 0)
+
+[node name="VfxMuzzleFlash" type="GPUParticles3D"]
+emitting = false
+amount = 8
+lifetime = 0.15
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_flash")
+draw_pass_1 = SubResource("SphereMesh_flash")
+draw_pass_1_material = SubResource("StandardMaterial3D_flash")
