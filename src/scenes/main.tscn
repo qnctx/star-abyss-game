@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0reprototype000000000000000001"]
+[gd_scene load_steps=13 format=3 uid="uid://c0reprototype000000000000000001"]
 
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000010" path="res://scripts/player.gd" id="1_player_script"]
 [ext_resource type="Script" uid="uid://c0reprototype000000000000000020" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scripts/serum_ui.gd" id="15_serum_ui"]
 [ext_resource type="Script" path="res://scripts/teleport_manager.gd" id="16_teleport_manager"]
 [ext_resource type="Script" path="res://scripts/world_generator.gd" id="17_world_generator"]
-[ext_resource type="Script" path="res://scripts/system_test.gd" id="18_system_test"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -134,6 +133,3 @@ script = ExtResource("16_teleport_manager")
 
 [node name="World" type="Node" parent="."]
 script = ExtResource("17_world_generator")
-
-[node name="SystemTest" type="Node" parent="."]
-script = ExtResource("18_system_test")
