@@ -13,6 +13,10 @@ signal base_reached(damage: float)
 
 func _ready():
 	add_to_group("enemies")
+	# Use WorldGenerator base if set, otherwise fall back to center
+	# where the base pod is placed (Vector3(0, h+0.1, 0))
+	var wp: Vector3 = WorldGenerator.base_position if WorldGenerator else Vector3.ZERO
+	target_position = wp if wp != Vector3.ZERO else Vector3(0, 1, 0)
 
 
 func _physics_process(delta):
