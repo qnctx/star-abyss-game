@@ -347,11 +347,12 @@ func _spawn_spores(scene: Node) -> void:
 # ===========================================================================
 
 func _spawn_zone_entrances(scene: Node) -> void:
+	# Register each entrance with TeleportManager so T-key teleport works.
 	var z_positions: Array[Dictionary] = [
-		{ "scene": ICE_CAVE_SCENE, "pos": Vector3(0, 0, 25) },
-		{ "scene": LAVA_FISSURE_SCENE, "pos": Vector3(25, 0, 0) },
-		{ "scene": GRAVITY_WELL_SCENE, "pos": Vector3(0, 0, -25) },
-		{ "scene": CRASH_ZONE_SCENE, "pos": Vector3(-25, 0, 0) },
+		{ "scene": ICE_CAVE_SCENE,    "pos": Vector3(0, 0, 25), "zone": "极寒区" },
+		{ "scene": LAVA_FISSURE_SCENE, "pos": Vector3(25, 0, 0), "zone": "熔岩区" },
+		{ "scene": GRAVITY_WELL_SCENE, "pos": Vector3(0, 0, -25), "zone": "重力异常区" },
+		{ "scene": CRASH_ZONE_SCENE,   "pos": Vector3(-25, 0, 0), "zone": "Crash Zone" },
 	]
 	for entry in z_positions:
 		var pos: Vector3 = entry["pos"]
@@ -359,5 +360,9 @@ func _spawn_zone_entrances(scene: Node) -> void:
 		var entrance: Node3D = entry["scene"].instantiate()
 		entrance.global_position = Vector3(pos.x, h, pos.z)
 		scene.add_child(entrance)
+		# TeleportManager lives in main.tscn, not as an autoload — find it via scene tree
+		var tm = scene.get_node_or_null("TeleportManager")
+		if tm:
+			tm.register_beacon(entrance, entry["zone"])
 
 	print("WorldGenerator: 4 zone entrances placed.")
