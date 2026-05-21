@@ -8,12 +8,14 @@ emission_energy_multiplier = 0.3
 roughness = 0.2
 metallic = 0.1
 transparency = 1
-use_point_size = true
-particle_size = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_spore"]
 radius = 0.04
 height = 0.08
+
+[sub_resource type="Gradient" id="Gradient_spore"]
+offsets = PackedFloat32Array(0.0, 0.5, 1.0)
+colors = PackedColorArray(Color(0.5, 0.2, 0.8, 0.8), Color(0.3, 0.5, 0.2, 0.5), Color(0.1, 0.08, 0.05, 0.0))
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spore"]
 lifetime_randomness = 1.0
@@ -26,9 +28,7 @@ angular_velocity_min = 0.0
 angular_velocity_max = 0.0
 scale_min = 0.5
 scale_max = 1.5
-color = Gradient.new()
-color.offsets = PackedFloat32Array(0, 0.5, 1)
-color.colors = PackedColorArray(Color(0.5, 0.2, 0.8, 0.8), Color(0.3, 0.5, 0.2, 0.5), Color(0.1, 0.08, 0.05, 0))
+color = SubResource("Gradient_spore")
 emission_shape = 2
 emission_sphere_radius = 3.0
 
