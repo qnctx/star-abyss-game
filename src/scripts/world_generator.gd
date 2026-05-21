@@ -203,20 +203,20 @@ func _generate_terrain_mesh() -> ArrayMesh:
 	var row_stride := GRID_POINTS
 	for jz in range(WORLD_SIZE):
 		for ix in range(WORLD_SIZE):
-			var tl := jz * row_stride + ix           # top-left
-			var tr := tl + 1                         # top-right
-			var bl := (jz + 1) * row_stride + ix     # bottom-left
-			var br := bl + 1                         # bottom-right
+		var top_left := jz * row_stride + ix         # top-left
+		var top_right := top_left + 1                 # top-right
+		var bottom_left := (jz + 1) * row_stride + ix   # bottom-left
+		var bottom_right := bottom_left + 1             # bottom-right
 
-			# Triangle 1: TL → BL → TR
-			st.add_index(tl)
-			st.add_index(bl)
-			st.add_index(tr)
+		# Triangle 1: TL → BL → TR
+		st.add_index(top_left)
+		st.add_index(bottom_left)
+		st.add_index(top_right)
 
-			# Triangle 2: TR → BL → BR
-			st.add_index(tr)
-			st.add_index(bl)
-			st.add_index(br)
+		# Triangle 2: TR → BL → BR
+		st.add_index(top_right)
+		st.add_index(bottom_left)
+		st.add_index(bottom_right)
 
 	st.generate_normals()
 

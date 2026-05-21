@@ -59,13 +59,13 @@ func fire():
 		var spread_offset = aim_dir.rotated(Vector3.UP, spread_angle)
 
 		var proj = projectile_scene.instantiate()
+		get_tree().current_scene.add_child(proj)
 		proj.global_position = global_position + Vector3(0, 0.5, 0)
 		proj.direction = spread_offset.normalized()
 		proj.speed = data.projectile_speed
 		proj.damage = data.damage * QUALITY_MULTIPLIERS[_get_weapon_quality(current_weapon)]
 		proj.slow_amount = data.get("slow_amount", 0)
 		proj.weapon_type = current_weapon
-		get_tree().current_scene.add_child(proj)
 
 	# Ammo consumption
 	if current_weapon not in infinite_ammo_weapons:
