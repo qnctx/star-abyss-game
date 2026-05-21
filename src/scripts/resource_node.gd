@@ -56,6 +56,7 @@ func _spawn_pickup_vfx():
 	particles.one_shot = true
 	particles.lifetime = 0.5
 	particles.amount = 8
+	get_tree().current_scene.add_child(particles)
 	particles.global_position = global_position
 
 	var mat = ParticleProcessMaterial.new()
@@ -81,7 +82,6 @@ func _spawn_pickup_vfx():
 	particles.material_override = mat_override
 
 	particles.process_material = mat
-	get_tree().current_scene.add_child(particles)
 	await get_tree().create_timer(0.6).timeout
 	if is_instance_valid(particles):
 		particles.queue_free()

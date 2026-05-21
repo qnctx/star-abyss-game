@@ -60,8 +60,8 @@ func spawn_wave():
 func spawn_enemy():
 	var enemy_scene = load("res://scenes/enemy.tscn")
 	var enemy = enemy_scene.instantiate()
-	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
 	get_tree().current_scene.add_child(enemy)
+	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
 	enemies_alive += 1
 	enemy.enemy_died.connect(_on_enemy_died)
 	enemy.base_reached.connect(_on_base_reached)

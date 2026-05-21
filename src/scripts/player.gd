@@ -2,12 +2,13 @@ extends CharacterBody3D
 
 @export var speed: float = 8.0
 @export var sprint_speed: float = 12.0
-@export var oxygen_drain_rate: float = 1.0
-@export var sprint_drain_rate: float = 1.5
+@export var oxygen_drain_rate: float = 0.3
+@export var sprint_drain_rate: float = 0.6
 
 var current_oxygen: float = 100.0
 var max_oxygen: float = 100.0
 var is_dead: bool = false
+var _grace_timer: float = 10.0  # 开局安全期，氧气不消耗
 
 signal oxygen_changed(current: float, maximum: float)
 signal player_died()
@@ -36,11 +37,14 @@ func _physics_process(delta):
 	velocity.z = direction.z * current_speed
 	move_and_slide()
 
-	# Oxygen drain
-	var mult = ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
-	var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
-	current_oxygen -= drain * delta
-	current_oxygen = max(current_oxygen, 0.0)
+	# Oxygen drain (grace period protects new players)
+	if _grace_timer > 0:
+		_grace_timer -= delta
+	else:
+		var mult = ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
+		var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
+		current_oxygen -= drain * delta
+		current_oxygen = max(current_oxygen, 0.0)
 	oxygen_changed.emit(current_oxygen, max_oxygen)
 
 	if current_oxygen <= 0:
@@ -57,6 +61,7 @@ func die():
 
 func respawn():
 	is_dead = false
+	_grace_timer = 5.0  # 每次复活给 5 秒 grace
 	current_oxygen = max_oxygen
 	position = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
 	oxygen_changed.emit(current_oxygen, max_oxygen)

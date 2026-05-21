@@ -53,14 +53,14 @@ func find_nearest_enemy() -> Node3D:
 func fire_projectile():
 	var proj_scene = load("res://scenes/projectile.tscn")
 	var proj = proj_scene.instantiate()
-	proj.global_position = global_position + Vector3(0, 0.5, 0)
 	proj.target = current_target
 	proj.damage = damage
 	get_tree().current_scene.add_child(proj)
+	proj.global_position = global_position + Vector3(0, 0.5, 0)
 
 	var flash = load("res://scenes/vfx_muzzle_flash.tscn").instantiate()
-	flash.global_position = global_position + Vector3(0, 0.85, 0) + (-global_transform.basis.z * 1.3)
 	get_tree().current_scene.add_child(flash)
+	flash.global_position = global_position + Vector3(0, 0.85, 0) + (-global_transform.basis.z * 1.3)
 	flash.emitting = true
 	await get_tree().create_timer(0.3).timeout
 	if is_instance_valid(flash):
