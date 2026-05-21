@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var attack_range: float = 2.0
 
 var target_position: Vector3 = Vector3(0, 0, 0)
+var _has_died: bool = false
 
 signal enemy_died()
 signal base_reached(damage: float)
@@ -37,9 +38,9 @@ func take_damage(amount: float):
 
 
 func die():
-	if is_queued_for_deletion:
+	if _has_died:
 		return
-	is_queued_for_deletion = true
+	_has_died = true
 	enemy_died.emit()
 	var explosion = load("res://scenes/vfx_explosion.tscn").instantiate()
 	explosion.global_position = global_position
