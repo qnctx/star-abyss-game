@@ -42,13 +42,13 @@ func _write_log_to_file():
 		f.close()
 
 
-func check(name: String, condition: bool, detail: String = ""):
+func check(test_name: String, condition: bool, detail: String = ""):
 	if condition:
 		_passed += 1
-		_log("[PASS] " + name + ((" → " + detail) if detail else ""))
+		_log("[PASS] " + test_name + ((" → " + detail) if detail else ""))
 	else:
 		_failed += 1
-		_log("[FAIL] " + name + ((" → " + detail) if detail else ""))
+		_log("[FAIL] " + test_name + ((" → " + detail) if detail else ""))
 
 
 func check_eq(a, b, name: String, detail: String = ""):
