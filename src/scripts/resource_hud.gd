@@ -7,13 +7,20 @@ const ICONS = {
 	"energy_core": "能",
 	"blueprint": "图",
 }
-
 const COLORS = {
 	"iron": Color(0.5, 0.45, 0.4),
 	"void_crystal": Color(0.6, 0.2, 0.8),
 	"biomass": Color(0.2, 0.7, 0.3),
 	"energy_core": Color(0.2, 0.4, 1.0),
 	"blueprint": Color(0.9, 0.7, 0.1),
+}
+
+const COLORS_NAMES = {
+	"iron": "铁",
+	"void_crystal": "晶",
+	"biomass": "质",
+	"energy_core": "能",
+	"blueprint": "图",
 }
 
 var resource_labels: Dictionary = {}
@@ -46,12 +53,3 @@ func _update_display():
 			add_child(label)
 			resource_labels[type] = label
 			y_offset += 20
-
-
-const COLORS_NAMES = {
-	"iron": "铁",
-	"void_crystal": "晶",
-	"biomass": "质",
-	"energy_core": "能",
-	"blueprint": "图",
-}

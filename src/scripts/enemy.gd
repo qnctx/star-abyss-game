@@ -33,6 +33,9 @@ func take_damage(amount: float):
 
 
 func die():
+	if is_queued_for_deletion:
+		return
+	is_queued_for_deletion = true
 	enemy_died.emit()
 	var explosion = load("res://scenes/vfx_explosion.tscn").instantiate()
 	explosion.global_position = global_position

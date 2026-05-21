@@ -18,6 +18,7 @@ const QUALITY_NAMES = ["normal", "fine", "rare", "epic", "legendary"]
 const QUALITY_MULTIPLIERS = {"normal": 1.0, "fine": 1.3, "rare": 1.6, "epic": 2.0, "legendary": 2.5}
 
 var weapon_quality: String = "normal"
+var weapon_qualities: Dictionary = {}  # weapon_name -> quality string
 var can_fire: bool = true
 var ammo = {"rifle": 30, "shotgun": 15, "flamethrower": 50, "ice_ray": 20}
 var infinite_ammo_weapons = ["pistol"]
@@ -61,7 +62,7 @@ func fire():
 		proj.global_position = global_position + Vector3(0, 0.5, 0)
 		proj.direction = spread_offset.normalized()
 		proj.speed = data.projectile_speed
-		proj.damage = data.damage * QUALITY_MULTIPLIERS[weapon_quality]
+		proj.damage = data.damage * QUALITY_MULTIPLIERS[_get_weapon_quality(current_weapon)]
 		proj.slow_amount = data.get("slow_amount", 0)
 		proj.weapon_type = current_weapon
 		get_tree().current_scene.add_child(proj)
@@ -100,11 +101,16 @@ func get_aim_direction() -> Vector3:
 func switch_weapon(weapon_name: String):
 	if weapon_name in weapon_data and weapon_name in unlocked_weapons:
 		current_weapon = weapon_name
+		weapon_quality = _get_weapon_quality(weapon_name)
 		weapon_changed.emit(current_weapon, _get_current_ammo())
 
 
 func get_quality_damage_mult() -> float:
-	return QUALITY_MULTIPLIERS[weapon_quality]
+	return QUALITY_MULTIPLIERS[_get_weapon_quality(current_weapon)]
+
+
+func _get_weapon_quality(weapon_name: String) -> String:
+	return weapon_qualities.get(weapon_name, "normal")
 
 
 func get_label() -> String:
@@ -127,5 +133,6 @@ func unlock_weapon(weapon_name: String):
 
 
 func apply_quality_upgrade(weapon_name: String, new_quality: String):
+	weapon_qualities[weapon_name] = new_quality
 	if weapon_name == current_weapon:
 		weapon_quality = new_quality

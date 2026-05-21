@@ -137,7 +137,7 @@ func _refresh_display():
 	var info_x = 280.0
 	var info_label = Label.new()
 	var data = weapon_controller.weapon_data[selected_weapon]
-	var current_quality = weapon_controller.weapon_quality if selected_weapon == weapon_controller.current_weapon else "normal"
+	var current_quality = weapon_controller.weapon_quality if selected_weapon == weapon_controller.current_weapon else weapon_controller._get_weapon_quality(selected_weapon)
 	var quality_idx = QUALITY_NAMES.find(current_quality)
 	var quality_label = QUALITY_LABELS[quality_idx]
 	var q_color_str = QUALITY_COLORS[quality_idx]
@@ -220,7 +220,7 @@ func _select_weapon(weapon_name: String):
 
 
 func _upgrade_weapon(weapon_name: String):
-	var current_quality = weapon_controller.weapon_quality if weapon_name == weapon_controller.current_weapon else "normal"
+	var current_quality = weapon_controller.weapon_quality if weapon_name == weapon_controller.current_weapon else weapon_controller._get_weapon_quality(weapon_name)
 	var next_idx = QUALITY_NAMES.find(current_quality) + 1
 	if next_idx >= QUALITY_NAMES.size():
 		return
