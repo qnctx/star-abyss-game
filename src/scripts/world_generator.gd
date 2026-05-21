@@ -59,7 +59,8 @@ func _ready() -> void:
 	# Load the world noise resource
 	var noise_tex: NoiseTexture2D = load("res://assets/world_noise.tres")
 	_noise = noise_tex.noise
-	generate_world()
+	# Defer so scene tree is fully unlocked before any add_child()
+	generate_world.call_deferred()
 
 
 # ===========================================================================
@@ -316,9 +317,9 @@ func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 func _spawn_base_pod(scene: Node) -> void:
 	var h := _raw_height(0.0, 0.0)
 	var pod := BASE_POD_SCENE.instantiate()
+	scene.add_child(pod)
 	pod.global_position = Vector3(0.0, h + 0.1, 0.0)
 	base_position = pod.global_position
-	scene.add_child(pod)
 	print("WorldGenerator: base pod placed at %s." % base_position)
 
 
@@ -358,8 +359,8 @@ func _spawn_zone_entrances(scene: Node) -> void:
 		var pos: Vector3 = entry["pos"]
 		var h := _raw_height(pos.x, pos.z)
 		var entrance: Node3D = entry["scene"].instantiate()
-		entrance.global_position = Vector3(pos.x, h, pos.z)
 		scene.add_child(entrance)
+		entrance.global_position = Vector3(pos.x, h, pos.z)
 		# TeleportManager lives in main.tscn, not as an autoload — find it via scene tree
 		var tm = scene.get_node_or_null("TeleportManager")
 		if tm:
