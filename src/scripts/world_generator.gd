@@ -197,6 +197,8 @@ func _generate_terrain_mesh() -> ArrayMesh:
 			var x: float = (ix - WORLD_SIZE / 2.0) * SPACING
 			var z: float = (jz - WORLD_SIZE / 2.0) * SPACING
 			var y: float = _raw_height(x, z)
+			# UV: tile the noise texture across the terrain (4 repeats per 100 units)
+			st.set_uv(Vector2(ix * 0.04, jz * 0.04))
 			st.add_vertex(Vector3(x, y, z))
 
 	# Triangle indices

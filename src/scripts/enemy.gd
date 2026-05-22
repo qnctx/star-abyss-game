@@ -42,11 +42,15 @@ func die():
 		return
 	_has_died = true
 	enemy_died.emit()
-	var explosion = load("res://scenes/vfx_explosion.tscn").instantiate()
-	get_tree().current_scene.add_child(explosion)
-	explosion.global_position = global_position
-	explosion.emitting = true
-	await get_tree().create_timer(0.5).timeout
-	if is_instance_valid(explosion):
-		explosion.queue_free()
+	var ExplosionScene = preload("res://scenes/vfx_explosion.tscn")
+	if ExplosionScene:
+		var explosion = ExplosionScene.instantiate()
+		get_tree().current_scene.add_child(explosion)
+		explosion.global_position = global_position
+		explosion.emitting = true
+		await get_tree().create_timer(0.5).timeout
+		if is_instance_valid(explosion):
+			explosion.queue_free()
+	else:
+		push_warning("Enemy: failed to preload vfx_explosion.tscn")
 	queue_free()
