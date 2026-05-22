@@ -47,20 +47,12 @@ const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
 var GROUND_MATERIAL: StandardMaterial3D
 
 func _create_ground_material() -> StandardMaterial3D:
-	# Load the pre-made noise texture resource (width/height now set to 512x512)
-	var noise_tex: NoiseTexture2D = load("res://assets/world_noise.tres")
-	if not noise_tex:
-		push_error("WorldGenerator: failed to load world_noise.tres, using fallback color")
-		var mat := StandardMaterial3D.new()
-		mat.albedo_color = Color(0.35, 0.28, 0.22, 1)
-		return mat
-
 	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(0.25, 0.22, 0.18, 1)  # Brownish-gray base
-	mat.albedo_texture = noise_tex
+	# Use bright tan/sand color to contrast with dark purple background (0.04, 0.02, 0.08)
+	mat.albedo_color = Color(0.6, 0.55, 0.4)
 	mat.roughness = 0.9
 	mat.metallic = 0.05
-	print("WorldGenerator: ground material ready (noise texture w=%d h=%d)" % [noise_tex.width, noise_tex.height])
+	print("WorldGenerator: ground material ready (bright tan color)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
