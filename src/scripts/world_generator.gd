@@ -49,20 +49,24 @@ var GROUND_MATERIAL: StandardMaterial3D
 func _create_ground_material() -> StandardMaterial3D:
 	# Create noise in code — no .tres file dependency
 	var noise := FastNoiseLite.new()
-	noise.noise_type = 2  # TYPE_SIMPLEX_SMOOTH
+	noise.noise_type = 0  # TYPE_SIMPLEX — safest default
 	noise.frequency = 0.05
+	noise.seed = 42
 
 	var noise_tex := NoiseTexture2D.new()
 	noise_tex.noise = noise
 	noise_tex.width = 256
 	noise_tex.height = 256
+	noise_tex.seamless = false
+	noise_tex.generate_mipmaps = false
+	noise_tex.emit_changed()  # Trigger async regen
 
 	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(0.20, 0.18, 0.16, 1)
+	mat.albedo_color = Color(0.25, 0.22, 0.18, 1)  # Brownish-gray base
 	mat.albedo_texture = noise_tex
 	mat.roughness = 0.9
 	mat.metallic = 0.05
-	print("WorldGenerator: ground material created in code (noise texture %dx%d)" % [noise_tex.width, noise_tex.height])
+	print("WorldGenerator: ground material ready (noise_type=%d, tex=%dx%d)" % [noise.noise_type, noise_tex.width, noise_tex.height])
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
