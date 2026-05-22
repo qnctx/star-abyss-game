@@ -1,9 +1,16 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+[gd_resource type="StandardMaterial3D" format=3]
 
-[ext_resource type="NoiseTexture2D" path="res://assets/ground_noise.tres" id="1_noise"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ground"]
+noise_type = 0
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ground"]
+width = 512
+height = 512
+noise = SubResource("FastNoiseLite_ground")
 
 [resource]
 albedo_color = Color(0.102, 0.102, 0.102, 1)
-albedo_texture = ExtResource("1_noise")
+albedo_texture = SubResource("NoiseTexture2D_ground")
 roughness = 0.9
 metallic = 0.05
