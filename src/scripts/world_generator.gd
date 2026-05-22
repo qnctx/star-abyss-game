@@ -47,26 +47,21 @@ const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
 var GROUND_MATERIAL: StandardMaterial3D
 
 func _create_ground_material() -> StandardMaterial3D:
-	# Create noise in code — no .tres file dependency
-	var noise := FastNoiseLite.new()
-	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX  # 1 in Godot 4.0, 2 in Godot 4.1+; use named constant to avoid version mismatch
-	noise.frequency = 0.05
-	noise.seed = 42
-
-	var noise_tex := NoiseTexture2D.new()
-	noise_tex.noise = noise
-	noise_tex.width = 256
-	noise_tex.height = 256
-	noise_tex.seamless = false
-	noise_tex.generate_mipmaps = false
-	noise_tex.emit_changed()  # Trigger async regen
+	# Load the pre-made noise texture resource instead of creating in code
+	# This ensures proper synchronous loading in Godot 4.0.2
+	var noise_tex: NoiseTexture2D = load("res://assets/world_noise.tres")
+	if not noise_tex:
+		push_error("WorldGenerator: failed to load world_noise.tres, using fallback color")
+		var mat := StandardMaterial3D.new()
+		mat.albedo_color = Color(0.35, 0.28, 0.22, 1)
+		return mat
 
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = Color(0.25, 0.22, 0.18, 1)  # Brownish-gray base
 	mat.albedo_texture = noise_tex
 	mat.roughness = 0.9
 	mat.metallic = 0.05
-	print("WorldGenerator: ground material ready (noise_type=%d, tex=%dx%d)" % [noise.noise_type, noise_tex.width, noise_tex.height])
+	print("WorldGenerator: ground material ready (loaded noise texture)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
@@ -79,9 +74,11 @@ const CRASH_ZONE_SCENE := preload("res://scenes/world/crash_zone_entrance.tscn")
 # ===========================================================================
 
 func _ready() -> void:
+	print("WorldGenerator: _ready() started")
 	# Load the world noise resource
 	var noise_tex: NoiseTexture2D = load("res://assets/world_noise.tres")
 	_noise = noise_tex.noise
+	print("WorldGenerator: noise loaded, type=", _noise.noise_type if _noise else "NULL")
 	# Create terrain material in code — no .tres file dependency
 	GROUND_MATERIAL = _create_ground_material()
 	print("WorldGenerator: noise loaded, terrain material initialized")
@@ -135,6 +132,7 @@ func get_spawn_position(min_dist: float, max_dist: float) -> Vector3:
 # ===========================================================================
 
 func generate_world() -> void:
+	print("WorldGenerator: generate_world() started")
 	var scene: Node = get_tree().current_scene
 	if not scene:
 		push_error("WorldGenerator: no current scene to add terrain to.")
@@ -142,6 +140,7 @@ func generate_world() -> void:
 
 	# 1. Terrain mesh
 	var terrain_node := _build_terrain_node()
+	print("WorldGenerator: terrain_node created, adding to scene")
 	scene.add_child(terrain_node)
 	# Move terrain as last child so it renders behind everything
 	scene.move_child(terrain_node, 0)
@@ -196,6 +195,8 @@ func _build_terrain_node() -> Node3D:
 
 	var mesh := _generate_terrain_mesh()
 	mesh_instance.mesh = mesh
+
+	print("WorldGenerator: mesh created, aabb=", mesh.get_aabb(), " surface_count=", mesh.get_surface_count())
 
 	# --- StaticBody3D for collision ---
 	var static_body := StaticBody3D.new()
