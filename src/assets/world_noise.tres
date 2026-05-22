@@ -10,4 +10,6 @@ fractal_gain = 0.5
 fractal_lacunarity = 2.0
 
 [resource]
+width = 512
+height = 512
 noise = SubResource("FastNoiseLite_world")
