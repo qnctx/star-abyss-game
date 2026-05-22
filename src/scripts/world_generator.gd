@@ -49,7 +49,7 @@ var GROUND_MATERIAL: StandardMaterial3D
 func _create_ground_material() -> StandardMaterial3D:
 	# Create noise in code — no .tres file dependency
 	var noise := FastNoiseLite.new()
-	noise.noise_type = 0  # TYPE_SIMPLEX — safest default
+	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX  # 1 in Godot 4.0, 2 in Godot 4.1+; use named constant to avoid version mismatch
 	noise.frequency = 0.05
 	noise.seed = 42
 

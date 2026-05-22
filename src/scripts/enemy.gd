@@ -20,7 +20,7 @@ func _ready():
 	target_position = wp if wp != Vector3.ZERO else Vector3(0, 1, 0)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = (target_position - global_position).normalized()
 	direction.y = 0
 	velocity = direction * speed
