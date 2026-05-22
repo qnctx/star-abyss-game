@@ -136,11 +136,14 @@ func generate_world() -> void:
 	if not scene:
 		push_error("WorldGenerator: no current scene to add terrain to.")
 		return
+	print("WorldGenerator: current_scene=%s" % scene.name)
 
 	# 1. Terrain mesh
+	print("WorldGenerator: BEFORE add_child terrain_node")
 	var terrain_node := _build_terrain_node()
 	print("WorldGenerator: terrain_node created, adding to scene")
 	scene.add_child(terrain_node)
+	print("WorldGenerator: AFTER add_child terrain_node, terrain_node.parent=%s" % terrain_node.get_parent().name if terrain_node.get_parent() else "NULL")
 	# Move terrain as last child so it renders behind everything
 	scene.move_child(terrain_node, 0)
 
@@ -169,7 +172,9 @@ func generate_world() -> void:
 
 func _raw_height(x: float, z: float) -> float:
 	## Noise height without any post-processing.
-	var y := _noise.get_noise_2d(x, z) * NOISE_AMPLITUDE
+	## TERRAIN SHIFT: Add 3.0 to move terrain from Y=[-3,0] to Y=[0,3]
+	## This fixes camera near-plane clipping on orthogonal cameras in Godot 4.0.2
+	var y := _noise.get_noise_2d(x, z) * NOISE_AMPLITUDE + 3.0
 
 	# Crash-zone depression: height scales down toward center
 	var dist := sqrt(x * x + z * z)
