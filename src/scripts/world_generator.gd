@@ -187,9 +187,8 @@ func _build_terrain_node() -> Node3D:
 	# --- MeshInstance3D ---
 	var mesh_instance := MeshInstance3D.new()
 	mesh_instance.name = "TerrainMesh"
-	mesh_instance.material_override = GROUND_MATERIAL
 
-	var mesh := _generate_terrain_mesh()
+	var mesh := _generate_terrain_mesh()  # Material is set on mesh surface inside
 	mesh_instance.mesh = mesh
 
 	print("WorldGenerator: mesh created, aabb=", mesh.get_aabb(), " surface_count=", mesh.get_surface_count())
@@ -246,6 +245,10 @@ func _generate_terrain_mesh() -> ArrayMesh:
 	st.generate_normals()
 
 	var array_mesh := st.commit()
+	# In Godot 4, ArrayMesh created via SurfaceTool.commit() has no material set.
+	# We must set the material on the mesh surface explicitly, not rely on
+	# material_override (which can fail to apply to ArrayMesh in some cases).
+	array_mesh.surface_set_material(0, GROUND_MATERIAL)
 	return array_mesh
 
 
