@@ -26,10 +26,6 @@ angular_velocity_min = 0.0
 angular_velocity_max = 0.0
 scale_min = 0.5
 scale_max = 1.5
-scale_curve = Curve.new()
-color = Gradient.new()
-color.offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
-color.colors = PackedColorArray(Color(1, 0.533, 0, 1), Color(1, 0.267, 0.1, 1), Color(0.5, 0.1, 0, 0.5), Color(0.05, 0.02, 0, 0))
 emission_shape = 0
 
 [node name="VfxExplosion" type="GPUParticles3D"]
