@@ -44,7 +44,26 @@ var _noise: Noise = null
 const RESOURCE_SCENE := preload("res://scenes/resource_node.tscn")
 const BASE_POD_SCENE := preload("res://scenes/base_pod.tscn")
 const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
-const GROUND_MATERIAL := preload("res://assets/ground_material.tres")
+var GROUND_MATERIAL: StandardMaterial3D
+
+func _create_ground_material() -> StandardMaterial3D:
+	# Create noise in code — no .tres file dependency
+	var noise := FastNoiseLite.new()
+	noise.noise_type = 2  # TYPE_SIMPLEX_SMOOTH
+	noise.frequency = 0.05
+
+	var noise_tex := NoiseTexture2D.new()
+	noise_tex.noise = noise
+	noise_tex.width = 256
+	noise_tex.height = 256
+
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color(0.20, 0.18, 0.16, 1)
+	mat.albedo_texture = noise_tex
+	mat.roughness = 0.9
+	mat.metallic = 0.05
+	print("WorldGenerator: ground material created in code (noise texture %dx%d)" % [noise_tex.width, noise_tex.height])
+	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
 const GRAVITY_WELL_SCENE := preload("res://scenes/world/gravity_well_entrance.tscn")
@@ -59,6 +78,9 @@ func _ready() -> void:
 	# Load the world noise resource
 	var noise_tex: NoiseTexture2D = load("res://assets/world_noise.tres")
 	_noise = noise_tex.noise
+	# Create terrain material in code — no .tres file dependency
+	GROUND_MATERIAL = _create_ground_material()
+	print("WorldGenerator: noise loaded, terrain material initialized")
 	# Defer so scene tree is fully unlocked before any add_child()
 	generate_world.call_deferred()
 
