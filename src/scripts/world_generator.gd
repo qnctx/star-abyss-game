@@ -188,10 +188,12 @@ func _build_terrain_node() -> Node3D:
 	var mesh_instance := MeshInstance3D.new()
 	mesh_instance.name = "TerrainMesh"
 
-	var mesh := _generate_terrain_mesh()  # Material is set on mesh surface inside
+	var mesh := _generate_terrain_mesh()
 	mesh_instance.mesh = mesh
-
-	print("WorldGenerator: mesh created, aabb=", mesh.get_aabb(), " surface_count=", mesh.get_surface_count())
+	# Use material_override on MeshInstance3D — more reliable than
+	# surface_set_material on ArrayMesh in Godot 4.0.x
+	mesh_instance.material_override = GROUND_MATERIAL
+	print("WorldGenerator: mesh created, aabb=", mesh.get_aabb(), " surface_count=", mesh.get_surface_count(), " material=", GROUND_MATERIAL.albedo_color if GROUND_MATERIAL else "NULL")
 
 	# --- StaticBody3D for collision ---
 	var static_body := StaticBody3D.new()
