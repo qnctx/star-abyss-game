@@ -339,12 +339,13 @@ func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 			continue
 
 		var y := _raw_height(x, z)
-		var node: Area3D = RESOURCE_SCENE.instantiate()
-		node.resource_type = res_type
-		node.amount = randi_range(1, 3)
-		scene.add_child(node)
-		node.global_position = Vector3(x, y + 0.25, z)
-		placed += 1
+		var node = RESOURCE_SCENE.instantiate()
+		if node:
+			node.resource_type = res_type
+			node.amount = randi_range(1, 3)
+			scene.add_child(node)
+			node.global_position = Vector3(x, y + 0.25, z)
+			placed += 1
 
 	print("WorldGenerator: placed %d %s resources." % [count, res_type])
 

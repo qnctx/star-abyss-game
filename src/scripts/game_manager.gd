@@ -122,10 +122,11 @@ func spawn_resources():
 		var distance = randf_range(3.0, 12.0)
 		var pos = Vector3(cos(angle) * distance, 0.3, sin(angle) * distance)
 		var node = load("res://scenes/resource_node.tscn").instantiate()
-		node.position = pos
-		node.resource_type = types[i % types.size()]
-		node.amount = randi_range(1, 3)
-		get_tree().current_scene.add_child(node)
+		if node and node.has_method("resource_type"):
+			node.position = pos
+			node.resource_type = types[i % types.size()]
+			node.amount = randi_range(1, 3)
+			get_tree().current_scene.add_child(node)
 
 
 func _apply_night_darkening(night: bool) -> void:
