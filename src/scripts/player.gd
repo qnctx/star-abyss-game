@@ -45,7 +45,7 @@ func _physics_process(delta):
 		var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
 		current_oxygen -= drain * delta
 		current_oxygen = max(current_oxygen, 0.0)
-	oxygen_changed.emit(current_oxygen, max_oxygen)
+		oxygen_changed.emit(current_oxygen, max_oxygen)
 
 	if current_oxygen <= 0:
 		die()
@@ -71,11 +71,12 @@ func refill_oxygen():
 	current_oxygen = max_oxygen
 	oxygen_changed.emit(current_oxygen, max_oxygen)
 
+
 func _try_teleport():
 	var tm = get_tree().current_scene.get_node_or_null("TeleportManager")
 	if not tm:
 		return
-	var zone = ZoneManager.ZONE_NAMES.get(ZoneManager.current_zone, "crash")
+	var zone = ZoneManager.ZONE_NAMES.get(ZoneManager.current_zone, "crash") if ZoneManager else "crash"
 	var base_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
 	if not tm.beacons.is_empty():
 		if position.distance_to(base_pos) < 3.0:
