@@ -22,7 +22,12 @@ func _ready():
 		_on_zone_changed(ZoneManager.get_zone_name())
 
 
-func _on_oxygen_changed(current: float, maximum: float):
+func _on_oxygen_changed():
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return
+	var current = player.current_oxygen
+	var maximum = player.max_oxygen
 	progress_bar.value = current / maximum * 100
 	label.text = "O2: %.0f%%" % (current / maximum * 100)
 

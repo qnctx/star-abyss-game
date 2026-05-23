@@ -10,12 +10,13 @@ var max_oxygen: float = 100.0
 var is_dead: bool = false
 var _grace_timer: float = 10.0  # 开局安全期，氧气不消耗
 
-signal oxygen_changed(current: float, maximum: float)
+# Oxygen and death signals
+signal oxygen_changed()
 signal player_died()
 
 
 func _ready():
-	oxygen_changed.emit(current_oxygen, max_oxygen)
+	oxygen_changed.emit()
 
 
 func _physics_process(delta):
@@ -45,7 +46,7 @@ func _physics_process(delta):
 		var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
 		current_oxygen -= drain * delta
 		current_oxygen = max(current_oxygen, 0.0)
-		oxygen_changed.emit(current_oxygen, max_oxygen)
+		oxygen_changed.emit()
 
 	if current_oxygen <= 0:
 		die()
@@ -64,12 +65,12 @@ func respawn():
 	_grace_timer = 5.0  # 每次复活给 5 秒 grace
 	current_oxygen = max_oxygen
 	position = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
-	oxygen_changed.emit(current_oxygen, max_oxygen)
+	oxygen_changed.emit()
 
 
 func refill_oxygen():
 	current_oxygen = max_oxygen
-	oxygen_changed.emit(current_oxygen, max_oxygen)
+	oxygen_changed.emit()
 
 
 func _try_teleport():
