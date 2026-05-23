@@ -156,7 +156,10 @@ func generate_world() -> void:
 	# 5. Toxic spore VFX
 	_spawn_spores(scene)
 
-	# 6. Zone entrances
+	# 6. Rock/debris scatter for terrain visual detail
+	_spawn_rocks(scene)
+
+	# 7. Zone entrances
 	_spawn_zone_entrances(scene)
 
 	print("WorldGenerator: world generated (100x100, %d vertices)." % (GRID_POINTS * GRID_POINTS))
@@ -363,9 +366,9 @@ func _spawn_base_pod(scene: Node) -> void:
 # ===========================================================================
 
 func _spawn_spores(scene: Node) -> void:
-	## Place 12 spore emitters within the crash zone (radius 12 from center).
+	## Place 4 spore emitters within the crash zone (reduced from 12).
 	const SPORE_RADIUS := 12.0
-	for _i in range(12):
+	for _i in range(4):
 		var angle := randf() * TAU
 		var dist := randf_range(2.0, SPORE_RADIUS)
 		var x := cos(angle) * dist
@@ -376,7 +379,59 @@ func _spawn_spores(scene: Node) -> void:
 		scene.add_child(spore)
 		spore.global_position = Vector3(x, y, z)
 
-	print("WorldGenerator: 12 spore emitters placed in crash zone.")
+	print("WorldGenerator: 4 spore emitters placed in crash zone.")
+
+
+func _spawn_rocks(scene: Node) -> void:
+	## Scatter 60 rock/debris meshes across the terrain for visual detail.
+	var rock_materials = [
+		_create_rock_material(Color(0.4, 0.35, 0.3)),
+		_create_rock_material(Color(0.5, 0.45, 0.35)),
+		_create_rock_material(Color(0.35, 0.3, 0.25)),
+	]
+	var half := WORLD_SIZE / 2.0 - 5.0
+	var placed := 0
+	const ROCK_COUNT := 60
+
+	while placed < ROCK_COUNT:
+		var x := randf_range(-half, half)
+		var z := randf_range(-half, half)
+		# Skip near center (crash zone)
+		if sqrt(x*x + z*z) < 5.0:
+			continue
+
+		var y := _raw_height(x, z)
+
+		var rock := MeshInstance3D.new()
+		rock.name = "Rock_%d" % placed
+		# Use random non-uniform scale to make rocks look varied
+		var scale_vec := Vector3(
+			randf_range(0.3, 1.2),
+			randf_range(0.2, 0.8),
+			randf_range(0.3, 1.2)
+		)
+		rock.scale = scale_vec
+		rock.position = Vector3(x, y + scale_vec.y * 0.3, z)
+
+		# Create sphere mesh for rock
+		var sphere_mesh := SphereMesh.new()
+		sphere_mesh.radius = 0.5
+		sphere_mesh.height = 1.0
+		rock.mesh = sphere_mesh
+		rock.material_override = rock_materials[randi() % rock_materials.size()]
+
+		scene.add_child(rock)
+		placed += 1
+
+	print("WorldGenerator: %d rocks scattered across terrain." % placed)
+
+
+func _create_rock_material(color: Color) -> StandardMaterial3D:
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = color
+	mat.roughness = 0.95
+	mat.metallic = 0.0
+	return mat
 
 # ===========================================================================
 # Zone entrance placement

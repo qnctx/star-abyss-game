@@ -64,7 +64,10 @@ func respawn():
 	is_dead = false
 	_grace_timer = 5.0  # 每次复活给 5 秒 grace
 	current_oxygen = max_oxygen
-	position = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
+	var spawn_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
+	# Ensure player spawns above terrain (add 0.5 to be on top of collision cylinder)
+	spawn_pos.y += 0.5
+	position = spawn_pos
 	oxygen_changed.emit()
 
 
