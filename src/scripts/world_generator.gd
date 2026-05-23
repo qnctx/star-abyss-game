@@ -51,12 +51,13 @@ func _create_ground_material() -> StandardMaterial3D:
 	# Unshaded = show albedo color directly without lighting calculations
 	# This ensures the terrain is visible regardless of scene lighting
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	mat.albedo_color = Color(0.6, 0.55, 0.4)
+	# Dark alien soil - purple-brown toxic earth
+	mat.albedo_color = Color(0.25, 0.2, 0.3)
 	mat.roughness = 0.9
 	mat.metallic = 0.0
 	# Disable cull so both sides of triangles render
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	print("WorldGenerator: ground material ready (unshaded tan color)")
+	print("WorldGenerator: ground material ready (dark alien soil)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
@@ -385,9 +386,9 @@ func _spawn_spores(scene: Node) -> void:
 func _spawn_rocks(scene: Node) -> void:
 	## Scatter 60 rock/debris meshes across the terrain for visual detail.
 	var rock_materials = [
-		_create_rock_material(Color(0.4, 0.35, 0.3)),
-		_create_rock_material(Color(0.5, 0.45, 0.35)),
-		_create_rock_material(Color(0.35, 0.3, 0.25)),
+		_create_rock_material(Color(0.2, 0.15, 0.25)),
+		_create_rock_material(Color(0.25, 0.18, 0.3)),
+		_create_rock_material(Color(0.18, 0.12, 0.22)),
 	]
 	var half := WORLD_SIZE / 2.0 - 5.0
 	var placed := 0
