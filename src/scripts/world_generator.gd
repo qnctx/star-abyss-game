@@ -385,6 +385,7 @@ func _spawn_spores(scene: Node) -> void:
 
 func _spawn_rocks(scene: Node) -> void:
 	## Scatter 60 rock/debris meshes across the terrain for visual detail.
+	## Plus 40 small debris pieces at varying heights for terrain unevenness effect.
 	var rock_materials = [
 		_create_rock_material(Color(0.2, 0.15, 0.25)),
 		_create_rock_material(Color(0.25, 0.18, 0.3)),
@@ -426,12 +427,62 @@ func _spawn_rocks(scene: Node) -> void:
 
 	print("WorldGenerator: %d rocks scattered across terrain." % placed)
 
+	# Spawn additional small debris at varying heights for terrain unevenness
+	_spawn_debris_layer(scene)
+
+
+func _spawn_debris_layer(scene: Node) -> void:
+	## Scatter 40 small debris pieces at varying heights (0.0 to 0.5 above terrain)
+	## to simulate small hills and dips in the terrain.
+	const DEBRIS_COUNT := 40
+	var half := WORLD_SIZE / 2.0 - 3.0
+	var placed := 0
+	# Use same color palette as rocks for visual consistency
+	var debris_materials = [
+		_create_rock_material(Color(0.2, 0.15, 0.25)),
+		_create_rock_material(Color(0.25, 0.18, 0.3)),
+		_create_rock_material(Color(0.18, 0.12, 0.22)),
+	]
+
+	while placed < DEBRIS_COUNT:
+		var x := randf_range(-half, half)
+		var z := randf_range(-half, half)
+		# Skip near center (crash zone)
+		if sqrt(x*x + z*z) < 4.0:
+			continue
+
+		var terrain_y := _raw_height(x, z)
+		# Height variation: small debris sits 0.0 to 0.5 units above terrain
+		var height_offset := randf_range(0.0, 0.5)
+
+		var debris := MeshInstance3D.new()
+		debris.name = "Debris_%d" % placed
+		var scale_vec := Vector3(
+			randf_range(0.08, 0.25),
+			randf_range(0.05, 0.15),
+			randf_range(0.08, 0.25)
+		)
+		debris.scale = scale_vec
+		debris.position = Vector3(x, terrain_y + height_offset + scale_vec.y * 0.2, z)
+
+		# Use small box mesh for angular debris
+		var box_mesh := BoxMesh.new()
+		box_mesh.size = Vector3(1.0, 1.0, 1.0)
+		debris.mesh = box_mesh
+		debris.material_override = debris_materials[randi() % debris_materials.size()]
+
+		scene.add_child(debris)
+		placed += 1
+
+	print("WorldGenerator: %d debris pieces added at varying heights." % placed)
+
 
 func _create_rock_material(color: Color) -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = color
-	mat.roughness = 0.95
-	mat.metallic = 0.0
+	# Slightly metallic for alien rock that catches directional light
+	mat.metallic = 0.3
+	mat.roughness = 0.7
 	return mat
 
 # ===========================================================================
