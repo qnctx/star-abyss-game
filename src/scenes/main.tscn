@@ -13,13 +13,9 @@
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
-background_color = Color(0.04, 0.02, 0.08, 1)
+background_color = Color(0.15, 0.15, 0.15, 1)
 fog_enabled = false
-fog_light_color = Color(0.24, 0.11, 0.37, 1)
-glow_enabled = true
-glow_intensity = 0.5
-glow_bloom = 0.3
-glow_hdr_threshold = 0.9
+glow_enabled = false
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_player"]
 radius = 0.5
@@ -38,7 +34,7 @@ environment = SubResource("Environment_main")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 20, 0)
 current = true
-projection = 1
+fov = 50.0
 size = 30.0
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
