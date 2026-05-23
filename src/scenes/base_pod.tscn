@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/base_pod.gd" id="1_base_pod_script"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_body"]
 albedo_color = Color(0.75, 0.75, 0.78, 1)
@@ -24,6 +26,7 @@ roughness = 0.3
 metallic = 0.6
 
 [node name="BasePod" type="CSGCombiner3D"]
+script = ExtResource("1_base_pod_script")
 
 [node name="MainBody" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.966, 0, 0.259, 0, 1, 0, -0.259, 0, 0.966, 0, 0.8, 0)
@@ -67,5 +70,5 @@ material = SubResource("StandardMaterial3D_nose")
 [node name="FlickerLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.9)
 light_color = Color(1, 0.6, 0.2, 1)
-light_intensity = 0.8
-light_range = 2.0
+light_intensity = 1.2
+light_range = 3.0
