@@ -9,8 +9,8 @@ var wave_number: int = 0
 var enemies_alive: int = 0
 var base_health: float = 100.0
 
-const DAY_DURATION: float = 120.0
-const NIGHT_DURATION: float = 60.0
+const DAY_DURATION: float = 960.0   # 16分钟白天
+const NIGHT_DURATION: float = 480.0  # 8分钟夜晚
 const ENEMIES_PER_WAVE_BASE: int = 3
 const ENEMIES_PER_WAVE_INCREMENT: int = 2
 
@@ -41,11 +41,23 @@ func start_night():
 
 
 func spawn_wave():
-	var count = ENEMIES_PER_WAVE_BASE + (wave_number - 1) * ENEMIES_PER_WAVE_INCREMENT
+	var base_count = ENEMIES_PER_WAVE_BASE + int(wave_number * 0.5)
 	wave_spawned.emit(wave_number)
-	for i in range(count):
-		spawn_enemy()
-		await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
+
+	if is_boss_wave():
+		spawn_enemy(true, false)  # 1 boss
+		for i in range(max(0, base_count - 1)):
+			spawn_enemy(false, false)
+			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
+	elif is_elite_wave():
+		spawn_enemy(false, true)  # 1 elite
+		for i in range(max(0, base_count - 1)):
+			spawn_enemy(false, false)
+			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
+	else:
+		for i in range(base_count):
+			spawn_enemy(false, false)
+			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
 
 	# Wait for all enemies to die or day to break
 	while enemies_alive > 0 and is_night:
@@ -61,14 +73,35 @@ func spawn_wave():
 		start_day()
 
 
-func spawn_enemy():
+func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
 	var enemy_scene = load("res://scenes/enemy.tscn")
 	var enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
 	enemies_alive += 1
+
+	# Apply boss/elite scaling
+	if is_boss:
+		enemy.speed *= 2.0
+		enemy.health *= 5.0
+		enemy.damage *= 3.0
+		enemy.name = "Boss_Wave" + str(wave_number)
+	elif is_elite:
+		enemy.speed *= 1.5
+		enemy.health *= 3.0
+		enemy.damage *= 2.0
+		enemy.name = "Elite_Wave" + str(wave_number)
+
 	enemy.enemy_died.connect(_on_enemy_died)
 	enemy.base_reached.connect(_on_base_reached)
+
+
+func is_elite_wave() -> bool:
+	return wave_number % 5 == 0 and wave_number % 10 != 0
+
+
+func is_boss_wave() -> bool:
+	return wave_number % 10 == 0
 
 
 func _on_enemy_died():

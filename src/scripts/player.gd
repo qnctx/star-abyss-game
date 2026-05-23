@@ -2,11 +2,11 @@ extends CharacterBody3D
 
 @export var speed: float = 8.0
 @export var sprint_speed: float = 12.0
-@export var oxygen_drain_rate: float = 0.3
-@export var sprint_drain_rate: float = 0.6
+@export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
+@export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
 
-var current_oxygen: float = 100.0
-var max_oxygen: float = 100.0
+var current_oxygen: float = 180.0
+var max_oxygen: float = 180.0
 var is_dead: bool = false
 var _grace_timer: float = 10.0  # 开局安全期，氧气不消耗
 

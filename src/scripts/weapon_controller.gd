@@ -15,7 +15,7 @@ var weapon_data = {
 }
 
 const QUALITY_NAMES = ["normal", "fine", "rare", "epic", "legendary"]
-const QUALITY_MULTIPLIERS = {"normal": 1.0, "fine": 1.3, "rare": 1.6, "epic": 2.0, "legendary": 2.5}
+const QUALITY_MULTIPLIERS = {"normal": 1.0, "fine": 1.25, "rare": 1.45, "epic": 1.7, "legendary": 1.9}
 
 var weapon_quality: String = "normal"
 var weapon_qualities: Dictionary = {}  # weapon_name -> quality string
