@@ -17,6 +17,7 @@
 .godot/
 *.import
 *.translation
+*.uid
 
 # IDE
 .vs/
