@@ -66,12 +66,12 @@ func _set_resource_shape(mesh: MeshInstance3D) -> void:
 			box.size = Vector3(0.25, 0.25, 0.25)
 			mesh.mesh = box
 			mesh.position.y = 0.125
-		"void_crystal":
-			# Void Crystal = octahedron (diamond shape)
-			var oct = OctahedronMesh.new()
-			oct.size = 0.3
-			mesh.mesh = oct
-			mesh.position.y = 0.2
+	"void_crystal":
+		# Void Crystal = tall box (diamond/crystal shape)
+		var box = BoxMesh.new()
+		box.size = Vector3(0.2, 0.4, 0.2)
+		mesh.mesh = box
+		mesh.position.y = 0.2
 		"biomass":
 			# Biomass = organic sphere with slight scale
 			var sphere = SphereMesh.new()
