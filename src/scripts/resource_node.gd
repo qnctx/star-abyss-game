@@ -34,13 +34,56 @@ func _set_appearance():
 		mat.albedo_color = TYPE_COLORS[resource_type]
 		mat.emission_enabled = true
 		mat.emission = TYPE_COLORS[resource_type]
-		mat.emission_energy_multiplier = 0.3
+		mat.emission_energy_multiplier = 0.4
 	mat.roughness = 0.3
 	mat.metallic = 0.4
 
 	var mesh = get_node_or_null("ResourceMesh")
 	if mesh:
 		mesh.material_override = mat
+		# Set distinct shape based on resource type
+		_set_resource_shape(mesh)
+
+
+func _set_resource_shape(mesh: MeshInstance3D) -> void:
+	# Remove existing mesh
+	mesh.mesh = null
+
+	match resource_type:
+		"iron":
+			# Iron = chunky cube
+			var box = BoxMesh.new()
+			box.size = Vector3(0.25, 0.25, 0.25)
+			mesh.mesh = box
+			mesh.position.y = 0.125
+		"void_crystal":
+			# Void Crystal = octahedron (diamond shape)
+			var oct = OctahedronMesh.new()
+			oct.size = 0.3
+			mesh.mesh = oct
+			mesh.position.y = 0.2
+		"biomass":
+			# Biomass = organic sphere with slight scale
+			var sphere = SphereMesh.new()
+			sphere.radius = 0.15
+			sphere.height = 0.3
+			mesh.mesh = sphere
+			mesh.scale = Vector3(1, 1.3, 1)
+			mesh.position.y = 0.2
+		"energy_core":
+			# Energy Core = cylinder (power cell)
+			var cyl = CylinderMesh.new()
+			cyl.top_radius = 0.12
+			cyl.bottom_radius = 0.12
+			cyl.height = 0.3
+			mesh.mesh = cyl
+			mesh.position.y = 0.15
+		_:
+			# Default cube
+			var box = BoxMesh.new()
+			box.size = Vector3(0.2, 0.3, 0.2)
+			mesh.mesh = box
+			mesh.position.y = 0.15
 
 
 func _on_body_entered(body: Node3D):
