@@ -132,6 +132,7 @@ func get_spawn_position(min_dist: float, max_dist: float) -> Vector3:
 func generate_world() -> void:
 	print("WorldGenerator: generate_world() started")
 	var scene: Node = get_tree().current_scene
+	print("WorldGenerator: current_scene = ", scene)
 	if not scene:
 		push_error("WorldGenerator: no current scene to add terrain to.")
 		return
