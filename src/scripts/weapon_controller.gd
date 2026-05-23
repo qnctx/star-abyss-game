@@ -82,20 +82,25 @@ func fire():
 
 
 func get_aim_direction() -> Vector3:
-	var mouse_pos = get_viewport().get_mouse_position()
 	var camera = get_viewport().get_camera_3d()
 	if not camera:
-		return (get_global_transform().basis * Vector3.FORWARD).normalized()
+		return (global_transform.basis * Vector3.FORWARD).normalized()
 
-	var from = camera.project_ray_origin(mouse_pos)
-	var dir = camera.project_ray_normal(mouse_pos)
-	if dir.y > -0.01:
-		return (get_global_transform().basis * Vector3.FORWARD).normalized()
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var ray_dir = camera.project_ray_normal(mouse_pos)
 
-	var t = -from.y / dir.y
-	var hit_point = from + dir * t
-	hit_point.y = global_position.y
-	return (hit_point - global_position).normalized()
+	# Intersect with horizontal plane at player's Y
+	var aim_plane = Plane(Vector3.UP, global_position.y)
+	var hit_point = aim_plane.intersects_ray(ray_origin, ray_dir)
+
+	if hit_point == null:
+		return ray_dir.normalized()
+
+	var dir = (hit_point - global_position).normalized()
+	if dir.length_squared() <= 0.0001:
+		return ray_dir.normalized()
+	return dir
 
 
 func switch_weapon(weapon_name: String):

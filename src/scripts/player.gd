@@ -27,16 +27,20 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("teleport"):
 		_try_teleport()
 
-	# Movement
+	# Movement — freeze Y so player stays on terrain plane
 	var input_dir = Input.get_vector("move_left", "move_right", "move_back", "move_forward")
 	var is_sprinting = Input.is_action_pressed("sprint")
 
 	var current_speed = sprint_speed if is_sprinting else speed
 	var direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
 
+	var fixed_y = global_position.y
 	velocity.x = direction.x * current_speed
+	velocity.y = 0.0
 	velocity.z = direction.z * current_speed
 	move_and_slide()
+	global_position.y = fixed_y
+	velocity.y = 0.0
 
 	# Oxygen drain (grace period protects new players)
 	if _grace_timer > 0:

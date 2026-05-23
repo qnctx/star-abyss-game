@@ -13,21 +13,23 @@
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
-background_color = Color(0.1, 0.05, 0.15, 1)
+background_color = Color(0.015, 0.018, 0.025, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.2, 0.1, 0.3, 1)
-ambient_light_energy = 0.3
+ambient_light_color = Color(0.55, 0.62, 0.72, 1)
+ambient_light_energy = 0.75
 fog_enabled = true
-fog_light_color = Color(0.35, 0.15, 0.45, 1)
-fog_density = 0.025
-fog_aerial_enabled = true
+fog_light_color = Color(0.46, 0.52, 0.58, 1)
+fog_density = 0.004
+fog_aerial_enabled = false
+fog_sky_affect = 0.15
 glow_enabled = true
-glow_intensity = 0.8
-glow_strength = 1.0
-glow_bloom = 0.3
-glow_blend_mode = 0
-glow_hdr_threshold = 0.9
-tonemap_mode = 3
+glow_intensity = 0.18
+glow_strength = 0.25
+glow_bloom = 0.05
+glow_hdr_threshold = 1.4
+tonemap_mode = 2
+tonemap_exposure = 1.12
+tonemap_white = 1.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_player"]
 radius = 0.5
@@ -79,7 +81,7 @@ light_color = Color(1, 0.95, 0.85, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_main")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 20, 0)
 current = true
 fov = 50.0

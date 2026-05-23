@@ -48,16 +48,17 @@ var GROUND_MATERIAL: StandardMaterial3D
 
 func _create_ground_material() -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()
-	# Unshaded = show albedo color directly without lighting calculations
-	# This ensures the terrain is visible regardless of scene lighting
+	# Unshaded = show albedo color directly without lighting
+	# This avoids "Cannot find member SHADING_MODE_..." errors
 	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	# Dark alien soil - purple-brown toxic earth
-	mat.albedo_color = Color(0.25, 0.2, 0.3)
-	mat.roughness = 0.9
+	# Alien rock — warm gray-brown, NOT purple
+	mat.albedo_color = Color(0.32, 0.30, 0.26)
+	mat.roughness = 0.92
 	mat.metallic = 0.0
-	# Disable cull so both sides of triangles render
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	print("WorldGenerator: ground material ready (dark alien soil)")
+	# Enable vertex-color-based tinting so terrain detail shader can work
+	mat.vertex_color_use_as_albedo = true
+	print("WorldGenerator: ground material ready (alien rock)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
@@ -199,10 +200,67 @@ func _build_terrain_node() -> Node3D:
 
 	var mesh := _generate_terrain_mesh()
 	mesh_instance.mesh = mesh
-	# Use material_override on MeshInstance3D — more reliable than
-	# surface_set_material on ArrayMesh in Godot 4.0.x
-	mesh_instance.material_override = GROUND_MATERIAL
-	print("WorldGenerator: mesh created, aabb=", mesh.get_aabb(), " surface_count=", mesh.get_surface_count(), " material=", GROUND_MATERIAL.albedo_color if GROUND_MATERIAL else "NULL")
+
+	# --- Terrain detail shader (procedural rock/dust/soil variation) ---
+	var detail_shader := Shader.new()
+	detail_shader.code = """
+shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 base_color : source_color = vec4(0.32, 0.30, 0.26, 1.0);
+uniform vec4 rock_color : source_color = vec4(0.18, 0.17, 0.16, 1.0);
+uniform vec4 dust_color : source_color = vec4(0.48, 0.43, 0.36, 1.0);
+uniform float uv_scale = 22.0;
+uniform float detail_strength = 0.55;
+uniform float roughness = 0.92;
+
+float hash(vec2 p) {
+	return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+}
+float noise(vec2 p) {
+	vec2 i = floor(p);
+	vec2 f = fract(p);
+	vec2 u = f * f * (3.0 - 2.0 * f);
+	return mix(mix(hash(i + vec2(0.0, 0.0)), hash(i + vec2(1.0, 0.0)), u.x),
+		mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);
+}
+float fbm(vec2 p) {
+	float v = 0.0; float a = 0.5;
+	for (int i = 0; i < 5; i++) { v += noise(p) * a; p *= 2.03; a *= 0.5; }
+	return v;
+}
+void fragment() {
+	vec2 uv = UV * uv_scale;
+	float large = fbm(uv * 0.18);
+	float mid = fbm(uv * 0.9);
+	float fine = fbm(uv * 4.5);
+	float cracks = smoothstep(0.46, 0.52, abs(fbm(uv * 1.7) - 0.5));
+	float pebbles = smoothstep(0.72, 0.95, fine);
+	vec3 col = base_color.rgb;
+	col = mix(col, rock_color.rgb, large * 0.65);
+	col = mix(col, dust_color.rgb, mid * 0.35);
+	col *= 0.82 + fine * 0.34;
+	col = mix(col, rock_color.rgb * 0.65, cracks * 0.42);
+	col = mix(col, dust_color.rgb * 1.15, pebbles * 0.22);
+	ALBEDO = col;
+	ROUGHNESS = roughness;
+	METALLIC = 0.0;
+	float height = large * 0.42 + mid * 0.28 + fine * 0.12;
+	NORMAL_MAP = vec3(
+		(fbm((uv + vec2(0.035, 0.0)) * 1.2) - height) * detail_strength,
+		(fbm((uv + vec2(0.0, 0.035)) * 1.2) - height) * detail_strength, 1.0);
+	NORMAL_MAP_DEPTH = 0.65;
+}
+"""
+	var detail_mat := ShaderMaterial.new()
+	detail_mat.shader = detail_shader
+	detail_mat.set_shader_parameter("base_color", Color(0.32, 0.30, 0.26))
+	detail_mat.set_shader_parameter("rock_color", Color(0.18, 0.17, 0.16))
+	detail_mat.set_shader_parameter("dust_color", Color(0.48, 0.43, 0.36))
+	detail_mat.set_shader_parameter("uv_scale", 22.0)
+	detail_mat.set_shader_parameter("detail_strength", 0.55)
+	detail_mat.set_shader_parameter("roughness", 0.92)
+	mesh_instance.material_override = detail_mat
 
 	# --- StaticBody3D for collision ---
 	var static_body := StaticBody3D.new()
