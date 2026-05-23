@@ -33,8 +33,18 @@ func _set_appearance():
 	if resource_type in TYPE_COLORS:
 		mat.albedo_color = TYPE_COLORS[resource_type]
 		mat.emission_enabled = true
-		mat.emission = TYPE_COLORS[resource_type]
-		mat.emission_energy_multiplier = 0.4
+		# Enhanced glow for energy cores and void crystals
+		if resource_type == "energy_core":
+			# Cyan glow for energy cores
+			mat.emission = Color(0.3, 0.8, 1.0)
+			mat.emission_energy_multiplier = 0.5
+		elif resource_type == "void_crystal":
+			# Purple glow for void crystals
+			mat.emission = Color(0.5, 0.2, 1.0)
+			mat.emission_energy_multiplier = 0.4
+		else:
+			mat.emission = TYPE_COLORS[resource_type]
+			mat.emission_energy_multiplier = 0.4
 	mat.roughness = 0.3
 	mat.metallic = 0.4
 
