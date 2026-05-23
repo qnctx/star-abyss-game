@@ -446,9 +446,9 @@ func _spawn_rocks(scene: Node) -> void:
 	## Scatter 60 rock/debris meshes across the terrain for visual detail.
 	## Plus 40 small debris pieces at varying heights for terrain unevenness effect.
 	var rock_materials = [
-		_create_rock_material(Color(0.2, 0.15, 0.25)),
-		_create_rock_material(Color(0.25, 0.18, 0.3)),
-		_create_rock_material(Color(0.18, 0.12, 0.22)),
+		_create_rock_material(Color(0.35, 0.28, 0.22)),
+		_create_rock_material(Color(0.42, 0.34, 0.25)),
+		_create_rock_material(Color(0.28, 0.22, 0.18)),
 	]
 	var half := WORLD_SIZE / 2.0 - 5.0
 	var placed := 0
@@ -498,9 +498,9 @@ func _spawn_debris_layer(scene: Node) -> void:
 	var placed := 0
 	# Use same color palette as rocks for visual consistency
 	var debris_materials = [
-		_create_rock_material(Color(0.2, 0.15, 0.25)),
-		_create_rock_material(Color(0.25, 0.18, 0.3)),
-		_create_rock_material(Color(0.18, 0.12, 0.22)),
+		_create_rock_material(Color(0.35, 0.28, 0.22)),
+		_create_rock_material(Color(0.42, 0.34, 0.25)),
+		_create_rock_material(Color(0.28, 0.22, 0.18)),
 	]
 
 	while placed < DEBRIS_COUNT:
