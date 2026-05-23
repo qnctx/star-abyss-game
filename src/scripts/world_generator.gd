@@ -48,18 +48,15 @@ var GROUND_MATERIAL: StandardMaterial3D
 
 func _create_ground_material() -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()
-	# Use bright tan/sand color to contrast with dark purple background (0.04, 0.02, 0.08)
+	# Unshaded = show albedo color directly without lighting calculations
+	# This ensures the terrain is visible regardless of scene lighting
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	mat.albedo_color = Color(0.6, 0.55, 0.4)
 	mat.roughness = 0.9
-	mat.metallic = 0.05
-	# DEBUG: Enable emission to diagnose visibility issues
-	# If terrain shows up with emission but not albedo, normals are wrong
-	mat.emission_enabled = true
-	mat.emission = Color(0.6, 0.55, 0.4)
-	mat.emission_energy_multiplier = 3.0
-	# Disable cull to ensure both sides of triangles render
+	mat.metallic = 0.0
+	# Disable cull so both sides of triangles render
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	print("WorldGenerator: ground material ready (bright tan color + emission debug)")
+	print("WorldGenerator: ground material ready (unshaded tan color)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
 const LAVA_FISSURE_SCENE := preload("res://scenes/world/lava_fissure_entrance.tscn")
