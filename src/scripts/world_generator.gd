@@ -18,7 +18,7 @@ const BIOME_CRASH_ZONE := 4  # West locked
 const WORLD_SIZE := 100          # Quads per side (100×100)
 const GRID_POINTS := WORLD_SIZE + 1  # 101 vertices per side
 const SPACING := 1.0             # Distance between vertices
-const NOISE_AMPLITUDE := 3.0     # Max terrain height from noise
+const NOISE_AMPLITUDE := 10.0     # Max terrain height from noise (was 3.0, increased for visible hills)
 const CRASH_RADIUS := 15.0       # Radius of center crater depression
 
 # ---------------------------------------------------------------------------
@@ -57,8 +57,8 @@ func _create_ground_material() -> StandardMaterial3D:
 	mat.roughness = 0.92
 	mat.metallic = 0.0
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-	# Enable vertex-color-based tinting so terrain detail shader can work
-	mat.vertex_color_use_as_albedo = true
+	# vertex_color_use_as_albedo = true only needed when mesh has per-vertex color data
+	# mat.vertex_color_use_as_albedo = true
 	print("WorldGenerator: ground material ready (alien rock)")
 	return mat
 const ICE_CAVE_SCENE := preload("res://scenes/world/ice_cave_entrance.tscn")
