@@ -30,6 +30,10 @@ func _input(event: InputEvent):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
+	# Release mouse cursor when ESC is pressed
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _physics_process(delta):
 	if is_dead:
@@ -48,13 +52,14 @@ func _physics_process(delta):
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
-	var fixed_y = global_position.y
 	velocity.x = direction.x * current_speed
-	velocity.y = 0.0
+	velocity.y = -20.0  # Gravity — ensures player falls and stays on terrain
 	velocity.z = direction.z * current_speed
 	move_and_slide()
-	global_position.y = fixed_y
-	velocity.y = 0.0
+	# Keep player on terrain surface — snap Y to terrain height at current XZ
+	if WorldGenerator:
+		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		global_position.y = terrain_y + 0.5  # +0.5 is player eye height above terrain
 
 	# Detect stuck state: input present but velocity near zero after move_and_slide()
 	# This commonly happens with ConcavePolygonShape3D terrain
