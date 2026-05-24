@@ -19,3 +19,9 @@ shape = SubResource("SphereShape3D_resource")
 [node name="ResourceMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 mesh = SubResource("BoxMesh_resource")
+surface_material_override/0 = SubResource("StandardMaterial3D_iron")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iron"]
+albedo_color = Color(0.5, 0.45, 0.4, 1)
+roughness = 0.4
+metallic = 0.3
