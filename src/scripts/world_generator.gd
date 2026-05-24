@@ -259,7 +259,9 @@ void fragment() {
 	detail_mat.set_shader_parameter("dust_color", Color(0.48, 0.43, 0.36))
 	detail_mat.set_shader_parameter("uv_scale", 22.0)
 	detail_mat.set_shader_parameter("roughness", 0.92)
-	mesh_instance.material_override = detail_mat
+	# TEMPORARILY DISABLED: material_override was causing all-gray terrain
+	# likely due to fbm noise issue in Godot 4.6.2
+	# mesh_instance.material_override = detail_mat
 
 	# --- StaticBody3D for collision ---
 	var static_body := StaticBody3D.new()
