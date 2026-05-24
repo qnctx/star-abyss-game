@@ -74,9 +74,6 @@ func _physics_process(delta):
 		_movement_state = 0
 		_target_eye_height = EYE_HEIGHT_NORMAL
 
-	# Smooth eye height transition
-	var current_eye_height = global_position.y - (WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z)) if WorldGenerator else 0.0)
-	var target_y_from_terrain = _target_eye_height
 	_crouch_transition = lerp(_crouch_transition, 1.0 if _movement_state > 0 else 0.0, delta * 10.0)
 
 	# Movement
@@ -101,26 +98,25 @@ func _physics_process(delta):
 	var direction = (transform.basis * move_vec).normalized()
 
 	# Jump — only when on ground and not prone
-	if Input.is_action_just_pressed("jump") and _movement_state < 2:
+	if Input.is_action_just_pressed("jump") and _movement_state < 2 and is_on_floor():
 		velocity.y = jump_force
-		_is_jumping = true
 
-	# Apply gravity
-	velocity.y -= 20.0 * delta
+	# Manually control Y position — no automatic gravity on CharacterBody
+	# Snap player eye height to terrain surface every frame
+	if WorldGenerator:
+		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		var target_y = terrain_y + _target_eye_height
+		# When jumping, let player rise before snapping back down
+		if velocity.y <= 0.1 or is_on_floor():
+			global_position.y = target_y
+			velocity.y = 0.0
+		else:
+			# In air — let jump arc play out
+			velocity.y -= jump_force * delta
+
 	velocity.x = direction.x * current_speed
 	velocity.z = direction.z * current_speed
 	move_and_slide()
-
-	# Ground detection
-	var on_ground = is_on_floor()
-	if on_ground:
-		_is_jumping = false
-
-	# Snap to terrain surface + current eye height (only when on ground)
-	if WorldGenerator:
-		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		if on_ground:
-			global_position.y = terrain_y + _target_eye_height
 
 	# Detect stuck state: input present but velocity near zero after move_and_slide()
 	# This commonly happens with ConcavePolygonShape3D terrain
