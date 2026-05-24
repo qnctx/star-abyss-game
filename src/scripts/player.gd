@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var sprint_speed: float = 12.0
 @export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
 @export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
+@export var mouse_sensitivity: float = 0.003
 
 const WORLD_HALF: float = 50.0  # 100x100 terrain boundary (half of 100)
 const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считается "застрял"
@@ -20,6 +21,14 @@ signal player_died()
 
 func _ready():
 	oxygen_changed.emit()
+	# Capture mouse for first-person look
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _input(event: InputEvent):
+	# Mouse look — rotate player body around Y axis
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * mouse_sensitivity)
 
 
 func _physics_process(delta):
