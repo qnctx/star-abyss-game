@@ -31,7 +31,7 @@ func _physics_process(delta):
 		_try_teleport()
 
 	# Movement — freeze Y so player stays on terrain plane
-	var input_dir = Input.get_vector("move_left", "move_right", "move_back", "move_forward")
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var is_sprinting = Input.is_action_pressed("sprint")
 
 	var current_speed = sprint_speed if is_sprinting else speed
