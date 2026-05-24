@@ -210,7 +210,7 @@ func _build_terrain_node() -> Node3D:
 	var detail_shader := Shader.new()
 	detail_shader.code = """
 shader_type spatial;
-render_mode diffuse_burley, specular_schlick_ggx;
+render_mode unshaded, cull_disabled;
 
 uniform vec4 base_color : source_color = vec4(0.32, 0.30, 0.26, 1.0);
 uniform vec4 rock_color : source_color = vec4(0.18, 0.17, 0.16, 1.0);
@@ -250,11 +250,6 @@ void fragment() {
 	ALBEDO = col;
 	ROUGHNESS = roughness;
 	METALLIC = 0.0;
-	float height = large * 0.42 + mid * 0.28 + fine * 0.12;
-	NORMAL_MAP = vec3(
-		(fbm((uv + vec2(0.035, 0.0)) * 1.2) - height) * detail_strength,
-		(fbm((uv + vec2(0.0, 0.035)) * 1.2) - height) * detail_strength, 1.0);
-	NORMAL_MAP_DEPTH = 0.65;
 }
 """
 	var detail_mat := ShaderMaterial.new()
@@ -263,7 +258,6 @@ void fragment() {
 	detail_mat.set_shader_parameter("rock_color", Color(0.18, 0.17, 0.16))
 	detail_mat.set_shader_parameter("dust_color", Color(0.48, 0.43, 0.36))
 	detail_mat.set_shader_parameter("uv_scale", 22.0)
-	detail_mat.set_shader_parameter("detail_strength", 0.55)
 	detail_mat.set_shader_parameter("roughness", 0.92)
 	mesh_instance.material_override = detail_mat
 
