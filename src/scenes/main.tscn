@@ -82,7 +82,7 @@ light_color = Color(1, 0.95, 0.85, 1)
 environment = SubResource("Environment_main")
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
 script = ExtResource("1_player_script")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]

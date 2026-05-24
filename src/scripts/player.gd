@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
 @export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
 
-const WORLD_HALF: float = 48.0  # 100x100 terrain boundary
+const WORLD_HALF: float = 50.0  # 100x100 terrain boundary (half of 100)
 const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считается "застрял"
 
 var current_oxygen: float = 180.0
@@ -90,7 +90,16 @@ func respawn() -> void:
 		spawn_y = WorldGenerator.get_height_at(Vector2(base_pos.x, base_pos.z))
 	else:
 		spawn_y = base_pos.y
-	global_position = Vector3(base_pos.x, spawn_y + 0.5, base_pos.z)
+	# Offset spawn position away from base pod to avoid collision overlap.
+	# Random angle ensures player doesn't always spawn in the same direction.
+	var spawn_offset: float = 3.5
+	var angle := randf() * TAU
+	var spawn_x := base_pos.x + cos(angle) * spawn_offset
+	var spawn_z := base_pos.z + sin(angle) * spawn_offset
+	# Re-sample terrain height at the offset position
+	if WorldGenerator:
+		spawn_y = WorldGenerator.get_height_at(Vector2(spawn_x, spawn_z))
+	global_position = Vector3(spawn_x, spawn_y + 0.5, spawn_z)
 	oxygen_changed.emit()
 
 
