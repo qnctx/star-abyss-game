@@ -35,7 +35,9 @@ func _physics_process(delta):
 	var is_sprinting = Input.is_action_pressed("sprint")
 
 	var current_speed = sprint_speed if is_sprinting else speed
-	var direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
+	# Transform input to world space relative to player's Y rotation (camera facing)
+	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
+	var direction = (transform.basis * move_vec).normalized()
 
 	var fixed_y = global_position.y
 	velocity.x = direction.x * current_speed
