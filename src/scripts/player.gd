@@ -97,34 +97,28 @@ func _physics_process(delta):
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
-	# Jump — only when on ground and not prone
+	# Jump — release from ground before jumping
 	if Input.is_action_just_pressed("jump") and _movement_state < 2 and is_on_floor():
 		velocity.y = jump_force
 
-	# Manually control Y position — no automatic gravity on CharacterBody
-	# Snap player eye height to terrain surface every frame
-	if WorldGenerator:
-		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		var target_y = terrain_y + _target_eye_height
-		# When jumping, let player rise before snapping back down
-		if velocity.y <= 0.1 or is_on_floor():
-			global_position.y = target_y
-			velocity.y = 0.0
-		else:
-			# In air — let jump arc play out
-			velocity.y -= jump_force * delta
+	# Apply gravity
+	velocity.y -= 20.0 * delta
 
+	# Set horizontal velocity from input
 	velocity.x = direction.x * current_speed
 	velocity.z = direction.z * current_speed
+
+	# Move and let CharacterBody3D handle terrain collision + floor snapping
 	move_and_slide()
 
-	# Detect stuck state: input present but velocity near zero after move_and_slide()
-	# This commonly happens with ConcavePolygonShape3D terrain
-	var is_stuck = (input_dir.length() > 0.1) and (velocity.length() < STUCK_VELOCITY_THRESHOLD)
-	if is_stuck:
-		# Manual override: directly update position to bypass physics stuck
-		global_position.x += direction.x * current_speed * delta
-		global_position.z += direction.z * current_speed * delta
+	# Manual terrain snap — only override Y after move_and_slide() settles
+	# This ensures the player always hugs the terrain surface regardless of slope
+	if WorldGenerator:
+		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		var player_bottom = global_position.y - _target_eye_height
+		# Only snap down, never push up (allows jumping off slopes)
+		if player_bottom > terrain_y + 0.05:
+			global_position.y = terrain_y + _target_eye_height
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
