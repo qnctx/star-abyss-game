@@ -82,7 +82,7 @@ light_color = Color(1, 0.95, 0.85, 1)
 environment = SubResource("Environment_main")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 current = true
 fov = 50.0
 projection = 0

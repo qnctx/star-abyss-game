@@ -5,6 +5,9 @@ extends CharacterBody3D
 @export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
 @export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
 
+const WORLD_HALF: float = 48.0  # 100x100 terrain boundary
+const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считается "застрял"
+
 var current_oxygen: float = 180.0
 var max_oxygen: float = 180.0
 var is_dead: bool = false
@@ -42,6 +45,18 @@ func _physics_process(delta):
 	global_position.y = fixed_y
 	velocity.y = 0.0
 
+	# Detect stuck state: input present but velocity near zero after move_and_slide()
+	# This commonly happens with ConcavePolygonShape3D terrain
+	var is_stuck = (input_dir.length() > 0.1) and (velocity.length() < STUCK_VELOCITY_THRESHOLD)
+	if is_stuck:
+		# Manual override: directly update position to bypass physics stuck
+		global_position.x += direction.x * current_speed * delta
+		global_position.z += direction.z * current_speed * delta
+
+	# Clamp to world boundary — prevent player from leaving 100x100 terrain
+	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
+	global_position.z = clamp(global_position.z, -WORLD_HALF, WORLD_HALF)
+
 	# Oxygen drain (grace period protects new players)
 	if _grace_timer > 0:
 		_grace_timer -= delta
@@ -64,14 +79,18 @@ func die():
 	respawn()
 
 
-func respawn():
+func respawn() -> void:
 	is_dead = false
 	_grace_timer = 5.0  # 每次复活给 5 秒 grace
 	current_oxygen = max_oxygen
-	var spawn_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
-	# Ensure player spawns above terrain (add 0.5 to be on top of collision cylinder)
-	spawn_pos.y += 0.5
-	position = spawn_pos
+	var base_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
+	# Place player on terrain surface, not underground
+	var spawn_y: float = 0.0
+	if WorldGenerator:
+		spawn_y = WorldGenerator.get_height_at(Vector2(base_pos.x, base_pos.z))
+	else:
+		spawn_y = base_pos.y
+	global_position = Vector3(base_pos.x, spawn_y + 0.5, base_pos.z)
 	oxygen_changed.emit()
 
 

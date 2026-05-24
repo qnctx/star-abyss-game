@@ -26,12 +26,13 @@ const CRASH_RADIUS := 15.0       # Radius of center crater depression
 # ---------------------------------------------------------------------------
 signal world_generated
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Public state
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 var base_position: Vector3 = Vector3.ZERO
 var height_map: Dictionary = {}   # Vector2(x,z) -> float (surface Y)
 var biome_map: Dictionary = {}    # Vector2(x,z) -> int (biome enum)
+var _generated := false           # Guard: only generate once per session
 
 # ---------------------------------------------------------------------------
 # Internal references
@@ -44,7 +45,7 @@ var _noise: Noise = null
 const RESOURCE_SCENE := preload("res://scenes/resource_node.tscn")
 const BASE_POD_SCENE := preload("res://scenes/base_pod.tscn")
 const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
-var GROUND_MATERIAL: StandardMaterial3D
+var _GROUND_MATERIAL: StandardMaterial3D
 
 func _create_ground_material() -> StandardMaterial3D:
 	var mat := StandardMaterial3D.new()
@@ -77,9 +78,11 @@ func _ready() -> void:
 	_noise = noise_tex.noise
 	print("WorldGenerator: noise loaded, type=", _noise.noise_type if _noise else "NULL")
 	# Create terrain material in code — no .tres file dependency
-	GROUND_MATERIAL = _create_ground_material()
+	_GROUND_MATERIAL = _create_ground_material()
 	print("WorldGenerator: noise loaded, terrain material initialized")
 	# Defer so scene tree is fully unlocked before any add_child()
+	# Set guard BEFORE deferred call to prevent re-entry if _ready() fires multiple times
+	_generated = true
 	generate_world.call_deferred()
 
 
@@ -130,6 +133,9 @@ func get_spawn_position(min_dist: float, max_dist: float) -> Vector3:
 
 func generate_world() -> void:
 	print("WorldGenerator: generate_world() started")
+	if _generated:
+		print("WorldGenerator: already generated, skipping.")
+		return
 	var scene: Node = get_tree().current_scene
 	print("WorldGenerator: current_scene = ", scene)
 	if not scene:
@@ -165,6 +171,7 @@ func generate_world() -> void:
 	_spawn_zone_entrances(scene)
 
 	print("WorldGenerator: world generated (100x100, %d vertices)." % (GRID_POINTS * GRID_POINTS))
+	_generated = true
 	world_generated.emit()
 
 
@@ -317,7 +324,7 @@ func _generate_terrain_mesh() -> ArrayMesh:
 	# In Godot 4, ArrayMesh created via SurfaceTool.commit() has no material set.
 	# We must set the material on the mesh surface explicitly, not rely on
 	# material_override (which can fail to apply to ArrayMesh in some cases).
-	array_mesh.surface_set_material(0, GROUND_MATERIAL)
+	array_mesh.surface_set_material(0, _GROUND_MATERIAL)
 	return array_mesh
 
 
