@@ -81,18 +81,18 @@ light_color = Color(1, 0.95, 0.85, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_main")
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
-current = true
-fov = 50.0
-projection = 0
-
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_player_script")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CylinderShape3D_player")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+current = true
+fov = 50.0
+projection = 0
 
 [node name="PlayerModel" parent="Player" instance=ExtResource("7_player_model")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -217,6 +217,3 @@ script = ExtResource("15_serum_ui")
 
 [node name="TeleportManager" type="Node" parent="."]
 script = ExtResource("16_teleport_manager")
-
-[node name="World" type="Node" parent="."]
-script = ExtResource("17_world_generator")

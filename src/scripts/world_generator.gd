@@ -81,8 +81,6 @@ func _ready() -> void:
 	_GROUND_MATERIAL = _create_ground_material()
 	print("WorldGenerator: noise loaded, terrain material initialized")
 	# Defer so scene tree is fully unlocked before any add_child()
-	# Set guard BEFORE deferred call to prevent re-entry if _ready() fires multiple times
-	_generated = true
 	generate_world.call_deferred()
 
 
@@ -132,9 +130,9 @@ func get_spawn_position(min_dist: float, max_dist: float) -> Vector3:
 # ===========================================================================
 
 func generate_world() -> void:
-	print("WorldGenerator: generate_world() started")
+	print("WorldGenerator: generate_world() called")
 	if _generated:
-		print("WorldGenerator: already generated, skipping.")
+		print("WorldGenerator: already generated (guard true), skipping.")
 		return
 	var scene: Node = get_tree().current_scene
 	print("WorldGenerator: current_scene = ", scene)
