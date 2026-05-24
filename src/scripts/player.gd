@@ -94,8 +94,8 @@ func respawn() -> void:
 	# Random angle ensures player doesn't always spawn in the same direction.
 	var spawn_offset: float = 3.5
 	var angle := randf() * TAU
-	var spawn_x := base_pos.x + cos(angle) * spawn_offset
-	var spawn_z := base_pos.z + sin(angle) * spawn_offset
+	var spawn_x: float = base_pos.x + cos(angle) * spawn_offset
+	var spawn_z: float = base_pos.z + sin(angle) * spawn_offset
 	# Re-sample terrain height at the offset position
 	if WorldGenerator:
 		spawn_y = WorldGenerator.get_height_at(Vector2(spawn_x, spawn_z))
