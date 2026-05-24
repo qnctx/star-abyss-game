@@ -2,17 +2,29 @@ extends CharacterBody3D
 
 @export var speed: float = 8.0
 @export var sprint_speed: float = 12.0
+@export var crouch_speed: float = 4.0
+@export var prone_speed: float = 2.0
+@export var jump_force: float = 10.0
 @export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
 @export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
 @export var mouse_sensitivity: float = 0.003
 
 const WORLD_HALF: float = 50.0  # 100x100 terrain boundary (half of 100)
 const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считается "застрял"
+const EYE_HEIGHT_NORMAL: float = 0.5
+const EYE_HEIGHT_CROUCH: float = 0.25
+const EYE_HEIGHT_PRONE: float = 0.1
 
 var current_oxygen: float = 180.0
 var max_oxygen: float = 180.0
 var is_dead: bool = false
 var _grace_timer: float = 10.0  # 开局安全期，氧气不消耗
+
+# Movement states: 0=normal, 1=crouching, 2=prone
+var _movement_state: int = 0
+var _crouch_transition: float = 0.0  # 0=fully normal, 1=fully crouched/prone
+var _target_eye_height: float = EYE_HEIGHT_NORMAL
+var _is_jumping: bool = false
 
 # Oxygen and death signals
 signal oxygen_changed()
@@ -34,6 +46,11 @@ func _input(event: InputEvent):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+	# Re-capture mouse when clicking inside the game window
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _physics_process(delta):
 	if is_dead:
@@ -43,23 +60,67 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("teleport"):
 		_try_teleport()
 
-	# Movement — freeze Y so player stays on terrain plane
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var is_sprinting = Input.is_action_pressed("sprint")
+	# Handle crouch/prone state transitions
+	var crouch_pressed = Input.is_action_pressed("crouch")
+	var prone_pressed = Input.is_action_pressed("prone")
 
-	var current_speed = sprint_speed if is_sprinting else speed
+	if prone_pressed:
+		_movement_state = 2
+		_target_eye_height = EYE_HEIGHT_PRONE
+	elif crouch_pressed:
+		_movement_state = 1
+		_target_eye_height = EYE_HEIGHT_CROUCH
+	else:
+		_movement_state = 0
+		_target_eye_height = EYE_HEIGHT_NORMAL
+
+	# Smooth eye height transition
+	var current_eye_height = global_position.y - (WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z)) if WorldGenerator else 0.0)
+	var target_y_from_terrain = _target_eye_height
+	_crouch_transition = lerp(_crouch_transition, 1.0 if _movement_state > 0 else 0.0, delta * 10.0)
+
+	# Movement
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var is_sprinting = Input.is_action_pressed("sprint") and _movement_state == 0
+	var is_crouching = _movement_state == 1
+	var is_proning = _movement_state == 2
+
+	# Determine current speed
+	var current_speed: float
+	if is_proning:
+		current_speed = prone_speed
+	elif is_crouching:
+		current_speed = crouch_speed
+	elif is_sprinting:
+		current_speed = sprint_speed
+	else:
+		current_speed = speed
+
 	# Transform input to world space relative to player's Y rotation (camera facing)
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
+	# Jump — only when on ground and not prone
+	if Input.is_action_just_pressed("jump") and _movement_state < 2:
+		velocity.y = jump_force
+		_is_jumping = true
+
+	# Apply gravity
+	velocity.y -= 20.0 * delta
 	velocity.x = direction.x * current_speed
-	velocity.y = -20.0  # Gravity — ensures player falls and stays on terrain
 	velocity.z = direction.z * current_speed
 	move_and_slide()
-	# Keep player on terrain surface — snap Y to terrain height at current XZ
+
+	# Ground detection
+	var on_ground = is_on_floor()
+	if on_ground:
+		_is_jumping = false
+
+	# Snap to terrain surface + current eye height (only when on ground)
 	if WorldGenerator:
 		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		global_position.y = terrain_y + 0.5  # +0.5 is player eye height above terrain
+		if on_ground:
+			global_position.y = terrain_y + _target_eye_height
 
 	# Detect stuck state: input present but velocity near zero after move_and_slide()
 	# This commonly happens with ConcavePolygonShape3D terrain
@@ -115,7 +176,7 @@ func respawn() -> void:
 	# Re-sample terrain height at the offset position
 	if WorldGenerator:
 		spawn_y = WorldGenerator.get_height_at(Vector2(spawn_x, spawn_z))
-	global_position = Vector3(spawn_x, spawn_y + 0.5, spawn_z)
+	global_position = Vector3(spawn_x, spawn_y + EYE_HEIGHT_NORMAL, spawn_z)
 	oxygen_changed.emit()
 
 
