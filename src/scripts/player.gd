@@ -93,23 +93,41 @@ func _physics_process(delta):
 	else:
 		current_speed = speed
 
-	# Transform input to world space relative to player's Y rotation (camera facing)
+	# Compute camera-relative horizontal direction
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
-	# Set horizontal velocity from input
-	velocity.x = direction.x * current_speed
-	velocity.z = direction.z * current_speed
-	velocity.y = 0.0  # No automatic gravity — we manually control Y every frame
+	# Build velocity — horizontal from input, vertical handled separately
+	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
+	velocity.x = direction.x * horizontal_speed
+	velocity.z = direction.z * horizontal_speed
 
-	# Move on XZ plane only
+	# Jump impulse — only when grounded and not crouching/proning
+	var on_ground := is_on_floor()
+	if Input.is_action_just_pressed("jump") and on_ground and _movement_state == 0:
+		velocity.y = jump_force
+		_is_jumping = true
+	else:
+		# When jump key released or airborne, allow gravity to pull player down
+		if not on_ground:
+			velocity.y -= 20.0 * delta  # gravity
+
+	# Move using Godot physics on XZ plane (gravity/pull-down handled via velocity.y)
 	move_and_slide()
 
-	# Snap Y to terrain surface EVERY frame — this is the only way to keep player on terrain
-	# since the terrain MeshInstance3D has no physics body, move_and_slide() can't collide with it
+	# Follow terrain height — snap to surface from ABOVE only.
+	# Don't push INTO terrain: only adjust when feet are above surface.
 	if WorldGenerator:
 		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		global_position.y = terrain_y + _target_eye_height
+		var feet_y := global_position.y - _target_eye_height
+		# Snap UP to terrain, never clip through it
+		if feet_y < terrain_y - 0.01:
+			global_position.y = terrain_y + _target_eye_height
+			velocity.y = 0.0
+			_is_jumping = false
+		# Smoothly sink INTO terrain if player somehow ends up above (rare)
+		elif feet_y > terrain_y + 0.01:
+			global_position.y = terrain_y + _target_eye_height
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
