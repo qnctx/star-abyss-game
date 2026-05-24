@@ -97,28 +97,19 @@ func _physics_process(delta):
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
-	# Jump — release from ground before jumping
-	if Input.is_action_just_pressed("jump") and _movement_state < 2 and is_on_floor():
-		velocity.y = jump_force
-
-	# Apply gravity
-	velocity.y -= 20.0 * delta
-
 	# Set horizontal velocity from input
 	velocity.x = direction.x * current_speed
 	velocity.z = direction.z * current_speed
+	velocity.y = 0.0  # No automatic gravity — we manually control Y every frame
 
-	# Move and let CharacterBody3D handle terrain collision + floor snapping
+	# Move on XZ plane only
 	move_and_slide()
 
-	# Manual terrain snap — only override Y after move_and_slide() settles
-	# This ensures the player always hugs the terrain surface regardless of slope
+	# Snap Y to terrain surface EVERY frame — this is the only way to keep player on terrain
+	# since the terrain MeshInstance3D has no physics body, move_and_slide() can't collide with it
 	if WorldGenerator:
 		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		var player_bottom = global_position.y - _target_eye_height
-		# Only snap down, never push up (allows jumping off slopes)
-		if player_bottom > terrain_y + 0.05:
-			global_position.y = terrain_y + _target_eye_height
+		global_position.y = terrain_y + _target_eye_height
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
