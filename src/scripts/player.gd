@@ -25,6 +25,7 @@ var _movement_state: int = 0
 var _crouch_transition: float = 0.0  # 0=fully normal, 1=fully crouched/prone
 var _target_eye_height: float = EYE_HEIGHT_NORMAL
 var _is_jumping: bool = false
+var _collision_shape: CollisionShape3D = null
 
 # Oxygen and death signals
 signal oxygen_changed()
@@ -35,6 +36,11 @@ func _ready():
 	oxygen_changed.emit()
 	# Capture mouse for first-person look
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Cache the collision shape for crouch transitions
+	for child in get_children():
+		if child is CollisionShape3D:
+			_collision_shape = child
+			break
 	# Correct initial spawn Y so player doesn't start underground
 	_correct_spawn_y()
 
@@ -70,15 +76,22 @@ func _physics_process(delta):
 	# ── Crouch / prone ───────────────────────────────────────────────────────
 	var crouch_pressed := Input.is_action_pressed("crouch")
 	var prone_pressed := Input.is_action_pressed("prone")
+	var target_state: int = 0
 
 	if prone_pressed:
-		_movement_state = 2
-		_target_eye_height = EYE_HEIGHT_PRONE
+		target_state = 2
 	elif crouch_pressed:
-		_movement_state = 1
+		target_state = 1
+
+	# Smooth transition between movement states
+	if target_state != _movement_state:
+		_movement_state = target_state
+		# Instantly update target height (smooth lerp will follow)
+	if _movement_state == 2:
+		_target_eye_height = EYE_HEIGHT_PRONE
+	elif _movement_state == 1:
 		_target_eye_height = EYE_HEIGHT_CROUCH
 	else:
-		_movement_state = 0
 		_target_eye_height = EYE_HEIGHT_NORMAL
 
 	# ── Speed selection ─────────────────────────────────────────────────────
@@ -89,6 +102,22 @@ func _physics_process(delta):
 		current_speed = crouch_speed
 	elif Input.is_action_pressed("sprint") and _movement_state == 0:
 		current_speed = sprint_speed
+
+	# ── Collision shape scaling for crouch ─────────────────────────────────
+	if _collision_shape != null:
+		var shape: Resource = _collision_shape.shape
+		if shape is CapsuleShape3D:
+			# In Godot 4, set shape via shape = resource (not shape.height = x)
+			# Create new capsule each time (Godot 4 handles cleanup)
+			var new_shape := CapsuleShape3D.new()
+			new_shape.radius = shape.radius  # keep same radius
+			if _movement_state == 1:
+				new_shape.height = 1.0  # crouch
+			elif _movement_state == 2:
+				new_shape.height = 0.5  # prone
+			else:
+				new_shape.height = 1.8  # normal
+			_collision_shape.shape = new_shape
 
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
 
@@ -104,8 +133,8 @@ func _physics_process(delta):
 	# Apply gravity each frame (only when airborne)
 	if _is_jumping:
 		velocity.y -= 20.0 * delta
-		if velocity.y < 0.0:
-			velocity.y = 0.0  # clamp fall speed
+		# Clamp fall speed so we don't accelerate forever, but allow downward motion
+		velocity.y = maxf(velocity.y, -50.0)
 
 	# ── Debug output every 0.5s when moving ──────────────────────────────────
 	if _debug_frames % 30 == 0 and input_dir.length() > 0.05:
