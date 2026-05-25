@@ -177,7 +177,7 @@ func _do_correct_spawn_y() -> void:
 	# Reject bad values
 	if is_inf(raw_y) or is_nan(raw_y):
 		raw_y = 0.0
-	var safe_y := clamp(raw_y, -5.0, 15.0)
+	var safe_y: float = clamp(raw_y, -5.0, 15.0)
 	global_position.y = safe_y + EYE_HEIGHT_NORMAL
 
 
