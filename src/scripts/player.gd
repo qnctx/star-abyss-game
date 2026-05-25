@@ -105,7 +105,12 @@ func _physics_process(delta):
 	# Manual height tracking — no gravity, no is_on_floor() dependency
 	var terrain_y: float = 0.0
 	if WorldGenerator:
-		terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		var raw_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		# Guard: reject NaN/Infinity from noise at world edges or uninitialized generator
+		if not is_inf(raw_y) and not is_nan(raw_y):
+			terrain_y = clamp(raw_y, -5.0, 15.0)
+		else:
+			terrain_y = 0.0
 
 	var target_y: float = terrain_y + _target_eye_height
 
@@ -114,11 +119,14 @@ func _physics_process(delta):
 		velocity.y = jump_force
 		_is_jumping = true
 
+	# Save pre-physics Y for landing detection
+	var pre_physics_y: float = global_position.y
+
 	# If jumping, integrate vertical velocity
 	if _is_jumping:
-		target_y = global_position.y + velocity.y * delta
-		# Check if we've landed (height dropped back to terrain level or below)
-		if global_position.y + velocity.y * delta <= terrain_y + _target_eye_height:
+		target_y = pre_physics_y + velocity.y * delta
+		# Check if we've landed: predicted position is at or below terrain level
+		if pre_physics_y + velocity.y * delta <= terrain_y + _target_eye_height + 0.05:
 			target_y = terrain_y + _target_eye_height
 			velocity.y = 0.0
 			_is_jumping = false
@@ -134,9 +142,21 @@ func _physics_process(delta):
 
 	# Re-sync Y after move_and_slide (which may have modified it)
 	if WorldGenerator:
-		terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		var raw_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+		if not is_inf(raw_y) and not is_nan(raw_y):
+			terrain_y = clamp(raw_y, -5.0, 15.0)
+		else:
+			terrain_y = 0.0
 	if not _is_jumping:
 		global_position.y = terrain_y + _target_eye_height
+	else:
+		# Fallback: detect landing via post-move position
+		var post_move_y: float = global_position.y
+		var y_delta: float = post_move_y - pre_physics_y
+		if y_delta < 0.1 and post_move_y <= terrain_y + _target_eye_height + 0.1:
+			global_position.y = terrain_y + _target_eye_height
+			velocity.y = 0.0
+			_is_jumping = false
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
