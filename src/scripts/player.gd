@@ -118,34 +118,8 @@ func _physics_process(delta):
 		# Clamp fall speed so we don't accelerate forever, but allow downward motion
 		velocity.y = maxf(velocity.y, -50.0)
 
-	# ── Debug output every 0.5s when moving ──────────────────────────────────
-	if _debug_frames % 30 == 0 and input_dir.length() > 0.05:
-		print("DEBUG pos=%.2f,%.2f,%.2f vel=%.2f,%.2f,%.2f jumping=%s" % [
-			global_position.x, global_position.y, global_position.z,
-			velocity.x, velocity.y, velocity.z, _is_jumping
-		])
-
 	# ── Move ───────────────────────────────────────────────────────────────
 	move_and_slide()
-
-	# ── Manual terrain height snap (THE RELIABLE SOLUTION) ─────────────────
-	if WorldGenerator:
-		var tx := global_position.x
-		var tz := global_position.z
-		# _raw_height matches what terrain mesh uses — no StaticBody needed
-		var ty: float = _raw_terrain_height(tx, tz)
-		var target_y := ty + _target_eye_height
-
-		if _is_jumping:
-			# In air: check if we've dropped back to terrain level
-			if global_position.y <= target_y + 0.1:
-				global_position.y = target_y
-				velocity.y = 0.0
-				_is_jumping = false
-		else:
-			# On ground: lock to terrain surface
-			global_position.y = target_y
-			velocity.y = 0.0
 
 	# ── Clamp to world boundary ───────────────────────────────────────────
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
