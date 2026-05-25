@@ -51,8 +51,10 @@ func _input(event: InputEvent):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 
 	# Release mouse cursor when ESC is pressed
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+	if event is InputEventKey and event.pressed and event.physical_keycode == KEY_ESCAPE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	# Crouch / prone: handled exclusively in _physics_process via action system
 
 	# Re-capture mouse when clicking inside the game window
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -120,6 +122,12 @@ func _physics_process(delta):
 
 	# ── Move ───────────────────────────────────────────────────────────────
 	move_and_slide()
+
+	# ── Landing detection ─────────────────────────────────────────────────
+	# Reset _is_jumping when player lands to stop gravity accumulation
+	if is_on_floor():
+		_is_jumping = false
+		velocity.y = 0
 
 	# ── Clamp to world boundary ───────────────────────────────────────────
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
