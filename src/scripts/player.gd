@@ -97,37 +97,46 @@ func _physics_process(delta):
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction = (transform.basis * move_vec).normalized()
 
-	# Build velocity — horizontal from input, vertical handled separately
+	# Build velocity — horizontal from input only (no gravity)
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
 	velocity.x = direction.x * horizontal_speed
 	velocity.z = direction.z * horizontal_speed
 
-	# Jump impulse — only when grounded and not crouching/proning
-	var on_ground := is_on_floor()
-	if Input.is_action_just_pressed("jump") and on_ground and _movement_state == 0:
+	# Manual height tracking — no gravity, no is_on_floor() dependency
+	var terrain_y: float = 0.0
+	if WorldGenerator:
+		terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+
+	var target_y: float = terrain_y + _target_eye_height
+
+	# Jump: give upward impulse, track height manually
+	if Input.is_action_just_pressed("jump") and not _is_jumping and _movement_state == 0:
 		velocity.y = jump_force
 		_is_jumping = true
-	else:
-		# When jump key released or airborne, allow gravity to pull player down
-		if not on_ground:
-			velocity.y -= 20.0 * delta  # gravity
 
-	# Move using Godot physics on XZ plane (gravity/pull-down handled via velocity.y)
-	move_and_slide()
-
-	# Follow terrain height — snap to surface from ABOVE only.
-	# Don't push INTO terrain: only adjust when feet are above surface.
-	if WorldGenerator:
-		var terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		var feet_y := global_position.y - _target_eye_height
-		# Snap UP to terrain, never clip through it
-		if feet_y < terrain_y - 0.01:
-			global_position.y = terrain_y + _target_eye_height
+	# If jumping, integrate vertical velocity
+	if _is_jumping:
+		target_y = global_position.y + velocity.y * delta
+		# Check if we've landed (height dropped back to terrain level or below)
+		if global_position.y + velocity.y * delta <= terrain_y + _target_eye_height:
+			target_y = terrain_y + _target_eye_height
 			velocity.y = 0.0
 			_is_jumping = false
-		# Smoothly sink INTO terrain if player somehow ends up above (rare)
-		elif feet_y > terrain_y + 0.01:
-			global_position.y = terrain_y + _target_eye_height
+	else:
+		# Not jumping — stay locked to terrain surface
+		velocity.y = 0.0
+
+	# Force snap to terrain (no physics push-through)
+	global_position.y = target_y
+
+	# Move using Godot physics on XZ plane only
+	move_and_slide()
+
+	# Re-sync Y after move_and_slide (which may have modified it)
+	if WorldGenerator:
+		terrain_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
+	if not _is_jumping:
+		global_position.y = terrain_y + _target_eye_height
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
