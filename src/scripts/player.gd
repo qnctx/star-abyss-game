@@ -35,6 +35,8 @@ func _ready():
 	oxygen_changed.emit()
 	# Capture mouse for first-person look
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Correct initial spawn Y so player doesn't start underground
+	_correct_spawn_y()
 
 
 func _input(event: InputEvent):
@@ -102,61 +104,28 @@ func _physics_process(delta):
 	velocity.x = direction.x * horizontal_speed
 	velocity.z = direction.z * horizontal_speed
 
-	# Manual height tracking — no gravity, no is_on_floor() dependency
-	var terrain_y: float = 0.0
-	if WorldGenerator:
-		var raw_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		# Guard: reject NaN/Infinity from noise at world edges or uninitialized generator
-		if not is_inf(raw_y) and not is_nan(raw_y):
-			terrain_y = clamp(raw_y, -5.0, 15.0)
-		else:
-			terrain_y = 0.0
-
-	var target_y: float = terrain_y + _target_eye_height
-
-	# Jump: give upward impulse, track height manually
+	# Jump: give upward impulse
 	if Input.is_action_just_pressed("jump") and not _is_jumping and _movement_state == 0:
 		velocity.y = jump_force
 		_is_jumping = true
 
-	# Save pre-physics Y for landing detection
-	var pre_physics_y: float = global_position.y
-
-	# If jumping, integrate vertical velocity
-	if _is_jumping:
-		target_y = pre_physics_y + velocity.y * delta
-		# Check if we've landed: predicted position is at or below terrain level
-		if pre_physics_y + velocity.y * delta <= terrain_y + _target_eye_height + 0.05:
-			target_y = terrain_y + _target_eye_height
-			velocity.y = 0.0
-			_is_jumping = false
-	else:
-		# Not jumping — stay locked to terrain surface
-		velocity.y = 0.0
-
-	# Force snap to terrain (no physics push-through)
-	global_position.y = target_y
-
-	# Move using Godot physics on XZ plane only
+	# Move using Godot physics — CharacterBody3D handles floor / ceiling
 	move_and_slide()
 
-	# Re-sync Y after move_and_slide (which may have modified it)
+	# Re-sync Y: stay on terrain surface when grounded, track airborne Y when jumping
 	if WorldGenerator:
 		var raw_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
 		if not is_inf(raw_y) and not is_nan(raw_y):
-			terrain_y = clamp(raw_y, -5.0, 15.0)
+			raw_y = clamp(raw_y, -5.0, 15.0)
 		else:
-			terrain_y = 0.0
-	if not _is_jumping:
-		global_position.y = terrain_y + _target_eye_height
-	else:
-		# Fallback: detect landing via post-move position
-		var post_move_y: float = global_position.y
-		var y_delta: float = post_move_y - pre_physics_y
-		if y_delta < 0.1 and post_move_y <= terrain_y + _target_eye_height + 0.1:
-			global_position.y = terrain_y + _target_eye_height
-			velocity.y = 0.0
+			raw_y = 0.0
+
+		if is_on_floor() or _is_jumping:
+			global_position.y = raw_y + _target_eye_height
+
+		if _is_jumping and is_on_floor():
 			_is_jumping = false
+			velocity.y = 0.0
 
 	# Clamp to world boundary — prevent player from leaving 100x100 terrain
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
@@ -188,24 +157,28 @@ func respawn() -> void:
 	is_dead = false
 	_grace_timer = 5.0  # 每次复活给 5 秒 grace
 	current_oxygen = max_oxygen
-	var base_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
-	# Place player on terrain surface, not underground
-	var spawn_y: float = 0.0
-	if WorldGenerator:
-		spawn_y = WorldGenerator.get_height_at(Vector2(base_pos.x, base_pos.z))
-	else:
-		spawn_y = base_pos.y
-	# Offset spawn position away from base pod to avoid collision overlap.
-	# Random angle ensures player doesn't always spawn in the same direction.
-	var spawn_offset: float = 3.5
-	var angle := randf() * TAU
-	var spawn_x: float = base_pos.x + cos(angle) * spawn_offset
-	var spawn_z: float = base_pos.z + sin(angle) * spawn_offset
-	# Re-sample terrain height at the offset position
-	if WorldGenerator:
-		spawn_y = WorldGenerator.get_height_at(Vector2(spawn_x, spawn_z))
-	global_position = Vector3(spawn_x, spawn_y + EYE_HEIGHT_NORMAL, spawn_z)
+	_correct_spawn_y()
 	oxygen_changed.emit()
+
+
+func _correct_spawn_y() -> void:
+	## Snap player to terrain surface on spawn / respawn.
+	## Handles the case where WorldGenerator hasn't been ready yet
+	## or terrain noise returns wrong values at scene load time.
+	if not WorldGenerator:
+		return
+	# Defer so WorldGenerator.generate_world.call_deferred() has finished
+	# before we sample the height map.
+	get_tree().create_timer(0.0, true, false, true).timeout.connect(_do_correct_spawn_y)
+
+func _do_correct_spawn_y() -> void:
+	var spawn_pos := Vector2(global_position.x, global_position.z)
+	var raw_y := WorldGenerator.get_height_at(spawn_pos)
+	# Reject bad values
+	if is_inf(raw_y) or is_nan(raw_y):
+		raw_y = 0.0
+	var safe_y := clamp(raw_y, -5.0, 15.0)
+	global_position.y = safe_y + EYE_HEIGHT_NORMAL
 
 
 func refill_oxygen():
