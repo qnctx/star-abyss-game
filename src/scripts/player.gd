@@ -76,17 +76,15 @@ func _physics_process(delta):
 	# ── Crouch / prone ───────────────────────────────────────────────────────
 	var crouch_pressed := Input.is_action_pressed("crouch")
 	var prone_pressed := Input.is_action_pressed("prone")
-	var target_state: int = 0
 
 	if prone_pressed:
-		target_state = 2
+		_movement_state = 2
 	elif crouch_pressed:
-		target_state = 1
+		_movement_state = 1
+	else:
+		_movement_state = 0
 
-	# Smooth transition between movement states
-	if target_state != _movement_state:
-		_movement_state = target_state
-		# Instantly update target height (smooth lerp will follow)
+	# Update eye height target (collision shape scaling disabled — caused physics glitches)
 	if _movement_state == 2:
 		_target_eye_height = EYE_HEIGHT_PRONE
 	elif _movement_state == 1:
@@ -102,22 +100,6 @@ func _physics_process(delta):
 		current_speed = crouch_speed
 	elif Input.is_action_pressed("sprint") and _movement_state == 0:
 		current_speed = sprint_speed
-
-	# ── Collision shape scaling for crouch ─────────────────────────────────
-	if _collision_shape != null:
-		var shape: Resource = _collision_shape.shape
-		if shape is CapsuleShape3D:
-			# In Godot 4, set shape via shape = resource (not shape.height = x)
-			# Create new capsule each time (Godot 4 handles cleanup)
-			var new_shape := CapsuleShape3D.new()
-			new_shape.radius = shape.radius  # keep same radius
-			if _movement_state == 1:
-				new_shape.height = 1.0  # crouch
-			elif _movement_state == 2:
-				new_shape.height = 0.5  # prone
-			else:
-				new_shape.height = 1.8  # normal
-			_collision_shape.shape = new_shape
 
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
 
