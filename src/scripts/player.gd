@@ -54,17 +54,20 @@ func _input(event: InputEvent):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
+var _debug_frames: int = 0
+
 func _physics_process(delta):
 	if is_dead:
 		return
 
-	# Teleport
-	if Input.is_action_just_pressed("teleport"):
-		_try_teleport()
+	_debug_frames += 1
 
-	# Handle crouch/prone state transitions
-	var crouch_pressed = Input.is_action_pressed("crouch")
-	var prone_pressed = Input.is_action_pressed("prone")
+	# ── Input ──────────────────────────────────────────────────────────────────
+	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+
+	# ── Crouch / prone ───────────────────────────────────────────────────────
+	var crouch_pressed := Input.is_action_pressed("crouch")
+	var prone_pressed := Input.is_action_pressed("prone")
 
 	if prone_pressed:
 		_movement_state = 2
@@ -76,69 +79,60 @@ func _physics_process(delta):
 		_movement_state = 0
 		_target_eye_height = EYE_HEIGHT_NORMAL
 
-	_crouch_transition = lerp(_crouch_transition, 1.0 if _movement_state > 0 else 0.0, delta * 10.0)
-
-	# Movement
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var is_sprinting = Input.is_action_pressed("sprint") and _movement_state == 0
-	var is_crouching = _movement_state == 1
-	var is_proning = _movement_state == 2
-
-	# Determine current speed
-	var current_speed: float
-	if is_proning:
+	# ── Speed selection ─────────────────────────────────────────────────────
+	var current_speed: float = speed
+	if _movement_state == 2:
 		current_speed = prone_speed
-	elif is_crouching:
+	elif _movement_state == 1:
 		current_speed = crouch_speed
-	elif is_sprinting:
+	elif Input.is_action_pressed("sprint") and _movement_state == 0:
 		current_speed = sprint_speed
-	else:
-		current_speed = speed
 
-	# Compute camera-relative horizontal direction
+	# ── Direction (camera-relative) ─────────────────────────────────────────
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
-	var direction = (transform.basis * move_vec).normalized()
-
-	# Build velocity — horizontal from input only (no gravity)
+	var direction := (transform.basis * move_vec).normalized()
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
+
+	# ── Velocity (XZ only — no manual gravity) ─────────────────────────────
 	velocity.x = direction.x * horizontal_speed
 	velocity.z = direction.z * horizontal_speed
+	velocity.y = 0.0  # No vertical velocity while on ground
 
-	# Jump: give upward impulse
-	if Input.is_action_just_pressed("jump") and not _is_jumping and _movement_state == 0:
+	# ── Jump ────────────────────────────────────────────────────────────────
+	if Input.is_action_just_pressed("jump") and _movement_state == 0:
 		velocity.y = jump_force
 		_is_jumping = true
 
-	# Move using Godot physics — CharacterBody3D handles floor / ceiling
+	# ── Debug output every 0.5s ──────────────────────────────────────────
+	if _debug_frames % 30 == 0 and input_dir.length() > 0.05:
+		print("DEBUG pos=%.2f,%.2f,%.2f vel=%.2f,%.2f,%.2f floor=%s jumping=%s" % [
+			global_position.x, global_position.y, global_position.z,
+			velocity.x, velocity.y, velocity.z,
+			is_on_floor(), _is_jumping
+		])
+
+	# ── Move (Godot handles terrain collision via StaticBody3D) ────────────
 	move_and_slide()
 
-	# Re-sync Y: stay on terrain surface when grounded, track airborne Y when jumping
-	if WorldGenerator:
-		var raw_y = WorldGenerator.get_height_at(Vector2(global_position.x, global_position.z))
-		if not is_inf(raw_y) and not is_nan(raw_y):
-			raw_y = clamp(raw_y, -5.0, 15.0)
-		else:
-			raw_y = 0.0
+	# ── Landing detection ──────────────────────────────────────────────────
+	if _is_jumping and is_on_floor():
+		_is_jumping = false
+		velocity.y = 0.0
 
-		if is_on_floor() or _is_jumping:
-			global_position.y = raw_y + _target_eye_height
-
-		if _is_jumping and is_on_floor():
-			_is_jumping = false
-			velocity.y = 0.0
-
-	# Clamp to world boundary — prevent player from leaving 100x100 terrain
+	# ── Clamp to world boundary ───────────────────────────────────────────
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
 	global_position.z = clamp(global_position.z, -WORLD_HALF, WORLD_HALF)
 
-	# Oxygen drain (grace period protects new players)
+	# ── Oxygen drain ───────────────────────────────────────────────────────
 	if _grace_timer > 0:
 		_grace_timer -= delta
 	else:
-		var mult = ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
-		var drain = (sprint_drain_rate if is_sprinting else oxygen_drain_rate) * mult
+		var mult := ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
+		var drain := oxygen_drain_rate * mult
+		if Input.is_action_pressed("sprint") and _movement_state == 0:
+			drain = sprint_drain_rate * mult
 		current_oxygen -= drain * delta
-		current_oxygen = max(current_oxygen, 0.0)
+		current_oxygen = maxf(current_oxygen, 0.0)
 		oxygen_changed.emit()
 
 	if current_oxygen <= 0:
