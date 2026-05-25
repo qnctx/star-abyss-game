@@ -64,6 +64,8 @@ func _physics_process(delta):
 
 	# ── Input ──────────────────────────────────────────────────────────────────
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
+	var direction := (transform.basis * move_vec).normalized()
 
 	# ── Crouch / prone ───────────────────────────────────────────────────────
 	var crouch_pressed := Input.is_action_pressed("crouch")
@@ -88,36 +90,51 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("sprint") and _movement_state == 0:
 		current_speed = sprint_speed
 
-	# ── Direction (camera-relative) ─────────────────────────────────────────
-	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
-	var direction := (transform.basis * move_vec).normalized()
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
 
-	# ── Velocity (XZ only — no manual gravity) ─────────────────────────────
+	# ── Velocity ──────────────────────────────────────────────────────────
 	velocity.x = direction.x * horizontal_speed
 	velocity.z = direction.z * horizontal_speed
-	velocity.y = 0.0  # No vertical velocity while on ground
 
-	# ── Jump ────────────────────────────────────────────────────────────────
-	if Input.is_action_just_pressed("jump") and _movement_state == 0:
+	# ── Jump: only allow re-jump when on floor ──────────────────────────────
+	if Input.is_action_just_pressed("jump") and _movement_state == 0 and not _is_jumping:
 		velocity.y = jump_force
 		_is_jumping = true
 
-	# ── Debug output every 0.5s ──────────────────────────────────────────
+	# Apply gravity each frame (only when airborne)
+	if _is_jumping:
+		velocity.y -= 20.0 * delta
+		if velocity.y < 0.0:
+			velocity.y = 0.0  # clamp fall speed
+
+	# ── Debug output every 0.5s when moving ──────────────────────────────────
 	if _debug_frames % 30 == 0 and input_dir.length() > 0.05:
-		print("DEBUG pos=%.2f,%.2f,%.2f vel=%.2f,%.2f,%.2f floor=%s jumping=%s" % [
+		print("DEBUG pos=%.2f,%.2f,%.2f vel=%.2f,%.2f,%.2f jumping=%s" % [
 			global_position.x, global_position.y, global_position.z,
-			velocity.x, velocity.y, velocity.z,
-			is_on_floor(), _is_jumping
+			velocity.x, velocity.y, velocity.z, _is_jumping
 		])
 
-	# ── Move (Godot handles terrain collision via StaticBody3D) ────────────
+	# ── Move ───────────────────────────────────────────────────────────────
 	move_and_slide()
 
-	# ── Landing detection ──────────────────────────────────────────────────
-	if _is_jumping and is_on_floor():
-		_is_jumping = false
-		velocity.y = 0.0
+	# ── Manual terrain height snap (THE RELIABLE SOLUTION) ─────────────────
+	if WorldGenerator:
+		var tx := global_position.x
+		var tz := global_position.z
+		# _raw_height matches what terrain mesh uses — no StaticBody needed
+		var ty: float = _raw_terrain_height(tx, tz)
+		var target_y := ty + _target_eye_height
+
+		if _is_jumping:
+			# In air: check if we've dropped back to terrain level
+			if global_position.y <= target_y + 0.1:
+				global_position.y = target_y
+				velocity.y = 0.0
+				_is_jumping = false
+		else:
+			# On ground: lock to terrain surface
+			global_position.y = target_y
+			velocity.y = 0.0
 
 	# ── Clamp to world boundary ───────────────────────────────────────────
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
@@ -178,6 +195,25 @@ func _do_correct_spawn_y() -> void:
 func refill_oxygen():
 	current_oxygen = max_oxygen
 	oxygen_changed.emit()
+
+
+# ============================================================================
+# Terrain height helper — mirrors WorldGenerator._raw_height() exactly
+# This is the ONLY reliable way to get the terrain surface Y
+# ============================================================================
+const _NOISE_AMPLITUDE := 10.0
+const _CRASH_RADIUS := 15.0
+const _TERRAIN_SHIFT := 3.0
+
+func _raw_terrain_height(x: float, z: float) -> float:
+	## Use WorldGenerator's own API — the same one that built the terrain mesh
+	var y: float = 0.0
+	if WorldGenerator:
+		y = WorldGenerator.get_height_at(Vector2(x, z))
+	# Guard against bad values
+	if is_inf(y) or is_nan(y):
+		y = 0.0
+	return y
 
 
 func _try_teleport():
