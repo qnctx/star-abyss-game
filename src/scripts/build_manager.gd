@@ -16,6 +16,8 @@ const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
 const MIN_STRUCTURE_DISTANCE: float = 2.0
+const RECYCLE_DISTANCE: float = 2.8
+const REFUND_RATE: float = 0.5
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
@@ -24,6 +26,7 @@ const BUILD_RESEARCH_STATION: String = "research_station"
 const BUILD_SLOW_FIELD: String = "slow_field"
 
 var build_mode: bool = false
+var recycle_mode: bool = false
 var selected_building: String = BUILD_TURRET
 var _preview: MeshInstance3D = null
 var _preview_material: StandardMaterial3D = null
@@ -48,6 +51,10 @@ func _input(event: InputEvent) -> void:
 
 	if event is InputEventKey and event.pressed and event.physical_keycode == KEY_ESCAPE:
 		_set_build_mode(false)
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("recycle_mode") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_X):
+		recycle_mode = not recycle_mode
+		_refresh_preview_mesh()
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
 		_select_building(BUILD_TURRET)
@@ -82,6 +89,8 @@ func _process(_delta: float) -> void:
 
 func _set_build_mode(enabled: bool) -> void:
 	build_mode = enabled
+	if not build_mode:
+		recycle_mode = false
 	set_process(build_mode)
 	_refresh_preview_mesh()
 	if _preview:
@@ -146,12 +155,20 @@ func _update_preview() -> void:
 
 	var target_pos := _get_build_target_position()
 	_placement_position = _snap_to_terrain(target_pos)
-	_position_is_valid = _validate_position(_placement_position)
-	var has_resources := InventoryManager.has_resources(get_selected_cost())
-	_can_place = _position_is_valid and has_resources
+	if recycle_mode:
+		_position_is_valid = _find_recycle_target(_placement_position) != null
+		_can_place = _position_is_valid
+	else:
+		_position_is_valid = _validate_position(_placement_position)
+		var has_resources := InventoryManager.has_resources(get_selected_cost())
+		_can_place = _position_is_valid and has_resources
 
 	_preview.global_position = _placement_position
-	if _can_place:
+	if recycle_mode and _can_place:
+		_preview_material.albedo_color = Color(0.25, 0.85, 1.0, 0.45)
+	elif recycle_mode:
+		_preview_material.albedo_color = Color(1.0, 0.2, 0.15, 0.45)
+	elif _can_place:
 		_preview_material.albedo_color = Color(0.2, 1.0, 0.45, 0.45)
 	elif _position_is_valid:
 		_preview_material.albedo_color = Color(1.0, 0.85, 0.15, 0.45)
@@ -160,6 +177,9 @@ func _update_preview() -> void:
 
 
 func _try_place_structure() -> void:
+	if recycle_mode:
+		_try_recycle_structure()
+		return
 	if not _can_place:
 		return
 	var cost := get_selected_cost()
@@ -170,6 +190,30 @@ func _try_place_structure() -> void:
 	var structure := _instantiate_selected_structure()
 	get_tree().current_scene.add_child(structure)
 	structure.global_position = _placement_position
+	structure.add_to_group("built_structures")
+	structure.set_meta("build_cost", cost.duplicate())
+	structure.set_meta("build_label", get_selected_label())
+
+
+func _try_recycle_structure() -> void:
+	var target := _find_recycle_target(_placement_position)
+	if target:
+		recycle_structure(target)
+
+
+func recycle_structure(structure: Node3D) -> bool:
+	if not structure or not is_instance_valid(structure):
+		return false
+	if not structure.is_in_group("built_structures"):
+		return false
+
+	var cost: Dictionary = structure.get_meta("build_cost", {})
+	for resource_type in cost:
+		var resource_name := str(resource_type)
+		var refund: int = max(1, floori(float(cost[resource_type]) * REFUND_RATE))
+		InventoryManager.add_resource(resource_name, refund)
+	structure.queue_free()
+	return true
 
 
 func _get_build_target_position() -> Vector3:
@@ -203,6 +247,20 @@ func _validate_position(pos: Vector3) -> bool:
 		if structure is Node3D and structure.global_position.distance_to(pos) < MIN_STRUCTURE_DISTANCE:
 			return false
 	return true
+
+
+func _find_recycle_target(pos: Vector3) -> Node3D:
+	var nearest: Node3D = null
+	var nearest_distance := RECYCLE_DISTANCE
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node3D
+		if not structure_node or not is_instance_valid(structure_node):
+			continue
+		var distance := structure_node.global_position.distance_to(pos)
+		if distance < nearest_distance:
+			nearest_distance = distance
+			nearest = structure_node
+	return nearest
 
 
 func _instantiate_selected_structure() -> Node3D:

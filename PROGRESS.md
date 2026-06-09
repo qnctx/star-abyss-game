@@ -265,6 +265,37 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Building Recycle Slice
+
+- Added recycle mode to `BuildManager`.
+- Build mode controls now include:
+  - `X` toggles recycle mode.
+  - Left click recycles the nearest built structure under the preview.
+- New placed structures now store `build_cost` and `build_label` metadata.
+- Recycled structures refund `50%` of original material cost, minimum `1` per cost item.
+- Recycle mode preview turns blue when a target can be recycled.
+- Combat HUD shows recycle-mode instructions.
+- Added `recycle_mode` input action.
+- Added automated coverage for recycle refund and non-built node rejection.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 92 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Wave Warning HUD Slice
 
 - Added phase countdown state to `GameManager`.

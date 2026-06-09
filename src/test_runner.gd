@@ -21,6 +21,7 @@ func _run() -> void:
         _test_turret_logic()
         _test_slow_field()
         _test_build_and_combat_ui()
+        _test_build_recycle()
         _test_inventory_manager()
         _test_base_repair()
         _test_base_shield()
@@ -243,6 +244,44 @@ func _test_build_and_combat_ui() -> void:
         check("BaseInteraction node exists", main.get_node_or_null("BaseInteraction") != null)
         check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
         main.free()
+
+
+func _test_build_recycle() -> void:
+        print("\n[ Build recycle ]")
+
+        var build_script = load("res://scripts/build_manager.gd")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("build_manager.gd loads for recycle test", build_script != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not build_script or not inventory_manager:
+                return
+
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["biomass"] = 0
+
+        var build_manager = build_script.new()
+        current_scene.add_child(build_manager)
+
+        var structure := Node3D.new()
+        structure.add_to_group("built_structures")
+        structure.set_meta("build_cost", {"iron": 20, "biomass": 8})
+        current_scene.add_child(structure)
+
+        var recycled: bool = build_manager.recycle_structure(structure)
+        check("recycle_structure succeeds for built structure", recycled)
+        check("recycle refunds half iron", inventory_manager.resources.get("iron", -1) == 10)
+        check("recycle refunds half biomass", inventory_manager.resources.get("biomass", -1) == 4)
+
+        var loose_node := Node3D.new()
+        current_scene.add_child(loose_node)
+        check("recycle_structure rejects non-built node", not build_manager.recycle_structure(loose_node))
+
+        build_manager.queue_free()
+        loose_node.queue_free()
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["biomass"] = old_biomass
 
 
 func _test_base_repair() -> void:

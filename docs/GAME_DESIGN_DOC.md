@@ -25,6 +25,7 @@
 | 波次预警 | HUD 显示阶段倒计时和敌人来袭方向 | `game_manager.gd`, `combat_hud.gd` |
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
 | 建造 | `B` 进入建造，`1-4` 选择建筑，地形吸附预览 | `build_manager.gd` |
+| 建筑回收 | 建造模式按 `X` 切换回收，返还约 50% 材料 | `build_manager.gd` |
 | 防御 | Turret 自动索敌射击，Shield Generator 先吸收基地伤害 | `turret.gd`, `shield_generator.gd` |
 | 控场 | Slow Field 半径内降低敌人移动速度 | `slow_field.gd`, `enemy.gd` |
 | 氧气补给 | O2 Station 在半径内给玩家补氧 | `o2_station.gd` |
@@ -51,7 +52,7 @@
 | Done | 资源扫描器 Resource Scanner | 降低找材料的摩擦，支撑建造测试 | HUD 显示最近资源方向/距离 |
 | Done | 第二种炮塔 Slow Field | 丰富防守选择，不只堆同一种炮塔 | 夜晚能减速敌人 |
 | Done | 敌人波次预警 | 让夜晚来临和进攻方向更清楚 | HUD 显示下一波倒计时/方向 |
-| P2 | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
+| Done | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
 
 ### 0.4 当前手测入口
 

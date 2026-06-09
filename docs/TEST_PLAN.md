@@ -32,7 +32,20 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Press `4`; HUD should show `Solar Panel`.
 8. Press `5`; HUD should show `Research Station`.
 9. Press `6`; HUD should show `Slow Field`.
-10. Right-click or press `Esc` to leave build mode.
+10. Press `X`; HUD should enter recycle mode.
+11. Press `X` again; HUD should return to build mode.
+12. Right-click or press `Esc` to leave build mode.
+
+## Building Recycle
+
+1. Build any structure.
+2. Press `B`, then `X`.
+3. Move the preview near the built structure.
+4. Confirm the preview turns blue when a recyclable structure is targeted.
+5. Left-click.
+6. Confirm the structure disappears.
+7. Confirm about half of its original resource cost is refunded.
+8. Press `X` again to return to normal build mode.
 
 ## Turret Placement
 

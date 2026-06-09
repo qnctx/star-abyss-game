@@ -166,6 +166,20 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Enemy base damage is absorbed by shield before Base HP is reduced.
   - Shield slowly recharges while shield capacity exists.
 
+### Build / Recycle System
+- **Manager**: `scripts/build_manager.gd`
+- **Build controls**:
+  - `B` toggles build mode.
+  - `1-6` select buildable structures.
+  - Left click places a valid structure.
+- **Recycle controls**:
+  - `X` toggles recycle mode while build mode is open.
+  - Left click recycles the nearest built structure under the preview.
+  - Refund rate is `50%`, with at least `1` returned for each original cost item.
+- **Implementation notes**:
+  - New structures store `build_cost` metadata when placed.
+  - Recycle ignores nodes that are not in `built_structures`.
+
 ### Weapon System
 - **Controller**: `scripts/weapon_controller.gd` (Node3D, attached to player)
 - **Concept**: Player fires one of 5 weapon types, selected by number keys 1-5.
