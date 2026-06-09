@@ -25,6 +25,7 @@ func _run() -> void:
         _test_base_shield()
         _test_solar_panel_energy()
         _test_research_station()
+        _test_resource_scanner()
         _test_serum_recipes()
 
         print("\n========================================")
@@ -194,6 +195,9 @@ func _test_build_and_combat_ui() -> void:
         var research_station_script = load("res://scripts/research_station.gd")
         check("research_station.gd loads", research_station_script != null)
 
+        var resource_scanner_script = load("res://scripts/resource_scanner.gd")
+        check("resource_scanner.gd loads", resource_scanner_script != null)
+
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
         if not main_scene:
@@ -203,6 +207,7 @@ func _test_build_and_combat_ui() -> void:
         check("BuildManager node exists", main.get_node_or_null("BuildManager") != null)
         check("CombatHUD node exists", main.get_node_or_null("CombatHUD") != null)
         check("BaseInteraction node exists", main.get_node_or_null("BaseInteraction") != null)
+        check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
         main.free()
 
 
@@ -338,6 +343,42 @@ func _test_research_station() -> void:
         station.queue_free()
         inventory_manager.resources["energy"] = old_energy
         inventory_manager.resources["blueprint"] = old_blueprint
+
+
+func _test_resource_scanner() -> void:
+        print("\n[ Resource scanner ]")
+
+        var scanner_script = load("res://scripts/resource_scanner.gd")
+        var resource_script = load("res://scripts/resource_node.gd")
+        check("resource_scanner.gd loads for scanner test", scanner_script != null)
+        check("resource_node.gd loads for scanner test", resource_script != null)
+        if not scanner_script or not resource_script:
+                return
+
+        var player := Node3D.new()
+        player.name = "ScannerTestPlayer"
+        player.add_to_group("player")
+        player.position = Vector3(1000.0, 0.0, 1000.0)
+        current_scene.add_child(player)
+
+        var resource = resource_script.new()
+        resource.resource_type = "iron"
+        resource.position = Vector3(1005.0, 0.0, 1004.0)
+        current_scene.add_child(resource)
+
+        var scanner = scanner_script.new()
+        current_scene.add_child(scanner)
+        scanner._scan_now()
+        var hint: String = scanner.get_scan_hint()
+        check("scanner finds nearby iron", hint.contains("iron") and hint.contains("6m"), hint)
+
+        scanner.selected_index = 1
+        scanner._scan_now()
+        check("scanner filters selected resource type", scanner.nearest_resource == null)
+
+        scanner.queue_free()
+        resource.queue_free()
+        player.queue_free()
 
 
 func _test_serum_recipes() -> void:

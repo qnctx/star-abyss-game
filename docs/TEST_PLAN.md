@@ -97,9 +97,20 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Wave number
    - Enemies alive
    - Build hint
+   - Resource scanner hint
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
+
+## Resource Scanner
+
+1. Confirm the top-left HUD shows a scanner line.
+2. Press `G`.
+3. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, and `core`.
+4. Walk toward the displayed direction.
+5. Confirm the displayed distance generally decreases.
+6. Pick up the targeted resource.
+7. Confirm the scanner updates to another nearby resource or says none is nearby.
 
 ## Base Repair And Wave Shortcut
 

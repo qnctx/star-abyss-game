@@ -19,6 +19,7 @@ var base_y: float = 0.0
 
 
 func _ready():
+	add_to_group("resource_nodes")
 	body_entered.connect(_on_body_entered)
 	base_y = global_position.y
 	_set_appearance()

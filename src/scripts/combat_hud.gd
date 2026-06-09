@@ -3,6 +3,7 @@ extends Control
 var _status_label: Label
 var _build_label: Label
 var _base_label: Label
+var _scanner_label: Label
 
 
 func _ready() -> void:
@@ -25,6 +26,12 @@ func _ready() -> void:
 	_base_label.add_theme_font_size_override("font_size", 16)
 	add_child(_base_label)
 
+	_scanner_label = Label.new()
+	_scanner_label.position = Vector2(10, 248)
+	_scanner_label.size = Vector2(560, 32)
+	_scanner_label.add_theme_font_size_override("font_size", 16)
+	add_child(_scanner_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -41,6 +48,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
+	_refresh_scanner_hint()
 
 
 func _on_base_health_changed(_health: float) -> void:
@@ -62,6 +70,7 @@ func _on_enemies_alive_changed(_count: int) -> void:
 func _on_resource_changed(_type: String, _amount: int) -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
+	_refresh_scanner_hint()
 
 
 func _refresh() -> void:
@@ -78,6 +87,7 @@ func _refresh() -> void:
 	]
 	_refresh_build_hint()
 	_refresh_base_hint()
+	_refresh_scanner_hint()
 
 
 func _refresh_build_hint() -> void:
@@ -103,3 +113,8 @@ func _refresh_base_hint() -> void:
 	if GameManager and not GameManager.is_night:
 		parts.append("N start night test")
 	_base_label.text = " | ".join(parts)
+
+
+func _refresh_scanner_hint() -> void:
+	var scanner := get_tree().current_scene.get_node_or_null("ResourceScanner") if get_tree().current_scene else null
+	_scanner_label.text = scanner.get_scan_hint() if scanner else ""

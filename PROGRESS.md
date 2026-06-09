@@ -265,6 +265,37 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Resource Scanner Slice
+
+- Added `ResourceScanner`, matching the GDD P0 scanner priority.
+- Resource nodes now join the `resource_nodes` group when ready.
+- Main scene now has a `ResourceScanner` node.
+- Combat HUD now shows nearest scanned resource distance and rough direction.
+- `G` cycles scanner target type:
+  - iron
+  - biomass
+  - void_crystal
+  - energy_core
+- Added automated coverage for scanner loading, main-scene wiring, and resource-type filtering.
+- Updated `docs/GAME_DESIGN_DOC.md`, `src/CONTEXT.md`, and `docs/TEST_PLAN.md`.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 77 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - GDD MVP Execution Update And Research Station Slice
 
 - Added a current MVP execution section to `docs/GAME_DESIGN_DOC.md`:

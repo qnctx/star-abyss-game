@@ -76,6 +76,17 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Produces `1 blueprint`
   - Pauses automatically while energy is below `5`
 
+### Resource Scanner (资源扫描器)
+- **Type**: `Node`
+- **Script**: `scripts/resource_scanner.gd`
+- **Concept**: Lightweight HUD scanner that reduces resource-hunting friction during the build loop.
+- **Controls**: `G` cycles target resource type.
+- **Scan types**: iron, biomass, void_crystal, energy_core
+- **Behaviors**:
+  - Finds nearest matching node in the `resource_nodes` group within `45m`
+  - Reports distance and rough compass direction through `CombatHUD`
+  - Updates automatically as resources are collected
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -221,6 +232,7 @@ src/
 │   ├── shield_generator.gd    # Buildable base shield module
 │   ├── solar_panel.gd         # Buildable daytime energy generator
 │   ├── research_station.gd    # Buildable energy-to-blueprint converter
+│   ├── resource_scanner.gd    # HUD nearest-resource scanner
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── zone_manager.gd       # Zone adaptation

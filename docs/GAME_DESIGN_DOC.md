@@ -29,6 +29,7 @@
 | 基地维护 | 靠近基地按 `E` 消耗资源修复 Base HP | `base_interaction.gd`, `game_manager.gd` |
 | 能量生产 | Solar Panel 白天生产 energy，夜晚停产 | `solar_panel.gd` |
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
+| 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
 
@@ -45,7 +46,7 @@
 | 优先级 | 功能 | 目的 | 验证方式 |
 |--------|------|------|----------|
 | Done | 研究台 Research Station | 把 energy 转成 blueprint，打开科技树入口 | 建造后消耗 energy 产出 blueprint |
-| P0 | 资源扫描器 Resource Scanner | 降低找材料的摩擦，支撑建造测试 | HUD 显示最近资源方向/距离 |
+| Done | 资源扫描器 Resource Scanner | 降低找材料的摩擦，支撑建造测试 | HUD 显示最近资源方向/距离 |
 | P1 | 第二种炮塔 Slow Field | 丰富防守选择，不只堆同一种炮塔 | 夜晚能减速敌人 |
 | P1 | 敌人波次预警 | 让夜晚来临和进攻方向更清楚 | HUD 显示下一波倒计时/方向 |
 | P2 | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
