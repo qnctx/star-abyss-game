@@ -14,6 +14,13 @@ const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считае�
 const EYE_HEIGHT_NORMAL: float = 0.5
 const EYE_HEIGHT_CROUCH: float = 0.25
 const EYE_HEIGHT_PRONE: float = 0.1
+const GRAVITY: float = 24.0
+const GROUND_STICK_FORCE: float = -2.0
+const LANDING_EPSILON: float = 0.14
+const CAMERA_FOV_NORMAL: float = 50.0
+const CAMERA_FOV_SPRINT: float = 58.0
+const STUCK_RECOVERY_DELAY: float = 0.35
+const STUCK_RECOVERY_NUDGE: float = 0.45
 
 var current_oxygen: float = 180.0
 var max_oxygen: float = 180.0
@@ -26,6 +33,11 @@ var _crouch_transition: float = 0.0  # 0=fully normal, 1=fully crouched/prone
 var _target_eye_height: float = EYE_HEIGHT_NORMAL
 var _is_jumping: bool = false
 var _collision_shape: CollisionShape3D = null
+var _camera: Camera3D = null
+var _head_bob_phase: float = 0.0
+var _last_horizontal_speed: float = 0.0
+var _last_is_sprinting: bool = false
+var _stuck_timer: float = 0.0
 
 # Oxygen and death signals
 signal oxygen_changed()
@@ -41,6 +53,7 @@ func _ready():
 		if child is CollisionShape3D:
 			_collision_shape = child
 			break
+	_camera = get_node_or_null("Camera3D")
 	# Correct initial spawn Y so player doesn't start underground
 	_correct_spawn_y()
 
@@ -71,13 +84,13 @@ func _physics_process(delta):
 	_debug_frames += 1
 
 	# ── Input ──────────────────────────────────────────────────────────────────
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var input_dir := _get_movement_input()
 	var move_vec := Vector3(input_dir.x, 0, input_dir.y)
 	var direction := (transform.basis * move_vec).normalized()
 
 	# ── Crouch / prone ───────────────────────────────────────────────────────
-	var crouch_pressed := Input.is_action_pressed("crouch")
-	var prone_pressed := Input.is_action_pressed("prone")
+	var crouch_pressed := _is_pressed_loose("crouch", [KEY_CTRL])
+	var prone_pressed := _is_pressed_loose("prone", [KEY_Z])
 
 	if prone_pressed:
 		_movement_state = 2
@@ -96,42 +109,57 @@ func _physics_process(delta):
 
 	# ── Speed selection ─────────────────────────────────────────────────────
 	var current_speed: float = speed
+	var is_sprinting := false
 	if _movement_state == 2:
 		current_speed = prone_speed
 	elif _movement_state == 1:
 		current_speed = crouch_speed
-	elif Input.is_action_pressed("sprint") and _movement_state == 0:
+	elif _is_pressed_loose("sprint", [KEY_SHIFT]) and _movement_state == 0:
 		current_speed = sprint_speed
+		is_sprinting = true
+
+	if ZoneManager:
+		current_speed *= 1.0 + ZoneManager.get_speed_bonus()
 
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
+	_last_horizontal_speed = horizontal_speed
+	_last_is_sprinting = is_sprinting
 
 	# ── Velocity ──────────────────────────────────────────────────────────
 	velocity.x = direction.x * horizontal_speed
 	velocity.z = direction.z * horizontal_speed
 
 	# ── Jump: only allow re-jump when on floor ──────────────────────────────
-	if Input.is_action_just_pressed("jump") and _movement_state == 0 and not _is_jumping:
+	var ground_y := _get_player_ground_y()
+	var grounded_on_terrain := global_position.y <= ground_y + LANDING_EPSILON and velocity.y <= 0.0
+	if Input.is_action_just_pressed("jump") and _movement_state == 0 and not _is_jumping and grounded_on_terrain:
 		velocity.y = jump_force
 		_is_jumping = true
 
-	# Apply gravity each frame (only when airborne)
-	if _is_jumping:
+	# Keep the body pressed onto the procedural terrain so down-slopes are visible.
+	if _is_jumping or not grounded_on_terrain:
 		velocity.y -= 20.0 * delta
-		# Clamp fall speed so we don't accelerate forever, but allow downward motion
+		velocity.y -= (GRAVITY - 20.0) * delta
 		velocity.y = maxf(velocity.y, -50.0)
+	else:
+		velocity.y = GROUND_STICK_FORCE
 
 	# ── Move ───────────────────────────────────────────────────────────────
+	var before_move := global_position
 	move_and_slide()
+	_follow_terrain(delta)
 
 	# ── Landing detection ─────────────────────────────────────────────────
 	# Reset _is_jumping when player lands to stop gravity accumulation
-	if is_on_floor():
+	if is_on_floor() or (velocity.y <= 0.0 and global_position.y <= _get_player_ground_y() + LANDING_EPSILON):
 		_is_jumping = false
 		velocity.y = 0
 
 	# ── Clamp to world boundary ───────────────────────────────────────────
 	global_position.x = clamp(global_position.x, -WORLD_HALF, WORLD_HALF)
 	global_position.z = clamp(global_position.z, -WORLD_HALF, WORLD_HALF)
+	_recover_if_stuck(delta, before_move, direction, horizontal_speed)
+	_update_camera_motion(delta)
 
 	# ── Oxygen drain ───────────────────────────────────────────────────────
 	if _grace_timer > 0:
@@ -139,7 +167,7 @@ func _physics_process(delta):
 	else:
 		var mult := ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
 		var drain := oxygen_drain_rate * mult
-		if Input.is_action_pressed("sprint") and _movement_state == 0:
+		if _is_pressed_loose("sprint", [KEY_SHIFT]) and _movement_state == 0:
 			drain = sprint_drain_rate * mult
 		current_oxygen -= drain * delta
 		current_oxygen = maxf(current_oxygen, 0.0)
@@ -207,6 +235,104 @@ func _raw_terrain_height(x: float, z: float) -> float:
 	if is_inf(y) or is_nan(y):
 		y = 0.0
 	return y
+
+
+func _get_player_ground_y() -> float:
+	var raw_y := _raw_terrain_height(global_position.x, global_position.z)
+	return clamp(raw_y, -5.0, 15.0) + EYE_HEIGHT_NORMAL
+
+
+func _follow_terrain(delta: float) -> void:
+	var target_y := _get_player_ground_y()
+	if _is_jumping:
+		if velocity.y <= 0.0 and global_position.y <= target_y + LANDING_EPSILON:
+			global_position.y = target_y
+			velocity.y = 0.0
+			_is_jumping = false
+		return
+
+	var follow_speed := 18.0 if _last_horizontal_speed > 0.0 else 28.0
+	global_position.y = move_toward(global_position.y, target_y, follow_speed * delta)
+
+
+func _update_camera_motion(delta: float) -> void:
+	if not _camera:
+		return
+
+	var bob_amplitude := 0.0
+	var bob_speed := 0.0
+	if _last_horizontal_speed > 0.1 and not _is_jumping:
+		if _movement_state == 2:
+			bob_amplitude = 0.01
+			bob_speed = 5.0
+		elif _movement_state == 1:
+			bob_amplitude = 0.025
+			bob_speed = 7.0
+		elif _last_is_sprinting:
+			bob_amplitude = 0.075
+			bob_speed = 13.0
+		else:
+			bob_amplitude = 0.045
+			bob_speed = 9.0
+		_head_bob_phase += delta * bob_speed
+	else:
+		_head_bob_phase = lerpf(_head_bob_phase, 0.0, minf(delta * 8.0, 1.0))
+
+	var bob := sin(_head_bob_phase) * bob_amplitude
+	var target_camera_y := _target_eye_height + bob
+	_camera.position.y = lerpf(_camera.position.y, target_camera_y, minf(delta * 12.0, 1.0))
+	var target_fov := CAMERA_FOV_SPRINT if _last_is_sprinting and _last_horizontal_speed > 0.1 else CAMERA_FOV_NORMAL
+	_camera.fov = lerpf(_camera.fov, target_fov, minf(delta * 7.0, 1.0))
+
+
+func _get_movement_input() -> Vector2:
+	var input_dir := Vector2.ZERO
+	if _is_pressed_loose("move_left", [KEY_A, KEY_LEFT]):
+		input_dir.x -= 1.0
+	if _is_pressed_loose("move_right", [KEY_D, KEY_RIGHT]):
+		input_dir.x += 1.0
+	if _is_pressed_loose("move_forward", [KEY_W, KEY_UP]):
+		input_dir.y -= 1.0
+	if _is_pressed_loose("move_back", [KEY_S, KEY_DOWN]):
+		input_dir.y += 1.0
+	if input_dir.length() > 1.0:
+		input_dir = input_dir.normalized()
+	return input_dir
+
+
+func _is_pressed_loose(action_name: String, physical_keys: Array[int]) -> bool:
+	if Input.is_action_pressed(action_name):
+		return true
+	for key in physical_keys:
+		if Input.is_physical_key_pressed(key):
+			return true
+	return false
+
+
+func _recover_if_stuck(delta: float, before_move: Vector3, direction: Vector3, horizontal_speed: float) -> void:
+	if horizontal_speed <= 0.1 or direction.length() <= 0.01 or _is_jumping:
+		_stuck_timer = 0.0
+		return
+
+	var horizontal_delta := Vector2(
+		global_position.x - before_move.x,
+		global_position.z - before_move.z
+	).length()
+	var expected_delta := horizontal_speed * delta
+	if horizontal_delta >= expected_delta * 0.12:
+		_stuck_timer = 0.0
+		return
+
+	_stuck_timer += delta
+	if _stuck_timer < STUCK_RECOVERY_DELAY:
+		return
+
+	var nudge := -direction.normalized() * STUCK_RECOVERY_NUDGE
+	global_position.x = clamp(global_position.x + nudge.x, -WORLD_HALF, WORLD_HALF)
+	global_position.z = clamp(global_position.z + nudge.z, -WORLD_HALF, WORLD_HALF)
+	global_position.y = _get_player_ground_y()
+	velocity = Vector3.ZERO
+	_stuck_timer = 0.0
 
 
 func _try_teleport():

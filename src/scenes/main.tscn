@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://scripts/serum_ui.gd" id="15_serum_ui"]
 [ext_resource type="Script" path="res://scripts/teleport_manager.gd" id="16_teleport_manager"]
 [ext_resource type="Script" path="res://scripts/world_generator.gd" id="17_world_generator"]
+[ext_resource type="Script" path="res://scripts/build_manager.gd" id="18_build_manager"]
+[ext_resource type="Script" path="res://scripts/combat_hud.gd" id="19_combat_hud"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -215,5 +217,18 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("15_serum_ui")
 
+[node name="CombatHUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("19_combat_hud")
+
 [node name="TeleportManager" type="Node" parent="."]
 script = ExtResource("16_teleport_manager")
+
+[node name="BuildManager" type="Node3D" parent="."]
+script = ExtResource("18_build_manager")

@@ -266,6 +266,10 @@ void fragment() {
 	# --- StaticBody3D for collision ---
 	var static_body := StaticBody3D.new()
 	static_body.name = "TerrainCollision"
+	# Player movement follows the procedural height function directly.
+	# Disabling mesh collision avoids invisible triangle-edge walls/sticking.
+	static_body.collision_layer = 0
+	static_body.collision_mask = 0
 
 	var collision_shape := CollisionShape3D.new()
 	collision_shape.name = "CollisionShape"

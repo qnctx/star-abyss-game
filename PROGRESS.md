@@ -79,3 +79,99 @@ cd star-abyss-game/src
 弹丸 = 黄色能量弹（旋转拖尾）
 夜晚 = 一波波虫子越来越多
 ```
+---
+
+## 2026-06-08 - Headless Test Runner Repair
+
+- Fixed `src/test_runner.gd` so it can run with Godot 4.6.2 `--script` by inheriting `SceneTree`.
+- Reworked the system test runner to resolve autoloads through `/root` instead of compile-time singleton identifiers.
+- Updated the turret test to match the current `fire_projectile()` API.
+- Fixed `src/test_standalone.gd` to run as a `SceneTree` script with consistent space indentation.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+```
+
+Results:
+
+- `test_runner.gd`: 33 passed, 0 failed.
+- `test_standalone.gd`: 29 passed, 0 failed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings after the generated headless scene exits, but both commands return exit code 0.
+
+---
+
+## 2026-06-08 - Player Movement Feel Fix
+
+- Added continuous terrain following so walking downhill visibly follows the slope instead of feeling flat.
+- Added grounded stick force and landing recovery so the player can move again after jumping.
+- Added crouch/prone camera height changes so stance changes are visible.
+- Added walking/sprinting camera bob and sprint FOV feedback so `Shift + W` feels faster.
+- Applied zone speed bonuses to player movement speed.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Manual test steps:
+
+- Walk forward on uneven terrain and verify the camera height follows downhill/uphill terrain.
+- Press Space once, wait for landing, then confirm WASD movement still works.
+- Hold Ctrl to crouch and Z to go prone; the camera should lower and movement should slow.
+- Hold Shift + W; speed should increase, bob amplitude should increase, and FOV should widen slightly.
+
+Follow-up:
+
+- Fixed Shift modifier input blocking movement by reading WASD/arrow keys and Shift/Ctrl/Z through physical-key fallbacks in `player.gd`.
+- Manual check: hold Shift first, then press W; press W first, then hold Shift. In both orders, forward movement should continue and sprint feedback should activate.
+
+Invisible wall follow-up:
+
+- Disabled the generated terrain mesh collision layer/mask because player grounding now uses `WorldGenerator.get_height_at()` directly.
+- Added player stuck recovery: if movement input is held but horizontal displacement stays near zero for a short time, the player is nudged backward and snapped back to terrain height.
+- Manual check: walk across rocky/uneven slopes and around zone entrances; if you hit a bad collision edge, movement should recover instead of freezing.
+
+---
+
+## 2026-06-08 - Build Defense MVP Slice
+
+- Added `BuildManager` to `main.tscn`.
+- Added `B` build mode for placing turrets with a green/red placement preview.
+- Turret placement costs `20 iron + 5 void_crystal`, consumes resources through `InventoryManager`, and uses the existing turret scene.
+- Added placement validation for resource affordability, range from player, base clearance, and turret spacing.
+- Added `CombatHUD` showing base HP, day/night phase, wave number, enemies alive, and build hint/cost.
+- Added `GameManager` signals for base HP and enemies alive.
+- Added enemy kill rewards directly into the resource loop.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 38 passed, 0 failed.
+- Main scene short startup: passed.
+
+Manual test steps:
+
+- Collect at least `20 iron` and `5 void_crystal`.
+- Press `B`; verify the turret preview appears and changes color for valid/invalid placement.
+- Left-click valid ground to place a turret; verify resources decrease and the turret remains active.
+- Press right mouse or Esc to leave build mode.
+- During night waves, verify the Combat HUD updates enemies alive and base HP.
+- Kill enemies; verify resources increase from enemy rewards.
+
+Build preview follow-up:
+
+- Changed turret preview placement from a mouse `Y=0` plane hit to a player-forward terrain sample.
+- Preview now sits at terrain height instead of floating above a flat placement plane.
+- Preview colors now mean: green = placeable, yellow = valid position but missing resources, red = invalid position.

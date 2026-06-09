@@ -3,6 +3,8 @@ extends Node
 signal night_started()
 signal day_started()
 signal wave_spawned(wave_number: int)
+signal base_health_changed(health: float)
+signal enemies_alive_changed(count: int)
 
 var is_night: bool = false
 var wave_number: int = 0
@@ -23,6 +25,8 @@ func start_day():
 	is_night = false
 	wave_number = 0
 	enemies_alive = 0
+	enemies_alive_changed.emit(enemies_alive)
+	base_health_changed.emit(base_health)
 	# Restore daylight environment settings
 	_apply_night_darkening(false)
 	day_started.emit()
@@ -79,6 +83,7 @@ func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
 	enemies_alive += 1
+	enemies_alive_changed.emit(enemies_alive)
 
 	# Apply boss/elite scaling
 	if is_boss:
@@ -105,11 +110,14 @@ func is_boss_wave() -> bool:
 
 
 func _on_enemy_died():
+	_drop_enemy_reward()
 	enemies_alive -= 1
+	enemies_alive_changed.emit(enemies_alive)
 
 
 func _on_base_reached(damage: float):
 	base_health -= damage
+	base_health_changed.emit(base_health)
 	if base_health <= 0:
 		game_over()
 
@@ -147,3 +155,15 @@ func _apply_night_darkening(night: bool) -> void:
 func game_over():
 	get_tree().paused = true
 	print("GAME OVER - Base destroyed!")
+
+
+func _drop_enemy_reward() -> void:
+	var roll := randf()
+	if roll < 0.60:
+		InventoryManager.add_resource("iron", randi_range(1, 3))
+	elif roll < 0.85:
+		InventoryManager.add_resource("biomass", randi_range(1, 2))
+	elif roll < 0.97:
+		InventoryManager.add_resource("void_crystal", 1)
+	else:
+		InventoryManager.add_resource("energy_core", 1)
