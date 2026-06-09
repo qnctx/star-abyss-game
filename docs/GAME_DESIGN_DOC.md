@@ -22,6 +22,7 @@
 |------|----------|----------|
 | 角色移动/O2 | 可玩，含冲刺、蹲伏、趴下、地形跟随和卡住恢复 | `player.gd` |
 | 昼夜/波次 | 白天采集，夜晚刷敌，`N` 可快速进入夜晚测试 | `game_manager.gd`, `base_interaction.gd` |
+| 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色和 HUD 标签 | `game_manager.gd`, `enemy.gd` |
 | 波次预警 | HUD 显示阶段倒计时和敌人来袭方向 | `game_manager.gd`, `combat_hud.gd` |
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
 | 建造 | `B` 进入建造，`1-4` 选择建筑，地形吸附预览 | `build_manager.gd` |
@@ -56,7 +57,7 @@
 | Done | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
 | Done | 炮塔升级 Turret Upgrade | 让 energy 和 blueprint 进入防守成长 | 建造模式下可升级炮塔 |
 | P0 | 建筑状态提示 | 让升级等级/回收目标更清楚 | HUD 或建筑颜色显示等级/目标 |
-| P1 | 敌人类型扩展 | 增加防守策略差异 | 新增快速/重甲敌人 |
+| Done | 敌人类型扩展 | 增加防守策略差异 | Scout/Tank/Elite/Boss 波次可见且数值不同 |
 | P1 | 建筑修理扩展 | 让基地维护扩展到模块 | 受损建筑可维修 |
 
 ### 0.4 当前手测入口

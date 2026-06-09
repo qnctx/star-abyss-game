@@ -82,12 +82,13 @@ func _refresh() -> void:
 	if not GameManager:
 		return
 	var phase := "Night" if GameManager.is_night else "Day"
-	_status_label.text = "Base HP: %d%% | Shield %d/%d\n%s | Wave %d | Enemies %d\n%s | From %s" % [
+	_status_label.text = "Base HP: %d%% | Shield %d/%d\n%s | Wave %d %s | Enemies %d\n%s | From %s" % [
 		roundi(GameManager.base_health),
 		roundi(GameManager.base_shield),
 		roundi(GameManager.max_base_shield),
 		phase,
 		GameManager.wave_number,
+		GameManager.get_wave_variant_label(),
 		GameManager.enemies_alive,
 		GameManager.get_phase_timer_text(),
 		GameManager.last_wave_direction

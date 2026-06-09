@@ -27,6 +27,7 @@ func _run() -> void:
         _test_base_repair()
         _test_base_shield()
         _test_wave_warning_status()
+        _test_wave_variant_logic()
         _test_solar_panel_energy()
         _test_research_station()
         _test_resource_scanner()
@@ -427,6 +428,43 @@ func _test_wave_warning_status() -> void:
         game_manager.is_night = old_is_night
         game_manager.phase_time_remaining = old_remaining
         game_manager.last_wave_direction = old_direction
+
+
+func _test_wave_variant_logic() -> void:
+        print("\n[ Wave variant logic ]")
+
+        var game_manager = _get_autoload("GameManager")
+        check("GameManager autoload exists", game_manager != null)
+        if not game_manager:
+                return
+
+        var old_wave: int = game_manager.wave_number
+        var old_enemies_alive: int = game_manager.enemies_alive
+
+        game_manager.wave_number = 3
+        check("wave 3 is scout", game_manager.get_wave_variant() == "scout")
+        check("wave 3 label is Scout", game_manager.get_wave_variant_label() == "Scout")
+
+        game_manager.wave_number = 4
+        check("wave 4 is tank", game_manager.get_wave_variant() == "tank")
+        check("wave 4 label is Tank", game_manager.get_wave_variant_label() == "Tank")
+
+        game_manager.wave_number = 5
+        check("wave 5 is elite", game_manager.get_wave_variant() == "elite")
+
+        game_manager.wave_number = 10
+        check("wave 10 is boss", game_manager.get_wave_variant() == "boss")
+
+        game_manager.wave_number = 3
+        var scout_enemy: Node = game_manager.spawn_enemy("scout")
+        check("spawned scout records variant metadata", scout_enemy.get_meta("wave_variant", "") == "scout")
+        check("spawned scout records label metadata", scout_enemy.get_meta("wave_variant_label", "") == "Scout")
+        var csg_shapes := scout_enemy.find_children("*", "CSGPrimitive3D", true, false)
+        check("spawned scout has tinted visual shapes", not csg_shapes.is_empty() and (csg_shapes[0] as CSGPrimitive3D).material != null)
+        scout_enemy.queue_free()
+
+        game_manager.wave_number = old_wave
+        game_manager.enemies_alive = old_enemies_alive
 
 
 func _test_solar_panel_energy() -> void:

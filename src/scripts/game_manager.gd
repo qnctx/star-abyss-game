@@ -82,24 +82,35 @@ func start_night():
 		start_day()
 
 
-func spawn_wave():
-	var base_count = ENEMIES_PER_WAVE_BASE + int(wave_number * 0.5)
+func spawn_wave() -> void:
+	var base_count: int = ENEMIES_PER_WAVE_BASE + int(wave_number * 0.5)
 	_wave_direction_reported = false
 	wave_spawned.emit(wave_number)
+	var wave_variant := get_wave_variant()
 
-	if is_boss_wave():
-		spawn_enemy(true, false)  # 1 boss
+	if wave_variant == "boss":
+		spawn_enemy("boss")  # 1 boss
 		for i in range(max(0, base_count - 1)):
-			spawn_enemy(false, false)
+			spawn_enemy("normal")
 			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
-	elif is_elite_wave():
-		spawn_enemy(false, true)  # 1 elite
+	elif wave_variant == "elite":
+		spawn_enemy("elite")  # 1 elite
 		for i in range(max(0, base_count - 1)):
-			spawn_enemy(false, false)
+			spawn_enemy("normal")
 			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
+	elif wave_variant == "scout":
+		spawn_enemy("scout")
+		for i in range(max(0, base_count - 1)):
+			spawn_enemy("normal")
+			await get_tree().create_timer(randf_range(0.8, 2.2)).timeout
+	elif wave_variant == "tank":
+		spawn_enemy("tank")
+		for i in range(max(0, base_count - 1)):
+			spawn_enemy("normal")
+			await get_tree().create_timer(randf_range(1.2, 3.2)).timeout
 	else:
 		for i in range(base_count):
-			spawn_enemy(false, false)
+			spawn_enemy("normal")
 			await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
 
 	# Wait for all enemies to die or day to break
@@ -114,7 +125,7 @@ func spawn_wave():
 		spawn_wave()
 
 
-func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
+func spawn_enemy(variant: String = "normal") -> Node:
 	var enemy_scene = load("res://scenes/enemy.tscn")
 	var enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
@@ -126,20 +137,36 @@ func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
 	enemies_alive += 1
 	enemies_alive_changed.emit(enemies_alive)
 
-	# Apply boss/elite scaling
-	if is_boss:
+	# Apply variant scaling
+	if variant == "boss":
 		enemy.speed *= 2.0
 		enemy.health *= 5.0
 		enemy.damage *= 3.0
 		enemy.name = "Boss_Wave" + str(wave_number)
-	elif is_elite:
+	elif variant == "elite":
 		enemy.speed *= 1.5
 		enemy.health *= 3.0
 		enemy.damage *= 2.0
 		enemy.name = "Elite_Wave" + str(wave_number)
+	elif variant == "scout":
+		enemy.speed *= 1.8
+		enemy.health *= 0.7
+		enemy.damage *= 0.75
+		enemy.scale = Vector3.ONE * 0.85
+		enemy.name = "Scout_Wave" + str(wave_number)
+	elif variant == "tank":
+		enemy.speed *= 0.7
+		enemy.health *= 2.8
+		enemy.damage *= 1.7
+		enemy.scale = Vector3.ONE * 1.35
+		enemy.name = "Tank_Wave" + str(wave_number)
 
+	enemy.set_meta("wave_variant", variant)
+	enemy.set_meta("wave_variant_label", get_wave_variant_label(variant))
+	_apply_enemy_variant_visual(enemy, variant)
 	enemy.enemy_died.connect(_on_enemy_died)
 	enemy.base_reached.connect(_on_base_reached)
+	return enemy
 
 
 func is_elite_wave() -> bool:
@@ -148,6 +175,74 @@ func is_elite_wave() -> bool:
 
 func is_boss_wave() -> bool:
 	return wave_number % 10 == 0
+
+
+func is_scout_wave() -> bool:
+	return wave_number % 3 == 0 and not is_elite_wave() and not is_boss_wave()
+
+
+func is_tank_wave() -> bool:
+	return wave_number % 4 == 0 and not is_elite_wave() and not is_boss_wave() and not is_scout_wave()
+
+
+func get_wave_variant() -> String:
+	if is_boss_wave():
+		return "boss"
+	if is_elite_wave():
+		return "elite"
+	if is_scout_wave():
+		return "scout"
+	if is_tank_wave():
+		return "tank"
+	return "normal"
+
+
+func get_wave_variant_label(variant: String = "") -> String:
+	if variant.is_empty():
+		variant = get_wave_variant()
+	match variant:
+		"boss":
+			return "Boss"
+		"elite":
+			return "Elite"
+		"scout":
+			return "Scout"
+		"tank":
+			return "Tank"
+		_:
+			return "Normal"
+
+
+func get_wave_variant_color(variant: String = "") -> Color:
+	if variant.is_empty():
+		variant = get_wave_variant()
+	match variant:
+		"boss":
+			return Color(1.0, 0.12, 0.08, 1.0)
+		"elite":
+			return Color(0.7, 0.2, 1.0, 1.0)
+		"scout":
+			return Color(0.2, 0.85, 1.0, 1.0)
+		"tank":
+			return Color(0.95, 0.72, 0.18, 1.0)
+		_:
+			return Color(0.35, 0.1, 0.1, 1.0)
+
+
+func _apply_enemy_variant_visual(enemy: Node, variant: String) -> void:
+	var color := get_wave_variant_color(variant)
+	var emission_strength := 0.0 if variant == "normal" else 0.45
+	for child in enemy.find_children("*", "CSGPrimitive3D", true, false):
+		var csg_shape := child as CSGPrimitive3D
+		var material := StandardMaterial3D.new()
+		material.albedo_color = color
+		material.roughness = 0.55
+		material.metallic = 0.12
+		if emission_strength > 0.0:
+			material.emission_enabled = true
+			material.emission = color
+			material.emission_energy_multiplier = emission_strength
+		csg_shape.material = material
 
 
 func _on_enemy_died():

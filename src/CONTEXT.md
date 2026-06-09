@@ -31,8 +31,11 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Key properties**: `speed`, `health`, `damage`, `attack_range`
 - **Signals**: `enemy_died`, `base_reached(damage: float)`
 - **Scaling**:
+  - Scout waves (every 3rd, unless elite/boss): 0.7x HP, 0.75x damage, 1.8x speed, smaller cyan visual
+  - Tank waves (every 4th, unless scout/elite/boss): 2.8x HP, 1.7x damage, 0.7x speed, larger gold visual
   - Boss waves (every 10th): 5x HP, 3x damage, 2x speed
   - Elite waves (every 5th, not 10th): 3x HP, 2x damage, 1.5x speed
+- **Metadata**: Spawned enemies store `wave_variant` and `wave_variant_label` for future reward/UI systems.
 - **Behaviors**: Move toward `target_position` (base), emit `base_reached` on contact, then die
 
 ### Turret (炮塔)
@@ -143,6 +146,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Night**: 480s (8 min) — enemy waves spawn, game is dangerous
 - **Wave system**:
   - Base enemy count: `ENEMIES_PER_WAVE_BASE + wave * 0.5`
+  - Variants: Scout every 3rd wave, Tank every 4th, Elite every 5th, Boss every 10th; boss/elite take priority over scout/tank.
   - Spawns staggered with 1-3s delays
   - Next wave starts 5s after all enemies dead
 - **Signals**: `night_started`, `day_started`, `wave_spawned(wave_number)`
@@ -150,7 +154,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Warning UI**:
   - `phase_time_remaining` tracks current day/night countdown.
   - `last_wave_direction` stores rough compass direction of the first enemy spawned in the current wave.
-  - `CombatHUD` displays countdown and direction.
+  - `CombatHUD` displays countdown, direction, and current wave variant label.
 
 ### Base Pod (基地舱)
 - **Type**: `StaticBody3D`

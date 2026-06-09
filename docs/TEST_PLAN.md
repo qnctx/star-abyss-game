@@ -139,6 +139,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Resource scanner hint
    - Day/night countdown
    - Wave direction
+   - Wave variant label
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
@@ -152,6 +153,16 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Confirm the Combat HUD shows `From N/S/E/W` or a diagonal direction.
 6. Compare the direction with where enemies are approaching from.
 7. Confirm the countdown keeps decreasing while playing.
+
+## Wave Variants
+
+1. Press `N` to start night quickly.
+2. Fight through waves and watch the Combat HUD variant label next to the wave number.
+3. Confirm wave `3` shows `Scout`; the highlighted enemy is smaller, cyan, and faster.
+4. Confirm wave `4` shows `Tank`; the highlighted enemy is larger, gold, slower, and harder to kill.
+5. Confirm wave `5` shows `Elite`; the highlighted enemy is purple and stronger than normal.
+6. Confirm wave `10` shows `Boss`; the highlighted enemy is red, larger/stronger, and visually distinct.
+7. Confirm normal waves still show `Normal` and use the regular dark red enemy look.
 
 ## Resource Scanner
 
