@@ -295,6 +295,40 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Enemy Reward Rule Slice
+
+- Fixed enemy reward semantics:
+  - Combat kills still grant rewards.
+  - Enemies that breach the base now call `die(false)` and do not grant kill rewards.
+- Enemy `enemy_died` signal now carries `should_reward`.
+- `GameManager.spawn_enemy()` binds the spawned enemy into `_on_enemy_died()` so reward logic can read `wave_variant` metadata.
+- Added variant bonus rewards:
+  - Scout: `+1 biomass`
+  - Tank: `+2 iron`
+  - Elite: `+1 void_crystal + 1 blueprint`
+  - Boss: `+1 energy_core + 1 blueprint`
+- Added automated coverage for boss variant bonus and no-reward base breach deaths.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 141 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Objective Tracker Slice
 
 - Added `ObjectiveTracker`, a lightweight next-step guidance node.

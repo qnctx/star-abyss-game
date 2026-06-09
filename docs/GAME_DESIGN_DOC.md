@@ -22,7 +22,7 @@
 |------|----------|----------|
 | 角色移动/O2 | 可玩，含冲刺、蹲伏、趴下、地形跟随和卡住恢复 | `player.gd` |
 | 昼夜/波次 | 白天采集，夜晚刷敌，`N` 可快速进入夜晚测试 | `game_manager.gd`, `base_interaction.gd` |
-| 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色和 HUD 标签 | `game_manager.gd`, `enemy.gd` |
+| 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色、HUD 标签和击杀奖励 | `game_manager.gd`, `enemy.gd` |
 | 波次预警 | HUD 显示阶段倒计时和敌人来袭方向 | `game_manager.gd`, `combat_hud.gd` |
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
 | 建造 | `B` 进入建造，`1-6` 选择建筑，地形吸附预览 | `build_manager.gd` |

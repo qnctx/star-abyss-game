@@ -9,7 +9,7 @@ var target_position: Vector3 = Vector3(0, 0, 0)
 var _has_died: bool = false
 var _slow_sources: Dictionary = {}
 
-signal enemy_died()
+signal enemy_died(should_reward: bool)
 signal base_reached(damage: float, hit_position: Vector3)
 
 
@@ -29,7 +29,7 @@ func _physics_process(_delta):
 
 	if global_position.distance_to(target_position) < attack_range:
 		base_reached.emit(damage, global_position)
-		die()
+		die(false)
 
 
 func take_damage(amount: float):
@@ -53,11 +53,11 @@ func get_effective_speed() -> float:
 	return speed * slow_multiplier
 
 
-func die():
+func die(should_reward: bool = true):
 	if _has_died:
 		return
 	_has_died = true
-	enemy_died.emit()
+	enemy_died.emit(should_reward)
 	var ExplosionScene = preload("res://scenes/vfx_explosion.tscn")
 	if ExplosionScene:
 		var explosion = ExplosionScene.instantiate()

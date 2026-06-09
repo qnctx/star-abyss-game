@@ -166,7 +166,7 @@ func spawn_enemy(variant: String = "normal") -> Node:
 	enemy.set_meta("wave_variant", variant)
 	enemy.set_meta("wave_variant_label", get_wave_variant_label(variant))
 	_apply_enemy_variant_visual(enemy, variant)
-	enemy.enemy_died.connect(_on_enemy_died)
+	enemy.enemy_died.connect(_on_enemy_died.bind(enemy))
 	enemy.base_reached.connect(_on_base_reached)
 	return enemy
 
@@ -247,9 +247,10 @@ func _apply_enemy_variant_visual(enemy: Node, variant: String) -> void:
 		csg_shape.material = material
 
 
-func _on_enemy_died():
-	_drop_enemy_reward()
-	enemies_alive -= 1
+func _on_enemy_died(should_reward: bool = true, enemy: Node = null):
+	if should_reward:
+		_drop_enemy_reward(enemy)
+	enemies_alive = max(0, enemies_alive - 1)
 	enemies_alive_changed.emit(enemies_alive)
 
 
@@ -402,7 +403,7 @@ func game_over():
 	print("GAME OVER - Base destroyed!")
 
 
-func _drop_enemy_reward() -> void:
+func _drop_enemy_reward(enemy: Node = null) -> void:
 	var roll := randf()
 	if roll < 0.60:
 		InventoryManager.add_resource("iron", randi_range(1, 3))
@@ -412,3 +413,21 @@ func _drop_enemy_reward() -> void:
 		InventoryManager.add_resource("void_crystal", 1)
 	else:
 		InventoryManager.add_resource("energy_core", 1)
+	var variant := "normal"
+	if enemy and is_instance_valid(enemy):
+		variant = str(enemy.get_meta("wave_variant", "normal"))
+	_drop_enemy_variant_bonus(variant)
+
+
+func _drop_enemy_variant_bonus(variant: String) -> void:
+	match variant:
+		"scout":
+			InventoryManager.add_resource("biomass", 1)
+		"tank":
+			InventoryManager.add_resource("iron", 2)
+		"elite":
+			InventoryManager.add_resource("void_crystal", 1)
+			InventoryManager.add_resource("blueprint", 1)
+		"boss":
+			InventoryManager.add_resource("energy_core", 1)
+			InventoryManager.add_resource("blueprint", 1)

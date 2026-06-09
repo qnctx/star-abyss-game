@@ -29,6 +29,7 @@ func _run() -> void:
         _test_base_shield()
         _test_wave_warning_status()
         _test_wave_variant_logic()
+        _test_enemy_reward_rules()
         _test_solar_panel_energy()
         _test_research_station()
         _test_resource_scanner()
@@ -554,6 +555,55 @@ func _test_wave_variant_logic() -> void:
         scout_enemy.queue_free()
 
         game_manager.wave_number = old_wave
+        game_manager.enemies_alive = old_enemies_alive
+
+
+func _test_enemy_reward_rules() -> void:
+        print("\n[ Enemy reward rules ]")
+
+        var game_manager = _get_autoload("GameManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("GameManager autoload exists", game_manager != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not game_manager or not inventory_manager:
+                return
+
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+        var old_crystal: int = inventory_manager.resources.get("void_crystal", 0)
+        var old_energy_core: int = inventory_manager.resources.get("energy_core", 0)
+        var old_blueprint: int = inventory_manager.resources.get("blueprint", 0)
+        var old_enemies_alive: int = game_manager.enemies_alive
+
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["biomass"] = 0
+        inventory_manager.resources["void_crystal"] = 0
+        inventory_manager.resources["energy_core"] = 0
+        inventory_manager.resources["blueprint"] = 0
+
+        game_manager._drop_enemy_variant_bonus("boss")
+        check("boss reward grants energy core", inventory_manager.resources.get("energy_core", -1) == 1)
+        check("boss reward grants blueprint", inventory_manager.resources.get("blueprint", -1) == 1)
+
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["biomass"] = 0
+        inventory_manager.resources["void_crystal"] = 0
+        inventory_manager.resources["energy_core"] = 0
+        inventory_manager.resources["blueprint"] = 0
+
+        var breached_enemy := Node.new()
+        breached_enemy.set_meta("wave_variant", "boss")
+        game_manager.enemies_alive = 1
+        game_manager._on_enemy_died(false, breached_enemy)
+        check("base breach death does not grant boss energy core", inventory_manager.resources.get("energy_core", -1) == 0)
+        check("base breach death does not grant boss blueprint", inventory_manager.resources.get("blueprint", -1) == 0)
+        check("base breach death decrements enemy count", game_manager.enemies_alive == 0)
+
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["biomass"] = old_biomass
+        inventory_manager.resources["void_crystal"] = old_crystal
+        inventory_manager.resources["energy_core"] = old_energy_core
+        inventory_manager.resources["blueprint"] = old_blueprint
         game_manager.enemies_alive = old_enemies_alive
 
 

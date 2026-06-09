@@ -163,6 +163,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
+5. Let one enemy reach the base and confirm no kill reward is granted for that breached enemy.
 
 ## Objective Tracker
 
@@ -192,6 +193,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Confirm wave `5` shows `Elite`; the highlighted enemy is purple and stronger than normal.
 6. Confirm wave `10` shows `Boss`; the highlighted enemy is red, larger/stronger, and visually distinct.
 7. Confirm normal waves still show `Normal` and use the regular dark red enemy look.
+8. Kill variant enemies and confirm they grant extra rewards beyond normal random drops.
 
 ## Resource Scanner
 

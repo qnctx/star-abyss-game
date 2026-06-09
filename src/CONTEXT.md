@@ -29,13 +29,17 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Hostile creature that pathfinds toward the player's base pod.
 - **States**: alive / dead (fires `enemy_died`, then queue_free)
 - **Key properties**: `speed`, `health`, `damage`, `attack_range`
-- **Signals**: `enemy_died`, `base_reached(damage: float, hit_position: Vector3)`
+- **Signals**: `enemy_died(should_reward: bool)`, `base_reached(damage: float, hit_position: Vector3)`
 - **Scaling**:
   - Scout waves (every 3rd, unless elite/boss): 0.7x HP, 0.75x damage, 1.8x speed, smaller cyan visual
   - Tank waves (every 4th, unless scout/elite/boss): 2.8x HP, 1.7x damage, 0.7x speed, larger gold visual
   - Boss waves (every 10th): 5x HP, 3x damage, 2x speed
   - Elite waves (every 5th, not 10th): 3x HP, 2x damage, 1.5x speed
 - **Metadata**: Spawned enemies store `wave_variant` and `wave_variant_label` for future reward/UI systems.
+- **Rewards**:
+  - Only combat kills grant rewards.
+  - Base breaches call `die(false)` and do not grant kill rewards.
+  - Variants add bonus rewards: Scout biomass, Tank iron, Elite crystal/blueprint, Boss energy_core/blueprint.
 - **Behaviors**: Move toward `target_position` (base), emit `base_reached` on contact, then die
 
 ### Turret (炮塔)
