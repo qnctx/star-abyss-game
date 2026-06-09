@@ -74,6 +74,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Player collision restores `45` O2 if the player is below max O2.
   - Does not consume itself while the player is already at max O2.
   - Queues itself for deletion after a successful refill.
+- **Visual**: Glowing cyan/green plant with an `O2` billboard label above it.
 - **World generation**:
   - `WorldGenerator._spawn_oxygen_plants()` places 14 plants away from the immediate crash-pod center.
 
@@ -161,6 +162,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `oxygen_plant` scans the `oxygen_plants` group instead
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
+  - Resource pickups are walk-over collection nodes with billboard labels: `IRON`, `BIO`, `CRYSTAL`, `CORE`, `BP`
 
 ### Signal Beacon (信号台)
 - **Type**: `Node3D`
@@ -373,6 +375,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Manager**: `scripts/inventory_manager.gd` (Autoload Node)
 - **Concept**: Tracks count of 5 resource types across the whole game
 - **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint
+- **Pickup rule**: Generated resource nodes are collected by walking into them; no key press is needed.
 - **Signals**: `resource_changed(resource_type, amount)`
 - **Methods**: `add_resource()`, `has_resources(requirements)`, `consume_resources(requirements)`
 

@@ -81,6 +81,42 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Resource Readability Labels Slice
+
+- Improved resource readability after playtest feedback that iron and O2 sources were hard to distinguish.
+- Resource pickups now show billboard labels above the node:
+  - `IRON`
+  - `BIO`
+  - `CRYSTAL`
+  - `CORE`
+  - `BP`
+- O2 Plants now show an `O2` billboard label.
+- Resource pickup shapes/colors were made larger and more distinct while keeping the existing walk-over auto-pickup behavior.
+- Added automated coverage that resource nodes and O2 Plants create readable labels.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+git diff --check
+codegraph status
+```
+
+Results:
+
+- `test_runner.gd`: 313 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Low Oxygen Objective Guidance Slice
 
 - Expanded `ObjectiveTracker` with an urgent low-oxygen branch:

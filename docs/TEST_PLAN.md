@@ -50,7 +50,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 ## Oxygen Plant
 
-1. Explore away from the crash pod and look for small glowing cyan/green plants.
+1. Explore away from the crash pod and look for glowing cyan/green plants with an `O2` label.
 2. Drain some O2 below full.
 3. Walk into an O2 Plant.
 4. Confirm O2 increases by about `45`.
@@ -316,10 +316,11 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 3. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, `core`, and `O2 plant`.
 4. Walk toward the displayed direction.
 5. Confirm the displayed distance generally decreases.
-6. Pick up the targeted resource.
-7. Confirm the scanner updates to another nearby resource/O2 Plant or says none is nearby.
-8. Cycle to `O2 plant`.
-9. Confirm the scanner points to a generated O2 Plant when one is within range.
+6. Confirm nearby resources have readable floating labels: `IRON`, `BIO`, `CRYSTAL`, or `CORE`.
+7. Walk into the targeted resource to auto-pick it up; no key press is needed.
+8. Confirm the scanner updates to another nearby resource/O2 Plant or says none is nearby.
+9. Cycle to `O2 plant`.
+10. Confirm the scanner points to a generated O2 Plant with an `O2` label when one is within range.
 
 ## Base Repair And Wave Shortcut
 

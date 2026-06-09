@@ -59,6 +59,18 @@ func _create_visuals() -> void:
 	collision.position = Vector3(0.0, 0.45, 0.0)
 	add_child(collision)
 
+	var label := Label3D.new()
+	label.name = "OxygenPlantLabel"
+	label.text = "O2"
+	label.position = Vector3(0.0, 1.08, 0.0)
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.font_size = 48
+	label.pixel_size = 0.01
+	label.modulate = Color(0.6, 1.0, 1.0)
+	label.outline_size = 8
+	label.outline_modulate = Color(0.02, 0.08, 0.08, 0.95)
+	add_child(label)
+
 
 func _make_material(color: Color, emission_strength: float) -> StandardMaterial3D:
 	var material := StandardMaterial3D.new()

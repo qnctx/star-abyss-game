@@ -152,6 +152,7 @@ func _test_oxygen_plant() -> void:
         var plant = oxygen_plant_script.new()
         current_scene.add_child(plant)
         check("oxygen plant joins group", plant.is_in_group("oxygen_plants"))
+        check("oxygen plant has readable label", plant.get_node_or_null("OxygenPlantLabel") != null)
         check("oxygen plant can be collected", plant.collect(player))
         check_nearly(player.current_oxygen, 135.0, 0.01, "oxygen plant restores oxygen")
         check("oxygen plant queues after collection", plant.is_queued_for_deletion())
@@ -1306,6 +1307,8 @@ func _test_resource_scanner() -> void:
         resource.resource_type = "iron"
         resource.position = Vector3(1005.0, 0.0, 1004.0)
         current_scene.add_child(resource)
+        var resource_label := resource.get_node_or_null("ResourceLabel") as Label3D
+        check("resource node has readable type label", resource_label != null and resource_label.text == "IRON")
 
         var scanner = scanner_script.new()
         current_scene.add_child(scanner)

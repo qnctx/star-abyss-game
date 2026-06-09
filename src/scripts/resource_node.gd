@@ -5,11 +5,19 @@ class_name ResourceNode
 @export var amount: int = 1
 
 const TYPE_COLORS = {
-	"iron": Color(0.5, 0.45, 0.4),
-	"void_crystal": Color(0.6, 0.2, 0.8),
-	"biomass": Color(0.2, 0.7, 0.3),
-	"energy_core": Color(0.2, 0.4, 1.0),
+	"iron": Color(0.95, 0.58, 0.24),
+	"void_crystal": Color(0.75, 0.35, 1.0),
+	"biomass": Color(0.2, 0.9, 0.35),
+	"energy_core": Color(0.25, 0.75, 1.0),
 	"blueprint": Color(0.9, 0.7, 0.1),
+}
+
+const TYPE_LABELS = {
+	"iron": "IRON",
+	"void_crystal": "CRYSTAL",
+	"biomass": "BIO",
+	"energy_core": "CORE",
+	"blueprint": "BP",
 }
 
 var bob_offset: float = randf_range(0.0, TAU)
@@ -55,6 +63,7 @@ func _set_appearance():
 		mesh.material_override = mat
 		# Set distinct shape based on resource type
 		_set_resource_shape(mesh)
+	_add_label()
 
 
 func _set_resource_shape(mesh: MeshInstance3D) -> void:
@@ -63,39 +72,51 @@ func _set_resource_shape(mesh: MeshInstance3D) -> void:
 
 	match resource_type:
 		"iron":
-			# Iron = chunky cube
 			var box = BoxMesh.new()
-			box.size = Vector3(0.25, 0.25, 0.25)
+			box.size = Vector3(0.38, 0.28, 0.38)
 			mesh.mesh = box
-			mesh.position.y = 0.125
+			mesh.position.y = 0.14
 		"void_crystal":
-			# Void Crystal = tall box (diamond/crystal shape)
 			var box = BoxMesh.new()
-			box.size = Vector3(0.2, 0.4, 0.2)
+			box.size = Vector3(0.18, 0.62, 0.18)
 			mesh.mesh = box
-			mesh.position.y = 0.2
+			mesh.position.y = 0.31
 		"biomass":
-			# Biomass = organic sphere with slight scale
 			var sphere = SphereMesh.new()
-			sphere.radius = 0.15
-			sphere.height = 0.3
+			sphere.radius = 0.2
+			sphere.height = 0.4
 			mesh.mesh = sphere
-			mesh.scale = Vector3(1, 1.3, 1)
-			mesh.position.y = 0.2
+			mesh.scale = Vector3(1.25, 1.55, 1.25)
+			mesh.position.y = 0.24
 		"energy_core":
-			# Energy Core = cylinder (power cell)
 			var cyl = CylinderMesh.new()
-			cyl.top_radius = 0.12
-			cyl.bottom_radius = 0.12
-			cyl.height = 0.3
+			cyl.top_radius = 0.15
+			cyl.bottom_radius = 0.15
+			cyl.height = 0.55
 			mesh.mesh = cyl
-			mesh.position.y = 0.15
+			mesh.position.y = 0.28
 		_:
 			# Default cube
 			var box = BoxMesh.new()
 			box.size = Vector3(0.2, 0.3, 0.2)
 			mesh.mesh = box
 			mesh.position.y = 0.15
+
+
+func _add_label() -> void:
+	if has_node("ResourceLabel"):
+		return
+	var label := Label3D.new()
+	label.name = "ResourceLabel"
+	label.text = str(TYPE_LABELS.get(resource_type, resource_type.to_upper()))
+	label.position = Vector3(0.0, 0.85, 0.0)
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.font_size = 42
+	label.pixel_size = 0.009
+	label.modulate = TYPE_COLORS.get(resource_type, Color.WHITE)
+	label.outline_size = 8
+	label.outline_modulate = Color(0.02, 0.02, 0.02, 0.95)
+	add_child(label)
 
 
 func _on_body_entered(body: Node3D):
