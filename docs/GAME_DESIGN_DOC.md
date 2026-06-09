@@ -21,6 +21,7 @@
 | 系统 | 当前状态 | 关键文件 |
 |------|----------|----------|
 | 角色移动/O2 | 可玩，含冲刺、蹲伏、趴下、地形跟随和卡住恢复 | `player.gd` |
+| 野外氧气植物 | 世界生成可采集 O2 Plant，氧气不满时碰触恢复 O2 | `oxygen_plant.gd`, `world_generator.gd` |
 | 便携氧气瓶 | `H` 消耗 biomass/energy 制作，`Q` 使用恢复 O2，支持存档和死亡掉落 | `oxygen_canister_manager.gd`, `inventory_manager.gd`, `combat_hud.gd` |
 | 死亡掉落 | 死亡时掉落约一半携带资源，HUD/Objective 引导找回，支持存档恢复 | `death_drop_manager.gd`, `death_drop.gd`, `player.gd` |
 | 昼夜/波次 | 白天采集，夜晚刷敌，`N` 可快速进入夜晚测试 | `game_manager.gd`, `base_interaction.gd` |
@@ -51,7 +52,7 @@
 当前阶段不追求完整沙盒，而追求一个“能反复玩 10-15 分钟”的闭环：
 
 1. 玩家白天采集基础资源。
-2. 玩家可用 biomass/energy 制作便携氧气瓶，准备更远距离探索或找回掉落。
+2. 野外 O2 Plant 和可制作 O2 Kit 给远距离探索提供临时续航。
 3. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
 4. 玩家选择建造路线：防御、氧气、护盾、能量。
 5. 夜晚敌人进攻基地，玩家用武器和建筑防守。
@@ -83,6 +84,7 @@
 | Done | 撤离坚守 Extraction Holdout | 让 100% 信号从“日志完成”变成结局前防守目标 | Signal 100 后强制进入夜袭，HUD/Objective 显示撤离倒计时，结束显示 victory |
 | Done | 死亡资源掉落 Death Drop | 让 O2 风险产生真实资源压力且可挽回 | 死亡扣除约半数资源生成掉落包，HUD/Objective 指引找回 |
 | Done | 便携氧气瓶 O2 Kit | 给探索/找回掉落增加可准备的风险缓冲 | `H` 制作氧气瓶，`Q` 使用恢复 60 O2，HUD 显示数量与制作状态 |
+| Done | 野外氧气植物 O2 Plant | 让探索路线中出现临时续航点 | WorldGenerator 放置 O2 Plant，氧气不满时碰触恢复 45 O2 |
 
 ### 0.4 当前手测入口
 

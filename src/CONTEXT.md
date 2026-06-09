@@ -65,6 +65,18 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **HUD**:
   - `CombatHUD` shows `O2 Kit: N | Q use +60 O2 | H craft READY/NEED ...`.
 
+### Oxygen Plant (野外氧气植物)
+- **Type**: `Area3D`
+- **Script**: `scripts/oxygen_plant.gd`
+- **Groups**: `oxygen_plants`
+- **Concept**: One-use wilderness oxygen refill that makes longer exploration routes survivable.
+- **Behavior**:
+  - Player collision restores `45` O2 if the player is below max O2.
+  - Does not consume itself while the player is already at max O2.
+  - Queues itself for deletion after a successful refill.
+- **World generation**:
+  - `WorldGenerator._spawn_oxygen_plants()` places 14 plants away from the immediate crash-pod center.
+
 ### Enemy (敌人)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/enemy.gd`
@@ -425,6 +437,7 @@ src/
 │   ├── death_drop_manager.gd # Death penalty resource drop/recovery state
 │   ├── death_drop.gd         # Recoverable death crate
 │   ├── oxygen_canister_manager.gd # Craft/use portable O2 kits
+│   ├── oxygen_plant.gd      # One-use wilderness O2 refill
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module

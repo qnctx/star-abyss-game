@@ -48,6 +48,17 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Save/load with at least one O2 Kit and confirm the count is restored.
 12. Die while carrying O2 Kits and confirm they can be included in the recoverable Death Drop payload.
 
+## Oxygen Plant
+
+1. Explore away from the crash pod and look for small glowing cyan/green plants.
+2. Drain some O2 below full.
+3. Walk into an O2 Plant.
+4. Confirm O2 increases by about `45`.
+5. Confirm the plant disappears after refilling you.
+6. Find another O2 Plant while already at full O2.
+7. Walk into it and confirm it does not disappear until oxygen is below full.
+8. Start a new run or reload the main scene and confirm O2 Plants are generated across the terrain.
+
 ## Build Mode
 
 1. Press `B` to enter build mode.

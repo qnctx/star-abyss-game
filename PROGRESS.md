@@ -81,6 +81,36 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Oxygen Plant Exploration Slice
+
+- Added `OxygenPlant`, a one-use wilderness O2 refill:
+  - Restores `45` O2 when the player is below max oxygen.
+  - Does not consume itself when the player is already full on O2.
+  - Displays a small glowing cyan/green plant with a pickup collision area.
+- Expanded `WorldGenerator`:
+  - Places 14 O2 Plants across the terrain away from the immediate crash-pod center.
+- Added automated coverage for:
+  - World generation placing O2 Plants.
+  - O2 Plant script loading and group membership.
+  - Refill amount, full-O2 no-consume behavior, and pickup deletion state.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 306 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+
+---
+
 ## 2026-06-09 - Oxygen Canister Exploration Slice
 
 - Added `OxygenCanisterManager` autoload:

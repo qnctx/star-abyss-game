@@ -43,6 +43,7 @@ var _noise: Noise = null
 # Scene paths
 # ---------------------------------------------------------------------------
 const RESOURCE_SCENE := preload("res://scenes/resource_node.tscn")
+const OXYGEN_PLANT_SCRIPT := preload("res://scripts/oxygen_plant.gd")
 const BASE_POD_SCENE := preload("res://scenes/base_pod.tscn")
 const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
 var _GROUND_MATERIAL: StandardMaterial3D
@@ -155,6 +156,7 @@ func generate_world() -> void:
 
 	# 3. Resources
 	_spawn_resources(scene)
+	_spawn_oxygen_plants(scene)
 
 	# 4. Base pod at origin
 	_spawn_base_pod(scene)
@@ -411,6 +413,25 @@ func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 			placed += 1
 
 	print("WorldGenerator: placed %d %s resources." % [count, res_type])
+
+
+func _spawn_oxygen_plants(scene: Node) -> void:
+	const PLANT_COUNT := 14
+	var half := WORLD_SIZE / 2.0 - 6.0
+	var placed := 0
+	var max_attempts := PLANT_COUNT * 25
+	for _attempt in range(max_attempts):
+		if placed >= PLANT_COUNT:
+			break
+		var x := randf_range(-half, half)
+		var z := randf_range(-half, half)
+		if Vector2(x, z).length() < 10.0:
+			continue
+		var plant := OXYGEN_PLANT_SCRIPT.new()
+		scene.add_child(plant)
+		plant.global_position = Vector3(x, _raw_height(x, z) + 0.15, z)
+		placed += 1
+	print("WorldGenerator: placed %d oxygen plants." % placed)
 
 
 # ===========================================================================

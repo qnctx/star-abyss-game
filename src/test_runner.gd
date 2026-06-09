@@ -17,6 +17,7 @@ func _run() -> void:
 
         _test_world_generator()
         _test_player_oxygen()
+        _test_oxygen_plant()
         _test_oxygen_canister_manager()
         _test_death_drop_manager()
         _test_zone_manager()
@@ -101,6 +102,7 @@ func _test_world_generator() -> void:
         check("height_map is populated", not world_generator.height_map.is_empty(), "size=%d" % world_generator.height_map.size())
         check("biome_map is populated", not world_generator.biome_map.is_empty(), "size=%d" % world_generator.biome_map.size())
         check("biome_map size is 101x101", world_generator.biome_map.size() == 101 * 101, "size=%d" % world_generator.biome_map.size())
+        check("world generator places oxygen plants", get_nodes_in_group("oxygen_plants").size() > 0, "count=%d" % get_nodes_in_group("oxygen_plants").size())
 
 
 func _test_player_oxygen() -> void:
@@ -129,6 +131,39 @@ func _test_player_oxygen() -> void:
         player.refill_oxygen()
         check_nearly(player.current_oxygen, 180.0, 0.01, "refill restores oxygen")
         main.free()
+
+
+func _test_oxygen_plant() -> void:
+        print("\n[ Oxygen plant ]")
+
+        var oxygen_plant_script = load("res://scripts/oxygen_plant.gd")
+        var player_script = load("res://scripts/player.gd")
+        check("oxygen_plant.gd loads", oxygen_plant_script != null)
+        check("player.gd loads for oxygen plant test", player_script != null)
+        if not oxygen_plant_script or not player_script:
+                return
+
+        var player = player_script.new()
+        player.add_to_group("player")
+        player.max_oxygen = 180.0
+        player.current_oxygen = 90.0
+        current_scene.add_child(player)
+
+        var plant = oxygen_plant_script.new()
+        current_scene.add_child(plant)
+        check("oxygen plant joins group", plant.is_in_group("oxygen_plants"))
+        check("oxygen plant can be collected", plant.collect(player))
+        check_nearly(player.current_oxygen, 135.0, 0.01, "oxygen plant restores oxygen")
+        check("oxygen plant queues after collection", plant.is_queued_for_deletion())
+        plant.free()
+
+        var full_plant = oxygen_plant_script.new()
+        current_scene.add_child(full_plant)
+        player.current_oxygen = player.max_oxygen
+        check("oxygen plant waits when oxygen is full", not full_plant.collect(player))
+        check("full oxygen plant remains available", not full_plant.is_queued_for_deletion())
+        full_plant.free()
+        player.free()
 
 
 func _test_oxygen_canister_manager() -> void:
@@ -412,6 +447,9 @@ func _test_build_and_combat_ui() -> void:
 
         var oxygen_canister_script = load("res://scripts/oxygen_canister_manager.gd")
         check("oxygen_canister_manager.gd loads", oxygen_canister_script != null)
+
+        var oxygen_plant_script = load("res://scripts/oxygen_plant.gd")
+        check("oxygen_plant.gd loads", oxygen_plant_script != null)
 
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
