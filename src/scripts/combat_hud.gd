@@ -10,6 +10,7 @@ var _scanner_label: Label
 var _objective_label: Label
 var _signal_label: Label
 var _save_status_label: Label
+var _radio_label: Label
 var _save_status_time_remaining := 0.0
 
 
@@ -60,6 +61,13 @@ func _ready() -> void:
 	_save_status_label.add_theme_color_override("font_color", Color(0.55, 0.9, 1.0))
 	add_child(_save_status_label)
 
+	_radio_label = Label.new()
+	_radio_label.position = Vector2(10, 414)
+	_radio_label.size = Vector2(920, 42)
+	_radio_label.add_theme_font_size_override("font_size", 15)
+	_radio_label.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
+	add_child(_radio_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -74,6 +82,8 @@ func _ready() -> void:
 		TechManager.tech_unlocked.connect(_on_tech_unlocked)
 	if SaveManager:
 		SaveManager.save_status_changed.connect(_on_save_status_changed)
+	if SignalLogManager:
+		SignalLogManager.radio_log_unlocked.connect(_on_radio_log_unlocked)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -87,6 +97,7 @@ func _process(_delta: float) -> void:
 	_refresh_base_hint()
 	_refresh_scanner_hint()
 	_refresh_signal_hint()
+	_refresh_radio_log()
 	if _save_status_time_remaining > 0.0:
 		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
 		if is_zero_approx(_save_status_time_remaining):
@@ -119,6 +130,7 @@ func _on_resource_changed(_type: String, _amount: int) -> void:
 	_refresh_scanner_hint()
 	_refresh_objective_hint()
 	_refresh_signal_hint()
+	_refresh_radio_log()
 
 
 func _on_tech_unlocked(_tech_id: String) -> void:
@@ -133,6 +145,10 @@ func _on_objective_changed(_text: String) -> void:
 func _on_save_status_changed(message: String) -> void:
 	_save_status_label.text = "Save: %s" % message
 	_save_status_time_remaining = SAVE_STATUS_DURATION
+
+
+func _on_radio_log_unlocked(_log_id: String, _message: String) -> void:
+	_refresh_radio_log()
 
 
 func _refresh() -> void:
@@ -208,6 +224,10 @@ func _refresh_signal_hint() -> void:
 	_signal_label.text = get_signal_hint()
 
 
+func _refresh_radio_log() -> void:
+	_radio_label.text = get_radio_log_text()
+
+
 func get_structure_damage_hint() -> String:
 	var damaged_count := 0
 	var worst_structure: Node = null
@@ -277,3 +297,9 @@ func get_signal_hint() -> String:
 			best_progress = progress
 			best_text = str(beacon_node.call("get_signal_status_text"))
 	return best_text
+
+
+func get_radio_log_text() -> String:
+	if not SignalLogManager:
+		return ""
+	return SignalLogManager.get_latest_message()

@@ -81,6 +81,41 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Signal Radio Log Slice
+
+- Added `SignalLogManager` as a new autoload:
+  - Tracks unlocked signal radio logs.
+  - Unlocks logs at `25`, `50`, `75`, and `100` Signal Beacon progress.
+  - Stores the latest visible radio message.
+- Signal Beacon now registers progress with `SignalLogManager` whenever energy advances the signal.
+- Combat HUD now shows the latest Radio log under the signal/save rows.
+- SaveManager now persists:
+  - Signal radio log unlock state.
+  - Latest radio message.
+  - It can also rebuild missing log milestones from restored Signal Beacon progress for older save data.
+- Added automated coverage for log milestones, latest message, save/restore, Signal Beacon-triggered unlocks, and HUD Radio display.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 237 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Signal Beacon Slice
 
 - Added `SignalBeacon`, a buildable long-term rescue-signal structure:

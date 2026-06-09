@@ -76,6 +76,7 @@ func capture_save_data() -> Dictionary:
 		"version": SAVE_VERSION,
 		"inventory": InventoryManager.resources.duplicate(true) if InventoryManager else {},
 		"tech": TechManager.unlocked.duplicate(true) if TechManager else {},
+		"signal_logs": SignalLogManager.capture_save_data() if SignalLogManager else {},
 		"game": _capture_game_state(),
 		"structures": _capture_structures(),
 		"enemies": _capture_enemies()
@@ -88,7 +89,9 @@ func apply_save_data(data: Dictionary) -> bool:
 	_clear_runtime_nodes()
 	_apply_inventory(data.get("inventory", {}))
 	_apply_tech(data.get("tech", {}))
+	_apply_signal_logs(data.get("signal_logs", {}))
 	_restore_structures(data.get("structures", []))
+	_sync_signal_logs_from_structures()
 	var restored_enemy_count := _restore_enemies(data.get("enemies", []))
 	_apply_game_state(data.get("game", {}), restored_enemy_count)
 	return true
@@ -186,6 +189,11 @@ func _apply_tech(data: Variant) -> void:
 			TechManager.tech_unlocked.emit(str(tech_id))
 
 
+func _apply_signal_logs(data: Variant) -> void:
+	if SignalLogManager:
+		SignalLogManager.apply_save_data(data)
+
+
 func _apply_game_state(data: Variant, restored_enemy_count: int = 0) -> void:
 	if not GameManager or typeof(data) != TYPE_DICTIONARY:
 		return
@@ -230,6 +238,17 @@ func _restore_structures(data: Variant) -> void:
 			structure.set("signal_progress", float(item["signal_progress"]))
 		if item.has("signal_power_timer") and structure.get("signal_power_timer") != null:
 			structure.set("signal_power_timer", float(item["signal_power_timer"]))
+
+
+func _sync_signal_logs_from_structures() -> void:
+	if not SignalLogManager:
+		return
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node
+		if not structure_node or not is_instance_valid(structure_node) or structure_node.is_queued_for_deletion():
+			continue
+		if structure_node.get("signal_progress") != null:
+			SignalLogManager.register_signal_progress(float(structure_node.get("signal_progress")))
 
 
 func _restore_enemies(data: Variant) -> int:

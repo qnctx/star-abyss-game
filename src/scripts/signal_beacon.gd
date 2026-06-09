@@ -43,6 +43,8 @@ func _try_transmit_signal() -> void:
 		return
 	InventoryManager.consume_resources(ENERGY_COST)
 	signal_progress = minf(SIGNAL_MAX, signal_progress + SIGNAL_PROGRESS_PER_CYCLE)
+	if SignalLogManager:
+		SignalLogManager.register_signal_progress(signal_progress)
 	signal_progress_changed.emit(signal_progress, SIGNAL_MAX)
 
 

@@ -33,6 +33,7 @@ func _run() -> void:
         _test_enemy_reward_rules()
         _test_solar_panel_energy()
         _test_research_station()
+        _test_signal_log_manager()
         _test_signal_beacon()
         _test_tech_unlocks()
         _test_save_manager()
@@ -286,6 +287,9 @@ func _test_build_and_combat_ui() -> void:
 
         var signal_beacon_script = load("res://scripts/signal_beacon.gd")
         check("signal_beacon.gd loads", signal_beacon_script != null)
+
+        var signal_log_script = load("res://scripts/signal_log_manager.gd")
+        check("signal_log_manager.gd loads", signal_log_script != null)
 
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
@@ -756,19 +760,49 @@ func _test_research_station() -> void:
         inventory_manager.resources["blueprint"] = old_blueprint
 
 
+func _test_signal_log_manager() -> void:
+        print("\n[ Signal log manager ]")
+
+        var signal_log_manager = _get_autoload("SignalLogManager")
+        check("SignalLogManager autoload exists", signal_log_manager != null)
+        if not signal_log_manager:
+                return
+
+        signal_log_manager.reset_logs()
+        check("signal logs start empty", signal_log_manager.get_latest_message().is_empty())
+
+        signal_log_manager.register_signal_progress(24.0)
+        check("signal log waits below first milestone", not signal_log_manager.is_log_unlocked("signal_25"))
+
+        signal_log_manager.register_signal_progress(50.0)
+        check("signal log unlocks 25 milestone", signal_log_manager.is_log_unlocked("signal_25"))
+        check("signal log unlocks 50 milestone", signal_log_manager.is_log_unlocked("signal_50"))
+        check("signal log latest message is visible", signal_log_manager.get_latest_message().contains("Radio:"), signal_log_manager.get_latest_message())
+
+        var data: Dictionary = signal_log_manager.capture_save_data()
+        signal_log_manager.reset_logs()
+        signal_log_manager.apply_save_data(data)
+        check("signal log save restores 50 milestone", signal_log_manager.is_log_unlocked("signal_50"))
+        signal_log_manager.reset_logs()
+
+
 func _test_signal_beacon() -> void:
         print("\n[ Signal beacon ]")
 
         var inventory_manager = _get_autoload("InventoryManager")
+        var signal_log_manager = _get_autoload("SignalLogManager")
         var signal_script = load("res://scripts/signal_beacon.gd")
         var combat_hud_script = load("res://scripts/combat_hud.gd")
         check("InventoryManager autoload exists for signal test", inventory_manager != null)
+        check("SignalLogManager autoload exists for signal test", signal_log_manager != null)
         check("signal_beacon.gd loads for signal test", signal_script != null)
         check("combat_hud.gd loads for signal test", combat_hud_script != null)
-        if not inventory_manager or not signal_script or not combat_hud_script:
+        if not inventory_manager or not signal_log_manager or not signal_script or not combat_hud_script:
                 return
 
         var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_signal_logs: Dictionary = signal_log_manager.capture_save_data()
+        signal_log_manager.reset_logs()
         inventory_manager.resources["energy"] = 2
 
         var beacon = signal_script.new()
@@ -781,13 +815,18 @@ func _test_signal_beacon() -> void:
         check_nearly(beacon.signal_progress, beacon.SIGNAL_PROGRESS_PER_CYCLE, 0.01, "signal beacon advances progress")
         check("signal beacon status shows progress", beacon.get_signal_status_text().contains("10/100"), beacon.get_signal_status_text())
 
+        beacon.signal_progress = 20.0
+        beacon._process(beacon.SIGNAL_INTERVAL)
+        check("signal beacon unlocks first radio log", signal_log_manager.is_log_unlocked("signal_25"))
+
         var combat_hud = combat_hud_script.new()
         current_scene.add_child(combat_hud)
         check("combat HUD shows signal hint", combat_hud.get_signal_hint().contains("Signal:"), combat_hud.get_signal_hint())
+        check("combat HUD shows radio log", combat_hud.get_radio_log_text().contains("Radio:"), combat_hud.get_radio_log_text())
 
         inventory_manager.resources["energy"] = 0
         beacon._process(beacon.SIGNAL_INTERVAL)
-        check_nearly(beacon.signal_progress, beacon.SIGNAL_PROGRESS_PER_CYCLE, 0.01, "signal beacon pauses without energy")
+        check_nearly(beacon.signal_progress, 30.0, 0.01, "signal beacon pauses without energy")
 
         beacon.signal_progress = beacon.SIGNAL_MAX
         check("signal beacon can complete", beacon.is_signal_complete())
@@ -796,6 +835,7 @@ func _test_signal_beacon() -> void:
         combat_hud.queue_free()
         beacon.queue_free()
         inventory_manager.resources["energy"] = old_energy
+        signal_log_manager.apply_save_data(old_signal_logs)
 
 
 func _test_tech_unlocks() -> void:
@@ -856,6 +896,7 @@ func _test_save_manager() -> void:
         var inventory_manager = _get_autoload("InventoryManager")
         var tech_manager = _get_autoload("TechManager")
         var game_manager = _get_autoload("GameManager")
+        var signal_log_manager = _get_autoload("SignalLogManager")
         var turret_scene = load("res://scenes/turret.tscn")
         var enemy_scene = load("res://scenes/enemy.tscn")
         var signal_script = load("res://scripts/signal_beacon.gd")
@@ -863,10 +904,11 @@ func _test_save_manager() -> void:
         check("InventoryManager autoload exists for save test", inventory_manager != null)
         check("TechManager autoload exists for save test", tech_manager != null)
         check("GameManager autoload exists for save test", game_manager != null)
+        check("SignalLogManager autoload exists for save test", signal_log_manager != null)
         check("turret scene loads for save test", turret_scene != null)
         check("enemy scene loads for save test", enemy_scene != null)
         check("signal_beacon.gd loads for save test", signal_script != null)
-        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene or not enemy_scene or not signal_script:
+        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not signal_log_manager or not turret_scene or not enemy_scene or not signal_script:
                 return
 
         var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
@@ -879,6 +921,7 @@ func _test_save_manager() -> void:
         var old_max_shield: float = game_manager.max_base_shield
         var old_phase_time: float = game_manager.phase_time_remaining
         var old_direction: String = game_manager.last_wave_direction
+        var old_signal_logs: Dictionary = signal_log_manager.capture_save_data()
 
         for existing_structure in get_nodes_in_group("built_structures"):
                 if existing_structure and is_instance_valid(existing_structure):
@@ -899,6 +942,8 @@ func _test_save_manager() -> void:
         game_manager.max_base_shield = 30.0
         game_manager.phase_time_remaining = 123.0
         game_manager.last_wave_direction = "NE"
+        signal_log_manager.reset_logs()
+        signal_log_manager.register_signal_progress(50.0)
 
         var turret = turret_scene.instantiate()
         turret.add_to_group("built_structures")
@@ -944,11 +989,13 @@ func _test_save_manager() -> void:
         check("save data captures game state", int(data["game"].get("wave_number", 0)) == 4)
         check("save data captures built structures", (data["structures"] as Array).size() >= 1)
         check("save data captures signal structures", _save_data_has_build(data, "signal_beacon"))
+        check("save data captures signal logs", data.has("signal_logs"))
         check("save data captures active enemies", (data["enemies"] as Array).size() >= 1)
 
         inventory_manager.resources["iron"] = 0
         inventory_manager.resources["blueprint"] = 0
         tech_manager.unlocked["shield_generator"] = false
+        signal_log_manager.reset_logs()
         game_manager.base_health = 10.0
         game_manager.enemies_alive = 0
         turret.queue_free()
@@ -959,6 +1006,7 @@ func _test_save_manager() -> void:
         check("load restores inventory iron", inventory_manager.resources.get("iron", -1) == 7)
         check("load restores blueprint", inventory_manager.resources.get("blueprint", -1) == 3)
         check("load restores shield unlock", bool(tech_manager.unlocked.get("shield_generator", false)))
+        check("load restores signal log milestone", signal_log_manager.is_log_unlocked("signal_50"))
         check_nearly(game_manager.base_health, 55.0, 0.01, "load restores base health")
         check("load restores wave number", game_manager.wave_number == 4)
         check("load restores enemy count", game_manager.enemies_alive == 1)
@@ -1012,6 +1060,7 @@ func _test_save_manager() -> void:
         game_manager.max_base_shield = old_max_shield
         game_manager.phase_time_remaining = old_phase_time
         game_manager.last_wave_direction = old_direction
+        signal_log_manager.apply_save_data(old_signal_logs)
 
 
 func _test_resource_scanner() -> void:

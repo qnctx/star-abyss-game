@@ -118,7 +118,20 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Adds `10/100` signal progress per powered cycle.
   - Pauses without energy.
   - Joins `signal_beacons` and `built_structures`.
+- **Progress milestones**: Notifies `SignalLogManager` whenever progress advances.
 - **HUD**: `CombatHUD` shows the strongest beacon status, e.g. `Signal: 40/100 | transmitting`, `needs energy`, or `locked 100/100`.
+
+### Signal Log Manager (无线电日志)
+- **Type**: `Node` autoload
+- **Script**: `scripts/signal_log_manager.gd`
+- **Concept**: Small story/progression log unlocked by Signal Beacon progress milestones.
+- **Milestones**: `25`, `50`, `75`, `100` signal progress.
+- **State**:
+  - `unlocked_logs`
+  - `latest_message`
+- **Signals**: `radio_log_unlocked(log_id, message)`
+- **HUD**: `CombatHUD` shows `latest_message` under the signal/save rows.
+- **Save/load**: `SaveManager` persists unlocked radio logs and latest message; old saves can also rebuild milestones from restored Signal Beacon progress.
 
 ### Objective Tracker (目标提示)
 - **Type**: `Node`
@@ -155,6 +168,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
+  - Signal radio logs from `SignalLogManager`
   - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
   - Clears current enemies and built structures before restoring saved runtime nodes.

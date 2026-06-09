@@ -180,9 +180,12 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Confirm the top-left HUD shows a `Signal:` row.
 8. Keep at least `1 energy` available and wait about `6` seconds.
 9. Confirm `energy` decreases by `1` and Signal progress increases by about `10`.
-10. Spend all energy and wait another cycle.
-11. Confirm the Signal row changes to `needs energy` and progress does not increase.
-12. Press `F6`, then later `F7`, and confirm Signal progress is restored.
+10. Continue powering until progress crosses `25`.
+11. Confirm a Radio log line appears under the Signal/Save HUD rows.
+12. Continue powering through `50`, `75`, and `100` if resources allow; confirm the latest Radio log changes at each milestone.
+13. Spend all energy and wait another cycle.
+14. Confirm the Signal row changes to `needs energy` and progress does not increase.
+15. Press `F6`, then later `F7`, and confirm Signal progress and the latest Radio log are restored.
 
 ## Tech Unlocks
 
@@ -210,6 +213,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Wave variant label
    - Objective line
    - Signal Beacon status after building one
+   - Latest Radio log after signal milestones
    - Locked-tech/unlock status while build mode is open
    - Damaged-structure summary when built structures are below full HP
    - `F6 Save F7 Load` in the main build hint row
@@ -289,11 +293,12 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 12. Confirm inventory returns to the saved amounts.
 13. Confirm tech unlocks return to the saved state.
 14. Confirm saved structures reappear with position, HP, upgrade level, and Signal Beacon progress if one was built.
-15. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
-16. During night, save while at least one enemy is alive.
-17. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.
-18. Confirm the Combat HUD enemy count matches the restored enemies.
-19. Optional: delete or rename the save file, press `F7`, and confirm the HUD briefly shows `Save: No save file`.
+15. Confirm unlocked Radio logs and the latest Radio log message are restored.
+16. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
+17. During night, save while at least one enemy is alive.
+18. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.
+19. Confirm the Combat HUD enemy count matches the restored enemies.
+20. Optional: delete or rename the save file, press `F7`, and confirm the HUD briefly shows `Save: No save file`.
 
 ## Known Headless Note
 
