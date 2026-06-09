@@ -128,10 +128,25 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Milestones**: `25`, `50`, `75`, `100` signal progress.
 - **State**:
   - `unlocked_logs`
+  - `collected_caches`
   - `latest_message`
-- **Signals**: `radio_log_unlocked(log_id, message)`
-- **HUD**: `CombatHUD` shows `latest_message` under the signal/save rows.
+- **Signals**: `radio_log_unlocked(log_id, message)`, `signal_cache_spawned(cache_id)`, `signal_cache_collected(cache_id)`
+- **Signal Cache loop**:
+  - Each unlocked milestone spawns one deterministic Signal Cache unless it has been collected.
+  - Cache rewards include resource bundles such as iron/energy, crystal/blueprint, biomass/energy, or energy_core/blueprint.
+  - `get_cache_hint()` reports nearest active cache distance/direction.
+- **HUD**: `CombatHUD` shows `latest_message` and nearest active Signal Cache hint under the signal/save rows.
 - **Save/load**: `SaveManager` persists unlocked radio logs and latest message; old saves can also rebuild milestones from restored Signal Beacon progress.
+
+### Signal Cache (信号补给点)
+- **Type**: `Area3D`
+- **Script**: `scripts/signal_cache.gd`
+- **Concept**: A radio-led exploration reward spawned by Signal Log milestones.
+- **Groups**: `signal_caches`
+- **Behavior**:
+  - Player collision collects the cache.
+  - Grants its configured resource bundle through `InventoryManager`.
+  - Calls `SignalLogManager.mark_cache_collected(cache_id)` so it will not respawn after save/load.
 
 ### Objective Tracker (目标提示)
 - **Type**: `Node`
@@ -139,7 +154,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes defense at night, base repair when damaged, damaged structure repair, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
+  - Prioritizes defense at night, base repair when damaged, damaged structure repair, active Signal Cache recovery, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
 
@@ -168,7 +183,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
-  - Signal radio logs from `SignalLogManager`
+  - Signal radio logs and collected Signal Cache state from `SignalLogManager`
   - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
   - Clears current enemies and built structures before restoring saved runtime nodes.

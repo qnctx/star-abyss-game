@@ -58,6 +58,10 @@ func get_objective_text() -> String:
 			return "Objective: Repair damaged structure (B, R)"
 		return "Objective: Gather %s for structure repair" % get_missing_resources_text(STRUCTURE_REPAIR_COST)
 
+	if _active_signal_cache_count() > 0:
+		var cache_hint := SignalLogManager.get_cache_hint() if SignalLogManager else ""
+		return "Objective: Locate signal cache | %s" % cache_hint if not cache_hint.is_empty() else "Objective: Locate signal cache"
+
 	if _count_group("built_turrets") <= 0:
 		return _build_or_gather("Build first Turret (B, 1)", TURRET_COST)
 
@@ -149,6 +153,14 @@ func _damaged_structure_count() -> int:
 		var max_health: float = float(structure_node.get_meta("structure_max_health", 100.0))
 		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
 		if current_health < max_health:
+			count += 1
+	return count
+
+
+func _active_signal_cache_count() -> int:
+	var count := 0
+	for cache in get_tree().get_nodes_in_group("signal_caches"):
+		if cache and is_instance_valid(cache) and not cache.is_queued_for_deletion():
 			count += 1
 	return count
 

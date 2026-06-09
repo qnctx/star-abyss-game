@@ -81,6 +81,44 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Signal Cache Exploration Slice
+
+- Added `SignalCache`, a collectible radio-led exploration reward:
+  - Spawned by `SignalLogManager` when signal milestones unlock.
+  - Each milestone has a deterministic cache position and resource bundle.
+  - Player collision collects the cache and grants resources.
+  - Collected caches are recorded so they do not respawn after save/load.
+- Expanded `SignalLogManager`:
+  - Tracks `collected_caches`.
+  - Spawns uncollected caches for unlocked radio logs.
+  - Provides nearest active cache direction/distance via `get_cache_hint()`.
+- Expanded Combat HUD:
+  - Latest Radio log row now also shows nearest Signal Cache hint while a cache is active.
+- Expanded Objective Tracker:
+  - During safe daytime states, active Signal Caches are surfaced as `Locate signal cache` objectives.
+- Added automated coverage for cache spawning, collection rewards, collected-state tracking, HUD cache hints, and objective cache guidance.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 247 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Signal Radio Log Slice
 
 - Added `SignalLogManager` as a new autoload:

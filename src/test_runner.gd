@@ -291,6 +291,9 @@ func _test_build_and_combat_ui() -> void:
         var signal_log_script = load("res://scripts/signal_log_manager.gd")
         check("signal_log_manager.gd loads", signal_log_script != null)
 
+        var signal_cache_script = load("res://scripts/signal_cache.gd")
+        check("signal_cache.gd loads", signal_cache_script != null)
+
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
 
@@ -764,10 +767,14 @@ func _test_signal_log_manager() -> void:
         print("\n[ Signal log manager ]")
 
         var signal_log_manager = _get_autoload("SignalLogManager")
+        var inventory_manager = _get_autoload("InventoryManager")
         check("SignalLogManager autoload exists", signal_log_manager != null)
-        if not signal_log_manager:
+        check("InventoryManager autoload exists for signal log test", inventory_manager != null)
+        if not signal_log_manager or not inventory_manager:
                 return
 
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
         signal_log_manager.reset_logs()
         check("signal logs start empty", signal_log_manager.get_latest_message().is_empty())
 
@@ -778,12 +785,34 @@ func _test_signal_log_manager() -> void:
         check("signal log unlocks 25 milestone", signal_log_manager.is_log_unlocked("signal_25"))
         check("signal log unlocks 50 milestone", signal_log_manager.is_log_unlocked("signal_50"))
         check("signal log latest message is visible", signal_log_manager.get_latest_message().contains("Radio:"), signal_log_manager.get_latest_message())
+        check("signal log spawns cache", _find_signal_cache("signal_25") != null)
+
+        var cache = _find_signal_cache("signal_25")
+        if cache:
+                inventory_manager.resources["iron"] = 0
+                inventory_manager.resources["energy"] = 0
+                check("signal cache can be collected", cache.collect())
+                check("signal cache grants iron", inventory_manager.resources.get("iron", -1) == 12)
+                check("signal cache grants energy", inventory_manager.resources.get("energy", -1) == 3)
+                check("signal cache records collected state", signal_log_manager.is_cache_collected("signal_25"))
+
+        signal_log_manager.reset_logs()
+        var player := Node3D.new()
+        player.name = "SignalCacheTestPlayer"
+        player.add_to_group("player")
+        player.position = Vector3.ZERO
+        current_scene.add_child(player)
+        signal_log_manager.register_signal_progress(25.0)
+        check("signal cache hint shows distance", signal_log_manager.get_cache_hint().contains("Cache:"), signal_log_manager.get_cache_hint())
+        player.free()
 
         var data: Dictionary = signal_log_manager.capture_save_data()
         signal_log_manager.reset_logs()
         signal_log_manager.apply_save_data(data)
-        check("signal log save restores 50 milestone", signal_log_manager.is_log_unlocked("signal_50"))
+        check("signal log save restores 25 milestone", signal_log_manager.is_log_unlocked("signal_25"))
         signal_log_manager.reset_logs()
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["energy"] = old_energy
 
 
 func _test_signal_beacon() -> void:
@@ -1095,8 +1124,8 @@ func _test_resource_scanner() -> void:
         check("scanner filters selected resource type", scanner.nearest_resource == null)
 
         scanner.queue_free()
-        resource.queue_free()
-        player.queue_free()
+        resource.free()
+        player.free()
 
 
 func _test_objective_tracker() -> void:
@@ -1105,10 +1134,12 @@ func _test_objective_tracker() -> void:
         var objective_script = load("res://scripts/objective_tracker.gd")
         var game_manager = _get_autoload("GameManager")
         var inventory_manager = _get_autoload("InventoryManager")
+        var signal_log_manager = _get_autoload("SignalLogManager")
         check("objective_tracker.gd loads for objective test", objective_script != null)
         check("GameManager autoload exists for objective test", game_manager != null)
         check("InventoryManager autoload exists", inventory_manager != null)
-        if not objective_script or not game_manager or not inventory_manager:
+        check("SignalLogManager autoload exists for objective test", signal_log_manager != null)
+        if not objective_script or not game_manager or not inventory_manager or not signal_log_manager:
                 return
 
         var old_is_night: bool = game_manager.is_night
@@ -1117,6 +1148,7 @@ func _test_objective_tracker() -> void:
         var old_iron: int = inventory_manager.resources.get("iron", 0)
         var old_void: int = inventory_manager.resources.get("void_crystal", 0)
         var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+        var old_signal_logs: Dictionary = signal_log_manager.capture_save_data()
         game_manager.is_night = false
         game_manager.enemies_alive = 0
         game_manager.base_health = game_manager.MAX_BASE_HEALTH
@@ -1147,7 +1179,19 @@ func _test_objective_tracker() -> void:
         var gather_repair_objective: String = tracker.get_objective_text()
         check("objective asks for structure repair resources", gather_repair_objective.contains("structure repair"), gather_repair_objective)
 
-        damaged_structure.queue_free()
+        damaged_structure.free()
+        signal_log_manager.reset_logs()
+        var player := Node3D.new()
+        player.name = "ObjectiveSignalCachePlayer"
+        player.add_to_group("player")
+        player.position = Vector3.ZERO
+        current_scene.add_child(player)
+        signal_log_manager.register_signal_progress(25.0)
+        var cache_objective: String = tracker.get_objective_text()
+        check("objective asks to locate signal cache", cache_objective.contains("signal cache"), cache_objective)
+        player.free()
+        signal_log_manager.apply_save_data(old_signal_logs)
+
         tracker.queue_free()
         game_manager.is_night = old_is_night
         game_manager.enemies_alive = old_enemies_alive
@@ -1179,6 +1223,14 @@ func _save_data_has_build(data: Dictionary, build_id: String) -> bool:
                 if typeof(item) == TYPE_DICTIONARY and str(item.get("build_id", "")) == build_id:
                         return true
         return false
+
+
+func _find_signal_cache(cache_id: String) -> Node:
+        for cache in get_nodes_in_group("signal_caches"):
+                var cache_node := cache as Node
+                if cache_node and is_instance_valid(cache_node) and not cache_node.is_queued_for_deletion() and str(cache_node.get("cache_id")) == cache_id:
+                        return cache_node
+        return null
 
 
 func _ensure_current_scene() -> void:

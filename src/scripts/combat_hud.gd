@@ -84,6 +84,8 @@ func _ready() -> void:
 		SaveManager.save_status_changed.connect(_on_save_status_changed)
 	if SignalLogManager:
 		SignalLogManager.radio_log_unlocked.connect(_on_radio_log_unlocked)
+		SignalLogManager.signal_cache_spawned.connect(_on_signal_cache_changed)
+		SignalLogManager.signal_cache_collected.connect(_on_signal_cache_changed)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -149,6 +151,11 @@ func _on_save_status_changed(message: String) -> void:
 
 func _on_radio_log_unlocked(_log_id: String, _message: String) -> void:
 	_refresh_radio_log()
+
+
+func _on_signal_cache_changed(_cache_id: String) -> void:
+	_refresh_radio_log()
+	_refresh_objective_hint()
 
 
 func _refresh() -> void:
@@ -302,4 +309,11 @@ func get_signal_hint() -> String:
 func get_radio_log_text() -> String:
 	if not SignalLogManager:
 		return ""
-	return SignalLogManager.get_latest_message()
+	var parts: Array[String] = []
+	var latest_message: String = SignalLogManager.get_latest_message()
+	if not latest_message.is_empty():
+		parts.append(latest_message)
+	var cache_hint: String = SignalLogManager.get_cache_hint()
+	if not cache_hint.is_empty():
+		parts.append(cache_hint)
+	return "\n".join(parts)
