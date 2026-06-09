@@ -81,6 +81,39 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Death Drop Recovery Slice
+
+- Added recoverable death resource drops:
+  - `DeathDropManager` autoload removes about half of carried resources on player death.
+  - A single active `DeathDrop` crate spawns at the death position.
+  - If the player dies again before recovery, the old payload merges into the new drop instead of leaving multiple confusing packs.
+  - Walking into the crate restores the dropped payload through `InventoryManager`.
+- Integrated with player death:
+  - `player.gd` now records a death drop before emitting `player_died` and starting the normal respawn delay.
+- Expanded Combat HUD and Objective Tracker:
+  - HUD shows a `Drop:` distance/direction hint only while a death drop is active.
+  - Objective Tracker guides recovery after urgent defense/base/structure repair states.
+- Expanded SaveManager:
+  - Active death drop payload and position are saved/restored with `F6/F7`.
+- Added automated coverage for drop creation, inventory loss/restoration, HUD hint, objective priority, direct manager save/load, and SaveManager persistence.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 281 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+
+---
+
 ## 2026-06-09 - Extraction Holdout Slice
 
 - Added an Extraction Holdout finale state to `SignalLogManager`:

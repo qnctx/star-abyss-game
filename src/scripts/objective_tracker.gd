@@ -33,6 +33,9 @@ func _ready() -> void:
 	if SignalLogManager:
 		SignalLogManager.extraction_holdout_started.connect(_on_extraction_changed)
 		SignalLogManager.extraction_holdout_completed.connect(_refresh)
+	if DeathDropManager:
+		DeathDropManager.death_drop_spawned.connect(_refresh)
+		DeathDropManager.death_drop_collected.connect(_refresh)
 	set_process(true)
 	_refresh()
 
@@ -71,6 +74,10 @@ func get_objective_text() -> String:
 		if InventoryManager and InventoryManager.has_resources(STRUCTURE_REPAIR_COST):
 			return "Objective: Repair damaged structure (B, R)"
 		return "Objective: Gather %s for structure repair" % get_missing_resources_text(STRUCTURE_REPAIR_COST)
+
+	if DeathDropManager and DeathDropManager.has_active_drop():
+		var drop_hint := DeathDropManager.get_drop_hint()
+		return "Objective: Recover dropped resources | %s" % drop_hint if not drop_hint.is_empty() else "Objective: Recover dropped resources"
 
 	if _active_signal_cache_count() > 0:
 		var cache_hint := SignalLogManager.get_cache_hint() if SignalLogManager else ""

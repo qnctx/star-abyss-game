@@ -17,6 +17,7 @@ func _run() -> void:
 
         _test_world_generator()
         _test_player_oxygen()
+        _test_death_drop_manager()
         _test_zone_manager()
         _test_turret_logic()
         _test_slow_field()
@@ -127,6 +128,66 @@ func _test_player_oxygen() -> void:
         player.refill_oxygen()
         check_nearly(player.current_oxygen, 180.0, 0.01, "refill restores oxygen")
         main.free()
+
+
+func _test_death_drop_manager() -> void:
+        print("\n[ Death drop manager ]")
+
+        var death_drop_manager = _get_autoload("DeathDropManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        var combat_hud_script = load("res://scripts/combat_hud.gd")
+        var objective_script = load("res://scripts/objective_tracker.gd")
+        check("DeathDropManager autoload exists", death_drop_manager != null)
+        check("InventoryManager autoload exists for death drop test", inventory_manager != null)
+        check("combat_hud.gd loads for death drop test", combat_hud_script != null)
+        check("objective_tracker.gd loads for death drop test", objective_script != null)
+        if not death_drop_manager or not inventory_manager or not combat_hud_script or not objective_script:
+                return
+
+        var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
+        death_drop_manager.reset_drop()
+        inventory_manager.resources["iron"] = 5
+        inventory_manager.resources["energy"] = 2
+        inventory_manager.resources["blueprint"] = 1
+
+        var player := Node3D.new()
+        player.name = "DeathDropTestPlayer"
+        player.add_to_group("player")
+        player.position = Vector3(12.0, 0.0, -4.0)
+        current_scene.add_child(player)
+
+        check("death drop records player death", death_drop_manager.record_player_death(player))
+        check("death drop becomes active", death_drop_manager.has_active_drop())
+        check("death drop removes half iron", inventory_manager.resources.get("iron", -1) == 3)
+        check("death drop removes half energy", inventory_manager.resources.get("energy", -1) == 1)
+        check("death drop removes single blueprint", inventory_manager.resources.get("blueprint", -1) == 0)
+        check("death drop node spawns", get_nodes_in_group("death_drops").size() >= 1)
+        check("death drop hint shows recovery", death_drop_manager.get_drop_hint().contains("Drop:"), death_drop_manager.get_drop_hint())
+
+        var combat_hud = combat_hud_script.new()
+        current_scene.add_child(combat_hud)
+        check("combat HUD shows death drop hint", combat_hud.get_death_drop_text().contains("Drop:"), combat_hud.get_death_drop_text())
+
+        var tracker = objective_script.new()
+        current_scene.add_child(tracker)
+        check("objective asks to recover death drop", tracker.get_objective_text().contains("Recover dropped resources"), tracker.get_objective_text())
+
+        var save_data: Dictionary = death_drop_manager.capture_save_data()
+        death_drop_manager.reset_drop()
+        death_drop_manager.apply_save_data(save_data)
+        check("death drop save restores active drop", death_drop_manager.has_active_drop())
+
+        check("death drop can be collected", death_drop_manager.collect_active_drop())
+        check("death drop restores iron", inventory_manager.resources.get("iron", -1) == 5)
+        check("death drop restores energy", inventory_manager.resources.get("energy", -1) == 2)
+        check("death drop restores blueprint", inventory_manager.resources.get("blueprint", -1) == 1)
+        check("death drop clears after collect", not death_drop_manager.has_active_drop())
+
+        tracker.queue_free()
+        combat_hud.queue_free()
+        player.free()
+        death_drop_manager.reset_drop()
+        inventory_manager.resources = old_resources
 
 
 func _test_zone_manager() -> void:
@@ -293,6 +354,12 @@ func _test_build_and_combat_ui() -> void:
 
         var signal_cache_script = load("res://scripts/signal_cache.gd")
         check("signal_cache.gd loads", signal_cache_script != null)
+
+        var death_drop_manager_script = load("res://scripts/death_drop_manager.gd")
+        check("death_drop_manager.gd loads", death_drop_manager_script != null)
+
+        var death_drop_script = load("res://scripts/death_drop.gd")
+        check("death_drop.gd loads", death_drop_script != null)
 
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
@@ -949,6 +1016,7 @@ func _test_save_manager() -> void:
         var tech_manager = _get_autoload("TechManager")
         var game_manager = _get_autoload("GameManager")
         var signal_log_manager = _get_autoload("SignalLogManager")
+        var death_drop_manager = _get_autoload("DeathDropManager")
         var turret_scene = load("res://scenes/turret.tscn")
         var enemy_scene = load("res://scenes/enemy.tscn")
         var signal_script = load("res://scripts/signal_beacon.gd")
@@ -957,10 +1025,11 @@ func _test_save_manager() -> void:
         check("TechManager autoload exists for save test", tech_manager != null)
         check("GameManager autoload exists for save test", game_manager != null)
         check("SignalLogManager autoload exists for save test", signal_log_manager != null)
+        check("DeathDropManager autoload exists for save test", death_drop_manager != null)
         check("turret scene loads for save test", turret_scene != null)
         check("enemy scene loads for save test", enemy_scene != null)
         check("signal_beacon.gd loads for save test", signal_script != null)
-        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not signal_log_manager or not turret_scene or not enemy_scene or not signal_script:
+        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not signal_log_manager or not death_drop_manager or not turret_scene or not enemy_scene or not signal_script:
                 return
 
         var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
@@ -974,6 +1043,7 @@ func _test_save_manager() -> void:
         var old_phase_time: float = game_manager.phase_time_remaining
         var old_direction: String = game_manager.last_wave_direction
         var old_signal_logs: Dictionary = signal_log_manager.capture_save_data()
+        var old_death_drop: Dictionary = death_drop_manager.capture_save_data()
 
         for existing_structure in get_nodes_in_group("built_structures"):
                 if existing_structure and is_instance_valid(existing_structure):
@@ -996,6 +1066,10 @@ func _test_save_manager() -> void:
         game_manager.last_wave_direction = "NE"
         signal_log_manager.reset_logs()
         signal_log_manager.register_signal_progress(100.0)
+        death_drop_manager.apply_save_data({
+                "payload": {"iron": 2, "energy": 1},
+                "position": [8.0, 0.75, -3.0]
+        })
 
         var turret = turret_scene.instantiate()
         turret.add_to_group("built_structures")
@@ -1043,12 +1117,15 @@ func _test_save_manager() -> void:
         check("save data captures signal structures", _save_data_has_build(data, "signal_beacon"))
         check("save data captures signal logs", data.has("signal_logs"))
         check("save data captures extraction holdout", bool(data["signal_logs"].get("extraction_holdout_active", false)))
+        var saved_death_payload: Dictionary = data["death_drop"].get("payload", {})
+        check("save data captures death drop", saved_death_payload.has("iron"))
         check("save data captures active enemies", (data["enemies"] as Array).size() >= 1)
 
         inventory_manager.resources["iron"] = 0
         inventory_manager.resources["blueprint"] = 0
         tech_manager.unlocked["shield_generator"] = false
         signal_log_manager.reset_logs()
+        death_drop_manager.reset_drop()
         game_manager.base_health = 10.0
         game_manager.enemies_alive = 0
         turret.queue_free()
@@ -1061,6 +1138,7 @@ func _test_save_manager() -> void:
         check("load restores shield unlock", bool(tech_manager.unlocked.get("shield_generator", false)))
         check("load restores signal log milestone", signal_log_manager.is_log_unlocked("signal_100"))
         check("load restores extraction holdout", signal_log_manager.is_extraction_active())
+        check("load restores death drop", death_drop_manager.has_active_drop())
         check_nearly(game_manager.base_health, 55.0, 0.01, "load restores base health")
         check("load restores wave number", game_manager.wave_number == 4)
         check("load restores enemy count", game_manager.enemies_alive == 1)
@@ -1115,6 +1193,7 @@ func _test_save_manager() -> void:
         game_manager.phase_time_remaining = old_phase_time
         game_manager.last_wave_direction = old_direction
         signal_log_manager.apply_save_data(old_signal_logs)
+        death_drop_manager.apply_save_data(old_death_drop)
 
 
 func _test_resource_scanner() -> void:

@@ -179,6 +179,8 @@ func _physics_process(delta):
 
 func die():
 	is_dead = true
+	if DeathDropManager:
+		DeathDropManager.record_player_death(self)
 	player_died.emit()
 	# Respawn after 2 seconds
 	await get_tree().create_timer(2.0).timeout

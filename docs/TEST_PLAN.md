@@ -18,6 +18,21 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 6. Walk over uneven terrain and slopes; the camera should follow terrain height.
 7. Walk around rocks and zone entrances; if a collision edge catches the player, movement should recover.
 
+## Death Drop
+
+1. Collect several resource types, preferably including `iron`, `energy`, and `blueprint`.
+2. Move away from base and let O2 reach zero.
+3. Confirm the player dies, then respawns after the normal delay.
+4. Confirm about half of carried resources are removed from inventory.
+5. Confirm the HUD shows a `Drop:` direction/distance recovery hint.
+6. Confirm the Objective line asks to recover dropped resources when there is no more urgent defense/repair objective.
+7. Follow the `Drop:` hint to the orange crate.
+8. Walk into the crate.
+9. Confirm dropped resources return to inventory and the crate disappears.
+10. Repeat death before collecting the previous drop.
+11. Confirm the new death drop merges with the previous lost resources rather than leaving multiple confusing packs.
+12. Press `F6`, then `F7`, and confirm an active death drop remains recoverable after load.
+
 ## Build Mode
 
 1. Press `B` to enter build mode.

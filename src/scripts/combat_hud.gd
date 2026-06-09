@@ -11,6 +11,7 @@ var _objective_label: Label
 var _signal_label: Label
 var _save_status_label: Label
 var _radio_label: Label
+var _death_drop_label: Label
 var _save_status_time_remaining := 0.0
 
 
@@ -68,6 +69,13 @@ func _ready() -> void:
 	_radio_label.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
 	add_child(_radio_label)
 
+	_death_drop_label = Label.new()
+	_death_drop_label.position = Vector2(10, 462)
+	_death_drop_label.size = Vector2(920, 30)
+	_death_drop_label.add_theme_font_size_override("font_size", 15)
+	_death_drop_label.add_theme_color_override("font_color", Color(1.0, 0.68, 0.35))
+	add_child(_death_drop_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -88,6 +96,9 @@ func _ready() -> void:
 		SignalLogManager.signal_cache_collected.connect(_on_signal_cache_changed)
 		SignalLogManager.extraction_holdout_started.connect(_on_extraction_changed)
 		SignalLogManager.extraction_holdout_completed.connect(_on_extraction_complete)
+	if DeathDropManager:
+		DeathDropManager.death_drop_spawned.connect(_on_death_drop_changed)
+		DeathDropManager.death_drop_collected.connect(_on_death_drop_changed)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -102,6 +113,7 @@ func _process(_delta: float) -> void:
 	_refresh_scanner_hint()
 	_refresh_signal_hint()
 	_refresh_radio_log()
+	_refresh_death_drop_hint()
 	if _save_status_time_remaining > 0.0:
 		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
 		if is_zero_approx(_save_status_time_remaining):
@@ -170,6 +182,11 @@ func _on_extraction_complete() -> void:
 	_refresh_objective_hint()
 
 
+func _on_death_drop_changed() -> void:
+	_refresh_death_drop_hint()
+	_refresh_objective_hint()
+
+
 func _refresh() -> void:
 	if not GameManager:
 		return
@@ -189,6 +206,7 @@ func _refresh() -> void:
 	_refresh_base_hint()
 	_refresh_scanner_hint()
 	_refresh_objective_hint()
+	_refresh_death_drop_hint()
 
 
 func _refresh_build_hint() -> void:
@@ -245,6 +263,10 @@ func _refresh_signal_hint() -> void:
 
 func _refresh_radio_log() -> void:
 	_radio_label.text = get_radio_log_text()
+
+
+func _refresh_death_drop_hint() -> void:
+	_death_drop_label.text = get_death_drop_text()
 
 
 func get_structure_damage_hint() -> String:
@@ -336,3 +358,9 @@ func get_radio_log_text() -> String:
 	if not cache_hint.is_empty():
 		parts.append(cache_hint)
 	return "\n".join(parts)
+
+
+func get_death_drop_text() -> String:
+	if not DeathDropManager:
+		return ""
+	return DeathDropManager.get_drop_hint()

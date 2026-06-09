@@ -77,6 +77,7 @@ func capture_save_data() -> Dictionary:
 		"inventory": InventoryManager.resources.duplicate(true) if InventoryManager else {},
 		"tech": TechManager.unlocked.duplicate(true) if TechManager else {},
 		"signal_logs": SignalLogManager.capture_save_data() if SignalLogManager else {},
+		"death_drop": DeathDropManager.capture_save_data() if DeathDropManager else {},
 		"game": _capture_game_state(),
 		"structures": _capture_structures(),
 		"enemies": _capture_enemies()
@@ -90,6 +91,7 @@ func apply_save_data(data: Dictionary) -> bool:
 	_apply_inventory(data.get("inventory", {}))
 	_apply_tech(data.get("tech", {}))
 	_apply_signal_logs(data.get("signal_logs", {}))
+	_apply_death_drop(data.get("death_drop", {}))
 	_restore_structures(data.get("structures", []))
 	_sync_signal_logs_from_structures()
 	var restored_enemy_count := _restore_enemies(data.get("enemies", []))
@@ -192,6 +194,11 @@ func _apply_tech(data: Variant) -> void:
 func _apply_signal_logs(data: Variant) -> void:
 	if SignalLogManager:
 		SignalLogManager.apply_save_data(data)
+
+
+func _apply_death_drop(data: Variant) -> void:
+	if DeathDropManager:
+		DeathDropManager.apply_save_data(data)
 
 
 func _apply_game_state(data: Variant, restored_enemy_count: int = 0) -> void:
@@ -315,6 +322,8 @@ func _clear_runtime_nodes() -> void:
 	for structure in get_tree().get_nodes_in_group("built_structures"):
 		if structure and is_instance_valid(structure):
 			structure.free()
+	if DeathDropManager:
+		DeathDropManager.reset_drop()
 
 
 func _get_structure_build_id(structure: Node) -> String:

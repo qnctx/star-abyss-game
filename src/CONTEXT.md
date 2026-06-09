@@ -21,7 +21,33 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Behaviors**:
   - Oxygen drains based on movement state (sprint vs normal) and zone pressure
   - Teleports between base and zone beacons
+  - Calls `DeathDropManager.record_player_death(self)` before emitting `player_died`
   - Respawns at base after 2s death timer
+
+### Death Drop Manager (死亡资源掉落)
+- **Type**: `Node` autoload
+- **Script**: `scripts/death_drop_manager.gd`
+- **Concept**: Recoverable penalty for O2/death risk. Death removes roughly half of each carried resource type and spawns one recoverable crate.
+- **State**:
+  - `active_payload`
+  - `active_position`
+- **Signals**: `death_drop_spawned()`, `death_drop_collected()`
+- **Behavior**:
+  - `record_player_death(player)` removes resources from `InventoryManager`, merges with any existing uncollected drop, and spawns a new `DeathDrop` at the latest death position.
+  - `collect_active_drop()` returns the payload to `InventoryManager` and clears the active crate.
+  - `get_drop_hint()` reports distance/direction and payload text for HUD/Objective guidance.
+  - `capture_save_data()` / `apply_save_data()` persist active drop payload and position.
+- **HUD/Objective**:
+  - `CombatHUD` shows a `Drop:` hint only while a death drop is active.
+  - `ObjectiveTracker` prioritizes recovery after urgent night/base/structure repair states.
+
+### Death Drop (死亡掉落包)
+- **Type**: `Area3D`
+- **Script**: `scripts/death_drop.gd`
+- **Groups**: `death_drops`
+- **Behavior**:
+  - Displays a small orange recoverable crate.
+  - Player collision calls `DeathDropManager.collect_active_drop()`.
 
 ### Enemy (敌人)
 - **Type**: `CharacterBody3D`
@@ -192,6 +218,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
   - Signal radio logs, collected Signal Cache state, and Extraction Holdout state from `SignalLogManager`
+  - Active Death Drop payload and position from `DeathDropManager`
   - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
   - Clears current enemies and built structures before restoring saved runtime nodes.
@@ -378,6 +405,8 @@ src/
 │   ├── game_manager.gd      # Day/night, wave spawning
 │   ├── base_interaction.gd   # Base repair input and night test shortcut
 │   ├── player.gd            # Movement, oxygen, death
+│   ├── death_drop_manager.gd # Death penalty resource drop/recovery state
+│   ├── death_drop.gd         # Recoverable death crate
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module
