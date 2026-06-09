@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://scripts/weapon_hud.gd" id="13_weapon_hud"]
 [ext_resource type="Script" path="res://scripts/serum_ui.gd" id="15_serum_ui"]
 [ext_resource type="Script" path="res://scripts/teleport_manager.gd" id="16_teleport_manager"]
-[ext_resource type="Script" path="res://scripts/world_generator.gd" id="17_world_generator"]
 [ext_resource type="Script" path="res://scripts/build_manager.gd" id="18_build_manager"]
 [ext_resource type="Script" path="res://scripts/combat_hud.gd" id="19_combat_hud"]
 

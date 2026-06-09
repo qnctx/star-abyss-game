@@ -175,3 +175,23 @@ Build preview follow-up:
 - Changed turret preview placement from a mouse `Y=0` plane hit to a player-forward terrain sample.
 - Preview now sits at terrain height instead of floating above a flat placement plane.
 - Preview colors now mean: green = placeable, yellow = valid position but missing resources, red = invalid position.
+
+---
+
+## 2026-06-09 - Prototype Cleanup Slice
+
+- Removed obsolete placeholder/test scripts: `hello_test.gd`, `test_project.gd`, `system_test.gd`.
+- Removed unused prototype scripts: `terrain_detail.gd`, `teleport_beacon.gd`, `forge_trigger.gd`.
+- Removed duplicate UI scenes no longer instanced by `main.tscn`: `oxygen_ui.tscn`, `serum_ui.tscn`.
+- Removed unused material resources now generated in code: `ground_material.tres`, `rock_material.tres`, `crystal_material.tres`.
+- Archived historical sprint task/spec docs under `docs/archive/`.
+- Removed unused `world_generator.gd` ExtResource from `main.tscn`; `WorldGenerator` remains an autoload.
+- Updated `src/CONTEXT.md` to reflect current direct-HUD setup.
+
+Validation plan:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```

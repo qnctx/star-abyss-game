@@ -78,7 +78,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### Oxygen System
 - **Managed by**: `Player` script (direct property `current_oxygen`)
-- **UI component**: `scripts/oxygen_ui.gd` + `scenes/ui/oxygen_ui.tscn`
+- **UI component**: `scripts/oxygen_ui.gd` attached directly in `scenes/main.tscn`
 - **Concept**: Countdown survival resource. Starts at 180s. Drains at different rates:
   - Normal movement: ~0.556/s (180s total)
   - Sprinting: ~0.778/s (~130s total)
@@ -193,7 +193,7 @@ src/
 │   ├── projectile.tscn / projectile_bolt.tscn / player_projectile.tscn
 │   ├── resource_node.tscn
 │   ├── base_pod.tscn
-│   └── ui/ (oxygen_ui, forge_ui, weapon_hud, etc.)
+│   └── ui/ (forge_ui scene; other HUDs are attached directly in main.tscn)
 └── project.godot
 ```
 
