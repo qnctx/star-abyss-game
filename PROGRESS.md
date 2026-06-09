@@ -295,6 +295,42 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Structure Repair Slice
+
+- Added structure HP metadata for newly placed buildings:
+  - `structure_health`
+  - `structure_max_health`
+- Added build-mode structure repair:
+  - Press `R` near a damaged built structure under the preview.
+  - Repair costs `5 iron + 2 biomass`.
+  - Repair restores `35` structure HP up to max.
+- Added connected damage source:
+  - Enemy `base_reached` now sends a hit position.
+  - `GameManager` damages nearby built structures when base breach damage gets through shield.
+  - Shield absorption prevents structure splash damage when it absorbs the whole hit.
+- Combat HUD now includes `R Repair` and shows damaged structure HP/readiness when aimed at a repair target.
+- Added automated coverage for repair HUD status, repair resource cost, full-health rejection, and base-breach splash damage.
+- Updated input map, GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 128 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Building Status HUD Slice
 
 - Expanded `BuildManager` status APIs:

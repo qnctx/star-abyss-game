@@ -19,8 +19,12 @@ const MIN_STRUCTURE_DISTANCE: float = 2.0
 const RECYCLE_DISTANCE: float = 2.8
 const REFUND_RATE: float = 0.5
 const UPGRADE_DISTANCE: float = 2.8
+const REPAIR_DISTANCE: float = 2.8
 const MAX_UPGRADE_LEVEL: int = 3
 const TURRET_UPGRADE_COST := {"iron": 10, "energy": 5, "blueprint": 1}
+const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
+const STRUCTURE_MAX_HEALTH: float = 100.0
+const STRUCTURE_REPAIR_AMOUNT: float = 35.0
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
@@ -61,6 +65,9 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("upgrade_structure") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_U):
 		_try_upgrade_structure()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("repair_structure") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_R):
+		_try_repair_structure()
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
 		_select_building(BUILD_TURRET)
@@ -199,6 +206,7 @@ func _try_place_structure() -> void:
 	structure.add_to_group("built_structures")
 	structure.set_meta("build_cost", cost.duplicate())
 	structure.set_meta("build_label", get_selected_label())
+	ensure_structure_health(structure)
 
 
 func _try_recycle_structure() -> void:
@@ -228,6 +236,12 @@ func _try_upgrade_structure() -> void:
 		upgrade_structure(target)
 
 
+func _try_repair_structure() -> void:
+	var target := _find_repair_target(_placement_position)
+	if target:
+		repair_structure(target)
+
+
 func upgrade_structure(structure: Node3D) -> bool:
 	if not structure or not is_instance_valid(structure):
 		return false
@@ -243,6 +257,24 @@ func upgrade_structure(structure: Node3D) -> bool:
 
 	InventoryManager.consume_resources(TURRET_UPGRADE_COST)
 	structure.set_meta("upgrade_level", current_level + 1)
+	return true
+
+
+func repair_structure(structure: Node3D) -> bool:
+	if not structure or not is_instance_valid(structure):
+		return false
+	if not structure.is_in_group("built_structures"):
+		return false
+	ensure_structure_health(structure)
+	var max_health: float = float(structure.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+	var current_health: float = float(structure.get_meta("structure_health", max_health))
+	if current_health >= max_health:
+		return false
+	if not InventoryManager.has_resources(STRUCTURE_REPAIR_COST):
+		return false
+
+	InventoryManager.consume_resources(STRUCTURE_REPAIR_COST)
+	structure.set_meta("structure_health", minf(max_health, current_health + STRUCTURE_REPAIR_AMOUNT))
 	return true
 
 
@@ -274,6 +306,44 @@ func get_upgrade_status_text() -> String:
 		MAX_UPGRADE_LEVEL,
 		"READY" if afford else "NEED RES"
 	]
+
+
+func get_structure_action_status_text() -> String:
+	var repair_target := _find_repair_target(_placement_position)
+	if repair_target:
+		return get_repair_status_text()
+	return get_upgrade_status_text()
+
+
+func get_repair_status_text() -> String:
+	var target := _find_repair_target(_placement_position)
+	if not target:
+		return "Repair: aim damaged structure"
+	var current_health: float = float(target.get_meta("structure_health", STRUCTURE_MAX_HEALTH))
+	var max_health: float = float(target.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+	var afford := InventoryManager.has_resources(STRUCTURE_REPAIR_COST) if InventoryManager else false
+	return "Repair %s HP %d/%d | R %s" % [
+		get_structure_label(target),
+		roundi(current_health),
+		roundi(max_health),
+		"READY" if afford else "NEED RES"
+	]
+
+
+func get_repair_cost_text() -> String:
+	var parts: Array[String] = []
+	for resource_type in STRUCTURE_REPAIR_COST:
+		parts.append("%d %s" % [STRUCTURE_REPAIR_COST[resource_type], _resource_label(str(resource_type))])
+	return " + ".join(parts)
+
+
+func ensure_structure_health(structure: Node) -> void:
+	if not structure:
+		return
+	if not structure.has_meta("structure_max_health"):
+		structure.set_meta("structure_max_health", STRUCTURE_MAX_HEALTH)
+	if not structure.has_meta("structure_health"):
+		structure.set_meta("structure_health", float(structure.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH)))
 
 
 func get_structure_label(structure: Node) -> String:
@@ -369,6 +439,26 @@ func _find_upgrade_target(pos: Vector3) -> Node3D:
 		if not structure_node or not is_instance_valid(structure_node):
 			continue
 		if structure_node.get("damage") == null:
+			continue
+		var distance := structure_node.global_position.distance_to(pos)
+		if distance < nearest_distance:
+			nearest_distance = distance
+			nearest = structure_node
+	return nearest
+
+
+func _find_repair_target(pos: Vector3) -> Node3D:
+	var nearest: Node3D = null
+	var nearest_distance := REPAIR_DISTANCE
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node3D
+		if not structure_node or not is_instance_valid(structure_node):
+			continue
+		if not structure_node.has_meta("structure_health"):
+			continue
+		var max_health: float = float(structure_node.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
+		if current_health >= max_health:
 			continue
 		var distance := structure_node.global_position.distance_to(pos)
 		if distance < nearest_distance:

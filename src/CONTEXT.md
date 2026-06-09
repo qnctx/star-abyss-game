@@ -29,7 +29,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Hostile creature that pathfinds toward the player's base pod.
 - **States**: alive / dead (fires `enemy_died`, then queue_free)
 - **Key properties**: `speed`, `health`, `damage`, `attack_range`
-- **Signals**: `enemy_died`, `base_reached(damage: float)`
+- **Signals**: `enemy_died`, `base_reached(damage: float, hit_position: Vector3)`
 - **Scaling**:
   - Scout waves (every 3rd, unless elite/boss): 0.7x HP, 0.75x damage, 1.8x speed, smaller cyan visual
   - Tank waves (every 4th, unless scout/elite/boss): 2.8x HP, 1.7x damage, 0.7x speed, larger gold visual
@@ -149,6 +149,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Variants: Scout every 3rd wave, Tank every 4th, Elite every 5th, Boss every 10th; boss/elite take priority over scout/tank.
   - Spawns staggered with 1-3s delays
   - Next wave starts 5s after all enemies dead
+  - Enemies that breach the base also damage nearby built structures after shield absorption.
 - **Signals**: `night_started`, `day_started`, `wave_spawned(wave_number)`
 - **Manual test control**: `BaseInteraction` maps `N` to `GameManager.force_start_night()` so wave/base-defense checks can start without waiting for the full day timer.
 - **Warning UI**:
@@ -187,8 +188,14 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Max upgrade level is `3`.
   - Each level increases turret damage and fire rate.
   - `get_upgrade_status_text()` reports target level and `READY`/`NEED RES`/`MAX` status for HUD display.
+- **Repair controls**:
+  - `R` repairs the nearest damaged built structure under the preview.
+  - Structure repair costs `5 iron + 2 biomass`.
+  - Repair restores `35` HP up to the structure max.
+  - `get_repair_status_text()` reports target HP and resource readiness.
 - **Implementation notes**:
   - New structures store `build_cost` metadata when placed.
+  - New structures store `structure_health` and `structure_max_health` metadata when placed.
   - Upgraded structures store `upgrade_level` metadata.
   - Recycle ignores nodes that are not in `built_structures`.
   - `CombatHUD` renders build status as two rows during build mode to avoid overlong one-line hints.

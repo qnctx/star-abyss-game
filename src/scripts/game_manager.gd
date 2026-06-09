@@ -27,6 +27,8 @@ const ENEMIES_PER_WAVE_INCREMENT: int = 2
 const BASE_REPAIR_COST := {"iron": 10, "biomass": 5}
 const BASE_REPAIR_AMOUNT: float = 25.0
 const SHIELD_RECHARGE_RATE: float = 3.0
+const STRUCTURE_DAMAGE_RADIUS: float = 4.5
+const STRUCTURE_MAX_HEALTH: float = 100.0
 
 
 func _ready():
@@ -251,7 +253,7 @@ func _on_enemy_died():
 	enemies_alive_changed.emit(enemies_alive)
 
 
-func _on_base_reached(damage: float):
+func _on_base_reached(damage: float, hit_position: Vector3 = Vector3.ZERO):
 	var remaining_damage := damage
 	if base_shield > 0.0:
 		var absorbed := minf(base_shield, remaining_damage)
@@ -261,10 +263,45 @@ func _on_base_reached(damage: float):
 	if remaining_damage <= 0.0:
 		return
 
+	var impact_position := hit_position
+	if impact_position == Vector3.ZERO and WorldGenerator:
+		impact_position = WorldGenerator.base_position
+	_damage_nearby_structures(impact_position, remaining_damage)
 	base_health = maxf(0.0, base_health - remaining_damage)
 	base_health_changed.emit(base_health)
 	if base_health <= 0:
 		game_over()
+
+
+func _damage_nearby_structures(center: Vector3, damage: float) -> int:
+	var damaged_count := 0
+	var scene := get_tree().current_scene
+	if not scene:
+		return damaged_count
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node3D
+		if not structure_node or not is_instance_valid(structure_node):
+			continue
+		if structure_node.global_position.distance_to(center) > STRUCTURE_DAMAGE_RADIUS:
+			continue
+		_ensure_structure_health(structure_node)
+		var max_health: float = float(structure_node.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
+		var next_health: float = maxf(0.0, current_health - damage)
+		structure_node.set_meta("structure_health", next_health)
+		damaged_count += 1
+		if next_health <= 0.0:
+			structure_node.queue_free()
+	return damaged_count
+
+
+func _ensure_structure_health(structure: Node) -> void:
+	if not structure:
+		return
+	if not structure.has_meta("structure_max_health"):
+		structure.set_meta("structure_max_health", STRUCTURE_MAX_HEALTH)
+	if not structure.has_meta("structure_health"):
+		structure.set_meta("structure_health", float(structure.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH)))
 
 
 func can_repair_base() -> bool:

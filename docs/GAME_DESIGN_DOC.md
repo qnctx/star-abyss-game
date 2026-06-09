@@ -29,6 +29,7 @@
 | 建筑回收 | 建造模式按 `X` 切换回收，返还约 50% 材料 | `build_manager.gd` |
 | 防御 | Turret 自动索敌射击，Shield Generator 先吸收基地伤害 | `turret.gd`, `shield_generator.gd` |
 | 建筑升级 | 建造模式按 `U` 消耗 energy/blueprint 升级炮塔 | `build_manager.gd`, `turret.gd` |
+| 建筑修理 | 敌人突破基地会损伤附近建筑，建造模式按 `R` 修理受损建筑 | `game_manager.gd`, `build_manager.gd` |
 | 建筑状态提示 | HUD 显示回收目标/返还和炮塔升级等级/资源状态 | `build_manager.gd`, `combat_hud.gd` |
 | 控场 | Slow Field 半径内降低敌人移动速度 | `slow_field.gd`, `enemy.gd` |
 | 氧气补给 | O2 Station 在半径内给玩家补氧 | `o2_station.gd` |
@@ -59,7 +60,7 @@
 | Done | 炮塔升级 Turret Upgrade | 让 energy 和 blueprint 进入防守成长 | 建造模式下可升级炮塔 |
 | Done | 建筑状态提示 | 让升级等级/回收目标更清楚 | HUD 显示等级、目标、返还和 READY/MAX |
 | Done | 敌人类型扩展 | 增加防守策略差异 | Scout/Tank/Elite/Boss 波次可见且数值不同 |
-| P1 | 建筑修理扩展 | 让基地维护扩展到模块 | 受损建筑可维修 |
+| Done | 建筑修理扩展 | 让基地维护扩展到模块 | 敌人突破会伤建筑，建造模式可修理 |
 
 ### 0.4 当前手测入口
 

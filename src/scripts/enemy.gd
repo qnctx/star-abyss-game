@@ -10,7 +10,7 @@ var _has_died: bool = false
 var _slow_sources: Dictionary = {}
 
 signal enemy_died()
-signal base_reached(damage: float)
+signal base_reached(damage: float, hit_position: Vector3)
 
 
 func _ready():
@@ -28,7 +28,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	if global_position.distance_to(target_position) < attack_range:
-		base_reached.emit(damage)
+		base_reached.emit(damage, global_position)
 		die()
 
 

@@ -23,6 +23,7 @@ func _run() -> void:
         _test_build_and_combat_ui()
         _test_build_recycle()
         _test_structure_upgrade()
+        _test_structure_repair()
         _test_inventory_manager()
         _test_base_repair()
         _test_base_shield()
@@ -345,6 +346,77 @@ func _test_structure_upgrade() -> void:
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["energy"] = old_energy
         inventory_manager.resources["blueprint"] = old_blueprint
+
+
+func _test_structure_repair() -> void:
+        print("\n[ Structure repair ]")
+
+        var build_script = load("res://scripts/build_manager.gd")
+        var game_manager = _get_autoload("GameManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("build_manager.gd loads for repair test", build_script != null)
+        check("GameManager autoload exists", game_manager != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not build_script or not game_manager or not inventory_manager:
+                return
+
+        var old_health: float = game_manager.base_health
+        var old_shield: float = game_manager.base_shield
+        var old_max_shield: float = game_manager.max_base_shield
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+
+        inventory_manager.resources["iron"] = 5
+        inventory_manager.resources["biomass"] = 2
+
+        var build_manager = build_script.new()
+        current_scene.add_child(build_manager)
+
+        var structure := Node3D.new()
+        structure.add_to_group("built_structures")
+        structure.set_meta("build_label", "Turret")
+        structure.set_meta("structure_max_health", 100.0)
+        structure.set_meta("structure_health", 40.0)
+        current_scene.add_child(structure)
+
+        var repair_status: String = build_manager.get_repair_status_text()
+        check("repair status shows damaged target", repair_status.contains("Repair Turret HP 40/100"), repair_status)
+        check("repair status shows ready when funded", repair_status.contains("READY"), repair_status)
+
+        var repaired: bool = build_manager.repair_structure(structure)
+        check("repair_structure succeeds for damaged built structure", repaired)
+        check_nearly(float(structure.get_meta("structure_health", 0.0)), 75.0, 0.01, "repair restores structure HP")
+        check("structure repair consumes iron", inventory_manager.resources.get("iron", -1) == 0)
+        check("structure repair consumes biomass", inventory_manager.resources.get("biomass", -1) == 0)
+
+        structure.set_meta("structure_health", 100.0)
+        inventory_manager.resources["iron"] = 5
+        inventory_manager.resources["biomass"] = 2
+        check("repair_structure rejects full-health structure", not build_manager.repair_structure(structure))
+
+        var splash_target := Node3D.new()
+        splash_target.add_to_group("built_structures")
+        var impact_position := Vector3(20.0, 0.0, 20.0)
+        splash_target.position = impact_position
+        splash_target.set_meta("structure_max_health", 100.0)
+        splash_target.set_meta("structure_health", 100.0)
+        current_scene.add_child(splash_target)
+
+        game_manager.base_health = 100.0
+        game_manager.base_shield = 0.0
+        game_manager.max_base_shield = 0.0
+        game_manager._on_base_reached(20.0, impact_position)
+        check_nearly(float(splash_target.get_meta("structure_health", 0.0)), 80.0, 0.01, "base breach damages nearby structures")
+        check_nearly(game_manager.base_health, 80.0, 0.01, "base breach still damages base")
+
+        build_manager.queue_free()
+        structure.queue_free()
+        splash_target.queue_free()
+        game_manager.base_health = old_health
+        game_manager.base_shield = old_shield
+        game_manager.max_base_shield = old_max_shield
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["biomass"] = old_biomass
 
 
 func _test_base_repair() -> void:

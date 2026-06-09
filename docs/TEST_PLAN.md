@@ -34,9 +34,10 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 9. Press `6`; HUD should show `Slow Field`.
 10. Confirm the build HUD uses two rows and does not overlap the Base/Scanner HUD rows.
 11. Confirm the second row shows selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade target status.
-12. Press `X`; HUD should enter recycle mode.
-13. Press `X` again; HUD should return to build mode.
-14. Right-click or press `Esc` to leave build mode.
+12. Confirm the first row includes `R Repair`.
+13. Press `X`; HUD should enter recycle mode.
+14. Press `X` again; HUD should return to build mode.
+15. Right-click or press `Esc` to leave build mode.
 
 ## Building Recycle
 
@@ -65,6 +66,18 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Upgrade the same turret to level `3`.
 12. Confirm the HUD shows `MAX` when the turret cannot be upgraded further.
 13. During night, confirm the upgraded turret fires faster or kills enemies faster.
+
+## Building Repair
+
+1. Build at least one structure near the base.
+2. Press `N` to start night quickly.
+3. Let one enemy reach the base while the base shield is empty or depleted.
+4. Press `B` and move the preview near the damaged structure.
+5. Confirm the HUD shows `Repair <structure> HP current/max`.
+6. Collect at least `5 iron + 2 biomass`.
+7. Press `R`.
+8. Confirm the structure HP increases by about `35` and resources decrease.
+9. If the structure is full HP, press `R` again and confirm resources are not consumed.
 
 ## Turret Placement
 
