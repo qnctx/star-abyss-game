@@ -2,9 +2,20 @@ extends Control
 
 const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
 const SAVE_STATUS_DURATION := 2.5
+const INVENTORY_DISPLAY_ORDER := ["iron", "void_crystal", "biomass", "energy", "energy_core", "blueprint", "oxygen_canister"]
+const INVENTORY_DISPLAY_NAMES := {
+	"iron": "IRON",
+	"void_crystal": "CRYSTAL",
+	"biomass": "BIO",
+	"energy": "ENERGY",
+	"energy_core": "CORE",
+	"blueprint": "BP",
+	"oxygen_canister": "O2 KIT",
+}
 
 var _status_label: Label
 var _build_label: Label
+var _inventory_label: Label
 var _base_label: Label
 var _scanner_label: Label
 var _objective_label: Label
@@ -30,55 +41,62 @@ func _ready() -> void:
 	_build_label.add_theme_font_size_override("font_size", 16)
 	add_child(_build_label)
 
+	_inventory_label = Label.new()
+	_inventory_label.position = Vector2(10, 236)
+	_inventory_label.size = Vector2(920, 36)
+	_inventory_label.add_theme_font_size_override("font_size", 15)
+	_inventory_label.add_theme_color_override("font_color", Color(0.92, 0.97, 1.0))
+	add_child(_inventory_label)
+
 	_base_label = Label.new()
-	_base_label.position = Vector2(10, 236)
+	_base_label.position = Vector2(10, 278)
 	_base_label.size = Vector2(560, 42)
 	_base_label.add_theme_font_size_override("font_size", 16)
 	add_child(_base_label)
 
 	_scanner_label = Label.new()
-	_scanner_label.position = Vector2(10, 278)
+	_scanner_label.position = Vector2(10, 320)
 	_scanner_label.size = Vector2(560, 32)
 	_scanner_label.add_theme_font_size_override("font_size", 16)
 	add_child(_scanner_label)
 
 	_objective_label = Label.new()
-	_objective_label.position = Vector2(10, 314)
+	_objective_label.position = Vector2(10, 356)
 	_objective_label.size = Vector2(920, 36)
 	_objective_label.add_theme_font_size_override("font_size", 16)
 	_objective_label.add_theme_color_override("font_color", Color(1.0, 0.88, 0.45))
 	add_child(_objective_label)
 
 	_signal_label = Label.new()
-	_signal_label.position = Vector2(10, 350)
+	_signal_label.position = Vector2(10, 392)
 	_signal_label.size = Vector2(760, 30)
 	_signal_label.add_theme_font_size_override("font_size", 16)
 	_signal_label.add_theme_color_override("font_color", Color(0.5, 0.95, 0.8))
 	add_child(_signal_label)
 
 	_save_status_label = Label.new()
-	_save_status_label.position = Vector2(10, 382)
+	_save_status_label.position = Vector2(10, 424)
 	_save_status_label.size = Vector2(560, 30)
 	_save_status_label.add_theme_font_size_override("font_size", 16)
 	_save_status_label.add_theme_color_override("font_color", Color(0.55, 0.9, 1.0))
 	add_child(_save_status_label)
 
 	_radio_label = Label.new()
-	_radio_label.position = Vector2(10, 414)
+	_radio_label.position = Vector2(10, 456)
 	_radio_label.size = Vector2(920, 42)
 	_radio_label.add_theme_font_size_override("font_size", 15)
 	_radio_label.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
 	add_child(_radio_label)
 
 	_death_drop_label = Label.new()
-	_death_drop_label.position = Vector2(10, 462)
+	_death_drop_label.position = Vector2(10, 504)
 	_death_drop_label.size = Vector2(920, 30)
 	_death_drop_label.add_theme_font_size_override("font_size", 15)
 	_death_drop_label.add_theme_color_override("font_color", Color(1.0, 0.68, 0.35))
 	add_child(_death_drop_label)
 
 	_oxygen_supply_label = Label.new()
-	_oxygen_supply_label.position = Vector2(10, 494)
+	_oxygen_supply_label.position = Vector2(10, 536)
 	_oxygen_supply_label.size = Vector2(920, 30)
 	_oxygen_supply_label.add_theme_font_size_override("font_size", 15)
 	_oxygen_supply_label.add_theme_color_override("font_color", Color(0.68, 0.95, 1.0))
@@ -120,6 +138,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_refresh_build_hint()
+	_refresh_inventory_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
 	_refresh_signal_hint()
@@ -154,6 +173,7 @@ func _on_enemies_alive_changed(_count: int) -> void:
 
 
 func _on_resource_changed(_type: String, _amount: int) -> void:
+	_refresh_inventory_hint()
 	_refresh_build_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
@@ -224,6 +244,7 @@ func _refresh() -> void:
 		GameManager.last_wave_direction
 	]
 	_refresh_build_hint()
+	_refresh_inventory_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
 	_refresh_objective_hint()
@@ -252,6 +273,10 @@ func _refresh_build_hint() -> void:
 		]
 	else:
 		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | F6 Save F7 Load"
+
+
+func _refresh_inventory_hint() -> void:
+	_inventory_label.text = get_inventory_text()
 
 
 func _refresh_base_hint() -> void:
@@ -350,6 +375,24 @@ func _structure_label(structure: Node) -> String:
 
 func get_save_status_text() -> String:
 	return _save_status_label.text if _save_status_label else ""
+
+
+func get_inventory_text() -> String:
+	if not InventoryManager:
+		return "Inventory: unavailable"
+	var first_row: Array[String] = []
+	var second_row: Array[String] = []
+	for i in range(INVENTORY_DISPLAY_ORDER.size()):
+		var resource_type: String = str(INVENTORY_DISPLAY_ORDER[i])
+		var item: String = "%s %d" % [
+			str(INVENTORY_DISPLAY_NAMES.get(resource_type, resource_type.to_upper())),
+			int(InventoryManager.resources.get(resource_type, 0))
+		]
+		if i < 4:
+			first_row.append(item)
+		else:
+			second_row.append(item)
+	return "Inventory: %s\n%s" % [" | ".join(first_row), " | ".join(second_row)]
 
 
 func get_signal_hint() -> String:

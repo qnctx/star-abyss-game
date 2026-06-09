@@ -163,7 +163,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
   - Resource pickups are walk-over collection nodes with billboard labels: `IRON`, `BIO`, `CRYSTAL`, `CORE`, `BP`
-  - Scanner remains useful as navigation; current resource counts are shown by `ResourceHUD`.
+  - Scanner remains useful as navigation; current resource counts are shown by `CombatHUD`.
 
 ### Signal Beacon (信号台)
 - **Type**: `Node3D`
@@ -374,7 +374,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### Inventory / Resources
 - **Manager**: `scripts/inventory_manager.gd` (Autoload Node)
-- **HUD**: `scripts/resource_hud.gd` shows a top-right two-line inventory summary, including zero counts.
+- **HUD**: `scripts/combat_hud.gd` shows a visible two-line `Inventory:` summary in the left HUD flow, including zero counts.
 - **Concept**: Tracks resource counts across the whole game.
 - **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint, oxygen_canister
 - **Pickup rule**: Generated resource nodes are collected by walking into them; no key press is needed.

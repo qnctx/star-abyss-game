@@ -84,7 +84,7 @@ cd star-abyss-game/src
 ## 2026-06-09 - Ground Resource And Inventory HUD Slice
 
 - Responded to playtest feedback that collected iron/crystal counts were not visible and some pickups/debris appeared airborne.
-- Reworked `ResourceHUD` into a top-right two-line inventory summary:
+- Added a visible `CombatHUD` inventory summary:
   - Always shows `IRON`, `CRYSTAL`, `BIO`, `ENERGY`, `CORE`, `BP`, and `O2 KIT` counts.
   - Shows zero counts so the player does not need to infer inventory from Objective missing-resource text.
 - Improved early resource pickup reliability:
@@ -96,8 +96,8 @@ cd star-abyss-game/src
   - Drop nodes are now `queue_free()`d instead of immediately `free()`d, avoiding the Godot locked-object error when collection happens during a collision signal.
 - Clarified current design:
   - Resources are generated once with the world and do not randomly respawn after pickup yet.
-  - `G` Scanner remains a navigation tool for finding the nearest target type; inventory counts are shown by ResourceHUD.
-- Added automated coverage for ground resource placement, inventory HUD text, and safe Death Drop node cleanup.
+  - `G` Scanner remains a navigation tool for finding the nearest target type; inventory counts are shown by CombatHUD.
+- Added automated coverage for ground resource placement, ResourceHUD/CombatHUD inventory text, and safe Death Drop node cleanup.
 - Updated GDD, context docs, progress, and manual test plan.
 
 Validation:
@@ -112,7 +112,7 @@ codegraph status
 
 Results:
 
-- `test_runner.gd`: 318 passed, 0 failed.
+- `test_runner.gd`: 320 passed, 0 failed.
 - `test_standalone.gd`: 31 passed, 0 failed.
 - Main scene short startup: passed.
 - `git diff --check`: passed; Windows LF-to-CRLF warnings only.

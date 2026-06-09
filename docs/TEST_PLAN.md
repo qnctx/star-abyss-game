@@ -318,7 +318,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Confirm the displayed distance generally decreases.
 6. Confirm nearby resources have readable floating labels: `IRON`, `BIO`, `CRYSTAL`, or `CORE`.
 7. Walk into the targeted resource to auto-pick it up; no key press is needed.
-8. Confirm the top-right `Inventory:` HUD count increases for that resource.
+8. Confirm the left-side `Inventory:` HUD count increases for that resource.
 9. Confirm the scanner updates to another nearby resource/O2 Plant or says none is nearby.
 10. Cycle to `O2 plant`.
 11. Confirm the scanner points to a generated O2 Plant with an `O2` label when one is within range.

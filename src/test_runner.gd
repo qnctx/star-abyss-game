@@ -512,6 +512,17 @@ func _test_build_and_combat_ui() -> void:
         if combat_hud_script and save_manager:
                 var combat_hud = combat_hud_script.new()
                 current_scene.add_child(combat_hud)
+                var inventory_manager = _get_autoload("InventoryManager")
+                var old_iron: int = inventory_manager.resources.get("iron", 0) if inventory_manager else 0
+                var old_void: int = inventory_manager.resources.get("void_crystal", 0) if inventory_manager else 0
+                if inventory_manager:
+                        inventory_manager.resources["iron"] = 6
+                        inventory_manager.resources["void_crystal"] = 3
+                check("combat HUD shows inventory iron count", combat_hud.get_inventory_text().contains("IRON 6"), combat_hud.get_inventory_text())
+                check("combat HUD shows inventory crystal count", combat_hud.get_inventory_text().contains("CRYSTAL 3"), combat_hud.get_inventory_text())
+                if inventory_manager:
+                        inventory_manager.resources["iron"] = old_iron
+                        inventory_manager.resources["void_crystal"] = old_void
                 save_manager.save_status_changed.emit("Saved")
                 check("combat HUD shows save status", combat_hud.get_save_status_text().contains("Saved"), combat_hud.get_save_status_text())
                 combat_hud._process(combat_hud.SAVE_STATUS_DURATION)

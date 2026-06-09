@@ -45,13 +45,13 @@
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
 | 信号台/撤离线 | Signal Beacon 消耗 energy 推进求救信号进度，里程碑解锁 Radio Log/Signal Cache，100% 后进入撤离坚守倒计时 | `signal_beacon.gd`, `signal_log_manager.gd`, `signal_cache.gd`, `build_manager.gd` |
-| 资源/库存/生存扫描 | ResourceHUD 显示当前库存数量；Resource Scanner 显示最近目标资源或 O2 Plant 的距离/方向，`G` 切换类型；资源/O2 Plant 带浮动类型标签 | `resource_hud.gd`, `resource_scanner.gd`, `resource_node.gd`, `oxygen_plant.gd` |
+| 资源/库存/生存扫描 | CombatHUD 显示当前库存数量；Resource Scanner 显示最近目标资源或 O2 Plant 的距离/方向，`G` 切换类型；资源/O2 Plant 带浮动类型标签 | `combat_hud.gd`, `resource_scanner.gd`, `resource_node.gd`, `oxygen_plant.gd` |
 
 ### 0.2 当前 MVP 设计目标
 
 当前阶段不追求完整沙盒，而追求一个“能反复玩 10-15 分钟”的闭环：
 
-1. 玩家白天在地面采集基础资源，并通过右上角 Inventory 行确认库存数量。
+1. 玩家白天在地面采集基础资源，并通过左侧 HUD 的 Inventory 行确认库存数量。
 2. 野外 O2 Plant 和可制作 O2 Kit 给远距离探索提供临时续航。
 3. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
 4. 玩家选择建造路线：防御、氧气、护盾、能量。
