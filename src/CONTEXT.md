@@ -56,6 +56,16 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Unregisters that capacity if removed from the scene
   - Uses lightweight procedural meshes and a blue shield field visual
 
+### Solar Panel (太阳能板)
+- **Type**: `Node3D`
+- **Script**: `scripts/solar_panel.gd`
+- **Concept**: Tier 1 base power module that turns safe daytime into a useful preparation resource.
+- **Cost**: `18 iron + 6 biomass`
+- **Behaviors**:
+  - Generates `1 energy` every `5` seconds during daytime
+  - Pauses generation at night
+  - Adds to `InventoryManager.resources["energy"]`
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -131,7 +141,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 ### Inventory / Resources
 - **Manager**: `scripts/inventory_manager.gd` (Autoload Node)
 - **Concept**: Tracks count of 5 resource types across the whole game
-- **Resource types**: iron, void_crystal, biomass, energy_core, blueprint
+- **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint
 - **Signals**: `resource_changed(resource_type, amount)`
 - **Methods**: `add_resource()`, `has_resources(requirements)`, `consume_resources(requirements)`
 
@@ -199,6 +209,7 @@ src/
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module
+│   ├── solar_panel.gd         # Buildable daytime energy generator
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── zone_manager.gd       # Zone adaptation

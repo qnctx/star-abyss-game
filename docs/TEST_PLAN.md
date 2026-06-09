@@ -28,7 +28,9 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Red: invalid position.
 4. Press `1`; HUD should show `Turret`.
 5. Press `2`; HUD should show `O2 Station`.
-6. Right-click or press `Esc` to leave build mode.
+6. Press `3`; HUD should show `Shield Generator`.
+7. Press `4`; HUD should show `Solar Panel`.
+8. Right-click or press `Esc` to leave build mode.
 
 ## Turret Placement
 
@@ -59,6 +61,18 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 8. Let an enemy reach the base.
 9. Confirm shield decreases before Base HP decreases.
 10. Wait near the base and confirm shield slowly recharges while the generator exists.
+
+## Solar Panel
+
+1. Collect at least `18 iron + 6 biomass`.
+2. Press `B`, then `4`.
+3. Confirm the HUD says `Solar Panel`.
+4. Place the solar panel on green terrain.
+5. Confirm resources decrease.
+6. During daytime, wait about `5` seconds.
+7. Confirm the Resource HUD shows `energy` increasing.
+8. Press `N` to start night.
+9. Confirm `energy` stops increasing during night.
 
 ## Combat HUD
 

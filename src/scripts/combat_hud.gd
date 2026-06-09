@@ -15,7 +15,7 @@ func _ready() -> void:
 
 	_build_label = Label.new()
 	_build_label.position = Vector2(10, 158)
-	_build_label.size = Vector2(520, 48)
+	_build_label.size = Vector2(760, 48)
 	_build_label.add_theme_font_size_override("font_size", 16)
 	add_child(_build_label)
 
@@ -84,13 +84,13 @@ func _refresh_build_hint() -> void:
 	var build_manager := get_tree().current_scene.get_node_or_null("BuildManager") if get_tree().current_scene else null
 	if build_manager and build_manager.build_mode:
 		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
-		_build_label.text = "Build: 1 Turret / 2 O2 / 3 Shield | %s: %s | LMB place | %s" % [
+		_build_label.text = "Build: 1 Turret / 2 O2 / 3 Shield / 4 Solar | %s: %s | LMB place | %s" % [
 			build_manager.get_selected_label(),
 			build_manager.get_selected_cost_text(),
 			"READY" if afford else "NEED RESOURCES"
 		]
 	else:
-		_build_label.text = "Press B to build | 1 Turret, 2 O2, 3 Shield"
+		_build_label.text = "Press B to build | 1 Turret, 2 O2, 3 Shield, 4 Solar"
 
 
 func _refresh_base_hint() -> void:

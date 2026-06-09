@@ -117,17 +117,22 @@ func _test_inventory_logic() -> void:
                 "iron": 0,
                 "void_crystal": 0,
                 "biomass": 0,
+                "energy": 0,
                 "energy_core": 0,
                 "blueprint": 0
         }
 
         check("initial iron = 0", resources["iron"] == 0)
+        check("initial energy = 0", resources["energy"] == 0)
 
         resources["iron"] += 10
         check("add iron +10", resources["iron"] == 10)
 
         resources["void_crystal"] += 3
         check("add void crystal +3", resources["void_crystal"] == 3)
+
+        resources["energy"] += 2
+        check("add energy +2", resources["energy"] == 2)
 
         resources["iron"] -= 4
         check("consume iron 4", resources["iron"] == 6)

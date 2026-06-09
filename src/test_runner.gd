@@ -23,6 +23,7 @@ func _run() -> void:
         _test_inventory_manager()
         _test_base_repair()
         _test_base_shield()
+        _test_solar_panel_energy()
         _test_serum_recipes()
 
         print("\n========================================")
@@ -157,6 +158,7 @@ func _test_inventory_manager() -> void:
 
         var iron_count = inventory_manager.resources.get("iron", 0)
         check("initial iron is int", typeof(iron_count) == TYPE_INT, "count=%d" % iron_count)
+        check("energy resource exists", inventory_manager.resources.has("energy"))
 
         inventory_manager.add_resource("iron", 10)
         var after_add = inventory_manager.resources.get("iron", 0)
@@ -184,6 +186,9 @@ func _test_build_and_combat_ui() -> void:
 
         var shield_generator_script = load("res://scripts/shield_generator.gd")
         check("shield_generator.gd loads", shield_generator_script != null)
+
+        var solar_panel_script = load("res://scripts/solar_panel.gd")
+        check("solar_panel.gd loads", solar_panel_script != null)
 
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
@@ -263,6 +268,40 @@ func _test_base_shield() -> void:
         game_manager.base_health = old_health
         game_manager.base_shield = old_shield
         game_manager.max_base_shield = old_max_shield
+
+
+func _test_solar_panel_energy() -> void:
+        print("\n[ Solar panel energy ]")
+
+        var game_manager = _get_autoload("GameManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("GameManager autoload exists", game_manager != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not game_manager or not inventory_manager:
+                return
+
+        var solar_script = load("res://scripts/solar_panel.gd")
+        check("solar_panel.gd loads for generation test", solar_script != null)
+        if not solar_script:
+                return
+
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_is_night: bool = game_manager.is_night
+        inventory_manager.resources["energy"] = 0
+
+        var panel = solar_script.new()
+        current_scene.add_child(panel)
+        game_manager.is_night = false
+        panel._process(panel.ENERGY_INTERVAL)
+        check("solar panel generates energy during day", inventory_manager.resources.get("energy", -1) == 1)
+
+        game_manager.is_night = true
+        panel._process(panel.ENERGY_INTERVAL * 2.0)
+        check("solar panel pauses at night", inventory_manager.resources.get("energy", -1) == 1)
+
+        panel.queue_free()
+        inventory_manager.resources["energy"] = old_energy
+        game_manager.is_night = old_is_night
 
 
 func _test_serum_recipes() -> void:

@@ -3,9 +3,11 @@ extends Node3D
 const TURRET_SCENE := preload("res://scenes/turret.tscn")
 const O2_STATION_SCRIPT := preload("res://scripts/o2_station.gd")
 const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
+const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
+const SOLAR_PANEL_COST := {"iron": 18, "biomass": 6}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
@@ -13,6 +15,7 @@ const MIN_STRUCTURE_DISTANCE: float = 2.0
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
+const BUILD_SOLAR_PANEL: String = "solar_panel"
 
 var build_mode: bool = false
 var selected_building: String = BUILD_TURRET
@@ -48,6 +51,9 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_3:
 		_select_building(BUILD_SHIELD_GENERATOR)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_4:
+		_select_building(BUILD_SOLAR_PANEL)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -91,19 +97,26 @@ func _refresh_preview_mesh() -> void:
 	if not _preview:
 		return
 
-	var mesh := CylinderMesh.new()
-	if selected_building == BUILD_SHIELD_GENERATOR:
-		mesh.top_radius = 0.75
-		mesh.bottom_radius = 0.95
-		mesh.height = 1.25
-	elif selected_building == BUILD_O2_STATION:
-		mesh.top_radius = 0.65
-		mesh.bottom_radius = 0.9
-		mesh.height = 1.1
+	var mesh: Mesh
+	if selected_building == BUILD_SOLAR_PANEL:
+		var box_mesh := BoxMesh.new()
+		box_mesh.size = Vector3(2.2, 0.25, 1.2)
+		mesh = box_mesh
 	else:
-		mesh.top_radius = 0.55
-		mesh.bottom_radius = 0.75
-		mesh.height = 1.2
+		var cylinder_mesh := CylinderMesh.new()
+		if selected_building == BUILD_SHIELD_GENERATOR:
+			cylinder_mesh.top_radius = 0.75
+			cylinder_mesh.bottom_radius = 0.95
+			cylinder_mesh.height = 1.25
+		elif selected_building == BUILD_O2_STATION:
+			cylinder_mesh.top_radius = 0.65
+			cylinder_mesh.bottom_radius = 0.9
+			cylinder_mesh.height = 1.1
+		else:
+			cylinder_mesh.top_radius = 0.55
+			cylinder_mesh.bottom_radius = 0.75
+			cylinder_mesh.height = 1.2
+		mesh = cylinder_mesh
 	_preview.mesh = mesh
 
 
@@ -173,6 +186,8 @@ func _validate_position(pos: Vector3) -> bool:
 
 
 func _instantiate_selected_structure() -> Node3D:
+	if selected_building == BUILD_SOLAR_PANEL:
+		return SOLAR_PANEL_SCRIPT.new()
 	if selected_building == BUILD_SHIELD_GENERATOR:
 		return SHIELD_GENERATOR_SCRIPT.new()
 	if selected_building == BUILD_O2_STATION:
@@ -185,6 +200,8 @@ func _instantiate_selected_structure() -> Node3D:
 
 
 func get_selected_cost() -> Dictionary:
+	if selected_building == BUILD_SOLAR_PANEL:
+		return SOLAR_PANEL_COST
 	if selected_building == BUILD_SHIELD_GENERATOR:
 		return SHIELD_GENERATOR_COST
 	if selected_building == BUILD_O2_STATION:
@@ -193,6 +210,8 @@ func get_selected_cost() -> Dictionary:
 
 
 func get_selected_label() -> String:
+	if selected_building == BUILD_SOLAR_PANEL:
+		return "Solar Panel"
 	if selected_building == BUILD_SHIELD_GENERATOR:
 		return "Shield Generator"
 	if selected_building == BUILD_O2_STATION:

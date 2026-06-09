@@ -265,6 +265,36 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Solar Panel Energy Slice
+
+- Added `energy` as a base power resource in `InventoryManager`.
+- Updated Resource HUD labels/colors so generated `energy` is visible.
+- Added `SolarPanel`, a Tier 1 base module aligned with the GDD solar-panel direction.
+- Expanded `BuildManager`:
+  - `4` selects Solar Panel.
+  - Solar Panel costs `18 iron + 6 biomass`.
+- Solar Panels generate `1 energy` every `5` seconds during daytime.
+- Solar Panels stop generating during night, connecting power production to the day/night loop.
+- Added automated coverage for the `energy` resource and solar panel generation behavior.
+- Updated `docs/TEST_PLAN.md` with Solar Panel manual test steps.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 65 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Base Shield Generator Slice
 
 - Added `ShieldGenerator`, a buildable base defense module from the GDD shield-generator direction.

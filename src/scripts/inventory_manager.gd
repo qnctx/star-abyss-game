@@ -6,6 +6,7 @@ var resources = {
 	"iron": 0,
 	"void_crystal": 0,
 	"biomass": 0,
+	"energy": 0,
 	"energy_core": 0,
 	"blueprint": 0
 }
