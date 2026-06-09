@@ -180,15 +180,18 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `X` toggles recycle mode while build mode is open.
   - Left click recycles the nearest built structure under the preview.
   - Refund rate is `50%`, with at least `1` returned for each original cost item.
+  - `get_recycle_status_text()` reports the current target label and expected refund for HUD display.
 - **Upgrade controls**:
   - `U` upgrades the nearest turret under the preview while build mode is open.
   - Turret upgrade costs `10 iron + 5 energy + 1 blueprint`.
   - Max upgrade level is `3`.
   - Each level increases turret damage and fire rate.
+  - `get_upgrade_status_text()` reports target level and `READY`/`NEED RES`/`MAX` status for HUD display.
 - **Implementation notes**:
   - New structures store `build_cost` metadata when placed.
   - Upgraded structures store `upgrade_level` metadata.
   - Recycle ignores nodes that are not in `built_structures`.
+  - `CombatHUD` renders build status as two rows during build mode to avoid overlong one-line hints.
 
 ### Weapon System
 - **Controller**: `scripts/weapon_controller.gd` (Node3D, attached to player)

@@ -246,6 +246,62 @@ func upgrade_structure(structure: Node3D) -> bool:
 	return true
 
 
+func get_recycle_status_text() -> String:
+	var target := _find_recycle_target(_placement_position)
+	if not target:
+		return "No recycle target"
+	return "Target %s | Refund %s | LMB recycle" % [
+		get_structure_label(target),
+		get_refund_text(target)
+	]
+
+
+func get_upgrade_status_text() -> String:
+	var target := _find_upgrade_target(_placement_position)
+	if not target:
+		return "Up: aim near turret"
+	var current_level: int = int(target.get_meta("upgrade_level", 0))
+	if current_level >= MAX_UPGRADE_LEVEL:
+		return "Up %s Lv %d/%d MAX" % [
+			get_structure_label(target),
+			current_level,
+			MAX_UPGRADE_LEVEL
+		]
+	var afford := InventoryManager.has_resources(TURRET_UPGRADE_COST) if InventoryManager else false
+	return "Up %s Lv %d/%d | U %s" % [
+		get_structure_label(target),
+		current_level,
+		MAX_UPGRADE_LEVEL,
+		"READY" if afford else "NEED RES"
+	]
+
+
+func get_structure_label(structure: Node) -> String:
+	if not structure:
+		return "Structure"
+	var label: String = str(structure.get_meta("build_label", ""))
+	if not label.is_empty():
+		return label
+	if structure.is_in_group("built_turrets") or structure.get("damage") != null:
+		return "Turret"
+	if not structure.name.is_empty():
+		return str(structure.name)
+	return "Structure"
+
+
+func get_refund_text(structure: Node) -> String:
+	if not structure:
+		return "none"
+	var cost: Dictionary = structure.get_meta("build_cost", {})
+	if cost.is_empty():
+		return "none"
+	var parts: Array[String] = []
+	for resource_type in cost:
+		var refund: int = max(1, floori(float(cost[resource_type]) * REFUND_RATE))
+		parts.append("%d %s" % [refund, _resource_label(str(resource_type))])
+	return " + ".join(parts)
+
+
 func _apply_turret_upgrade(structure: Node3D, new_level: int) -> bool:
 	var damage_value: Variant = structure.get("damage")
 	var fire_rate_value: Variant = structure.get("fire_rate")

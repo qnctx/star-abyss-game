@@ -269,7 +269,12 @@ func _test_build_recycle() -> void:
         var structure := Node3D.new()
         structure.add_to_group("built_structures")
         structure.set_meta("build_cost", {"iron": 20, "biomass": 8})
+        structure.set_meta("build_label", "Turret")
         current_scene.add_child(structure)
+
+        var recycle_status: String = build_manager.get_recycle_status_text()
+        check("recycle status shows target label", recycle_status.contains("Target Turret"), recycle_status)
+        check("recycle status shows refund", recycle_status.contains("10 iron") and recycle_status.contains("4 biomass"), recycle_status)
 
         var recycled: bool = build_manager.recycle_structure(structure)
         check("recycle_structure succeeds for built structure", recycled)
@@ -310,9 +315,15 @@ func _test_structure_upgrade() -> void:
 
         var turret = turret_scene.instantiate()
         turret.add_to_group("built_structures")
+        turret.add_to_group("built_turrets")
+        turret.set_meta("build_label", "Turret")
         current_scene.add_child(turret)
         var old_damage: float = turret.damage
         var old_fire_rate: float = turret.fire_rate
+
+        var upgrade_status: String = build_manager.get_upgrade_status_text()
+        check("upgrade status shows turret level", upgrade_status.contains("Turret Lv 0/3"), upgrade_status)
+        check("upgrade status shows ready when funded", upgrade_status.contains("READY"), upgrade_status)
 
         var upgraded: bool = build_manager.upgrade_structure(turret)
         check("upgrade_structure succeeds for turret", upgraded)
@@ -325,6 +336,8 @@ func _test_structure_upgrade() -> void:
         inventory_manager.resources["iron"] = 10
         inventory_manager.resources["energy"] = 5
         inventory_manager.resources["blueprint"] = 1
+        var max_status: String = build_manager.get_upgrade_status_text()
+        check("upgrade status shows max level", max_status.contains("MAX"), max_status)
         check("upgrade rejects max-level turret", not build_manager.upgrade_structure(turret))
 
         build_manager.queue_free()

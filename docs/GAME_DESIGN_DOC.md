@@ -25,10 +25,11 @@
 | 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色和 HUD 标签 | `game_manager.gd`, `enemy.gd` |
 | 波次预警 | HUD 显示阶段倒计时和敌人来袭方向 | `game_manager.gd`, `combat_hud.gd` |
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
-| 建造 | `B` 进入建造，`1-4` 选择建筑，地形吸附预览 | `build_manager.gd` |
+| 建造 | `B` 进入建造，`1-6` 选择建筑，地形吸附预览 | `build_manager.gd` |
 | 建筑回收 | 建造模式按 `X` 切换回收，返还约 50% 材料 | `build_manager.gd` |
 | 防御 | Turret 自动索敌射击，Shield Generator 先吸收基地伤害 | `turret.gd`, `shield_generator.gd` |
 | 建筑升级 | 建造模式按 `U` 消耗 energy/blueprint 升级炮塔 | `build_manager.gd`, `turret.gd` |
+| 建筑状态提示 | HUD 显示回收目标/返还和炮塔升级等级/资源状态 | `build_manager.gd`, `combat_hud.gd` |
 | 控场 | Slow Field 半径内降低敌人移动速度 | `slow_field.gd`, `enemy.gd` |
 | 氧气补给 | O2 Station 在半径内给玩家补氧 | `o2_station.gd` |
 | 基地维护 | 靠近基地按 `E` 消耗资源修复 Base HP | `base_interaction.gd`, `game_manager.gd` |
@@ -56,7 +57,7 @@
 | Done | 敌人波次预警 | 让夜晚来临和进攻方向更清楚 | HUD 显示下一波倒计时/方向 |
 | Done | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
 | Done | 炮塔升级 Turret Upgrade | 让 energy 和 blueprint 进入防守成长 | 建造模式下可升级炮塔 |
-| P0 | 建筑状态提示 | 让升级等级/回收目标更清楚 | HUD 或建筑颜色显示等级/目标 |
+| Done | 建筑状态提示 | 让升级等级/回收目标更清楚 | HUD 显示等级、目标、返还和 READY/MAX |
 | Done | 敌人类型扩展 | 增加防守策略差异 | Scout/Tank/Elite/Boss 波次可见且数值不同 |
 | P1 | 建筑修理扩展 | 让基地维护扩展到模块 | 受损建筑可维修 |
 

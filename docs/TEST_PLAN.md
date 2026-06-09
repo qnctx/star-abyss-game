@@ -32,9 +32,11 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Press `4`; HUD should show `Solar Panel`.
 8. Press `5`; HUD should show `Research Station`.
 9. Press `6`; HUD should show `Slow Field`.
-10. Press `X`; HUD should enter recycle mode.
-11. Press `X` again; HUD should return to build mode.
-12. Right-click or press `Esc` to leave build mode.
+10. Confirm the build HUD uses two rows and does not overlap the Base/Scanner HUD rows.
+11. Confirm the second row shows selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade target status.
+12. Press `X`; HUD should enter recycle mode.
+13. Press `X` again; HUD should return to build mode.
+14. Right-click or press `Esc` to leave build mode.
 
 ## Building Recycle
 
@@ -42,10 +44,11 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 2. Press `B`, then `X`.
 3. Move the preview near the built structure.
 4. Confirm the preview turns blue when a recyclable structure is targeted.
-5. Left-click.
-6. Confirm the structure disappears.
-7. Confirm about half of its original resource cost is refunded.
-8. Press `X` again to return to normal build mode.
+5. Confirm the HUD shows the targeted structure label and expected refund.
+6. Left-click.
+7. Confirm the structure disappears.
+8. Confirm about half of its original resource cost is refunded.
+9. Press `X` again to return to normal build mode.
 
 ## Turret Upgrade
 
@@ -55,10 +58,13 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 4. Collect at least `10 iron`.
 5. Press `B`.
 6. Move the preview near the turret.
-7. Press `U`.
-8. Confirm `10 iron + 5 energy + 1 blueprint` are consumed.
-9. Confirm the turret becomes slightly larger.
-10. During night, confirm the upgraded turret fires faster or kills enemies faster.
+7. Confirm the HUD shows `Up Turret Lv 0/3` and `READY`.
+8. Press `U`.
+9. Confirm `10 iron + 5 energy + 1 blueprint` are consumed.
+10. Confirm the turret becomes slightly larger.
+11. Upgrade the same turret to level `3`.
+12. Confirm the HUD shows `MAX` when the turret cannot be upgraded further.
+13. During night, confirm the upgraded turret fires faster or kills enemies faster.
 
 ## Turret Placement
 
