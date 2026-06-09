@@ -76,10 +76,11 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 3. Let one enemy reach the base while the base shield is empty or depleted.
 4. Press `B` and move the preview near the damaged structure.
 5. Confirm the HUD shows `Repair <structure> HP current/max`.
-6. Collect at least `5 iron + 2 biomass`.
-7. Press `R`.
-8. Confirm the structure HP increases by about `35` and resources decrease.
-9. If the structure is full HP, press `R` again and confirm resources are not consumed.
+6. Confirm the Base HUD row shows a short damaged-structure summary such as `Struct Turret 40/100 | B+R READY`.
+7. Collect at least `5 iron + 2 biomass`.
+8. Press `R`.
+9. Confirm the structure HP increases by about `35` and resources decrease.
+10. If the structure is full HP, press `R` again and confirm resources are not consumed.
 
 ## Enemy Structure Targeting
 
@@ -90,8 +91,9 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Confirm the structure can lose HP from repeated enemy attacks.
 6. Press `B` and aim the preview near the damaged structure.
 7. Confirm the repair HUD shows the damaged structure HP.
-8. If the structure is destroyed, confirm it disappears and enemies continue toward the base.
-9. Confirm enemies that destroy structures do not grant kill rewards unless killed by the player/turrets.
+8. Confirm the Objective line changes to structure repair during daytime once the base is safe.
+9. If the structure is destroyed, confirm it disappears and enemies continue toward the base.
+10. Confirm enemies that destroy structures do not grant kill rewards unless killed by the player/turrets.
 
 ## Turret Placement
 
@@ -192,6 +194,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Wave variant label
    - Objective line
    - Locked-tech/unlock status while build mode is open
+   - Damaged-structure summary when built structures are below full HP
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
@@ -204,7 +207,8 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, tech unlocks, Shield Generator, Slow Field, or turret upgrade depending on current progress/resources.
 4. Press `N` to start night and confirm the objective changes to base defense while enemies are alive.
 5. Let Base HP drop below full during daytime and confirm the objective asks for base repair or repair resources.
-6. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
+6. Damage a built structure while Base HP is full and confirm the objective asks to repair damaged structures or gather `5 iron + 2 biomass`.
+7. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
 
 ## Wave Warning
 

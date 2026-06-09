@@ -405,12 +405,14 @@ func _test_structure_repair() -> void:
         print("\n[ Structure repair ]")
 
         var build_script = load("res://scripts/build_manager.gd")
+        var combat_hud_script = load("res://scripts/combat_hud.gd")
         var game_manager = _get_autoload("GameManager")
         var inventory_manager = _get_autoload("InventoryManager")
         check("build_manager.gd loads for repair test", build_script != null)
+        check("combat_hud.gd loads for repair HUD test", combat_hud_script != null)
         check("GameManager autoload exists", game_manager != null)
         check("InventoryManager autoload exists", inventory_manager != null)
-        if not build_script or not game_manager or not inventory_manager:
+        if not build_script or not combat_hud_script or not game_manager or not inventory_manager:
                 return
 
         var old_health: float = game_manager.base_health
@@ -431,6 +433,12 @@ func _test_structure_repair() -> void:
         structure.set_meta("structure_max_health", 100.0)
         structure.set_meta("structure_health", 40.0)
         current_scene.add_child(structure)
+
+        var combat_hud = combat_hud_script.new()
+        current_scene.add_child(combat_hud)
+        var damage_hint: String = combat_hud.get_structure_damage_hint()
+        check("combat HUD shows damaged structure label", damage_hint.contains("Struct Turret"), damage_hint)
+        check("combat HUD shows damaged structure HP", damage_hint.contains("40/100"), damage_hint)
 
         var repair_status: String = build_manager.get_repair_status_text()
         check("repair status shows damaged target", repair_status.contains("Repair Turret HP 40/100"), repair_status)
@@ -463,6 +471,7 @@ func _test_structure_repair() -> void:
         check_nearly(game_manager.base_health, 80.0, 0.01, "base breach still damages base")
 
         build_manager.queue_free()
+        combat_hud.queue_free()
         structure.queue_free()
         splash_target.queue_free()
         game_manager.base_health = old_health
@@ -810,16 +819,26 @@ func _test_objective_tracker() -> void:
         print("\n[ Objective tracker ]")
 
         var objective_script = load("res://scripts/objective_tracker.gd")
+        var game_manager = _get_autoload("GameManager")
         var inventory_manager = _get_autoload("InventoryManager")
         check("objective_tracker.gd loads for objective test", objective_script != null)
+        check("GameManager autoload exists for objective test", game_manager != null)
         check("InventoryManager autoload exists", inventory_manager != null)
-        if not objective_script or not inventory_manager:
+        if not objective_script or not game_manager or not inventory_manager:
                 return
 
+        var old_is_night: bool = game_manager.is_night
+        var old_enemies_alive: int = game_manager.enemies_alive
+        var old_base_health: float = game_manager.base_health
         var old_iron: int = inventory_manager.resources.get("iron", 0)
         var old_void: int = inventory_manager.resources.get("void_crystal", 0)
+        var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+        game_manager.is_night = false
+        game_manager.enemies_alive = 0
+        game_manager.base_health = game_manager.MAX_BASE_HEALTH
         inventory_manager.resources["iron"] = 0
         inventory_manager.resources["void_crystal"] = 2
+        inventory_manager.resources["biomass"] = 0
 
         var tracker = objective_script.new()
         current_scene.add_child(tracker)
@@ -828,9 +847,30 @@ func _test_objective_tracker() -> void:
         check("objective missing text shows iron gap", missing_text.contains("20 iron"), missing_text)
         check("objective missing text shows crystal gap", missing_text.contains("3 crystal"), missing_text)
 
+        var damaged_structure := Node3D.new()
+        damaged_structure.add_to_group("built_structures")
+        damaged_structure.set_meta("structure_max_health", 100.0)
+        damaged_structure.set_meta("structure_health", 40.0)
+        current_scene.add_child(damaged_structure)
+
+        inventory_manager.resources["iron"] = 5
+        inventory_manager.resources["biomass"] = 2
+        var repair_objective: String = tracker.get_objective_text()
+        check("objective asks to repair damaged structure when funded", repair_objective.contains("Repair damaged structure"), repair_objective)
+
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["biomass"] = 0
+        var gather_repair_objective: String = tracker.get_objective_text()
+        check("objective asks for structure repair resources", gather_repair_objective.contains("structure repair"), gather_repair_objective)
+
+        damaged_structure.queue_free()
         tracker.queue_free()
+        game_manager.is_night = old_is_night
+        game_manager.enemies_alive = old_enemies_alive
+        game_manager.base_health = old_base_health
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["void_crystal"] = old_void
+        inventory_manager.resources["biomass"] = old_biomass
 
 
 func _test_serum_recipes() -> void:

@@ -81,6 +81,39 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Structure Damage Guidance Slice
+
+- Added damaged-structure visibility to the Combat HUD:
+  - Base HUD row now shows a compact damaged-structure summary.
+  - Single damaged structure example: `Struct Turret 40/100 | B+R READY`.
+  - Multiple damaged structures show count plus worst HP.
+  - Repair readiness uses the existing `5 iron + 2 biomass` repair cost.
+- Objective Tracker now prioritizes damaged structure repair during daytime after base repair:
+  - If funded, it asks the player to repair damaged structures with `B, R`.
+  - If unfunded, it asks for the missing repair resources.
+- Added automated coverage for HUD damaged-structure text and objective repair priority/resource guidance.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 174 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Enemy Structure Targeting Slice
 
 - Expanded enemy behavior beyond only walking to the base:

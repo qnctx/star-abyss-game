@@ -113,7 +113,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes defense at night, base repair when damaged, then first turret, O2, solar, research, tech unlocks, shield, slow field, and turret upgrades.
+  - Prioritizes defense at night, base repair when damaged, damaged structure repair, then first turret, O2, solar, research, tech unlocks, shield, slow field, and turret upgrades.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
 
@@ -224,6 +224,10 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Structure repair costs `5 iron + 2 biomass`.
   - Repair restores `35` HP up to the structure max.
   - `get_repair_status_text()` reports target HP and resource readiness.
+- **Damage visibility**:
+  - `CombatHUD.get_structure_damage_hint()` summarizes damaged structures on the Base HUD row.
+  - Single damaged structures show label plus HP, e.g. `Struct Turret 40/100 | B+R READY`.
+  - Multiple damaged structures show count and worst HP.
 - **Implementation notes**:
   - New structures store `build_cost` metadata when placed.
   - New structures store `structure_health` and `structure_max_health` metadata when placed; enemies can also initialize this metadata when attacking older/test structures.

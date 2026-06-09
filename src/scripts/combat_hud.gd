@@ -1,5 +1,7 @@
 extends Control
 
+const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
+
 var _status_label: Label
 var _build_label: Label
 var _base_label: Label
@@ -153,6 +155,9 @@ func _refresh_base_hint() -> void:
 		var repair_hint: String = base_interaction.get_repair_hint()
 		if repair_hint:
 			parts.append(repair_hint)
+	var structure_hint := get_structure_damage_hint()
+	if structure_hint:
+		parts.append(structure_hint)
 	if GameManager and not GameManager.is_night:
 		parts.append("N start night test")
 	_base_label.text = " | ".join(parts)
@@ -166,3 +171,56 @@ func _refresh_scanner_hint() -> void:
 func _refresh_objective_hint() -> void:
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	_objective_label.text = objective_tracker.get_objective_text() if objective_tracker else ""
+
+
+func get_structure_damage_hint() -> String:
+	var damaged_count := 0
+	var worst_structure: Node = null
+	var worst_health := 1.0
+	var worst_max := 1.0
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node
+		if not structure_node or not is_instance_valid(structure_node) or structure_node.is_queued_for_deletion():
+			continue
+		if not structure_node.has_meta("structure_health"):
+			continue
+		var max_health: float = float(structure_node.get_meta("structure_max_health", 100.0))
+		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
+		if current_health >= max_health:
+			continue
+		damaged_count += 1
+		var health_ratio := current_health / maxf(1.0, max_health)
+		if not worst_structure or health_ratio < worst_health / maxf(1.0, worst_max):
+			worst_structure = structure_node
+			worst_health = current_health
+			worst_max = max_health
+	if damaged_count <= 0:
+		return ""
+
+	var repair_state := "READY" if InventoryManager and InventoryManager.has_resources(STRUCTURE_REPAIR_COST) else "NEED RES"
+	if damaged_count == 1:
+		return "Struct %s %d/%d | B+R %s" % [
+			_structure_label(worst_structure),
+			roundi(worst_health),
+			roundi(worst_max),
+			repair_state
+		]
+	return "Struct dmg x%d | worst %d/%d | B+R %s" % [
+		damaged_count,
+		roundi(worst_health),
+		roundi(worst_max),
+		repair_state
+	]
+
+
+func _structure_label(structure: Node) -> String:
+	if not structure:
+		return "Structure"
+	var label: String = str(structure.get_meta("build_label", ""))
+	if not label.is_empty():
+		return label
+	if structure.is_in_group("built_turrets") or structure.get("damage") != null:
+		return "Turret"
+	if not structure.name.is_empty():
+		return str(structure.name)
+	return "Structure"

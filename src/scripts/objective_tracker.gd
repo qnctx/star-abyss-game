@@ -10,6 +10,7 @@ const RESEARCH_STATION_COST := {"iron": 20, "void_crystal": 5, "energy": 5}
 const SLOW_FIELD_COST := {"iron": 15, "biomass": 8, "energy": 4}
 const TURRET_UPGRADE_COST := {"iron": 10, "energy": 5, "blueprint": 1}
 const BASE_REPAIR_COST := {"iron": 10, "biomass": 5}
+const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
 const SHIELD_UNLOCK_COST := {"blueprint": 1}
 const SLOW_FIELD_UNLOCK_COST := {"blueprint": 2}
 
@@ -48,6 +49,12 @@ func get_objective_text() -> String:
 		if InventoryManager.has_resources(BASE_REPAIR_COST):
 			return "Objective: Repair base at pod (E)"
 		return "Objective: Gather %s for base repair" % get_missing_resources_text(BASE_REPAIR_COST)
+
+	var damaged_structures := _damaged_structure_count()
+	if damaged_structures > 0:
+		if InventoryManager and InventoryManager.has_resources(STRUCTURE_REPAIR_COST):
+			return "Objective: Repair damaged structure (B, R)"
+		return "Objective: Gather %s for structure repair" % get_missing_resources_text(STRUCTURE_REPAIR_COST)
 
 	if _count_group("built_turrets") <= 0:
 		return _build_or_gather("Build first Turret (B, 1)", TURRET_COST)
@@ -116,6 +123,21 @@ func _count_group(group_name: String) -> int:
 	var count := 0
 	for node in get_tree().get_nodes_in_group(group_name):
 		if is_instance_valid(node):
+			count += 1
+	return count
+
+
+func _damaged_structure_count() -> int:
+	var count := 0
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node
+		if not structure_node or not is_instance_valid(structure_node) or structure_node.is_queued_for_deletion():
+			continue
+		if not structure_node.has_meta("structure_health"):
+			continue
+		var max_health: float = float(structure_node.get_meta("structure_max_health", 100.0))
+		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
+		if current_health < max_health:
 			count += 1
 	return count
 
