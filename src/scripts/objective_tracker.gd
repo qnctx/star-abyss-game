@@ -30,6 +30,9 @@ func _ready() -> void:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 	if TechManager:
 		TechManager.tech_unlocked.connect(_on_tech_unlocked)
+	if SignalLogManager:
+		SignalLogManager.extraction_holdout_started.connect(_on_extraction_changed)
+		SignalLogManager.extraction_holdout_completed.connect(_refresh)
 	set_process(true)
 	_refresh()
 
@@ -42,6 +45,17 @@ func _process(delta: float) -> void:
 
 
 func get_objective_text() -> String:
+	if SignalLogManager and SignalLogManager.is_extraction_complete():
+		return SignalLogManager.get_extraction_objective_text()
+
+	if SignalLogManager and SignalLogManager.is_extraction_active():
+		if GameManager and GameManager.enemies_alive > 0:
+			return "Objective: Defend extraction zone | Enemies %d | %s" % [
+				GameManager.enemies_alive,
+				SignalLogManager.get_extraction_time_text()
+			]
+		return SignalLogManager.get_extraction_objective_text()
+
 	if GameManager and GameManager.is_night:
 		if GameManager.enemies_alive > 0:
 			return "Objective: Defend base | Enemies %d" % GameManager.enemies_alive
@@ -196,6 +210,10 @@ func _on_base_health_changed(_health: float) -> void:
 
 
 func _on_tech_unlocked(_tech_id: String) -> void:
+	_refresh()
+
+
+func _on_extraction_changed(_duration: float) -> void:
 	_refresh()
 
 

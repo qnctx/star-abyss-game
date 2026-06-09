@@ -187,9 +187,15 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 14. Walk into the cache and confirm resources are added.
 15. Confirm the cache disappears and the Objective no longer asks for that same cache.
 16. Continue powering through `50`, `75`, and `100` if resources allow; confirm the latest Radio log changes and new caches can appear at each milestone.
-17. Spend all energy and wait another cycle.
-18. Confirm the Signal row changes to `needs energy` and progress does not increase.
-19. Press `F6`, then later `F7`, and confirm Signal progress, latest Radio log, and collected cache state are restored.
+17. When Signal reaches `100/100`, confirm the run enters an Extraction holdout:
+   - The Signal HUD shows `Extraction: hold mm:ss`.
+   - The Objective line asks you to defend the extraction zone.
+   - If it was daytime, the game starts a night attack.
+18. Survive until the Extraction timer reaches zero.
+19. Confirm the Signal HUD shows `victory` and the Objective line changes to extraction complete.
+20. Spend all energy and wait another cycle in a separate pre-100 test.
+21. Confirm the Signal row changes to `needs energy` and progress does not increase.
+22. Press `F6`, then later `F7`, and confirm Signal progress, latest Radio log, collected cache state, and Extraction holdout state are restored.
 
 ## Tech Unlocks
 
@@ -219,6 +225,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Signal Beacon status after building one
    - Latest Radio log after signal milestones
    - Signal Cache direction/distance while a cache is active
+   - Extraction holdout countdown after Signal reaches `100/100`
    - Locked-tech/unlock status while build mode is open
    - Damaged-structure summary when built structures are below full HP
    - `F6 Save F7 Load` in the main build hint row

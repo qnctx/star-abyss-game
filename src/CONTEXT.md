@@ -121,22 +121,30 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Progress milestones**: Notifies `SignalLogManager` whenever progress advances.
 - **HUD**: `CombatHUD` shows the strongest beacon status, e.g. `Signal: 40/100 | transmitting`, `needs energy`, or `locked 100/100`.
 
-### Signal Log Manager (无线电日志)
+### Signal Log Manager (无线电日志 / 撤离坚守)
 - **Type**: `Node` autoload
 - **Script**: `scripts/signal_log_manager.gd`
-- **Concept**: Small story/progression log unlocked by Signal Beacon progress milestones.
+- **Concept**: Small story/progression log unlocked by Signal Beacon progress milestones, plus the end-of-signal Extraction Holdout state.
 - **Milestones**: `25`, `50`, `75`, `100` signal progress.
 - **State**:
   - `unlocked_logs`
   - `collected_caches`
   - `latest_message`
-- **Signals**: `radio_log_unlocked(log_id, message)`, `signal_cache_spawned(cache_id)`, `signal_cache_collected(cache_id)`
+  - `extraction_holdout_active`
+  - `extraction_holdout_complete`
+  - `extraction_time_remaining`
+- **Signals**: `radio_log_unlocked(log_id, message)`, `signal_cache_spawned(cache_id)`, `signal_cache_collected(cache_id)`, `extraction_holdout_started(duration)`, `extraction_holdout_completed()`
 - **Signal Cache loop**:
   - Each unlocked milestone spawns one deterministic Signal Cache unless it has been collected.
   - Cache rewards include resource bundles such as iron/energy, crystal/blueprint, biomass/energy, or energy_core/blueprint.
   - `get_cache_hint()` reports nearest active cache distance/direction.
-- **HUD**: `CombatHUD` shows `latest_message` and nearest active Signal Cache hint under the signal/save rows.
-- **Save/load**: `SaveManager` persists unlocked radio logs and latest message; old saves can also rebuild milestones from restored Signal Beacon progress.
+- **Extraction Holdout loop**:
+  - Unlocking `signal_100` in normal play starts a timed extraction holdout.
+  - If the player completes Signal during daytime, `GameManager.force_start_night()` starts immediate defense pressure.
+  - `get_extraction_status_text()` and `get_extraction_objective_text()` expose HUD/objective text.
+  - Save/load restores holdout state without spawning a new wave while runtime structures are being restored.
+- **HUD**: `CombatHUD` shows `latest_message`, nearest active Signal Cache hint, and Extraction countdown/victory state under the signal/save rows.
+- **Save/load**: `SaveManager` persists unlocked radio logs, collected Signal Cache state, latest message, and Extraction Holdout state; old saves can also rebuild milestones from restored Signal Beacon progress.
 
 ### Signal Cache (信号补给点)
 - **Type**: `Area3D`
@@ -154,7 +162,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes defense at night, base repair when damaged, damaged structure repair, active Signal Cache recovery, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
+  - Prioritizes extraction completion/holdout, defense at night, base repair when damaged, damaged structure repair, active Signal Cache recovery, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
 
@@ -183,7 +191,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
-  - Signal radio logs and collected Signal Cache state from `SignalLogManager`
+  - Signal radio logs, collected Signal Cache state, and Extraction Holdout state from `SignalLogManager`
   - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
   - Clears current enemies and built structures before restoring saved runtime nodes.

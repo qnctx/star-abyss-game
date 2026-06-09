@@ -3,8 +3,11 @@ extends Node
 signal radio_log_unlocked(log_id: String, message: String)
 signal signal_cache_spawned(cache_id: String)
 signal signal_cache_collected(cache_id: String)
+signal extraction_holdout_started(duration: float)
+signal extraction_holdout_completed()
 
 const SIGNAL_CACHE_SCRIPT := preload("res://scripts/signal_cache.gd")
+const EXTRACTION_HOLDOUT_DURATION := 180.0
 
 const MILESTONES := [
 	{"id": "signal_25", "progress": 25.0, "message": "Radio: weak automated ping detected beyond the crash basin."},
@@ -22,31 +25,49 @@ const CACHE_DEFS := {
 var unlocked_logs: Dictionary = {}
 var collected_caches: Dictionary = {}
 var latest_message := ""
+var extraction_holdout_active := false
+var extraction_holdout_complete := false
+var extraction_time_remaining := 0.0
 
 
 func _ready() -> void:
 	reset_logs()
+	set_process(true)
+
+
+func _process(delta: float) -> void:
+	if not extraction_holdout_active or extraction_holdout_complete:
+		return
+	extraction_time_remaining = maxf(0.0, extraction_time_remaining - delta)
+	if is_zero_approx(extraction_time_remaining):
+		_complete_extraction_holdout()
 
 
 func reset_logs() -> void:
 	unlocked_logs.clear()
 	collected_caches.clear()
 	latest_message = ""
+	extraction_holdout_active = false
+	extraction_holdout_complete = false
+	extraction_time_remaining = 0.0
 	_clear_active_caches()
 
 
-func register_signal_progress(progress: float) -> void:
+func register_signal_progress(progress: float, trigger_extraction: bool = true) -> void:
 	for milestone in MILESTONES:
 		var log_id := str(milestone["id"])
 		if progress >= float(milestone["progress"]) and not bool(unlocked_logs.get(log_id, false)):
-			_unlock_log(log_id, str(milestone["message"]))
+			_unlock_log(log_id, str(milestone["message"]), trigger_extraction)
 
 
 func capture_save_data() -> Dictionary:
 	return {
 		"unlocked_logs": unlocked_logs.duplicate(true),
 		"collected_caches": collected_caches.duplicate(true),
-		"latest_message": latest_message
+		"latest_message": latest_message,
+		"extraction_holdout_active": extraction_holdout_active,
+		"extraction_holdout_complete": extraction_holdout_complete,
+		"extraction_time_remaining": extraction_time_remaining
 	}
 
 
@@ -54,6 +75,7 @@ func apply_save_data(data: Variant) -> void:
 	reset_logs()
 	if typeof(data) != TYPE_DICTIONARY:
 		return
+	var has_extraction_state: bool = bool(data.has("extraction_holdout_active") or data.has("extraction_holdout_complete"))
 	var logs: Variant = data.get("unlocked_logs", {})
 	if typeof(logs) == TYPE_DICTIONARY:
 		for log_id in logs:
@@ -63,6 +85,13 @@ func apply_save_data(data: Variant) -> void:
 		for cache_id in caches:
 			collected_caches[str(cache_id)] = bool(caches[cache_id])
 	latest_message = str(data.get("latest_message", _latest_unlocked_message()))
+	extraction_holdout_complete = bool(data.get("extraction_holdout_complete", false))
+	extraction_holdout_active = bool(data.get("extraction_holdout_active", false)) and not extraction_holdout_complete
+	extraction_time_remaining = clampf(float(data.get("extraction_time_remaining", EXTRACTION_HOLDOUT_DURATION)), 0.0, EXTRACTION_HOLDOUT_DURATION)
+	if extraction_holdout_active and is_zero_approx(extraction_time_remaining):
+		_complete_extraction_holdout()
+	elif not has_extraction_state and is_log_unlocked("signal_100"):
+		_start_extraction_holdout(false)
 	_spawn_uncollected_caches()
 
 
@@ -76,6 +105,34 @@ func is_log_unlocked(log_id: String) -> bool:
 
 func is_cache_collected(cache_id: String) -> bool:
 	return bool(collected_caches.get(cache_id, false))
+
+
+func is_extraction_active() -> bool:
+	return extraction_holdout_active and not extraction_holdout_complete
+
+
+func is_extraction_complete() -> bool:
+	return extraction_holdout_complete
+
+
+func get_extraction_status_text() -> String:
+	if extraction_holdout_complete:
+		return "Extraction: rescue shuttle landed | victory"
+	if extraction_holdout_active:
+		return "Extraction: hold %s | defend base" % _format_time(extraction_time_remaining)
+	return ""
+
+
+func get_extraction_time_text() -> String:
+	return _format_time(extraction_time_remaining)
+
+
+func get_extraction_objective_text() -> String:
+	if extraction_holdout_complete:
+		return "Objective: Extraction complete | secure victory"
+	if extraction_holdout_active:
+		return "Objective: Defend extraction zone | %s" % _format_time(extraction_time_remaining)
+	return ""
 
 
 func mark_cache_collected(cache_id: String) -> void:
@@ -107,10 +164,12 @@ func get_cache_hint() -> String:
 	]
 
 
-func _unlock_log(log_id: String, message: String) -> void:
+func _unlock_log(log_id: String, message: String, trigger_extraction: bool = true) -> void:
 	unlocked_logs[log_id] = true
 	latest_message = message
 	_spawn_cache_for_log(log_id)
+	if log_id == "signal_100" and trigger_extraction:
+		_start_extraction_holdout()
 	radio_log_unlocked.emit(log_id, message)
 
 
@@ -181,3 +240,29 @@ func _direction_label(from_pos: Vector3, to_pos: Vector3) -> String:
 	if abs(delta.x) > 1.0:
 		parts.append("E" if delta.x > 0.0 else "W")
 	return "".join(parts) if not parts.is_empty() else "here"
+
+
+func _start_extraction_holdout(force_night: bool = true) -> void:
+	if extraction_holdout_active or extraction_holdout_complete:
+		return
+	extraction_holdout_active = true
+	extraction_time_remaining = EXTRACTION_HOLDOUT_DURATION
+	if force_night and GameManager and not GameManager.is_night:
+		GameManager.force_start_night()
+	extraction_holdout_started.emit(EXTRACTION_HOLDOUT_DURATION)
+
+
+func _complete_extraction_holdout() -> void:
+	if extraction_holdout_complete:
+		return
+	extraction_holdout_active = false
+	extraction_holdout_complete = true
+	extraction_time_remaining = 0.0
+	extraction_holdout_completed.emit()
+
+
+func _format_time(seconds: float) -> String:
+	var total_seconds := ceili(seconds)
+	var minutes := int(total_seconds / 60)
+	var remainder := total_seconds % 60
+	return "%02d:%02d" % [minutes, remainder]

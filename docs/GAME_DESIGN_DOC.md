@@ -41,7 +41,7 @@
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
-| 信号台/无线电日志 | Signal Beacon 消耗 energy 推进求救信号进度，并在里程碑解锁 Radio Log 和 Signal Cache | `signal_beacon.gd`, `signal_log_manager.gd`, `signal_cache.gd`, `build_manager.gd` |
+| 信号台/撤离线 | Signal Beacon 消耗 energy 推进求救信号进度，里程碑解锁 Radio Log/Signal Cache，100% 后进入撤离坚守倒计时 | `signal_beacon.gd`, `signal_log_manager.gd`, `signal_cache.gd`, `build_manager.gd` |
 | 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
@@ -53,7 +53,7 @@
 3. 夜晚敌人进攻基地，玩家用武器和建筑防守。
 4. 防守奖励和基地损伤推动下一天的建造选择。
 5. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
-6. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log 与 Signal Cache 给出探索/奖励反馈。
+6. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log、Signal Cache 与 Extraction Holdout 给出探索、奖励和结局压力反馈。
 
 ### 0.3 近期开发顺序
 
@@ -76,6 +76,7 @@
 | Done | 信号台 Signal Beacon | 给长线生存增加求救/剧情进度目标 | `B, 7` 建造后消耗 energy 累计信号进度 |
 | Done | 无线电日志 Radio Log | 让信号进度有可读反馈和后续探索钩子 | 25/50/75/100 信号进度解锁 HUD 日志 |
 | Done | 信号补给点 Signal Cache | 让 Radio Log 变成可探索奖励 | 里程碑生成补给点，HUD/Objective 给方向，拾取获得资源 |
+| Done | 撤离坚守 Extraction Holdout | 让 100% 信号从“日志完成”变成结局前防守目标 | Signal 100 后强制进入夜袭，HUD/Objective 显示撤离倒计时，结束显示 victory |
 
 ### 0.4 当前手测入口
 

@@ -768,13 +768,16 @@ func _test_signal_log_manager() -> void:
 
         var signal_log_manager = _get_autoload("SignalLogManager")
         var inventory_manager = _get_autoload("InventoryManager")
+        var game_manager = _get_autoload("GameManager")
         check("SignalLogManager autoload exists", signal_log_manager != null)
         check("InventoryManager autoload exists for signal log test", inventory_manager != null)
-        if not signal_log_manager or not inventory_manager:
+        check("GameManager autoload exists for signal log test", game_manager != null)
+        if not signal_log_manager or not inventory_manager or not game_manager:
                 return
 
         var old_iron: int = inventory_manager.resources.get("iron", 0)
         var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_is_night: bool = game_manager.is_night
         signal_log_manager.reset_logs()
         check("signal logs start empty", signal_log_manager.get_latest_message().is_empty())
 
@@ -806,6 +809,18 @@ func _test_signal_log_manager() -> void:
         check("signal cache hint shows distance", signal_log_manager.get_cache_hint().contains("Cache:"), signal_log_manager.get_cache_hint())
         player.free()
 
+        game_manager.is_night = true
+        signal_log_manager.register_signal_progress(100.0)
+        check("signal 100 starts extraction holdout", signal_log_manager.is_extraction_active())
+        check("extraction status is visible", signal_log_manager.get_extraction_status_text().contains("Extraction:"), signal_log_manager.get_extraction_status_text())
+        var extraction_data: Dictionary = signal_log_manager.capture_save_data()
+        signal_log_manager.reset_logs()
+        signal_log_manager.apply_save_data(extraction_data)
+        check("signal save restores extraction holdout", signal_log_manager.is_extraction_active())
+        signal_log_manager._process(signal_log_manager.EXTRACTION_HOLDOUT_DURATION)
+        check("extraction holdout can complete", signal_log_manager.is_extraction_complete())
+        check("extraction completion text is visible", signal_log_manager.get_extraction_status_text().contains("victory"), signal_log_manager.get_extraction_status_text())
+
         var data: Dictionary = signal_log_manager.capture_save_data()
         signal_log_manager.reset_logs()
         signal_log_manager.apply_save_data(data)
@@ -813,6 +828,7 @@ func _test_signal_log_manager() -> void:
         signal_log_manager.reset_logs()
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["energy"] = old_energy
+        game_manager.is_night = old_is_night
 
 
 func _test_signal_beacon() -> void:
@@ -852,6 +868,13 @@ func _test_signal_beacon() -> void:
         current_scene.add_child(combat_hud)
         check("combat HUD shows signal hint", combat_hud.get_signal_hint().contains("Signal:"), combat_hud.get_signal_hint())
         check("combat HUD shows radio log", combat_hud.get_radio_log_text().contains("Radio:"), combat_hud.get_radio_log_text())
+        signal_log_manager.apply_save_data({
+                "unlocked_logs": {"signal_100": true},
+                "latest_message": "Radio: rescue ping locked.",
+                "extraction_holdout_active": true,
+                "extraction_time_remaining": 90.0
+        })
+        check("combat HUD shows extraction holdout", combat_hud.get_signal_hint().contains("Extraction:"), combat_hud.get_signal_hint())
 
         inventory_manager.resources["energy"] = 0
         beacon._process(beacon.SIGNAL_INTERVAL)
@@ -972,7 +995,7 @@ func _test_save_manager() -> void:
         game_manager.phase_time_remaining = 123.0
         game_manager.last_wave_direction = "NE"
         signal_log_manager.reset_logs()
-        signal_log_manager.register_signal_progress(50.0)
+        signal_log_manager.register_signal_progress(100.0)
 
         var turret = turret_scene.instantiate()
         turret.add_to_group("built_structures")
@@ -1019,6 +1042,7 @@ func _test_save_manager() -> void:
         check("save data captures built structures", (data["structures"] as Array).size() >= 1)
         check("save data captures signal structures", _save_data_has_build(data, "signal_beacon"))
         check("save data captures signal logs", data.has("signal_logs"))
+        check("save data captures extraction holdout", bool(data["signal_logs"].get("extraction_holdout_active", false)))
         check("save data captures active enemies", (data["enemies"] as Array).size() >= 1)
 
         inventory_manager.resources["iron"] = 0
@@ -1035,7 +1059,8 @@ func _test_save_manager() -> void:
         check("load restores inventory iron", inventory_manager.resources.get("iron", -1) == 7)
         check("load restores blueprint", inventory_manager.resources.get("blueprint", -1) == 3)
         check("load restores shield unlock", bool(tech_manager.unlocked.get("shield_generator", false)))
-        check("load restores signal log milestone", signal_log_manager.is_log_unlocked("signal_50"))
+        check("load restores signal log milestone", signal_log_manager.is_log_unlocked("signal_100"))
+        check("load restores extraction holdout", signal_log_manager.is_extraction_active())
         check_nearly(game_manager.base_health, 55.0, 0.01, "load restores base health")
         check("load restores wave number", game_manager.wave_number == 4)
         check("load restores enemy count", game_manager.enemies_alive == 1)
@@ -1162,6 +1187,18 @@ func _test_objective_tracker() -> void:
         var missing_text: String = tracker.get_missing_resources_text({"iron": 20, "void_crystal": 5})
         check("objective missing text shows iron gap", missing_text.contains("20 iron"), missing_text)
         check("objective missing text shows crystal gap", missing_text.contains("3 crystal"), missing_text)
+
+        signal_log_manager.apply_save_data({
+                "unlocked_logs": {"signal_100": true},
+                "latest_message": "Radio: rescue ping locked.",
+                "extraction_holdout_active": true,
+                "extraction_time_remaining": 90.0
+        })
+        game_manager.enemies_alive = 2
+        var extraction_text: String = tracker.get_objective_text()
+        check("objective prioritizes extraction holdout", extraction_text.contains("extraction") and extraction_text.contains("Enemies 2"), extraction_text)
+        signal_log_manager.reset_logs()
+        game_manager.enemies_alive = 0
 
         var damaged_structure := Node3D.new()
         damaged_structure.add_to_group("built_structures")

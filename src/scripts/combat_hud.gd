@@ -86,6 +86,8 @@ func _ready() -> void:
 		SignalLogManager.radio_log_unlocked.connect(_on_radio_log_unlocked)
 		SignalLogManager.signal_cache_spawned.connect(_on_signal_cache_changed)
 		SignalLogManager.signal_cache_collected.connect(_on_signal_cache_changed)
+		SignalLogManager.extraction_holdout_started.connect(_on_extraction_changed)
+		SignalLogManager.extraction_holdout_completed.connect(_on_extraction_complete)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -155,6 +157,16 @@ func _on_radio_log_unlocked(_log_id: String, _message: String) -> void:
 
 func _on_signal_cache_changed(_cache_id: String) -> void:
 	_refresh_radio_log()
+	_refresh_objective_hint()
+
+
+func _on_extraction_changed(_duration: float) -> void:
+	_refresh_signal_hint()
+	_refresh_objective_hint()
+
+
+func _on_extraction_complete() -> void:
+	_refresh_signal_hint()
 	_refresh_objective_hint()
 
 
@@ -303,7 +315,14 @@ func get_signal_hint() -> String:
 		if progress > best_progress:
 			best_progress = progress
 			best_text = str(beacon_node.call("get_signal_status_text"))
-	return best_text
+	var parts: Array[String] = []
+	if not best_text.is_empty():
+		parts.append(best_text)
+	if SignalLogManager:
+		var extraction_text := SignalLogManager.get_extraction_status_text()
+		if not extraction_text.is_empty():
+			parts.append(extraction_text)
+	return "\n".join(parts)
 
 
 func get_radio_log_text() -> String:

@@ -81,6 +81,39 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Extraction Holdout Slice
+
+- Added an Extraction Holdout finale state to `SignalLogManager`:
+  - Unlocking the `signal_100` Radio Log in normal play starts a timed extraction holdout.
+  - Completing Signal during daytime forces an immediate night attack through `GameManager.force_start_night()`.
+  - The holdout counts down and then marks extraction as complete/victory.
+  - Holdout active/complete state and remaining time are captured by save/load.
+- Expanded Combat HUD:
+  - Signal HUD can now show `Extraction: hold mm:ss | defend base`.
+  - Completed holdout shows `Extraction: rescue shuttle landed | victory`.
+- Expanded Objective Tracker:
+  - Extraction holdout takes priority over normal build/repair/cache objectives.
+  - Active enemies are surfaced as `Defend extraction zone | Enemies N | mm:ss`.
+- Updated SaveManager sync so restored Signal Beacon progress can rebuild milestones without spawning a new wave during load.
+- Added automated coverage for extraction start, countdown completion, HUD text, objective priority, and save/load persistence.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 257 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+
+---
+
 ## 2026-06-09 - Signal Cache Exploration Slice
 
 - Added `SignalCache`, a collectible radio-led exploration reward:

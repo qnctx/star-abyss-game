@@ -248,7 +248,7 @@ func _sync_signal_logs_from_structures() -> void:
 		if not structure_node or not is_instance_valid(structure_node) or structure_node.is_queued_for_deletion():
 			continue
 		if structure_node.get("signal_progress") != null:
-			SignalLogManager.register_signal_progress(float(structure_node.get("signal_progress")))
+			SignalLogManager.register_signal_progress(float(structure_node.get("signal_progress")), false)
 
 
 func _restore_enemies(data: Variant) -> int:
