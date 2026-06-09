@@ -264,16 +264,19 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 4. Damage or upgrade one built structure if possible.
 5. Press `F6`.
 6. Confirm the game does not pause or crash.
-7. Spend or collect some resources after saving.
-8. Recycle or damage a structure after saving.
-9. Press `F7`.
-10. Confirm inventory returns to the saved amounts.
-11. Confirm tech unlocks return to the saved state.
-12. Confirm saved structures reappear with position, HP, and upgrade level.
-13. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
-14. During night, save while at least one enemy is alive.
-15. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.
-16. Confirm the Combat HUD enemy count matches the restored enemies.
+7. Confirm the top-left HUD briefly shows `Save: Saved`.
+8. Spend or collect some resources after saving.
+9. Recycle or damage a structure after saving.
+10. Press `F7`.
+11. Confirm the top-left HUD briefly shows `Save: Loaded`.
+12. Confirm inventory returns to the saved amounts.
+13. Confirm tech unlocks return to the saved state.
+14. Confirm saved structures reappear with position, HP, and upgrade level.
+15. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
+16. During night, save while at least one enemy is alive.
+17. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.
+18. Confirm the Combat HUD enemy count matches the restored enemies.
+19. Optional: delete or rename the save file, press `F7`, and confirm the HUD briefly shows `Save: No save file`.
 
 ## Known Headless Note
 

@@ -291,6 +291,8 @@ func _test_build_and_combat_ui() -> void:
 
         var save_manager_script = load("res://scripts/save_manager.gd")
         check("save_manager.gd loads", save_manager_script != null)
+        var save_manager = _get_autoload("SaveManager")
+        check("SaveManager autoload exists for HUD status", save_manager != null)
 
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
@@ -304,6 +306,15 @@ func _test_build_and_combat_ui() -> void:
         check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
         check("ObjectiveTracker node exists", main.get_node_or_null("ObjectiveTracker") != null)
         main.free()
+
+        if combat_hud_script and save_manager:
+                var combat_hud = combat_hud_script.new()
+                current_scene.add_child(combat_hud)
+                save_manager.save_status_changed.emit("Saved")
+                check("combat HUD shows save status", combat_hud.get_save_status_text().contains("Saved"), combat_hud.get_save_status_text())
+                combat_hud._process(combat_hud.SAVE_STATUS_DURATION)
+                check("combat HUD clears save status", combat_hud.get_save_status_text().is_empty(), combat_hud.get_save_status_text())
+                combat_hud.queue_free()
 
 
 func _test_build_recycle() -> void:

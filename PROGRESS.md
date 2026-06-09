@@ -81,6 +81,37 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Save HUD Feedback Slice
+
+- Connected `SaveManager.save_status_changed(message)` into the Combat HUD.
+- Added a short-lived top-left save status row:
+  - `Save: Saved`
+  - `Save: Loaded`
+  - failure/no-file messages such as `Save: No save file`
+- The status clears automatically after `2.5` seconds so it does not crowd the combat/objective HUD.
+- Added automated coverage for showing and clearing the HUD save status.
+- Updated GDD, context docs, progress, and the manual save/load checklist.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 202 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Save Active Enemies Slice
 
 - Expanded SaveManager beyond the first save/load MVP:

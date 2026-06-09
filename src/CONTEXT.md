@@ -136,6 +136,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Script**: `scripts/save_manager.gd`
 - **Input**: `F6` quick-save, `F7` quick-load; actions are registered at runtime.
 - **Save path**: `user://star_abyss_save.json`
+- **HUD feedback**: `SaveManager.save_status_changed(message)` is connected by `CombatHUD`; top-left HUD shows `Save: Saved`, `Save: Loaded`, or failure/no-file messages for a short duration.
 - **Persisted MVP state**:
   - `InventoryManager.resources`
   - `TechManager.unlocked`

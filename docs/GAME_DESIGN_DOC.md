@@ -40,7 +40,7 @@
 | 能量生产 | Solar Panel 白天生产 energy，夜晚停产 | `solar_panel.gd` |
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
-| 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态 | `save_manager.gd` |
+| 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
 | 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
@@ -70,7 +70,7 @@
 | Done | 科技解锁 Tech Unlock | 让 Research Station 产出的 blueprint 推动建筑解锁 | Shield/Slow 默认锁定，按 `Y` 消耗 blueprint 解锁后才能建造 |
 | Done | 敌人结构攻击 | 让建筑布局和修理压力更真实 | 敌人会停下攻击附近建筑，结构 HP 清零后摧毁 |
 | Done | 建筑损伤提示 | 让玩家知道哪些防御需要维护 | Base HUD 显示受损结构摘要，Objective Tracker 引导修理 |
-| Done | 存档/读档 MVP | 支撑长线测试和晚上集中验证 | `F6/F7` 保存/恢复库存、科技、基地和已建结构 |
+| Done | 存档/读档 MVP | 支撑长线测试和晚上集中验证 | `F6/F7` 保存/恢复库存、科技、基地、已建结构和活敌人，HUD 显示结果反馈 |
 
 ### 0.4 当前手测入口
 

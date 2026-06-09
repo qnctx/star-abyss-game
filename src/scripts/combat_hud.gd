@@ -1,12 +1,15 @@
 extends Control
 
 const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
+const SAVE_STATUS_DURATION := 2.5
 
 var _status_label: Label
 var _build_label: Label
 var _base_label: Label
 var _scanner_label: Label
 var _objective_label: Label
+var _save_status_label: Label
+var _save_status_time_remaining := 0.0
 
 
 func _ready() -> void:
@@ -42,6 +45,13 @@ func _ready() -> void:
 	_objective_label.add_theme_color_override("font_color", Color(1.0, 0.88, 0.45))
 	add_child(_objective_label)
 
+	_save_status_label = Label.new()
+	_save_status_label.position = Vector2(10, 350)
+	_save_status_label.size = Vector2(560, 30)
+	_save_status_label.add_theme_font_size_override("font_size", 16)
+	_save_status_label.add_theme_color_override("font_color", Color(0.55, 0.9, 1.0))
+	add_child(_save_status_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -54,6 +64,8 @@ func _ready() -> void:
 		InventoryManager.resource_changed.connect(_on_resource_changed)
 	if TechManager:
 		TechManager.tech_unlocked.connect(_on_tech_unlocked)
+	if SaveManager:
+		SaveManager.save_status_changed.connect(_on_save_status_changed)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -66,6 +78,10 @@ func _process(_delta: float) -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
+	if _save_status_time_remaining > 0.0:
+		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
+		if is_zero_approx(_save_status_time_remaining):
+			_save_status_label.text = ""
 
 
 func _on_base_health_changed(_health: float) -> void:
@@ -102,6 +118,11 @@ func _on_tech_unlocked(_tech_id: String) -> void:
 
 func _on_objective_changed(_text: String) -> void:
 	_refresh_objective_hint()
+
+
+func _on_save_status_changed(message: String) -> void:
+	_save_status_label.text = "Save: %s" % message
+	_save_status_time_remaining = SAVE_STATUS_DURATION
 
 
 func _refresh() -> void:
@@ -224,3 +245,7 @@ func _structure_label(structure: Node) -> String:
 	if not structure.name.is_empty():
 		return str(structure.name)
 	return "Structure"
+
+
+func get_save_status_text() -> String:
+	return _save_status_label.text if _save_status_label else ""
