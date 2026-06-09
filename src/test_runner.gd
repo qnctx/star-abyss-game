@@ -33,6 +33,7 @@ func _run() -> void:
         _test_enemy_reward_rules()
         _test_solar_panel_energy()
         _test_research_station()
+        _test_signal_beacon()
         _test_tech_unlocks()
         _test_save_manager()
         _test_resource_scanner()
@@ -283,6 +284,9 @@ func _test_build_and_combat_ui() -> void:
         var slow_field_script = load("res://scripts/slow_field.gd")
         check("slow_field.gd loads", slow_field_script != null)
 
+        var signal_beacon_script = load("res://scripts/signal_beacon.gd")
+        check("signal_beacon.gd loads", signal_beacon_script != null)
+
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
 
@@ -315,6 +319,14 @@ func _test_build_and_combat_ui() -> void:
                 combat_hud._process(combat_hud.SAVE_STATUS_DURATION)
                 check("combat HUD clears save status", combat_hud.get_save_status_text().is_empty(), combat_hud.get_save_status_text())
                 combat_hud.queue_free()
+
+        if build_script:
+                var build_manager = build_script.new()
+                current_scene.add_child(build_manager)
+                build_manager.selected_building = build_manager.BUILD_SIGNAL_BEACON
+                check("signal beacon is a build option", build_manager.get_selected_label() == "Signal Beacon")
+                check("signal beacon cost includes blueprint", build_manager.get_selected_cost().get("blueprint", 0) == 2)
+                build_manager.queue_free()
 
 
 func _test_build_recycle() -> void:
@@ -744,6 +756,48 @@ func _test_research_station() -> void:
         inventory_manager.resources["blueprint"] = old_blueprint
 
 
+func _test_signal_beacon() -> void:
+        print("\n[ Signal beacon ]")
+
+        var inventory_manager = _get_autoload("InventoryManager")
+        var signal_script = load("res://scripts/signal_beacon.gd")
+        var combat_hud_script = load("res://scripts/combat_hud.gd")
+        check("InventoryManager autoload exists for signal test", inventory_manager != null)
+        check("signal_beacon.gd loads for signal test", signal_script != null)
+        check("combat_hud.gd loads for signal test", combat_hud_script != null)
+        if not inventory_manager or not signal_script or not combat_hud_script:
+                return
+
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        inventory_manager.resources["energy"] = 2
+
+        var beacon = signal_script.new()
+        current_scene.add_child(beacon)
+        check("signal beacon joins group", beacon.is_in_group("signal_beacons"))
+        check("signal beacon starts at zero progress", int(beacon.signal_progress) == 0)
+
+        beacon._process(beacon.SIGNAL_INTERVAL)
+        check("signal beacon consumes energy", inventory_manager.resources.get("energy", -1) == 1)
+        check_nearly(beacon.signal_progress, beacon.SIGNAL_PROGRESS_PER_CYCLE, 0.01, "signal beacon advances progress")
+        check("signal beacon status shows progress", beacon.get_signal_status_text().contains("10/100"), beacon.get_signal_status_text())
+
+        var combat_hud = combat_hud_script.new()
+        current_scene.add_child(combat_hud)
+        check("combat HUD shows signal hint", combat_hud.get_signal_hint().contains("Signal:"), combat_hud.get_signal_hint())
+
+        inventory_manager.resources["energy"] = 0
+        beacon._process(beacon.SIGNAL_INTERVAL)
+        check_nearly(beacon.signal_progress, beacon.SIGNAL_PROGRESS_PER_CYCLE, 0.01, "signal beacon pauses without energy")
+
+        beacon.signal_progress = beacon.SIGNAL_MAX
+        check("signal beacon can complete", beacon.is_signal_complete())
+        check("signal beacon completion text is visible", beacon.get_signal_status_text().contains("100/100"), beacon.get_signal_status_text())
+
+        combat_hud.queue_free()
+        beacon.queue_free()
+        inventory_manager.resources["energy"] = old_energy
+
+
 func _test_tech_unlocks() -> void:
         print("\n[ Tech unlocks ]")
 
@@ -761,6 +815,7 @@ func _test_tech_unlocks() -> void:
         inventory_manager.resources["blueprint"] = 0
 
         check("turret starts unlocked", tech_manager.is_unlocked("turret"))
+        check("signal beacon starts unlocked", tech_manager.is_unlocked("signal_beacon"))
         check("shield starts locked", not tech_manager.is_unlocked("shield_generator"))
         check("slow field starts locked", not tech_manager.is_unlocked("slow_field"))
         check("shield cannot unlock without blueprint", not tech_manager.unlock("shield_generator"))
@@ -803,13 +858,15 @@ func _test_save_manager() -> void:
         var game_manager = _get_autoload("GameManager")
         var turret_scene = load("res://scenes/turret.tscn")
         var enemy_scene = load("res://scenes/enemy.tscn")
+        var signal_script = load("res://scripts/signal_beacon.gd")
         check("SaveManager autoload exists", save_manager != null)
         check("InventoryManager autoload exists for save test", inventory_manager != null)
         check("TechManager autoload exists for save test", tech_manager != null)
         check("GameManager autoload exists for save test", game_manager != null)
         check("turret scene loads for save test", turret_scene != null)
         check("enemy scene loads for save test", enemy_scene != null)
-        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene or not enemy_scene:
+        check("signal_beacon.gd loads for save test", signal_script != null)
+        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene or not enemy_scene or not signal_script:
                 return
 
         var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
@@ -858,6 +915,18 @@ func _test_save_manager() -> void:
         turret.fire_rate = 1.5
         current_scene.add_child(turret)
 
+        var signal_beacon = signal_script.new()
+        signal_beacon.position = Vector3(6.0, 1.0, -1.0)
+        signal_beacon.set_meta("build_id", "signal_beacon")
+        signal_beacon.set_meta("build_label", "Signal Beacon")
+        signal_beacon.set_meta("build_cost", {"iron": 30, "void_crystal": 10, "energy": 10, "blueprint": 2})
+        signal_beacon.set_meta("structure_max_health", 100.0)
+        signal_beacon.set_meta("structure_health", 88.0)
+        signal_beacon.signal_progress = 40.0
+        signal_beacon.signal_power_timer = 2.0
+        current_scene.add_child(signal_beacon)
+        signal_beacon.add_to_group("built_structures")
+
         var enemy = enemy_scene.instantiate()
         enemy.position = Vector3(-4.0, 0.5, 3.0)
         enemy.name = "Scout_Save_Test"
@@ -874,6 +943,7 @@ func _test_save_manager() -> void:
         check("save data captures tech unlock", bool(data["tech"].get("shield_generator", false)))
         check("save data captures game state", int(data["game"].get("wave_number", 0)) == 4)
         check("save data captures built structures", (data["structures"] as Array).size() >= 1)
+        check("save data captures signal structures", _save_data_has_build(data, "signal_beacon"))
         check("save data captures active enemies", (data["enemies"] as Array).size() >= 1)
 
         inventory_manager.resources["iron"] = 0
@@ -882,6 +952,7 @@ func _test_save_manager() -> void:
         game_manager.base_health = 10.0
         game_manager.enemies_alive = 0
         turret.queue_free()
+        signal_beacon.queue_free()
         enemy.queue_free()
 
         check("apply save data succeeds", save_manager.apply_save_data(data))
@@ -902,6 +973,17 @@ func _test_save_manager() -> void:
         if restored_turret:
                 check_nearly(float(restored_turret.get_meta("structure_health", 0.0)), 42.0, 0.01, "load restores structure health")
                 check("load restores upgrade level", int(restored_turret.get_meta("upgrade_level", 0)) == 2)
+
+        var restored_signal: Node = null
+        for structure in get_nodes_in_group("built_structures"):
+                var structure_node := structure as Node
+                if structure_node and is_instance_valid(structure_node) and not structure_node.is_queued_for_deletion() and str(structure_node.get_meta("build_id", "")) == "signal_beacon":
+                        restored_signal = structure_node
+                        break
+        check("load restores signal beacon", restored_signal != null)
+        if restored_signal:
+                check_nearly(float(restored_signal.get("signal_progress")), 40.0, 0.01, "load restores signal progress")
+                check_nearly(float(restored_signal.get_meta("structure_health", 0.0)), 88.0, 0.01, "load restores signal structure health")
 
         var restored_enemy: Node = null
         for active_enemy in get_nodes_in_group("enemies"):
@@ -1040,6 +1122,14 @@ func _test_serum_recipes() -> void:
 
 func _get_autoload(name: String) -> Node:
         return root.get_node_or_null(name)
+
+
+func _save_data_has_build(data: Dictionary, build_id: String) -> bool:
+        var structures: Array = data.get("structures", [])
+        for item in structures:
+                if typeof(item) == TYPE_DICTIONARY and str(item.get("build_id", "")) == build_id:
+                        return true
+        return false
 
 
 func _ensure_current_scene() -> void:

@@ -8,6 +8,7 @@ var _build_label: Label
 var _base_label: Label
 var _scanner_label: Label
 var _objective_label: Label
+var _signal_label: Label
 var _save_status_label: Label
 var _save_status_time_remaining := 0.0
 
@@ -45,8 +46,15 @@ func _ready() -> void:
 	_objective_label.add_theme_color_override("font_color", Color(1.0, 0.88, 0.45))
 	add_child(_objective_label)
 
+	_signal_label = Label.new()
+	_signal_label.position = Vector2(10, 350)
+	_signal_label.size = Vector2(760, 30)
+	_signal_label.add_theme_font_size_override("font_size", 16)
+	_signal_label.add_theme_color_override("font_color", Color(0.5, 0.95, 0.8))
+	add_child(_signal_label)
+
 	_save_status_label = Label.new()
-	_save_status_label.position = Vector2(10, 350)
+	_save_status_label.position = Vector2(10, 382)
 	_save_status_label.size = Vector2(560, 30)
 	_save_status_label.add_theme_font_size_override("font_size", 16)
 	_save_status_label.add_theme_color_override("font_color", Color(0.55, 0.9, 1.0))
@@ -78,6 +86,7 @@ func _process(_delta: float) -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
+	_refresh_signal_hint()
 	if _save_status_time_remaining > 0.0:
 		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
 		if is_zero_approx(_save_status_time_remaining):
@@ -109,6 +118,7 @@ func _on_resource_changed(_type: String, _amount: int) -> void:
 	_refresh_base_hint()
 	_refresh_scanner_hint()
 	_refresh_objective_hint()
+	_refresh_signal_hint()
 
 
 func _on_tech_unlocked(_tech_id: String) -> void:
@@ -153,20 +163,20 @@ func _refresh_build_hint() -> void:
 			_build_label.text = "Recycle | X Build | U Up | R Repair\n%s" % build_manager.get_recycle_status_text()
 			return
 		if not build_manager.is_selected_unlocked():
-			_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair\n%s locked | %s" % [
+			_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | X Rec | U Up | R Repair\n%s locked | %s" % [
 				build_manager.get_selected_label(),
 				build_manager.get_selected_unlock_status_text()
 			]
 			return
 		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
-		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair\n%s: %s | LMB %s | %s" % [
+		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | X Rec | U Up | R Repair\n%s: %s | LMB %s | %s" % [
 			build_manager.get_selected_label(),
 			build_manager.get_selected_cost_text(),
 			"READY" if afford else "NEED RES",
 			build_manager.get_structure_action_status_text()
 		]
 	else:
-		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | F6 Save F7 Load"
+		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | F6 Save F7 Load"
 
 
 func _refresh_base_hint() -> void:
@@ -192,6 +202,10 @@ func _refresh_scanner_hint() -> void:
 func _refresh_objective_hint() -> void:
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	_objective_label.text = objective_tracker.get_objective_text() if objective_tracker else ""
+
+
+func _refresh_signal_hint() -> void:
+	_signal_label.text = get_signal_hint()
 
 
 func get_structure_damage_hint() -> String:
@@ -249,3 +263,17 @@ func _structure_label(structure: Node) -> String:
 
 func get_save_status_text() -> String:
 	return _save_status_label.text if _save_status_label else ""
+
+
+func get_signal_hint() -> String:
+	var best_text := ""
+	var best_progress := -1.0
+	for beacon in get_tree().get_nodes_in_group("signal_beacons"):
+		var beacon_node := beacon as Node
+		if not beacon_node or not is_instance_valid(beacon_node) or beacon_node.is_queued_for_deletion():
+			continue
+		var progress: float = float(beacon_node.get("signal_progress"))
+		if progress > best_progress:
+			best_progress = progress
+			best_text = str(beacon_node.call("get_signal_status_text"))
+	return best_text

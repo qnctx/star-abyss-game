@@ -8,6 +8,7 @@ const BUILD_SHIELD_GENERATOR: String = "shield_generator"
 const BUILD_SOLAR_PANEL: String = "solar_panel"
 const BUILD_RESEARCH_STATION: String = "research_station"
 const BUILD_SLOW_FIELD: String = "slow_field"
+const BUILD_SIGNAL_BEACON: String = "signal_beacon"
 
 const UNLOCK_COSTS := {
 	BUILD_SHIELD_GENERATOR: {"blueprint": 1},
@@ -20,7 +21,8 @@ const LABELS := {
 	BUILD_SHIELD_GENERATOR: "Shield Generator",
 	BUILD_SOLAR_PANEL: "Solar Panel",
 	BUILD_RESEARCH_STATION: "Research Station",
-	BUILD_SLOW_FIELD: "Slow Field"
+	BUILD_SLOW_FIELD: "Slow Field",
+	BUILD_SIGNAL_BEACON: "Signal Beacon"
 }
 
 var unlocked: Dictionary = {}
@@ -37,7 +39,8 @@ func reset_unlocks() -> void:
 		BUILD_SOLAR_PANEL: true,
 		BUILD_RESEARCH_STATION: true,
 		BUILD_SHIELD_GENERATOR: false,
-		BUILD_SLOW_FIELD: false
+		BUILD_SLOW_FIELD: false,
+		BUILD_SIGNAL_BEACON: true
 	}
 
 

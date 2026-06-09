@@ -41,6 +41,7 @@
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
+| 信号台 | Signal Beacon 消耗 energy 推进求救信号进度，作为后续探索/剧情入口 | `signal_beacon.gd`, `build_manager.gd` |
 | 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
@@ -52,6 +53,7 @@
 3. 夜晚敌人进攻基地，玩家用武器和建筑防守。
 4. 防守奖励和基地损伤推动下一天的建造选择。
 5. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
+6. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标。
 
 ### 0.3 近期开发顺序
 
@@ -71,6 +73,7 @@
 | Done | 敌人结构攻击 | 让建筑布局和修理压力更真实 | 敌人会停下攻击附近建筑，结构 HP 清零后摧毁 |
 | Done | 建筑损伤提示 | 让玩家知道哪些防御需要维护 | Base HUD 显示受损结构摘要，Objective Tracker 引导修理 |
 | Done | 存档/读档 MVP | 支撑长线测试和晚上集中验证 | `F6/F7` 保存/恢复库存、科技、基地、已建结构和活敌人，HUD 显示结果反馈 |
+| Done | 信号台 Signal Beacon | 给长线生存增加求救/剧情进度目标 | `B, 7` 建造后消耗 energy 累计信号进度 |
 
 ### 0.4 当前手测入口
 

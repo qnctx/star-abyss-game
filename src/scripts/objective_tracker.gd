@@ -13,6 +13,8 @@ const BASE_REPAIR_COST := {"iron": 10, "biomass": 5}
 const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
 const SHIELD_UNLOCK_COST := {"blueprint": 1}
 const SLOW_FIELD_UNLOCK_COST := {"blueprint": 2}
+const SIGNAL_BEACON_COST := {"iron": 30, "void_crystal": 10, "energy": 10, "blueprint": 2}
+const SIGNAL_POWER_COST := {"energy": 1}
 
 var _last_text: String = ""
 var _refresh_timer: float = 0.0
@@ -83,7 +85,16 @@ func get_objective_text() -> String:
 	if _has_upgradeable_turret():
 		return _build_or_gather("Upgrade a Turret (B, U)", TURRET_UPGRADE_COST)
 
-	return "Objective: Survive waves, scan resources (G), expand defenses"
+	if _count_group("signal_beacons") <= 0:
+		return _build_or_gather("Build Signal Beacon (B, 7)", SIGNAL_BEACON_COST)
+
+	var signal_progress := _best_signal_progress()
+	if signal_progress < 100.0:
+		if InventoryManager and InventoryManager.has_resources(SIGNAL_POWER_COST):
+			return "Objective: Power Signal Beacon | %d/100" % roundi(signal_progress)
+		return "Objective: Gather 1 energy for Signal Beacon"
+
+	return "Objective: Signal locked | survive and expand defenses"
 
 
 func get_missing_resources_text(cost: Dictionary) -> String:
@@ -140,6 +151,16 @@ func _damaged_structure_count() -> int:
 		if current_health < max_health:
 			count += 1
 	return count
+
+
+func _best_signal_progress() -> float:
+	var best_progress := 0.0
+	for beacon in get_tree().get_nodes_in_group("signal_beacons"):
+		var beacon_node := beacon as Node
+		if not beacon_node or not is_instance_valid(beacon_node) or beacon_node.is_queued_for_deletion():
+			continue
+		best_progress = maxf(best_progress, float(beacon_node.get("signal_progress")))
+	return best_progress
 
 
 func _refresh() -> void:

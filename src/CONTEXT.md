@@ -107,13 +107,26 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
 
+### Signal Beacon (信号台)
+- **Type**: `Node3D`
+- **Script**: `scripts/signal_beacon.gd`
+- **Concept**: Late-MVP rescue signal structure that converts stored energy into long-term story/progression signal.
+- **Build input**: `B`, then `7`
+- **Build cost**: `30 iron + 10 void_crystal + 10 energy + 2 blueprint`
+- **Runtime loop**:
+  - Every `6s`, consumes `1 energy` if available.
+  - Adds `10/100` signal progress per powered cycle.
+  - Pauses without energy.
+  - Joins `signal_beacons` and `built_structures`.
+- **HUD**: `CombatHUD` shows the strongest beacon status, e.g. `Signal: 40/100 | transmitting`, `needs energy`, or `locked 100/100`.
+
 ### Objective Tracker (目标提示)
 - **Type**: `Node`
 - **Script**: `scripts/objective_tracker.gd`
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes defense at night, base repair when damaged, damaged structure repair, then first turret, O2, solar, research, tech unlocks, shield, slow field, and turret upgrades.
+  - Prioritizes defense at night, base repair when damaged, damaged structure repair, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
 
@@ -121,7 +134,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Type**: `Node` autoload
 - **Script**: `scripts/tech_manager.gd`
 - **Concept**: Small MVP technology gate that turns blueprints into buildable defensive options.
-- **Unlocked by default**: Turret, O2 Station, Solar Panel, Research Station.
+- **Unlocked by default**: Turret, O2 Station, Solar Panel, Research Station, Signal Beacon.
 - **Locked by default**:
   - Shield Generator costs `1 blueprint` to unlock.
   - Slow Field costs `2 blueprint` to unlock.
@@ -141,7 +154,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `InventoryManager.resources`
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
-  - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate
+  - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
   - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
   - Clears current enemies and built structures before restoring saved runtime nodes.

@@ -81,6 +81,46 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Signal Beacon Slice
+
+- Added `SignalBeacon`, a buildable long-term rescue-signal structure:
+  - Build mode key: `7`.
+  - Cost: `30 iron + 10 void_crystal + 10 energy + 2 blueprint`.
+  - Every `6s`, consumes `1 energy` and adds `10/100` signal progress.
+  - Pauses when energy is unavailable.
+  - Shows completion text at `100/100`.
+- Expanded `BuildManager` and `TechManager`:
+  - Signal Beacon is unlocked by default after the research/blueprint economy exists.
+  - Build HUD now includes `7Sig`.
+- Expanded Combat HUD:
+  - Shows the strongest Signal Beacon status as a dedicated `Signal:` row.
+- Expanded Objective Tracker:
+  - After the current defense/upgrade chain, it guides the player to build and power the Signal Beacon.
+- Expanded SaveManager:
+  - Saves and restores Signal Beacon progress and power timer.
+- Added automated coverage for build option/cost, energy consumption, progress pause/completion, HUD status, default tech unlock, and save/load restoration.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 223 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Save HUD Feedback Slice
 
 - Connected `SaveManager.save_status_changed(message)` into the Combat HUD.

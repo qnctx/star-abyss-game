@@ -11,6 +11,7 @@ const BUILD_SHIELD_GENERATOR: String = "shield_generator"
 const BUILD_SOLAR_PANEL: String = "solar_panel"
 const BUILD_RESEARCH_STATION: String = "research_station"
 const BUILD_SLOW_FIELD: String = "slow_field"
+const BUILD_SIGNAL_BEACON: String = "signal_beacon"
 
 const TURRET_SCENE := preload("res://scenes/turret.tscn")
 const O2_STATION_SCRIPT := preload("res://scripts/o2_station.gd")
@@ -18,6 +19,7 @@ const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
 const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const RESEARCH_STATION_SCRIPT := preload("res://scripts/research_station.gd")
 const SLOW_FIELD_SCRIPT := preload("res://scripts/slow_field.gd")
+const SIGNAL_BEACON_SCRIPT := preload("res://scripts/signal_beacon.gd")
 const ENEMY_SCENE := preload("res://scenes/enemy.tscn")
 
 var last_status: String = ""
@@ -132,6 +134,10 @@ func _capture_structure(structure: Node3D) -> Dictionary:
 		data["damage"] = float(structure.get("damage"))
 	if structure.get("fire_rate") != null:
 		data["fire_rate"] = float(structure.get("fire_rate"))
+	if structure.get("signal_progress") != null:
+		data["signal_progress"] = float(structure.get("signal_progress"))
+	if structure.get("signal_power_timer") != null:
+		data["signal_power_timer"] = float(structure.get("signal_power_timer"))
 	return data
 
 
@@ -220,6 +226,10 @@ func _restore_structures(data: Variant) -> void:
 			structure.set("damage", float(item["damage"]))
 		if item.has("fire_rate") and structure.get("fire_rate") != null:
 			structure.set("fire_rate", float(item["fire_rate"]))
+		if item.has("signal_progress") and structure.get("signal_progress") != null:
+			structure.set("signal_progress", float(item["signal_progress"]))
+		if item.has("signal_power_timer") and structure.get("signal_power_timer") != null:
+			structure.set("signal_power_timer", float(item["signal_power_timer"]))
 
 
 func _restore_enemies(data: Variant) -> int:
@@ -271,6 +281,8 @@ func _instantiate_structure(build_id: String) -> Node3D:
 			return RESEARCH_STATION_SCRIPT.new()
 		BUILD_SLOW_FIELD:
 			return SLOW_FIELD_SCRIPT.new()
+		BUILD_SIGNAL_BEACON:
+			return SIGNAL_BEACON_SCRIPT.new()
 		_:
 			var turret := TURRET_SCENE.instantiate() as Node3D
 			turret.add_to_group("built_turrets")
@@ -302,6 +314,8 @@ func _get_structure_build_id(structure: Node) -> String:
 			return BUILD_RESEARCH_STATION
 		"Slow Field":
 			return BUILD_SLOW_FIELD
+		"Signal Beacon":
+			return BUILD_SIGNAL_BEACON
 		_:
 			return BUILD_TURRET
 
@@ -318,6 +332,8 @@ func _label_for_build_id(build_id: String) -> String:
 			return "Research Station"
 		BUILD_SLOW_FIELD:
 			return "Slow Field"
+		BUILD_SIGNAL_BEACON:
+			return "Signal Beacon"
 		_:
 			return "Turret"
 

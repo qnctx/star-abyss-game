@@ -33,13 +33,14 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Press `4`; HUD should show `Solar Panel`.
 8. Press `5`; HUD should show `Research Station`.
 9. Press `6`; HUD should show `Slow Field`.
-10. Confirm the build HUD uses two rows and does not overlap the Base/Scanner HUD rows.
-11. Confirm locked buildings show `Y Unlock`, blueprint cost, and `Y READY` or `Y NEED BLUEPRINT`.
-12. Confirm unlocked buildings show selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade/repair target status.
-13. Confirm the first row includes `Y Unlock` and `R Repair`.
-14. Press `X`; HUD should enter recycle mode.
-15. Press `X` again; HUD should return to build mode.
-16. Right-click or press `Esc` to leave build mode.
+10. Press `7`; HUD should show `Signal Beacon`.
+11. Confirm the build HUD uses two rows and does not overlap the Base/Scanner/HUD rows.
+12. Confirm locked buildings show `Y Unlock`, blueprint cost, and `Y READY` or `Y NEED BLUEPRINT`.
+13. Confirm unlocked buildings show selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade/repair target status.
+14. Confirm the first row includes `Y Unlock` and `R Repair`.
+15. Press `X`; HUD should enter recycle mode.
+16. Press `X` again; HUD should return to build mode.
+17. Right-click or press `Esc` to leave build mode.
 
 ## Building Recycle
 
@@ -168,6 +169,21 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 9. Confirm `blueprint` increases by `1`.
 10. If energy is below `5`, confirm blueprints stop increasing.
 
+## Signal Beacon
+
+1. Build at least one Solar Panel and Research Station.
+2. Collect at least `30 iron + 10 void_crystal + 10 energy + 2 blueprint`.
+3. Press `B`, then `7`.
+4. Confirm the HUD says `Signal Beacon` and shows the full cost.
+5. Place the Signal Beacon on green terrain.
+6. Confirm build resources decrease.
+7. Confirm the top-left HUD shows a `Signal:` row.
+8. Keep at least `1 energy` available and wait about `6` seconds.
+9. Confirm `energy` decreases by `1` and Signal progress increases by about `10`.
+10. Spend all energy and wait another cycle.
+11. Confirm the Signal row changes to `needs energy` and progress does not increase.
+12. Press `F6`, then later `F7`, and confirm Signal progress is restored.
+
 ## Tech Unlocks
 
 1. Start a fresh run and enter build mode.
@@ -193,6 +209,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Wave direction
    - Wave variant label
    - Objective line
+   - Signal Beacon status after building one
    - Locked-tech/unlock status while build mode is open
    - Damaged-structure summary when built structures are below full HP
    - `F6 Save F7 Load` in the main build hint row
@@ -205,7 +222,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 1. Start a fresh run and confirm the objective line appears below the scanner line.
 2. With no turret built, confirm it asks you to gather resources or build the first Turret.
-3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, tech unlocks, Shield Generator, Slow Field, or turret upgrade depending on current progress/resources.
+3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, tech unlocks, Shield Generator, Slow Field, turret upgrade, Signal Beacon, or signal power depending on current progress/resources.
 4. Press `N` to start night and confirm the objective changes to base defense while enemies are alive.
 5. Let Base HP drop below full during daytime and confirm the objective asks for base repair or repair resources.
 6. Damage a built structure while Base HP is full and confirm the objective asks to repair damaged structures or gather `5 iron + 2 biomass`.
@@ -271,7 +288,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Confirm the top-left HUD briefly shows `Save: Loaded`.
 12. Confirm inventory returns to the saved amounts.
 13. Confirm tech unlocks return to the saved state.
-14. Confirm saved structures reappear with position, HP, and upgrade level.
+14. Confirm saved structures reappear with position, HP, upgrade level, and Signal Beacon progress if one was built.
 15. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
 16. During night, save while at least one enemy is alive.
 17. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.

@@ -6,12 +6,14 @@ const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
 const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const RESEARCH_STATION_SCRIPT := preload("res://scripts/research_station.gd")
 const SLOW_FIELD_SCRIPT := preload("res://scripts/slow_field.gd")
+const SIGNAL_BEACON_SCRIPT := preload("res://scripts/signal_beacon.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
 const SOLAR_PANEL_COST := {"iron": 18, "biomass": 6}
 const RESEARCH_STATION_COST := {"iron": 20, "void_crystal": 5, "energy": 5}
 const SLOW_FIELD_COST := {"iron": 15, "biomass": 8, "energy": 4}
+const SIGNAL_BEACON_COST := {"iron": 30, "void_crystal": 10, "energy": 10, "blueprint": 2}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
@@ -31,6 +33,7 @@ const BUILD_SHIELD_GENERATOR: String = "shield_generator"
 const BUILD_SOLAR_PANEL: String = "solar_panel"
 const BUILD_RESEARCH_STATION: String = "research_station"
 const BUILD_SLOW_FIELD: String = "slow_field"
+const BUILD_SIGNAL_BEACON: String = "signal_beacon"
 
 var build_mode: bool = false
 var recycle_mode: bool = false
@@ -91,6 +94,9 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_6:
 		_select_building(BUILD_SLOW_FIELD)
 		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_7:
+		_select_building(BUILD_SIGNAL_BEACON)
+		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			_try_place_structure()
@@ -140,6 +146,12 @@ func _refresh_preview_mesh() -> void:
 		var solar_mesh := BoxMesh.new()
 		solar_mesh.size = Vector3(2.2, 0.25, 1.2)
 		mesh = solar_mesh
+	elif selected_building == BUILD_SIGNAL_BEACON:
+		var beacon_mesh := CylinderMesh.new()
+		beacon_mesh.top_radius = 0.55
+		beacon_mesh.bottom_radius = 0.9
+		beacon_mesh.height = 1.8
+		mesh = beacon_mesh
 	elif selected_building == BUILD_RESEARCH_STATION:
 		var research_mesh := BoxMesh.new()
 		research_mesh.size = Vector3(1.6, 0.9, 1.2)
@@ -502,6 +514,8 @@ func _find_repair_target(pos: Vector3) -> Node3D:
 
 
 func _instantiate_selected_structure() -> Node3D:
+	if selected_building == BUILD_SIGNAL_BEACON:
+		return SIGNAL_BEACON_SCRIPT.new()
 	if selected_building == BUILD_SLOW_FIELD:
 		return SLOW_FIELD_SCRIPT.new()
 	if selected_building == BUILD_RESEARCH_STATION:
@@ -520,6 +534,8 @@ func _instantiate_selected_structure() -> Node3D:
 
 
 func get_selected_cost() -> Dictionary:
+	if selected_building == BUILD_SIGNAL_BEACON:
+		return SIGNAL_BEACON_COST
 	if selected_building == BUILD_SLOW_FIELD:
 		return SLOW_FIELD_COST
 	if selected_building == BUILD_RESEARCH_STATION:
@@ -534,6 +550,8 @@ func get_selected_cost() -> Dictionary:
 
 
 func get_selected_label() -> String:
+	if selected_building == BUILD_SIGNAL_BEACON:
+		return "Signal Beacon"
 	if selected_building == BUILD_SLOW_FIELD:
 		return "Slow Field"
 	if selected_building == BUILD_RESEARCH_STATION:
