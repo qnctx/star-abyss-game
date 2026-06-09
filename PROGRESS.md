@@ -81,6 +81,38 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Oxygen Canister Exploration Slice
+
+- Added `OxygenCanisterManager` autoload:
+  - `H` crafts one O2 Kit from `2 biomass + 1 energy`.
+  - `Q` consumes one O2 Kit to restore `60` O2, capped at max O2.
+  - Refuses to consume when the player is already full on oxygen.
+- Expanded inventory:
+  - Added `oxygen_canister` as a regular inventory resource.
+  - Save/load persists O2 Kits automatically through `InventoryManager`.
+  - Death Drop can include O2 Kits because they are part of the carried resource dictionary.
+- Expanded Combat HUD:
+  - Shows `O2 Kit: N | Q use +60 O2 | H craft READY/NEED ...`.
+- Added automated coverage for crafting, resource cost, oxygen restoration, full-O2 no-consume behavior, and HUD text.
+- Fixed a test isolation issue by freeing the temporary O2 Kit test player synchronously so Resource Scanner tests do not pick the wrong `player` group node.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 296 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+
+---
+
 ## 2026-06-09 - Death Drop Recovery Slice
 
 - Added recoverable death resource drops:

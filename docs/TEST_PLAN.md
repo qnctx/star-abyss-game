@@ -33,6 +33,21 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Confirm the new death drop merges with the previous lost resources rather than leaving multiple confusing packs.
 12. Press `F6`, then `F7`, and confirm an active death drop remains recoverable after load.
 
+## Oxygen Canister
+
+1. Collect at least `2 biomass + 1 energy`.
+2. Confirm the HUD shows an `O2 Kit:` line with `H craft READY`.
+3. Press `H`.
+4. Confirm biomass decreases by `2`, energy decreases by `1`, and O2 Kit count increases by `1`.
+5. Drain some oxygen by exploring away from base.
+6. Press `Q`.
+7. Confirm O2 increases by about `60` without exceeding max O2.
+8. Confirm O2 Kit count decreases by `1`.
+9. Try pressing `Q` while oxygen is already full.
+10. Confirm no O2 Kit is consumed.
+11. Save/load with at least one O2 Kit and confirm the count is restored.
+12. Die while carrying O2 Kits and confirm they can be included in the recoverable Death Drop payload.
+
 ## Build Mode
 
 1. Press `B` to enter build mode.

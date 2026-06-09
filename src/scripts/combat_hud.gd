@@ -12,6 +12,7 @@ var _signal_label: Label
 var _save_status_label: Label
 var _radio_label: Label
 var _death_drop_label: Label
+var _oxygen_supply_label: Label
 var _save_status_time_remaining := 0.0
 
 
@@ -76,6 +77,13 @@ func _ready() -> void:
 	_death_drop_label.add_theme_color_override("font_color", Color(1.0, 0.68, 0.35))
 	add_child(_death_drop_label)
 
+	_oxygen_supply_label = Label.new()
+	_oxygen_supply_label.position = Vector2(10, 494)
+	_oxygen_supply_label.size = Vector2(920, 30)
+	_oxygen_supply_label.add_theme_font_size_override("font_size", 15)
+	_oxygen_supply_label.add_theme_color_override("font_color", Color(0.68, 0.95, 1.0))
+	add_child(_oxygen_supply_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -99,6 +107,9 @@ func _ready() -> void:
 	if DeathDropManager:
 		DeathDropManager.death_drop_spawned.connect(_on_death_drop_changed)
 		DeathDropManager.death_drop_collected.connect(_on_death_drop_changed)
+	if OxygenCanisterManager:
+		OxygenCanisterManager.oxygen_canister_crafted.connect(_on_oxygen_supply_changed)
+		OxygenCanisterManager.oxygen_canister_used.connect(_on_oxygen_supply_used)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -113,7 +124,9 @@ func _process(_delta: float) -> void:
 	_refresh_scanner_hint()
 	_refresh_signal_hint()
 	_refresh_radio_log()
+	_refresh_oxygen_supply_hint()
 	_refresh_death_drop_hint()
+	_refresh_oxygen_supply_hint()
 	if _save_status_time_remaining > 0.0:
 		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
 		if is_zero_approx(_save_status_time_remaining):
@@ -187,6 +200,14 @@ func _on_death_drop_changed() -> void:
 	_refresh_objective_hint()
 
 
+func _on_oxygen_supply_changed() -> void:
+	_refresh_oxygen_supply_hint()
+
+
+func _on_oxygen_supply_used(_amount: float) -> void:
+	_refresh_oxygen_supply_hint()
+
+
 func _refresh() -> void:
 	if not GameManager:
 		return
@@ -207,6 +228,7 @@ func _refresh() -> void:
 	_refresh_scanner_hint()
 	_refresh_objective_hint()
 	_refresh_death_drop_hint()
+	_refresh_oxygen_supply_hint()
 
 
 func _refresh_build_hint() -> void:
@@ -267,6 +289,10 @@ func _refresh_radio_log() -> void:
 
 func _refresh_death_drop_hint() -> void:
 	_death_drop_label.text = get_death_drop_text()
+
+
+func _refresh_oxygen_supply_hint() -> void:
+	_oxygen_supply_label.text = get_oxygen_supply_text()
 
 
 func get_structure_damage_hint() -> String:
@@ -364,3 +390,9 @@ func get_death_drop_text() -> String:
 	if not DeathDropManager:
 		return ""
 	return DeathDropManager.get_drop_hint()
+
+
+func get_oxygen_supply_text() -> String:
+	if not OxygenCanisterManager:
+		return ""
+	return OxygenCanisterManager.get_supply_hint()

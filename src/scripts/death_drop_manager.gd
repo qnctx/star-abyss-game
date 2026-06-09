@@ -157,5 +157,7 @@ func _resource_label(resource_type: String) -> String:
 			return "crystal"
 		"energy_core":
 			return "core"
+		"oxygen_canister":
+			return "O2 kit"
 		_:
 			return resource_type

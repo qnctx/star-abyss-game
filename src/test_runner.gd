@@ -17,6 +17,7 @@ func _run() -> void:
 
         _test_world_generator()
         _test_player_oxygen()
+        _test_oxygen_canister_manager()
         _test_death_drop_manager()
         _test_zone_manager()
         _test_turret_logic()
@@ -128,6 +129,54 @@ func _test_player_oxygen() -> void:
         player.refill_oxygen()
         check_nearly(player.current_oxygen, 180.0, 0.01, "refill restores oxygen")
         main.free()
+
+
+func _test_oxygen_canister_manager() -> void:
+        print("\n[ Oxygen canister manager ]")
+
+        var oxygen_canister_manager = _get_autoload("OxygenCanisterManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        var player_script = load("res://scripts/player.gd")
+        var combat_hud_script = load("res://scripts/combat_hud.gd")
+        check("OxygenCanisterManager autoload exists", oxygen_canister_manager != null)
+        check("InventoryManager autoload exists for O2 kit test", inventory_manager != null)
+        check("player.gd loads for O2 kit test", player_script != null)
+        check("combat_hud.gd loads for O2 kit test", combat_hud_script != null)
+        if not oxygen_canister_manager or not inventory_manager or not player_script or not combat_hud_script:
+                return
+
+        var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
+        inventory_manager.resources["biomass"] = 2
+        inventory_manager.resources["energy"] = 1
+        inventory_manager.resources["oxygen_canister"] = 0
+
+        check("oxygen canister crafts from biomass and energy", oxygen_canister_manager.craft_canister())
+        check("oxygen canister craft consumes biomass", inventory_manager.resources.get("biomass", -1) == 0)
+        check("oxygen canister craft consumes energy", inventory_manager.resources.get("energy", -1) == 0)
+        check("oxygen canister craft adds kit", inventory_manager.resources.get("oxygen_canister", -1) == 1)
+
+        var player = player_script.new()
+        player.add_to_group("player")
+        player.max_oxygen = 180.0
+        player.current_oxygen = 80.0
+        current_scene.add_child(player)
+
+        check("oxygen canister can be used", oxygen_canister_manager.use_canister(player))
+        check_nearly(player.current_oxygen, 140.0, 0.01, "oxygen canister restores oxygen")
+        check("oxygen canister use consumes kit", inventory_manager.resources.get("oxygen_canister", -1) == 0)
+
+        inventory_manager.resources["oxygen_canister"] = 1
+        player.current_oxygen = player.max_oxygen
+        check("oxygen canister does not consume at full oxygen", not oxygen_canister_manager.use_canister(player))
+        check("full oxygen keeps canister", inventory_manager.resources.get("oxygen_canister", -1) == 1)
+
+        var combat_hud = combat_hud_script.new()
+        current_scene.add_child(combat_hud)
+        check("combat HUD shows oxygen kit hint", combat_hud.get_oxygen_supply_text().contains("O2 Kit"), combat_hud.get_oxygen_supply_text())
+
+        combat_hud.queue_free()
+        player.free()
+        inventory_manager.resources = old_resources
 
 
 func _test_death_drop_manager() -> void:
@@ -360,6 +409,9 @@ func _test_build_and_combat_ui() -> void:
 
         var death_drop_script = load("res://scripts/death_drop.gd")
         check("death_drop.gd loads", death_drop_script != null)
+
+        var oxygen_canister_script = load("res://scripts/oxygen_canister_manager.gd")
+        check("oxygen_canister_manager.gd loads", oxygen_canister_script != null)
 
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)

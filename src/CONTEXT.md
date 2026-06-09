@@ -49,6 +49,22 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Displays a small orange recoverable crate.
   - Player collision calls `DeathDropManager.collect_active_drop()`.
 
+### Oxygen Canister Manager (便携氧气瓶)
+- **Type**: `Node` autoload
+- **Script**: `scripts/oxygen_canister_manager.gd`
+- **Concept**: Prepared exploration buffer for O2 risk and death-drop recovery runs.
+- **Inventory key**: `oxygen_canister`
+- **Inputs**:
+  - `H` / `craft_oxygen_canister`: craft one O2 Kit from `2 biomass + 1 energy`.
+  - `Q` / `use_oxygen_canister`: consume one O2 Kit to restore `60` O2, capped at player max O2.
+- **Signals**: `oxygen_canister_crafted()`, `oxygen_canister_used(amount)`
+- **Behavior**:
+  - Refuses to craft without resources.
+  - Refuses to consume if no kit, no player, or oxygen is already full.
+  - Uses `InventoryManager` for persistence, SaveManager support, and Death Drop integration.
+- **HUD**:
+  - `CombatHUD` shows `O2 Kit: N | Q use +60 O2 | H craft READY/NEED ...`.
+
 ### Enemy (敌人)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/enemy.gd`
@@ -214,6 +230,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **HUD feedback**: `SaveManager.save_status_changed(message)` is connected by `CombatHUD`; top-left HUD shows `Save: Saved`, `Save: Loaded`, or failure/no-file messages for a short duration.
 - **Persisted MVP state**:
   - `InventoryManager.resources`
+    - Includes `oxygen_canister`, which is crafted/used by `OxygenCanisterManager`.
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate, Signal Beacon progress/timer
@@ -407,6 +424,7 @@ src/
 │   ├── player.gd            # Movement, oxygen, death
 │   ├── death_drop_manager.gd # Death penalty resource drop/recovery state
 │   ├── death_drop.gd         # Recoverable death crate
+│   ├── oxygen_canister_manager.gd # Craft/use portable O2 kits
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module

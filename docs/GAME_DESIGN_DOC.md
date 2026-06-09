@@ -21,6 +21,7 @@
 | 系统 | 当前状态 | 关键文件 |
 |------|----------|----------|
 | 角色移动/O2 | 可玩，含冲刺、蹲伏、趴下、地形跟随和卡住恢复 | `player.gd` |
+| 便携氧气瓶 | `H` 消耗 biomass/energy 制作，`Q` 使用恢复 O2，支持存档和死亡掉落 | `oxygen_canister_manager.gd`, `inventory_manager.gd`, `combat_hud.gd` |
 | 死亡掉落 | 死亡时掉落约一半携带资源，HUD/Objective 引导找回，支持存档恢复 | `death_drop_manager.gd`, `death_drop.gd`, `player.gd` |
 | 昼夜/波次 | 白天采集，夜晚刷敌，`N` 可快速进入夜晚测试 | `game_manager.gd`, `base_interaction.gd` |
 | 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色、HUD 标签和击杀奖励 | `game_manager.gd`, `enemy.gd` |
@@ -50,12 +51,13 @@
 当前阶段不追求完整沙盒，而追求一个“能反复玩 10-15 分钟”的闭环：
 
 1. 玩家白天采集基础资源。
-2. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
-3. 玩家选择建造路线：防御、氧气、护盾、能量。
-4. 夜晚敌人进攻基地，玩家用武器和建筑防守。
-5. 防守奖励和基地损伤推动下一天的建造选择。
-6. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
-7. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log、Signal Cache 与 Extraction Holdout 给出探索、奖励和结局压力反馈。
+2. 玩家可用 biomass/energy 制作便携氧气瓶，准备更远距离探索或找回掉落。
+3. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
+4. 玩家选择建造路线：防御、氧气、护盾、能量。
+5. 夜晚敌人进攻基地，玩家用武器和建筑防守。
+6. 防守奖励和基地损伤推动下一天的建造选择。
+7. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
+8. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log、Signal Cache 与 Extraction Holdout 给出探索、奖励和结局压力反馈。
 
 ### 0.3 近期开发顺序
 
@@ -80,6 +82,7 @@
 | Done | 信号补给点 Signal Cache | 让 Radio Log 变成可探索奖励 | 里程碑生成补给点，HUD/Objective 给方向，拾取获得资源 |
 | Done | 撤离坚守 Extraction Holdout | 让 100% 信号从“日志完成”变成结局前防守目标 | Signal 100 后强制进入夜袭，HUD/Objective 显示撤离倒计时，结束显示 victory |
 | Done | 死亡资源掉落 Death Drop | 让 O2 风险产生真实资源压力且可挽回 | 死亡扣除约半数资源生成掉落包，HUD/Objective 指引找回 |
+| Done | 便携氧气瓶 O2 Kit | 给探索/找回掉落增加可准备的风险缓冲 | `H` 制作氧气瓶，`Q` 使用恢复 60 O2，HUD 显示数量与制作状态 |
 
 ### 0.4 当前手测入口
 

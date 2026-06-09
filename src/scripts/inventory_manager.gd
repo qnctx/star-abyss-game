@@ -8,7 +8,8 @@ var resources = {
 	"biomass": 0,
 	"energy": 0,
 	"energy_core": 0,
-	"blueprint": 0
+	"blueprint": 0,
+	"oxygen_canister": 0
 }
 
 
