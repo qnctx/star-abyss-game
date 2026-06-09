@@ -295,6 +295,43 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Objective Tracker Slice
+
+- Added `ObjectiveTracker`, a lightweight next-step guidance node.
+- Objective priority currently covers:
+  - Night defense.
+  - Base repair when Base HP is damaged.
+  - First Turret.
+  - O2 Station.
+  - Solar Panel.
+  - Research Station.
+  - Slow Field.
+  - Turret upgrade.
+  - General scan/expand fallback.
+- Combat HUD now displays the objective line below the resource scanner hint.
+- Main scene now includes an `ObjectiveTracker` node.
+- Added automated coverage for script loading, main-scene wiring, and missing-resource text formatting.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 134 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Structure Repair Slice
 
 - Added structure HP metadata for newly placed buildings:

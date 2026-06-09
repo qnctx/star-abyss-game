@@ -159,9 +159,19 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Day/night countdown
    - Wave direction
    - Wave variant label
+   - Objective line
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
+
+## Objective Tracker
+
+1. Start a fresh run and confirm the objective line appears below the scanner line.
+2. With no turret built, confirm it asks you to gather resources or build the first Turret.
+3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, Slow Field, or turret upgrade depending on current progress/resources.
+4. Press `N` to start night and confirm the objective changes to base defense while enemies are alive.
+5. Let Base HP drop below full during daytime and confirm the objective asks for base repair or repair resources.
+6. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
 
 ## Wave Warning
 

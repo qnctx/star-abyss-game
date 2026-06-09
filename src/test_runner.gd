@@ -32,6 +32,7 @@ func _run() -> void:
         _test_solar_panel_energy()
         _test_research_station()
         _test_resource_scanner()
+        _test_objective_tracker()
         _test_serum_recipes()
 
         print("\n========================================")
@@ -236,6 +237,9 @@ func _test_build_and_combat_ui() -> void:
         var slow_field_script = load("res://scripts/slow_field.gd")
         check("slow_field.gd loads", slow_field_script != null)
 
+        var objective_tracker_script = load("res://scripts/objective_tracker.gd")
+        check("objective_tracker.gd loads", objective_tracker_script != null)
+
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
         if not main_scene:
@@ -246,6 +250,7 @@ func _test_build_and_combat_ui() -> void:
         check("CombatHUD node exists", main.get_node_or_null("CombatHUD") != null)
         check("BaseInteraction node exists", main.get_node_or_null("BaseInteraction") != null)
         check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
+        check("ObjectiveTracker node exists", main.get_node_or_null("ObjectiveTracker") != null)
         main.free()
 
 
@@ -652,6 +657,33 @@ func _test_resource_scanner() -> void:
         scanner.queue_free()
         resource.queue_free()
         player.queue_free()
+
+
+func _test_objective_tracker() -> void:
+        print("\n[ Objective tracker ]")
+
+        var objective_script = load("res://scripts/objective_tracker.gd")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("objective_tracker.gd loads for objective test", objective_script != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not objective_script or not inventory_manager:
+                return
+
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_void: int = inventory_manager.resources.get("void_crystal", 0)
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["void_crystal"] = 2
+
+        var tracker = objective_script.new()
+        current_scene.add_child(tracker)
+
+        var missing_text: String = tracker.get_missing_resources_text({"iron": 20, "void_crystal": 5})
+        check("objective missing text shows iron gap", missing_text.contains("20 iron"), missing_text)
+        check("objective missing text shows crystal gap", missing_text.contains("3 crystal"), missing_text)
+
+        tracker.queue_free()
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["void_crystal"] = old_void
 
 
 func _test_serum_recipes() -> void:

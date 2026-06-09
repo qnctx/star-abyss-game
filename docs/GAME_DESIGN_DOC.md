@@ -31,6 +31,7 @@
 | 建筑升级 | 建造模式按 `U` 消耗 energy/blueprint 升级炮塔 | `build_manager.gd`, `turret.gd` |
 | 建筑修理 | 敌人突破基地会损伤附近建筑，建造模式按 `R` 修理受损建筑 | `game_manager.gd`, `build_manager.gd` |
 | 建筑状态提示 | HUD 显示回收目标/返还和炮塔升级等级/资源状态 | `build_manager.gd`, `combat_hud.gd` |
+| 目标提示 | HUD 显示当前下一步目标，引导采集/建造/防守 | `objective_tracker.gd`, `combat_hud.gd` |
 | 控场 | Slow Field 半径内降低敌人移动速度 | `slow_field.gd`, `enemy.gd` |
 | 氧气补给 | O2 Station 在半径内给玩家补氧 | `o2_station.gd` |
 | 基地维护 | 靠近基地按 `E` 消耗资源修复 Base HP | `base_interaction.gd`, `game_manager.gd` |
@@ -61,6 +62,7 @@
 | Done | 建筑状态提示 | 让升级等级/回收目标更清楚 | HUD 显示等级、目标、返还和 READY/MAX |
 | Done | 敌人类型扩展 | 增加防守策略差异 | Scout/Tank/Elite/Boss 波次可见且数值不同 |
 | Done | 建筑修理扩展 | 让基地维护扩展到模块 | 敌人突破会伤建筑，建造模式可修理 |
+| Done | 目标提示 Objective Tracker | 让新系统形成可读推进路线 | HUD 显示下一步采集/建造/防守目标 |
 
 ### 0.4 当前手测入口
 

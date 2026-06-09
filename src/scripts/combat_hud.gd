@@ -4,6 +4,7 @@ var _status_label: Label
 var _build_label: Label
 var _base_label: Label
 var _scanner_label: Label
+var _objective_label: Label
 
 
 func _ready() -> void:
@@ -32,6 +33,13 @@ func _ready() -> void:
 	_scanner_label.add_theme_font_size_override("font_size", 16)
 	add_child(_scanner_label)
 
+	_objective_label = Label.new()
+	_objective_label.position = Vector2(10, 314)
+	_objective_label.size = Vector2(920, 36)
+	_objective_label.add_theme_font_size_override("font_size", 16)
+	_objective_label.add_theme_color_override("font_color", Color(1.0, 0.88, 0.45))
+	add_child(_objective_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -42,6 +50,10 @@ func _ready() -> void:
 		GameManager.night_started.connect(_refresh)
 	if InventoryManager:
 		InventoryManager.resource_changed.connect(_on_resource_changed)
+
+	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
+	if objective_tracker:
+		objective_tracker.objective_changed.connect(_on_objective_changed)
 
 	_refresh()
 
@@ -76,6 +88,11 @@ func _on_resource_changed(_type: String, _amount: int) -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
+	_refresh_objective_hint()
+
+
+func _on_objective_changed(_text: String) -> void:
+	_refresh_objective_hint()
 
 
 func _refresh() -> void:
@@ -96,6 +113,7 @@ func _refresh() -> void:
 	_refresh_build_hint()
 	_refresh_base_hint()
 	_refresh_scanner_hint()
+	_refresh_objective_hint()
 
 
 func _refresh_build_hint() -> void:
@@ -130,3 +148,8 @@ func _refresh_base_hint() -> void:
 func _refresh_scanner_hint() -> void:
 	var scanner := get_tree().current_scene.get_node_or_null("ResourceScanner") if get_tree().current_scene else null
 	_scanner_label.text = scanner.get_scan_hint() if scanner else ""
+
+
+func _refresh_objective_hint() -> void:
+	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
+	_objective_label.text = objective_tracker.get_objective_text() if objective_tracker else ""

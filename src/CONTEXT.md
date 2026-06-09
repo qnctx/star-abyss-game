@@ -100,6 +100,16 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
 
+### Objective Tracker (目标提示)
+- **Type**: `Node`
+- **Script**: `scripts/objective_tracker.gd`
+- **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
+- **Behaviors**:
+  - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
+  - Prioritizes defense at night, base repair when damaged, then first turret, O2, solar, research, slow field, and turret upgrades.
+  - Emits `objective_changed(text)` when the current objective changes.
+  - `CombatHUD` displays the objective line below scanner status.
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -282,6 +292,7 @@ src/
 │   ├── solar_panel.gd         # Buildable daytime energy generator
 │   ├── research_station.gd    # Buildable energy-to-blueprint converter
 │   ├── resource_scanner.gd    # HUD nearest-resource scanner
+│   ├── objective_tracker.gd   # HUD next-step objective tracker
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── zone_manager.gd       # Zone adaptation
