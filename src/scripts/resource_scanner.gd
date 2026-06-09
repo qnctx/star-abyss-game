@@ -3,7 +3,7 @@ class_name ResourceScanner
 
 const SCAN_RADIUS: float = 45.0
 const SCAN_INTERVAL: float = 0.25
-const RESOURCE_TYPES := ["iron", "biomass", "void_crystal", "energy_core"]
+const RESOURCE_TYPES := ["iron", "biomass", "void_crystal", "energy_core", "oxygen_plant"]
 
 var selected_index: int = 0
 var nearest_resource: Node3D = null
@@ -57,11 +57,12 @@ func _scan_now() -> void:
 
 	var selected_type := get_selected_resource_type()
 	var best_distance := SCAN_RADIUS + 1.0
-	for node in get_tree().get_nodes_in_group("resource_nodes"):
+	var group_name := "oxygen_plants" if selected_type == "oxygen_plant" else "resource_nodes"
+	for node in get_tree().get_nodes_in_group(group_name):
 		var resource_node := node as Node3D
 		if not resource_node:
 			continue
-		if str(resource_node.get("resource_type")) != selected_type:
+		if selected_type != "oxygen_plant" and str(resource_node.get("resource_type")) != selected_type:
 			continue
 		var distance := _flat_distance(player.global_position, resource_node.global_position)
 		if distance < best_distance:
@@ -100,6 +101,8 @@ func _resource_label(resource_type: String) -> String:
 		return "crystal"
 	if resource_type == "energy_core":
 		return "core"
+	if resource_type == "oxygen_plant":
+		return "O2 plant"
 	return resource_type
 
 

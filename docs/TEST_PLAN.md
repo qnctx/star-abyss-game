@@ -310,11 +310,13 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 1. Confirm the top-left HUD shows a scanner line.
 2. Press `G`.
-3. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, and `core`.
+3. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, `core`, and `O2 plant`.
 4. Walk toward the displayed direction.
 5. Confirm the displayed distance generally decreases.
 6. Pick up the targeted resource.
-7. Confirm the scanner updates to another nearby resource or says none is nearby.
+7. Confirm the scanner updates to another nearby resource/O2 Plant or says none is nearby.
+8. Cycle to `O2 plant`.
+9. Confirm the scanner points to a generated O2 Plant when one is within range.
 
 ## Base Repair And Wave Shortcut
 

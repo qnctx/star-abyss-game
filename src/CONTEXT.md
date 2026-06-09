@@ -150,14 +150,15 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Produces `1 blueprint`
   - Pauses automatically while energy is below `5`
 
-### Resource Scanner (资源扫描器)
+### Resource Scanner (资源/生存扫描器)
 - **Type**: `Node`
 - **Script**: `scripts/resource_scanner.gd`
-- **Concept**: Lightweight HUD scanner that reduces resource-hunting friction during the build loop.
-- **Controls**: `G` cycles target resource type.
-- **Scan types**: iron, biomass, void_crystal, energy_core
+- **Concept**: Lightweight HUD scanner that reduces resource and O2 Plant hunting friction during the build/explore loop.
+- **Controls**: `G` cycles target scan type.
+- **Scan types**: iron, biomass, void_crystal, energy_core, oxygen_plant
 - **Behaviors**:
-  - Finds nearest matching node in the `resource_nodes` group within `45m`
+  - Finds nearest matching resource node in the `resource_nodes` group within `45m`
+  - `oxygen_plant` scans the `oxygen_plants` group instead
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
 

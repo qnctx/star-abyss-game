@@ -1317,7 +1317,19 @@ func _test_resource_scanner() -> void:
         scanner._scan_now()
         check("scanner filters selected resource type", scanner.nearest_resource == null)
 
+        var oxygen_plant := Node3D.new()
+        oxygen_plant.name = "ScannerTestOxygenPlant"
+        oxygen_plant.add_to_group("oxygen_plants")
+        oxygen_plant.position = Vector3(1003.0, 0.0, 1000.0)
+        current_scene.add_child(oxygen_plant)
+
+        scanner.selected_index = 4
+        scanner._scan_now()
+        var oxygen_hint: String = scanner.get_scan_hint()
+        check("scanner finds oxygen plant", oxygen_hint.contains("O2 plant") and oxygen_hint.contains("3m"), oxygen_hint)
+
         scanner.queue_free()
+        oxygen_plant.free()
         resource.free()
         player.free()
 

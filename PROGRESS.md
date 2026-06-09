@@ -81,6 +81,32 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Scanner O2 Plant Tracking Slice
+
+- Expanded `ResourceScanner` scan targets:
+  - Added `oxygen_plant` as the fifth `G` cycle mode.
+  - Resource modes still scan `resource_nodes`.
+  - O2 Plant mode scans the `oxygen_plants` group.
+  - HUD displays `Scanner: O2 plant Xm DIR | G type`.
+- Added automated coverage for scanning a nearby O2 Plant while preserving existing resource scan behavior.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 307 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+
+---
+
 ## 2026-06-09 - Oxygen Plant Exploration Slice
 
 - Added `OxygenPlant`, a one-use wilderness O2 refill:

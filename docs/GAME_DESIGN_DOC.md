@@ -45,7 +45,7 @@
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
 | 信号台/撤离线 | Signal Beacon 消耗 energy 推进求救信号进度，里程碑解锁 Radio Log/Signal Cache，100% 后进入撤离坚守倒计时 | `signal_beacon.gd`, `signal_log_manager.gd`, `signal_cache.gd`, `build_manager.gd` |
-| 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
+| 资源/生存扫描 | Resource Scanner 显示最近目标资源或 O2 Plant 的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
 
@@ -65,7 +65,7 @@
 | 优先级 | 功能 | 目的 | 验证方式 |
 |--------|------|------|----------|
 | Done | 研究台 Research Station | 把 energy 转成 blueprint，打开科技树入口 | 建造后消耗 energy 产出 blueprint |
-| Done | 资源扫描器 Resource Scanner | 降低找材料的摩擦，支撑建造测试 | HUD 显示最近资源方向/距离 |
+| Done | 资源扫描器 Resource Scanner | 降低找材料和 O2 Plant 的摩擦，支撑探索/建造测试 | HUD 显示最近资源/O2 Plant 方向距离 |
 | Done | 第二种炮塔 Slow Field | 丰富防守选择，不只堆同一种炮塔 | 夜晚能减速敌人 |
 | Done | 敌人波次预警 | 让夜晚来临和进攻方向更清楚 | HUD 显示下一波倒计时/方向 |
 | Done | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
