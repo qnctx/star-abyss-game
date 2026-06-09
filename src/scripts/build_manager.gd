@@ -69,6 +69,10 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("repair_structure") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_R):
 		_try_repair_structure()
 		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("unlock_tech") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_Y):
+		unlock_selected_tech()
+		_refresh_preview_mesh()
+		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
 		_select_building(BUILD_TURRET)
 		get_viewport().set_input_as_handled()
@@ -174,7 +178,8 @@ func _update_preview() -> void:
 	else:
 		_position_is_valid = _validate_position(_placement_position)
 		var has_resources := InventoryManager.has_resources(get_selected_cost())
-		_can_place = _position_is_valid and has_resources
+		var unlocked := is_selected_unlocked()
+		_can_place = _position_is_valid and has_resources and unlocked
 
 	_preview.global_position = _placement_position
 	if recycle_mode and _can_place:
@@ -183,6 +188,8 @@ func _update_preview() -> void:
 		_preview_material.albedo_color = Color(1.0, 0.2, 0.15, 0.45)
 	elif _can_place:
 		_preview_material.albedo_color = Color(0.2, 1.0, 0.45, 0.45)
+	elif _position_is_valid and not is_selected_unlocked():
+		_preview_material.albedo_color = Color(0.65, 0.35, 1.0, 0.45)
 	elif _position_is_valid:
 		_preview_material.albedo_color = Color(1.0, 0.85, 0.15, 0.45)
 	else:
@@ -194,6 +201,8 @@ func _try_place_structure() -> void:
 		_try_recycle_structure()
 		return
 	if not _can_place:
+		return
+	if not is_selected_unlocked():
 		return
 	var cost := get_selected_cost()
 	if not InventoryManager.has_resources(cost):
@@ -313,6 +322,30 @@ func get_structure_action_status_text() -> String:
 	if repair_target:
 		return get_repair_status_text()
 	return get_upgrade_status_text()
+
+
+func is_selected_unlocked() -> bool:
+	return not TechManager or TechManager.is_unlocked(selected_building)
+
+
+func can_unlock_selected() -> bool:
+	return TechManager and TechManager.can_unlock(selected_building)
+
+
+func unlock_selected_tech() -> bool:
+	return TechManager and TechManager.unlock(selected_building)
+
+
+func get_selected_unlock_status_text() -> String:
+	if is_selected_unlocked():
+		return "Unlocked"
+	if not TechManager or not TechManager.is_unlockable(selected_building):
+		return "Locked"
+	var afford := TechManager.can_unlock(selected_building)
+	return "Unlock %s | Y %s" % [
+		get_selected_unlock_cost_text(),
+		"READY" if afford else "NEED BLUEPRINT"
+	]
 
 
 func get_repair_status_text() -> String:
@@ -514,9 +547,21 @@ func get_selected_label() -> String:
 
 
 func get_selected_cost_text() -> String:
+	return _cost_text(get_selected_cost())
+
+
+func get_selected_unlock_cost_text() -> String:
+	if not TechManager:
+		return "none"
+	return _cost_text(TechManager.get_unlock_cost(selected_building))
+
+
+func _cost_text(cost: Dictionary) -> String:
+	if cost.is_empty():
+		return "none"
 	var parts: Array[String] = []
-	for resource_type in get_selected_cost():
-		parts.append("%d %s" % [get_selected_cost()[resource_type], _resource_label(resource_type)])
+	for resource_type in cost:
+		parts.append("%d %s" % [cost[resource_type], _resource_label(str(resource_type))])
 	return " + ".join(parts)
 
 

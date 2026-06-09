@@ -37,6 +37,7 @@
 | 基地维护 | 靠近基地按 `E` 消耗资源修复 Base HP | `base_interaction.gd`, `game_manager.gd` |
 | 能量生产 | Solar Panel 白天生产 energy，夜晚停产 | `solar_panel.gd` |
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
+| 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标
@@ -47,7 +48,7 @@
 2. 玩家选择建造路线：防御、氧气、护盾、能量。
 3. 夜晚敌人进攻基地，玩家用武器和建筑防守。
 4. 防守奖励和基地损伤推动下一天的建造选择。
-5. 能量与蓝图开始承接科技树，而不是只停留在资源堆积。
+5. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
 
 ### 0.3 近期开发顺序
 
@@ -63,6 +64,7 @@
 | Done | 敌人类型扩展 | 增加防守策略差异 | Scout/Tank/Elite/Boss 波次可见且数值不同 |
 | Done | 建筑修理扩展 | 让基地维护扩展到模块 | 敌人突破会伤建筑，建造模式可修理 |
 | Done | 目标提示 Objective Tracker | 让新系统形成可读推进路线 | HUD 显示下一步采集/建造/防守目标 |
+| Done | 科技解锁 Tech Unlock | 让 Research Station 产出的 blueprint 推动建筑解锁 | Shield/Slow 默认锁定，按 `Y` 消耗 blueprint 解锁后才能建造 |
 
 ### 0.4 当前手测入口
 

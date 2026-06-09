@@ -110,9 +110,23 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes defense at night, base repair when damaged, then first turret, O2, solar, research, slow field, and turret upgrades.
+  - Prioritizes defense at night, base repair when damaged, then first turret, O2, solar, research, tech unlocks, shield, slow field, and turret upgrades.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
+
+### Tech Manager (科技解锁)
+- **Type**: `Node` autoload
+- **Script**: `scripts/tech_manager.gd`
+- **Concept**: Small MVP technology gate that turns blueprints into buildable defensive options.
+- **Unlocked by default**: Turret, O2 Station, Solar Panel, Research Station.
+- **Locked by default**:
+  - Shield Generator costs `1 blueprint` to unlock.
+  - Slow Field costs `2 blueprint` to unlock.
+- **Behaviors**:
+  - `BuildManager` blocks placement while selected building tech is locked.
+  - Build mode uses `Y` / `unlock_tech` to unlock the selected building if blueprint cost is available.
+  - `CombatHUD` shows locked state, unlock cost, and `Y READY` / `Y NEED BLUEPRINT`.
+  - `ObjectiveTracker` guides the player from research into Shield Generator and Slow Field unlocks.
 
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
@@ -299,6 +313,7 @@ src/
 │   ├── objective_tracker.gd   # HUD next-step objective tracker
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
+│   ├── tech_manager.gd       # Blueprint-based building unlock gates
 │   ├── zone_manager.gd       # Zone adaptation
 │   ├── zone_trigger.gd       # Zone entry detection
 │   ├── resource_node.gd      # Collectible resources

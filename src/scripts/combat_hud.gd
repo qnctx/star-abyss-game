@@ -50,6 +50,8 @@ func _ready() -> void:
 		GameManager.night_started.connect(_refresh)
 	if InventoryManager:
 		InventoryManager.resource_changed.connect(_on_resource_changed)
+	if TechManager:
+		TechManager.tech_unlocked.connect(_on_tech_unlocked)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -91,6 +93,11 @@ func _on_resource_changed(_type: String, _amount: int) -> void:
 	_refresh_objective_hint()
 
 
+func _on_tech_unlocked(_tech_id: String) -> void:
+	_refresh_build_hint()
+	_refresh_objective_hint()
+
+
 func _on_objective_changed(_text: String) -> void:
 	_refresh_objective_hint()
 
@@ -120,17 +127,23 @@ func _refresh_build_hint() -> void:
 	var build_manager := get_tree().current_scene.get_node_or_null("BuildManager") if get_tree().current_scene else null
 	if build_manager and build_manager.build_mode:
 		if build_manager.recycle_mode:
-			_build_label.text = "Recycle mode | X build mode | U upgrade | R repair\n%s" % build_manager.get_recycle_status_text()
+			_build_label.text = "Recycle | X Build | U Up | R Repair\n%s" % build_manager.get_recycle_status_text()
+			return
+		if not build_manager.is_selected_unlocked():
+			_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair\n%s locked | %s" % [
+				build_manager.get_selected_label(),
+				build_manager.get_selected_unlock_status_text()
+			]
 			return
 		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
-		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | X Rec | U Up | R Repair\n%s: %s | LMB %s | %s" % [
+		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair\n%s: %s | LMB %s | %s" % [
 			build_manager.get_selected_label(),
 			build_manager.get_selected_cost_text(),
 			"READY" if afford else "NEED RES",
 			build_manager.get_structure_action_status_text()
 		]
 	else:
-		_build_label.text = "Press B to build | 1 Turret, 2 O2, 3 Shield, 4 Solar, 5 Research, 6 Slow, X Recycle, U Upgrade, R Repair"
+		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair"
 
 
 func _refresh_base_hint() -> void:

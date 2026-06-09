@@ -81,6 +81,45 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Tech Unlock Gate Slice
+
+- Added `TechManager` as a small blueprint-driven technology autoload.
+- Default unlocked buildings:
+  - Turret.
+  - O2 Station.
+  - Solar Panel.
+  - Research Station.
+- Default locked buildings:
+  - Shield Generator: unlock costs `1 blueprint`.
+  - Slow Field: unlock costs `2 blueprint`.
+- Build mode now supports `Y` / `unlock_tech`:
+  - Locked selected buildings cannot be placed.
+  - Valid locked placement previews show a purple locked state.
+  - HUD shows unlock cost plus `Y READY` or `Y NEED BLUEPRINT`.
+- Objective Tracker now guides the player from Research Station into Shield Generator unlock/build, then Slow Field unlock/build, then turret upgrades.
+- Added automated coverage for tech autoload loading, default unlock state, blueprint costs, failed unlocks, successful unlocks, and build-manager unlock status.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 160 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-08 - Headless Test Runner Repair
 
 - Fixed `src/test_runner.gd` so it can run with Godot 4.6.2 `--script` by inheriting `SceneTree`.

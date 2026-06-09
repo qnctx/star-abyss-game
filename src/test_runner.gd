@@ -32,6 +32,7 @@ func _run() -> void:
         _test_enemy_reward_rules()
         _test_solar_panel_energy()
         _test_research_station()
+        _test_tech_unlocks()
         _test_resource_scanner()
         _test_objective_tracker()
         _test_serum_recipes()
@@ -240,6 +241,9 @@ func _test_build_and_combat_ui() -> void:
 
         var objective_tracker_script = load("res://scripts/objective_tracker.gd")
         check("objective_tracker.gd loads", objective_tracker_script != null)
+
+        var tech_manager_script = load("res://scripts/tech_manager.gd")
+        check("tech_manager.gd loads", tech_manager_script != null)
 
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
@@ -670,6 +674,56 @@ func _test_research_station() -> void:
 
         station.queue_free()
         inventory_manager.resources["energy"] = old_energy
+        inventory_manager.resources["blueprint"] = old_blueprint
+
+
+func _test_tech_unlocks() -> void:
+        print("\n[ Tech unlocks ]")
+
+        var tech_manager = _get_autoload("TechManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        var build_script = load("res://scripts/build_manager.gd")
+        check("TechManager autoload exists", tech_manager != null)
+        check("InventoryManager autoload exists for tech test", inventory_manager != null)
+        check("build_manager.gd loads for tech test", build_script != null)
+        if not tech_manager or not inventory_manager or not build_script:
+                return
+
+        var old_blueprint: int = inventory_manager.resources.get("blueprint", 0)
+        tech_manager.reset_unlocks()
+        inventory_manager.resources["blueprint"] = 0
+
+        check("turret starts unlocked", tech_manager.is_unlocked("turret"))
+        check("shield starts locked", not tech_manager.is_unlocked("shield_generator"))
+        check("slow field starts locked", not tech_manager.is_unlocked("slow_field"))
+        check("shield cannot unlock without blueprint", not tech_manager.unlock("shield_generator"))
+
+        var build_manager = build_script.new()
+        current_scene.add_child(build_manager)
+        build_manager.selected_building = build_manager.BUILD_SHIELD_GENERATOR
+
+        var locked_status: String = build_manager.get_selected_unlock_status_text()
+        check("build manager reports selected locked tech", not build_manager.is_selected_unlocked())
+        check("unlock status shows shield blueprint cost", locked_status.contains("1 blueprint"), locked_status)
+
+        inventory_manager.resources["blueprint"] = 1
+        check("build manager can unlock selected shield", build_manager.can_unlock_selected())
+        check("unlock selected shield succeeds", build_manager.unlock_selected_tech())
+        check("shield unlock consumes blueprint", inventory_manager.resources.get("blueprint", -1) == 0)
+        check("shield is unlocked after purchase", build_manager.is_selected_unlocked())
+
+        build_manager.selected_building = build_manager.BUILD_SLOW_FIELD
+        inventory_manager.resources["blueprint"] = 1
+        check("slow field rejects partial blueprint cost", not build_manager.unlock_selected_tech())
+        check("partial failed unlock does not consume blueprint", inventory_manager.resources.get("blueprint", -1) == 1)
+
+        inventory_manager.resources["blueprint"] = 2
+        check("slow field unlock succeeds with two blueprints", build_manager.unlock_selected_tech())
+        check("slow field unlock consumes two blueprints", inventory_manager.resources.get("blueprint", -1) == 0)
+        check("slow field is unlocked after purchase", build_manager.is_selected_unlocked())
+
+        build_manager.queue_free()
+        tech_manager.reset_unlocks()
         inventory_manager.resources["blueprint"] = old_blueprint
 
 

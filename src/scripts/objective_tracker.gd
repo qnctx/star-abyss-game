@@ -5,10 +5,13 @@ signal objective_changed(text: String)
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const SOLAR_PANEL_COST := {"iron": 18, "biomass": 6}
+const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
 const RESEARCH_STATION_COST := {"iron": 20, "void_crystal": 5, "energy": 5}
 const SLOW_FIELD_COST := {"iron": 15, "biomass": 8, "energy": 4}
 const TURRET_UPGRADE_COST := {"iron": 10, "energy": 5, "blueprint": 1}
 const BASE_REPAIR_COST := {"iron": 10, "biomass": 5}
+const SHIELD_UNLOCK_COST := {"blueprint": 1}
+const SLOW_FIELD_UNLOCK_COST := {"blueprint": 2}
 
 var _last_text: String = ""
 var _refresh_timer: float = 0.0
@@ -22,6 +25,8 @@ func _ready() -> void:
 		GameManager.day_started.connect(_refresh)
 		GameManager.enemies_alive_changed.connect(_on_enemies_alive_changed)
 		GameManager.base_health_changed.connect(_on_base_health_changed)
+	if TechManager:
+		TechManager.tech_unlocked.connect(_on_tech_unlocked)
 	set_process(true)
 	_refresh()
 
@@ -56,6 +61,15 @@ func get_objective_text() -> String:
 	if _count_group("research_stations") <= 0:
 		return _build_or_gather("Build Research Station (B, 5)", RESEARCH_STATION_COST)
 
+	if TechManager and not TechManager.is_unlocked("shield_generator"):
+		return _unlock_or_gather("Unlock Shield Generator (B, 3, Y)", SHIELD_UNLOCK_COST)
+
+	if _count_group("shield_generators") <= 0:
+		return _build_or_gather("Build Shield Generator (B, 3)", SHIELD_GENERATOR_COST)
+
+	if TechManager and not TechManager.is_unlocked("slow_field"):
+		return _unlock_or_gather("Unlock Slow Field (B, 6, Y)", SLOW_FIELD_UNLOCK_COST)
+
 	if _count_group("slow_fields") <= 0:
 		return _build_or_gather("Build Slow Field (B, 6)", SLOW_FIELD_COST)
 
@@ -80,6 +94,12 @@ func _build_or_gather(build_text: String, cost: Dictionary) -> String:
 	if InventoryManager and InventoryManager.has_resources(cost):
 		return "Objective: %s" % build_text
 	return "Objective: Gather %s" % get_missing_resources_text(cost)
+
+
+func _unlock_or_gather(unlock_text: String, cost: Dictionary) -> String:
+	if InventoryManager and InventoryManager.has_resources(cost):
+		return "Objective: %s" % unlock_text
+	return "Objective: Research %s" % get_missing_resources_text(cost)
 
 
 func _has_upgradeable_turret() -> bool:
@@ -117,6 +137,10 @@ func _on_enemies_alive_changed(_count: int) -> void:
 
 
 func _on_base_health_changed(_health: float) -> void:
+	_refresh()
+
+
+func _on_tech_unlocked(_tech_id: String) -> void:
 	_refresh()
 
 

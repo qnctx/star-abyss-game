@@ -25,6 +25,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 3. Preview colors:
    - Green: valid position and enough resources.
    - Yellow: valid position but missing resources.
+   - Purple: valid position but selected building is still tech-locked.
    - Red: invalid position.
 4. Press `1`; HUD should show `Turret`.
 5. Press `2`; HUD should show `O2 Station`.
@@ -33,11 +34,12 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 8. Press `5`; HUD should show `Research Station`.
 9. Press `6`; HUD should show `Slow Field`.
 10. Confirm the build HUD uses two rows and does not overlap the Base/Scanner HUD rows.
-11. Confirm the second row shows selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade target status.
-12. Confirm the first row includes `R Repair`.
-13. Press `X`; HUD should enter recycle mode.
-14. Press `X` again; HUD should return to build mode.
-15. Right-click or press `Esc` to leave build mode.
+11. Confirm locked buildings show `Y Unlock`, blueprint cost, and `Y READY` or `Y NEED BLUEPRINT`.
+12. Confirm unlocked buildings show selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade/repair target status.
+13. Confirm the first row includes `Y Unlock` and `R Repair`.
+14. Press `X`; HUD should enter recycle mode.
+15. Press `X` again; HUD should return to build mode.
+16. Right-click or press `Esc` to leave build mode.
 
 ## Building Recycle
 
@@ -98,28 +100,34 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 ## Shield Generator
 
-1. Collect at least `25 iron + 8 void_crystal + 1 energy_core`.
+1. Generate at least `1 blueprint` from a Research Station.
 2. Press `B`, then `3`.
-3. Confirm the HUD says `Shield Generator`.
-4. Place the shield generator on green terrain.
-5. Confirm resources decrease.
-6. Confirm the Combat HUD shows shield value above `0`.
-7. Press `N` to start night quickly.
-8. Let an enemy reach the base.
-9. Confirm shield decreases before Base HP decreases.
-10. Wait near the base and confirm shield slowly recharges while the generator exists.
+3. Confirm the HUD says `Shield Generator locked | Unlock 1 blueprint | Y READY`.
+4. Press `Y`.
+5. Confirm `blueprint` decreases by `1` and the selected Shield Generator no longer shows locked.
+6. Collect at least `25 iron + 8 void_crystal + 1 energy_core`.
+7. Place the shield generator on green terrain.
+8. Confirm build resources decrease.
+9. Confirm the Combat HUD shows shield value above `0`.
+10. Press `N` to start night quickly.
+11. Let an enemy reach the base.
+12. Confirm shield decreases before Base HP decreases.
+13. Wait near the base and confirm shield slowly recharges while the generator exists.
 
 ## Slow Field
 
-1. Build at least one Solar Panel and collect `4 energy`.
-2. Collect at least `15 iron + 8 biomass`.
+1. Generate at least `2 blueprint` from a Research Station.
+2. Build at least one Solar Panel and collect `4 energy`.
 3. Press `B`, then `6`.
-4. Confirm the HUD says `Slow Field`.
-5. Place the slow field on green terrain between enemy spawn direction and the base.
-6. Press `N` to start night quickly.
-7. Watch enemies crossing the blue field radius.
-8. Confirm enemies inside the field move slower than enemies outside it.
-9. Confirm enemies return to normal speed after leaving the field.
+4. Confirm the HUD says `Slow Field locked | Unlock 2 blueprint | Y READY`.
+5. Press `Y`.
+6. Confirm `blueprint` decreases by `2` and the selected Slow Field no longer shows locked.
+7. Collect at least `15 iron + 8 biomass`.
+8. Place the slow field on green terrain between enemy spawn direction and the base.
+9. Press `N` to start night quickly.
+10. Watch enemies crossing the blue field radius.
+11. Confirm enemies inside the field move slower than enemies outside it.
+12. Confirm enemies return to normal speed after leaving the field.
 
 ## Solar Panel
 
@@ -146,6 +154,17 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 9. Confirm `blueprint` increases by `1`.
 10. If energy is below `5`, confirm blueprints stop increasing.
 
+## Tech Unlocks
+
+1. Start a fresh run and enter build mode.
+2. Select `3` Shield Generator and confirm it is locked before spending blueprint.
+3. Try left-clicking on valid terrain while locked and confirm no Shield Generator is placed.
+4. Without blueprint, press `Y` and confirm nothing unlocks or consumes resources.
+5. Generate `1 blueprint`, select `3`, press `Y`, and confirm Shield Generator unlocks.
+6. Select `6` Slow Field and confirm it still requires `2 blueprint`.
+7. Generate `2 blueprint`, press `Y`, and confirm Slow Field unlocks.
+8. Confirm unlocked Shield Generator and Slow Field remain buildable while switching selections during the same run.
+
 ## Combat HUD
 
 1. Confirm the top-left HUD shows:
@@ -160,6 +179,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Wave direction
    - Wave variant label
    - Objective line
+   - Locked-tech/unlock status while build mode is open
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
@@ -169,7 +189,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 1. Start a fresh run and confirm the objective line appears below the scanner line.
 2. With no turret built, confirm it asks you to gather resources or build the first Turret.
-3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, Slow Field, or turret upgrade depending on current progress/resources.
+3. Build a Turret and confirm the objective advances toward O2 Station, Solar Panel, Research Station, tech unlocks, Shield Generator, Slow Field, or turret upgrade depending on current progress/resources.
 4. Press `N` to start night and confirm the objective changes to base defense while enemies are alive.
 5. Let Base HP drop below full during daytime and confirm the objective asks for base repair or repair resources.
 6. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
