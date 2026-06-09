@@ -81,6 +81,40 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Low Oxygen Objective Guidance Slice
+
+- Expanded `ObjectiveTracker` with an urgent low-oxygen branch:
+  - At or below 25% O2, the objective now guides the player to the strongest available survival action.
+  - If an O2 Kit is carried, it shows `Objective: Use O2 Kit (Q) | O2 XX%`.
+  - If no kit is carried but craft resources are available, it shows `Objective: Craft O2 Kit (H) | O2 XX%`.
+  - Otherwise it shows `Objective: Find O2 Plant or return to base | O2 XX%`.
+- Low-oxygen guidance sits after extraction holdout/completion and before ordinary night/build/repair guidance.
+- Player lookup now ignores invalid/dead nodes and chooses the valid player with the lowest O2 ratio, which keeps tests and future multi-node scenes deterministic.
+- Added automated coverage for all three low-O2 objective outcomes.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+git diff --check
+codegraph status
+```
+
+Results:
+
+- `test_runner.gd`: 311 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Scanner O2 Plant Tracking Slice
 
 - Expanded `ResourceScanner` scan targets:

@@ -15,6 +15,7 @@ const SHIELD_UNLOCK_COST := {"blueprint": 1}
 const SLOW_FIELD_UNLOCK_COST := {"blueprint": 2}
 const SIGNAL_BEACON_COST := {"iron": 30, "void_crystal": 10, "energy": 10, "blueprint": 2}
 const SIGNAL_POWER_COST := {"energy": 1}
+const LOW_OXYGEN_RATIO := 0.25
 
 var _last_text: String = ""
 var _refresh_timer: float = 0.0
@@ -58,6 +59,10 @@ func get_objective_text() -> String:
 				SignalLogManager.get_extraction_time_text()
 			]
 		return SignalLogManager.get_extraction_objective_text()
+
+	var oxygen_text := _oxygen_objective_text()
+	if not oxygen_text.is_empty():
+		return oxygen_text
 
 	if GameManager and GameManager.is_night:
 		if GameManager.enemies_alive > 0:
@@ -153,6 +158,48 @@ func _has_upgradeable_turret() -> bool:
 		if int(turret_node.get_meta("upgrade_level", 0)) < 3:
 			return true
 	return false
+
+
+func _oxygen_objective_text() -> String:
+	var player := _oxygen_player()
+	if not player or player.get("is_dead") == true:
+		return ""
+	var max_oxygen := float(player.get("max_oxygen"))
+	if max_oxygen <= 0.0:
+		return ""
+	var current_oxygen := float(player.get("current_oxygen"))
+	var ratio := current_oxygen / max_oxygen
+	if ratio > LOW_OXYGEN_RATIO:
+		return ""
+	var percent := roundi(ratio * 100.0)
+	if InventoryManager and int(InventoryManager.resources.get("oxygen_canister", 0)) > 0:
+		return "Objective: Use O2 Kit (Q) | O2 %d%%" % percent
+	if OxygenCanisterManager and InventoryManager and InventoryManager.has_resources(OxygenCanisterManager.CRAFT_COST):
+		return "Objective: Craft O2 Kit (H) | O2 %d%%" % percent
+	return "Objective: Find O2 Plant or return to base | O2 %d%%" % percent
+
+
+func _oxygen_player() -> Node:
+	var best_player: Node = null
+	var best_ratio := INF
+	for node in get_tree().get_nodes_in_group("player"):
+		var player_node := node as Node
+		if not player_node or not is_instance_valid(player_node) or player_node.is_queued_for_deletion():
+			continue
+		if player_node.get("is_dead") == true:
+			continue
+		var max_oxygen_value = player_node.get("max_oxygen")
+		var current_oxygen_value = player_node.get("current_oxygen")
+		if max_oxygen_value == null or current_oxygen_value == null:
+			continue
+		var max_oxygen := float(max_oxygen_value)
+		if max_oxygen <= 0.0:
+			continue
+		var ratio := float(current_oxygen_value) / max_oxygen
+		if ratio < best_ratio:
+			best_ratio = ratio
+			best_player = player_node
+	return best_player
 
 
 func _count_group(group_name: String) -> int:

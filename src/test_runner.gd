@@ -1338,14 +1338,16 @@ func _test_objective_tracker() -> void:
         print("\n[ Objective tracker ]")
 
         var objective_script = load("res://scripts/objective_tracker.gd")
+        var player_script = load("res://scripts/player.gd")
         var game_manager = _get_autoload("GameManager")
         var inventory_manager = _get_autoload("InventoryManager")
         var signal_log_manager = _get_autoload("SignalLogManager")
         check("objective_tracker.gd loads for objective test", objective_script != null)
+        check("player.gd loads for objective oxygen test", player_script != null)
         check("GameManager autoload exists for objective test", game_manager != null)
         check("InventoryManager autoload exists", inventory_manager != null)
         check("SignalLogManager autoload exists for objective test", signal_log_manager != null)
-        if not objective_script or not game_manager or not inventory_manager or not signal_log_manager:
+        if not objective_script or not player_script or not game_manager or not inventory_manager or not signal_log_manager:
                 return
 
         var old_is_night: bool = game_manager.is_night
@@ -1354,6 +1356,8 @@ func _test_objective_tracker() -> void:
         var old_iron: int = inventory_manager.resources.get("iron", 0)
         var old_void: int = inventory_manager.resources.get("void_crystal", 0)
         var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_o2_kit: int = inventory_manager.resources.get("oxygen_canister", 0)
         var old_signal_logs: Dictionary = signal_log_manager.capture_save_data()
         game_manager.is_night = false
         game_manager.enemies_alive = 0
@@ -1361,6 +1365,15 @@ func _test_objective_tracker() -> void:
         inventory_manager.resources["iron"] = 0
         inventory_manager.resources["void_crystal"] = 2
         inventory_manager.resources["biomass"] = 0
+        inventory_manager.resources["energy"] = 0
+        inventory_manager.resources["oxygen_canister"] = 0
+
+        var oxygen_player = player_script.new()
+        oxygen_player.name = "ObjectiveOxygenPlayer"
+        oxygen_player.add_to_group("player")
+        oxygen_player.max_oxygen = 180.0
+        oxygen_player.current_oxygen = 180.0
+        current_scene.add_child(oxygen_player)
 
         var tracker = objective_script.new()
         current_scene.add_child(tracker)
@@ -1380,6 +1393,21 @@ func _test_objective_tracker() -> void:
         check("objective prioritizes extraction holdout", extraction_text.contains("extraction") and extraction_text.contains("Enemies 2"), extraction_text)
         signal_log_manager.reset_logs()
         game_manager.enemies_alive = 0
+
+        oxygen_player.current_oxygen = 30.0
+        inventory_manager.resources["oxygen_canister"] = 1
+        var use_o2_text: String = tracker.get_objective_text()
+        check("objective asks to use O2 kit when oxygen is low", use_o2_text.contains("Use O2 Kit"), use_o2_text)
+        inventory_manager.resources["oxygen_canister"] = 0
+        inventory_manager.resources["biomass"] = 2
+        inventory_manager.resources["energy"] = 1
+        var craft_o2_text: String = tracker.get_objective_text()
+        check("objective asks to craft O2 kit when funded", craft_o2_text.contains("Craft O2 Kit"), craft_o2_text)
+        inventory_manager.resources["biomass"] = 0
+        inventory_manager.resources["energy"] = 0
+        var find_o2_text: String = tracker.get_objective_text()
+        check("objective asks to find O2 plant without kit", find_o2_text.contains("Find O2 Plant"), find_o2_text)
+        oxygen_player.current_oxygen = oxygen_player.max_oxygen
 
         var damaged_structure := Node3D.new()
         damaged_structure.add_to_group("built_structures")
@@ -1410,6 +1438,7 @@ func _test_objective_tracker() -> void:
         player.free()
         signal_log_manager.apply_save_data(old_signal_logs)
 
+        oxygen_player.free()
         tracker.queue_free()
         game_manager.is_night = old_is_night
         game_manager.enemies_alive = old_enemies_alive
@@ -1417,6 +1446,8 @@ func _test_objective_tracker() -> void:
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["void_crystal"] = old_void
         inventory_manager.resources["biomass"] = old_biomass
+        inventory_manager.resources["energy"] = old_energy
+        inventory_manager.resources["oxygen_canister"] = old_o2_kit
 
 
 func _test_serum_recipes() -> void:

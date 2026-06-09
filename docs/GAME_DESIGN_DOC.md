@@ -85,6 +85,7 @@
 | Done | 死亡资源掉落 Death Drop | 让 O2 风险产生真实资源压力且可挽回 | 死亡扣除约半数资源生成掉落包，HUD/Objective 指引找回 |
 | Done | 便携氧气瓶 O2 Kit | 给探索/找回掉落增加可准备的风险缓冲 | `H` 制作氧气瓶，`Q` 使用恢复 60 O2，HUD 显示数量与制作状态 |
 | Done | 野外氧气植物 O2 Plant | 让探索路线中出现临时续航点 | WorldGenerator 放置 O2 Plant，氧气不满时碰触恢复 45 O2 |
+| Done | 低氧目标指引 | 让低氧危机不被普通建造/修理目标淹没 | O2 <= 25% 时 Objective 优先提示用 O2 Kit、制作 O2 Kit 或寻找 O2 Plant/回基地 |
 
 ### 0.4 当前手测入口
 

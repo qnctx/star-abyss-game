@@ -283,7 +283,10 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 4. Press `N` to start night and confirm the objective changes to base defense while enemies are alive.
 5. Let Base HP drop below full during daytime and confirm the objective asks for base repair or repair resources.
 6. Damage a built structure while Base HP is full and confirm the objective asks to repair damaged structures or gather `5 iron + 2 biomass`.
-7. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
+7. Let O2 fall to 25% or lower while carrying at least one O2 Kit and confirm the objective says `Use O2 Kit (Q)`.
+8. Repeat with no O2 Kit but at least `2 biomass + 1 energy` and confirm it says `Craft O2 Kit (H)`.
+9. Repeat with no kit and not enough craft resources and confirm it says `Find O2 Plant or return to base`.
+10. Confirm the objective text stays on one line and does not overlap the build/base/scanner HUD rows.
 
 ## Wave Warning
 

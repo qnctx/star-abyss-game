@@ -217,7 +217,9 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Lightweight HUD guidance that turns the growing MVP systems into a readable next-step loop.
 - **Behaviors**:
   - Reads inventory, base health, day/night state, enemies alive, and built structure groups.
-  - Prioritizes extraction completion/holdout, defense at night, base repair when damaged, damaged structure repair, active Signal Cache recovery, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
+  - Prioritizes extraction completion/holdout, low-oxygen survival guidance, defense at night, base repair when damaged, damaged structure repair, active Signal Cache recovery, then first turret, O2, solar, research, tech unlocks, shield, slow field, turret upgrades, Signal Beacon build, and signal powering.
+  - When player O2 is at or below 25%, it shows the strongest available recovery action: use an O2 Kit with `Q`, craft one with `H`, or find an O2 Plant / return to base.
+  - If multiple test/player nodes are in the `player` group, oxygen guidance uses the valid non-dead player with the lowest oxygen ratio.
   - Emits `objective_changed(text)` when the current objective changes.
   - `CombatHUD` displays the objective line below scanner status.
 
