@@ -147,6 +147,10 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Next wave starts 5s after all enemies dead
 - **Signals**: `night_started`, `day_started`, `wave_spawned(wave_number)`
 - **Manual test control**: `BaseInteraction` maps `N` to `GameManager.force_start_night()` so wave/base-defense checks can start without waiting for the full day timer.
+- **Warning UI**:
+  - `phase_time_remaining` tracks current day/night countdown.
+  - `last_wave_direction` stores rough compass direction of the first enemy spawned in the current wave.
+  - `CombatHUD` displays countdown and direction.
 
 ### Base Pod (基地舱)
 - **Type**: `StaticBody3D`

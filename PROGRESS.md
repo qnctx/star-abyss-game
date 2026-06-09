@@ -265,6 +265,36 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Wave Warning HUD Slice
+
+- Added phase countdown state to `GameManager`.
+- Combat HUD now shows:
+  - `Next night mm:ss` during day.
+  - `Night ends mm:ss` during night.
+  - Last wave approach direction.
+- `GameManager` records the rough compass direction of the first spawned enemy in each wave.
+- Added `wave_direction_changed(direction)` signal.
+- Moved Combat HUD rows down to avoid overlap after adding the third status line.
+- Added automated coverage for countdown text and direction labeling.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 86 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Slow Field Defense Slice
 
 - Added reusable slow support to `Enemy`:

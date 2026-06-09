@@ -6,6 +6,7 @@ signal wave_spawned(wave_number: int)
 signal base_health_changed(health: float)
 signal base_shield_changed(shield: float, max_shield: float)
 signal enemies_alive_changed(count: int)
+signal wave_direction_changed(direction: String)
 
 var is_night: bool = false
 var wave_number: int = 0
@@ -13,7 +14,10 @@ var enemies_alive: int = 0
 var base_health: float = 100.0
 var base_shield: float = 0.0
 var max_base_shield: float = 0.0
+var phase_time_remaining: float = 0.0
+var last_wave_direction: String = "--"
 var _cycle_token: int = 0
+var _wave_direction_reported: bool = false
 
 const MAX_BASE_HEALTH: float = 100.0
 const DAY_DURATION: float = 960.0   # 16分钟白天
@@ -31,6 +35,8 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	phase_time_remaining = maxf(0.0, phase_time_remaining - delta)
+
 	if max_base_shield <= 0.0 or base_shield >= max_base_shield:
 		return
 	base_shield = minf(max_base_shield, base_shield + SHIELD_RECHARGE_RATE * delta)
@@ -43,9 +49,12 @@ func start_day():
 	is_night = false
 	wave_number = 0
 	enemies_alive = 0
+	phase_time_remaining = DAY_DURATION
+	last_wave_direction = "--"
 	enemies_alive_changed.emit(enemies_alive)
 	base_health_changed.emit(base_health)
 	base_shield_changed.emit(base_shield, max_base_shield)
+	wave_direction_changed.emit(last_wave_direction)
 	# Restore daylight environment settings
 	_apply_night_darkening(false)
 	day_started.emit()
@@ -62,6 +71,7 @@ func start_night():
 	_cycle_token += 1
 	var token := _cycle_token
 	is_night = true
+	phase_time_remaining = NIGHT_DURATION
 	wave_number += 1
 	night_started.emit()
 	# Darken environment for night: reduce ambient light and thicken fog
@@ -74,6 +84,7 @@ func start_night():
 
 func spawn_wave():
 	var base_count = ENEMIES_PER_WAVE_BASE + int(wave_number * 0.5)
+	_wave_direction_reported = false
 	wave_spawned.emit(wave_number)
 
 	if is_boss_wave():
@@ -108,6 +119,10 @@ func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
 	var enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
+	if not _wave_direction_reported:
+		_wave_direction_reported = true
+		last_wave_direction = _direction_label(WorldGenerator.base_position, enemy.global_position)
+		wave_direction_changed.emit(last_wave_direction)
 	enemies_alive += 1
 	enemies_alive_changed.emit(enemies_alive)
 
@@ -184,6 +199,14 @@ func get_base_repair_cost_text() -> String:
 	return "10 iron + 5 biomass"
 
 
+func get_phase_timer_text() -> String:
+	var total_seconds := ceili(phase_time_remaining)
+	var minutes := int(total_seconds / 60)
+	var seconds := total_seconds % 60
+	var label := "Night ends" if is_night else "Next night"
+	return "%s %02d:%02d" % [label, minutes, seconds]
+
+
 func register_base_shield(amount: float) -> void:
 	max_base_shield += amount
 	base_shield = minf(max_base_shield, base_shield + amount)
@@ -194,6 +217,22 @@ func unregister_base_shield(amount: float) -> void:
 	max_base_shield = maxf(0.0, max_base_shield - amount)
 	base_shield = minf(base_shield, max_base_shield)
 	base_shield_changed.emit(base_shield, max_base_shield)
+
+
+func _direction_label(from_pos: Vector3, to_pos: Vector3) -> String:
+	var delta := to_pos - from_pos
+	var parts: Array[String] = []
+	if delta.z < -2.0:
+		parts.append("N")
+	elif delta.z > 2.0:
+		parts.append("S")
+	if delta.x > 2.0:
+		parts.append("E")
+	elif delta.x < -2.0:
+		parts.append("W")
+	if parts.is_empty():
+		return "CENTER"
+	return "".join(parts)
 
 
 func spawn_resources():

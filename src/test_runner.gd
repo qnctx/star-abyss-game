@@ -24,6 +24,7 @@ func _run() -> void:
         _test_inventory_manager()
         _test_base_repair()
         _test_base_shield()
+        _test_wave_warning_status()
         _test_solar_panel_energy()
         _test_research_station()
         _test_resource_scanner()
@@ -310,6 +311,34 @@ func _test_base_shield() -> void:
         game_manager.base_health = old_health
         game_manager.base_shield = old_shield
         game_manager.max_base_shield = old_max_shield
+
+
+func _test_wave_warning_status() -> void:
+        print("\n[ Wave warning status ]")
+
+        var game_manager = _get_autoload("GameManager")
+        check("GameManager autoload exists", game_manager != null)
+        if not game_manager:
+                return
+
+        var old_is_night: bool = game_manager.is_night
+        var old_remaining: float = game_manager.phase_time_remaining
+        var old_direction: String = game_manager.last_wave_direction
+
+        game_manager.is_night = false
+        game_manager.phase_time_remaining = 61.0
+        check("day timer text shows next night", game_manager.get_phase_timer_text() == "Next night 01:01")
+
+        game_manager.is_night = true
+        game_manager.phase_time_remaining = 5.0
+        check("night timer text shows night end", game_manager.get_phase_timer_text() == "Night ends 00:05")
+
+        var direction: String = game_manager._direction_label(Vector3.ZERO, Vector3(5.0, 0.0, -5.0))
+        check("wave direction label supports compass direction", direction == "NE", direction)
+
+        game_manager.is_night = old_is_night
+        game_manager.phase_time_remaining = old_remaining
+        game_manager.last_wave_direction = old_direction
 
 
 func _test_solar_panel_energy() -> void:

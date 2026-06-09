@@ -10,24 +10,24 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_status_label = Label.new()
 	_status_label.position = Vector2(10, 88)
-	_status_label.size = Vector2(420, 70)
+	_status_label.size = Vector2(560, 92)
 	_status_label.add_theme_font_size_override("font_size", 18)
 	add_child(_status_label)
 
 	_build_label = Label.new()
-	_build_label.position = Vector2(10, 158)
+	_build_label.position = Vector2(10, 188)
 	_build_label.size = Vector2(920, 48)
 	_build_label.add_theme_font_size_override("font_size", 16)
 	add_child(_build_label)
 
 	_base_label = Label.new()
-	_base_label.position = Vector2(10, 206)
+	_base_label.position = Vector2(10, 236)
 	_base_label.size = Vector2(560, 42)
 	_base_label.add_theme_font_size_override("font_size", 16)
 	add_child(_base_label)
 
 	_scanner_label = Label.new()
-	_scanner_label.position = Vector2(10, 248)
+	_scanner_label.position = Vector2(10, 278)
 	_scanner_label.size = Vector2(560, 32)
 	_scanner_label.add_theme_font_size_override("font_size", 16)
 	add_child(_scanner_label)
@@ -36,6 +36,7 @@ func _ready() -> void:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
 		GameManager.wave_spawned.connect(_on_wave_spawned)
+		GameManager.wave_direction_changed.connect(_on_wave_direction_changed)
 		GameManager.enemies_alive_changed.connect(_on_enemies_alive_changed)
 		GameManager.day_started.connect(_refresh)
 		GameManager.night_started.connect(_refresh)
@@ -63,6 +64,10 @@ func _on_wave_spawned(_wave_number: int) -> void:
 	_refresh()
 
 
+func _on_wave_direction_changed(_direction: String) -> void:
+	_refresh()
+
+
 func _on_enemies_alive_changed(_count: int) -> void:
 	_refresh()
 
@@ -77,13 +82,15 @@ func _refresh() -> void:
 	if not GameManager:
 		return
 	var phase := "Night" if GameManager.is_night else "Day"
-	_status_label.text = "Base HP: %d%% | Shield %d/%d\n%s | Wave %d | Enemies %d" % [
+	_status_label.text = "Base HP: %d%% | Shield %d/%d\n%s | Wave %d | Enemies %d\n%s | From %s" % [
 		roundi(GameManager.base_health),
 		roundi(GameManager.base_shield),
 		roundi(GameManager.max_base_shield),
 		phase,
 		GameManager.wave_number,
-		GameManager.enemies_alive
+		GameManager.enemies_alive,
+		GameManager.get_phase_timer_text(),
+		GameManager.last_wave_direction
 	]
 	_refresh_build_hint()
 	_refresh_base_hint()

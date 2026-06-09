@@ -111,9 +111,21 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Enemies alive
    - Build hint
    - Resource scanner hint
+   - Day/night countdown
+   - Wave direction
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
+
+## Wave Warning
+
+1. During daytime, confirm the Combat HUD shows `Next night mm:ss`.
+2. Press `N` to start night quickly.
+3. Confirm the Combat HUD changes to `Night ends mm:ss`.
+4. Wait for the first enemy to spawn.
+5. Confirm the Combat HUD shows `From N/S/E/W` or a diagonal direction.
+6. Compare the direction with where enemies are approaching from.
+7. Confirm the countdown keeps decreasing while playing.
 
 ## Resource Scanner
 
