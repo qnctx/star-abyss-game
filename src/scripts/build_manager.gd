@@ -5,11 +5,13 @@ const O2_STATION_SCRIPT := preload("res://scripts/o2_station.gd")
 const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
 const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const RESEARCH_STATION_SCRIPT := preload("res://scripts/research_station.gd")
+const SLOW_FIELD_SCRIPT := preload("res://scripts/slow_field.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
 const SOLAR_PANEL_COST := {"iron": 18, "biomass": 6}
 const RESEARCH_STATION_COST := {"iron": 20, "void_crystal": 5, "energy": 5}
+const SLOW_FIELD_COST := {"iron": 15, "biomass": 8, "energy": 4}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
@@ -19,6 +21,7 @@ const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
 const BUILD_SOLAR_PANEL: String = "solar_panel"
 const BUILD_RESEARCH_STATION: String = "research_station"
+const BUILD_SLOW_FIELD: String = "slow_field"
 
 var build_mode: bool = false
 var selected_building: String = BUILD_TURRET
@@ -60,6 +63,9 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_5:
 		_select_building(BUILD_RESEARCH_STATION)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_6:
+		_select_building(BUILD_SLOW_FIELD)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -118,6 +124,10 @@ func _refresh_preview_mesh() -> void:
 			cylinder_mesh.top_radius = 0.75
 			cylinder_mesh.bottom_radius = 0.95
 			cylinder_mesh.height = 1.25
+		elif selected_building == BUILD_SLOW_FIELD:
+			cylinder_mesh.top_radius = 0.85
+			cylinder_mesh.bottom_radius = 1.05
+			cylinder_mesh.height = 0.85
 		elif selected_building == BUILD_O2_STATION:
 			cylinder_mesh.top_radius = 0.65
 			cylinder_mesh.bottom_radius = 0.9
@@ -196,6 +206,8 @@ func _validate_position(pos: Vector3) -> bool:
 
 
 func _instantiate_selected_structure() -> Node3D:
+	if selected_building == BUILD_SLOW_FIELD:
+		return SLOW_FIELD_SCRIPT.new()
 	if selected_building == BUILD_RESEARCH_STATION:
 		return RESEARCH_STATION_SCRIPT.new()
 	if selected_building == BUILD_SOLAR_PANEL:
@@ -212,6 +224,8 @@ func _instantiate_selected_structure() -> Node3D:
 
 
 func get_selected_cost() -> Dictionary:
+	if selected_building == BUILD_SLOW_FIELD:
+		return SLOW_FIELD_COST
 	if selected_building == BUILD_RESEARCH_STATION:
 		return RESEARCH_STATION_COST
 	if selected_building == BUILD_SOLAR_PANEL:
@@ -224,6 +238,8 @@ func get_selected_cost() -> Dictionary:
 
 
 func get_selected_label() -> String:
+	if selected_building == BUILD_SLOW_FIELD:
+		return "Slow Field"
 	if selected_building == BUILD_RESEARCH_STATION:
 		return "Research Station"
 	if selected_building == BUILD_SOLAR_PANEL:

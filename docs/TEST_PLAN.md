@@ -31,7 +31,8 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 6. Press `3`; HUD should show `Shield Generator`.
 7. Press `4`; HUD should show `Solar Panel`.
 8. Press `5`; HUD should show `Research Station`.
-9. Right-click or press `Esc` to leave build mode.
+9. Press `6`; HUD should show `Slow Field`.
+10. Right-click or press `Esc` to leave build mode.
 
 ## Turret Placement
 
@@ -62,6 +63,18 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 8. Let an enemy reach the base.
 9. Confirm shield decreases before Base HP decreases.
 10. Wait near the base and confirm shield slowly recharges while the generator exists.
+
+## Slow Field
+
+1. Build at least one Solar Panel and collect `4 energy`.
+2. Collect at least `15 iron + 8 biomass`.
+3. Press `B`, then `6`.
+4. Confirm the HUD says `Slow Field`.
+5. Place the slow field on green terrain between enemy spawn direction and the base.
+6. Press `N` to start night quickly.
+7. Watch enemies crossing the blue field radius.
+8. Confirm enemies inside the field move slower than enemies outside it.
+9. Confirm enemies return to normal speed after leaving the field.
 
 ## Solar Panel
 

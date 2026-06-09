@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 var target_position: Vector3 = Vector3(0, 0, 0)
 var _has_died: bool = false
+var _slow_sources: Dictionary = {}
 
 signal enemy_died()
 signal base_reached(damage: float)
@@ -23,7 +24,7 @@ func _ready():
 func _physics_process(_delta):
 	var direction = (target_position - global_position).normalized()
 	direction.y = 0
-	velocity = direction * speed
+	velocity = direction * get_effective_speed()
 	move_and_slide()
 
 	if global_position.distance_to(target_position) < attack_range:
@@ -35,6 +36,21 @@ func take_damage(amount: float):
 	health -= amount
 	if health <= 0:
 		die()
+
+
+func apply_slow(source_id: String, multiplier: float) -> void:
+	_slow_sources[source_id] = clampf(multiplier, 0.1, 1.0)
+
+
+func remove_slow(source_id: String) -> void:
+	_slow_sources.erase(source_id)
+
+
+func get_effective_speed() -> float:
+	var slow_multiplier := 1.0
+	for source_id in _slow_sources:
+		slow_multiplier = minf(slow_multiplier, _slow_sources[source_id])
+	return speed * slow_multiplier
 
 
 func die():

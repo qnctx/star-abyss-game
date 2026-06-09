@@ -19,6 +19,7 @@ func _run() -> void:
         _test_player_oxygen()
         _test_zone_manager()
         _test_turret_logic()
+        _test_slow_field()
         _test_build_and_combat_ui()
         _test_inventory_manager()
         _test_base_repair()
@@ -150,6 +151,35 @@ func _test_turret_logic() -> void:
         check("turret has fire_projectile()", has_fire_projectile)
 
 
+func _test_slow_field() -> void:
+        print("\n[ Slow field ]")
+
+        var enemy_script = load("res://scripts/enemy.gd")
+        var slow_field_script = load("res://scripts/slow_field.gd")
+        check("enemy.gd loads for slow test", enemy_script != null)
+        check("slow_field.gd loads for slow test", slow_field_script != null)
+        if not enemy_script or not slow_field_script:
+                return
+
+        var enemy = enemy_script.new()
+        enemy.speed = 4.0
+        enemy.position = Vector3(0.0, 0.0, 0.0)
+        current_scene.add_child(enemy)
+
+        var slow_field = slow_field_script.new()
+        slow_field.position = Vector3(2.0, 0.0, 0.0)
+        current_scene.add_child(slow_field)
+        slow_field._process(0.1)
+        check_nearly(enemy.get_effective_speed(), 4.0 * slow_field.SLOW_MULTIPLIER, 0.01, "slow field reduces enemy speed")
+
+        enemy.position = Vector3(20.0, 0.0, 0.0)
+        slow_field._process(0.1)
+        check_nearly(enemy.get_effective_speed(), 4.0, 0.01, "enemy speed restores after leaving slow field")
+
+        slow_field.queue_free()
+        enemy.queue_free()
+
+
 func _test_inventory_manager() -> void:
         print("\n[ InventoryManager ]")
 
@@ -197,6 +227,9 @@ func _test_build_and_combat_ui() -> void:
 
         var resource_scanner_script = load("res://scripts/resource_scanner.gd")
         check("resource_scanner.gd loads", resource_scanner_script != null)
+
+        var slow_field_script = load("res://scripts/slow_field.gd")
+        check("slow_field.gd loads", slow_field_script != null)
 
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)

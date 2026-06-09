@@ -25,6 +25,7 @@
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
 | 建造 | `B` 进入建造，`1-4` 选择建筑，地形吸附预览 | `build_manager.gd` |
 | 防御 | Turret 自动索敌射击，Shield Generator 先吸收基地伤害 | `turret.gd`, `shield_generator.gd` |
+| 控场 | Slow Field 半径内降低敌人移动速度 | `slow_field.gd`, `enemy.gd` |
 | 氧气补给 | O2 Station 在半径内给玩家补氧 | `o2_station.gd` |
 | 基地维护 | 靠近基地按 `E` 消耗资源修复 Base HP | `base_interaction.gd`, `game_manager.gd` |
 | 能量生产 | Solar Panel 白天生产 energy，夜晚停产 | `solar_panel.gd` |
@@ -47,7 +48,7 @@
 |--------|------|------|----------|
 | Done | 研究台 Research Station | 把 energy 转成 blueprint，打开科技树入口 | 建造后消耗 energy 产出 blueprint |
 | Done | 资源扫描器 Resource Scanner | 降低找材料的摩擦，支撑建造测试 | HUD 显示最近资源方向/距离 |
-| P1 | 第二种炮塔 Slow Field | 丰富防守选择，不只堆同一种炮塔 | 夜晚能减速敌人 |
+| Done | 第二种炮塔 Slow Field | 丰富防守选择，不只堆同一种炮塔 | 夜晚能减速敌人 |
 | P1 | 敌人波次预警 | 让夜晚来临和进攻方向更清楚 | HUD 显示下一波倒计时/方向 |
 | P2 | 建筑拆除/回收 | 修复误放建筑和测试不便 | 建造模式下可拆已建结构 |
 

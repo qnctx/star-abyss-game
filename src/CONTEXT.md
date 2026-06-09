@@ -56,6 +56,16 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Unregisters that capacity if removed from the scene
   - Uses lightweight procedural meshes and a blue shield field visual
 
+### Slow Field (减速力场)
+- **Type**: `Node3D`
+- **Script**: `scripts/slow_field.gd`
+- **Concept**: Buildable control defense that slows enemies inside its radius instead of dealing damage.
+- **Cost**: `15 iron + 8 biomass + 4 energy`
+- **Behaviors**:
+  - Applies a named slow source to enemies in range
+  - Enemies use `get_effective_speed()` so slow sources can be reused by future systems
+  - Removes slow when enemies leave range or the field is removed
+
 ### Solar Panel (太阳能板)
 - **Type**: `Node3D`
 - **Script**: `scripts/solar_panel.gd`
@@ -230,6 +240,7 @@ src/
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module
+│   ├── slow_field.gd          # Buildable enemy slow/control field
 │   ├── solar_panel.gd         # Buildable daytime energy generator
 │   ├── research_station.gd    # Buildable energy-to-blueprint converter
 │   ├── resource_scanner.gd    # HUD nearest-resource scanner
