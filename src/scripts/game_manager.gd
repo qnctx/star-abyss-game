@@ -4,44 +4,72 @@ signal night_started()
 signal day_started()
 signal wave_spawned(wave_number: int)
 signal base_health_changed(health: float)
+signal base_shield_changed(shield: float, max_shield: float)
 signal enemies_alive_changed(count: int)
 
 var is_night: bool = false
 var wave_number: int = 0
 var enemies_alive: int = 0
 var base_health: float = 100.0
+var base_shield: float = 0.0
+var max_base_shield: float = 0.0
+var _cycle_token: int = 0
 
+const MAX_BASE_HEALTH: float = 100.0
 const DAY_DURATION: float = 960.0   # 16分钟白天
 const NIGHT_DURATION: float = 480.0  # 8分钟夜晚
 const ENEMIES_PER_WAVE_BASE: int = 3
 const ENEMIES_PER_WAVE_INCREMENT: int = 2
+const BASE_REPAIR_COST := {"iron": 10, "biomass": 5}
+const BASE_REPAIR_AMOUNT: float = 25.0
+const SHIELD_RECHARGE_RATE: float = 3.0
 
 
 func _ready():
+	set_process(true)
 	start_day()
 
 
+func _process(delta: float) -> void:
+	if max_base_shield <= 0.0 or base_shield >= max_base_shield:
+		return
+	base_shield = minf(max_base_shield, base_shield + SHIELD_RECHARGE_RATE * delta)
+	base_shield_changed.emit(base_shield, max_base_shield)
+
+
 func start_day():
+	_cycle_token += 1
+	var token := _cycle_token
 	is_night = false
 	wave_number = 0
 	enemies_alive = 0
 	enemies_alive_changed.emit(enemies_alive)
 	base_health_changed.emit(base_health)
+	base_shield_changed.emit(base_shield, max_base_shield)
 	# Restore daylight environment settings
 	_apply_night_darkening(false)
 	day_started.emit()
 	spawn_resources()
 	await get_tree().create_timer(DAY_DURATION).timeout
+	if token != _cycle_token or is_night:
+		return
 	start_night()
 
 
 func start_night():
+	if is_night:
+		return
+	_cycle_token += 1
+	var token := _cycle_token
 	is_night = true
 	wave_number += 1
 	night_started.emit()
 	# Darken environment for night: reduce ambient light and thicken fog
 	_apply_night_darkening(true)
 	spawn_wave()
+	await get_tree().create_timer(NIGHT_DURATION).timeout
+	if token == _cycle_token and is_night:
+		start_day()
 
 
 func spawn_wave():
@@ -73,8 +101,6 @@ func spawn_wave():
 		wave_number += 1
 		wave_spawned.emit(wave_number)
 		spawn_wave()
-	else:
-		start_day()
 
 
 func spawn_enemy(is_boss: bool = false, is_elite: bool = false):
@@ -116,10 +142,58 @@ func _on_enemy_died():
 
 
 func _on_base_reached(damage: float):
-	base_health -= damage
+	var remaining_damage := damage
+	if base_shield > 0.0:
+		var absorbed := minf(base_shield, remaining_damage)
+		base_shield -= absorbed
+		remaining_damage -= absorbed
+		base_shield_changed.emit(base_shield, max_base_shield)
+	if remaining_damage <= 0.0:
+		return
+
+	base_health = maxf(0.0, base_health - remaining_damage)
 	base_health_changed.emit(base_health)
 	if base_health <= 0:
 		game_over()
+
+
+func can_repair_base() -> bool:
+	return base_health < MAX_BASE_HEALTH and InventoryManager.has_resources(BASE_REPAIR_COST)
+
+
+func repair_base() -> bool:
+	if base_health >= MAX_BASE_HEALTH:
+		return false
+	if not InventoryManager.has_resources(BASE_REPAIR_COST):
+		return false
+
+	InventoryManager.consume_resources(BASE_REPAIR_COST)
+	base_health = minf(MAX_BASE_HEALTH, base_health + BASE_REPAIR_AMOUNT)
+	base_health_changed.emit(base_health)
+	return true
+
+
+func force_start_night() -> bool:
+	if is_night:
+		return false
+	start_night()
+	return true
+
+
+func get_base_repair_cost_text() -> String:
+	return "10 iron + 5 biomass"
+
+
+func register_base_shield(amount: float) -> void:
+	max_base_shield += amount
+	base_shield = minf(max_base_shield, base_shield + amount)
+	base_shield_changed.emit(base_shield, max_base_shield)
+
+
+func unregister_base_shield(amount: float) -> void:
+	max_base_shield = maxf(0.0, max_base_shield - amount)
+	base_shield = minf(base_shield, max_base_shield)
+	base_shield_changed.emit(base_shield, max_base_shield)
 
 
 func spawn_resources():

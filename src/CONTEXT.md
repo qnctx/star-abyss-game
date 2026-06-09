@@ -46,6 +46,16 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Fires projectile toward target, plays muzzle flash VFX
   - Fire rate controlled by cooldown timer
 
+### Shield Generator (护盾发生器)
+- **Type**: `Node3D`
+- **Script**: `scripts/shield_generator.gd`
+- **Concept**: Buildable base defense module that protects Base HP from enemy contact damage.
+- **Cost**: `25 iron + 8 void_crystal + 1 energy_core`
+- **Behaviors**:
+  - Registers `50` shield capacity with `GameManager` on build
+  - Unregisters that capacity if removed from the scene
+  - Uses lightweight procedural meshes and a blue shield field visual
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -95,12 +105,21 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Spawns staggered with 1-3s delays
   - Next wave starts 5s after all enemies dead
 - **Signals**: `night_started`, `day_started`, `wave_spawned(wave_number)`
+- **Manual test control**: `BaseInteraction` maps `N` to `GameManager.force_start_night()` so wave/base-defense checks can start without waiting for the full day timer.
 
 ### Base Pod (基地舱)
 - **Type**: `StaticBody3D`
 - **Script**: `scripts/base_pod.gd`
 - **Concept**: Central structure. Enemy pathfind to this. Player teleports to/from this.
 - **Position** tracked by `WorldGenerator.base_position`
+- **Repair loop**:
+  - `BaseInteraction` lets the player press `E` near the base pod to repair.
+  - Repair costs `10 iron + 5 biomass`.
+  - Repair restores `25` Base HP and cannot be used at full HP.
+- **Shield loop**:
+  - Buildable `ShieldGenerator` adds `50` max shield to the base.
+  - Enemy base damage is absorbed by shield before Base HP is reduced.
+  - Shield slowly recharges while shield capacity exists.
 
 ### Weapon System
 - **Controller**: `scripts/weapon_controller.gd` (Node3D, attached to player)
@@ -175,9 +194,11 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 src/
 ├── scripts/
 │   ├── game_manager.gd      # Day/night, wave spawning
+│   ├── base_interaction.gd   # Base repair input and night test shortcut
 │   ├── player.gd            # Movement, oxygen, death
 │   ├── enemy.gd              # Pathfind to base, damage
 │   ├── turret.gd             # Auto-target, fire
+│   ├── shield_generator.gd    # Buildable base shield module
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── zone_manager.gd       # Zone adaptation

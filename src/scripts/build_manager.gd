@@ -2,14 +2,17 @@ extends Node3D
 
 const TURRET_SCENE := preload("res://scenes/turret.tscn")
 const O2_STATION_SCRIPT := preload("res://scripts/o2_station.gd")
+const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
+const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
 const MIN_STRUCTURE_DISTANCE: float = 2.0
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
+const BUILD_SHIELD_GENERATOR: String = "shield_generator"
 
 var build_mode: bool = false
 var selected_building: String = BUILD_TURRET
@@ -42,6 +45,9 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_2:
 		_select_building(BUILD_O2_STATION)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_3:
+		_select_building(BUILD_SHIELD_GENERATOR)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -86,7 +92,11 @@ func _refresh_preview_mesh() -> void:
 		return
 
 	var mesh := CylinderMesh.new()
-	if selected_building == BUILD_O2_STATION:
+	if selected_building == BUILD_SHIELD_GENERATOR:
+		mesh.top_radius = 0.75
+		mesh.bottom_radius = 0.95
+		mesh.height = 1.25
+	elif selected_building == BUILD_O2_STATION:
 		mesh.top_radius = 0.65
 		mesh.bottom_radius = 0.9
 		mesh.height = 1.1
@@ -163,6 +173,8 @@ func _validate_position(pos: Vector3) -> bool:
 
 
 func _instantiate_selected_structure() -> Node3D:
+	if selected_building == BUILD_SHIELD_GENERATOR:
+		return SHIELD_GENERATOR_SCRIPT.new()
 	if selected_building == BUILD_O2_STATION:
 		return O2_STATION_SCRIPT.new()
 
@@ -173,12 +185,16 @@ func _instantiate_selected_structure() -> Node3D:
 
 
 func get_selected_cost() -> Dictionary:
+	if selected_building == BUILD_SHIELD_GENERATOR:
+		return SHIELD_GENERATOR_COST
 	if selected_building == BUILD_O2_STATION:
 		return O2_STATION_COST
 	return TURRET_COST
 
 
 func get_selected_label() -> String:
+	if selected_building == BUILD_SHIELD_GENERATOR:
+		return "Shield Generator"
 	if selected_building == BUILD_O2_STATION:
 		return "O2 Station"
 	return "Turret"

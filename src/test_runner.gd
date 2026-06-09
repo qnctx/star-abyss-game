@@ -21,6 +21,8 @@ func _run() -> void:
         _test_turret_logic()
         _test_build_and_combat_ui()
         _test_inventory_manager()
+        _test_base_repair()
+        _test_base_shield()
         _test_serum_recipes()
 
         print("\n========================================")
@@ -177,6 +179,12 @@ func _test_build_and_combat_ui() -> void:
         var o2_station_script = load("res://scripts/o2_station.gd")
         check("o2_station.gd loads", o2_station_script != null)
 
+        var base_interaction_script = load("res://scripts/base_interaction.gd")
+        check("base_interaction.gd loads", base_interaction_script != null)
+
+        var shield_generator_script = load("res://scripts/shield_generator.gd")
+        check("shield_generator.gd loads", shield_generator_script != null)
+
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
         if not main_scene:
@@ -185,7 +193,76 @@ func _test_build_and_combat_ui() -> void:
         var main = main_scene.instantiate()
         check("BuildManager node exists", main.get_node_or_null("BuildManager") != null)
         check("CombatHUD node exists", main.get_node_or_null("CombatHUD") != null)
+        check("BaseInteraction node exists", main.get_node_or_null("BaseInteraction") != null)
         main.free()
+
+
+func _test_base_repair() -> void:
+        print("\n[ Base repair ]")
+
+        var game_manager = _get_autoload("GameManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("GameManager autoload exists", game_manager != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not game_manager or not inventory_manager:
+                return
+
+        var old_health: float = game_manager.base_health
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_biomass: int = inventory_manager.resources.get("biomass", 0)
+
+        game_manager.base_health = 50.0
+        inventory_manager.resources["iron"] = 10
+        inventory_manager.resources["biomass"] = 5
+        var repaired: bool = game_manager.repair_base()
+        check("repair_base succeeds when damaged and funded", repaired)
+        check_nearly(game_manager.base_health, 75.0, 0.01, "repair adds 25 base HP")
+        check("repair consumes iron", inventory_manager.resources.get("iron", -1) == 0)
+        check("repair consumes biomass", inventory_manager.resources.get("biomass", -1) == 0)
+
+        game_manager.base_health = game_manager.MAX_BASE_HEALTH
+        inventory_manager.resources["iron"] = 10
+        inventory_manager.resources["biomass"] = 5
+        var full_repair: bool = game_manager.repair_base()
+        check("repair_base fails at full health", not full_repair)
+        check("full health repair does not consume iron", inventory_manager.resources.get("iron", -1) == 10)
+        check("GameManager has force_start_night()", game_manager.has_method("force_start_night"))
+
+        game_manager.base_health = old_health
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["biomass"] = old_biomass
+
+
+func _test_base_shield() -> void:
+        print("\n[ Base shield ]")
+
+        var game_manager = _get_autoload("GameManager")
+        check("GameManager autoload exists", game_manager != null)
+        if not game_manager:
+                return
+
+        var old_health: float = game_manager.base_health
+        var old_shield: float = game_manager.base_shield
+        var old_max_shield: float = game_manager.max_base_shield
+
+        game_manager.base_health = 100.0
+        game_manager.base_shield = 0.0
+        game_manager.max_base_shield = 0.0
+        game_manager.register_base_shield(50.0)
+        check_nearly(game_manager.base_shield, 50.0, 0.01, "register shield fills shield")
+        check_nearly(game_manager.max_base_shield, 50.0, 0.01, "register shield raises max")
+
+        game_manager._on_base_reached(20.0)
+        check_nearly(game_manager.base_shield, 30.0, 0.01, "shield absorbs incoming damage first")
+        check_nearly(game_manager.base_health, 100.0, 0.01, "shield prevents base damage")
+
+        game_manager._on_base_reached(40.0)
+        check_nearly(game_manager.base_shield, 0.0, 0.01, "shield can be depleted")
+        check_nearly(game_manager.base_health, 90.0, 0.01, "overflow damage hits base")
+
+        game_manager.base_health = old_health
+        game_manager.base_shield = old_shield
+        game_manager.max_base_shield = old_max_shield
 
 
 func _test_serum_recipes() -> void:

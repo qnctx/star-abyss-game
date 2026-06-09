@@ -188,7 +188,7 @@ Build preview follow-up:
 - Removed unused `world_generator.gd` ExtResource from `main.tscn`; `WorldGenerator` remains an autoload.
 - Updated `src/CONTEXT.md` to reflect current direct-HUD setup.
 
-Validation plan:
+Validation:
 
 ```cmd
 "D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
@@ -231,3 +231,64 @@ Manual test steps:
 - Place an O2 Station on valid terrain.
 - Walk away, let oxygen drain, return near the station, and verify oxygen refills.
 - Press `1` to switch back to turret placement.
+
+---
+
+## 2026-06-09 - Base Repair And Wave Test Slice
+
+- Added base repair as a connected survival-defense loop:
+  - Base repair costs `10 iron + 5 biomass`.
+  - Repair restores `25` Base HP.
+  - Repair is only allowed when the base is damaged, so full-health repairs do not consume resources.
+- Added `BaseInteraction` to `main.tscn`:
+  - Press `E` near the base pod to repair.
+  - Press `N` during day to immediately start night for manual wave testing.
+- Hardened the day/night cycle with a cycle token so a skipped day timer cannot later start a duplicate night.
+- Combat HUD now shows base repair and quick-night test hints.
+- Added automated coverage for base repair behavior and the new main scene node.
+- Added `docs/TEST_PLAN.md` as the single manual checklist for tonight's playtest.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 50 passed, 0 failed.
+- `test_standalone.gd`: 29 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
+## 2026-06-09 - Base Shield Generator Slice
+
+- Added `ShieldGenerator`, a buildable base defense module from the GDD shield-generator direction.
+- Expanded `BuildManager`:
+  - `3` selects Shield Generator.
+  - Shield Generator costs `25 iron + 8 void_crystal + 1 energy_core`.
+- Shield Generators add `50` max shield to the base when built.
+- Base shield absorbs enemy base damage before Base HP is reduced.
+- Shield slowly recharges while shield capacity exists.
+- Combat HUD now shows `Shield current/max`.
+- Added automated coverage for shield registration and damage absorption.
+- Updated `docs/TEST_PLAN.md` with shield generator manual test steps.
+
+Validation plan:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 58 passed, 0 failed.
+- `test_standalone.gd`: 29 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
