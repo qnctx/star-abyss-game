@@ -131,6 +131,21 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `CombatHUD` shows locked state, unlock cost, and `Y READY` / `Y NEED BLUEPRINT`.
   - `ObjectiveTracker` guides the player from research into Shield Generator and Slow Field unlocks.
 
+### Save Manager (存档/读档)
+- **Type**: `Node` autoload
+- **Script**: `scripts/save_manager.gd`
+- **Input**: `F6` quick-save, `F7` quick-load; actions are registered at runtime.
+- **Save path**: `user://star_abyss_save.json`
+- **Persisted MVP state**:
+  - `InventoryManager.resources`
+  - `TechManager.unlocked`
+  - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
+  - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate
+- **Load behavior**:
+  - Clears current enemies and built structures before restoring saved structures.
+  - Active enemies are not persisted yet; this MVP is safest during daytime or between waves.
+  - Restored structures are created from the same structure scripts/scenes used by BuildManager.
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -229,6 +244,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Single damaged structures show label plus HP, e.g. `Struct Turret 40/100 | B+R READY`.
   - Multiple damaged structures show count and worst HP.
 - **Implementation notes**:
+  - New structures store `build_id` metadata for save/load restoration.
   - New structures store `build_cost` metadata when placed.
   - New structures store `structure_health` and `structure_max_health` metadata when placed; enemies can also initialize this metadata when attacking older/test structures.
   - Upgraded structures store `upgrade_level` metadata.
@@ -270,7 +286,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### What's OUT of the domain (not yet implemented)
 - Multiplayer
-- Persistent save/load system
+- Full save/load beyond MVP runtime state; active enemy persistence is not implemented yet
 - Full crafting tree beyond forge UI
 - Advanced enemy pathfinding/tactics beyond nearby structure attacks
 - Terrain destruction
@@ -321,6 +337,7 @@ src/
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── tech_manager.gd       # Blueprint-based building unlock gates
+│   ├── save_manager.gd       # Runtime save/load MVP
 │   ├── zone_manager.gd       # Zone adaptation
 │   ├── zone_trigger.gd       # Zone entry detection
 │   ├── resource_node.gd      # Collectible resources

@@ -81,6 +81,45 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Save Load MVP Slice
+
+- Added `SaveManager` autoload with runtime quick-save/load:
+  - `F6` quick-save.
+  - `F7` quick-load.
+  - Save file path: `user://star_abyss_save.json`.
+- MVP persisted state:
+  - Inventory resources.
+  - Tech unlocks.
+  - Base HP, shield, wave number, phase timer, day/night flag, wave direction.
+  - Built structures with build id, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate.
+- BuildManager now tags newly placed structures with `build_id` metadata so save/load can restore the right structure type.
+- Combat HUD main hint now includes `F6 Save F7 Load`.
+- Load behavior:
+  - Clears current enemies and built structures before restoring saved state.
+  - Active enemies are not persisted yet; this MVP is safest during daytime or between waves.
+- Added automated coverage for save capture and apply/restore across inventory, tech, base state, and built turret state.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 193 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Structure Damage Guidance Slice
 
 - Added damaged-structure visibility to the Combat HUD:

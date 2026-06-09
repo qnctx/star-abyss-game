@@ -213,6 +213,7 @@ func _try_place_structure() -> void:
 	get_tree().current_scene.add_child(structure)
 	structure.global_position = _placement_position
 	structure.add_to_group("built_structures")
+	structure.set_meta("build_id", selected_building)
 	structure.set_meta("build_cost", cost.duplicate())
 	structure.set_meta("build_label", get_selected_label())
 	ensure_structure_health(structure)

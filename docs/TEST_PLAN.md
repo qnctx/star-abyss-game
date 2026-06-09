@@ -195,6 +195,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Objective line
    - Locked-tech/unlock status while build mode is open
    - Damaged-structure summary when built structures are below full HP
+   - `F6 Save F7 Load` in the main build hint row
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
 4. When enemies die, confirm resources increase from kill rewards.
@@ -254,6 +255,23 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 9. Press `E`.
 10. Confirm Base HP increases by about `25` and resources decrease.
 11. When Base HP is already full, press `E` near the base again and confirm resources are not consumed.
+
+## Save And Load MVP
+
+1. During daytime, collect several resources.
+2. Build at least one Turret and one utility structure if possible.
+3. Unlock Shield Generator or Slow Field if you have enough `blueprint`.
+4. Damage or upgrade one built structure if possible.
+5. Press `F6`.
+6. Confirm the game does not pause or crash.
+7. Spend or collect some resources after saving.
+8. Recycle or damage a structure after saving.
+9. Press `F7`.
+10. Confirm inventory returns to the saved amounts.
+11. Confirm tech unlocks return to the saved state.
+12. Confirm saved structures reappear with position, HP, and upgrade level.
+13. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
+14. Note: active enemies are not persisted in this MVP; loading clears current enemies and is safest during daytime or between waves.
 
 ## Known Headless Note
 

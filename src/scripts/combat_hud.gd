@@ -145,7 +145,7 @@ func _refresh_build_hint() -> void:
 			build_manager.get_structure_action_status_text()
 		]
 	else:
-		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | X Rec | U Up | R Repair"
+		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow | Y Unlock | F6 Save F7 Load"
 
 
 func _refresh_base_hint() -> void:

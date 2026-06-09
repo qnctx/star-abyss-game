@@ -34,6 +34,7 @@ func _run() -> void:
         _test_solar_panel_energy()
         _test_research_station()
         _test_tech_unlocks()
+        _test_save_manager()
         _test_resource_scanner()
         _test_objective_tracker()
         _test_serum_recipes()
@@ -287,6 +288,9 @@ func _test_build_and_combat_ui() -> void:
 
         var tech_manager_script = load("res://scripts/tech_manager.gd")
         check("tech_manager.gd loads", tech_manager_script != null)
+
+        var save_manager_script = load("res://scripts/save_manager.gd")
+        check("save_manager.gd loads", save_manager_script != null)
 
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
@@ -777,6 +781,107 @@ func _test_tech_unlocks() -> void:
         build_manager.queue_free()
         tech_manager.reset_unlocks()
         inventory_manager.resources["blueprint"] = old_blueprint
+
+
+func _test_save_manager() -> void:
+        print("\n[ SaveManager ]")
+
+        var save_manager = _get_autoload("SaveManager")
+        var inventory_manager = _get_autoload("InventoryManager")
+        var tech_manager = _get_autoload("TechManager")
+        var game_manager = _get_autoload("GameManager")
+        var turret_scene = load("res://scenes/turret.tscn")
+        check("SaveManager autoload exists", save_manager != null)
+        check("InventoryManager autoload exists for save test", inventory_manager != null)
+        check("TechManager autoload exists for save test", tech_manager != null)
+        check("GameManager autoload exists for save test", game_manager != null)
+        check("turret scene loads for save test", turret_scene != null)
+        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene:
+                return
+
+        var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
+        var old_unlocked: Dictionary = tech_manager.unlocked.duplicate(true)
+        var old_is_night: bool = game_manager.is_night
+        var old_wave: int = game_manager.wave_number
+        var old_base_health: float = game_manager.base_health
+        var old_base_shield: float = game_manager.base_shield
+        var old_max_shield: float = game_manager.max_base_shield
+        var old_phase_time: float = game_manager.phase_time_remaining
+        var old_direction: String = game_manager.last_wave_direction
+
+        for existing_structure in get_nodes_in_group("built_structures"):
+                if existing_structure and is_instance_valid(existing_structure):
+                        existing_structure.queue_free()
+
+        inventory_manager.resources["iron"] = 7
+        inventory_manager.resources["blueprint"] = 3
+        tech_manager.reset_unlocks()
+        tech_manager.unlocked["shield_generator"] = true
+        game_manager.is_night = true
+        game_manager.wave_number = 4
+        game_manager.base_health = 55.0
+        game_manager.base_shield = 12.0
+        game_manager.max_base_shield = 30.0
+        game_manager.phase_time_remaining = 123.0
+        game_manager.last_wave_direction = "NE"
+
+        var turret = turret_scene.instantiate()
+        turret.add_to_group("built_structures")
+        turret.add_to_group("built_turrets")
+        turret.position = Vector3(3.0, 1.0, -2.0)
+        turret.scale = Vector3.ONE * 1.16
+        turret.set_meta("build_id", "turret")
+        turret.set_meta("build_label", "Turret")
+        turret.set_meta("build_cost", {"iron": 20, "void_crystal": 5})
+        turret.set_meta("structure_max_health", 100.0)
+        turret.set_meta("structure_health", 42.0)
+        turret.set_meta("upgrade_level", 2)
+        turret.damage = 22.0
+        turret.fire_rate = 1.5
+        current_scene.add_child(turret)
+
+        var data: Dictionary = save_manager.capture_save_data()
+        check("save data captures inventory", int(data["inventory"].get("iron", 0)) == 7)
+        check("save data captures tech unlock", bool(data["tech"].get("shield_generator", false)))
+        check("save data captures game state", int(data["game"].get("wave_number", 0)) == 4)
+        check("save data captures built structures", (data["structures"] as Array).size() >= 1)
+
+        inventory_manager.resources["iron"] = 0
+        inventory_manager.resources["blueprint"] = 0
+        tech_manager.unlocked["shield_generator"] = false
+        game_manager.base_health = 10.0
+        turret.queue_free()
+
+        check("apply save data succeeds", save_manager.apply_save_data(data))
+        check("load restores inventory iron", inventory_manager.resources.get("iron", -1) == 7)
+        check("load restores blueprint", inventory_manager.resources.get("blueprint", -1) == 3)
+        check("load restores shield unlock", bool(tech_manager.unlocked.get("shield_generator", false)))
+        check_nearly(game_manager.base_health, 55.0, 0.01, "load restores base health")
+        check("load restores wave number", game_manager.wave_number == 4)
+
+        var restored_turret: Node = null
+        for structure in get_nodes_in_group("built_structures"):
+                var structure_node := structure as Node
+                if structure_node and is_instance_valid(structure_node) and not structure_node.is_queued_for_deletion() and str(structure_node.get_meta("build_id", "")) == "turret":
+                        restored_turret = structure_node
+                        break
+        check("load restores saved turret", restored_turret != null)
+        if restored_turret:
+                check_nearly(float(restored_turret.get_meta("structure_health", 0.0)), 42.0, 0.01, "load restores structure health")
+                check("load restores upgrade level", int(restored_turret.get_meta("upgrade_level", 0)) == 2)
+
+        for restored_structure in get_nodes_in_group("built_structures"):
+                if restored_structure and is_instance_valid(restored_structure):
+                        restored_structure.queue_free()
+        inventory_manager.resources = old_resources
+        tech_manager.unlocked = old_unlocked
+        game_manager.is_night = old_is_night
+        game_manager.wave_number = old_wave
+        game_manager.base_health = old_base_health
+        game_manager.base_shield = old_base_shield
+        game_manager.max_base_shield = old_max_shield
+        game_manager.phase_time_remaining = old_phase_time
+        game_manager.last_wave_direction = old_direction
 
 
 func _test_resource_scanner() -> void:
