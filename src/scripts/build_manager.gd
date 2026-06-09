@@ -1,13 +1,18 @@
 extends Node3D
 
 const TURRET_SCENE := preload("res://scenes/turret.tscn")
+const O2_STATION_SCRIPT := preload("res://scripts/o2_station.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
+const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
 const MIN_BASE_DISTANCE: float = 2.5
-const MIN_TURRET_DISTANCE: float = 2.0
+const MIN_STRUCTURE_DISTANCE: float = 2.0
+const BUILD_TURRET: String = "turret"
+const BUILD_O2_STATION: String = "o2_station"
 
 var build_mode: bool = false
+var selected_building: String = BUILD_TURRET
 var _preview: MeshInstance3D = null
 var _preview_material: StandardMaterial3D = null
 var _can_place: bool = false
@@ -32,9 +37,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.physical_keycode == KEY_ESCAPE:
 		_set_build_mode(false)
 		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
+		_select_building(BUILD_TURRET)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_2:
+		_select_building(BUILD_O2_STATION)
+		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			_try_place_turret()
+			_try_place_structure()
 			get_viewport().set_input_as_handled()
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			_set_build_mode(false)
@@ -48,24 +59,42 @@ func _process(_delta: float) -> void:
 func _set_build_mode(enabled: bool) -> void:
 	build_mode = enabled
 	set_process(build_mode)
+	_refresh_preview_mesh()
 	if _preview:
 		_preview.visible = build_mode
 
 
+func _select_building(building_id: String) -> void:
+	selected_building = building_id
+	_refresh_preview_mesh()
+
+
 func _create_preview() -> void:
 	_preview = MeshInstance3D.new()
-	_preview.name = "TurretBuildPreview"
-	var mesh := CylinderMesh.new()
-	mesh.top_radius = 0.55
-	mesh.bottom_radius = 0.75
-	mesh.height = 1.2
-	_preview.mesh = mesh
+	_preview.name = "BuildPreview"
 	_preview_material = StandardMaterial3D.new()
 	_preview_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	_preview_material.albedo_color = Color(0.2, 1.0, 0.45, 0.45)
 	_preview.material_override = _preview_material
 	_preview.visible = false
 	add_child(_preview)
+	_refresh_preview_mesh()
+
+
+func _refresh_preview_mesh() -> void:
+	if not _preview:
+		return
+
+	var mesh := CylinderMesh.new()
+	if selected_building == BUILD_O2_STATION:
+		mesh.top_radius = 0.65
+		mesh.bottom_radius = 0.9
+		mesh.height = 1.1
+	else:
+		mesh.top_radius = 0.55
+		mesh.bottom_radius = 0.75
+		mesh.height = 1.2
+	_preview.mesh = mesh
 
 
 func _update_preview() -> void:
@@ -75,7 +104,7 @@ func _update_preview() -> void:
 	var target_pos := _get_build_target_position()
 	_placement_position = _snap_to_terrain(target_pos)
 	_position_is_valid = _validate_position(_placement_position)
-	var has_resources := InventoryManager.has_resources(TURRET_COST)
+	var has_resources := InventoryManager.has_resources(get_selected_cost())
 	_can_place = _position_is_valid and has_resources
 
 	_preview.global_position = _placement_position
@@ -87,17 +116,17 @@ func _update_preview() -> void:
 		_preview_material.albedo_color = Color(1.0, 0.2, 0.15, 0.45)
 
 
-func _try_place_turret() -> void:
+func _try_place_structure() -> void:
 	if not _can_place:
 		return
-	if not InventoryManager.has_resources(TURRET_COST):
+	var cost := get_selected_cost()
+	if not InventoryManager.has_resources(cost):
 		return
 
-	InventoryManager.consume_resources(TURRET_COST)
-	var turret = TURRET_SCENE.instantiate()
-	get_tree().current_scene.add_child(turret)
-	turret.global_position = _placement_position
-	turret.add_to_group("built_turrets")
+	InventoryManager.consume_resources(cost)
+	var structure := _instantiate_selected_structure()
+	get_tree().current_scene.add_child(structure)
+	structure.global_position = _placement_position
 
 
 func _get_build_target_position() -> Vector3:
@@ -127,7 +156,42 @@ func _validate_position(pos: Vector3) -> bool:
 		return false
 	if WorldGenerator and pos.distance_to(WorldGenerator.base_position) < MIN_BASE_DISTANCE:
 		return false
-	for turret in get_tree().get_nodes_in_group("turrets"):
-		if turret is Node3D and turret.global_position.distance_to(pos) < MIN_TURRET_DISTANCE:
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		if structure is Node3D and structure.global_position.distance_to(pos) < MIN_STRUCTURE_DISTANCE:
 			return false
 	return true
+
+
+func _instantiate_selected_structure() -> Node3D:
+	if selected_building == BUILD_O2_STATION:
+		return O2_STATION_SCRIPT.new()
+
+	var turret := TURRET_SCENE.instantiate() as Node3D
+	turret.add_to_group("built_turrets")
+	turret.add_to_group("built_structures")
+	return turret
+
+
+func get_selected_cost() -> Dictionary:
+	if selected_building == BUILD_O2_STATION:
+		return O2_STATION_COST
+	return TURRET_COST
+
+
+func get_selected_label() -> String:
+	if selected_building == BUILD_O2_STATION:
+		return "O2 Station"
+	return "Turret"
+
+
+func get_selected_cost_text() -> String:
+	var parts: Array[String] = []
+	for resource_type in get_selected_cost():
+		parts.append("%d %s" % [get_selected_cost()[resource_type], _resource_label(resource_type)])
+	return " + ".join(parts)
+
+
+func _resource_label(resource_type: String) -> String:
+	if resource_type == "void_crystal":
+		return "crystal"
+	return resource_type

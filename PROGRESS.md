@@ -195,3 +195,39 @@ Validation plan:
 "D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
 "D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
 ```
+
+---
+
+## 2026-06-09 - O2 Supply Station Build Slice
+
+- Added `O2Station`, a buildable oxygen refill structure inspired by the GDD O2 supply station / exploration tether design.
+- Expanded `BuildManager` from single turret placement to multi-structure placement:
+  - `1` selects Turret.
+  - `2` selects O2 Station.
+- O2 Station costs `15 iron + 10 biomass`.
+- O2 Station refills player oxygen over time inside a short radius.
+- Build preview keeps the same placement rules and terrain snapping as turret placement.
+- Combat HUD now shows the selected building, selected cost, and build controls.
+- Updated system test coverage for `o2_station.gd`.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 39 passed, 0 failed.
+- `test_standalone.gd`: 29 passed, 0 failed.
+- Main scene short startup: passed.
+
+Manual test steps:
+
+- Press `B`, press `2`, and verify the HUD says `O2 Station`.
+- Collect `15 iron + 10 biomass`.
+- Place an O2 Station on valid terrain.
+- Walk away, let oxygen drain, return near the station, and verify oxygen refills.
+- Press `1` to switch back to turret placement.

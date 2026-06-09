@@ -65,9 +65,12 @@ func _refresh() -> void:
 
 func _refresh_build_hint() -> void:
 	var build_manager := get_tree().current_scene.get_node_or_null("BuildManager") if get_tree().current_scene else null
-	var cost_text := "Turret: 20 iron + 5 crystal"
-	var afford := InventoryManager.has_resources({"iron": 20, "void_crystal": 5}) if InventoryManager else false
 	if build_manager and build_manager.build_mode:
-		_build_label.text = "Build mode: LMB place, RMB/Esc cancel | %s %s" % [cost_text, "READY" if afford else "NEED RESOURCES"]
+		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
+		_build_label.text = "Build: 1 Turret / 2 O2 | %s: %s | LMB place | %s" % [
+			build_manager.get_selected_label(),
+			build_manager.get_selected_cost_text(),
+			"READY" if afford else "NEED RESOURCES"
+		]
 	else:
-		_build_label.text = "Press B to build turret | %s" % cost_text
+		_build_label.text = "Press B to build | 1 Turret, 2 O2 Station"

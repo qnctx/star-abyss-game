@@ -174,6 +174,9 @@ func _test_build_and_combat_ui() -> void:
         var combat_hud_script = load("res://scripts/combat_hud.gd")
         check("combat_hud.gd loads", combat_hud_script != null)
 
+        var o2_station_script = load("res://scripts/o2_station.gd")
+        check("o2_station.gd loads", o2_station_script != null)
+
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
         if not main_scene:
