@@ -103,6 +103,13 @@ func _test_world_generator() -> void:
         check("biome_map is populated", not world_generator.biome_map.is_empty(), "size=%d" % world_generator.biome_map.size())
         check("biome_map size is 101x101", world_generator.biome_map.size() == 101 * 101, "size=%d" % world_generator.biome_map.size())
         check("world generator places oxygen plants", get_nodes_in_group("oxygen_plants").size() > 0, "count=%d" % get_nodes_in_group("oxygen_plants").size())
+        var max_resource_offset := 0.0
+        for resource in get_nodes_in_group("resource_nodes"):
+                var resource_node := resource as Node3D
+                if resource_node and is_instance_valid(resource_node):
+                        var terrain_y: float = world_generator.get_height_at(Vector2(resource_node.global_position.x, resource_node.global_position.z))
+                        max_resource_offset = maxf(max_resource_offset, absf(resource_node.global_position.y - terrain_y))
+        check("world resources spawn on ground", max_resource_offset <= 0.12, "max offset=%.3f" % max_resource_offset)
 
 
 func _test_player_oxygen() -> void:
@@ -267,6 +274,12 @@ func _test_death_drop_manager() -> void:
         check("death drop restores energy", inventory_manager.resources.get("energy", -1) == 2)
         check("death drop restores blueprint", inventory_manager.resources.get("blueprint", -1) == 1)
         check("death drop clears after collect", not death_drop_manager.has_active_drop())
+        var queued_drop_count := 0
+        for drop in get_nodes_in_group("death_drops"):
+                var drop_node := drop as Node
+                if drop_node and drop_node.is_queued_for_deletion():
+                        queued_drop_count += 1
+        check("death drop queues node after collect", queued_drop_count >= 1)
 
         tracker.queue_free()
         combat_hud.queue_free()
@@ -410,6 +423,9 @@ func _test_build_and_combat_ui() -> void:
         var combat_hud_script = load("res://scripts/combat_hud.gd")
         check("combat_hud.gd loads", combat_hud_script != null)
 
+        var resource_hud_script = load("res://scripts/resource_hud.gd")
+        check("resource_hud.gd loads", resource_hud_script != null)
+
         var o2_station_script = load("res://scripts/o2_station.gd")
         check("o2_station.gd loads", o2_station_script != null)
 
@@ -475,6 +491,23 @@ func _test_build_and_combat_ui() -> void:
         check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
         check("ObjectiveTracker node exists", main.get_node_or_null("ObjectiveTracker") != null)
         main.free()
+
+        if resource_hud_script:
+                var inventory_manager = _get_autoload("InventoryManager")
+                var old_iron: int = inventory_manager.resources.get("iron", 0) if inventory_manager else 0
+                var old_void: int = inventory_manager.resources.get("void_crystal", 0) if inventory_manager else 0
+                if inventory_manager:
+                        inventory_manager.resources["iron"] = 5
+                        inventory_manager.resources["void_crystal"] = 2
+                var resource_hud = resource_hud_script.new()
+                current_scene.add_child(resource_hud)
+                var inventory_text: String = resource_hud.get_inventory_text()
+                check("resource HUD shows iron count", inventory_text.contains("IRON 5"), inventory_text)
+                check("resource HUD shows crystal count", inventory_text.contains("CRYSTAL 2"), inventory_text)
+                resource_hud.queue_free()
+                if inventory_manager:
+                        inventory_manager.resources["iron"] = old_iron
+                        inventory_manager.resources["void_crystal"] = old_void
 
         if combat_hud_script and save_manager:
                 var combat_hud = combat_hud_script.new()

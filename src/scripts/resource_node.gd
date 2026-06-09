@@ -22,20 +22,27 @@ const TYPE_LABELS = {
 
 var bob_offset: float = randf_range(0.0, TAU)
 var bob_speed: float = 2.0
-var bob_height: float = 0.2
-var base_y: float = 0.0
+var bob_height: float = 0.06
+var _mesh_rest_y := 0.0
+var _label_rest_y := 0.85
 
 
 func _ready():
 	add_to_group("resource_nodes")
 	body_entered.connect(_on_body_entered)
-	base_y = global_position.y
 	_set_appearance()
+	_expand_pickup_collision()
 
 
 func _process(delta):
 	bob_offset += delta * bob_speed
-	global_position.y = base_y + sin(bob_offset) * bob_height
+	var bob := sin(bob_offset) * bob_height
+	var mesh := get_node_or_null("ResourceMesh") as Node3D
+	if mesh:
+		mesh.position.y = _mesh_rest_y + bob
+	var label := get_node_or_null("ResourceLabel") as Label3D
+	if label:
+		label.position.y = _label_rest_y + bob
 
 
 func _set_appearance():
@@ -64,6 +71,8 @@ func _set_appearance():
 		# Set distinct shape based on resource type
 		_set_resource_shape(mesh)
 	_add_label()
+	if mesh:
+		_mesh_rest_y = mesh.position.y
 
 
 func _set_resource_shape(mesh: MeshInstance3D) -> void:
@@ -117,6 +126,16 @@ func _add_label() -> void:
 	label.outline_size = 8
 	label.outline_modulate = Color(0.02, 0.02, 0.02, 0.95)
 	add_child(label)
+	_label_rest_y = label.position.y
+
+
+func _expand_pickup_collision() -> void:
+	var collision := get_node_or_null("CollisionShape3D") as CollisionShape3D
+	if not collision:
+		return
+	var sphere := collision.shape as SphereShape3D
+	if sphere:
+		sphere.radius = 0.85
 
 
 func _on_body_entered(body: Node3D):

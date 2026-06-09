@@ -409,7 +409,7 @@ func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 			node.resource_type = res_type
 			node.amount = randi_range(1, 3)
 			scene.add_child(node)
-			node.global_position = Vector3(x, y + 0.25, z)
+			node.global_position = Vector3(x, y + 0.04, z)
 			placed += 1
 
 	print("WorldGenerator: placed %d %s resources." % [count, res_type])
@@ -517,8 +517,7 @@ func _spawn_rocks(scene: Node) -> void:
 
 
 func _spawn_debris_layer(scene: Node) -> void:
-	## Scatter 40 small debris pieces at varying heights (0.0 to 0.5 above terrain)
-	## to simulate small hills and dips in the terrain.
+	## Scatter 40 small debris pieces on the ground so they do not read as airborne pickups.
 	const DEBRIS_COUNT := 40
 	var half := WORLD_SIZE / 2.0 - 3.0
 	var placed := 0
@@ -537,9 +536,6 @@ func _spawn_debris_layer(scene: Node) -> void:
 			continue
 
 		var terrain_y := _raw_height(x, z)
-		# Height variation: small debris sits 0.0 to 0.5 units above terrain
-		var height_offset := randf_range(0.0, 0.5)
-
 		var debris := MeshInstance3D.new()
 		debris.name = "Debris_%d" % placed
 		var scale_vec := Vector3(
@@ -548,7 +544,7 @@ func _spawn_debris_layer(scene: Node) -> void:
 			randf_range(0.08, 0.25)
 		)
 		debris.scale = scale_vec
-		debris.position = Vector3(x, terrain_y + height_offset + scale_vec.y * 0.2, z)
+		debris.position = Vector3(x, terrain_y + scale_vec.y * 0.12, z)
 
 		# Use small box mesh for angular debris
 		var box_mesh := BoxMesh.new()

@@ -1,35 +1,31 @@
 extends Control
 
-const ICONS = {
-	"iron": "石",
-	"void_crystal": "晶",
-	"biomass": "质",
-	"energy": "电",
-	"energy_core": "能",
-	"blueprint": "图",
-}
-const COLORS = {
-	"iron": Color(0.5, 0.45, 0.4),
-	"void_crystal": Color(0.6, 0.2, 0.8),
-	"biomass": Color(0.2, 0.7, 0.3),
-	"energy": Color(1.0, 0.85, 0.25),
-	"energy_core": Color(0.2, 0.4, 1.0),
-	"blueprint": Color(0.9, 0.7, 0.1),
+const DISPLAY_ORDER := ["iron", "void_crystal", "biomass", "energy", "energy_core", "blueprint", "oxygen_canister"]
+const DISPLAY_NAMES = {
+	"iron": "IRON",
+	"void_crystal": "CRYSTAL",
+	"biomass": "BIO",
+	"energy": "ENERGY",
+	"energy_core": "CORE",
+	"blueprint": "BP",
+	"oxygen_canister": "O2 KIT",
 }
 
-const COLORS_NAMES = {
-	"iron": "铁",
-	"void_crystal": "晶",
-	"biomass": "质",
-	"energy": "电",
-	"energy_core": "能",
-	"blueprint": "图",
-}
-
-var resource_labels: Dictionary = {}
+var _inventory_label: Label
 
 
 func _ready():
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	position = Vector2(-610.0, 10.0)
+	size = Vector2(600.0, 52.0)
+	_inventory_label = Label.new()
+	_inventory_label.name = "InventoryLabel"
+	_inventory_label.size = size
+	_inventory_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_inventory_label.add_theme_font_size_override("font_size", 15)
+	_inventory_label.add_theme_color_override("font_color", Color(0.92, 0.97, 1.0))
+	add_child(_inventory_label)
 	InventoryManager.resource_changed.connect(_on_resource_changed)
 	_update_display()
 
@@ -39,20 +35,24 @@ func _on_resource_changed(_type: String, _amount: int):
 
 
 func _update_display():
-	# Clear old labels
-	for child in get_children():
-		child.queue_free()
-	resource_labels.clear()
+	if not _inventory_label:
+		return
+	_inventory_label.text = get_inventory_text()
 
-	var y_offset = 10.0
-	for type in InventoryManager.resources:
-		var amount = InventoryManager.resources[type]
-		if amount > 0:
-			var label = Label.new()
-			label.text = "%s%s x %d" % [ICONS.get(type, "?"), COLORS_NAMES.get(type, type), amount]
-			label.add_theme_color_override("font_color", COLORS.get(type, Color.WHITE))
-			label.add_theme_font_size_override("font_size", 14)
-			label.position = Vector2(10, y_offset)
-			add_child(label)
-			resource_labels[type] = label
-			y_offset += 20
+
+func get_inventory_text() -> String:
+	if not InventoryManager:
+		return "Inventory unavailable"
+	var first_row: Array[String] = []
+	var second_row: Array[String] = []
+	for i in range(DISPLAY_ORDER.size()):
+		var resource_type: String = str(DISPLAY_ORDER[i])
+		var item: String = "%s %d" % [
+			str(DISPLAY_NAMES.get(resource_type, resource_type.to_upper())),
+			int(InventoryManager.resources.get(resource_type, 0))
+		]
+		if i < 4:
+			first_row.append(item)
+		else:
+			second_row.append(item)
+	return "Inventory: %s\n%s" % [" | ".join(first_row), " | ".join(second_row)]

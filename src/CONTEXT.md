@@ -163,6 +163,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
   - Resource pickups are walk-over collection nodes with billboard labels: `IRON`, `BIO`, `CRYSTAL`, `CORE`, `BP`
+  - Scanner remains useful as navigation; current resource counts are shown by `ResourceHUD`.
 
 ### Signal Beacon (信号台)
 - **Type**: `Node3D`
@@ -373,9 +374,11 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### Inventory / Resources
 - **Manager**: `scripts/inventory_manager.gd` (Autoload Node)
-- **Concept**: Tracks count of 5 resource types across the whole game
-- **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint
+- **HUD**: `scripts/resource_hud.gd` shows a top-right two-line inventory summary, including zero counts.
+- **Concept**: Tracks resource counts across the whole game.
+- **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint, oxygen_canister
 - **Pickup rule**: Generated resource nodes are collected by walking into them; no key press is needed.
+- **Spawn rule**: Current world resources are generated once when the world is created; they do not randomly respawn after pickup yet.
 - **Signals**: `resource_changed(resource_type, amount)`
 - **Methods**: `add_resource()`, `has_resources(requirements)`, `consume_resources(requirements)`
 
@@ -383,6 +386,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Script**: `scripts/world_generator.gd`
 - **Concept**: Procedural terrain generation (likely crash zone terrain).
 - **Provides**: `base_position` (Vector3), `get_spawn_position(min_dist, max_dist)`
+- **Resource placement**: Generated resource pickups are snapped close to terrain height for early ground collection. Decorative debris is kept grounded so it does not read as airborne loot.
 
 ---
 

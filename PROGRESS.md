@@ -81,6 +81,47 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Ground Resource And Inventory HUD Slice
+
+- Responded to playtest feedback that collected iron/crystal counts were not visible and some pickups/debris appeared airborne.
+- Reworked `ResourceHUD` into a top-right two-line inventory summary:
+  - Always shows `IRON`, `CRYSTAL`, `BIO`, `ENERGY`, `CORE`, `BP`, and `O2 KIT` counts.
+  - Shows zero counts so the player does not need to infer inventory from Objective missing-resource text.
+- Improved early resource pickup reliability:
+  - Resource Area3D nodes now stay fixed near terrain height; only the mesh/label does a small visual bob.
+  - Pickup collision radius is larger so ground-level walking collects resources without needing to jump.
+  - World-generated resources now spawn within `0.04` units of terrain height.
+  - Decorative debris is grounded so it does not read as floating loot.
+- Fixed Death Drop cleanup:
+  - Drop nodes are now `queue_free()`d instead of immediately `free()`d, avoiding the Godot locked-object error when collection happens during a collision signal.
+- Clarified current design:
+  - Resources are generated once with the world and do not randomly respawn after pickup yet.
+  - `G` Scanner remains a navigation tool for finding the nearest target type; inventory counts are shown by ResourceHUD.
+- Added automated coverage for ground resource placement, inventory HUD text, and safe Death Drop node cleanup.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+git diff --check
+codegraph status
+```
+
+Results:
+
+- `test_runner.gd`: 318 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Resource Readability Labels Slice
 
 - Improved resource readability after playtest feedback that iron and O2 sources were hard to distinguish.
