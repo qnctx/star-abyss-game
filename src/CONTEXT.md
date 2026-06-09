@@ -26,7 +26,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 ### Enemy (敌人)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/enemy.gd`
-- **Concept**: Hostile creature that pathfinds toward the player's base pod.
+- **Concept**: Hostile creature that moves toward the player's base pod and opportunistically attacks nearby built structures.
 - **States**: alive / dead (fires `enemy_died`, then queue_free)
 - **Key properties**: `speed`, `health`, `damage`, `attack_range`
 - **Signals**: `enemy_died(should_reward: bool)`, `base_reached(damage: float, hit_position: Vector3)`
@@ -40,7 +40,10 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Only combat kills grant rewards.
   - Base breaches call `die(false)` and do not grant kill rewards.
   - Variants add bonus rewards: Scout biomass, Tank iron, Elite crystal/blueprint, Boss energy_core/blueprint.
-- **Behaviors**: Move toward `target_position` (base), emit `base_reached` on contact, then die
+- **Behaviors**:
+  - Move toward `target_position` (base), emit `base_reached` on contact, then die.
+  - If a `built_structures` node is within `structure_target_range`, move to it and attack on `structure_attack_interval`.
+  - Structure attacks use `structure_health` / `structure_max_health` metadata and queue-free structures at 0 HP.
 
 ### Turret (炮塔)
 - **Type**: `StaticBody3D`
@@ -223,7 +226,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `get_repair_status_text()` reports target HP and resource readiness.
 - **Implementation notes**:
   - New structures store `build_cost` metadata when placed.
-  - New structures store `structure_health` and `structure_max_health` metadata when placed.
+  - New structures store `structure_health` and `structure_max_health` metadata when placed; enemies can also initialize this metadata when attacking older/test structures.
   - Upgraded structures store `upgrade_level` metadata.
   - Recycle ignores nodes that are not in `built_structures`.
   - `CombatHUD` renders build status as two rows during build mode to avoid overlong one-line hints.
@@ -265,7 +268,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - Multiplayer
 - Persistent save/load system
 - Full crafting tree beyond forge UI
-- Enemy AI beyond "walk to base"
+- Advanced enemy pathfinding/tactics beyond nearby structure attacks
 - Terrain destruction
 
 ---

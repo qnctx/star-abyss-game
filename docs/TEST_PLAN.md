@@ -81,6 +81,18 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 8. Confirm the structure HP increases by about `35` and resources decrease.
 9. If the structure is full HP, press `R` again and confirm resources are not consumed.
 
+## Enemy Structure Targeting
+
+1. Build a Turret or Slow Field between the enemy approach direction and the base.
+2. Press `N` to start night quickly.
+3. Let at least one enemy reach the built structure before reaching the base.
+4. Confirm the enemy stops or slows near the structure instead of sliding forever against it.
+5. Confirm the structure can lose HP from repeated enemy attacks.
+6. Press `B` and aim the preview near the damaged structure.
+7. Confirm the repair HUD shows the damaged structure HP.
+8. If the structure is destroyed, confirm it disappears and enemies continue toward the base.
+9. Confirm enemies that destroy structures do not grant kill rewards unless killed by the player/turrets.
+
 ## Turret Placement
 
 1. Collect at least `20 iron + 5 void_crystal`.

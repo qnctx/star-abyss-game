@@ -20,6 +20,7 @@ func _run() -> void:
         _test_zone_manager()
         _test_turret_logic()
         _test_slow_field()
+        _test_enemy_structure_targeting()
         _test_build_and_combat_ui()
         _test_build_recycle()
         _test_structure_upgrade()
@@ -186,6 +187,48 @@ func _test_slow_field() -> void:
 
         slow_field.queue_free()
         enemy.queue_free()
+
+
+func _test_enemy_structure_targeting() -> void:
+        print("\n[ Enemy structure targeting ]")
+
+        var enemy_script = load("res://scripts/enemy.gd")
+        check("enemy.gd loads for structure targeting test", enemy_script != null)
+        if not enemy_script:
+                return
+
+        var enemy = enemy_script.new()
+        current_scene.add_child(enemy)
+        enemy.global_position = Vector3.ZERO
+        enemy.damage = 12.0
+        enemy.attack_range = 2.0
+        enemy.structure_target_range = 4.0
+
+        var structure := Node3D.new()
+        structure.add_to_group("built_structures")
+        structure.position = Vector3(1.0, 0.0, 0.0)
+        current_scene.add_child(structure)
+
+        check("enemy finds nearby built structure", enemy.find_structure_target() == structure)
+
+        enemy._physics_process(1.0)
+        check_nearly(float(structure.get_meta("structure_health", 0.0)), 88.0, 0.01, "enemy attack damages structure")
+
+        enemy._physics_process(0.1)
+        check_nearly(float(structure.get_meta("structure_health", 0.0)), 88.0, 0.01, "enemy structure attack respects cooldown")
+
+        enemy._physics_process(1.0)
+        check_nearly(float(structure.get_meta("structure_health", 0.0)), 76.0, 0.01, "enemy can attack structure again after cooldown")
+
+        check("enemy damage_structure destroys depleted structure", enemy.damage_structure(structure, 200.0))
+        check("depleted structure queues for deletion", structure.is_queued_for_deletion())
+
+        var loose_node := Node3D.new()
+        current_scene.add_child(loose_node)
+        check("enemy ignores non-built structure damage target", not enemy.damage_structure(loose_node, 10.0))
+
+        enemy.queue_free()
+        loose_node.queue_free()
 
 
 func _test_inventory_manager() -> void:

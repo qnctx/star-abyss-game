@@ -81,6 +81,43 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Enemy Structure Targeting Slice
+
+- Expanded enemy behavior beyond only walking to the base:
+  - Enemies now scan for nearby `built_structures`.
+  - If a structure is within `structure_target_range`, the enemy moves to it.
+  - Inside `attack_range`, the enemy stops and attacks on `structure_attack_interval`.
+- Structure attacks use the existing structure HP metadata:
+  - `structure_health`
+  - `structure_max_health`
+  - Structures at 0 HP are queued for deletion.
+- This makes defensive placement, repair, and accidental walling more meaningful:
+  - Structures can buy time.
+  - Enemies no longer just press against nearby built modules forever.
+  - Repair mode can recover damaged structures after attacks.
+- Added automated coverage for target selection, attack cooldown, repeated structure damage, structure destruction, and ignoring non-built nodes.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 168 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Tech Unlock Gate Slice
 
 - Added `TechManager` as a small blueprint-driven technology autoload.

@@ -23,6 +23,7 @@
 | 角色移动/O2 | 可玩，含冲刺、蹲伏、趴下、地形跟随和卡住恢复 | `player.gd` |
 | 昼夜/波次 | 白天采集，夜晚刷敌，`N` 可快速进入夜晚测试 | `game_manager.gd`, `base_interaction.gd` |
 | 敌人变体 | Scout/Tank/Elite/Boss 波次有不同数值、颜色、HUD 标签和击杀奖励 | `game_manager.gd`, `enemy.gd` |
+| 敌人结构攻击 | 敌人会攻击路过的已建建筑，建筑 HP 归零后被摧毁 | `enemy.gd`, `build_manager.gd` |
 | 波次预警 | HUD 显示阶段倒计时和敌人来袭方向 | `game_manager.gd`, `combat_hud.gd` |
 | 资源/库存 | iron, void_crystal, biomass, energy, energy_core, blueprint | `inventory_manager.gd` |
 | 建造 | `B` 进入建造，`1-6` 选择建筑，地形吸附预览 | `build_manager.gd` |
@@ -65,6 +66,7 @@
 | Done | 建筑修理扩展 | 让基地维护扩展到模块 | 敌人突破会伤建筑，建造模式可修理 |
 | Done | 目标提示 Objective Tracker | 让新系统形成可读推进路线 | HUD 显示下一步采集/建造/防守目标 |
 | Done | 科技解锁 Tech Unlock | 让 Research Station 产出的 blueprint 推动建筑解锁 | Shield/Slow 默认锁定，按 `Y` 消耗 blueprint 解锁后才能建造 |
+| Done | 敌人结构攻击 | 让建筑布局和修理压力更真实 | 敌人会停下攻击附近建筑，结构 HP 清零后摧毁 |
 
 ### 0.4 当前手测入口
 
