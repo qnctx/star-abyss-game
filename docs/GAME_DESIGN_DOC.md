@@ -40,7 +40,7 @@
 | 能量生产 | Solar Panel 白天生产 energy，夜晚停产 | `solar_panel.gd` |
 | 研究/蓝图 | Research Station 消耗 energy 产出 blueprint | `research_station.gd` |
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
-| 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑状态 | `save_manager.gd` |
+| 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态 | `save_manager.gd` |
 | 资源扫描 | Resource Scanner 显示最近目标资源的距离/方向，`G` 切换类型 | `resource_scanner.gd` |
 
 ### 0.2 当前 MVP 设计目标

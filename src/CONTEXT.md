@@ -141,9 +141,10 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `TechManager.unlocked`
   - Base HP/shield, wave number, phase timer, current day/night flag, wave direction
   - Built structures with `build_id`, position, scale, build cost/label, HP, max HP, upgrade level, turret damage/fire rate
+  - Active enemies with position, scale, health, speed, damage, attack settings, and wave variant metadata
 - **Load behavior**:
-  - Clears current enemies and built structures before restoring saved structures.
-  - Active enemies are not persisted yet; this MVP is safest during daytime or between waves.
+  - Clears current enemies and built structures before restoring saved runtime nodes.
+  - Restored enemies reconnect to `GameManager._on_enemy_died` and `_on_base_reached`.
   - Restored structures are created from the same structure scripts/scenes used by BuildManager.
 
 ### Projectile (子弹/抛射物)
@@ -286,7 +287,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### What's OUT of the domain (not yet implemented)
 - Multiplayer
-- Full save/load beyond MVP runtime state; active enemy persistence is not implemented yet
+- Full save/load beyond MVP runtime state; projectile/VFX persistence is not implemented yet
 - Full crafting tree beyond forge UI
 - Advanced enemy pathfinding/tactics beyond nearby structure attacks
 - Terrain destruction

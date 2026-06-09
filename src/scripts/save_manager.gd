@@ -18,6 +18,7 @@ const SHIELD_GENERATOR_SCRIPT := preload("res://scripts/shield_generator.gd")
 const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const RESEARCH_STATION_SCRIPT := preload("res://scripts/research_station.gd")
 const SLOW_FIELD_SCRIPT := preload("res://scripts/slow_field.gd")
+const ENEMY_SCENE := preload("res://scenes/enemy.tscn")
 
 var last_status: String = ""
 
@@ -74,7 +75,8 @@ func capture_save_data() -> Dictionary:
 		"inventory": InventoryManager.resources.duplicate(true) if InventoryManager else {},
 		"tech": TechManager.unlocked.duplicate(true) if TechManager else {},
 		"game": _capture_game_state(),
-		"structures": _capture_structures()
+		"structures": _capture_structures(),
+		"enemies": _capture_enemies()
 	}
 
 
@@ -85,7 +87,8 @@ func apply_save_data(data: Dictionary) -> bool:
 	_apply_inventory(data.get("inventory", {}))
 	_apply_tech(data.get("tech", {}))
 	_restore_structures(data.get("structures", []))
-	_apply_game_state(data.get("game", {}))
+	var restored_enemy_count := _restore_enemies(data.get("enemies", []))
+	_apply_game_state(data.get("game", {}), restored_enemy_count)
 	return true
 
 
@@ -99,7 +102,8 @@ func _capture_game_state() -> Dictionary:
 		"base_shield": GameManager.base_shield,
 		"max_base_shield": GameManager.max_base_shield,
 		"phase_time_remaining": GameManager.phase_time_remaining,
-		"last_wave_direction": GameManager.last_wave_direction
+		"last_wave_direction": GameManager.last_wave_direction,
+		"enemies_alive": GameManager.enemies_alive
 	}
 
 
@@ -131,6 +135,32 @@ func _capture_structure(structure: Node3D) -> Dictionary:
 	return data
 
 
+func _capture_enemies() -> Array[Dictionary]:
+	var enemies: Array[Dictionary] = []
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		var enemy_node := enemy as Node3D
+		if not enemy_node or not is_instance_valid(enemy_node) or enemy_node.is_queued_for_deletion():
+			continue
+		enemies.append(_capture_enemy(enemy_node))
+	return enemies
+
+
+func _capture_enemy(enemy: Node3D) -> Dictionary:
+	return {
+		"position": _vector_to_array(enemy.global_position),
+		"scale": _vector_to_array(enemy.scale),
+		"name": enemy.name,
+		"speed": float(enemy.get("speed")),
+		"health": float(enemy.get("health")),
+		"damage": float(enemy.get("damage")),
+		"attack_range": float(enemy.get("attack_range")),
+		"structure_target_range": float(enemy.get("structure_target_range")),
+		"structure_attack_interval": float(enemy.get("structure_attack_interval")),
+		"wave_variant": str(enemy.get_meta("wave_variant", "normal")),
+		"wave_variant_label": str(enemy.get_meta("wave_variant_label", "Normal"))
+	}
+
+
 func _apply_inventory(data: Variant) -> void:
 	if not InventoryManager or typeof(data) != TYPE_DICTIONARY:
 		return
@@ -150,12 +180,12 @@ func _apply_tech(data: Variant) -> void:
 			TechManager.tech_unlocked.emit(str(tech_id))
 
 
-func _apply_game_state(data: Variant) -> void:
+func _apply_game_state(data: Variant, restored_enemy_count: int = 0) -> void:
 	if not GameManager or typeof(data) != TYPE_DICTIONARY:
 		return
 	GameManager.is_night = bool(data.get("is_night", false))
 	GameManager.wave_number = int(data.get("wave_number", 0))
-	GameManager.enemies_alive = 0
+	GameManager.enemies_alive = restored_enemy_count
 	GameManager.base_health = float(data.get("base_health", GameManager.MAX_BASE_HEALTH))
 	GameManager.base_shield = float(data.get("base_shield", 0.0))
 	GameManager.max_base_shield = float(data.get("max_base_shield", 0.0))
@@ -190,6 +220,43 @@ func _restore_structures(data: Variant) -> void:
 			structure.set("damage", float(item["damage"]))
 		if item.has("fire_rate") and structure.get("fire_rate") != null:
 			structure.set("fire_rate", float(item["fire_rate"]))
+
+
+func _restore_enemies(data: Variant) -> int:
+	if typeof(data) != TYPE_ARRAY or not get_tree().current_scene:
+		return 0
+	var restored_count := 0
+	for item in data:
+		if typeof(item) != TYPE_DICTIONARY:
+			continue
+		var enemy := _restore_enemy(item)
+		if enemy:
+			restored_count += 1
+	return restored_count
+
+
+func _restore_enemy(item: Dictionary) -> Node3D:
+	var enemy := ENEMY_SCENE.instantiate() as Node3D
+	if not enemy:
+		return null
+	get_tree().current_scene.add_child(enemy)
+	enemy.global_position = _array_to_vector(item.get("position", [0.0, 0.0, 0.0]))
+	enemy.scale = _array_to_vector(item.get("scale", [1.0, 1.0, 1.0]))
+	enemy.name = str(item.get("name", "Enemy_Restored"))
+	enemy.set("speed", float(item.get("speed", enemy.get("speed"))))
+	enemy.set("health", float(item.get("health", enemy.get("health"))))
+	enemy.set("damage", float(item.get("damage", enemy.get("damage"))))
+	enemy.set("attack_range", float(item.get("attack_range", enemy.get("attack_range"))))
+	enemy.set("structure_target_range", float(item.get("structure_target_range", enemy.get("structure_target_range"))))
+	enemy.set("structure_attack_interval", float(item.get("structure_attack_interval", enemy.get("structure_attack_interval"))))
+	var variant := str(item.get("wave_variant", "normal"))
+	enemy.set_meta("wave_variant", variant)
+	enemy.set_meta("wave_variant_label", str(item.get("wave_variant_label", "Normal")))
+	if GameManager:
+		GameManager._apply_enemy_variant_visual(enemy, variant)
+		enemy.enemy_died.connect(GameManager._on_enemy_died.bind(enemy))
+		enemy.base_reached.connect(GameManager._on_base_reached)
+	return enemy
 
 
 func _instantiate_structure(build_id: String) -> Node3D:

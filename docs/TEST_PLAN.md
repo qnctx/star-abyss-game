@@ -271,7 +271,9 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Confirm tech unlocks return to the saved state.
 12. Confirm saved structures reappear with position, HP, and upgrade level.
 13. Confirm Base HP, shield values, wave number, and phase timer return close to the saved state.
-14. Note: active enemies are not persisted in this MVP; loading clears current enemies and is safest during daytime or between waves.
+14. During night, save while at least one enemy is alive.
+15. Press `F7` and confirm the enemy reappears with the same rough position, health state, and variant label.
+16. Confirm the Combat HUD enemy count matches the restored enemies.
 
 ## Known Headless Note
 

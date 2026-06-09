@@ -81,6 +81,38 @@ cd star-abyss-game/src
 ```
 ---
 
+## 2026-06-09 - Save Active Enemies Slice
+
+- Expanded SaveManager beyond the first save/load MVP:
+  - Active enemies are now included in save data.
+  - Persisted enemy data includes position, scale, name, health, speed, damage, attack settings, and wave variant metadata.
+  - Loading restores enemy nodes from `enemy.tscn`.
+  - Restored enemies reconnect to `GameManager._on_enemy_died` and `_on_base_reached`.
+  - `GameManager.enemies_alive` is restored from the number of active enemies loaded.
+- Updated manual save/load test steps to cover saving during night while enemies are alive.
+- Updated GDD and context docs to remove the previous active-enemy persistence limitation.
+- Added automated coverage for enemy capture, restore, enemy count, health, and variant label.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Results:
+
+- `test_runner.gd`: 199 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- CodeGraph status: `[OK] Index is up to date`; current GDScript project still indexes 0 files.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Save Load MVP Slice
 
 - Added `SaveManager` autoload with runtime quick-save/load:

@@ -791,18 +791,21 @@ func _test_save_manager() -> void:
         var tech_manager = _get_autoload("TechManager")
         var game_manager = _get_autoload("GameManager")
         var turret_scene = load("res://scenes/turret.tscn")
+        var enemy_scene = load("res://scenes/enemy.tscn")
         check("SaveManager autoload exists", save_manager != null)
         check("InventoryManager autoload exists for save test", inventory_manager != null)
         check("TechManager autoload exists for save test", tech_manager != null)
         check("GameManager autoload exists for save test", game_manager != null)
         check("turret scene loads for save test", turret_scene != null)
-        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene:
+        check("enemy scene loads for save test", enemy_scene != null)
+        if not save_manager or not inventory_manager or not tech_manager or not game_manager or not turret_scene or not enemy_scene:
                 return
 
         var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
         var old_unlocked: Dictionary = tech_manager.unlocked.duplicate(true)
         var old_is_night: bool = game_manager.is_night
         var old_wave: int = game_manager.wave_number
+        var old_enemies_alive: int = game_manager.enemies_alive
         var old_base_health: float = game_manager.base_health
         var old_base_shield: float = game_manager.base_shield
         var old_max_shield: float = game_manager.max_base_shield
@@ -812,6 +815,9 @@ func _test_save_manager() -> void:
         for existing_structure in get_nodes_in_group("built_structures"):
                 if existing_structure and is_instance_valid(existing_structure):
                         existing_structure.queue_free()
+        for existing_enemy in get_nodes_in_group("enemies"):
+                if existing_enemy and is_instance_valid(existing_enemy):
+                        existing_enemy.queue_free()
 
         inventory_manager.resources["iron"] = 7
         inventory_manager.resources["blueprint"] = 3
@@ -819,6 +825,7 @@ func _test_save_manager() -> void:
         tech_manager.unlocked["shield_generator"] = true
         game_manager.is_night = true
         game_manager.wave_number = 4
+        game_manager.enemies_alive = 1
         game_manager.base_health = 55.0
         game_manager.base_shield = 12.0
         game_manager.max_base_shield = 30.0
@@ -840,17 +847,31 @@ func _test_save_manager() -> void:
         turret.fire_rate = 1.5
         current_scene.add_child(turret)
 
+        var enemy = enemy_scene.instantiate()
+        enemy.position = Vector3(-4.0, 0.5, 3.0)
+        enemy.name = "Scout_Save_Test"
+        enemy.health = 17.0
+        enemy.speed = 6.5
+        enemy.damage = 8.0
+        enemy.scale = Vector3.ONE * 0.85
+        enemy.set_meta("wave_variant", "scout")
+        enemy.set_meta("wave_variant_label", "Scout")
+        current_scene.add_child(enemy)
+
         var data: Dictionary = save_manager.capture_save_data()
         check("save data captures inventory", int(data["inventory"].get("iron", 0)) == 7)
         check("save data captures tech unlock", bool(data["tech"].get("shield_generator", false)))
         check("save data captures game state", int(data["game"].get("wave_number", 0)) == 4)
         check("save data captures built structures", (data["structures"] as Array).size() >= 1)
+        check("save data captures active enemies", (data["enemies"] as Array).size() >= 1)
 
         inventory_manager.resources["iron"] = 0
         inventory_manager.resources["blueprint"] = 0
         tech_manager.unlocked["shield_generator"] = false
         game_manager.base_health = 10.0
+        game_manager.enemies_alive = 0
         turret.queue_free()
+        enemy.queue_free()
 
         check("apply save data succeeds", save_manager.apply_save_data(data))
         check("load restores inventory iron", inventory_manager.resources.get("iron", -1) == 7)
@@ -858,6 +879,7 @@ func _test_save_manager() -> void:
         check("load restores shield unlock", bool(tech_manager.unlocked.get("shield_generator", false)))
         check_nearly(game_manager.base_health, 55.0, 0.01, "load restores base health")
         check("load restores wave number", game_manager.wave_number == 4)
+        check("load restores enemy count", game_manager.enemies_alive == 1)
 
         var restored_turret: Node = null
         for structure in get_nodes_in_group("built_structures"):
@@ -870,13 +892,28 @@ func _test_save_manager() -> void:
                 check_nearly(float(restored_turret.get_meta("structure_health", 0.0)), 42.0, 0.01, "load restores structure health")
                 check("load restores upgrade level", int(restored_turret.get_meta("upgrade_level", 0)) == 2)
 
+        var restored_enemy: Node = null
+        for active_enemy in get_nodes_in_group("enemies"):
+                var enemy_node := active_enemy as Node
+                if enemy_node and is_instance_valid(enemy_node) and not enemy_node.is_queued_for_deletion() and str(enemy_node.get_meta("wave_variant", "")) == "scout":
+                        restored_enemy = enemy_node
+                        break
+        check("load restores saved enemy", restored_enemy != null)
+        if restored_enemy:
+                check_nearly(float(restored_enemy.get("health")), 17.0, 0.01, "load restores enemy health")
+                check("load restores enemy variant label", str(restored_enemy.get_meta("wave_variant_label", "")) == "Scout")
+
         for restored_structure in get_nodes_in_group("built_structures"):
                 if restored_structure and is_instance_valid(restored_structure):
                         restored_structure.queue_free()
+        for restored_enemy_node in get_nodes_in_group("enemies"):
+                if restored_enemy_node and is_instance_valid(restored_enemy_node):
+                        restored_enemy_node.queue_free()
         inventory_manager.resources = old_resources
         tech_manager.unlocked = old_unlocked
         game_manager.is_night = old_is_night
         game_manager.wave_number = old_wave
+        game_manager.enemies_alive = old_enemies_alive
         game_manager.base_health = old_base_health
         game_manager.base_shield = old_base_shield
         game_manager.max_base_shield = old_max_shield
