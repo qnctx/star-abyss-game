@@ -66,6 +66,16 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - Pauses generation at night
   - Adds to `InventoryManager.resources["energy"]`
 
+### Research Station (研究台)
+- **Type**: `Node3D`
+- **Script**: `scripts/research_station.gd`
+- **Concept**: First technology-tree entry point; converts base power into blueprint progress.
+- **Cost**: `20 iron + 5 void_crystal + 5 energy`
+- **Behaviors**:
+  - Consumes `5 energy` every `20` seconds
+  - Produces `1 blueprint`
+  - Pauses automatically while energy is below `5`
+
 ### Projectile (子弹/抛射物)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
@@ -210,6 +220,7 @@ src/
 │   ├── turret.gd             # Auto-target, fire
 │   ├── shield_generator.gd    # Buildable base shield module
 │   ├── solar_panel.gd         # Buildable daytime energy generator
+│   ├── research_station.gd    # Buildable energy-to-blueprint converter
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking
 │   ├── zone_manager.gd       # Zone adaptation

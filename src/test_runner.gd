@@ -24,6 +24,7 @@ func _run() -> void:
         _test_base_repair()
         _test_base_shield()
         _test_solar_panel_energy()
+        _test_research_station()
         _test_serum_recipes()
 
         print("\n========================================")
@@ -190,6 +191,9 @@ func _test_build_and_combat_ui() -> void:
         var solar_panel_script = load("res://scripts/solar_panel.gd")
         check("solar_panel.gd loads", solar_panel_script != null)
 
+        var research_station_script = load("res://scripts/research_station.gd")
+        check("research_station.gd loads", research_station_script != null)
+
         var main_scene = load("res://scenes/main.tscn")
         check("main scene loads with build/combat nodes", main_scene != null)
         if not main_scene:
@@ -302,6 +306,38 @@ func _test_solar_panel_energy() -> void:
         panel.queue_free()
         inventory_manager.resources["energy"] = old_energy
         game_manager.is_night = old_is_night
+
+
+func _test_research_station() -> void:
+        print("\n[ Research station ]")
+
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not inventory_manager:
+                return
+
+        var research_script = load("res://scripts/research_station.gd")
+        check("research_station.gd loads for research test", research_script != null)
+        if not research_script:
+                return
+
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_blueprint: int = inventory_manager.resources.get("blueprint", 0)
+        inventory_manager.resources["energy"] = 5
+        inventory_manager.resources["blueprint"] = 0
+
+        var station = research_script.new()
+        current_scene.add_child(station)
+        station._process(station.RESEARCH_INTERVAL)
+        check("research consumes energy", inventory_manager.resources.get("energy", -1) == 0)
+        check("research creates blueprint", inventory_manager.resources.get("blueprint", -1) == 1)
+
+        station._process(station.RESEARCH_INTERVAL * 2.0)
+        check("research pauses without energy", inventory_manager.resources.get("blueprint", -1) == 1)
+
+        station.queue_free()
+        inventory_manager.resources["energy"] = old_energy
+        inventory_manager.resources["blueprint"] = old_blueprint
 
 
 func _test_serum_recipes() -> void:

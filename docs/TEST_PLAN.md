@@ -30,7 +30,8 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Press `2`; HUD should show `O2 Station`.
 6. Press `3`; HUD should show `Shield Generator`.
 7. Press `4`; HUD should show `Solar Panel`.
-8. Right-click or press `Esc` to leave build mode.
+8. Press `5`; HUD should show `Research Station`.
+9. Right-click or press `Esc` to leave build mode.
 
 ## Turret Placement
 
@@ -73,6 +74,19 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Confirm the Resource HUD shows `energy` increasing.
 8. Press `N` to start night.
 9. Confirm `energy` stops increasing during night.
+
+## Research Station
+
+1. Build at least one Solar Panel and wait until you have `5 energy`.
+2. Collect at least `20 iron + 5 void_crystal`.
+3. Press `B`, then `5`.
+4. Confirm the HUD says `Research Station`.
+5. Place the research station on green terrain.
+6. Confirm resources decrease.
+7. Wait about `20` seconds while you still have at least `5 energy`.
+8. Confirm `energy` decreases by `5`.
+9. Confirm `blueprint` increases by `1`.
+10. If energy is below `5`, confirm blueprints stop increasing.
 
 ## Combat HUD
 

@@ -265,6 +265,39 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - GDD MVP Execution Update And Research Station Slice
+
+- Added a current MVP execution section to `docs/GAME_DESIGN_DOC.md`:
+  - Current implemented systems.
+  - Current MVP design target.
+  - Near-term development order.
+  - Manual test/documentation rule.
+- Added `ResearchStation`, the first concrete technology-tree entry point.
+- Expanded `BuildManager`:
+  - `5` selects Research Station.
+  - Research Station costs `20 iron + 5 void_crystal + 5 energy`.
+- Research Stations consume `5 energy` every `20` seconds to produce `1 blueprint`.
+- Research pauses automatically when energy is below `5`.
+- Added automated coverage for research energy consumption and blueprint output.
+- Updated `docs/TEST_PLAN.md` with Research Station manual test steps.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 71 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Solar Panel Energy Slice
 
 - Added `energy` as a base power resource in `InventoryManager`.
