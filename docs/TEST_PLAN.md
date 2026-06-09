@@ -47,6 +47,19 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 7. Confirm about half of its original resource cost is refunded.
 8. Press `X` again to return to normal build mode.
 
+## Turret Upgrade
+
+1. Build at least one turret.
+2. Generate at least `5 energy` from Solar Panels.
+3. Generate at least `1 blueprint` from a Research Station.
+4. Collect at least `10 iron`.
+5. Press `B`.
+6. Move the preview near the turret.
+7. Press `U`.
+8. Confirm `10 iron + 5 energy + 1 blueprint` are consumed.
+9. Confirm the turret becomes slightly larger.
+10. During night, confirm the upgraded turret fires faster or kills enemies faster.
+
 ## Turret Placement
 
 1. Collect at least `20 iron + 5 void_crystal`.

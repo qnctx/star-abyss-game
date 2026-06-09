@@ -22,6 +22,7 @@ func _run() -> void:
         _test_slow_field()
         _test_build_and_combat_ui()
         _test_build_recycle()
+        _test_structure_upgrade()
         _test_inventory_manager()
         _test_base_repair()
         _test_base_shield()
@@ -282,6 +283,54 @@ func _test_build_recycle() -> void:
         loose_node.queue_free()
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["biomass"] = old_biomass
+
+
+func _test_structure_upgrade() -> void:
+        print("\n[ Structure upgrade ]")
+
+        var build_script = load("res://scripts/build_manager.gd")
+        var turret_scene = load("res://scenes/turret.tscn")
+        var inventory_manager = _get_autoload("InventoryManager")
+        check("build_manager.gd loads for upgrade test", build_script != null)
+        check("turret scene loads for upgrade test", turret_scene != null)
+        check("InventoryManager autoload exists", inventory_manager != null)
+        if not build_script or not turret_scene or not inventory_manager:
+                return
+
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_blueprint: int = inventory_manager.resources.get("blueprint", 0)
+        inventory_manager.resources["iron"] = 10
+        inventory_manager.resources["energy"] = 5
+        inventory_manager.resources["blueprint"] = 1
+
+        var build_manager = build_script.new()
+        current_scene.add_child(build_manager)
+
+        var turret = turret_scene.instantiate()
+        turret.add_to_group("built_structures")
+        current_scene.add_child(turret)
+        var old_damage: float = turret.damage
+        var old_fire_rate: float = turret.fire_rate
+
+        var upgraded: bool = build_manager.upgrade_structure(turret)
+        check("upgrade_structure succeeds for turret", upgraded)
+        check("upgrade increases turret damage", turret.damage > old_damage)
+        check("upgrade increases turret fire rate", turret.fire_rate > old_fire_rate)
+        check("upgrade records level", int(turret.get_meta("upgrade_level", 0)) == 1)
+        check("upgrade consumes blueprint", inventory_manager.resources.get("blueprint", -1) == 0)
+
+        turret.set_meta("upgrade_level", build_manager.MAX_UPGRADE_LEVEL)
+        inventory_manager.resources["iron"] = 10
+        inventory_manager.resources["energy"] = 5
+        inventory_manager.resources["blueprint"] = 1
+        check("upgrade rejects max-level turret", not build_manager.upgrade_structure(turret))
+
+        build_manager.queue_free()
+        turret.queue_free()
+        inventory_manager.resources["iron"] = old_iron
+        inventory_manager.resources["energy"] = old_energy
+        inventory_manager.resources["blueprint"] = old_blueprint
 
 
 func _test_base_repair() -> void:

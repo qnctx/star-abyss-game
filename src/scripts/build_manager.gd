@@ -18,6 +18,9 @@ const MIN_BASE_DISTANCE: float = 2.5
 const MIN_STRUCTURE_DISTANCE: float = 2.0
 const RECYCLE_DISTANCE: float = 2.8
 const REFUND_RATE: float = 0.5
+const UPGRADE_DISTANCE: float = 2.8
+const MAX_UPGRADE_LEVEL: int = 3
+const TURRET_UPGRADE_COST := {"iron": 10, "energy": 5, "blueprint": 1}
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
@@ -55,6 +58,9 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("recycle_mode") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_X):
 		recycle_mode = not recycle_mode
 		_refresh_preview_mesh()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("upgrade_structure") or (event is InputEventKey and event.pressed and event.physical_keycode == KEY_U):
+		_try_upgrade_structure()
 		get_viewport().set_input_as_handled()
 	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
 		_select_building(BUILD_TURRET)
@@ -216,6 +222,42 @@ func recycle_structure(structure: Node3D) -> bool:
 	return true
 
 
+func _try_upgrade_structure() -> void:
+	var target := _find_upgrade_target(_placement_position)
+	if target:
+		upgrade_structure(target)
+
+
+func upgrade_structure(structure: Node3D) -> bool:
+	if not structure or not is_instance_valid(structure):
+		return false
+	if not structure.is_in_group("built_structures"):
+		return false
+	var current_level: int = int(structure.get_meta("upgrade_level", 0))
+	if current_level >= MAX_UPGRADE_LEVEL:
+		return false
+	if not InventoryManager.has_resources(TURRET_UPGRADE_COST):
+		return false
+	if not _apply_turret_upgrade(structure, current_level + 1):
+		return false
+
+	InventoryManager.consume_resources(TURRET_UPGRADE_COST)
+	structure.set_meta("upgrade_level", current_level + 1)
+	return true
+
+
+func _apply_turret_upgrade(structure: Node3D, new_level: int) -> bool:
+	var damage_value: Variant = structure.get("damage")
+	var fire_rate_value: Variant = structure.get("fire_rate")
+	if damage_value == null or fire_rate_value == null:
+		return false
+
+	structure.set("damage", float(damage_value) + 5.0)
+	structure.set("fire_rate", float(fire_rate_value) + 0.25)
+	structure.scale = Vector3.ONE * (1.0 + float(new_level) * 0.08)
+	return true
+
+
 func _get_build_target_position() -> Vector3:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if not player:
@@ -255,6 +297,22 @@ func _find_recycle_target(pos: Vector3) -> Node3D:
 	for structure in get_tree().get_nodes_in_group("built_structures"):
 		var structure_node := structure as Node3D
 		if not structure_node or not is_instance_valid(structure_node):
+			continue
+		var distance := structure_node.global_position.distance_to(pos)
+		if distance < nearest_distance:
+			nearest_distance = distance
+			nearest = structure_node
+	return nearest
+
+
+func _find_upgrade_target(pos: Vector3) -> Node3D:
+	var nearest: Node3D = null
+	var nearest_distance := UPGRADE_DISTANCE
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		var structure_node := structure as Node3D
+		if not structure_node or not is_instance_valid(structure_node):
+			continue
+		if structure_node.get("damage") == null:
 			continue
 		var distance := structure_node.global_position.distance_to(pos)
 		if distance < nearest_distance:

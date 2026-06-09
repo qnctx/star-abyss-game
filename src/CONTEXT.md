@@ -176,8 +176,14 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
   - `X` toggles recycle mode while build mode is open.
   - Left click recycles the nearest built structure under the preview.
   - Refund rate is `50%`, with at least `1` returned for each original cost item.
+- **Upgrade controls**:
+  - `U` upgrades the nearest turret under the preview while build mode is open.
+  - Turret upgrade costs `10 iron + 5 energy + 1 blueprint`.
+  - Max upgrade level is `3`.
+  - Each level increases turret damage and fire rate.
 - **Implementation notes**:
   - New structures store `build_cost` metadata when placed.
+  - Upgraded structures store `upgrade_level` metadata.
   - Recycle ignores nodes that are not in `built_structures`.
 
 ### Weapon System

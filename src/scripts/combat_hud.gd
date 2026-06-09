@@ -101,16 +101,16 @@ func _refresh_build_hint() -> void:
 	var build_manager := get_tree().current_scene.get_node_or_null("BuildManager") if get_tree().current_scene else null
 	if build_manager and build_manager.build_mode:
 		if build_manager.recycle_mode:
-			_build_label.text = "Recycle mode | LMB recycle nearest structure | X build mode | 50% refund"
+			_build_label.text = "Recycle mode | LMB recycle nearest | X build mode | U upgrade turret | 50% refund"
 			return
 		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
-		_build_label.text = "Build 1 Tur 2 O2 3 Sh 4 Sol 5 Res 6 Slow | X Recycle | %s: %s | LMB | %s" % [
+		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow | X Rec U Up | %s: %s | LMB %s" % [
 			build_manager.get_selected_label(),
 			build_manager.get_selected_cost_text(),
 			"READY" if afford else "NEED RESOURCES"
 		]
 	else:
-		_build_label.text = "Press B to build | 1 Turret, 2 O2, 3 Shield, 4 Solar, 5 Research, 6 Slow, X Recycle"
+		_build_label.text = "Press B to build | 1 Turret, 2 O2, 3 Shield, 4 Solar, 5 Research, 6 Slow, X Recycle, U Upgrade"
 
 
 func _refresh_base_hint() -> void:

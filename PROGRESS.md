@@ -265,6 +265,36 @@ Manual test steps are consolidated in `docs/TEST_PLAN.md`.
 
 ---
 
+## 2026-06-09 - Turret Upgrade Slice
+
+- Added turret upgrade support to `BuildManager`.
+- Build mode now supports:
+  - `U` upgrades the nearest turret under the preview.
+- Turret upgrade costs `10 iron + 5 energy + 1 blueprint`.
+- Max turret upgrade level is `3`.
+- Each upgrade increases turret damage and fire rate.
+- Upgraded turrets scale up slightly so the change has an in-world visual cue.
+- Added `upgrade_structure` input action.
+- Added automated coverage for upgrade cost, stat increase, level metadata, and max-level rejection.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --script test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+- `test_runner.gd`: 101 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- Godot 4.6.2 still prints RID/resource cleanup warnings on headless exit, but all validation commands returned exit code 0.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+---
+
 ## 2026-06-09 - Building Recycle Slice
 
 - Added recycle mode to `BuildManager`.
