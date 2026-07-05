@@ -3,12 +3,14 @@ extends Node3D
 signal signal_progress_changed(progress: float, max_progress: float)
 
 const ENERGY_COST := {"energy": 1}
-const SIGNAL_INTERVAL := 6.0
-const SIGNAL_PROGRESS_PER_CYCLE := 10.0
+const SIGNAL_INTERVAL := 12.0
+const SIGNAL_PROGRESS_PER_CYCLE := 5.0
 const SIGNAL_MAX := 100.0
+const STARTUP_DELAY := 1.0
 
 var signal_progress := 0.0
 var signal_power_timer := 0.0
+var _startup_timer := 0.0
 
 
 func _ready() -> void:
@@ -18,6 +20,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# Defer transmission for STARTUP_DELAY seconds after _ready to avoid
+	# first-frame fires when InventoryManager/SaveManager may still be
+	# restoring state. Increment first so a large delta (e.g. test calls)
+	# clears the gate in a single step instead of swallowing the cycle.
+	_startup_timer += delta
+	if _startup_timer < STARTUP_DELAY:
+		return
 	if is_signal_complete():
 		return
 	signal_power_timer += delta
@@ -41,7 +50,8 @@ func get_signal_status_text() -> String:
 func _try_transmit_signal() -> void:
 	if not InventoryManager or not InventoryManager.has_resources(ENERGY_COST):
 		return
-	InventoryManager.consume_resources(ENERGY_COST)
+	if not InventoryManager.consume_resources(ENERGY_COST):
+		return
 	signal_progress = minf(SIGNAL_MAX, signal_progress + SIGNAL_PROGRESS_PER_CYCLE)
 	if SignalLogManager:
 		SignalLogManager.register_signal_progress(signal_progress)

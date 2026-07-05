@@ -152,7 +152,7 @@ func _refresh_display():
 	for res in InventoryManager.resources:
 		var amount = InventoryManager.resources[res]
 		var line = Label.new()
-		line.text = "%s%s: %d" % [RESOURCE_LABELS.get(res, res), RESOURCE_LABELS.get(res, res), amount]
+		line.text = "%s: %d" % [RESOURCE_LABELS.get(res, res), amount]
 		line.add_theme_font_size_override("font_size", 13)
 		line.add_theme_color_override("font_color", Color(0.6, 0.6, 0.6) if amount == 0 else Color(0.8, 0.8, 0.6))
 		line.position = Vector2(inv_x, inv_y)
@@ -174,7 +174,8 @@ func _brew_serum(recipe_id: String):
 	if current_level >= recipe.level:
 		return
 
-	InventoryManager.consume_resources(recipe.cost)
+	if not InventoryManager.consume_resources(recipe.cost):
+		return
 	ZoneManager.adaptations[recipe.zone] = recipe.level
 
 	# Unlock next level recipe

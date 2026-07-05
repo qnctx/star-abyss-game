@@ -44,6 +44,7 @@ var _noise: Noise = null
 # ---------------------------------------------------------------------------
 const RESOURCE_SCENE := preload("res://scenes/resource_node.tscn")
 const OXYGEN_PLANT_SCRIPT := preload("res://scripts/oxygen_plant.gd")
+const BURIED_RESOURCE_SCRIPT := preload("res://scripts/buried_resource.gd")
 const BASE_POD_SCENE := preload("res://scenes/base_pod.tscn")
 const SPORE_SCENE := preload("res://scenes/vfx_toxic_spores.tscn")
 var _GROUND_MATERIAL: StandardMaterial3D
@@ -156,6 +157,7 @@ func generate_world() -> void:
 
 	# 3. Resources
 	_spawn_resources(scene)
+	_spawn_buried_resources(scene)
 	_spawn_oxygen_plants(scene)
 
 	# 4. Base pod at origin
@@ -183,6 +185,8 @@ func _raw_height(x: float, z: float) -> float:
 	## Noise height without any post-processing.
 	## TERRAIN SHIFT: Add 3.0 to move terrain from Y=[-3,0] to Y=[0,3]
 	## This fixes camera near-plane clipping on orthogonal cameras in Godot 4.0.2
+	if _noise == null:
+		return 3.0
 	var y := _noise.get_noise_2d(x, z) * NOISE_AMPLITUDE + 3.0
 
 	# Crash-zone depression: height scales down toward center
@@ -384,6 +388,25 @@ func _spawn_resources(scene: Node) -> void:
 		return randf() < 0.7 or _x > 15.0
 	)
 
+	# Blueprint data chips: fixed early teaching pickups close enough to see.
+	_spawn_teaching_blueprint_chips(scene)
+
+
+func _spawn_buried_resources(scene: Node) -> void:
+	_spawn_buried_resource_batch(scene, "iron", 14, func(x: float, z: float) -> bool:
+		var dist := Vector2(x, z).length()
+		return dist > 7.0 and dist < 38.0
+	)
+	_spawn_buried_resource_batch(scene, "void_crystal", 8, func(x: float, z: float) -> bool:
+		return z < -12.0 or randf() < 0.45
+	)
+	_spawn_buried_resource_batch(scene, "biomass", 8, func(x: float, z: float) -> bool:
+		return z > 12.0 or randf() < 0.45
+	)
+	_spawn_buried_resource_batch(scene, "energy_core", 4, func(x: float, z: float) -> bool:
+		return x > 12.0 or randf() < 0.35
+	)
+
 
 func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 		accept: Callable) -> void:
@@ -407,12 +430,298 @@ func _spawn_resource_batch(scene: Node, res_type: String, count: int,
 		var node = RESOURCE_SCENE.instantiate()
 		if node:
 			node.resource_type = res_type
-			node.amount = randi_range(1, 3)
+			node.amount = 1 if res_type == "blueprint" else randi_range(1, 3)
 			scene.add_child(node)
 			node.global_position = Vector3(x, y + 0.04, z)
 			placed += 1
 
-	print("WorldGenerator: placed %d %s resources." % [count, res_type])
+	print("WorldGenerator: placed %d %s resources." % [placed, res_type])
+
+
+func _spawn_teaching_blueprint_chips(scene: Node) -> void:
+	# 教学 blueprint 芯片：1 个近距引导 + 4 个分散到 18-32m 不同方向，
+	# 避免玩家开局在基地半径内一次性捡到一堆图纸。
+	var positions: Array[Vector2] = [
+		Vector2(9.0, 7.0),     # 近距引导，基地半径外缘
+		Vector2(18.0, -12.0),  # 东偏南
+		Vector2(-20.0, 10.0),  # 西偏北
+		Vector2(-14.0, -22.0), # 西偏南
+		Vector2(24.0, 18.0),   # 东偏北，稍远
+	]
+	var placed := 0
+	for pos in positions:
+		var node = RESOURCE_SCENE.instantiate()
+		if not node:
+			continue
+		node.resource_type = "blueprint"
+		node.amount = 1
+		scene.add_child(node)
+		node.global_position = Vector3(pos.x, _raw_height(pos.x, pos.y) + 0.04, pos.y)
+		placed += 1
+	print("WorldGenerator: placed %d blueprint resources." % placed)
+
+
+func _spawn_buried_resource_batch(scene: Node, res_type: String, count: int,
+		accept: Callable) -> void:
+	var half := WORLD_SIZE / 2.0 - 4.0
+	var placed := 0
+	var max_attempts := count * 30
+
+	for _attempt in range(max_attempts):
+		if placed >= count:
+			break
+
+		var x := randf_range(-half, half)
+		var z := randf_range(-half, half)
+		if not accept.call(x, z):
+			continue
+		if Vector2(x, z).length() < 6.0:
+			continue
+
+		var y := _raw_height(x, z)
+		var buried = BURIED_RESOURCE_SCRIPT.new()
+		buried.resource_type = res_type
+		buried.depth = randf_range(0.8, 2.6)
+		buried.dig_required = _dig_required_for_depth(buried.depth)
+		buried.amount = _buried_amount_for_type(res_type)
+		scene.add_child(buried)
+		buried.global_position = Vector3(x, y + 0.03, z)
+		placed += 1
+
+	print("WorldGenerator: placed %d buried %s resources." % [placed, res_type])
+
+
+func _dig_required_for_depth(depth: float) -> int:
+	if depth >= 2.1:
+		return 4
+	if depth >= 1.4:
+		return 3
+	return 2
+
+
+func _buried_amount_for_type(res_type: String) -> int:
+	if res_type == "iron":
+		return randi_range(3, 6)
+	if res_type == "biomass":
+		return randi_range(2, 5)
+	if res_type == "energy_core":
+		return 1
+	return randi_range(2, 4)
+
+
+# ---------------------------------------------------------------------------
+# Daily buried resource refresh
+# ---------------------------------------------------------------------------
+const MAX_BURIED_RESOURCES := 60
+const DAILY_BURIED_MIN := 2
+const DAILY_BURIED_MAX := 3
+const DAILY_BURIED_BASE_DIST := 25.0
+const DAILY_BURIED_SPACING := 8.0
+
+const MAX_VISIBLE_RESOURCES := 90
+const DAILY_VISIBLE_MIN := 3
+const DAILY_VISIBLE_MAX := 3
+const DAILY_VISIBLE_BASE_DIST := 25.0
+const DAILY_VISIBLE_SPACING := 8.0
+
+
+func spawn_daily_resources(day: int) -> void:
+	## Spawn 3 new visible resource nodes each dawn, away from base and
+	## existing nodes. Resource type is weighted by game day. Cap at
+	## MAX_VISIBLE_RESOURCES to avoid bloat.
+	if not get_tree() or not get_tree().current_scene:
+		return
+	if _noise == null:
+		# World not fully initialized yet (e.g. autoload _ready race).
+		return
+	var scene := get_tree().current_scene
+	var existing := get_tree().get_nodes_in_group("resource_nodes")
+	if existing.size() >= MAX_VISIBLE_RESOURCES:
+		print("WorldGenerator: daily visible refresh skipped — cap reached (%d)." % existing.size())
+		return
+
+	var to_spawn := randi_range(DAILY_VISIBLE_MIN, DAILY_VISIBLE_MAX)
+	var placed := 0
+	var half := WORLD_SIZE / 2.0 - 4.0
+	# Tighter spacing first; relax if we can't find a slot.
+	for spacing_mult in [1.0, 0.5]:
+		var spacing: float = DAILY_VISIBLE_SPACING * float(spacing_mult)
+		var attempts: int = 20 if spacing_mult > 0.5 else 10
+		for _attempt in range(attempts):
+			if placed >= to_spawn:
+				break
+			if existing.size() + placed >= MAX_VISIBLE_RESOURCES:
+				break
+			var x := randf_range(-half, half)
+			var z := randf_range(-half, half)
+			if Vector2(x, z).length() < DAILY_VISIBLE_BASE_DIST:
+				continue
+			if not _is_visible_slot_valid(x, z, existing, spacing):
+				continue
+			var res_type := _daily_visible_type(day)
+			var y := _raw_height(x, z)
+			var node = RESOURCE_SCENE.instantiate()
+			if node:
+				node.resource_type = res_type
+				node.amount = 1 if res_type == "blueprint" else randi_range(1, 3)
+				scene.add_child(node)
+				node.global_position = Vector3(x, y + 0.04, z)
+				existing.append(node)
+				placed += 1
+		if placed >= to_spawn:
+			break
+	print("WorldGenerator: daily visible refresh day %d placed %d nodes." % [day, placed])
+
+
+func _is_visible_slot_valid(x: float, z: float, existing: Array, spacing: float) -> bool:
+	var pos2 := Vector2(x, z)
+	for node in existing:
+		if not is_instance_valid(node):
+			continue
+		var n := node as Node3D
+		if not n:
+			continue
+		if Vector2(n.global_position.x, n.global_position.z).distance_to(pos2) < spacing:
+			return false
+	# Also avoid overlapping buried resources.
+	for res in get_tree().get_nodes_in_group("buried_resources"):
+		if not is_instance_valid(res):
+			continue
+		var r := res as Node3D
+		if r and Vector2(r.global_position.x, r.global_position.z).distance_to(pos2) < spacing * 0.6:
+			return false
+	return true
+
+
+func _daily_visible_type(day: int) -> String:
+	## Weighted visible resource type by game day.
+	var roll := randf()
+	if day <= 2:
+		# 60% iron, 25% biomass, 15% void_crystal
+		if roll < 0.6:
+			return "iron"
+		if roll < 0.85:
+			return "biomass"
+		return "void_crystal"
+	elif day <= 4:
+		# 35% iron, 30% void_crystal, 25% biomass, 10% energy_core
+		if roll < 0.35:
+			return "iron"
+		if roll < 0.65:
+			return "void_crystal"
+		if roll < 0.9:
+			return "biomass"
+		return "energy_core"
+	else:
+		# 25% void_crystal, 25% energy_core, 25% iron, 15% biomass, 10% blueprint
+		if roll < 0.25:
+			return "void_crystal"
+		if roll < 0.5:
+			return "energy_core"
+		if roll < 0.75:
+			return "iron"
+		if roll < 0.9:
+			return "biomass"
+		return "blueprint"
+
+
+func spawn_daily_buried(day: int) -> void:
+	## Spawn 2-3 new buried resource nodes each dawn, away from base and
+	## existing nodes. Resource type is weighted by game day so later days
+	## favor rarer resources. Cap at MAX_BURIED_RESOURCES to avoid bloat.
+	if not get_tree() or not get_tree().current_scene:
+		return
+	if _noise == null:
+		# World not fully initialized yet (e.g. autoload _ready race).
+		return
+	var scene := get_tree().current_scene
+	var existing := get_tree().get_nodes_in_group("buried_resources")
+	if existing.size() >= MAX_BURIED_RESOURCES:
+		print("WorldGenerator: daily buried refresh skipped — cap reached (%d)." % existing.size())
+		return
+
+	var to_spawn := randi_range(DAILY_BURIED_MIN, DAILY_BURIED_MAX)
+	var placed := 0
+	var half := WORLD_SIZE / 2.0 - 4.0
+	# Tighter spacing first; relax if we can't find a slot.
+	for spacing_mult in [1.0, 0.5]:
+		var spacing: float = DAILY_BURIED_SPACING * float(spacing_mult)
+		var attempts: int = 20 if spacing_mult > 0.5 else 10
+		for _attempt in range(attempts):
+			if placed >= to_spawn:
+				break
+			if existing.size() + placed >= MAX_BURIED_RESOURCES:
+				break
+			var x := randf_range(-half, half)
+			var z := randf_range(-half, half)
+			if Vector2(x, z).length() < DAILY_BURIED_BASE_DIST:
+				continue
+			if not _is_buried_slot_valid(x, z, existing, spacing):
+				continue
+			var res_type := _daily_buried_type(day)
+			var y := _raw_height(x, z)
+			var buried = BURIED_RESOURCE_SCRIPT.new()
+			buried.resource_type = res_type
+			buried.depth = randf_range(0.8, 2.6)
+			buried.dig_required = _dig_required_for_depth(buried.depth)
+			buried.amount = _buried_amount_for_type(res_type)
+			scene.add_child(buried)
+			buried.global_position = Vector3(x, y + 0.03, z)
+			existing.append(buried)
+			placed += 1
+		if placed >= to_spawn:
+			break
+	print("WorldGenerator: daily buried refresh day %d placed %d nodes." % [day, placed])
+
+
+func _is_buried_slot_valid(x: float, z: float, existing: Array, spacing: float) -> bool:
+	var pos2 := Vector2(x, z)
+	for node in existing:
+		if not is_instance_valid(node):
+			continue
+		var n := node as Node3D
+		if not n:
+			continue
+		if Vector2(n.global_position.x, n.global_position.z).distance_to(pos2) < spacing:
+			return false
+	# Also avoid overlapping visible resources.
+	for res in get_tree().get_nodes_in_group("resource_nodes"):
+		if not is_instance_valid(res):
+			continue
+		var r := res as Node3D
+		if r and Vector2(r.global_position.x, r.global_position.z).distance_to(pos2) < spacing * 0.6:
+			return false
+	return true
+
+
+func _daily_buried_type(day: int) -> String:
+	## Weighted resource type by game day.
+	var roll := randf()
+	if day <= 2:
+		# 70% iron, 20% biomass, 10% void_crystal
+		if roll < 0.7:
+			return "iron"
+		if roll < 0.9:
+			return "biomass"
+		return "void_crystal"
+	elif day <= 4:
+		# 40% iron, 30% void_crystal, 20% energy_core, 10% biomass
+		if roll < 0.4:
+			return "iron"
+		if roll < 0.7:
+			return "void_crystal"
+		if roll < 0.9:
+			return "energy_core"
+		return "biomass"
+	else:
+		# 30% void_crystal, 30% energy_core, 20% blueprint, 20% iron
+		if roll < 0.3:
+			return "void_crystal"
+		if roll < 0.6:
+			return "energy_core"
+		if roll < 0.8:
+			return "blueprint"
+		return "iron"
 
 
 func _spawn_oxygen_plants(scene: Node) -> void:

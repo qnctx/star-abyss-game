@@ -88,8 +88,10 @@ func apply_save_data(data: Variant) -> void:
 	extraction_holdout_complete = bool(data.get("extraction_holdout_complete", false))
 	extraction_holdout_active = bool(data.get("extraction_holdout_active", false)) and not extraction_holdout_complete
 	extraction_time_remaining = clampf(float(data.get("extraction_time_remaining", EXTRACTION_HOLDOUT_DURATION)), 0.0, EXTRACTION_HOLDOUT_DURATION)
+	# Do not complete extraction during load — let _process handle it naturally
+	# on the next frame so signals/HUD have time to wire up.
 	if extraction_holdout_active and is_zero_approx(extraction_time_remaining):
-		_complete_extraction_holdout()
+		extraction_time_remaining = 0.1
 	elif not has_extraction_state and is_log_unlocked("signal_100"):
 		_start_extraction_holdout(false)
 	_spawn_uncollected_caches()

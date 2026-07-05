@@ -3,7 +3,7 @@ class_name ResourceScanner
 
 const SCAN_RADIUS: float = 45.0
 const SCAN_INTERVAL: float = 0.25
-const RESOURCE_TYPES := ["iron", "biomass", "void_crystal", "energy_core", "oxygen_plant"]
+const RESOURCE_TYPES := ["iron", "biomass", "void_crystal", "energy_core", "oxygen_plant", "blueprint"]
 
 var selected_index: int = 0
 var nearest_resource: Node3D = null
@@ -18,6 +18,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scanner_cycle") or _is_physical_key_pressed(event, KEY_G):
+		if not _scanner_tool_active():
+			return
 		selected_index = (selected_index + 1) % RESOURCE_TYPES.size()
 		_scan_now()
 		get_viewport().set_input_as_handled()
@@ -32,8 +34,16 @@ func _process(delta: float) -> void:
 
 
 func get_scan_hint() -> String:
+	if not _scanner_tool_active():
+		return "Scanner: equip 3 Scanner for buried signals"
 	var selected_type := get_selected_resource_type()
 	if nearest_resource:
+		if nearest_resource.is_in_group("buried_resources"):
+			return "Scanner: %s %dm %s | G type | 2 dig" % [
+				nearest_resource.get_scan_hint(),
+				roundi(nearest_distance),
+				nearest_direction
+			]
 		return "Scanner: %s %dm %s | G type" % [
 			_resource_label(selected_type),
 			roundi(nearest_distance),
@@ -50,6 +60,8 @@ func _scan_now() -> void:
 	nearest_resource = null
 	nearest_distance = 0.0
 	nearest_direction = ""
+	if not _scanner_tool_active():
+		return
 
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if not player:
@@ -57,7 +69,7 @@ func _scan_now() -> void:
 
 	var selected_type := get_selected_resource_type()
 	var best_distance := SCAN_RADIUS + 1.0
-	var group_name := "oxygen_plants" if selected_type == "oxygen_plant" else "resource_nodes"
+	var group_name := "oxygen_plants" if selected_type == "oxygen_plant" else "buried_resources"
 	for node in get_tree().get_nodes_in_group(group_name):
 		var resource_node := node as Node3D
 		if not resource_node:
@@ -69,7 +81,21 @@ func _scan_now() -> void:
 			best_distance = distance
 			nearest_resource = resource_node
 
+	if not nearest_resource and selected_type != "oxygen_plant":
+		for node in get_tree().get_nodes_in_group("resource_nodes"):
+			var resource_node := node as Node3D
+			if not resource_node:
+				continue
+			if str(resource_node.get("resource_type")) != selected_type:
+				continue
+			var distance := _flat_distance(player.global_position, resource_node.global_position)
+			if distance < best_distance:
+				best_distance = distance
+				nearest_resource = resource_node
+
 	if nearest_resource:
+		if nearest_resource.is_in_group("buried_resources") and nearest_resource.has_method("reveal"):
+			nearest_resource.call("reveal")
 		nearest_distance = best_distance
 		nearest_direction = _direction_label(player.global_position, nearest_resource.global_position)
 
@@ -103,8 +129,15 @@ func _resource_label(resource_type: String) -> String:
 		return "core"
 	if resource_type == "oxygen_plant":
 		return "O2 plant"
+	if resource_type == "blueprint":
+		return "BP"
 	return resource_type
 
 
 func _is_physical_key_pressed(event: InputEvent, keycode: Key) -> bool:
 	return event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == keycode
+
+
+func _scanner_tool_active() -> bool:
+	var toolbelt := get_tree().current_scene.get_node_or_null("ToolbeltManager") if get_tree().current_scene else null
+	return not toolbelt or str(toolbelt.get("current_tool")) == "scanner"

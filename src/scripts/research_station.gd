@@ -25,7 +25,9 @@ func _process(delta: float) -> void:
 			_research_timer = 0.0
 			return
 		_research_timer -= RESEARCH_INTERVAL
-		InventoryManager.consume_resources({"energy": ENERGY_COST})
+		if not InventoryManager.consume_resources({"energy": ENERGY_COST}):
+			_research_timer = 0.0
+			return
 		InventoryManager.add_resource("blueprint", BLUEPRINT_REWARD)
 
 

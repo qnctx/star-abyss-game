@@ -10,6 +10,7 @@ signal wave_direction_changed(direction: String)
 
 var is_night: bool = false
 var wave_number: int = 0
+var day_number: int = 0
 var enemies_alive: int = 0
 var base_health: float = 100.0
 var base_shield: float = 0.0
@@ -29,6 +30,8 @@ const BASE_REPAIR_AMOUNT: float = 25.0
 const SHIELD_RECHARGE_RATE: float = 3.0
 const STRUCTURE_DAMAGE_RADIUS: float = 4.5
 const STRUCTURE_MAX_HEALTH: float = 100.0
+const ENEMY_SCENE := preload("res://scenes/enemy.tscn")
+const RESOURCE_NODE_SCENE := preload("res://scenes/resource_node.tscn")
 
 
 func _ready():
@@ -39,10 +42,60 @@ func _ready():
 func _process(delta: float) -> void:
 	phase_time_remaining = maxf(0.0, phase_time_remaining - delta)
 
-	if max_base_shield <= 0.0 or base_shield >= max_base_shield:
+	# HEAT zone structure drain. Lives in GameManager (not BuildManager) so it
+	# runs every frame regardless of build mode, and only damages structures
+	# physically inside the HEAT zone. Lv2+ adaptation makes them immune.
+	_apply_zone_structure_drain(delta)
+
+	if max_base_shield > 0.0 and base_shield < max_base_shield:
+		base_shield = minf(max_base_shield, base_shield + SHIELD_RECHARGE_RATE * delta)
+		base_shield_changed.emit(base_shield, max_base_shield)
+
+
+func _apply_zone_structure_drain(delta: float) -> void:
+	## Per GAMEPLAY_v3 3.2/5.3: only structures inside HEAT zone take damage,
+	## drain rate is low (0.1 HP/s), Lv2+ adaptation stops it. CRASH/COLD/
+	## GRAVITY zones never drain structures.
+	if not ZoneManager:
 		return
-	base_shield = minf(max_base_shield, base_shield + SHIELD_RECHARGE_RATE * delta)
-	base_shield_changed.emit(base_shield, max_base_shield)
+	if ZoneManager.current_zone != ZoneManager.ZoneType.HEAT:
+		return
+	var drain_rate := ZoneManager.get_structure_drain_rate()
+	if drain_rate <= 0.0:
+		return
+	var damage := drain_rate * delta
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		if not is_instance_valid(structure):
+			continue
+		var structure_node := structure as Node3D
+		# Only structures physically inside the HEAT zone take damage.
+		if structure_node and _get_biome_at_pos(structure_node.global_position) != ZoneManager.ZoneType.HEAT:
+			continue
+		_ensure_structure_health(structure)
+		var max_health: float = float(structure.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+		var current := float(structure.get_meta("structure_health", max_health))
+		current = maxf(0.0, current - damage)
+		structure.set_meta("structure_health", current)
+		if current <= 0.0:
+			structure.queue_free()
+
+
+func _get_biome_at_pos(world_pos: Vector3) -> int:
+	## Map a world position to a ZoneType using WorldGenerator's biome lookup.
+	## Falls back to CRASH (no pressure) when WorldGenerator is unavailable.
+	if not WorldGenerator:
+		return ZoneManager.ZoneType.CRASH if ZoneManager else 0
+	var biome := WorldGenerator.get_biome_at(Vector2(world_pos.x, world_pos.z))
+	# WorldGenerator biome enums: 0=CRASH,1=COLD,2=HEAT,3=GRAVITY,4=CRASH_ZONE.
+	# ZoneManager.ZoneType uses 0=CRASH,1=COLD,2=HEAT,3=GRAVITY. CRASH_ZONE(4)
+	# is treated as CRASH for pressure purposes.
+	if biome == WorldGenerator.BIOME_HEAT:
+		return ZoneManager.ZoneType.HEAT
+	if biome == WorldGenerator.BIOME_COLD:
+		return ZoneManager.ZoneType.COLD
+	if biome == WorldGenerator.BIOME_GRAVITY:
+		return ZoneManager.ZoneType.GRAVITY
+	return ZoneManager.ZoneType.CRASH
 
 
 func start_day():
@@ -50,6 +103,7 @@ func start_day():
 	var token := _cycle_token
 	is_night = false
 	wave_number = 0
+	day_number += 1
 	enemies_alive = 0
 	phase_time_remaining = DAY_DURATION
 	last_wave_direction = "--"
@@ -59,8 +113,12 @@ func start_day():
 	wave_direction_changed.emit(last_wave_direction)
 	# Restore daylight environment settings
 	_apply_night_darkening(false)
+	# Daily resource refresh — WorldGenerator owns world resource layout.
+	if WorldGenerator and WorldGenerator.has_method("spawn_daily_resources"):
+		WorldGenerator.spawn_daily_resources(day_number)
+	if WorldGenerator and WorldGenerator.has_method("spawn_daily_buried"):
+		WorldGenerator.spawn_daily_buried(day_number)
 	day_started.emit()
-	spawn_resources()
 	await get_tree().create_timer(DAY_DURATION).timeout
 	if token != _cycle_token or is_night:
 		return
@@ -128,8 +186,7 @@ func spawn_wave() -> void:
 
 
 func spawn_enemy(variant: String = "normal") -> Node:
-	var enemy_scene = load("res://scenes/enemy.tscn")
-	var enemy = enemy_scene.instantiate()
+	var enemy = ENEMY_SCENE.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = WorldGenerator.get_spawn_position(8.0, 12.0)
 	if not _wave_direction_reported:
@@ -315,7 +372,8 @@ func repair_base() -> bool:
 	if not InventoryManager.has_resources(BASE_REPAIR_COST):
 		return false
 
-	InventoryManager.consume_resources(BASE_REPAIR_COST)
+	if not InventoryManager.consume_resources(BASE_REPAIR_COST):
+		return false
 	base_health = minf(MAX_BASE_HEALTH, base_health + BASE_REPAIR_AMOUNT)
 	base_health_changed.emit(base_health)
 	return true
@@ -369,18 +427,10 @@ func _direction_label(from_pos: Vector3, to_pos: Vector3) -> String:
 
 
 func spawn_resources():
-	var count = 15
-	var types = ["iron", "iron", "iron", "iron", "void_crystal", "void_crystal", "biomass", "biomass", "biomass"]
-	for i in range(count):
-		var angle = randf_range(0, TAU)
-		var distance = randf_range(3.0, 12.0)
-		var pos = Vector3(cos(angle) * distance, 0.3, sin(angle) * distance)
-		var node = load("res://scenes/resource_node.tscn").instantiate()
-		if node and node.has_method("resource_type"):
-			node.position = pos
-			node.resource_type = types[i % types.size()]
-			node.amount = randi_range(1, 3)
-			get_tree().current_scene.add_child(node)
+	# Deprecated: daily resource refresh is now handled by
+	# WorldGenerator.spawn_daily_buried(day_number) called from start_day().
+	# Kept as no-op stub for save-file compatibility; will be removed later.
+	pass
 
 
 func _apply_night_darkening(night: bool) -> void:
@@ -400,7 +450,52 @@ func _apply_night_darkening(night: bool) -> void:
 
 func game_over():
 	get_tree().paused = true
-	print("GAME OVER - Base destroyed!")
+
+
+func reset_game() -> void:
+	get_tree().paused = false
+	_cycle_token += 1
+	_clear_runtime_nodes()
+	if InventoryManager and InventoryManager.has_method("reset_resources"):
+		InventoryManager.reset_resources()
+	if TechManager and TechManager.has_method("reset_unlocks"):
+		TechManager.reset_unlocks()
+	if DeathDropManager and DeathDropManager.has_method("reset_drop"):
+		DeathDropManager.reset_drop()
+	if SignalLogManager and SignalLogManager.has_method("reset_logs"):
+		SignalLogManager.reset_logs()
+
+	is_night = false
+	wave_number = 0
+	day_number = 0
+	enemies_alive = 0
+	base_health = MAX_BASE_HEALTH
+	base_shield = 0.0
+	max_base_shield = 0.0
+	phase_time_remaining = DAY_DURATION
+	last_wave_direction = "--"
+	_wave_direction_reported = false
+	enemies_alive_changed.emit(enemies_alive)
+	base_health_changed.emit(base_health)
+	base_shield_changed.emit(base_shield, max_base_shield)
+	wave_direction_changed.emit(last_wave_direction)
+
+	var player := get_tree().get_first_node_in_group("player")
+	if player:
+		player.set("is_dead", false)
+		if player.has_method("respawn"):
+			player.respawn()
+	_apply_night_darkening(false)
+	start_day()
+
+
+func _clear_runtime_nodes() -> void:
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy and is_instance_valid(enemy):
+			enemy.queue_free()
+	for structure in get_tree().get_nodes_in_group("built_structures"):
+		if structure and is_instance_valid(structure):
+			structure.queue_free()
 
 
 func _drop_enemy_reward(enemy: Node = null) -> void:

@@ -21,6 +21,7 @@ func _run() -> void:
         _test_oxygen_canister_manager()
         _test_death_drop_manager()
         _test_zone_manager()
+        _test_zone_structure_drain()
         _test_turret_logic()
         _test_slow_field()
         _test_enemy_structure_targeting()
@@ -43,6 +44,7 @@ func _run() -> void:
         _test_resource_scanner()
         _test_objective_tracker()
         _test_serum_recipes()
+        _test_teleport_manager()
 
         print("\n========================================")
         print("  Test result: %d passed, %d failed" % [_passed, _failed])
@@ -103,13 +105,81 @@ func _test_world_generator() -> void:
         check("biome_map is populated", not world_generator.biome_map.is_empty(), "size=%d" % world_generator.biome_map.size())
         check("biome_map size is 101x101", world_generator.biome_map.size() == 101 * 101, "size=%d" % world_generator.biome_map.size())
         check("world generator places oxygen plants", get_nodes_in_group("oxygen_plants").size() > 0, "count=%d" % get_nodes_in_group("oxygen_plants").size())
+        check("world generator places buried resources", get_nodes_in_group("buried_resources").size() > 0, "count=%d" % get_nodes_in_group("buried_resources").size())
+        var blueprint_count := 0
         var max_resource_offset := 0.0
         for resource in get_nodes_in_group("resource_nodes"):
                 var resource_node := resource as Node3D
                 if resource_node and is_instance_valid(resource_node):
+                        if str(resource_node.get("resource_type")) == "blueprint":
+                                blueprint_count += 1
                         var terrain_y: float = world_generator.get_height_at(Vector2(resource_node.global_position.x, resource_node.global_position.z))
                         max_resource_offset = maxf(max_resource_offset, absf(resource_node.global_position.y - terrain_y))
+        check("world generator places visible BP data chips", blueprint_count >= 5, "count=%d" % blueprint_count)
         check("world resources spawn on ground", max_resource_offset <= 0.12, "max offset=%.3f" % max_resource_offset)
+
+        # ── D-03: daily buried resource refresh ─────────────────────────────
+        var before_count := get_nodes_in_group("buried_resources").size()
+        # Record existing node positions so we can identify new ones.
+        var existing_positions: Dictionary = {}
+        for node in get_nodes_in_group("buried_resources"):
+                var n := node as Node3D
+                if n and is_instance_valid(n):
+                        existing_positions[n.get_instance_id()] = n.global_position
+        check("spawn_daily_buried method exists", world_generator.has_method("spawn_daily_buried"))
+        # Simulate day 2 dawn refresh
+        world_generator.spawn_daily_buried(2)
+        var after_count := get_nodes_in_group("buried_resources").size()
+        check("daily refresh adds buried nodes", after_count > before_count, "before=%d after=%d" % [before_count, after_count])
+        check("daily refresh adds 2-3 nodes", after_count - before_count >= 2 and after_count - before_count <= 3, "added=%d" % (after_count - before_count))
+        # Only check NEW nodes are away from base (distance > 25m)
+        var new_nodes_valid := true
+        var new_node_count := 0
+        for node in get_nodes_in_group("buried_resources"):
+                var n := node as Node3D
+                if not n or not is_instance_valid(n):
+                        continue
+                if existing_positions.has(n.get_instance_id()):
+                        continue
+                new_node_count += 1
+                if Vector2(n.global_position.x, n.global_position.z).length() < 25.0:
+                        new_nodes_valid = false
+                        break
+        check("new daily buried nodes are away from base", new_nodes_valid, "new_count=%d" % new_node_count)
+        # Day 5 should favor rare resources
+        world_generator.spawn_daily_buried(5)
+        check("day 5 refresh still within cap", get_nodes_in_group("buried_resources").size() <= world_generator.MAX_BURIED_RESOURCES)
+
+        # ── P1: daily visible resource refresh ──────────────────────────────
+        var visible_before := get_nodes_in_group("resource_nodes").size()
+        var visible_existing_positions: Dictionary = {}
+        for node in get_nodes_in_group("resource_nodes"):
+                var n := node as Node3D
+                if n and is_instance_valid(n):
+                        visible_existing_positions[n.get_instance_id()] = n.global_position
+        check("spawn_daily_resources method exists", world_generator.has_method("spawn_daily_resources"))
+        # Simulate day 2 dawn refresh
+        world_generator.spawn_daily_resources(2)
+        var visible_after := get_nodes_in_group("resource_nodes").size()
+        check("P1 daily refresh adds visible nodes", visible_after > visible_before, "before=%d after=%d" % [visible_before, visible_after])
+        check("P1 daily refresh adds 3 nodes", visible_after - visible_before == 3, "added=%d" % (visible_after - visible_before))
+        # Only check NEW nodes are away from base (distance > 25m)
+        var new_visible_valid := true
+        var new_visible_count := 0
+        for node in get_nodes_in_group("resource_nodes"):
+                var n := node as Node3D
+                if not n or not is_instance_valid(n):
+                        continue
+                if visible_existing_positions.has(n.get_instance_id()):
+                        continue
+                new_visible_count += 1
+                if Vector2(n.global_position.x, n.global_position.z).length() < 25.0:
+                        new_visible_valid = false
+                        break
+        check("P1 new visible nodes away from base", new_visible_valid, "new_count=%d" % new_visible_count)
+        # Day 5 should still respect cap
+        world_generator.spawn_daily_resources(5)
+        check("P1 day 5 visible refresh within cap", get_nodes_in_group("resource_nodes").size() <= world_generator.MAX_VISIBLE_RESOURCES)
 
 
 func _test_player_oxygen() -> void:
@@ -137,6 +207,13 @@ func _test_player_oxygen() -> void:
         check("oxygen drain lowers value", player.current_oxygen < initial_o2, "%.1f -> %.1f" % [initial_o2, player.current_oxygen])
         player.refill_oxygen()
         check_nearly(player.current_oxygen, 180.0, 0.01, "refill restores oxygen")
+        var camera := player.get_node_or_null("Camera3D") as Camera3D
+        check("player has first-person camera", camera != null)
+        if camera:
+                var pitch_before: float = camera.rotation.x
+                player.apply_look_delta(Vector2(0.0, -120.0))
+                check("mouse vertical controls camera pitch", absf(camera.rotation.x - pitch_before) > 0.05, "before=%.3f after=%.3f" % [pitch_before, camera.rotation.x])
+                check("camera pitch is clamped", absf(camera.rotation.x) <= deg_to_rad(player.look_pitch_limit_degrees) + 0.01)
         main.free()
 
 
@@ -305,6 +382,166 @@ func _test_zone_manager() -> void:
         check("cold multiplier is valid", cold_mult > 0.0, "mult=%.2f" % cold_mult)
         zone_manager.current_zone = zone_manager.ZoneType.CRASH
 
+        # ── D-06: GRAVITY speed multiplier ──────────────────────────────────
+        # CRASH zone: no penalty
+        zone_manager.current_zone = zone_manager.ZoneType.CRASH
+        zone_manager.adaptations[zone_manager.ZoneType.GRAVITY] = 0
+        check("crash speed multiplier is 1.0", is_zero_approx(zone_manager.get_speed_multiplier() - 1.0), "mult=%.2f" % zone_manager.get_speed_multiplier())
+
+        # GRAVITY zone Lv0: 0.7x speed
+        zone_manager.current_zone = zone_manager.ZoneType.GRAVITY
+        zone_manager.adaptations[zone_manager.ZoneType.GRAVITY] = 0
+        var grav_pen = zone_manager.get_speed_multiplier()
+        check("gravity Lv0 speed penalty is 0.7", is_zero_approx(grav_pen - 0.7), "mult=%.2f" % grav_pen)
+
+        # GRAVITY zone Lv1: still 0.7x (penalty removed at Lv2)
+        zone_manager.adaptations[zone_manager.ZoneType.GRAVITY] = 1
+        check("gravity Lv1 still penalized", is_zero_approx(zone_manager.get_speed_multiplier() - 0.7), "mult=%.2f" % zone_manager.get_speed_multiplier())
+
+        # GRAVITY zone Lv2: penalty removed, back to 1.0
+        zone_manager.adaptations[zone_manager.ZoneType.GRAVITY] = 2
+        check("gravity Lv2 speed restored to 1.0", is_zero_approx(zone_manager.get_speed_multiplier() - 1.0), "mult=%.2f" % zone_manager.get_speed_multiplier())
+
+        # ── D-01: HEAT structure drain ──────────────────────────────────────
+        # CRASH zone: no drain
+        zone_manager.current_zone = zone_manager.ZoneType.CRASH
+        check("crash structure drain is 0.0", is_zero_approx(zone_manager.get_structure_drain_rate()), "drain=%.2f" % zone_manager.get_structure_drain_rate())
+
+        # HEAT zone Lv0: 0.1 HP/s drain (GAMEPLAY_v3 5.3: low rate, was 0.3)
+        zone_manager.current_zone = zone_manager.ZoneType.HEAT
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 0
+        var heat_drain = zone_manager.get_structure_drain_rate()
+        check("heat Lv0 structure drain is 0.1", is_zero_approx(heat_drain - 0.1), "drain=%.2f" % heat_drain)
+
+        # HEAT zone Lv1: still drains
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 1
+        check("heat Lv1 still drains", is_zero_approx(zone_manager.get_structure_drain_rate() - 0.1), "drain=%.2f" % zone_manager.get_structure_drain_rate())
+
+        # HEAT zone Lv2: immune
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 2
+        check("heat Lv2 structure drain is 0.0", is_zero_approx(zone_manager.get_structure_drain_rate()), "drain=%.2f" % zone_manager.get_structure_drain_rate())
+
+        # ── P2: COLD oxygen multiplier scales with adaptation ───────────────
+        zone_manager.current_zone = zone_manager.ZoneType.COLD
+        zone_manager.adaptations[zone_manager.ZoneType.COLD] = 0
+        var cold_lv0 = zone_manager.get_oxygen_multiplier()
+        zone_manager.adaptations[zone_manager.ZoneType.COLD] = 2
+        var cold_lv2 = zone_manager.get_oxygen_multiplier()
+        zone_manager.adaptations[zone_manager.ZoneType.COLD] = 4
+        var cold_lv4 = zone_manager.get_oxygen_multiplier()
+        check("cold oxygen multiplier decreases with adaptation", cold_lv2 < cold_lv0, "lv0=%.2f lv2=%.2f" % [cold_lv0, cold_lv2])
+        check("cold oxygen multiplier at Lv4 below Lv2", cold_lv4 < cold_lv2, "lv2=%.2f lv4=%.2f" % [cold_lv2, cold_lv4])
+        check("cold oxygen multiplier stays >= 0.3 floor", cold_lv4 >= 0.3, "lv4=%.2f" % cold_lv4)
+
+        # ── P2: recommended adaptation level (HUD soft-gate hint) ───────────
+        zone_manager.current_zone = zone_manager.ZoneType.CRASH
+        check("crash recommends Lv0 (no pressure)", zone_manager.get_recommended_adaptation_level() == 0, "rec=%d" % zone_manager.get_recommended_adaptation_level())
+        zone_manager.current_zone = zone_manager.ZoneType.COLD
+        check("cold recommends Lv2", zone_manager.get_recommended_adaptation_level() == 2, "rec=%d" % zone_manager.get_recommended_adaptation_level())
+        zone_manager.current_zone = zone_manager.ZoneType.HEAT
+        check("heat recommends Lv2", zone_manager.get_recommended_adaptation_level() == 2, "rec=%d" % zone_manager.get_recommended_adaptation_level())
+        zone_manager.current_zone = zone_manager.ZoneType.GRAVITY
+        check("gravity recommends Lv2", zone_manager.get_recommended_adaptation_level() == 2, "rec=%d" % zone_manager.get_recommended_adaptation_level())
+
+        # ── P2: current adaptation level accessor ───────────────────────────
+        zone_manager.current_zone = zone_manager.ZoneType.HEAT
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 3
+        check("current adaptation level mirrors adaptations", zone_manager.get_current_adaptation_level() == 3, "lv=%d" % zone_manager.get_current_adaptation_level())
+
+        # Reset
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 0
+        zone_manager.adaptations[zone_manager.ZoneType.GRAVITY] = 0
+        zone_manager.adaptations[zone_manager.ZoneType.COLD] = 0
+        zone_manager.current_zone = zone_manager.ZoneType.CRASH
+
+
+func _test_zone_structure_drain() -> void:
+        print("\n[ Zone structure drain (GameManager) ]")
+        # P2-2: HEAT zone structure drain lives in GameManager (not BuildManager)
+        # per GAMEPLAY_v3 3.2/5.3. Only structures physically inside the HEAT
+        # biome take damage; Lv2+ adaptation stops the drain.
+
+        var game_manager = _get_autoload("GameManager")
+        var zone_manager = _get_autoload("ZoneManager")
+        var world_generator = _get_autoload("WorldGenerator")
+        check("GameManager autoload exists for drain", game_manager != null)
+        check("ZoneManager autoload exists for drain", zone_manager != null)
+        if not game_manager or not zone_manager:
+                return
+        check("GameManager exposes _apply_zone_structure_drain", game_manager.has_method("_apply_zone_structure_drain"))
+
+        # Snapshot state so we can restore after the test.
+        var old_zone: int = zone_manager.current_zone
+        var old_heat_lv: int = zone_manager.adaptations[zone_manager.ZoneType.HEAT]
+
+        # Two structures: one inside HEAT biome (east, x>20), one in CRASH (origin).
+        var heat_structure := Node3D.new()
+        heat_structure.name = "HeatDrainTarget"
+        heat_structure.add_to_group("built_structures")
+        heat_structure.set_meta("structure_max_health", 100.0)
+        heat_structure.set_meta("structure_health", 100.0)
+        current_scene.add_child(heat_structure)
+        heat_structure.global_position = Vector3(30.0, 0.0, 0.0)  # east -> HEAT biome
+
+        var crash_structure := Node3D.new()
+        crash_structure.name = "CrashDrainTarget"
+        crash_structure.add_to_group("built_structures")
+        crash_structure.set_meta("structure_max_health", 100.0)
+        crash_structure.set_meta("structure_health", 100.0)
+        current_scene.add_child(crash_structure)
+        crash_structure.global_position = Vector3(0.0, 0.0, 0.0)  # origin -> CRASH biome
+
+        # Confirm biome classification if WorldGenerator is available.
+        if world_generator:
+                var heat_biome = world_generator.get_biome_at(Vector2(30.0, 0.0))
+                check("heat structure position resolves to HEAT biome", heat_biome == world_generator.BIOME_HEAT, "biome=%d" % heat_biome)
+
+        # 1) CRASH zone: no drain on either structure.
+        zone_manager.current_zone = zone_manager.ZoneType.CRASH
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 0
+        game_manager._apply_zone_structure_drain(1.0)
+        check_nearly(float(heat_structure.get_meta("structure_health", -1.0)), 100.0, 0.001, "CRASH zone does not drain heat-zone structure")
+        check_nearly(float(crash_structure.get_meta("structure_health", -1.0)), 100.0, 0.001, "CRASH zone does not drain crash-zone structure")
+
+        # 2) HEAT zone Lv0: heat_structure drains 0.1 HP/s, crash_structure untouched.
+        zone_manager.current_zone = zone_manager.ZoneType.HEAT
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 0
+        game_manager._apply_zone_structure_drain(1.0)
+        check_nearly(float(heat_structure.get_meta("structure_health", -1.0)), 99.9, 0.001, "HEAT zone drains heat-zone structure by 0.1 HP/s")
+        check_nearly(float(crash_structure.get_meta("structure_health", -1.0)), 100.0, 0.001, "HEAT zone does not drain crash-zone structure")
+
+        # 3) HEAT zone Lv2: adaptation stops the drain (immune).
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 2
+        game_manager._apply_zone_structure_drain(1.0)
+        check_nearly(float(heat_structure.get_meta("structure_health", -1.0)), 99.9, 0.001, "HEAT Lv2 adaptation stops structure drain")
+
+        # 4) HEAT zone Lv0 drains to zero over many frames would destroy the
+        # structure; verify the drain math scales linearly without destroying
+        # mid-health structures in a single frame.
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = 0
+        heat_structure.set_meta("structure_health", 50.0)
+        game_manager._apply_zone_structure_drain(5.0)
+        check_nearly(float(heat_structure.get_meta("structure_health", -1.0)), 49.5, 0.001, "HEAT drain scales with delta (5s ->-0.5 HP)")
+
+        # 5) Drain to zero destroys the structure (queue_free).
+        heat_structure.set_meta("structure_health", 0.05)
+        game_manager._apply_zone_structure_drain(1.0)
+        check("HEAT drain destroys structure at zero HP", not is_instance_valid(heat_structure) or heat_structure.is_queued_for_deletion(), "still valid")
+
+        # Restore. Remove test structures from the built_structures group
+        # immediately so subsequent tests (e.g. build_recycle) don't see them,
+        # since queue_free() defers deletion until the next frame.
+        zone_manager.adaptations[zone_manager.ZoneType.HEAT] = old_heat_lv
+        zone_manager.current_zone = old_zone
+        if is_instance_valid(heat_structure):
+                if heat_structure.is_in_group("built_structures"):
+                        heat_structure.remove_from_group("built_structures")
+                heat_structure.queue_free()
+        if is_instance_valid(crash_structure):
+                if crash_structure.is_in_group("built_structures"):
+                        crash_structure.remove_from_group("built_structures")
+                crash_structure.queue_free()
+
 
 func _test_turret_logic() -> void:
         print("\n[ Turret logic ]")
@@ -409,9 +646,73 @@ func _test_inventory_manager() -> void:
         var after_add = inventory_manager.resources.get("iron", 0)
         check("add_resource increases amount", after_add == iron_count + 10, "%d -> %d" % [iron_count, after_add])
 
-        inventory_manager.consume_resources({"iron": 5})
+        check("consume_resources returns true when affordable", inventory_manager.consume_resources({"iron": 5}))
         var after_remove = inventory_manager.resources.get("iron", 0)
         check("consume_resources decreases amount", after_remove == after_add - 5, "%d -> %d" % [after_add, after_remove])
+
+        check("consume_resources returns false when short", not inventory_manager.consume_resources({"iron": after_remove + 1}))
+        check("failed consume keeps amount non-negative", inventory_manager.resources.get("iron", 0) == after_remove, "count=%d" % inventory_manager.resources.get("iron", 0))
+
+        # ── P4 重量系统 ─────────────────────────────────────────────────────
+        check("CARRY_CAPACITY is 25.0", absf(inventory_manager.CARRY_CAPACITY - 25.0) < 0.001)
+        check("RESOURCE_WEIGHT has iron 0.5", absf(float(inventory_manager.RESOURCE_WEIGHT.get("iron", 0.0)) - 0.5) < 0.001)
+        check("RESOURCE_WEIGHT has blueprint 0.05", absf(float(inventory_manager.RESOURCE_WEIGHT.get("blueprint", 0.0)) - 0.05) < 0.001)
+
+        # 保存当前状态，测试后恢复
+        var old_resources: Dictionary = inventory_manager.resources.duplicate(true)
+        inventory_manager.reset_resources()
+
+        # 空背包重量为 0，倍率 1.0
+        check_nearly(inventory_manager.get_total_weight(), 0.0, 0.001, "空背包重量为 0")
+        check_nearly(inventory_manager.get_load_ratio(), 0.0, 0.001, "空背包负载比为 0")
+        check_nearly(inventory_manager.get_speed_weight_multiplier(), 1.0, 0.001, "空背包速度倍率 1.0")
+        check_nearly(inventory_manager.get_oxygen_weight_multiplier(), 1.0, 0.001, "空背包氧耗倍率 1.0")
+
+        # 10 iron = 5kg，未超重
+        inventory_manager.add_resource("iron", 10)
+        check_nearly(inventory_manager.get_total_weight(), 5.0, 0.001, "10 iron = 5kg")
+        check_nearly(inventory_manager.get_load_ratio(), 0.2, 0.001, "10 iron 负载比 0.2")
+        check_nearly(inventory_manager.get_speed_weight_multiplier(), 1.0, 0.001, "未超重速度倍率 1.0")
+        check_nearly(inventory_manager.get_oxygen_weight_multiplier(), 1.0, 0.001, "未超重氧耗倍率 1.0")
+
+        # 加到 50 iron = 25kg，刚好满载，仍未超重
+        inventory_manager.add_resource("iron", 40)
+        check_nearly(inventory_manager.get_total_weight(), 25.0, 0.001, "50 iron = 25kg 满载")
+        check_nearly(inventory_manager.get_load_ratio(), 1.0, 0.001, "满载负载比 1.0")
+        check_nearly(inventory_manager.get_speed_weight_multiplier(), 1.0, 0.001, "满载速度倍率仍 1.0")
+
+        # 再加 10 iron = 30kg，超重 20%
+        inventory_manager.add_resource("iron", 10)
+        check_nearly(inventory_manager.get_total_weight(), 30.0, 0.001, "60 iron = 30kg 超重")
+        check_nearly(inventory_manager.get_load_ratio(), 1.2, 0.001, "超重负载比 1.2")
+        # 速度倍率 = 1.0 - 0.2*0.5 = 0.9
+        check_nearly(inventory_manager.get_speed_weight_multiplier(), 0.9, 0.001, "超重 20% 速度倍率 0.9")
+        # 氧耗倍率 = 1.0 + 0.2*0.5 = 1.1
+        check_nearly(inventory_manager.get_oxygen_weight_multiplier(), 1.1, 0.001, "超重 20% 氧耗倍率 1.1")
+
+        # 严重超重：100 iron = 50kg，超重 100%，速度封顶 0.5x
+        inventory_manager.reset_resources()
+        inventory_manager.add_resource("iron", 100)
+        check_nearly(inventory_manager.get_total_weight(), 50.0, 0.001, "100 iron = 50kg 严重超重")
+        check_nearly(inventory_manager.get_speed_weight_multiplier(), 0.5, 0.001, "超重 100% 速度封顶 0.5x")
+        check_nearly(inventory_manager.get_oxygen_weight_multiplier(), 1.5, 0.001, "超重 100% 氧耗倍率 1.5x")
+
+        # 混合资源重量计算
+        inventory_manager.reset_resources()
+        inventory_manager.add_resource("iron", 10)         # 5.0 kg
+        inventory_manager.add_resource("void_crystal", 10) # 3.0 kg
+        inventory_manager.add_resource("biomass", 10)      # 2.0 kg
+        inventory_manager.add_resource("blueprint", 10)    # 0.5 kg
+        check_nearly(inventory_manager.get_total_weight(), 10.5, 0.001, "混合资源重量 10.5kg")
+
+        # 消耗后重量下降
+        inventory_manager.consume_resources({"iron": 5})
+        check_nearly(inventory_manager.get_total_weight(), 8.0, 0.001, "消耗 5 iron 后重量 8.0kg")
+
+        # 恢复状态
+        inventory_manager.reset_resources()
+        for res_type in old_resources:
+                inventory_manager.resources[res_type] = int(old_resources[res_type])
 
 
 func _test_build_and_combat_ui() -> void:
@@ -425,6 +726,9 @@ func _test_build_and_combat_ui() -> void:
 
         var resource_hud_script = load("res://scripts/resource_hud.gd")
         check("resource_hud.gd loads", resource_hud_script != null)
+
+        var aim_targeting_script = load("res://scripts/aim_targeting.gd")
+        check("aim_targeting.gd loads", aim_targeting_script != null)
 
         var o2_station_script = load("res://scripts/o2_station.gd")
         check("o2_station.gd loads", o2_station_script != null)
@@ -443,6 +747,12 @@ func _test_build_and_combat_ui() -> void:
 
         var resource_scanner_script = load("res://scripts/resource_scanner.gd")
         check("resource_scanner.gd loads", resource_scanner_script != null)
+
+        var toolbelt_script = load("res://scripts/toolbelt_manager.gd")
+        check("toolbelt_manager.gd loads", toolbelt_script != null)
+
+        var buried_resource_script = load("res://scripts/buried_resource.gd")
+        check("buried_resource.gd loads", buried_resource_script != null)
 
         var slow_field_script = load("res://scripts/slow_field.gd")
         check("slow_field.gd loads", slow_field_script != null)
@@ -489,6 +799,7 @@ func _test_build_and_combat_ui() -> void:
         check("CombatHUD node exists", main.get_node_or_null("CombatHUD") != null)
         check("BaseInteraction node exists", main.get_node_or_null("BaseInteraction") != null)
         check("ResourceScanner node exists", main.get_node_or_null("ResourceScanner") != null)
+        check("ToolbeltManager node exists", main.get_node_or_null("ToolbeltManager") != null)
         check("ObjectiveTracker node exists", main.get_node_or_null("ObjectiveTracker") != null)
         main.free()
 
@@ -510,8 +821,23 @@ func _test_build_and_combat_ui() -> void:
                         inventory_manager.resources["void_crystal"] = old_void
 
         if combat_hud_script and save_manager:
+                var toolbelt = current_scene.get_node_or_null("ToolbeltManager")
+                var created_toolbelt := false
+                if toolbelt_script:
+                        if not toolbelt:
+                                toolbelt = toolbelt_script.new()
+                                toolbelt.name = "ToolbeltManager"
+                                current_scene.add_child(toolbelt)
+                                created_toolbelt = true
                 var combat_hud = combat_hud_script.new()
                 current_scene.add_child(combat_hud)
+                var build_manager_node = current_scene.get_node_or_null("BuildManager")
+                var created_build_manager := false
+                if not build_manager_node and build_script:
+                        build_manager_node = build_script.new()
+                        build_manager_node.name = "BuildManager"
+                        current_scene.add_child(build_manager_node)
+                        created_build_manager = true
                 var inventory_manager = _get_autoload("InventoryManager")
                 var old_iron: int = inventory_manager.resources.get("iron", 0) if inventory_manager else 0
                 var old_void: int = inventory_manager.resources.get("void_crystal", 0) if inventory_manager else 0
@@ -520,6 +846,17 @@ func _test_build_and_combat_ui() -> void:
                         inventory_manager.resources["void_crystal"] = 3
                 check("combat HUD shows inventory iron count", combat_hud.get_inventory_text().contains("IRON 6"), combat_hud.get_inventory_text())
                 check("combat HUD shows inventory crystal count", combat_hud.get_inventory_text().contains("CRYSTAL 3"), combat_hud.get_inventory_text())
+                if toolbelt:
+                        check("combat HUD shows toolbelt row", combat_hud.get_toolbelt_text().contains("Tools:"), combat_hud.get_toolbelt_text())
+                        toolbelt.set_tool("scanner")
+                        combat_hud._process(0.016)
+                        check("toolbelt can select scanner", combat_hud.get_toolbelt_text().contains("[3 Scanner]"), combat_hud.get_toolbelt_text())
+                        toolbelt.set_tool("build")
+                        check("toolbelt build opens build mode", build_manager_node and bool(build_manager_node.get("build_mode")))
+                        toolbelt.set_tool("harvester")
+                        check("toolbelt harvester exits build mode", build_manager_node and not bool(build_manager_node.get("build_mode")))
+                        combat_hud._process(0.016)
+                        check("toolbelt can leave build for harvester", combat_hud.get_toolbelt_text().contains("[2 Harvester]"), combat_hud.get_toolbelt_text())
                 if inventory_manager:
                         inventory_manager.resources["iron"] = old_iron
                         inventory_manager.resources["void_crystal"] = old_void
@@ -527,7 +864,12 @@ func _test_build_and_combat_ui() -> void:
                 check("combat HUD shows save status", combat_hud.get_save_status_text().contains("Saved"), combat_hud.get_save_status_text())
                 combat_hud._process(combat_hud.SAVE_STATUS_DURATION)
                 check("combat HUD clears save status", combat_hud.get_save_status_text().is_empty(), combat_hud.get_save_status_text())
+                check("combat HUD shows center crosshair", combat_hud.get_crosshair_text() == "+", combat_hud.get_crosshair_text())
                 combat_hud.queue_free()
+                if build_manager_node and created_build_manager:
+                        build_manager_node.queue_free()
+                if toolbelt and created_toolbelt:
+                        toolbelt.queue_free()
 
         if build_script:
                 var build_manager = build_script.new()
@@ -535,6 +877,50 @@ func _test_build_and_combat_ui() -> void:
                 build_manager.selected_building = build_manager.BUILD_SIGNAL_BEACON
                 check("signal beacon is a build option", build_manager.get_selected_label() == "Signal Beacon")
                 check("signal beacon cost includes blueprint", build_manager.get_selected_cost().get("blueprint", 0) == 2)
+                var cursor_player := Node3D.new()
+                cursor_player.name = "BuildCursorTestPlayer"
+                cursor_player.add_to_group("player")
+                cursor_player.position = Vector3(0.0, 0.5, 0.0)
+                current_scene.add_child(cursor_player)
+                var aim_camera := Camera3D.new()
+                aim_camera.name = "AimTargetTestCamera"
+                aim_camera.current = true
+                current_scene.add_child(aim_camera)
+                aim_camera.global_position = Vector3(0.0, 4.0, 4.0)
+                aim_camera.rotation_degrees = Vector3(-42.0, 0.0, 0.0)
+                build_manager._set_build_mode(true)
+                var tab_event := InputEventKey.new()
+                tab_event.pressed = true
+                tab_event.physical_keycode = KEY_TAB
+                var tab_before: String = build_manager.selected_building
+                build_manager._input(tab_event)
+                check("tab cycles build type", build_manager.selected_building != tab_before, "before=%s after=%s" % [tab_before, build_manager.selected_building])
+                var direct_event := InputEventKey.new()
+                direct_event.pressed = true
+                direct_event.shift_pressed = true
+                direct_event.physical_keycode = KEY_1
+                build_manager._input(direct_event)
+                check("shift number directly selects build type", build_manager.selected_building == build_manager.BUILD_TURRET)
+                var aim_data: Dictionary = aim_targeting_script.new().get_terrain_aim_position(build_manager.get_viewport(), build_manager.PLACEMENT_RANGE, build_manager.BUILD_DISTANCE)
+                check("aim targeting hits terrain from crosshair", bool(aim_data.get("valid", false)), str(aim_data))
+                var crosshair_target: Vector3 = build_manager._get_build_target_position()
+                var min_flat_distance := Vector2(crosshair_target.x - cursor_player.global_position.x, crosshair_target.z - cursor_player.global_position.z).length()
+                check("build target stays outside player collision", min_flat_distance >= build_manager.MIN_PLAYER_BUILD_DISTANCE - 0.05, "distance=%.2f target=%s" % [min_flat_distance, crosshair_target])
+                var preview_label := build_manager.get_node_or_null("BuildPreview/BuildPreviewLabel") as Label3D
+                check("build preview has readable label", preview_label != null and preview_label.text.contains("TURRET"), preview_label.text if preview_label else "missing")
+                var snapped_target: Vector3 = build_manager._snap_to_terrain(crosshair_target)
+                var world_generator = _get_autoload("WorldGenerator")
+                var terrain_y: float = world_generator.get_height_at(Vector2(snapped_target.x, snapped_target.z)) if world_generator else snapped_target.y - 0.75
+                check_nearly(snapped_target.y, clamp(terrain_y, -5.0, 15.0) + 0.75, 0.01, "crosshair build target snaps to terrain height")
+                aim_camera.rotation_degrees = Vector3(25.0, 0.0, 0.0)
+                var sky_data: Dictionary = build_manager._get_build_target_data()
+                check("build target is invalid when aiming into sky", not bool(sky_data.get("valid", true)), str(sky_data))
+                build_manager._process(0.016)
+                var preview := build_manager.get_node_or_null("BuildPreview") as MeshInstance3D
+                check("build preview hides when aiming into sky", preview != null and not preview.visible)
+                build_manager._set_build_mode(false)
+                aim_camera.queue_free()
+                cursor_player.free()
                 build_manager.queue_free()
 
 
@@ -1027,6 +1413,31 @@ func _test_signal_log_manager() -> void:
         signal_log_manager.reset_logs()
         signal_log_manager.apply_save_data(data)
         check("signal log save restores 25 milestone", signal_log_manager.is_log_unlocked("signal_25"))
+
+        # P0: 撤离读档不瞬间胜利 — extraction_time_remaining=0 时读档应保留 0.1s 让 _process 处理
+        signal_log_manager.reset_logs()
+        signal_log_manager.register_signal_progress(100.0)
+        signal_log_manager.extraction_time_remaining = 0.0
+        var extraction_zero_data: Dictionary = signal_log_manager.capture_save_data()
+        signal_log_manager.reset_logs()
+        signal_log_manager.apply_save_data(extraction_zero_data)
+        check("撤离读档 time_remaining=0 不立即完成", not signal_log_manager.is_extraction_complete())
+        check("撤离读档 time_remaining=0 保持 active", signal_log_manager.is_extraction_active())
+        # 推进一帧后应正常完成
+        signal_log_manager._process(0.2)
+        check("撤离读档后推进一帧可完成", signal_log_manager.is_extraction_complete())
+
+        # P0: 撤离读档保留剩余时间
+        signal_log_manager.reset_logs()
+        signal_log_manager.register_signal_progress(100.0)
+        signal_log_manager.extraction_time_remaining = 60.0
+        var extraction_partial_data: Dictionary = signal_log_manager.capture_save_data()
+        signal_log_manager.reset_logs()
+        signal_log_manager.apply_save_data(extraction_partial_data)
+        check("撤离读档保留剩余时间", signal_log_manager.is_extraction_active())
+        check_nearly(signal_log_manager.extraction_time_remaining, 60.0, 0.01, "撤离读档剩余时间正确")
+        check("撤离读档不瞬间胜利", not signal_log_manager.is_extraction_complete())
+
         signal_log_manager.reset_logs()
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["energy"] = old_energy
@@ -1060,7 +1471,7 @@ func _test_signal_beacon() -> void:
         beacon._process(beacon.SIGNAL_INTERVAL)
         check("signal beacon consumes energy", inventory_manager.resources.get("energy", -1) == 1)
         check_nearly(beacon.signal_progress, beacon.SIGNAL_PROGRESS_PER_CYCLE, 0.01, "signal beacon advances progress")
-        check("signal beacon status shows progress", beacon.get_signal_status_text().contains("10/100"), beacon.get_signal_status_text())
+        check("signal beacon status shows progress", beacon.get_signal_status_text().contains("5/100"), beacon.get_signal_status_text())
 
         beacon.signal_progress = 20.0
         beacon._process(beacon.SIGNAL_INTERVAL)
@@ -1080,11 +1491,29 @@ func _test_signal_beacon() -> void:
 
         inventory_manager.resources["energy"] = 0
         beacon._process(beacon.SIGNAL_INTERVAL)
-        check_nearly(beacon.signal_progress, 30.0, 0.01, "signal beacon pauses without energy")
+        check_nearly(beacon.signal_progress, 25.0, 0.01, "signal beacon pauses without energy")
 
         beacon.signal_progress = beacon.SIGNAL_MAX
         check("signal beacon can complete", beacon.is_signal_complete())
         check("signal beacon completion text is visible", beacon.get_signal_status_text().contains("100/100"), beacon.get_signal_status_text())
+
+        # P0: 信号台读档不额外消耗 energy
+        # 场景：存档时 signal_power_timer 接近 SIGNAL_INTERVAL，读档后经过 startup delay，
+        # 不应在一帧 _process 里多次触发 while 循环导致多扣 energy
+        var beacon2 = signal_script.new()
+        current_scene.add_child(beacon2)
+        beacon2.signal_progress = 10.0
+        beacon2.signal_power_timer = beacon2.SIGNAL_INTERVAL - 0.01  # 接近触发阈值
+        inventory_manager.resources["energy"] = 3
+        var energy_before_load := int(inventory_manager.resources.get("energy", 0))
+        # 模拟读档后的第一帧（startup delay 内不触发）
+        beacon2._process(0.5)  # 小于 STARTUP_DELAY(1.0)
+        check("信号台读档后 startup delay 内不消耗 energy", int(inventory_manager.resources.get("energy", 0)) == energy_before_load)
+        # 经过完整 startup delay 后，第一帧只触发一次
+        beacon2._process(0.6)  # 累计 1.1s 超过 STARTUP_DELAY
+        check("信号台读档后第一帧只消耗 1 energy", int(inventory_manager.resources.get("energy", 0)) == energy_before_load - 1)
+        check_nearly(beacon2.signal_progress, 15.0, 0.01, "信号台读档后进度只增加 5%")
+        beacon2.queue_free()
 
         combat_hud.queue_free()
         beacon.queue_free()
@@ -1336,9 +1765,15 @@ func _test_resource_scanner() -> void:
 
         var scanner_script = load("res://scripts/resource_scanner.gd")
         var resource_script = load("res://scripts/resource_node.gd")
+        var buried_script = load("res://scripts/buried_resource.gd")
+        var toolbelt_script = load("res://scripts/toolbelt_manager.gd")
+        var inventory_manager = _get_autoload("InventoryManager")
         check("resource_scanner.gd loads for scanner test", scanner_script != null)
         check("resource_node.gd loads for scanner test", resource_script != null)
-        if not scanner_script or not resource_script:
+        check("buried_resource.gd loads for scanner test", buried_script != null)
+        check("toolbelt_manager.gd loads for scanner test", toolbelt_script != null)
+        check("InventoryManager autoload exists for scanner test", inventory_manager != null)
+        if not scanner_script or not resource_script or not buried_script or not toolbelt_script or not inventory_manager:
                 return
 
         var player := Node3D.new()
@@ -1346,6 +1781,12 @@ func _test_resource_scanner() -> void:
         player.add_to_group("player")
         player.position = Vector3(1000.0, 0.0, 1000.0)
         current_scene.add_child(player)
+        var displaced_players: Array[Node] = []
+        for existing_player in get_nodes_in_group("player"):
+                var existing_node := existing_player as Node
+                if existing_node and existing_node != player:
+                        existing_node.remove_from_group("player")
+                        displaced_players.append(existing_node)
 
         var resource = resource_script.new()
         resource.resource_type = "iron"
@@ -1353,6 +1794,38 @@ func _test_resource_scanner() -> void:
         current_scene.add_child(resource)
         var resource_label := resource.get_node_or_null("ResourceLabel") as Label3D
         check("resource node has readable type label", resource_label != null and resource_label.text == "IRON")
+        check("iron resource uses ore visual signature", resource.get_visual_signature() == "ore_cluster", resource.get_visual_signature())
+        var iron_visual := resource.get_node_or_null("ResourceMesh") as Node3D
+        check("iron resource visual is multi-part", iron_visual != null and iron_visual.get_child_count() >= 2, "parts=%d" % (iron_visual.get_child_count() if iron_visual else 0))
+
+        var visual_types := {
+                "void_crystal": "crystal_cluster",
+                "biomass": "spore_pod",
+                "energy_core": "energy_core",
+                "blueprint": "data_chip",
+        }
+        var visual_test_nodes: Array[Node] = []
+        for resource_type in visual_types:
+                var visual_resource = resource_script.new()
+                visual_resource.resource_type = str(resource_type)
+                visual_resource.position = Vector3(2000.0 + float(visual_test_nodes.size()), 0.0, 2000.0)
+                current_scene.add_child(visual_resource)
+                visual_test_nodes.append(visual_resource)
+                var signature: String = visual_resource.get_visual_signature()
+                check("%s resource has distinct visual signature" % resource_type, signature == str(visual_types[resource_type]), signature)
+                var visual_root := visual_resource.get_node_or_null("ResourceMesh") as Node3D
+                check("%s resource visual is multi-part" % resource_type, visual_root != null and visual_root.get_child_count() >= 1, "parts=%d" % (visual_root.get_child_count() if visual_root else 0))
+                if str(resource_type) == "blueprint":
+                        check("blueprint resource has visible beacon", visual_root != null and visual_root.get_node_or_null("BlueprintBeacon") != null)
+
+        var toolbelt = current_scene.get_node_or_null("ToolbeltManager")
+        var created_toolbelt := false
+        if not toolbelt:
+                toolbelt = toolbelt_script.new()
+                toolbelt.name = "ToolbeltManager"
+                current_scene.add_child(toolbelt)
+                created_toolbelt = true
+        toolbelt.set_tool("scanner")
 
         var scanner = scanner_script.new()
         current_scene.add_child(scanner)
@@ -1363,6 +1836,23 @@ func _test_resource_scanner() -> void:
         scanner.selected_index = 1
         scanner._scan_now()
         check("scanner filters selected resource type", scanner.nearest_resource == null)
+
+        var aim_camera := Camera3D.new()
+        aim_camera.name = "HarvesterAimTestCamera"
+        aim_camera.current = true
+        current_scene.add_child(aim_camera)
+        player.position = Vector3(1003.5, 0.0, 1002.8)
+        aim_camera.global_position = player.global_position + Vector3(0.0, 1.2, 0.0)
+        aim_camera.look_at(resource.global_position + Vector3(0.0, 0.3, 0.0), Vector3.UP)
+        var old_iron: int = inventory_manager.resources.get("iron", 0)
+        inventory_manager.resources["iron"] = 0
+        toolbelt.set_tool("harvester")
+        check("harvester collects visible resource by crosshair", toolbelt._try_harvest())
+        check("harvester grants aimed visible resource", inventory_manager.resources.get("iron", -1) == int(resource.get("amount")), "count=%d" % inventory_manager.resources.get("iron", -1))
+        check("aimed visible resource queues after harvest", resource.is_queued_for_deletion())
+        inventory_manager.resources["iron"] = old_iron
+        player.position = Vector3(1000.0, 0.0, 1000.0)
+        toolbelt.set_tool("scanner")
 
         var oxygen_plant := Node3D.new()
         oxygen_plant.name = "ScannerTestOxygenPlant"
@@ -1375,9 +1865,59 @@ func _test_resource_scanner() -> void:
         var oxygen_hint: String = scanner.get_scan_hint()
         check("scanner finds oxygen plant", oxygen_hint.contains("O2 plant") and oxygen_hint.contains("3m"), oxygen_hint)
 
+        var blueprint_resource = resource_script.new()
+        blueprint_resource.resource_type = "blueprint"
+        blueprint_resource.position = Vector3(1001.0, 0.0, 1000.0)
+        current_scene.add_child(blueprint_resource)
+        scanner.selected_index = 5
+        scanner._scan_now()
+        var blueprint_hint: String = scanner.get_scan_hint()
+        check("scanner finds visible BP data chip", blueprint_hint.contains("BP") and blueprint_hint.contains("1m"), blueprint_hint)
+
+        var old_void: int = inventory_manager.resources.get("void_crystal", 0)
+        inventory_manager.resources["void_crystal"] = 0
+        var buried = buried_script.new()
+        buried.resource_type = "void_crystal"
+        buried.amount = 4
+        buried.depth = 1.2
+        buried.dig_required = 2
+        buried.position = Vector3(1002.0, 0.0, 1000.0)
+        current_scene.add_child(buried)
+
+        scanner.selected_index = 2
+        scanner._scan_now()
+        var buried_hint: String = scanner.get_scan_hint()
+        check("scanner finds buried crystal", buried_hint.contains("buried") and buried_hint.contains("depth"), buried_hint)
+        check("scanner reveals buried resource", buried.is_revealed)
+        var buried_icon := buried.get_node_or_null("BuriedResourceIcon") as MeshInstance3D
+        check("revealed buried resource has visual icon", buried_icon != null and buried_icon.visible)
+        var buried_beam := buried.get_node_or_null("BuriedResourceBeam") as MeshInstance3D
+        check("revealed buried resource has visible beam", buried_beam != null and buried_beam.visible)
+
+        toolbelt.set_tool("harvester")
+        player.position = Vector3(1002.0, 0.0, 1000.0)
+        check("harvester partial dig waits for progress", not toolbelt._try_harvest())
+        check("harvester completes buried resource", toolbelt._try_harvest())
+        check("harvester grants buried crystal", inventory_manager.resources.get("void_crystal", -1) == 4, "count=%d" % inventory_manager.resources.get("void_crystal", -1))
+        check("buried resource queues after harvest", buried.is_queued_for_deletion())
+
+        inventory_manager.resources["void_crystal"] = old_void
         scanner.queue_free()
+        if created_toolbelt:
+                toolbelt.queue_free()
+        aim_camera.queue_free()
         oxygen_plant.free()
-        resource.free()
+        if is_instance_valid(resource) and not resource.is_queued_for_deletion():
+                resource.free()
+        blueprint_resource.free()
+        for visual_node in visual_test_nodes:
+                if is_instance_valid(visual_node):
+                        visual_node.free()
+        if is_instance_valid(buried) and not buried.is_queued_for_deletion():
+                buried.free()
+        for displaced_player in displaced_players:
+                if is_instance_valid(displaced_player):
+                        displaced_player.add_to_group("player")
         player.free()
 
 
@@ -1507,6 +2047,115 @@ func _test_serum_recipes() -> void:
 
         check("recipes are populated", serum_recipes.recipes.size() >= 16, "size=%d" % serum_recipes.recipes.size())
         check("crash_1 starts unlocked", serum_recipes.recipes["crash_1"].get("unlocked", false))
+
+
+func _test_teleport_manager() -> void:
+        print("\n[ Teleport manager ]")
+
+        var teleport_script = load("res://scripts/teleport_manager.gd")
+        var player_script = load("res://scripts/player.gd")
+        var inventory_manager = _get_autoload("InventoryManager")
+        var game_manager = _get_autoload("GameManager")
+        var world_generator = _get_autoload("WorldGenerator")
+        check("teleport_manager.gd loads", teleport_script != null)
+        check("player.gd loads for teleport test", player_script != null)
+        check("InventoryManager autoload exists for teleport test", inventory_manager != null)
+        check("GameManager autoload exists for teleport test", game_manager != null)
+        if not teleport_script or not player_script or not inventory_manager or not game_manager:
+                return
+
+        # --- TeleportManager API: register_beacon / get_beacons_for_zone ---
+        var tm = teleport_script.new()
+        tm.name = "TeleportManager"
+        current_scene.add_child(tm)
+        check("TeleportManager starts with empty beacons", tm.beacons.is_empty())
+
+        var beacon_zone := "极寒区"
+        var beacon = Node3D.new()
+        beacon.name = "TestBeacon"
+        beacon.position = Vector3(0, 0, 25)
+        current_scene.add_child(beacon)
+        tm.register_beacon(beacon, beacon_zone)
+        check("register_beacon adds zone entry", tm.beacons.has(beacon_zone))
+        check("register_beacon stores beacon node", tm.get_beacons_for_zone(beacon_zone).size() == 1)
+        check("get_beacons_for_zone returns empty for unknown zone", tm.get_beacons_for_zone("未知区域").is_empty())
+
+        # teleport_to_beacon moves player to beacon position (P3-2: registered zone entrance)
+        var player = player_script.new()
+        player.add_to_group("player")
+        current_scene.add_child(player)
+        player.position = Vector3(0, 1, 0)
+        tm.teleport_to_beacon(player, beacon_zone)
+        check_nearly(player.position.x, 0.0, 0.01, "teleport_to_beacon sets player x to beacon x")
+        check_nearly(player.position.z, 25.0, 0.01, "teleport_to_beacon sets player z to beacon z")
+
+        # teleport_to_base returns player to origin
+        player.position = Vector3(50, 1, 50)
+        tm.teleport_to_base(player, beacon_zone)
+        check_nearly(player.position.x, 0.0, 0.01, "teleport_to_base resets player x")
+        check_nearly(player.position.z, 0.0, 0.01, "teleport_to_base resets player z")
+
+        # --- player.gd _try_teleport gating (P3-1: day / base radius / 5 energy / beacon) ---
+        var old_energy: int = inventory_manager.resources.get("energy", 0)
+        var old_is_night: bool = game_manager.is_night
+        var old_base_position: Vector3 = world_generator.base_position if world_generator else Vector3.ZERO
+
+        # Happy path: day + at base + 10 energy + registered beacon -> teleport + 5 energy cost
+        player.position = Vector3(0, 1, 0)
+        game_manager.is_night = false
+        if world_generator:
+                world_generator.base_position = Vector3.ZERO
+        inventory_manager.resources["energy"] = 10
+        player._try_teleport()
+        check("P3-2 teleport moves player to registered beacon", player.position.distance_to(Vector3(0, 0, 25)) < 1.0, "pos=%s" % str(player.position))
+        check("P3-1 teleport consumes 5 energy", int(inventory_manager.resources.get("energy", -1)) == 5)
+
+        # Gating: night blocks teleport (no move, no cost)
+        player.position = Vector3(0, 1, 0)
+        game_manager.is_night = true
+        inventory_manager.resources["energy"] = 10
+        player._try_teleport()
+        check("teleport blocked at night (no move)", player.position.distance_to(Vector3(0, 1, 0)) < 0.1)
+        check("teleport blocked at night (no energy cost)", int(inventory_manager.resources.get("energy", -1)) == 10)
+
+        # Gating: outside base radius blocks teleport
+        player.position = Vector3(50, 1, 50)
+        game_manager.is_night = false
+        inventory_manager.resources["energy"] = 10
+        player._try_teleport()
+        check("teleport blocked outside base radius (no move)", player.position.distance_to(Vector3(50, 1, 50)) < 0.1)
+        check("teleport blocked outside base radius (no energy cost)", int(inventory_manager.resources.get("energy", -1)) == 10)
+
+        # Gating: insufficient energy blocks teleport
+        player.position = Vector3(0, 1, 0)
+        game_manager.is_night = false
+        inventory_manager.resources["energy"] = 2
+        player._try_teleport()
+        check("teleport blocked with low energy (no move)", player.position.distance_to(Vector3(0, 1, 0)) < 0.1)
+        check("teleport blocked with low energy (no energy cost)", int(inventory_manager.resources.get("energy", -1)) == 2)
+
+        # Gating: no registered beacon blocks teleport
+        var saved_beacons: Dictionary = tm.beacons.duplicate(true)
+        tm.beacons.clear()
+        player.position = Vector3(0, 1, 0)
+        game_manager.is_night = false
+        inventory_manager.resources["energy"] = 10
+        player._try_teleport()
+        check("teleport blocked with no beacons (no move)", player.position.distance_to(Vector3(0, 1, 0)) < 0.1)
+        check("teleport blocked with no beacons (no energy cost)", int(inventory_manager.resources.get("energy", -1)) == 10)
+        tm.beacons = saved_beacons
+
+        # Restore state
+        inventory_manager.resources["energy"] = old_energy
+        game_manager.is_night = old_is_night
+        if world_generator:
+                world_generator.base_position = old_base_position
+
+        # Cleanup (remove from group first so later tests don't see this player)
+        player.remove_from_group("player")
+        player.queue_free()
+        beacon.queue_free()
+        tm.queue_free()
 
 
 func _get_autoload(name: String) -> Node:

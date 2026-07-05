@@ -67,7 +67,8 @@ func can_unlock(tech_id: String) -> bool:
 func unlock(tech_id: String) -> bool:
 	if not can_unlock(tech_id):
 		return false
-	InventoryManager.consume_resources(get_unlock_cost(tech_id))
+	if not InventoryManager.consume_resources(get_unlock_cost(tech_id)):
+		return false
 	unlocked[tech_id] = true
 	tech_unlocked.emit(tech_id)
 	return true

@@ -1,6 +1,6 @@
 # 🪐 星渊迷航 — 开发进度看板
 
-> 最后更新：2026-05-20  
+> 最后更新：2026-06-25
 > 仓库：https://github.com/qnctx/star-abyss-game  
 > 本地：~/projects/star-abyss-game/src/
 
@@ -80,6 +80,181 @@ cd star-abyss-game/src
 夜晚 = 一波波虫子越来越多
 ```
 ---
+
+## 2026-06-25 - TEST_ISSUES Review Fix Slice
+
+- Reviewed `docs/TEST_ISSUES.md` and agreed with the severe issue priority, with one adjustment:
+  - `spawn_resources()` should not become a daily auto-refresh because WorldGenerator already owns the world resource layout.
+- Fixed the immediate severe defects:
+  - Ice projectiles now call `Enemy.apply_slow(source_id, multiplier)` with a stable source id.
+  - `InventoryManager.consume_resources()` is now atomic and returns `false` without changing inventory when resources are short.
+  - Serum inventory labels no longer duplicate Chinese resource labels.
+  - Oxygen UI guards against `max_oxygen <= 0`.
+  - Restart now routes through `GameManager.reset_game()` and clears enemies, built structures, inventory, tech unlocks, death drops, signal logs, base state, and wave state.
+- Stopped the day loop from calling the legacy resource top-up helper, fixed that helper's property check, and moved GameManager enemy/resource scenes to `preload`.
+- Cleaned the unused player debug frame counter and the mixed-language stuck comment.
+- Added automated inventory coverage for failed consumption and updated manual restart test steps.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+```
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+Results:
+
+- `test_runner.gd`: 372 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- Godot still prints known RID/ObjectDB cleanup warnings on headless exit.
+
+---
+
+## 2026-06-09 - Crosshair Aim Tooling Slice
+
+- Reworked first-person aiming and tool targeting around a shared center-screen crosshair:
+  - Mouse look now supports yaw and pitch instead of only left/right yaw.
+  - CombatHUD draws a small center crosshair.
+  - `AimTargeting` provides shared center-ray helpers for terrain hits and aimed group targets.
+- Unified core tool actions around the crosshair:
+  - Weapons fire along the crosshair direction.
+  - Build preview follows the crosshair terrain hit and becomes invalid when aiming into the sky.
+  - Harvester can collect visible resources by crosshair or dig revealed buried resources.
+  - Repair/upgrade/recycle actions prioritize crosshair-targeted structures.
+- Followed up on screenshot playtest issues:
+  - Ordinary `1-5` always switch tools; build type selection moved to `Tab` / `Shift+1-7`.
+  - Selecting Harvester/Scanner/Weapon/Repair exits build mode so `2` can immediately harvest.
+  - Build preview stays outside the player's collision, hides when aiming into sky, and shows a readable building label.
+  - Revealed buried resources now use a larger ground marker, vertical beam, icon, and bigger `DIG` label.
+  - Harvester aim radius/range is more forgiving for visible resources and buried markers.
+- Kept terrain collision disabled and uses `WorldGenerator.get_height_at()` for terrain aiming so the earlier invisible-wall fix stays intact.
+- Added automated coverage for camera pitch, crosshair HUD, crosshair build target, sky invalid placement, tool switching out of build mode, build preview labels, buried beams, and aimed Harvester collection.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+- `test_runner.gd`: 369 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+----
+
+## 2026-06-09 - Build Ground Cursor Fix
+
+- Fixed build placement interaction after playtest feedback that the preview felt stuck on a flat plane and could not be made green:
+  - Build mode now uses a ground cursor controlled by mouse movement.
+  - Mouse left/right moves the preview sideways.
+  - Mouse up/down moves the preview nearer/farther.
+  - The preview still snaps to `WorldGenerator` terrain height after movement.
+- Clarified HUD/manual-test wording:
+  - `LMB NEED RES` means the location may be valid, but Inventory is missing the listed cost.
+  - Green requires both a valid location and enough resources.
+- Added automated coverage that vertical mouse motion changes the build target and that the snapped preview height matches terrain height.
+
+Validation:
+
+- `test_runner.gd`: 337 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+----
+
+## 2026-06-09 - Resource Visual Readability Slice
+
+- Reworked visible resource models from single primitive blocks into distinct procedural silhouettes:
+  - `iron`: orange ore chunks on a dark rock base.
+  - `void_crystal`: purple crystal cluster.
+  - `biomass`: green spore/pod cluster.
+  - `energy_core`: cyan glowing core with dark shell pieces.
+  - `blueprint`: flat gold data chip with cyan trace lines.
+- Revealed buried resources now show a small resource-shaped icon above the dig marker, not only a flat circle.
+- Added automated coverage for visual signatures, multi-part resource visuals, and buried-resource reveal icons.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+- `test_runner.gd`: 348 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+----
+
+## 2026-06-09 - Visible BP Data Chip Slice
+
+- Added visible `blueprint` data chip pickups near the crash basin:
+  - World generation now places 5 fixed early BP chips on terrain.
+  - BP pickup amount is fixed at `1`.
+- BP chips now use a taller gold beacon so the player can spot them during first-pass testing.
+- Expanded `ResourceScanner` scan types with `blueprint` / `BP`.
+- Added automated coverage for world BP placement and scanner BP targeting.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+- `test_runner.gd`: 351 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed; world generation logs `placed 5 blueprint resources`.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+----
+
+## 2026-06-09 - Toolbelt Buried Resource Slice
+
+- Added a connected toolbelt loop:
+  - `1` Weapon, `2` Harvester, `3` Scanner, `4` Build, `5` Repair.
+  - Weapon firing is gated to the Weapon tool so scanning/harvesting/building does not also shoot.
+  - Build tool opens Build mode; later crosshair tooling moved building selection to `Tab` / `Shift+1-7` so `1-5` always remain tool slots.
+- Added buried resource gameplay:
+  - `WorldGenerator` places hidden buried iron, biomass, crystal, and core deposits on terrain.
+  - Scanner resource modes now prioritize buried deposits, reveal them, and show depth/distance/direction.
+  - Harvester digs revealed buried deposits over multiple left-clicks and grants resources to Inventory.
+- Expanded CombatHUD:
+  - Bottom toolbelt row shows current tool and action/status text.
+  - Inventory and scanner rows remain visible for resource count and signal feedback.
+- Added automated coverage for main scene ToolbeltManager wiring, HUD toolbelt text, buried world placement, scanner reveal, and harvester inventory reward.
+- Updated GDD, context docs, progress, and manual test plan.
+
+Validation:
+
+```cmd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_runner.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src -s res://test_standalone.gd
+"D:\Godot_v4.6.2-stable_win64.exe\Godot_v4.6.2-stable_win64_console.exe" --headless --path src --quit-after 2
+git diff --check
+codegraph status
+```
+
+Results:
+
+- `test_runner.gd`: 335 passed, 0 failed.
+- `test_standalone.gd`: 31 passed, 0 failed.
+- Main scene short startup: passed.
+- `git diff --check`: passed; Windows LF-to-CRLF warnings only.
+- `codegraph status`: up to date; current GDScript index remains 0 files / 0 nodes.
+
+Manual test steps are consolidated in `docs/TEST_PLAN.md`.
+
+----
 
 ## 2026-06-09 - Ground Resource And Inventory HUD Slice
 

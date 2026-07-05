@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星渊迷航 — 体素原型 v5</title>
+<style>
+/* ============ 全局科幻终端风 ============ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+  --bg:#0a0e1a; --cyan:#00ffcc; --orange:#ff8c42; --gold:#ffd700;
+  --purple:#b46cff; --red:#ff4d6d; --green:#7CFC9A; --blue:#5ab0ff;
+  --panel:rgba(8,16,28,0.82); --border:rgba(0,255,204,0.45);
+}
+html,body{
+  width:100%; height:100%; background:var(--bg); color:var(--cyan);
+  font-family:"Consolas","Courier New",monospace; overflow:hidden;
+  user-select:none;
+}
+#gameCanvas{ display:block; position:absolute; top:0; left:0; }
+
+/* ============ z-index 层级 ============
+   1: 3D canvas
+  10: HUD 基础层
+  20: 建造栏
+  30: 背包面板
+  40: 工作台面板
+  50: toast
+  55: 红屏警告
+  60: 结束遮罩
+  70: 开始遮罩（PointerLock 提示）
+*/
+
+.hud{ position:absolute; z-index:10; pointer-events:none; }
+.panel{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:6px; padding:8px 12px; backdrop-filter:blur(2px);
+  box-shadow:0 0 12px rgba(0,255,204,0.18) inset, 0 0 8px rgba(0,255,204,0.15);
+}
+
+/* 顶部中央：区域 + 氧气 + 生命 */
+#topCenter{ top:10px; left:50%; transform:translateX(-50%); width:360px; text-align:center; }
+#regionName{ font-size:15px; letter-spacing:3px; color:var(--cyan); text-shadow:0 0 8px var(--cyan); margin-bottom:5px; }
+.bar{ height:14px; border:1px solid var(--border); border-radius:7px; background:#06101a; position:relative; margin:3px 0; overflow:hidden; }
+.barFill{ height:100%; transition:width .15s linear; }
+#oxygenFill{ background:linear-gradient(90deg,#00d6ff,#00ffcc); box-shadow:0 0 8px #00ffcc; }
+#healthFill{ background:linear-gradient(90deg,#ff4d6d,#7CFC9A); box-shadow:0 0 8px #7CFC9A; }
+.barText{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:10px; color:#fff; text-shadow:0 0 3px #000; letter-spacing:1px; }
+
+/* 右上：昼夜 + 零件 + 基地血条 */
+#topRight{ top:10px; right:10px; width:210px; }
+#dayNight{ font-size:12px; color:var(--gold); margin-bottom:3px; }
+#partsProgress{ font-size:12px; color:var(--gold); margin-bottom:5px; }
+#baseWrap{ margin-top:4px; }
+#baseLabel{ font-size:11px; color:var(--orange); }
+#baseBar{ height:12px; }
+
+/* 左下：背包提示 */
+#backpackHint{
+  bottom:10px; left:10px; cursor:pointer; pointer-events:auto;
+  font-size:12px; color:var(--cyan); padding:6px 10px;
+}
+#backpackHint:hover{ background:rgba(0,255,204,0.15); }
+
+/* 右下：操作提示 */
+#controlsHint{ bottom:10px; right:10px; font-size:11px; line-height:1.7; color:rgba(0,255,204,0.8); text-align:right; }
+#controlsHint b{ color:var(--gold); }
+
+/* 底部中央：目标提示 */
+#objective{ bottom:10px; left:50%; transform:translateX(-50%); font-size:13px; color:var(--gold); text-shadow:0 0 6px rgba(255,215,0,0.5); max-width:50%; text-align:center; }
+
+/* 中央十字准星 */
+#crosshair{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  z-index:10; width:20px; height:20px; pointer-events:none;
+}
+#crosshair::before, #crosshair::after{
+  content:''; position:absolute; background:rgba(0,255,204,0.7); box-shadow:0 0 4px rgba(0,255,204,0.8);
+}
+#crosshair::before{ left:9px; top:2px; width:2px; height:16px; }
+#crosshair::after{ top:9px; left:2px; width:16px; height:2px; }
+
+/* 交互提示（采集/卸货/进工作台） */
+#interactHint{
+  position:absolute; top:55%; left:50%; transform:translateX(-50%);
+  z-index:10; font-size:13px; color:var(--gold); text-shadow:0 0 6px #000;
+  display:none; pointer-events:none;
+}
+#interactHint b{ color:var(--cyan); }
+
+/* 背包面板 */
+#backpackPanel{
+  position:absolute; top:50%; right:30px; transform:translateY(-50%);
+  z-index:30; width:340px; padding:12px; display:none;
+}
+#backpackPanel.open{ display:block; }
+#backpackTitle{ font-size:14px; color:var(--cyan); text-align:center; margin-bottom:4px; letter-spacing:2px; }
+#invInfo{ font-size:11px; color:rgba(0,255,204,0.7); text-align:center; margin-bottom:4px; }
+#invInfo.over{ color:var(--red); }
+#invHint{ font-size:10px; color:rgba(255,215,0,0.7); text-align:center; margin-bottom:8px; }
+#invGrid{ display:flex; flex-direction:column; gap:3px; max-height:320px; overflow-y:auto; }
+.invRow{
+  display:flex; align-items:center; gap:8px; padding:5px 8px;
+  border:1px solid rgba(0,255,204,0.25); border-radius:4px;
+  background:rgba(0,30,40,0.5); font-size:12px;
+}
+.invRow.item{ border-color:var(--green); cursor:pointer; }
+.invRow.item:hover{ background:rgba(124,252,154,0.15); box-shadow:0 0 6px rgba(124,252,154,0.3); }
+.invRow .icon{ font-size:14px; width:18px; text-align:center; }
+.invRow .name{ flex:1; color:rgba(255,255,255,0.85); }
+.invRow .cnt{ color:#fff; font-weight:bold; min-width:36px; text-align:right; }
+.invRow .wt{ color:var(--gold); font-size:11px; min-width:44px; text-align:right; }
+.invEmpty{ text-align:center; color:rgba(0,255,204,0.4); padding:20px; font-size:12px; }
+
+/* 工作台面板 */
+#workbenchPanel{
+  position:absolute; inset:0; z-index:40; display:none;
+  background:rgba(4,8,16,0.92); padding:30px 40px; overflow:auto;
+}
+#workbenchPanel.open{ display:block; }
+#wbTitle{ font-size:22px; color:var(--cyan); text-align:center; letter-spacing:6px; margin-bottom:6px; text-shadow:0 0 12px var(--cyan); }
+#wbSub{ text-align:center; font-size:12px; color:rgba(0,255,204,0.6); margin-bottom:18px; }
+#wbTabs{ display:flex; gap:8px; justify-content:center; margin-bottom:16px; }
+.wbTab{ padding:6px 18px; border:1px solid var(--border); border-radius:4px; cursor:pointer; font-size:13px; color:var(--cyan); background:rgba(0,40,50,0.4); }
+.wbTab.active{ background:var(--cyan); color:#021; box-shadow:0 0 10px var(--cyan); }
+#wbGrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; max-width:1100px; margin:0 auto; }
+.recipe{
+  border:1px solid var(--border); border-radius:6px; padding:10px; background:rgba(0,20,30,0.6);
+}
+.recipe.locked{ opacity:0.45; }
+.recipe h4{ color:var(--gold); font-size:14px; margin-bottom:4px; }
+.recipe .eff{ font-size:11px; color:var(--cyan); margin-bottom:5px; }
+.recipe .mat{ font-size:11px; margin-bottom:6px; line-height:1.5; }
+.recipe .mat .ok{ color:var(--green); } .recipe .mat .no{ color:var(--red); }
+.recipe button{ width:100%; padding:5px; background:var(--cyan); color:#021; border:none; border-radius:4px; cursor:pointer; font-family:inherit; font-size:12px; font-weight:bold; }
+.recipe button:disabled{ background:#334; color:#889; cursor:not-allowed; }
+.recipe .lockNote{ color:var(--red); font-size:11px; text-align:center; }
+#wbCloseHint{ text-align:center; margin-top:16px; font-size:12px; color:rgba(0,255,204,0.6); }
+#wbStorage{ max-width:1100px; margin:14px auto 0; font-size:11px; color:rgba(0,255,204,0.7); border-top:1px dashed var(--border); padding-top:10px; }
+
+/* 建造栏 */
+#buildBar{
+  position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
+  z-index:20; display:none; gap:8px; padding:8px;
+}
+#buildBar.open{ display:flex; }
+.buildCard{
+  width:120px; padding:8px; border:1px solid var(--border); border-radius:5px;
+  background:rgba(0,20,30,0.8); cursor:pointer; text-align:center; font-size:11px;
+}
+.buildCard.active{ border-color:var(--gold); box-shadow:0 0 10px var(--gold); }
+.buildCard .bn{ color:var(--cyan); font-size:13px; margin-bottom:3px; }
+.buildCard .bc{ color:var(--orange); font-size:10px; }
+
+/* toast */
+#toast{
+  position:absolute; top:80px; left:50%; transform:translateX(-50%);
+  z-index:50; padding:8px 18px; font-size:13px; color:var(--gold);
+  background:rgba(8,16,28,0.9); border:1px solid var(--gold); border-radius:5px;
+  opacity:0; transition:opacity .3s; pointer-events:none; text-shadow:0 0 6px rgba(255,215,0,0.5);
+}
+#toast.show{ opacity:1; }
+
+/* 红屏警告 */
+#baseAttackFlash{
+  position:absolute; inset:0; z-index:55; pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 20%, rgba(255,30,30,0.45) 100%);
+  opacity:0; transition:opacity 0.12s;
+}
+#baseAttackFlash.flash{ opacity:1; }
+
+/* 结束遮罩 */
+#endMask{
+  position:absolute; inset:0; z-index:60; display:none;
+  background:rgba(2,4,10,0.92); flex-direction:column; align-items:center; justify-content:center;
+}
+#endMask.show{ display:flex; }
+#endTitle{ font-size:42px; letter-spacing:10px; margin-bottom:14px; }
+#endTitle.win{ color:var(--gold); text-shadow:0 0 20px var(--gold); }
+#endTitle.lose{ color:var(--red); text-shadow:0 0 20px var(--red); }
+#endMsg{ font-size:14px; color:var(--cyan); margin-bottom:24px; text-align:center; line-height:1.8; }
+#restartBtn{ padding:10px 30px; background:var(--cyan); color:#021; border:none; border-radius:5px; font-family:inherit; font-size:14px; cursor:pointer; font-weight:bold; }
+
+/* 准星 */
+#crosshair{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(1);
+  z-index:11; width:18px; height:18px; pointer-events:none;
+  transition:transform .08s;
+}
+#crosshair::before, #crosshair::after{
+  content:''; position:absolute; background:rgba(0,255,204,0.7); box-shadow:0 0 4px rgba(0,0,0,0.8);
+}
+#crosshair::before{ left:8px; top:2px; width:2px; height:14px; }
+#crosshair::after{ top:8px; left:2px; width:14px; height:2px; }
+
+/* ============ 全屏地图（Tab 打开，游戏暂停）============ */
+#mapPanel{
+  position:absolute; inset:0; z-index:45; display:none;
+  background:rgba(2,6,14,0.95); flex-direction:column; align-items:center; justify-content:center;
+}
+#mapPanel.open{ display:flex; }
+#mapTitle{ font-size:22px; color:var(--cyan); letter-spacing:6px; margin-bottom:12px; text-shadow:0 0 10px var(--cyan); }
+#mapCanvas{ border:1px solid var(--border); border-radius:6px; background:#04070f; box-shadow:0 0 20px rgba(0,255,204,0.2); }
+#mapHint{ margin-top:10px; font-size:11px; color:rgba(0,255,204,0.7); text-align:center; line-height:1.6; }
+
+/* 开始遮罩（PointerLock） */
+#startMask{
+  position:absolute; inset:0; z-index:70; display:flex;
+  background:rgba(2,4,10,0.85); flex-direction:column; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+#startMask.hide{ display:none; }
+#startTitle{ font-size:36px; letter-spacing:8px; color:var(--cyan); text-shadow:0 0 16px var(--cyan); margin-bottom:14px; }
+#startSub{ font-size:14px; color:var(--gold); margin-bottom:30px; text-align:center; line-height:1.8; }
+#startBtn{ padding:12px 40px; background:var(--cyan); color:#021; border:none; border-radius:5px; font-family:inherit; font-size:16px; cursor:pointer; font-weight:bold; letter-spacing:2px; }
+#startHint{ margin-top:20px; font-size:11px; color:rgba(0,255,204,0.5); }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<div id="crosshair"></div>
+
+<!-- 顶部中央 -->
+<div id="topCenter" class="hud">
+  <div id="regionName" class="panel">坠毁地</div>
+  <div class="bar"><div id="oxygenFill" class="barFill" style="width:100%"></div><div id="oxygenText" class="barText">氧气 120/120秒</div></div>
+  <div class="bar"><div id="healthFill" class="barFill" style="width:100%"></div><div id="healthText" class="barText">生命 100/100</div></div>
+</div>
+
+<!-- 右上 -->
+<div id="topRight" class="hud panel">
+  <div id="dayNight">白天 50秒</div>
+  <div id="partsProgress">零件 0/5</div>
+  <div id="baseWrap">
+    <div id="baseLabel">基地 200/200</div>
+    <div id="baseBar" class="bar"><div id="baseFill" class="barFill" style="width:100%; background:linear-gradient(90deg,#ff8c42,#ffd700); box-shadow:0 0 8px var(--orange);"></div></div>
+  </div>
+</div>
+
+<!-- 左下 -->
+<div id="backpackHint" class="hud panel">[I] 背包 0.0/25kg</div>
+
+<!-- 右下操作提示 -->
+<div id="controlsHint" class="hud panel">
+  <b>WASD</b> 移动 · <b>Shift</b> 冲刺 · <b>空格</b> 跳跃<br>
+  <b>鼠标</b> 瞄准 · <b>左键</b> 攻击<br>
+  <b>B</b> 建造 · <b>E</b> 采集/工作台<br>
+  <b>R</b> 修理 · <b>K</b> 卸货<br>
+  <b>Q</b> 医疗包 · <b>F</b> 迷晕 · <b>I</b> 背包 · <b>Tab</b> 地图
+</div>
+
+<!-- 全屏地图面板 -->
+<div id="mapPanel">
+  <div id="mapTitle">星 图 · 世 界 地 图</div>
+  <canvas id="mapCanvas" width="700" height="700"></canvas>
+  <div id="mapHint">Tab / ESC 关闭 · 黄点=玩家 · 橙圈=基地 · 紫=晶体 · 橙=铁 · 绿=生物质 · 蓝=能量 · 金=图纸</div>
+</div>
+
+<!-- 目标 -->
+<div id="objective" class="hud panel">目标：点击屏幕开始 · WASD 移动探索</div>
+
+<!-- 十字准星 -->
+<div id="crosshair"></div>
+<div id="interactHint"></div>
+
+<!-- 背包面板 -->
+<div id="backpackPanel" class="panel">
+  <div id="backpackTitle">背 包</div>
+  <div id="invInfo">负重 0.0/25kg</div>
+  <div id="invHint">点击道具行可直接使用 · 超重减速加耗氧</div>
+  <div id="invGrid"></div>
+</div>
+
+<!-- 工作台面板 -->
+<div id="workbenchPanel">
+  <div id="wbTitle">基 地 工 作 台</div>
+  <div id="wbSub">图纸解锁配方 · 材料优先消耗仓库，再扣背包 · 道具制作后放入背包</div>
+  <div id="wbTabs">
+    <div class="wbTab active" data-tab="upgrade">升级</div>
+    <div class="wbTab" data-tab="serum">血清</div>
+    <div class="wbTab" data-tab="tool">工具</div>
+    <div class="wbTab" data-tab="ship">飞船</div>
+  </div>
+  <div id="wbGrid"></div>
+  <div id="wbStorage"></div>
+  <div id="wbCloseHint">按 ESC 关闭 · 游戏已暂停</div>
+</div>
+
+<!-- 建造栏 -->
+<div id="buildBar" class="panel"></div>
+
+<!-- 红屏 -->
+<div id="baseAttackFlash"></div>
+<!-- toast -->
+<div id="toast"></div>
+
+<!-- 结束遮罩 -->
+<div id="endMask">
+  <div id="endTitle"></div>
+  <div id="endMsg"></div>
+  <button id="restartBtn">重新开始</button>
+</div>
+
+<!-- 开始遮罩 -->
+<div id="startMask">
+  <div id="startTitle">星 渊 迷 航</div>
+  <div id="startSub">体素第一人称原型 v5<br>第一人称视角 · 真正的山洞水潭丛林<br>重量制背包 · 分阶段故事线</div>
+  <button id="startBtn">点击进入</button>
+  <div id="startHint">点击后鼠标会被锁定 · ESC 解锁</div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+
+/* ============================================================
+   星渊迷航 — 体素第一人称原型 v5
+   P0 骨架：Three.js 场景 + PointerLock + 体素地形 + 山洞水潭丛林
+   ============================================================ */
+
+// ============ 配置 ============
+const CFG = {
+  WORLD: 96,          // 体素世界边长 96x96
+  WORLD_H: 32,        // 世界高度上限
+  GROUND_BASE: 12,    // 基准地面高度
+  VIEW: 75,           // 相机视野度
+  MOVE_SPD: 5.5,      // 移动速度（单位/秒）
+  SPRINT_MULT: 1.8,   // 冲刺倍率
+  JUMP_V: 7.2,        // 跳跃初速度
+  GRAVITY: 22,
+  EYE_H: 1.6,         // 眼睛离脚高度
+  PLAYER_R: 0.3,      // 玩家碰撞半径
+  REACH: 4.5,         // 交互距离
+  HARVEST_R: 2.6,     // 采集半径
+  BASE_R: 8,          // 基地半径
+  BASE_O2: 120,
+  CARRY_CAPACITY: 25,
+  DAY: 50, NIGHT: 35,
+  NEWBIE_DAYS: 2,
+  BOSS_SCOUT_DAY: 3,
+  BOSS_FIGHT_DAY: 7,
+  BOSS_SCOUT_HITS: 4,
+  WATER_LEVEL: 7,     // 水面高度（y<7 且低于地形 = 水潭）
+  // 资源点配置
+  RES_TOTAL: { iron:8, crystal:6, biomass:10, energy:5, core:3 }, // 每个资源点总量
+  RES_TARGET_COUNT: { iron:35, crystal:20, biomass:40, energy:18, core:6 }, // 全图目标数量
+  BLUEPRINT_TARGET: 7, // 全图特殊图纸点数量
+  HARVEST_DT: 0.3,    // 采集计时更新间隔
+  // 工具进阶：决定可采资源 + 速度倍率 + 每次产出 + 是否进度条模式
+  // 拳头：进度条模式（慢，有沉淀感）；铲子+1；钻头+2；量子+3+范围采集
+  TOOLS: [
+    { id:0, name:'拳头',     can:['biomass','energy','iron','blueprint'],          spd:2.5, yield:1, bar:true,  range:0 },
+    { id:1, name:'铲子',     can:['biomass','energy','iron','blueprint'],          spd:1.0, yield:1, bar:false, range:0 },
+    { id:2, name:'钻头',     can:['biomass','energy','iron','blueprint','crystal','core'], spd:0.6, yield:2, bar:false, range:0 },
+    { id:3, name:'量子收集器', can:['biomass','energy','iron','blueprint','crystal','core'], spd:0.3, yield:3, bar:false, range:5 },
+  ],
+};
+
+// ============ 体素类型 ============
+const V = {
+  AIR:0, GRASS:1, DIRT:2, STONE:3, WATER:4, WOOD:5, LEAVES:6, SAND:7, BEDROCK:8
+};
+const VOXEL_COLOR = {
+  [V.GRASS]:0x4a7c3a, [V.DIRT]:0x6b4423, [V.STONE]:0x6a6a6a,
+  [V.WATER]:0x2a6fff, [V.WOOD]:0x3d2817, [V.LEAVES]:0x2d5a1f,
+  [V.SAND]:0xc2a878, [V.BEDROCK]:0x2a2a2a
+};
+
+// 资源类型定义（重量制，与 2D 版一致）
+const RES = {
+  iron:     { name:'铁',       color:0xff8c42, icon:'Fe', weight:1.0 },
+  crystal:  { name:'晶体',     color:0xb46cff, icon:'Cr', weight:0.4 },
+  biomass:  { name:'生物质',   color:0x7CFC9A, icon:'Bio', weight:0.3 },
+  energy:   { name:'能量',     color:0x5ab0ff, icon:'En', weight:0.15 },
+  core:     { name:'能量核心', color:0xffd700, icon:'Co', weight:2.0 },
+  blueprint:{ name:'图纸碎片', color:0xffd700, icon:'图', weight:0.05 },
+  medkit:   { name:'医疗包',   color:0x7CFC9A, icon:'✚', isItem:true, eff:'恢复50生命', weight:1.5 },
+  stun:     { name:'迷晕药水', color:0xb46cff, icon:'◉', isItem:true, eff:'迷晕周围敌人5秒', weight:0.8 },
+};
+
+// ============ 噪声函数（简易 Perlin）============
+// 用 hash + 平滑插值模拟 2D/3D 噪声
+function hash2(x, y){
+  let h = (x*374761393 + y*668265263) | 0;
+  h = (h ^ (h >> 13)) * 1274126177 | 0;
+  return ((h ^ (h >> 16)) >>> 0) / 4294967295;
+}
+function hash3(x, y, z){
+  let h = (x*374761393 + y*668265263 + z*125364893) | 0;
+  h = (h ^ (h >> 13)) * 1274126177 | 0;
+  return ((h ^ (h >> 16)) >>> 0) / 4294967295;
+}
+function smooth(t){ return t*t*(3-2*t); }
+function lerp(a, b, t){ return a + (b-a)*t; }
+function noise2D(x, y){
+  const x0=Math.floor(x), y0=Math.floor(y);
+  const x1=x0+1, y1=y0+1;
+  const tx=smooth(x-x0), ty=smooth(y-y0);
+  return lerp(lerp(hash2(x0,y0), hash2(x1,y0), tx), lerp(hash2(x0,y1), hash2(x1,y1), tx), ty);
+}
+function noise3D(x, y, z){
+  const x0=Math.floor(x), y0=Math.floor(y), z0=Math.floor(z);
+  const x1=x0+1, y1=y0+1, z1=z0+1;
+  const tx=smooth(x-x0), ty=smooth(y-y0), tz=smooth(z-z0);
+  return lerp(
+    lerp(lerp(hash3(x0,y0,z0), hash3(x1,y0,z0), tx), lerp(hash3(x0,y1,z0), hash3(x1,y1,z0), tx), ty),
+    lerp(lerp(hash3(x0,y0,z1), hash3(x1,y0,z1), tx), lerp(hash3(x0,y1,z1), hash3(x1,y1,z1), tx), ty),
+    tz
+  );
+}
+// 分形噪声（多倍频叠加）
+function fbm2(x, y, oct=4){
+  let v=0, amp=1, freq=1, max=0;
+  for(let i=0;i<oct;i++){ v += noise2D(x*freq, y*freq)*amp; max+=amp; amp*=0.5; freq*=2; }
+  return v/max;
+}
+
+// ============ 全局状态 ============
+const G = {
+  voxels: null,        // Uint8Array 体素数据
+  instances: {},       // 每种方块的 InstancedMesh
+  waterMesh: null,
+  resourceNodes: [],   // 资源点（3D 网格）
+  buildings: [],       // 建筑列表
+  enemies: [],
+  projectiles: [],
+  particles: [],
+  base: { x:0, y:0, z:0, hp:200, hpMax:200 },
+  player: {
+    x:0, y:0, z:0,     // 脚位置
+    vy:0, onGround:false,
+    angle:0,           // 朝向（绕Y轴）
+    hp:100, hpMax:100,
+    inv:{}, storage:{},
+    carryCapacity: CFG.CARRY_CAPACITY,
+    unlockedBp:new Set(),
+    tool:0,            // 当前工具等级（0=拳头 ... 3=量子收集器）
+  },
+  oxygen:{ cur: CFG.BASE_O2, max: CFG.BASE_O2 },
+  time:0,
+  day:1,
+  isDay:true,
+  dayT:0,
+  keys:{},
+  mouseDown:false,
+  buildMode:false,
+  buildSel:'turret',
+  wbTab:'upgrade',
+  harvestTimer:0,
+  harvestTarget:null,
+  repairTimer:0,
+  baseUnderAttack:false,
+  bossScoutDone:false, bossFightDone:false, bossScoutLeft:false,
+  parts:0, partsTarget:5,
+  gameOver:false, win:false,
+  _toastT:0, _unloadHintT:0, _invFullToast:0, _nearFullToast:0,
+};
+
+// ============ 体素世界 ============
+function voxelIdx(x, y, z){
+  if(x<0||x>=CFG.WORLD||z<0||z>=CFG.WORLD||y<0||y>=CFG.WORLD_H) return -1;
+  return (y*CFG.WORLD + z)*CFG.WORLD + x;
+}
+function getVoxel(x, y, z){
+  const i = voxelIdx(x,y,z);
+  return i<0 ? V.AIR : G.voxels[i];
+}
+function setVoxel(x, y, z, t){
+  const i = voxelIdx(x,y,z);
+  if(i>=0) G.voxels[i] = t;
+}
+function isSolid(t){ return t!==V.AIR && t!==V.WATER; }
+
+// 生成体素世界
+function generateWorld(){
+  G.voxels = new Uint8Array(CFG.WORLD * CFG.WORLD * CFG.WORLD_H);
+  const W=CFG.WORLD, H=CFG.WORLD_H;
+  const cx=W/2, cz=W/2;
+  // Pass 1：高度图 → 草/土/石/基岩
+  for(let x=0;x<W;x++){
+    for(let z=0;z<W;z++){
+      // 多倍频噪声生成高度
+      const nx=x/24, nz=z/24;
+      const cont = fbm2(nx, nz, 4);            // 大陆架
+      const mtn = fbm2(nx*2+100, nz*2+100, 3); // 山脉
+      let h = CFG.GROUND_BASE + cont*8 + Math.pow(mtn,2)*14;
+      // 边缘下沉（让世界边界是海）
+      const dx=x-cx, dz=z-cz;
+      const edgeDist = Math.sqrt(dx*dx+dz*dz);
+      const edgeFalloff = Math.max(0, (W*0.55 - edgeDist)/(W*0.15));
+      h = h * Math.min(1, edgeFalloff+0.2);
+      const top = Math.max(1, Math.min(H-3, Math.floor(h)));
+      for(let y=0;y<=top;y++){
+        let t = V.STONE;
+        if(y===0) t = V.BEDROCK;
+        else if(y===top) t = (top < CFG.WATER_LEVEL+1) ? V.SAND : V.GRASS;
+        else if(y >= top-3) t = (top < CFG.WATER_LEVEL+1) ? V.SAND : V.DIRT;
+        setVoxel(x,y,z,t);
+      }
+    }
+  }
+  // Pass 2：水（低于水面且为空气处填水）
+  for(let x=0;x<W;x++){
+    for(let z=0;z<W;z++){
+      for(let y=0;y<=CFG.WATER_LEVEL;y++){
+        if(getVoxel(x,y,z)===V.AIR){
+          setVoxel(x,y,z,V.WATER);
+        }
+      }
+    }
+  }
+  // Pass 3：山洞（3D 噪声挖空石头区）
+  for(let x=2;x<W-2;x++){
+    for(let z=2;z<W-2;z++){
+      for(let y=2;y<H-4;y++){
+        if(getVoxel(x,y,z)===V.STONE){
+          const c = noise3D(x*0.15, y*0.2, z*0.15);
+          // 在中等高度，噪声值落在带内 → 挖空成洞
+          if(y > 3 && y < H-6 && c > 0.62 && c < 0.78){
+            setVoxel(x,y,z,V.AIR);
+          }
+        }
+      }
+    }
+  }
+  // Pass 4：丛林（草地上种树，密度按区域分）
+  for(let x=3;x<W-3;x++){
+    for(let z=3;z<W-3;z++){
+      // 找顶层草地
+      let topY=-1;
+      for(let y=H-1;y>=0;y--){
+        const t=getVoxel(x,y,z);
+        if(t!==V.AIR && t!==V.WATER){ topY=y; break; }
+      }
+      if(topY<0) continue;
+      if(getVoxel(x,topY,z)!==V.GRASS) continue;
+      // 用噪声划分丛林区（某些区域树密）
+      const jungle = fbm2(x*0.08+500, z*0.08+500, 2);
+      const density = jungle > 0.55 ? 0.18 : (jungle > 0.45 ? 0.05 : 0.0);
+      if(hash2(x*7, z*7) < density && topY < H-6){
+        plantTree(x, topY+1, z);
+      }
+    }
+  }
+  console.log('[世界] 体素生成完成', W+'x'+W+'x'+H);
+}
+
+function plantTree(x, baseY, z){
+  const trunkH = 3 + Math.floor(hash2(x*13, z*13)*3);
+  // 树干
+  for(let i=0;i<trunkH;i++){
+    setVoxel(x, baseY+i, z, V.WOOD);
+  }
+  // 树叶（球形）
+  const cy = baseY + trunkH;
+  for(let dx=-2;dx<=2;dx++){
+    for(let dz=-2;dz<=2;dz++){
+      for(let dy=-1;dy<=2;dy++){
+        const d = dx*dx + dz*dz + dy*dy;
+        if(d <= 5){
+          const lx=x+dx, ly=cy+dy, lz=z+dz;
+          if(getVoxel(lx,ly,lz)===V.AIR) setVoxel(lx,ly,lz,V.LEAVES);
+        }
+      }
+    }
+  }
+}
+
+// ============ 体素渲染（InstancedMesh）============
+let scene, camera, renderer, controls;
+const voxelMeshes = {};
+
+function buildVoxelMeshes(){
+  const W=CFG.WORLD, H=CFG.WORLD_H;
+  // 统计每种方块暴露数量
+  const counts = {};
+  Object.keys(VOXEL_COLOR).forEach(k=>counts[k]=0);
+  const exposed = []; // {x,y,z,t}
+  for(let x=0;x<W;x++){
+    for(let z=0;z<W;z++){
+      for(let y=0;y<H;y++){
+        const t = getVoxel(x,y,z);
+        if(t===V.AIR) continue;
+        // 水单独渲染
+        if(t===V.WATER){
+          // 只渲染顶层水（表面）
+          if(getVoxel(x,y+1,z)!==V.WATER){
+            exposed.push({x,y,z,t});
+          }
+          continue;
+        }
+        // 暴露判定：6 面任一邻接 AIR 或 WATER
+        if(getVoxel(x+1,y,z)===V.AIR || getVoxel(x-1,y,z)===V.AIR ||
+           getVoxel(x,y+1,z)===V.AIR || getVoxel(x,y-1,z)===V.AIR ||
+           getVoxel(x,y,z+1)===V.AIR || getVoxel(x,y,z-1)===V.AIR){
+          exposed.push({x,y,z,t});
+          counts[t]++;
+        }
+      }
+    }
+  }
+  // 创建 InstancedMesh
+  const boxGeo = new THREE.BoxGeometry(1,1,1);
+  // 加面纹理感（顶面亮、侧面中、底面暗）
+  Object.entries(VOXEL_COLOR).forEach(([tStr, color])=>{
+    const t = parseInt(tStr);
+    const mat = new THREE.MeshLambertMaterial({ color });
+    const mesh = new THREE.InstancedMesh(boxGeo, mat, Math.max(1, counts[t]||1));
+    mesh.castShadow = false; // 性能考虑，关阴影
+    mesh.receiveShadow = false;
+    voxelMeshes[t] = mesh;
+    scene.add(mesh);
+  });
+  // 水单独半透明
+  const waterMat = new THREE.MeshLambertMaterial({ color:VOXEL_COLOR[V.WATER], transparent:true, opacity:0.7 });
+  voxelMeshes[V.WATER] = new THREE.InstancedMesh(boxGeo, waterMat, 4000);
+  voxelMeshes[V.WATER].renderOrder = 1;
+  scene.add(voxelMeshes[V.WATER]);
+
+  // 填充实例矩阵
+  const buckets = {};
+  Object.keys(VOXEL_COLOR).forEach(k=>buckets[k]=[]);
+  const waterPos = [];
+  for(const e of exposed){
+    if(e.t===V.WATER){ waterPos.push(e); }
+    else if(buckets[e.t]) buckets[e.t].push(e);
+  }
+  const m4 = new THREE.Object3D();
+  Object.entries(buckets).forEach(([tStr, list])=>{
+    const t = parseInt(tStr);
+    const mesh = voxelMeshes[t];
+    list.forEach((e, i)=>{
+      m4.position.set(e.x+0.5, e.y+0.5, e.z+0.5);
+      m4.updateMatrix();
+      mesh.setMatrixAt(i, m4.matrix);
+    });
+    mesh.count = list.length;
+    mesh.instanceMatrix.needsUpdate = true;
+  });
+  // 水
+  const wmesh = voxelMeshes[V.WATER];
+  waterPos.forEach((e, i)=>{
+    m4.position.set(e.x+0.5, e.y+0.5, e.z+0.5);
+    m4.updateMatrix();
+    wmesh.setMatrixAt(i, m4.matrix);
+  });
+  wmesh.count = waterPos.length;
+  wmesh.instanceMatrix.needsUpdate = true;
+  console.log('[渲染] 体素实例化完成，暴露方块数:', exposed.length);
+}
+
+// ============ 玩家碰撞与移动 ============
+function tryMove(dx, dz){
+  // 在脚部和头部两个高度检测碰撞，AABB vs 体素
+  const p = G.player;
+  const r = CFG.PLAYER_R;
+  // 世界边界 clamp（留 1 格 margin 防穿出）
+  const minX = 1, maxX = CFG.WORLD - 1 - r;
+  const minZ = 1, maxZ = CFG.WORLD - 1 - r;
+  // X 轴
+  let nx = p.x + dx;
+  if(!collidesAt(nx, p.y, p.z) && !collidesAt(nx, p.y+1, p.z)){
+    p.x = Math.max(minX, Math.min(maxX, nx));
+  }
+  // Z 轴
+  let nz = p.z + dz;
+  if(!collidesAt(p.x, p.y, nz) && !collidesAt(p.x, p.y+1, nz)){
+    p.z = Math.max(minZ, Math.min(maxZ, nz));
+  }
+}
+// 3D 移动（水里游泳用，含 Y 轴）
+function tryMove3D(dx, dy, dz){
+  const p = G.player;
+  const r = CFG.PLAYER_R;
+  const minX = 1, maxX = CFG.WORLD - 1 - r;
+  const minZ = 1, maxZ = CFG.WORLD - 1 - r;
+  const minY = 1, maxY = CFG.WORLD_H - 2;
+  // X 轴
+  let nx = p.x + dx;
+  if(!collidesAt(nx, p.y, p.z) && !collidesAt(nx, p.y+1, p.z)){
+    p.x = Math.max(minX, Math.min(maxX, nx));
+  }
+  // Z 轴
+  let nz = p.z + dz;
+  if(!collidesAt(p.x, p.y, nz) && !collidesAt(p.x, p.y+1, nz)){
+    p.z = Math.max(minZ, Math.min(maxZ, nz));
+  }
+  // Y 轴：水中自由上下，撞固体（非水）才挡
+  let ny = p.y + dy;
+  ny = Math.max(minY, Math.min(maxY, ny));
+  // 脚部和头部都不能撞固体
+  if(!collidesAt(p.x, ny, p.z) && !collidesAt(p.x, ny+1, p.z)){
+    p.y = ny;
+  }
+}
+function collidesAt(x, y, z){
+  // 检查玩家圆柱（近似为点）周围 4 个角是否撞固体
+  const r = CFG.PLAYER_R;
+  const corners = [
+    [x-r, z-r], [x+r, z-r], [x-r, z+r], [x+r, z+r]
+  ];
+  const fy = Math.floor(y);
+  for(const [cx, cz] of corners){
+    if(isSolid(getVoxel(Math.floor(cx), fy, Math.floor(cz)))) return true;
+  }
+  return false;
+}
+function applyGravity(dt){
+  // 陆地重力（水里分支不调用此函数）
+  const p = G.player;
+  p.vy -= CFG.GRAVITY * dt;
+  p.y += p.vy * dt;
+  if(collidesAt(p.x, p.y, p.z)){
+    p.y = Math.ceil(p.y);
+    p.vy = 0;
+    p.onGround = true;
+  } else {
+    p.onGround = false;
+  }
+  // 防穿底
+  if(p.y < 0){ p.y = 0; p.vy = 0; p.onGround = true; }
+}
+
+// ============ 输入 ============
+function setupInput(){
+  document.addEventListener('keydown', e=>{
+    const k = e.key.toLowerCase();
+    if(G.keys[k]) return; // 防止 keydown 重复触发
+    G.keys[k] = true;
+    if(k==='tab'){ e.preventDefault(); toggleMap(); }
+    if(k==='i'){ toggleBackpack(); }
+    if(k==='e'){ tryInteract(); }
+    if(k==='b'){ toggleBuild(); }
+    if(k==='r'){ tryRepair(); }
+    if(k==='k'){ tryUnloadAtBase(); }
+    if(k==='q'){ useItem('medkit'); }
+    if(k==='f'){ useItem('stun'); }
+    if(k==='escape'){ closeAllPanels(); }
+    if(G.buildMode && k>='1' && k<='4'){
+      const ids=['turret','o2station','solar','lab'];
+      G.buildSel=ids[parseInt(k)-1]; renderBuildBar();
+    }
+    if(k===' ' && G.player.onGround){
+      // 水里不硬跳（由 applyGravity 处理上浮）；陆地才跳
+      const footV = getVoxel(Math.floor(G.player.x), Math.floor(G.player.y), Math.floor(G.player.z));
+      if(footV !== V.WATER){
+        G.player.vy = CFG.JUMP_V;
+        G.player.onGround = false;
+      }
+    }
+  });
+  document.addEventListener('keyup', e=>{
+    const k = e.key.toLowerCase();
+    G.keys[k] = false;
+    // 松开 E 停止采集
+    if(k==='e'){ G.harvestTarget=null; G.harvestTimer=0; }
+  });
+  document.addEventListener('mousedown', e=>{
+    if(controls && controls.isLocked){
+      G.mouseDown = true;
+      if(G.buildMode) tryPlaceBuilding();
+      else tryAttack();
+    }
+  });
+  document.addEventListener('mouseup', e=>{ G.mouseDown=false; });
+}
+
+// ============ 背包（重量制）============
+function invWeight(){
+  let w=0;
+  for(const k in G.player.inv){
+    const r = RES[k];
+    w += (r ? r.weight : 0) * G.player.inv[k];
+  }
+  return w;
+}
+function invCount(){
+  let n=0;
+  for(const k in G.player.inv) n += G.player.inv[k];
+  return n;
+}
+function getLoadRatio(){ return invWeight() / G.player.carryCapacity; }
+function getSpeedWeightMult(){
+  const r = getLoadRatio();
+  if(r<=1) return 1;
+  return Math.max(0.5, 1 - (r-1)*0.5); // 超重线性减速到 0.5x
+}
+function getO2WeightMult(){
+  const r = getLoadRatio();
+  if(r<=1) return 1;
+  return Math.min(1.5, 1 + (r-1)*0.5); // 超重线性加速到 1.5x
+}
+function invAdd(type, count){
+  const w = RES[type] ? RES[type].weight : 0;
+  const curW = invWeight();
+  const remain = G.player.carryCapacity - curW;
+  if(w <= 0){
+    G.player.inv[type] = (G.player.inv[type]||0) + count;
+    return count;
+  }
+  const canAdd = Math.floor(remain / w);
+  if(canAdd <= 0) return 0; // 超重硬拒
+  const actual = Math.min(canAdd, count);
+  G.player.inv[type] = (G.player.inv[type]||0) + actual;
+  return actual;
+}
+function consumeRes(type, count){
+  if((G.player.inv[type]||0) >= count){
+    G.player.inv[type]-=count;
+    if(G.player.inv[type]<=0) delete G.player.inv[type];
+    return true;
+  }
+  // 扣仓库
+  if((G.player.storage[type]||0) >= count){
+    G.player.storage[type]-=count;
+    if(G.player.storage[type]<=0) delete G.player.storage[type];
+    return true;
+  }
+  return false;
+}
+function consumeItem(type){
+  if((G.player.inv[type]||0) > 0){
+    G.player.inv[type]--; if(G.player.inv[type]<=0) delete G.player.inv[type]; return true;
+  }
+  return false;
+}
+function unloadToStorage(){
+  const inv = G.player.inv;
+  for(const k in inv){
+    if(RES[k] && !RES[k].isItem){
+      G.player.storage[k]=(G.player.storage[k]||0)+inv[k]; delete inv[k];
+    }
+  }
+}
+function tryUnloadAtBase(){
+  const dx=G.player.x-G.base.x, dz=G.player.z-G.base.z;
+  const dy=G.player.y-G.base.y;
+  const dist2 = dx*dx+dz*dz+dy*dy;
+  const inBase = dist2 < CFG.BASE_R*CFG.BASE_R;
+  console.log('[卸货] 玩家(',G.player.x.toFixed(1),G.player.y.toFixed(1),G.player.z.toFixed(1),
+    ') 基地(',G.base.x.toFixed(1),G.base.y.toFixed(1),G.base.z.toFixed(1),
+    ') 距离²=',dist2.toFixed(1),'阈值=',CFG.BASE_R*CFG.BASE_R,'在基地=',inBase,'背包重=',invWeight());
+  if(!inBase){ showToast('需要进入基地范围才能卸货（橙色光柱处）'); return; }
+  if(invWeight()<=0){ showToast('背包没有可卸的资源'); return; }
+  unloadToStorage();
+  renderInventory();
+  showToast('已把资源卸到基地仓库');
+}
+
+// ============ toast ============
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  G._toastT = G.time;
+}
+function updateToast(){
+  const el = document.getElementById('toast');
+  if(G.time - G._toastT > 2.2) el.classList.remove('show');
+}
+
+// ============ 资源点系统 ============
+// 资源点数据：{x,y,z,type,total,harvested,mesh,special}
+// 找到 顶层方块高度（非空气/水的最高 y）
+function topVoxelY(x, z){
+  for(let y=CFG.WORLD_H-1; y>=0; y--){
+    const t = getVoxel(x, y, z);
+    if(t!==V.AIR && t!==V.WATER) return y;
+  }
+  return -1;
+}
+// 生成资源点（草地/沙地表面 + 山洞内核心）
+function generateResources(){
+  const W=CFG.WORLD, H=CFG.WORLD_H;
+  const counts = { iron:0, crystal:0, biomass:0, energy:0, core:0 };
+  // Pass 1：地表资源点（按高度+区域噪声分配类型）
+  for(let x=4;x<W-4;x++){
+    for(let z=4;z<W-4;z++){
+      const topY = topVoxelY(x, z);
+      if(topY < 0) continue;
+      const topT = getVoxel(x, topY, z);
+      if(topT!==V.GRASS && topT!==V.SAND) continue;
+      // 距基地太近不放资源点（基地周围 6 格清空）
+      const dx=x-G.base.x, dz=z-G.base.z;
+      if(dx*dx+dz*dz < 36) continue;
+      // 区域噪声决定是否放 + 类型
+      const r = hash2(x*3.7, z*5.3);
+      // 不同类型不同密度
+      let type=null;
+      if(topY >= 18 && r < 0.18 && counts.crystal < CFG.RES_TARGET_COUNT.crystal) type='crystal';
+      else if(topY >= 14 && topY < 18 && r < 0.22 && counts.iron < CFG.RES_TARGET_COUNT.iron) type='iron';
+      else if(topY >= 9 && topY < 14 && topT===V.GRASS && r < 0.28 && counts.biomass < CFG.RES_TARGET_COUNT.biomass){
+        // 丛林区生物质更密
+        const jungle = fbm2(x*0.08+500, z*0.08+500, 2);
+        if(jungle > 0.5 || r < 0.1) type='biomass';
+      }
+      else if(topY >= 6 && topY < 10 && topT===V.SAND && r < 0.20 && counts.energy < CFG.RES_TARGET_COUNT.energy) type='energy';
+      if(!type) continue;
+      // 不能太靠近同类资源点
+      let tooClose=false;
+      for(const n of G.resourceNodes){
+        if(n.type!==type) continue;
+        const ddx=n.x-(x+0.5), ddz=n.z-(z+0.5);
+        if(ddx*ddx+ddz*ddz < 9){ tooClose=true; break; }
+      }
+      if(tooClose) continue;
+      G.resourceNodes.push({
+        x:x+0.5, y:topY+1.2, z:z+0.5, type,
+        total: CFG.RES_TOTAL[type], harvested:0,
+        special:false, mesh:null
+      });
+      counts[type]++;
+    }
+  }
+  // Pass 2：能量核心（山洞深处空气旁，稀有）
+  let corePlaced=0;
+  for(let x=4;x<W-4 && corePlaced<CFG.RES_TARGET_COUNT.core;x++){
+    for(let z=4;z<W-2 && corePlaced<CFG.RES_TARGET_COUNT.core;z++){
+      for(let y=3;y<H-6 && corePlaced<CFG.RES_TARGET_COUNT.core;y++){
+        if(getVoxel(x,y,z)!==V.AIR) continue;
+        // 必须被石头包围（山洞内）
+        let stoneAround=0;
+        for(const [dx,dy,dz] of [[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]]){
+          if(getVoxel(x+dx,y+dy,z+dz)===V.STONE) stoneAround++;
+        }
+        if(stoneAround < 4) continue;
+        if(hash2(x*11+900, z*11+900) > 0.08) continue;
+        G.resourceNodes.push({
+          x:x+0.5, y:y+0.5, z:z+0.5, type:'core',
+          total: CFG.RES_TOTAL.core, harvested:0,
+          special:false, mesh:null
+        });
+        corePlaced++;
+      }
+    }
+  }
+  // Pass 3：特殊图纸点（山崖/低洼/山顶平台，全图 7 个）
+  placeSpecialBlueprints();
+  console.log('[资源] 生成资源点:', counts, '核心:', corePlaced, '图纸:', G.resourceNodes.filter(n=>n.type==='blueprint').length);
+}
+
+// ============ 怪物生成（固定区域，有活动范围，不默认攻基地）============
+const ENEMY_TYPES = {
+  bug:   { name:'沙地虫', hp:50,  speed:2.5, radius:18, color:0x8a4a2a, size:0.5, dmg:8,  drop:'biomass', dropAmt:2, attackRange:1.5 },
+  elite: { name:'精英虫', hp:120, speed:3.0, radius:20, color:0xb46cff, size:0.7, dmg:15, drop:'crystal', dropAmt:1, attackRange:1.8 },
+  guard: { name:'守卫兽', hp:200, speed:2.0, radius:8,  color:0xff4d6d, size:0.9, dmg:20, drop:'iron', dropAmt:3, attackRange:2.0 }
+};
+function generateEnemies(){
+  G.enemies = [];
+  const W = CFG.WORLD;
+  // 散布 15 个普通虫：沙地/平地，避开基地 20 格
+  let placed = 0, tries = 0;
+  while(placed < 12 && tries < 500){
+    tries++;
+    const x = 8 + Math.floor(Math.random() * (W-16));
+    const z = 8 + Math.floor(Math.random() * (W-16));
+    const dx=x-G.base.x, dz=z-G.base.z;
+    if(dx*dx+dz*dz < 400) continue; // 离基地 >20
+    const ty = topVoxelY(x, z);
+    if(ty < 6 || ty > 16) continue; // 只在平地/沙地
+    const top = getVoxel(x, ty, z);
+    if(top !== V.GRASS && top !== V.SAND) continue;
+    G.enemies.push(makeEnemy('bug', x+0.5, ty+1, z+0.5));
+    placed++;
+  }
+  // 6 个精英虫：山脚/丛林
+  placed = 0; tries = 0;
+  while(placed < 6 && tries < 500){
+    tries++;
+    const x = 8 + Math.floor(Math.random() * (W-16));
+    const z = 8 + Math.floor(Math.random() * (W-16));
+    const dx=x-G.base.x, dz=z-G.base.z;
+    if(dx*dx+dz*dz < 600) continue; // 离基地 >24
+    const ty = topVoxelY(x, z);
+    if(ty < 10 || ty > 18) continue;
+    G.enemies.push(makeEnemy('elite', x+0.5, ty+1, z+0.5));
+    placed++;
+  }
+  // 3 个守卫兽：守在特殊图纸点旁
+  const bpNodes = G.resourceNodes.filter(n => n.type === 'blueprint');
+  for(let i=0; i<Math.min(3, bpNodes.length); i++){
+    const n = bpNodes[i];
+    G.enemies.push(makeEnemy('guard', n.x, n.y, n.z));
+  }
+  console.log('[怪物] 生成:', G.enemies.length, '只');
+}
+function makeEnemy(type, x, y, z){
+  const def = ENEMY_TYPES[type];
+  const geo = new THREE.BoxGeometry(def.size, def.size, def.size);
+  const mat = new THREE.MeshBasicMaterial({ color: def.color });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(x, y + def.size/2, z);
+  scene.add(mesh);
+  return {
+    type, x, y, z, hx:x, hz:z, // hx,hz=出生点（活动范围圆心）
+    hp: def.hp, speed: def.speed, radius: def.radius,
+    dmg: def.dmg, attackRange: def.attackRange,
+    drop: def.drop, dropAmt: def.dropAmt,
+    mesh, dead:false, stun:0, lastAttack:0
+  };
+}
+function updateEnemies(dt){
+  const p = G.player;
+  const t = G.time;
+  for(const e of G.enemies){
+    if(e.dead) continue;
+    if(e.stun > 0){ e.stun -= dt; continue; }
+    const dx = p.x - e.x, dz = p.z - e.z;
+    const distP = Math.hypot(dx, dz);
+    // 活动范围限制：超过 radius 回出生点
+    const dxh = e.hx - e.x, dzh = e.hz - e.z;
+    const distH = Math.hypot(dxh, dzh);
+    let targetX, targetZ;
+    if(distH > e.radius){
+      // 超出活动范围，回出生点
+      targetX = e.hx; targetZ = e.hz;
+    } else if(distP < 8 && distP > e.attackRange){
+      // 玩家靠近 8 格内，追玩家（但不离开活动范围）
+      targetX = p.x; targetZ = p.z;
+    } else if(distP <= e.attackRange){
+      // 攻击玩家
+      targetX = e.x; targetZ = e.z;
+      if(t - e.lastAttack > 1.0){
+        e.lastAttack = t;
+        G.health.cur -= e.dmg;
+        if(G.health.cur <= 0){ die('被怪物击杀'); return; }
+        showToast(`${ENEMY_TYPES[e.type].name} 攻击你 -${e.dmg}`);
+      }
+    } else {
+      // 闲逛：在活动范围内随机走
+      targetX = e.hx + (Math.random()-0.5) * e.radius * 0.5;
+      targetZ = e.hz + (Math.random()-0.5) * e.radius * 0.5;
+    }
+    const tdx = targetX - e.x, tdz = targetZ - e.z;
+    const tlen = Math.hypot(tdx, tdz);
+    if(tlen > 0.05){
+      const mv = e.speed * dt;
+      e.x += (tdx/tlen) * Math.min(mv, tlen);
+      e.z += (tdz/tlen) * Math.min(mv, tlen);
+    }
+    // 贴地：脚踩地表
+    const ty = topVoxelY(Math.floor(e.x), Math.floor(e.z));
+    if(ty >= 0) e.y = ty + 1;
+    if(e.mesh){
+      e.mesh.position.set(e.x, e.y + ENEMY_TYPES[e.type].size/2, e.z);
+      e.mesh.rotation.y += dt * 2;
+    }
+  }
+}
+
+// 特殊图纸点：只在山崖边/低洼地/山顶平台
+function placeSpecialBlueprints(){
+  const W=CFG.WORLD, H=CFG.WORLD_H;
+  const TARGET = CFG.BLUEPRINT_TARGET;
+  const placed = [];
+  let tries=0;
+  while(placed.length < TARGET && tries < 3000){
+    tries++;
+    const x = 6 + Math.floor(hash2(tries*1.1, 777)*(W-12));
+    const z = 6 + Math.floor(hash2(tries*2.3, 888)*(W-12));
+    // 距基地远
+    const dx=x-G.base.x, dz=z-G.base.z;
+    if(dx*dx+dz*dz < 400) continue;
+    // 距已放图纸点远（60+ 单位）
+    let tooClose=false;
+    for(const p of placed){
+      const ddx=x-p.x, ddz=z-p.z;
+      if(ddx*ddx+ddz*ddz < 3600){ tooClose=true; break; } // 60²=3600
+    }
+    if(tooClose) continue;
+    const topY = topVoxelY(x, z);
+    if(topY < 0) continue;
+    const h = topY;
+    // 检测山崖：与周围 3 格高度差大
+    const cliff = Math.abs(topVoxelY(x+3,z)-h) > 3 ||
+                  Math.abs(topVoxelY(x-3,z)-h) > 3 ||
+                  Math.abs(topVoxelY(x,z+3)-h) > 3 ||
+                  Math.abs(topVoxelY(x,z-3)-h) > 3;
+    // 低洼地（水潭/谷地）
+    const lowland = h <= CFG.WATER_LEVEL + 1;
+    // 山顶平台（高且平）
+    const plateau = h >= 18 && Math.abs(topVoxelY(x+2,z)-h) <= 1 && Math.abs(topVoxelY(x-2,z)-h) <= 1;
+    if(!(cliff || lowland || plateau)) continue;
+    let terrain='陡坡';
+    if(lowland) terrain='水潭';
+    else if(plateau) terrain='山顶';
+    G.resourceNodes.push({
+      x:x+0.5, y:h+1.5, z:z+0.5, type:'blueprint',
+      total:1, harvested:0, special:true, mesh:null, terrain
+    });
+    placed.push({x, z});
+  }
+  console.log('[图纸] 特殊图纸点放置 %d/%d', placed.length, TARGET);
+}
+
+// 渲染资源点（每个一个小发光体）
+const resourceGroup = new THREE.Group();
+function renderResourceNodes(){
+  // 清空旧
+  while(resourceGroup.children.length) resourceGroup.remove(resourceGroup.children[0]);
+  for(const n of G.resourceNodes){
+    if(n.harvested >= n.total) continue;
+    let geo, mat;
+    if(n.special){
+      // 特殊图纸：金色八面体 + 发光
+      geo = new THREE.OctahedronGeometry(0.45);
+      mat = new THREE.MeshBasicMaterial({ color:0xffd700 });
+    } else {
+      // 普通资源：彩色八面体
+      geo = new THREE.OctahedronGeometry(0.35);
+      mat = new THREE.MeshBasicMaterial({ color:RES[n.type].color });
+    }
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(n.x, n.y, n.z);
+    // 加光晕（小球半透明）
+    const haloGeo = new THREE.SphereGeometry(n.special?0.8:0.6, 8, 6);
+    const haloMat = new THREE.MeshBasicMaterial({
+      color: n.special ? 0xffd700 : RES[n.type].color,
+      transparent:true, opacity:0.25
+    });
+    const halo = new THREE.Mesh(haloGeo, haloMat);
+    mesh.add(halo);
+    n.mesh = mesh;
+    resourceGroup.add(mesh);
+  }
+  scene.add(resourceGroup);
+}
+
+// 找前方资源点（射线 + 距离）
+function findHarvestTarget(){
+  const p = G.player;
+  let best=null, bestD=CFG.REACH*CFG.REACH;
+  for(const n of G.resourceNodes){
+    if(n.harvested >= n.total) continue;
+    const dx=n.x-p.x, dy=n.y-(p.y+CFG.EYE_H), dz=n.z-p.z;
+    const d = dx*dx+dy*dy+dz*dz;
+    if(d < bestD){ bestD=d; best=n; }
+  }
+  return best;
+}
+// 工具能否采集该资源
+function canHarvest(type){
+  return CFG.TOOLS[G.player.tool].can.includes(type);
+}
+// 采集进度
+function updateHarvest(dt){
+  // 基地内不采集（避免与工作台冲突）
+  const p=G.player;
+  const bdx=p.x-G.base.x, bdz=p.z-G.base.z;
+  const inBase = bdx*bdx+bdz*bdz < CFG.BASE_R*CFG.BASE_R;
+  if(inBase){ G.harvestTarget=null; G.harvestTimer=0; return; }
+  // 没有目标时，按住 E 自动找前方资源点
+  if(!G.harvestTarget){
+    if(G.keys['e']){
+      const t = findHarvestTarget();
+      if(t){
+        if(canHarvest(t.type)){
+          G.harvestTarget = t;
+          G.harvestTimer = 0;
+        }
+      }
+    }
+    return;
+  }
+  const n = G.harvestTarget;
+  // 检查目标是否还有效
+  if(n.harvested >= n.total){
+    G.harvestTarget=null; G.harvestTimer=0; return;
+  }
+  // 检查距离
+  const dx=n.x-p.x, dy=n.y-(p.y+CFG.EYE_H), dz=n.z-p.z;
+  if(dx*dx+dy*dy+dz*dz > CFG.REACH*CFG.REACH){
+    G.harvestTarget=null; G.harvestTimer=0; return;
+  }
+  // 检查工具
+  if(!canHarvest(n.type)){
+    showToast('当前工具无法采集 '+RES[n.type].name+'（需升级工具）');
+    G.harvestTarget=null; G.harvestTimer=0; return;
+  }
+  G.harvestTimer += dt;
+  const tool = CFG.TOOLS[G.player.tool];
+  const need = tool.spd;
+  if(G.harvestTimer >= need){
+    G.harvestTimer = 0;
+    // 每次产出 yield 个（钻头+2，量子+3）
+    const want = Math.min(tool.yield, n.total - n.harvested);
+    let actuallyAdded = 0;
+    for(let i=0;i<want;i++){
+      const added = invAdd(n.type, 1);
+      if(added > 0) actuallyAdded++;
+      else break; // 背包满立即停
+    }
+    if(actuallyAdded > 0){
+      n.harvested += actuallyAdded;
+      showToast('+'+actuallyAdded+' '+RES[n.type].name + (n.special?(' ['+n.terrain+']'):''));
+      renderInventory();
+      // 量子收集器范围采集：主资源点耗尽后自动吸附近 5 格内同类资源点
+      if(tool.range > 0 && n.harvested >= n.total){
+        autoCollectNearby(n, tool.range);
+      }
+      if(n.harvested >= n.total){
+        // 资源点耗尽，移除
+        if(n.mesh) resourceGroup.remove(n.mesh);
+        G.harvestTarget = null;
+        // 特殊图纸点采集后解锁图纸
+        if(n.type === 'blueprint'){
+          // 随机解锁一个未解锁图纸
+          const allBp = ['turret','backpack1','backpack2','backpack3','drill','quantum','o2tank1','o2tank2','signal'];
+          const locked = allBp.filter(b=>!G.player.unlockedBp.has(b));
+          if(locked.length){
+            const get = locked[Math.floor(Math.random()*locked.length)];
+            G.player.unlockedBp.add(get);
+            showToast('获得图纸：'+get+' · 可在工作台制作');
+          } else {
+            showToast('图纸已全部解锁');
+          }
+        }
+        // 背包快满提示
+        if(getLoadRatio()>0.9 && (!G._nearFullToast || G.time-G._nearFullToast>5)){
+          showToast('背包快满了，回基地按 K 卸货到仓库'); G._nearFullToast=G.time;
+        }
+      }
+    } else {
+      // 背包满
+      if(!G._invFullToast || G.time-G._invFullToast>3){
+        showToast('背包已满！回基地按 K 卸货到仓库'); G._invFullToast=G.time;
+      }
+      G.harvestTarget=null;
+    }
+  }
+}
+// 量子收集器范围采集：吸附近同类资源点
+function autoCollectNearby(src, range){
+  const r2 = range*range;
+  for(const n of G.resourceNodes){
+    if(n === src) continue;
+    if(n.harvested >= n.total) continue;
+    if(n.type !== src.type) continue;
+    const dx=n.x-src.x, dy=n.y-src.y, dz=n.z-src.z;
+    if(dx*dx+dy*dy+dz*dz > r2) continue;
+    // 吸 1 个
+    const added = invAdd(n.type, 1);
+    if(added > 0){
+      n.harvested++;
+      if(n.harvested >= n.total && n.mesh) resourceGroup.remove(n.mesh);
+    }
+  }
+}
+
+// ============ 交互 ============
+function tryInteract(){
+  // 基地内优先开工作台（回基地就是要合成/卸货）
+  const p = G.player;
+  const dx=p.x-G.base.x, dz=p.z-G.base.z;
+  if(dx*dx+dz*dz < CFG.BASE_R*CFG.BASE_R){
+    toggleWorkbench();
+    return;
+  }
+  // 否则：前方资源点 → 开始采集（持续按 E 由 updateHarvest 维持）
+  const target = findHarvestTarget();
+  if(target){
+    if(!canHarvest(target.type)){
+      showToast('当前工具（'+CFG.TOOLS[G.player.tool].name+'）无法采集 '+RES[target.type].name);
+      return;
+    }
+    G.harvestTarget = target;
+    G.harvestTimer = 0;
+    return;
+  }
+  showToast('附近没有可交互对象');
+}
+
+// ============ 背包 UI ============
+function toggleBackpack(){
+  const el = document.getElementById('backpackPanel');
+  el.classList.toggle('open');
+  if(el.classList.contains('open')) renderInventory();
+}
+function renderInventory(){
+  const grid = document.getElementById('invGrid');
+  const info = document.getElementById('invInfo');
+  const inv = G.player.inv;
+  const w = invWeight();
+  info.textContent = `负重 ${w.toFixed(1)}/${G.player.carryCapacity}kg`;
+  info.classList.toggle('over', w > G.player.carryCapacity);
+  grid.innerHTML = '';
+  const keys = Object.keys(inv);
+  if(keys.length===0){
+    grid.innerHTML = '<div class="invEmpty">背包空空如也</div>';
+    return;
+  }
+  keys.sort((a,b)=>{
+    const ra=RES[a], rb=RES[b];
+    if(ra.isItem && !rb.isItem) return -1;
+    if(!ra.isItem && rb.isItem) return 1;
+    return 0;
+  });
+  for(const k of keys){
+    const r = RES[k];
+    const cnt = inv[k];
+    const wt = (r.weight * cnt).toFixed(1);
+    const row = document.createElement('div');
+    row.className = 'invRow' + (r.isItem ? ' item' : '');
+    row.innerHTML = `<span class="icon" style="color:#${r.color.toString(16).padStart(6,'0')}">${r.icon}</span>
+      <span class="name">${r.name}${r.isItem?' <small style="color:#888">('+r.eff+')</small>':''}</span>
+      <span class="cnt">×${cnt}</span>
+      <span class="wt">${wt}kg</span>`;
+    if(r.isItem){
+      row.onclick = ()=>{ useItem(k); };
+    }
+    grid.appendChild(row);
+  }
+}
+
+// ============ 工作台配方 ============
+// 每个配方：{id, name, tab, bp(需图纸), cost, eff(描述), apply(制作后效果)}
+const RECIPES = [
+  // 升级 tab
+  { id:'backpack1', tab:'upgrade', name:'背包扩容 I (25→35kg)', bp:'backpack1',
+    cost:{iron:5, biomass:3}, eff:'负重 +10kg',
+    apply:()=>{ G.player.carryCapacity = 35; } },
+  { id:'backpack2', tab:'upgrade', name:'背包扩容 II (35→50kg)', bp:'backpack2',
+    cost:{iron:10, crystal:4}, eff:'负重 +15kg',
+    apply:()=>{ G.player.carryCapacity = 50; } },
+  { id:'backpack3', tab:'upgrade', name:'背包扩容 III (50→75kg)', bp:'backpack3',
+    cost:{iron:15, crystal:8, core:1}, eff:'负重 +25kg',
+    apply:()=>{ G.player.carryCapacity = 75; } },
+  { id:'o2tank1', tab:'upgrade', name:'氧气罐 I (120→160秒)', bp:'o2tank1',
+    cost:{iron:4, biomass:2}, eff:'氧气上限 +40',
+    apply:()=>{ G.oxygen.max = 160; G.oxygen.cur = 160; } },
+  { id:'o2tank2', tab:'upgrade', name:'氧气罐 II (160→220秒)', bp:'o2tank2',
+    cost:{iron:8, crystal:4, core:1}, eff:'氧气上限 +60',
+    apply:()=>{ G.oxygen.max = 220; G.oxygen.cur = 220; } },
+  // 血清 tab
+  { id:'medkit', tab:'serum', name:'医疗包', cost:{biomass:3, iron:1},
+    eff:'恢复 50 生命 · 占 1.5kg',
+    apply:()=>{ invAdd('medkit', 1); } },
+  { id:'stun', tab:'serum', name:'迷晕药水', cost:{biomass:2, crystal:1},
+    eff:'迷晕周围敌人 5 秒 · 占 0.8kg',
+    apply:()=>{ invAdd('stun', 1); } },
+  // 工具 tab
+  { id:'shovel', tab:'tool', name:'铲子', bp:null,
+    cost:{iron:3, biomass:1}, eff:'可采生物质/能量/铁（比拳头快）',
+    apply:()=>{ G.player.tool = Math.max(G.player.tool, 1); } },
+  { id:'drill', tab:'tool', name:'钻头', bp:'drill',
+    cost:{iron:6, crystal:3}, eff:'可采+晶体/核心',
+    apply:()=>{ G.player.tool = Math.max(G.player.tool, 2); } },
+  { id:'quantum', tab:'tool', name:'量子收集器', bp:'quantum',
+    cost:{iron:8, crystal:5, core:2}, eff:'可采+图纸 · 速度更快',
+    apply:()=>{ G.player.tool = Math.max(G.player.tool, 3); } },
+  // 飞船 tab
+  { id:'ship', tab:'ship', name:'飞船修复 (胜利)', cost:{iron:30, crystal:15, core:3, energy:10},
+    eff:'集齐材料可修复飞船逃离',
+    apply:()=>{ winGame(); } },
+];
+function getRecipesByTab(tab){
+  return RECIPES.filter(r => r.tab === tab);
+}
+// 检查材料够不够（背包+仓库）
+function hasMaterials(cost){
+  for(const k in cost){
+    const need = cost[k];
+    const have = (G.player.inv[k]||0) + (G.player.storage[k]||0);
+    if(have < need) return false;
+  }
+  return true;
+}
+// 扣材料（先扣仓库，再扣背包）
+function spendMaterials(cost){
+  for(const k in cost){
+    let need = cost[k];
+    // 先扣仓库
+    const store = G.player.storage[k]||0;
+    if(store > 0){
+      const take = Math.min(store, need);
+      G.player.storage[k] -= take;
+      if(G.player.storage[k] <= 0) delete G.player.storage[k];
+      need -= take;
+    }
+    // 再扣背包
+    if(need > 0){
+      G.player.inv[k] = (G.player.inv[k]||0) - need;
+      if(G.player.inv[k] <= 0) delete G.player.inv[k];
+    }
+  }
+}
+// ============ 工作台 UI ============
+function toggleWorkbench(){
+  const el = document.getElementById('workbenchPanel');
+  if(!el.classList.contains('open')){
+    el.classList.add('open');
+    // 打开工作台：设标志再 unlock，避免弹出开始遮罩
+    G._panelUnlock = true;
+    if(controls && controls.isLocked) controls.unlock();
+    renderWorkbench();
+  } else {
+    el.classList.remove('open');
+    // 关闭工作台：清标志并重新锁定鼠标
+    G._panelUnlock = false;
+    if(controls && !controls.isLocked && !G.gameOver) controls.lock();
+  }
+}
+function renderWorkbench(){
+  const grid = document.getElementById('wbGrid');
+  const storage = document.getElementById('wbStorage');
+  grid.innerHTML = '';
+  // 配方卡片
+  const list = getRecipesByTab(G.wbTab);
+  for(const r of list){
+    const hasBp = !r.bp || G.player.unlockedBp.has(r.bp);
+    const made = G.player.crafted && G.player.crafted.has(r.id); // 工具/升级类一次性
+    const canAfford = hasMaterials(r.cost);
+    const card = document.createElement('div');
+    card.className = 'recipe' + (hasBp ? (made?'':' locked') : ' locked');
+    let matHtml = '';
+    for(const k in r.cost){
+      const need = r.cost[k];
+      const have = (G.player.inv[k]||0) + (G.player.storage[k]||0);
+      const ok = have >= need;
+      matHtml += `<div class="${ok?'ok':'no'}">${RES[k].name} ${have}/${need}</div>`;
+    }
+    let actionHtml;
+    if(!hasBp){
+      actionHtml = `<div class="lockNote">需图纸：${r.bp}</div>`;
+    } else if(made){
+      actionHtml = `<div class="lockNote" style="color:var(--green)">已制作</div>`;
+    } else {
+      actionHtml = `<button ${canAfford?'':'disabled'}>制作</button>`;
+    }
+    card.innerHTML = `
+      <h4>${hasBp ? (made? r.name+' ✓' : r.name) : '???'}</h4>
+      <div class="eff">${hasBp ? r.eff : '需要图纸'}</div>
+      <div class="mat">${matHtml}</div>
+      ${actionHtml}
+    `;
+    if(hasBp && !made){
+      const btn = card.querySelector('button');
+      if(btn && !btn.disabled){
+        btn.onclick = ()=>{ craftRecipe(r); };
+      }
+    }
+    grid.appendChild(card);
+  }
+  // 仓库显示
+  const storeKeys = Object.keys(G.player.storage);
+  if(storeKeys.length === 0){
+    storage.innerHTML = '<div style="text-align:center;color:rgba(0,255,204,0.4)">仓库空空如也</div>';
+  } else {
+    let html = '<div style="margin-bottom:4px;color:var(--gold)">仓库：</div>';
+    for(const k of storeKeys){
+      const r = RES[k];
+      const cnt = G.player.storage[k];
+      html += `<span style="margin-right:14px">${r.icon} ${r.name}×${cnt}</span>`;
+    }
+    storage.innerHTML = html;
+  }
+}
+function craftRecipe(r){
+  if(!hasMaterials(r.cost)){ showToast('材料不足'); return; }
+  spendMaterials(r.cost);
+  r.apply();
+  showToast('制作完成：'+r.name);
+  // 工具/升级类配方一次性（血清/飞船可重复）
+  if(r.tab === 'tool' || r.tab === 'upgrade'){
+    if(!G.player.crafted) G.player.crafted = new Set();
+    G.player.crafted.add(r.id);
+  }
+  renderWorkbench();
+  renderInventory();
+}
+function switchWbTab(tab){
+  G.wbTab = tab;
+  document.querySelectorAll('.wbTab').forEach(el=>{
+    el.classList.toggle('active', el.dataset.tab === tab);
+  });
+  renderWorkbench();
+}
+function closeAllPanels(){
+  const wbOpen = document.getElementById('workbenchPanel').classList.contains('open');
+  const mapOpen = document.getElementById('mapPanel').classList.contains('open');
+  document.getElementById('workbenchPanel').classList.remove('open');
+  document.getElementById('backpackPanel').classList.remove('open');
+  document.getElementById('mapPanel').classList.remove('open');
+  document.getElementById('buildBar').classList.remove('open');
+  G.buildMode = false;
+  // 关闭工作台/地图后重新锁定鼠标
+  if(wbOpen || mapOpen){
+    G._panelUnlock = false;
+    if(controls && !controls.isLocked && !G.gameOver) controls.lock();
+  }
+}
+
+// ============ 全屏地图 ============
+function toggleMap(){
+  const el = document.getElementById('mapPanel');
+  const willOpen = !el.classList.contains('open');
+  el.classList.toggle('open');
+  if(willOpen){
+    G._panelUnlock = true;
+    if(controls && controls.isLocked) controls.unlock();
+    drawMap();
+  } else {
+    G._panelUnlock = false;
+    if(controls && !controls.isLocked && !G.gameOver) controls.lock();
+  }
+}
+function drawMap(){
+  const cv = document.getElementById('mapCanvas');
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  const sx = W / CFG.WORLD, sz = H / CFG.WORLD;
+  // 背景
+  ctx.fillStyle = '#04070f';
+  ctx.fillRect(0, 0, W, H);
+  // 绘制地形俯视图（取地表真实方块，每 2 格取一点）
+  for(let z=0; z<CFG.WORLD; z+=2){
+    for(let x=0; x<CFG.WORLD; x+=2){
+      const ty = topVoxelY(x, z);
+      let color = '#04070f';
+      if(ty >= 0){
+        const v = getVoxel(x, ty, z);
+        // 上方有水则是水域
+        const above = getVoxel(x, ty+1, z);
+        if(above === V.WATER){
+          color = '#0a3a6a';
+        } else if(v === V.GRASS){
+          color = ty >= 16 ? '#6a5a3a' : (ty >= 10 ? '#2a5a2a' : '#2a4a2a');
+        } else if(v === V.STONE){
+          color = ty >= 16 ? '#5a5a5a' : '#3a3a3a';
+        } else if(v === V.SAND){
+          color = '#6a5a2a';
+        } else if(v === V.WATER){
+          color = '#0a3a6a';
+        }
+      }
+      ctx.fillStyle = color;
+      ctx.fillRect(x*sx, z*sz, 2*sx+1, 2*sz+1);
+    }
+  }
+  // 资源点
+  for(const n of G.resourceNodes){
+    if(!n || n.harvested) continue;
+    ctx.fillStyle = RES[n.type] ? RES[n.type].color : '#fff';
+    ctx.beginPath();
+    ctx.arc(n.x*sx, n.z*sz, n.special ? 5 : 3, 0, Math.PI*2);
+    ctx.fill();
+    if(n.special){
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+  }
+  // 怪物（红点=普通，紫=精英，粉=守卫）
+  for(const e of G.enemies){
+    if(e.dead) continue;
+    const def = ENEMY_TYPES[e.type];
+    ctx.fillStyle = '#' + def.color.toString(16).padStart(6,'0');
+    ctx.beginPath();
+    ctx.arc(e.x*sx, e.z*sz, e.type==='guard'?5:3, 0, Math.PI*2);
+    ctx.fill();
+  }
+  // 基地
+  ctx.strokeStyle = '#ff8c42';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(G.base.x*sx, G.base.z*sz, CFG.BASE_R*sx, 0, Math.PI*2);
+  ctx.stroke();
+  ctx.fillStyle = '#ff8c42';
+  ctx.font = 'bold 12px Consolas';
+  ctx.fillText('基地', G.base.x*sx - 12, G.base.z*sz + 4);
+  // 玩家
+  const p = G.player;
+  ctx.fillStyle = '#ffd700';
+  ctx.beginPath();
+  ctx.arc(p.x*sx, p.z*sz, 5, 0, Math.PI*2);
+  ctx.fill();
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  // 玩家朝向（视线方向）
+  const fwd3 = new THREE.Vector3(0,0,-1).applyQuaternion(camera.quaternion);
+  ctx.strokeStyle = '#ffd700';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(p.x*sx, p.z*sz);
+  ctx.lineTo((p.x + fwd3.x*6)*sx, (p.z + fwd3.z*6)*sz);
+  ctx.stroke();
+}
+
+// ============ 建造 ============
+// 建筑定义：{id, name, cost, bp, range, color, desc}
+const BUILDINGS = {
+  turret:    { name:'炮台',     cost:{iron:8, crystal:3}, bp:'turret',  range:12, color:0xff4d6d, hp:80,  desc:'自动攻击范围内敌人' },
+  o2station: { name:'氧站',     cost:{iron:5, biomass:4}, bp:null,      range:8,  color:0x00ffcc, hp:60,  desc:'范围内回氧', o2Regen:5 },
+  solar:     { name:'太阳能',   cost:{iron:6, crystal:2}, bp:null,      range:0,  color:0xffd700, hp:40,  desc:'白天产能', powerDay:2 },
+  lab:       { name:'研究台',   cost:{iron:10, crystal:5}, bp:null,     range:0,  color:0xb46cff, hp:50,  desc:'解锁高级配方', research:0.1 },
+};
+function toggleBuild(){
+  G.buildMode = !G.buildMode;
+  document.getElementById('buildBar').classList.toggle('open', G.buildMode);
+  if(G.buildMode) renderBuildBar();
+}
+function renderBuildBar(){
+  const bar = document.getElementById('buildBar');
+  bar.innerHTML = '';
+  for(const [id, b] of Object.entries(BUILDINGS)){
+    const hasBp = !b.bp || G.player.unlockedBp.has(b.bp);
+    const card = document.createElement('div');
+    card.className = 'buildCard' + (G.buildSel===id ? ' active' : '');
+    const costStr = Object.entries(b.cost).map(([k,v])=>`${RES[k].name}×${v}`).join(' ');
+    card.innerHTML = `<div class="bn">${hasBp?b.name:'???'}</div><div class="bc">${hasBp?costStr:'需图纸'}</div>`;
+    card.onclick = ()=>{ G.buildSel=id; renderBuildBar(); };
+    bar.appendChild(card);
+  }
+}
+// 建造预览 mesh
+let buildPreview = null;
+function updateBuildPreview(){
+  if(!G.buildMode){
+    if(buildPreview){ scene.remove(buildPreview); buildPreview=null; }
+    return;
+  }
+  const b = BUILDINGS[G.buildSel];
+  if(!b) return;
+  const hasBp = !b.bp || G.player.unlockedBp.has(b.bp);
+  if(!buildPreview || buildPreview._type !== G.buildSel){
+    if(buildPreview) scene.remove(buildPreview);
+    const geo = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+    const mat = new THREE.MeshBasicMaterial({
+      color: hasBp ? b.color : 0x666666,
+      transparent: true, opacity: 0.5, wireframe: !hasBp
+    });
+    buildPreview = new THREE.Mesh(geo, mat);
+    buildPreview._type = G.buildSel;
+    scene.add(buildPreview);
+  }
+  // 跟随玩家前方 3 格
+  camera.updateMatrix();
+  const right = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 0);
+  const fwd = new THREE.Vector3().crossVectors(camera.up, right).normalize();
+  const px = G.player.x + fwd.x*3;
+  const pz = G.player.z + fwd.z*3;
+  // 找地面高度
+  const topY = topVoxelY(Math.floor(px), Math.floor(pz));
+  buildPreview.position.set(px, (topY>=0?topY:G.player.y)+0.6, pz);
+}
+function tryPlaceBuilding(){
+  const b = BUILDINGS[G.buildSel];
+  if(!b){ return; }
+  if(b.bp && !G.player.unlockedBp.has(b.bp)){
+    showToast('需要图纸：'+b.name); return;
+  }
+  if(!hasMaterials(b.cost)){
+    showToast('材料不足：'+b.name); return;
+  }
+  // 放置位置
+  const pos = buildPreview.position;
+  // 不能太靠近其他建筑
+  for(const bd of G.buildings){
+    const dx=bd.x-pos.x, dz=bd.z-pos.z;
+    if(dx*dx+dz*dz < 4){ showToast('太靠近其他建筑'); return; }
+  }
+  // 不能太靠近基地
+  const dx=pos.x-G.base.x, dz=pos.z-G.base.z;
+  if(dx*dx+dz*dz < 9){ showToast('太靠近基地中枢'); return; }
+  spendMaterials(b.cost);
+  // 创建建筑 mesh
+  const geo = new THREE.BoxGeometry(1, 1.2, 1);
+  const mat = new THREE.MeshLambertMaterial({ color:b.color, emissive:b.color, emissiveIntensity:0.2 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(pos.x, pos.y+0.1, pos.z);
+  scene.add(mesh);
+  // 顶部小光球标识
+  const halo = new THREE.Mesh(
+    new THREE.SphereGeometry(0.3, 8, 6),
+    new THREE.MeshBasicMaterial({ color:b.color, transparent:true, opacity:0.6 })
+  );
+  halo.position.set(0, 1.0, 0);
+  mesh.add(halo);
+  G.buildings.push({
+    type:G.buildSel, x:pos.x, y:pos.y, z:pos.z,
+    hp:b.hp, hpMax:b.hp, mesh, cooldown:0
+  });
+  showToast('建造完成：'+b.name);
+  renderBuildBar();
+}
+function tryRepair(){
+  const p = G.player;
+  // 找最近的受损建筑（包括基地）
+  let target=null, bestD=4*4;
+  // 基地
+  const bdx=p.x-G.base.x, bdz=p.z-G.base.z;
+  if(bdx*bdx+bdz*bdz < bestD && G.base.hp < G.base.hpMax){
+    target = { type:'base', x:G.base.x, y:G.base.y, z:G.base.z, ref:G.base };
+    bestD = bdx*bdx+bdz*bdz;
+  }
+  for(const b of G.buildings){
+    if(b.hp >= b.hpMax) continue;
+    const dx=p.x-b.x, dz=p.z-b.z;
+    if(dx*dx+dz*dz < bestD){
+      target = { type:b.type, x:b.x, y:b.y, z:b.z, ref:b };
+      bestD = dx*dx+dz*dz;
+    }
+  }
+  if(!target){ showToast('附近没有可修理的建筑'); return; }
+  // 消耗铁
+  if(!consumeRes('iron', 3)){ showToast('修理需要 3 铁（背包+仓库）'); return; }
+  const heal = 30;
+  target.ref.hp = Math.min(target.ref.hpMax, target.ref.hp + heal);
+  showToast('修理 '+target.type+' +'+heal+' HP');
+  renderInventory();
+}
+function updateBuildings(dt){
+  for(const b of G.buildings){
+    const def = BUILDINGS[b.type];
+    b.cooldown -= dt;
+    // 炮台攻击
+    if(b.type === 'turret' && b.cooldown <= 0){
+      // 找最近敌人
+      let target=null, bestD=def.range*def.range;
+      for(const e of G.enemies){
+        if(e.hp <= 0) continue;
+        const dx=e.x-b.x, dy=e.y-b.y, dz=e.z-b.z;
+        const d = dx*dx+dy*dy+dz*dz;
+        if(d < bestD){ bestD=d; target=e; }
+      }
+      if(target){
+        // 发射弹幕（用简单小球）
+        const dx=target.x-b.x, dy=target.y-b.y, dz=target.z-b.z;
+        const len = Math.hypot(dx,dy,dz) || 1;
+        G.projectiles.push({
+          x:b.x, y:b.y+0.6, z:b.z,
+          vx:dx/len*15, vy:dy/len*15, vz:dz/len*15,
+          life:1.5, dmg:20, from:'turret'
+        });
+        b.cooldown = 1.0;
+      }
+    }
+    // 氧站回氧
+    if(b.type === 'o2station'){
+      const dx=G.player.x-b.x, dz=G.player.z-b.z;
+      if(dx*dx+dz*dz < def.range*def.range){
+        G.oxygen.cur = Math.min(G.oxygen.max, G.oxygen.cur + def.o2Regen*dt);
+      }
+    }
+  }
+}
+// 弹幕更新（炮台子弹）
+const projectileGroup = new THREE.Group();
+function updateProjectiles(dt){
+  // 清空旧 mesh
+  while(projectileGroup.children.length) projectileGroup.remove(projectileGroup.children[0]);
+  for(let i=G.projectiles.length-1; i>=0; i--){
+    const p = G.projectiles[i];
+    p.x += p.vx*dt; p.y += p.vy*dt; p.z += p.vz*dt;
+    p.life -= dt;
+    // 命中检测
+    let hit=false;
+    if(p.from === 'turret'){
+      for(const e of G.enemies){
+        if(e.hp <= 0) continue;
+        const dx=e.x-p.x, dy=e.y-p.y, dz=e.z-p.z;
+        if(dx*dx+dy*dy+dz*dz < 0.8){
+          e.hp -= p.dmg;
+          hit=true;
+          if(e.hp <= 0){ onEnemyKilled(e); }
+          break;
+        }
+      }
+    }
+    if(p.life <= 0 || hit){
+      G.projectiles.splice(i, 1);
+      continue;
+    }
+    // 渲染子弹
+    const m = new THREE.Mesh(
+      new THREE.SphereGeometry(0.12, 6, 4),
+      new THREE.MeshBasicMaterial({ color: 0xff8c42 })
+    );
+    m.position.set(p.x, p.y, p.z);
+    projectileGroup.add(m);
+  }
+}
+function onEnemyKilled(e){
+  if(e.mesh && e.mesh.parent) e.mesh.parent.remove(e.mesh);
+  e.hp = 0;
+  // 掉落：根据类型
+  if(e.type === 'guard'){
+    invAdd('core', 1); showToast('击杀守卫兽！获得 1 能量核心');
+  } else if(e.type === 'elite'){
+    invAdd('crystal', 2);
+    // 精英怪有概率掉炮台图纸
+    if(Math.random() < 0.3 && !G.player.unlockedBp.has('turret')){
+      G.player.unlockedBp.add('turret');
+      showToast('精英怪掉落：炮台图纸！');
+    }
+  } else {
+    invAdd('biomass', 1);
+  }
+  renderInventory();
+}
+function damageBase(dmg){
+  G.base.hp = Math.max(0, G.base.hp - dmg);
+  // 红屏警告
+  const flash = document.getElementById('baseAttackFlash');
+  flash.classList.add('flash');
+  setTimeout(()=>flash.classList.remove('flash'), 200);
+  G.baseUnderAttack = true;
+  if(G.base.hp <= 0) loseGame('基地被摧毁');
+}
+function damageBuilding(b, dmg){
+  b.hp -= dmg;
+  if(b.hp <= 0){
+    if(b.mesh && b.mesh.parent) b.mesh.parent.remove(b.mesh);
+    const idx = G.buildings.indexOf(b);
+    if(idx >= 0) G.buildings.splice(idx, 1);
+    showToast(BUILDINGS[b.type].name + ' 被摧毁！');
+  }
+}
+function winGame(){
+  G.gameOver = true; G.win = true;
+  if(controls && controls.isLocked) controls.unlock();
+  const mask = document.getElementById('endMask');
+  document.getElementById('endTitle').className = 'win';
+  document.getElementById('endTitle').textContent = '逃 脱 成 功';
+  document.getElementById('endMsg').textContent = '飞船已修复，你成功离开了这颗星球。';
+  mask.classList.add('show');
+}
+function loseGame(reason){
+  G.gameOver = true; G.win = false;
+  if(controls && controls.isLocked) controls.unlock();
+  const mask = document.getElementById('endMask');
+  document.getElementById('endTitle').className = 'lose';
+  document.getElementById('endTitle').textContent = '任 务 失 败';
+  document.getElementById('endMsg').textContent = reason;
+  mask.classList.add('show');
+}
+
+// ============ 道具 ============
+function useItem(type){
+  if(!consumeItem(type)){ showToast('没有'+RES[type].name); return; }
+  if(type==='medkit'){
+    G.player.hp = Math.min(G.player.hpMax, G.player.hp+50);
+    showToast('使用医疗包，恢复 50 生命');
+  } else if(type==='stun'){
+    for(const e of G.enemies){ e.stun = 5; }
+    showToast('使用迷晕药水，周围敌人迷晕 5 秒');
+  }
+  renderInventory();
+}
+
+// ============ 攻击 ============
+function tryAttack(){
+  // 射线检测前方敌人，打中掉血
+  if(G.gameOver) return;
+  const p = G.player;
+  const fwd = new THREE.Vector3(0,0,-1).applyQuaternion(camera.quaternion).normalize();
+  let bestHit = null, bestDist = 6; // 射程 6 格
+  for(const e of G.enemies){
+    if(e.dead) continue;
+    const dx = e.x - p.x, dy = (e.y+0.5) - (p.y+CFG.EYE_H), dz = e.z - p.z;
+    const dist = Math.hypot(dx, dy, dz);
+    if(dist > bestDist) continue;
+    // 投影到视线方向
+    const proj = dx*fwd.x + dy*fwd.y + dz*fwd.z;
+    if(proj < 0 || proj > bestDist) continue;
+    // 垂直距离 < 0.8 视为命中
+    const perp = Math.hypot(dx - proj*fwd.x, dy - proj*fwd.y, dz - proj*fwd.z);
+    if(perp < 0.8 && (!bestHit || proj < bestHit.proj)){
+      bestHit = { e, proj, dist };
+    }
+  }
+  if(bestHit){
+    bestHit.e.hp -= 25;
+    if(bestHit.e.hp <= 0){
+      bestHit.e.dead = true;
+      if(bestHit.e.mesh) scene.remove(bestHit.e.mesh);
+      // 掉落资源到仓库（直接给玩家）
+      const drop = bestHit.e.drop || 'biomass';
+      const amt = bestHit.e.dropAmt || 2;
+      G.storage[drop] = (G.storage[drop]||0) + amt;
+      showToast(`击杀！获得 ${amt} ${RES[drop].name}（入仓库）`);
+    } else {
+      // 击退
+      bestHit.e.x += fwd.x * 0.5;
+      bestHit.e.z += fwd.z * 0.5;
+    }
+  }
+  // 射击视觉反馈：屏幕中央闪一下准星
+  const cross = document.getElementById('crosshair');
+  if(cross){ cross.style.transform = 'scale(1.5)'; setTimeout(()=>{ if(cross) cross.style.transform='scale(1)'; }, 80); }
+}
+
+// ============ 初始化场景 ============
+function initScene(){
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x87ceeb);
+  scene.fog = new THREE.Fog(0x87ceeb, 30, 80);
+
+  camera = new THREE.PerspectiveCamera(CFG.VIEW, window.innerWidth/window.innerHeight, 0.1, 200);
+  renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gameCanvas'), antialias:true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // 光照
+  const ambient = new THREE.AmbientLight(0xffffff, 0.55);
+  scene.add(ambient);
+  const sun = new THREE.DirectionalLight(0xffffff, 0.8);
+  sun.position.set(50, 80, 30);
+  scene.add(sun);
+  const hemi = new THREE.HemisphereLight(0x87ceeb, 0x3a5f3a, 0.4);
+  scene.add(hemi);
+
+  // PointerLockControls
+  controls = new PointerLockControls(camera, renderer.domElement);
+  scene.add(controls.getObject());
+
+  document.getElementById('startMask').addEventListener('click', ()=>{
+    controls.lock();
+  });
+  controls.addEventListener('lock', ()=>{
+    document.getElementById('startMask').classList.add('hide');
+  });
+  controls.addEventListener('unlock', ()=>{
+    // 工作台/背包打开时主动 unlock，不显示开始遮罩
+    if(G.gameOver) return;
+    if(G._panelUnlock) return;
+    document.getElementById('startMask').classList.remove('hide');
+  });
+
+  window.addEventListener('resize', ()=>{
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+
+// 找出生点：世界中心最高的草地
+function findSpawnPoint(){
+  const cx = Math.floor(CFG.WORLD/2), cz = Math.floor(CFG.WORLD/2);
+  for(let y=CFG.WORLD_H-1; y>=0; y--){
+    const t = getVoxel(cx, y, cz);
+    if(t!==V.AIR && t!==V.WATER){
+      return { x:cx+0.5, y:y+1, z:cz+0.5 };
+    }
+  }
+  return { x:cx+0.5, y:CFG.GROUND_BASE+1, z:cz+0.5 };
+}
+
+// 基地位置
+function placeBase(){
+  const spawn = findSpawnPoint();
+  G.base.x = spawn.x;
+  G.base.y = spawn.y;
+  G.base.z = spawn.z;
+  G.player.x = spawn.x;
+  G.player.y = spawn.y;
+  G.player.z = spawn.z;
+  // 基地标记：一个发光柱（P0 用简单 mesh）
+  const baseGeo = new THREE.CylinderGeometry(1, 1.5, 4, 8);
+  const baseMat = new THREE.MeshLambertMaterial({ color:0xff8c42, emissive:0x441100 });
+  const baseMesh = new THREE.Mesh(baseGeo, baseMat);
+  baseMesh.position.set(G.base.x, G.base.y+2, G.base.z);
+  scene.add(baseMesh);
+  // 光柱
+  const beamGeo = new THREE.CylinderGeometry(0.3, 0.3, 20, 8);
+  const beamMat = new THREE.MeshBasicMaterial({ color:0xffd700, transparent:true, opacity:0.25 });
+  const beam = new THREE.Mesh(beamGeo, beamMat);
+  beam.position.set(G.base.x, G.base.y+12, G.base.z);
+  scene.add(beam);
+}
+
+// ============ 渲染循环 ============
+let lastT = performance.now();
+function animate(){
+  requestAnimationFrame(animate);
+  const now = performance.now();
+  let dt = (now - lastT) / 1000;
+  lastT = now;
+  if(dt > 0.1) dt = 0.1;
+
+  if(controls && controls.isLocked && !G.gameOver){
+    updatePlayer(dt);
+    updateEnemies(dt);
+    updateWorld(dt);
+    updateBuildings(dt);
+    updateProjectiles(dt);
+  }
+  updateBuildPreview();
+  updateToast();
+  updateHUD();
+  renderer.render(scene, camera);
+}
+
+function updatePlayer(dt){
+  const p = G.player;
+  // 防卡死：如果脚部或头部卡在固体里，逐格上抬直到脱出
+  let safety = 0;
+  while((collidesAt(p.x, p.y, p.z) || collidesAt(p.x, p.y+1, p.z)) && safety < 10){
+    p.y = Math.ceil(p.y) + 1;
+    p.vy = 0;
+    safety++;
+  }
+  // 极端兜底：如果还卡，向基地方向拉
+  if(safety >= 10){
+    p.x = G.base.x;
+    p.z = G.base.z;
+    p.y = G.base.y + 2;
+    p.vy = 0;
+  }
+  // 第一人称视角：相机 = 眼睛位置
+  controls.getObject().position.set(p.x, p.y + CFG.EYE_H, p.z);
+  // 移动方向：用 PointerLockControls 库一致的矩阵列方法（最可靠）
+  // right = 相机本地 X 轴（矩阵第 0 列）；fwd = up × right
+  camera.updateMatrix();
+  const right = new THREE.Vector3().setFromMatrixColumn(camera.matrix, 0);
+  right.y = 0;
+  if(right.lengthSq() > 0) right.normalize();
+  const fwd = new THREE.Vector3().crossVectors(camera.up, right);
+  fwd.normalize();
+  // 检测水里状态：surface（脚在水、头出水）或 underwater（头也在水里）
+  const footV = getVoxel(Math.floor(p.x), Math.floor(p.y), Math.floor(p.z));
+  const eyeV  = getVoxel(Math.floor(p.x), Math.floor(p.y + CFG.EYE_H), Math.floor(p.z));
+  const isUnderwater = (footV === V.WATER) && (eyeV === V.WATER);
+  const isSurface    = (footV === V.WATER) && (eyeV !== V.WATER);
+  if(isUnderwater){
+    // 全水下：6DoF 自由泳，W 沿视线方向（含 Y），空格上浮，Shift 下潜，无重力
+    const fwd3 = new THREE.Vector3(0,0,-1).applyQuaternion(camera.quaternion).normalize();
+    const right3 = new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion).normalize();
+    let dx=0, dy=0, dz=0;
+    if(G.keys['w']){ dx += fwd3.x; dy += fwd3.y; dz += fwd3.z; }
+    if(G.keys['s']){ dx -= fwd3.x; dy -= fwd3.y; dz -= fwd3.z; }
+    if(G.keys['d']){ dx += right3.x; dz += right3.z; }
+    if(G.keys['a']){ dx -= right3.x; dz -= right3.z; }
+    if(G.keys[' ']){ dy += 1; }      // 空格上浮
+    if(G.keys['shift']){ dy -= 1; }  // Shift 下潜
+    const len = Math.hypot(dx, dy, dz);
+    if(len > 0){
+      dx /= len; dy /= len; dz /= len;
+      let spd = CFG.MOVE_SPD * 0.35;
+      spd *= getSpeedWeightMult();
+      tryMove3D(dx * spd * dt, dy * spd * dt, dz * spd * dt);
+    }
+    p.onGround = false;
+  } else if(isSurface){
+    // 水面：漂浮态，只能水平游 + 踩水，不能站立走路
+    let mx=0, mz=0;
+    if(G.keys['w']){ mx += fwd.x; mz += fwd.z; }
+    if(G.keys['s']){ mx -= fwd.x; mz -= fwd.z; }
+    if(G.keys['d']){ mx += right.x; mz += right.z; }
+    if(G.keys['a']){ mx -= right.x; mz -= right.z; }
+    const len = Math.hypot(mx, mz);
+    if(len > 0){
+      mx /= len; mz /= len;
+      let spd = CFG.MOVE_SPD * 0.5; // 水面踩水比水下快，比陆地慢
+      spd *= getSpeedWeightMult();
+      tryMove(mx * spd * dt, mz * spd * dt);
+    }
+    // Y 轴：重力减半（浮力抵消一半）+ 空格上蹬 + Shift 下潜
+    p.vy -= CFG.GRAVITY * 0.5 * dt;       // 减重力
+    if(G.keys[' ']) p.vy += 18 * dt;       // 空格向上蹬
+    if(G.keys['shift']) p.vy -= 10 * dt;   // Shift 主动下潜
+    p.vy = Math.max(-5, Math.min(5, p.vy)); // 限速
+    p.y += p.vy * dt;
+    // 撞水底固体停下
+    if(collidesAt(p.x, p.y, p.z)){ p.y = Math.ceil(p.y); p.vy = 0; }
+    p.onGround = false; // 水面永远不能站立
+  } else {
+    // 陆地：水平移动 + 重力
+    let mx=0, mz=0;
+    if(G.keys['w']){ mx += fwd.x; mz += fwd.z; }
+    if(G.keys['s']){ mx -= fwd.x; mz -= fwd.z; }
+    if(G.keys['d']){ mx += right.x; mz += right.z; }
+    if(G.keys['a']){ mx -= right.x; mz -= right.z; }
+    const len = Math.hypot(mx, mz);
+    if(len > 0){
+      mx /= len; mz /= len;
+      let spd = CFG.MOVE_SPD;
+      if(G.keys['shift']) spd *= CFG.SPRINT_MULT;
+      spd *= getSpeedWeightMult();
+      tryMove(mx * spd * dt, mz * spd * dt);
+    }
+    applyGravity(dt);
+  }
+  // 氧气
+  const dx=p.x-G.base.x, dz=p.z-G.base.z;
+  const inBase = dx*dx+dz*dz < CFG.BASE_R*CFG.BASE_R;
+  if(inBase){
+    G.oxygen.cur = Math.min(G.oxygen.max, G.oxygen.cur + dt*60);
+  } else {
+    // 水里 1.5x 氧耗 + 超重再加成
+    let o2m = getO2WeightMult();
+    if(isUnderwater || isSurface) o2m *= 1.5;
+    G.oxygen.cur -= dt * o2m;
+    if(G.oxygen.cur <= 0){ die('氧气耗尽'); return; }
+  }
+  // 进基地提示手动卸货：仅在"刚进入基地"时提示一次，离开后再回来才重新提示
+  if(inBase && invWeight()>0){
+    if(!G._wasInBase){
+      showToast('回到基地，按 K 把资源卸到仓库');
+    }
+    G._wasInBase = true;
+  } else {
+    G._wasInBase = false;
+  }
+  // 采集进度（按住 E）
+  updateHarvest(dt);
+  // 资源点动画（旋转+脉冲）
+  for(const n of G.resourceNodes){
+    if(n.mesh){
+      n.mesh.rotation.y += dt*1.5;
+      n.mesh.position.y = n.y + Math.sin(G.time*2 + n.x)*0.15;
+    }
+  }
+  G.time += dt;
+}
+
+function updateWorld(dt){
+  // 昼夜（P0 简化）
+  G.dayT += dt;
+  const cycle = CFG.DAY + CFG.NIGHT;
+  if(G.dayT >= cycle){
+    G.dayT -= cycle; G.day++;
+    G.isDay = true;
+    showToast('第 '+G.day+' 天 · 白天 '+CFG.DAY+'秒');
+  } else if(G.dayT >= CFG.DAY && G.isDay){
+    G.isDay = false;
+    showToast('夜晚降临 · '+CFG.NIGHT+'秒');
+  }
+  // 天空颜色随昼夜
+  const dayColor = new THREE.Color(0x87ceeb);
+  const nightColor = new THREE.Color(0x0a0e2a);
+  const t = G.isDay ? Math.min(1, G.dayT/5) : Math.min(1, (G.dayT-CFG.DAY)/5);
+  scene.background.copy(G.isDay ? dayColor : nightColor);
+  scene.fog.color.copy(scene.background);
+  // 氧气消耗（基地内回氧）
+  const p = G.player;
+  const bdx=p.x-G.base.x, bdz=p.z-G.base.z;
+  const inBase = bdx*bdx+bdz*bdz < CFG.BASE_R*CFG.BASE_R;
+  if(inBase){
+    G.oxygen.cur = Math.min(G.oxygen.max, G.oxygen.cur + 8*dt);
+  } else {
+    // 超重加速氧耗
+    const ratio = getLoadRatio();
+    const o2mult = ratio > 1 ? 1.5 : 1.0;
+    G.oxygen.cur -= dt * o2mult;
+    if(G.oxygen.cur <= 0){
+      G.oxygen.cur = 0;
+      G.player.hp -= 10*dt; // 窒息掉血
+      if(G.player.hp <= 0) loseGame('氧气耗尽，窒息而亡');
+    }
+  }
+  // 基地受击状态重置
+  G.baseUnderAttack = false;
+}
+
+function updateHUD(){
+  document.getElementById('oxygenFill').style.width = Math.max(0, G.oxygen.cur/G.oxygen.max*100)+'%';
+  document.getElementById('oxygenText').textContent = '氧气 '+Math.max(0,Math.ceil(G.oxygen.cur))+'/'+G.oxygen.max+'秒';
+  document.getElementById('healthFill').style.width = (G.player.hp/G.player.hpMax*100)+'%';
+  document.getElementById('healthText').textContent = '生命 '+Math.ceil(G.player.hp)+'/'+G.player.hpMax;
+  document.getElementById('dayNight').textContent = (G.isDay?'白天 ':'夜晚 ') + Math.ceil(G.isDay ? Math.max(0,CFG.DAY-G.dayT) : Math.max(0,CFG.NIGHT-(G.dayT-CFG.DAY))) + '秒 · Day '+G.day;
+  document.getElementById('baseLabel').textContent = '基地 '+Math.ceil(G.base.hp)+'/'+G.base.hpMax;
+  document.getElementById('baseFill').style.width = (G.base.hp/G.base.hpMax*100)+'%';
+  document.getElementById('partsProgress').textContent = '零件 '+G.parts+'/'+G.partsTarget;
+  // 背包提示
+  const w = invWeight();
+  const bpHint = document.getElementById('backpackHint');
+  bpHint.textContent = `[I] 背包 ${w.toFixed(1)}/${G.player.carryCapacity}kg` + (w>G.player.carryCapacity?' !超重!':'');
+  bpHint.style.color = w>G.player.carryCapacity ? 'var(--red)' : 'var(--cyan)';
+  // 交互提示
+  const p = G.player;
+  const dx=p.x-G.base.x, dz=p.z-G.base.z;
+  const inBase = dx*dx+dz*dz < CFG.BASE_R*CFG.BASE_R;
+  const hint = document.getElementById('interactHint');
+  // 优先显示采集目标
+  const target = findHarvestTarget();
+  if(G.harvestTarget){
+    const tool = CFG.TOOLS[G.player.tool];
+    hint.style.display='block';
+    if(tool.bar){
+      // 拳头：进度条模式
+      const pct = Math.min(100, G.harvestTimer/tool.spd*100);
+      hint.innerHTML = `采集 ${RES[G.harvestTarget.type].name} <div style="width:120px;height:6px;background:#06101a;border:1px solid var(--border);border-radius:3px;margin:3px 0;overflow:hidden"><div style="height:100%;width:${pct}%;background:var(--cyan);transition:width .1s"></div></div><small>${tool.name} · 松开E取消</small>`;
+    } else {
+      // 铲子/钻头/量子：+N 即时模式
+      const yieldStr = tool.yield > 1 ? ` (每次+${tool.yield})` : '';
+      const rangeStr = tool.range > 0 ? ' · 范围吸' : '';
+      hint.innerHTML = `采集 ${RES[G.harvestTarget.type].name} <b style="color:var(--green)">+${G.harvestTarget.harvested}</b>/${G.harvestTarget.total}<small>${yieldStr}${rangeStr} · ${tool.name} · 松开E停</small>`;
+    }
+  } else if(target){
+    // 附近有资源点
+    hint.style.display='block';
+    const can = canHarvest(target.type);
+    if(can){
+      hint.innerHTML = `按住 <b>E</b> 采集 ${RES[target.type].name}` + (target.special?` [${target.terrain}]`:'');
+    } else {
+      hint.innerHTML = `<span style="color:var(--red)">${RES[target.type].name} 需更高级工具</span>`;
+    }
+  } else if(inBase){
+    hint.style.display='block';
+    hint.innerHTML = '按 <b>E</b> 打开工作台 · 按 <b>K</b> 卸货';
+  } else {
+    hint.style.display='none';
+  }
+  // 工具显示（拼到背包提示后面）
+  const toolName = CFG.TOOLS[G.player.tool].name;
+  document.getElementById('backpackHint').textContent += ` · 工具:${toolName}`;
+}
+
+function die(reason){
+  G.gameOver = true; G.win = false;
+  controls.unlock();
+  const mask = document.getElementById('endMask');
+  mask.classList.add('show');
+  document.getElementById('endTitle').textContent = '失 败';
+  document.getElementById('endTitle').className = 'lose';
+  document.getElementById('endMsg').innerHTML = reason + '<br>坚持到了第 '+G.day+' 天';
+}
+
+// ============ 启动 ============
+function start(){
+  generateWorld();
+  initScene();
+  scene.add(projectileGroup); // 弹幕组
+  buildVoxelMeshes();
+  placeBase();
+  generateResources();
+  renderResourceNodes();
+  generateEnemies();
+  setupInput();
+  document.getElementById('restartBtn').onclick = ()=>{ location.reload(); };
+  // 工作台 tab 切换
+  document.querySelectorAll('.wbTab').forEach(el=>{
+    el.onclick = ()=>{ switchWbTab(el.dataset.tab); };
+  });
+  // 开局提示：工具进阶路径
+  showToast('开局：拳头采铁(慢)+生物质 → 回基地做铲子 → 探索山崖找图纸点解锁钻头');
+  animate();
+  console.log('[启动] 星渊迷航 v5 体素原型已启动');
+}
+start();
+</script>
+</body>
+</html>

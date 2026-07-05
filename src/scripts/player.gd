@@ -8,9 +8,10 @@ extends CharacterBody3D
 @export var oxygen_drain_rate: float = 0.556  # 基础耗氧：180秒耗尽
 @export var sprint_drain_rate: float = 0.778   # 冲刺耗氧：约130秒耗尽
 @export var mouse_sensitivity: float = 0.003
+@export var look_pitch_limit_degrees: float = 85.0
 
 const WORLD_HALF: float = 50.0  # 100x100 terrain boundary (half of 100)
-const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity считается "застрял"
+const STUCK_VELOCITY_THRESHOLD: float = 0.5  # Below this velocity the player is considered stuck
 const EYE_HEIGHT_NORMAL: float = 0.5
 const EYE_HEIGHT_CROUCH: float = 0.25
 const EYE_HEIGHT_PRONE: float = 0.1
@@ -38,6 +39,7 @@ var _head_bob_phase: float = 0.0
 var _last_horizontal_speed: float = 0.0
 var _last_is_sprinting: bool = false
 var _stuck_timer: float = 0.0
+var _look_pitch: float = 0.0
 
 # Oxygen and death signals
 signal oxygen_changed()
@@ -59,13 +61,17 @@ func _ready():
 
 
 func _input(event: InputEvent):
-	# Mouse look — rotate player body around Y axis
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity)
+		apply_look_delta(event.relative)
 
 	# Release mouse cursor when ESC is pressed
 	if event is InputEventKey and event.pressed and event.physical_keycode == KEY_ESCAPE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	# Teleport: T key, only at base, only during day, costs 5 energy.
+	if event.is_action_pressed("teleport"):
+		_try_teleport()
+		get_viewport().set_input_as_handled()
 
 	# Crouch / prone: handled exclusively in _physics_process via action system
 
@@ -75,13 +81,22 @@ func _input(event: InputEvent):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-var _debug_frames: int = 0
+func apply_look_delta(relative: Vector2) -> void:
+	if not _camera:
+		_camera = get_node_or_null("Camera3D")
+	rotate_y(-relative.x * mouse_sensitivity)
+	_look_pitch = clampf(
+		_look_pitch - relative.y * mouse_sensitivity,
+		deg_to_rad(-look_pitch_limit_degrees),
+		deg_to_rad(look_pitch_limit_degrees)
+	)
+	if _camera:
+		_camera.rotation.x = _look_pitch
+
 
 func _physics_process(delta):
 	if is_dead:
 		return
-
-	_debug_frames += 1
 
 	# ── Input ──────────────────────────────────────────────────────────────────
 	var input_dir := _get_movement_input()
@@ -120,6 +135,10 @@ func _physics_process(delta):
 
 	if ZoneManager:
 		current_speed *= 1.0 + ZoneManager.get_speed_bonus()
+		current_speed *= ZoneManager.get_speed_multiplier()
+	# P4 重量系统：超重线性减速到 0.5x（软惩罚，未超重为 1.0）。
+	if InventoryManager:
+		current_speed *= InventoryManager.get_speed_weight_multiplier()
 
 	var horizontal_speed := current_speed if direction.length() > 0 else 0.0
 	_last_horizontal_speed = horizontal_speed
@@ -166,9 +185,11 @@ func _physics_process(delta):
 		_grace_timer -= delta
 	else:
 		var mult := ZoneManager.get_oxygen_multiplier() if ZoneManager else 1.0
-		var drain := oxygen_drain_rate * mult
+		# P4 重量系统：超重线性加速耗氧到 1.5x（软惩罚，未超重为 1.0）。
+		var weight_mult := InventoryManager.get_oxygen_weight_multiplier() if InventoryManager else 1.0
+		var drain := oxygen_drain_rate * mult * weight_mult
 		if _is_pressed_loose("sprint", [KEY_SHIFT]) and _movement_state == 0:
-			drain = sprint_drain_rate * mult
+			drain = sprint_drain_rate * mult * weight_mult
 		current_oxygen -= drain * delta
 		current_oxygen = maxf(current_oxygen, 0.0)
 		oxygen_changed.emit()
@@ -337,16 +358,28 @@ func _recover_if_stuck(delta: float, before_move: Vector3, direction: Vector3, h
 	_stuck_timer = 0.0
 
 
+const TELEPORT_COST := {"energy": 5}
+const TELEPORT_BASE_RADIUS := 10.0
+
+
 func _try_teleport():
 	var tm = get_tree().current_scene.get_node_or_null("TeleportManager")
 	if not tm:
 		return
-	var zone = ZoneManager.ZONE_NAMES.get(ZoneManager.current_zone, "crash") if ZoneManager else "crash"
+	# Only at base, only during day.
 	var base_pos = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
-	if not tm.beacons.is_empty():
-		if position.distance_to(base_pos) < 3.0:
-			# At base — teleport to first beacon
-			tm.teleport_to_beacon(self, zone)
-		else:
-			# In the field — teleport to base
-			tm.teleport_to_base(self, zone)
+	if position.distance_to(base_pos) > TELEPORT_BASE_RADIUS:
+		return
+	if GameManager and GameManager.is_night:
+		return
+	# Need at least one registered beacon.
+	if tm.beacons.is_empty():
+		return
+	# Consume energy first.
+	if not InventoryManager or not InventoryManager.has_resources(TELEPORT_COST):
+		return
+	if not InventoryManager.consume_resources(TELEPORT_COST):
+		return
+	# Teleport to first beacon of the first registered zone.
+	var first_zone = tm.beacons.keys()[0]
+	tm.teleport_to_beacon(self, first_zone)

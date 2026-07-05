@@ -231,18 +231,18 @@ func _upgrade_weapon(weapon_name: String):
 
 	var cost = forge_recipes[weapon_name][next_quality]
 	if InventoryManager.has_resources(cost):
-		InventoryManager.consume_resources(cost)
-		weapon_controller.apply_quality_upgrade(weapon_name, next_quality)
-		_refresh_display()
+		if InventoryManager.consume_resources(cost):
+			weapon_controller.apply_quality_upgrade(weapon_name, next_quality)
+			_refresh_display()
 
 
 func _unlock_weapon(weapon_name: String):
 	if weapon_name in forge_recipes and "unlock" in forge_recipes[weapon_name]:
 		var cost = forge_recipes[weapon_name]["unlock"]
 		if InventoryManager.has_resources(cost):
-			InventoryManager.consume_resources(cost)
-			weapon_controller.unlock_weapon(weapon_name)
-			_refresh_display()
+			if InventoryManager.consume_resources(cost):
+				weapon_controller.unlock_weapon(weapon_name)
+				_refresh_display()
 
 
 func _format_cost(cost: Dictionary) -> String:

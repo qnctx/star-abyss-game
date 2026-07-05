@@ -45,20 +45,25 @@
 | 科技解锁 | Shield Generator 和 Slow Field 默认锁定，建造模式按 `Y` 消耗 blueprint 解锁 | `tech_manager.gd`, `build_manager.gd` |
 | 存档/读档 | `F6` 快存、`F7` 快读，保存库存/科技/基地/建筑/活敌人状态，HUD 短暂显示保存/读取结果 | `save_manager.gd`, `combat_hud.gd` |
 | 信号台/撤离线 | Signal Beacon 消耗 energy 推进求救信号进度，里程碑解锁 Radio Log/Signal Cache，100% 后进入撤离坚守倒计时 | `signal_beacon.gd`, `signal_log_manager.gd`, `signal_cache.gd`, `build_manager.gd` |
-| 资源/库存/生存扫描 | CombatHUD 显示当前库存数量；Resource Scanner 显示最近目标资源或 O2 Plant 的距离/方向，`G` 切换类型；资源/O2 Plant 带浮动类型标签 | `combat_hud.gd`, `resource_scanner.gd`, `resource_node.gd`, `oxygen_plant.gd` |
+| 准星工具交互 | 鼠标控制完整 yaw/pitch 视角；CombatHUD 中央准星作为 Weapon/Harvester/Build/Repair 的统一目标来源 | `player.gd`, `aim_targeting.gd`, `combat_hud.gd`, `weapon_controller.gd`, `toolbelt_manager.gd`, `build_manager.gd` |
+| 资源/工具/生存扫描 | CombatHUD 显示当前库存数量；底部工具栏用 `1-5` 切换 Weapon/Harvester/Scanner/Build/Repair；Scanner 装备后用 `G` 切换地下资源或 O2 Plant 信号；Harvester 按准星采集可见资源或挖已揭示地下资源 | `combat_hud.gd`, `toolbelt_manager.gd`, `resource_scanner.gd`, `buried_resource.gd`, `resource_node.gd`, `oxygen_plant.gd` |
+
+资源可读性规则：铁矿显示为橙色矿石簇，虚空晶显示为紫色晶簇，生物质显示为绿色孢子/菌团，能量核心显示为蓝色发光核心，蓝图显示为金色数据片；文字标签只作为辅助，不能成为唯一识别方式。
+当前 MVP 会在坠毁盆地附近固定生成 5 个可见 BP 数据片，并带金色竖向信标，用于教学和早期测试；后续主要 BP 来源仍是研究台、精英/Boss 奖励和 Signal Cache。
 
 ### 0.2 当前 MVP 设计目标
 
 当前阶段不追求完整沙盒，而追求一个“能反复玩 10-15 分钟”的闭环：
 
-1. 玩家白天在地面采集基础资源，并通过左侧 HUD 的 Inventory 行确认库存数量。
-2. 野外 O2 Plant 和可制作 O2 Kit 给远距离探索提供临时续航。
-3. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
-4. 玩家选择建造路线：防御、氧气、护盾、能量。
-5. 夜晚敌人进攻基地，玩家用武器和建筑防守。
-6. 防守奖励和基地损伤推动下一天的建造选择。
-7. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
-8. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log、Signal Cache 与 Extraction Holdout 给出探索、奖励和结局压力反馈。
+1. 玩家白天在地表采集可见资源，并通过左侧 HUD 的 Inventory 行确认库存数量。
+2. 部分资源埋在地下：先装备 `3` Scanner 搜索/揭示，再装备 `2` Harvester 用准星瞄准挖掘；可见资源也可以用 Harvester 准星采集。
+3. 野外 O2 Plant 和可制作 O2 Kit 给远距离探索提供临时续航。
+4. 氧气风险会造成死亡掉落，迫使玩家规划返程和找回路线。
+5. 玩家选择建造路线：防御、氧气、护盾、能量。
+6. 夜晚敌人进攻基地，玩家用武器和建筑防守。
+7. 防守奖励和基地损伤推动下一天的建造选择。
+8. 能量与蓝图开始承接科技树，先用于解锁护盾和控场建筑，而不是只停留在资源堆积。
+9. 后期用 Signal Beacon 把 energy/blueprint 消耗转成“求救信号”长期目标，并通过 Radio Log、Signal Cache 与 Extraction Holdout 给出探索、奖励和结局压力反馈。
 
 ### 0.3 近期开发顺序
 
@@ -381,7 +386,11 @@
 
 | 工具 | 功能 |
 |------|------|
-| **扫描器** | 扫描环境、生物、资源，获取信息 |
+| **武器** | 默认工具，左键射击；切换到其他工具时不会误开火 |
+| **采掘器** | 对扫描器揭示出的地下资源进行分段挖掘，完成后进入 Inventory |
+| **扫描器** | 装备后用 `G` 切换信号类型，优先寻找地下资源，也可寻找 O2 Plant |
+| **建造器** | 进入建造模式，准星瞄准地形放置；`Tab` 循环建筑，`Shift+1-7` 直选建筑，普通 `1-5` 保持工具切换 |
+| **维修器** | 近距离修复受损基地建筑 |
 | **地形雷达** | 绘制周边地图，显示洞穴入口 |
 | **信号接收器** | 接收遇难者求救信号和遗迹广播 |
 | **虚空探测器** | 探测虚空晶矿脉位置 |

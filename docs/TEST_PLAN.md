@@ -48,6 +48,14 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 11. Save/load with at least one O2 Kit and confirm the count is restored.
 12. Die while carrying O2 Kits and confirm they can be included in the recoverable Death Drop payload.
 
+## Game Over Restart
+
+1. Build at least one structure and start night with `N`.
+2. Let enemies remain alive, then drain O2 to trigger the death panel.
+3. Click `重新开始`.
+4. Confirm the run returns to daytime, enemies are cleared, built structures are removed, Base HP is full, shield is reset, inventory is empty, and the player has full O2.
+5. Repeat after the base is destroyed and confirm the game unpauses after restart.
+
 ## Oxygen Plant
 
 1. Explore away from the crash pod and look for glowing cyan/green plants with an `O2` label.
@@ -61,33 +69,57 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 ## Build Mode
 
-1. Press `B` to enter build mode.
-2. Confirm a terrain-snapped preview appears in front of the player.
-3. Preview colors:
+1. Press `4` to select the Build tool, or press `B` to enter build mode directly.
+2. Confirm the center crosshair remains visible and the build preview follows the terrain point under the crosshair.
+3. Move the mouse while build mode is open:
+   - Mouse left/right turns the view.
+   - Mouse up/down pitches the view so you can aim at ground, slopes, or sky.
+   - The preview should stay snapped to the terrain point under the crosshair.
+4. Aim into the sky and confirm placement stays invalid instead of sticking to a flat invisible plane.
+5. Preview colors:
    - Green: valid position and enough resources.
    - Yellow: valid position but missing resources.
    - Purple: valid position but selected building is still tech-locked.
    - Red: invalid position.
-4. Press `1`; HUD should show `Turret`.
-5. Press `2`; HUD should show `O2 Station`.
-6. Press `3`; HUD should show `Shield Generator`.
-7. Press `4`; HUD should show `Solar Panel`.
-8. Press `5`; HUD should show `Research Station`.
-9. Press `6`; HUD should show `Slow Field`.
-10. Press `7`; HUD should show `Signal Beacon`.
-11. Confirm the build HUD uses two rows and does not overlap the Base/Scanner/HUD rows.
-12. Confirm locked buildings show `Y Unlock`, blueprint cost, and `Y READY` or `Y NEED BLUEPRINT`.
-13. Confirm unlocked buildings show selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade/repair target status.
-14. Confirm the first row includes `Y Unlock` and `R Repair`.
-15. Press `X`; HUD should enter recycle mode.
-16. Press `X` again; HUD should return to build mode.
-17. Right-click or press `Esc` to leave build mode.
+6. Press `Tab`; HUD should cycle to the next building type.
+7. Press `Shift+1`; HUD should show `Turret`.
+8. Press `Shift+2`; HUD should show `O2 Station`.
+9. Press `Shift+3`; HUD should show `Shield Generator`.
+10. Press `Shift+4`; HUD should show `Solar Panel`.
+11. Press `Shift+5`; HUD should show `Research Station`.
+12. Press `Shift+6`; HUD should show `Slow Field`.
+13. Press `Shift+7`; HUD should show `Signal Beacon`.
+14. Confirm ordinary `1-5` still switch tools; for example, press `2` and confirm Build mode exits and Harvester is selected.
+15. Confirm the build HUD uses two rows and does not overlap the Base/Scanner/HUD rows.
+16. Confirm locked buildings show `Y Unlock`, blueprint cost, and `Y READY` or `Y NEED BLUEPRINT`.
+17. Confirm unlocked buildings show selected building cost, `LMB READY` or `LMB NEED RES`, and upgrade/repair target status.
+18. If HUD says `LMB NEED RES`, confirm Inventory is missing the listed cost; this is resource shortage, not an invalid location.
+19. Press `X`; HUD should enter recycle mode.
+20. Put the crosshair on a built structure and confirm the preview turns blue and the HUD shows refund text.
+21. Press `X` again; HUD should return to build mode.
+22. Right-click or press `Esc` to leave build mode.
+
+## Toolbelt And Buried Harvest
+
+1. Confirm the bottom HUD shows `Tools:` with slots `1 Weapon`, `2 Harvester`, `3 Scanner`, `4 Build`, and `5 Repair`.
+2. Press `1`; confirm the Weapon slot is highlighted and left-click can fire.
+3. Press `3`; confirm Scanner is highlighted and left-click no longer fires the weapon.
+4. Press `G` until the scanner targets `iron` or `crystal`.
+5. Follow the scanner direction until it reports a `buried ... depth ...` signal.
+6. Confirm a colored `DIG ... 0/N` marker appears on the ground when the buried resource is revealed.
+7. Press `2`; confirm Harvester is highlighted.
+8. Put the crosshair on the revealed marker and left-click until the `DIG` progress completes.
+9. Confirm the marker disappears and the left-side `Inventory:` count increases.
+10. Aim the Harvester at a visible labeled resource and left-click; confirm it can collect the visible resource without walking into it.
+11. Press `4`; confirm build mode opens, then press `2` and confirm it exits build mode and selects Harvester.
+12. Press `Esc` or right-click to leave build mode, then press `1` to return to Weapon.
+13. Press `5`; if a built structure is damaged, put the crosshair on it and left-click to repair.
 
 ## Building Recycle
 
 1. Build any structure.
 2. Press `B`, then `X`.
-3. Move the preview near the built structure.
+3. Put the crosshair on the built structure.
 4. Confirm the preview turns blue when a recyclable structure is targeted.
 5. Confirm the HUD shows the targeted structure label and expected refund.
 6. Left-click.
@@ -219,8 +251,8 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 5. Place the Signal Beacon on green terrain.
 6. Confirm build resources decrease.
 7. Confirm the top-left HUD shows a `Signal:` row.
-8. Keep at least `1 energy` available and wait about `6` seconds.
-9. Confirm `energy` decreases by `1` and Signal progress increases by about `10`.
+8. Keep at least `1 energy` available and wait about `12` seconds.
+9. Confirm `energy` decreases by `1` and Signal progress increases by about `5`.
 10. Continue powering until progress crosses `25`.
 11. Confirm a Radio log line appears under the Signal/Save HUD rows.
 12. Confirm the HUD also shows a `Cache:` direction/distance hint.
@@ -232,11 +264,33 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - The Signal HUD shows `Extraction: hold mm:ss`.
    - The Objective line asks you to defend the extraction zone.
    - If it was daytime, the game starts a night attack.
-18. Survive until the Extraction timer reaches zero.
+18. Survive until the Extraction timer reaches zero (180s).
 19. Confirm the Signal HUD shows `victory` and the Objective line changes to extraction complete.
 20. Spend all energy and wait another cycle in a separate pre-100 test.
 21. Confirm the Signal row changes to `needs energy` and progress does not increase.
 22. Press `F6`, then later `F7`, and confirm Signal progress, latest Radio log, collected cache state, and Extraction holdout state are restored.
+23. **P0 验证**：在信号进度达到 50% 时存档，读档后确认 energy 不会在一帧内被多次扣除（读档后信号台有 1 秒启动延迟）。
+24. **P0 验证**：在撤离坚守剩余时间归零时存档，读档后确认不会立即显示 victory，而是等一帧 _process 处理后才完成。
+25. **P0 验证**：在撤离坚守剩余 60 秒时存档，读档后确认剩余时间正确恢复且撤离仍处于 active 状态。
+26. **P2 验证**：走到东侧熔岩区（x>20），HUD 底部应显示 `熔岩区 | 氧耗 x3.5 | 适应 Lv0 | 建议 Lv2+`。
+27. **P2 验证**：在熔岩区内建造一座 Turret，等待数秒后确认该 Turret 的 HP 缓慢下降（0.1 HP/s），HUD 出现 `Struct Turret .../100` 损耗提示。
+28. **P2 验证**：回到坠毁区（基地附近），确认基地附近的建筑 HP 不受熔岩区损耗影响。
+29. **P2 验证**：调制熔岩适应 Lv2 血清后，再次进入熔岩区，确认结构损耗停止（适应等级达标后 `get_structure_drain_rate` 返回 0）。
+30. **P2 验证**：进入极寒区（z>20）确认 HUD 显示 `极寒区 | 氧耗 x3.0 | 适应 Lv0 | 建议 Lv2+`，且氧气消耗明显加快。
+31. **P2 验证**：进入重力异常区（z<-20）确认移动速度下降到 0.7x，HUD 显示 `重力异常区 | 适应 Lv0 | 建议 Lv2+`。
+32. **P3 验证**：白天在基地半径内（距坠毁点 <10m）且 energy≥5 时，HUD 应显示 `T 传送 5 energy`。
+33. **P3 验证**：收集至少 5 energy，站在基地半径内，按 `T`，确认玩家被传送到已注册区域入口（极寒区/熔岩区/重力异常区之一），energy 减少 5。
+34. **P3 验证**：夜晚按 `T`，确认玩家不移动、energy 不消耗，HUD 显示 `T 传送（仅白天可用）`。
+35. **P3 验证**：白天走到远离基地 10m 以外（例如 x=30），按 `T`，确认玩家不移动、energy 不消耗，HUD 显示 `T 传送（需在基地半径内）`。
+36. **P3 验证**：白天在基地半径内但 energy<5 时，按 `T`，确认玩家不移动、energy 不消耗，HUD 显示 `T 传送（需 5 energy）`。
+37. **P3 验证**：按 `F6` 存档后按 `F7` 读档，确认区域入口 beacon 仍注册在 TeleportManager 中（按 `T` 仍可传送）。
+38. **P4 验证（图纸分布）**：开局在基地半径 10m 内走一圈，确认最多只捡到 1 个教学 blueprint 芯片（不再"一堆图纸"）。
+39. **P4 验证（图纸分布）**：走出基地 18m+ 后，确认不同方向散布着其余 4 个教学 blueprint 芯片。
+40. **P4 验证（Tab 切建筑诊断）**：捡若干资源后按 `B` 进建造模式，连续按 `Tab` 切换建筑，确认资源数量不变；若资源异常减少，控制台会输出 `[BuildManager] Tab 切换异常消耗资源！` 警告日志。
+41. **P4 验证（重量系统）**：HUD 库存行末尾应显示 `负重 X.X/25kg`，未超重时无额外标记。
+42. **P4 验证（重量-速度）**：收集超过 25kg 资源（如 60 iron = 30kg），HUD 显示 `负重 30.0/25kg !超重!`，移动速度明显下降到约 0.9x。
+43. **P4 验证（重量-氧耗）**：超重状态下，氧气消耗速度加快到约 1.1x（60 iron）或 1.5x（100 iron）。
+44. **P4 验证（重量软惩罚）**：超重不会阻止拾取，只会减速 + 加速耗氧；丢弃/消耗资源使负重回到 25kg 内后，速度和氧耗恢复正常。
 
 ## Tech Unlocks
 
@@ -269,6 +323,7 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
    - Extraction holdout countdown after Signal reaches `100/100`
    - Locked-tech/unlock status while build mode is open
    - Damaged-structure summary when built structures are below full HP
+   - Zone pressure line: `极寒区 | 氧耗 x3.0 | 适应 Lv0 | 建议 Lv2+` (shows current zone, oxygen multiplier, adaptation level, recommended level)
    - `F6 Save F7 Load` in the main build hint row
 2. During enemy waves, confirm enemy count changes.
 3. When enemies reach base, confirm base HP decreases.
@@ -311,18 +366,26 @@ Use this checklist for the next hands-on playtest in Godot 4.6.2.
 
 ## Resource Scanner
 
-1. Confirm the top-left HUD shows a scanner line.
-2. Press `G`.
-3. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, `core`, and `O2 plant`.
-4. Walk toward the displayed direction.
-5. Confirm the displayed distance generally decreases.
-6. Confirm nearby resources have readable floating labels: `IRON`, `BIO`, `CRYSTAL`, or `CORE`.
-7. Walk into the targeted resource to auto-pick it up; no key press is needed.
-8. Confirm the left-side `Inventory:` HUD count increases for that resource.
-9. Confirm the scanner updates to another nearby resource/O2 Plant or says none is nearby.
-10. Cycle to `O2 plant`.
-11. Confirm the scanner points to a generated O2 Plant with an `O2` label when one is within range.
-12. Confirm early resources can be picked up from ground level without needing to jump.
+1. Press `3` to equip Scanner.
+2. Confirm the top-left scanner line becomes active.
+3. Press `G`.
+4. Confirm the scanner cycles through `iron`, `biomass`, `crystal`, `core`, `O2 plant`, and `BP`.
+5. For resource modes, follow the displayed direction.
+6. If the hint says `buried`, confirm it includes depth, distance, and direction.
+7. Confirm the nearest buried resource becomes visible as a `DIG ...` marker.
+8. Press `2` and dig the revealed marker with left-click; confirm the `Inventory:` count increases when it completes.
+9. If the scanner points to a visible resource instead, walk into it to auto-pick it up; no key press is needed.
+10. Confirm nearby visible resources have readable floating labels and distinct shapes:
+    - `IRON`: orange ore/rock cluster.
+    - `CRYSTAL`: purple crystal cluster.
+    - `BIO`: green spore/pod cluster.
+    - `CORE`: cyan glowing energy core.
+    - `BP`: flat gold data chip with a taller gold beacon.
+11. Cycle to `O2 plant`.
+12. Confirm the scanner points to a generated O2 Plant with an `O2` label when one is within range.
+13. Confirm early visible resources and buried markers are on ground level without needing to jump.
+14. When a buried resource is revealed, confirm the `DIG` marker includes a small resource-shaped icon, not only a flat circle.
+15. Look for the 5 visible `BP` data chips around the crash basin and confirm walking into one increases `BP` in Inventory.
 
 ## Base Repair And Wave Shortcut
 

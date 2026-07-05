@@ -25,7 +25,8 @@ func _input(event: InputEvent) -> void:
 func craft_canister() -> bool:
 	if not InventoryManager or not InventoryManager.has_resources(CRAFT_COST):
 		return false
-	InventoryManager.consume_resources(CRAFT_COST)
+	if not InventoryManager.consume_resources(CRAFT_COST):
+		return false
 	InventoryManager.add_resource(RESOURCE_TYPE, 1)
 	oxygen_canister_crafted.emit()
 	return true
@@ -43,7 +44,8 @@ func use_canister(player: Node = null) -> bool:
 	var max_oxygen := float(target_player.get("max_oxygen"))
 	if current_oxygen >= max_oxygen:
 		return false
-	InventoryManager.consume_resources({RESOURCE_TYPE: 1})
+	if not InventoryManager.consume_resources({RESOURCE_TYPE: 1}):
+		return false
 	target_player.set("current_oxygen", minf(max_oxygen, current_oxygen + OXYGEN_RESTORE))
 	target_player.emit_signal("oxygen_changed")
 	oxygen_canister_used.emit(OXYGEN_RESTORE)

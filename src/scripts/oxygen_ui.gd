@@ -40,12 +40,18 @@ func _on_oxygen_changed():
 		return
 	var current = player.current_oxygen
 	var maximum = player.max_oxygen
-	progress_bar.value = current / maximum * 100
-	label.text = "O2: %.0f%%" % (current / maximum * 100)
+	if maximum <= 0:
+		progress_bar.value = 0
+		label.text = "O2: --"
+		progress_bar.modulate = Color.DARK_RED
+		return
+	var ratio := clampf(current / maximum, 0.0, 1.0)
+	progress_bar.value = ratio * 100.0
+	label.text = "O2: %.0f%%" % (ratio * 100.0)
 
-	if current / maximum < 0.25:
+	if ratio < 0.25:
 		progress_bar.modulate = Color.RED
-	elif current / maximum < 0.5:
+	elif ratio < 0.5:
 		progress_bar.modulate = Color.YELLOW
 	else:
 		progress_bar.modulate = Color.WHITE
@@ -62,10 +68,12 @@ func _on_player_died():
 func _on_restart_pressed():
 	_is_game_over = false
 	game_over_panel.visible = false
-	# Request game restart via GameManager if it exists
-	var player = get_tree().get_first_node_in_group("player")
-	if player and player.is_dead:
-		player.respawn()
+	if GameManager and GameManager.has_method("reset_game"):
+		GameManager.reset_game()
+	else:
+		var player = get_tree().get_first_node_in_group("player")
+		if player and player.is_dead:
+			player.respawn()
 	progress_bar.value = 100
 	label.text = "O2: 100%"
 	progress_bar.modulate = Color.WHITE

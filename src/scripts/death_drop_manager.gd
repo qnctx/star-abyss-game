@@ -110,7 +110,7 @@ func _spawn_drop_node() -> void:
 func _clear_active_drop_node() -> void:
 	for drop in get_tree().get_nodes_in_group("death_drops"):
 		if drop and is_instance_valid(drop):
-			drop.queue_free()
+				drop.queue_free()
 
 
 func _drop_position(value: Vector3) -> Vector3:

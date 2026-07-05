@@ -6,6 +6,7 @@ var damage: float = 10.0
 var slow_amount: float = 0.0
 var lifetime: float = 3.0
 
+const SLOW_SOURCE_ID := "player_projectile"
 const WEAPON_COLORS = {
 	"pistol": Color(1.0, 0.85, 0.2),
 	"shotgun": Color(1.0, 0.5, 0.1),
@@ -42,7 +43,7 @@ func _on_body_entered(body: Node3D):
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
 		if slow_amount > 0 and body.has_method("apply_slow"):
-			body.apply_slow(slow_amount)
+			body.apply_slow(SLOW_SOURCE_ID, slow_amount)
 	queue_free()
 
 

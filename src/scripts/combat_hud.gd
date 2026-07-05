@@ -24,6 +24,10 @@ var _save_status_label: Label
 var _radio_label: Label
 var _death_drop_label: Label
 var _oxygen_supply_label: Label
+var _toolbelt_label: Label
+var _crosshair_label: Label
+var _zone_label: Label
+var _teleport_label: Label
 var _save_status_time_remaining := 0.0
 
 
@@ -102,6 +106,39 @@ func _ready() -> void:
 	_oxygen_supply_label.add_theme_color_override("font_color", Color(0.68, 0.95, 1.0))
 	add_child(_oxygen_supply_label)
 
+	_zone_label = Label.new()
+	_zone_label.position = Vector2(10, 568)
+	_zone_label.size = Vector2(920, 30)
+	_zone_label.add_theme_font_size_override("font_size", 15)
+	_zone_label.add_theme_color_override("font_color", Color(1.0, 0.78, 0.45))
+	add_child(_zone_label)
+
+	# Teleport hint: simple `T 传送 5 energy` line with availability state.
+	# Constants must stay in sync with player.gd (TELEPORT_COST, TELEPORT_BASE_RADIUS).
+	_teleport_label = Label.new()
+	_teleport_label.position = Vector2(10, 598)
+	_teleport_label.size = Vector2(920, 30)
+	_teleport_label.add_theme_font_size_override("font_size", 15)
+	_teleport_label.add_theme_color_override("font_color", Color(0.85, 0.92, 1.0))
+	add_child(_teleport_label)
+
+	_toolbelt_label = Label.new()
+	_toolbelt_label.size = Vector2(980, 42)
+	_toolbelt_label.add_theme_font_size_override("font_size", 16)
+	_toolbelt_label.add_theme_color_override("font_color", Color(0.95, 0.92, 0.78))
+	add_child(_toolbelt_label)
+
+	_crosshair_label = Label.new()
+	_crosshair_label.text = "+"
+	_crosshair_label.size = Vector2(28, 28)
+	_crosshair_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_crosshair_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_crosshair_label.add_theme_font_size_override("font_size", 22)
+	_crosshair_label.add_theme_color_override("font_color", Color(0.92, 0.98, 1.0, 0.86))
+	_crosshair_label.add_theme_color_override("font_outline_color", Color(0.0, 0.0, 0.0, 0.75))
+	_crosshair_label.add_theme_constant_override("outline_size", 3)
+	add_child(_crosshair_label)
+
 	if GameManager:
 		GameManager.base_health_changed.connect(_on_base_health_changed)
 		GameManager.base_shield_changed.connect(_on_base_shield_changed)
@@ -125,9 +162,14 @@ func _ready() -> void:
 	if DeathDropManager:
 		DeathDropManager.death_drop_spawned.connect(_on_death_drop_changed)
 		DeathDropManager.death_drop_collected.connect(_on_death_drop_changed)
+	if ZoneManager:
+		ZoneManager.zone_changed.connect(_on_zone_changed)
 	if OxygenCanisterManager:
 		OxygenCanisterManager.oxygen_canister_crafted.connect(_on_oxygen_supply_changed)
 		OxygenCanisterManager.oxygen_canister_used.connect(_on_oxygen_supply_used)
+	var toolbelt := _toolbelt_manager()
+	if toolbelt:
+		toolbelt.tool_changed.connect(_on_tool_changed)
 
 	var objective_tracker := get_tree().current_scene.get_node_or_null("ObjectiveTracker") if get_tree().current_scene else null
 	if objective_tracker:
@@ -145,7 +187,10 @@ func _process(_delta: float) -> void:
 	_refresh_radio_log()
 	_refresh_oxygen_supply_hint()
 	_refresh_death_drop_hint()
-	_refresh_oxygen_supply_hint()
+	_refresh_zone_hint()
+	_refresh_teleport_hint()
+	_refresh_toolbelt_hint()
+	_refresh_crosshair()
 	if _save_status_time_remaining > 0.0:
 		_save_status_time_remaining = maxf(0.0, _save_status_time_remaining - _delta)
 		if is_zero_approx(_save_status_time_remaining):
@@ -228,6 +273,16 @@ func _on_oxygen_supply_used(_amount: float) -> void:
 	_refresh_oxygen_supply_hint()
 
 
+func _on_zone_changed(_zone_name: String) -> void:
+	_refresh_zone_hint()
+
+
+func _on_tool_changed(_tool_id: String) -> void:
+	_refresh_toolbelt_hint()
+	_refresh_scanner_hint()
+	_refresh_build_hint()
+
+
 func _refresh() -> void:
 	if not GameManager:
 		return
@@ -250,29 +305,32 @@ func _refresh() -> void:
 	_refresh_objective_hint()
 	_refresh_death_drop_hint()
 	_refresh_oxygen_supply_hint()
+	_refresh_zone_hint()
+	_refresh_teleport_hint()
+	_refresh_toolbelt_hint()
 
 
 func _refresh_build_hint() -> void:
 	var build_manager := get_tree().current_scene.get_node_or_null("BuildManager") if get_tree().current_scene else null
 	if build_manager and build_manager.build_mode:
 		if build_manager.recycle_mode:
-			_build_label.text = "Recycle | X Build | U Up | R Repair\n%s" % build_manager.get_recycle_status_text()
+			_build_label.text = "Recycle | crosshair target | X build | 1-5 tools\n%s" % build_manager.get_recycle_status_text()
 			return
 		if not build_manager.is_selected_unlocked():
-			_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | X Rec | U Up | R Repair\n%s locked | %s" % [
+			_build_label.text = "Build: aim ground | Tab type Shift+1-7 direct | 1-5 tools\n%s locked | %s" % [
 				build_manager.get_selected_label(),
 				build_manager.get_selected_unlock_status_text()
 			]
 			return
 		var afford := InventoryManager.has_resources(build_manager.get_selected_cost()) if InventoryManager else false
-		_build_label.text = "Build 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | X Rec | U Up | R Repair\n%s: %s | LMB %s | %s" % [
+		_build_label.text = "Build: aim ground | Tab type Shift+1-7 direct | X Rec U Up R Repair\n%s: %s | LMB %s | %s" % [
 			build_manager.get_selected_label(),
 			build_manager.get_selected_cost_text(),
 			"READY" if afford else "NEED RES",
 			build_manager.get_structure_action_status_text()
 		]
 	else:
-		_build_label.text = "B Build | 1Tur 2O2 3Sh 4Sol 5Res 6Slow 7Sig | Y Unlock | F6 Save F7 Load"
+		_build_label.text = "4/B Build | Crosshair aims tools | F6 Save F7 Load"
 
 
 func _refresh_inventory_hint() -> void:
@@ -318,6 +376,75 @@ func _refresh_death_drop_hint() -> void:
 
 func _refresh_oxygen_supply_hint() -> void:
 	_oxygen_supply_label.text = get_oxygen_supply_text()
+
+
+func _refresh_zone_hint() -> void:
+	if not _zone_label:
+		return
+	if not ZoneManager:
+		_zone_label.text = ""
+		return
+	var zone_name := ZoneManager.get_zone_name()
+	var o2_mult := ZoneManager.get_oxygen_multiplier()
+	var cur_level := ZoneManager.get_current_adaptation_level()
+	var rec_level := ZoneManager.get_recommended_adaptation_level()
+	var parts: Array[String] = [zone_name, "氧耗 x%.1f" % o2_mult, "适应 Lv%d" % cur_level]
+	# Soft-gate hint: only pressure zones (COLD/HEAT/GRAVITY) recommend Lv2+.
+	# Skip the recommendation when the player has already reached it.
+	if rec_level > 0 and cur_level < rec_level:
+		parts.append("建议 Lv%d+" % rec_level)
+	_zone_label.text = " | ".join(parts)
+
+
+func _refresh_teleport_hint() -> void:
+	# P3: simple `T 传送 5 energy` hint with availability state.
+	# Mirrors player.gd _try_teleport gating (day / base radius / 5 energy / registered beacon).
+	if not _teleport_label:
+		return
+	const TELEPORT_ENERGY_COST := 5
+	const TELEPORT_BASE_RADIUS := 10.0
+	# No teleport without a registered zone entrance beacon.
+	var tm := get_tree().current_scene.get_node_or_null("TeleportManager") if get_tree().current_scene else null
+	if not tm or tm.beacons.is_empty():
+		_teleport_label.text = ""
+		return
+	# Night locks teleport — surface the reason so the player knows why T does nothing.
+	if GameManager and GameManager.is_night:
+		_teleport_label.text = "T 传送（仅白天可用）"
+		return
+	# Must be standing inside the base radius.
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if not player:
+		_teleport_label.text = "T 传送 5 energy"
+		return
+	var base_pos: Vector3 = WorldGenerator.base_position if WorldGenerator else Vector3(0, 1, 0)
+	if player.global_position.distance_to(base_pos) > TELEPORT_BASE_RADIUS:
+		_teleport_label.text = "T 传送（需在基地半径内）"
+		return
+	# Energy gate.
+	if InventoryManager and int(InventoryManager.resources.get("energy", 0)) < TELEPORT_ENERGY_COST:
+		_teleport_label.text = "T 传送（需 %d energy）" % TELEPORT_ENERGY_COST
+		return
+	_teleport_label.text = "T 传送 5 energy"
+
+
+func _refresh_toolbelt_hint() -> void:
+	if not _toolbelt_label:
+		return
+	var viewport_size := get_viewport_rect().size
+	_toolbelt_label.position = Vector2(10.0, maxf(0.0, viewport_size.y - 52.0))
+	var toolbelt := _toolbelt_manager()
+	if not toolbelt:
+		_toolbelt_label.text = "Tools unavailable"
+		return
+	_toolbelt_label.text = "%s\n%s" % [toolbelt.get_toolbelt_text(), toolbelt.get_status_text()]
+
+
+func _refresh_crosshair() -> void:
+	if not _crosshair_label:
+		return
+	var viewport_size := get_viewport_rect().size
+	_crosshair_label.position = viewport_size * 0.5 - _crosshair_label.size * 0.5
 
 
 func get_structure_damage_hint() -> String:
@@ -392,7 +519,13 @@ func get_inventory_text() -> String:
 			first_row.append(item)
 		else:
 			second_row.append(item)
-	return "Inventory: %s\n%s" % [" | ".join(first_row), " | ".join(second_row)]
+	return "Inventory: %s\n%s | 负重 %.1f/%.0fkg%s" % [
+		" | ".join(first_row),
+		" | ".join(second_row),
+		InventoryManager.get_total_weight(),
+		InventoryManager.CARRY_CAPACITY,
+		" !超重!" if InventoryManager.get_load_ratio() > 1.0 else ""
+	]
 
 
 func get_signal_hint() -> String:
@@ -439,3 +572,15 @@ func get_oxygen_supply_text() -> String:
 	if not OxygenCanisterManager:
 		return ""
 	return OxygenCanisterManager.get_supply_hint()
+
+
+func get_toolbelt_text() -> String:
+	return _toolbelt_label.text if _toolbelt_label else ""
+
+
+func get_crosshair_text() -> String:
+	return _crosshair_label.text if _crosshair_label else ""
+
+
+func _toolbelt_manager() -> Node:
+	return get_tree().current_scene.get_node_or_null("ToolbeltManager") if get_tree().current_scene else null

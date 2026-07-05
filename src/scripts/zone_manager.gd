@@ -27,6 +27,24 @@ const ADAPTATION_BONUSES = {
 	ZoneType.CRASH: {4: {"oxygen_efficiency": 0.7}}
 }
 
+# Base speed penalty per zone (before adaptation). Lv2+ removes the penalty.
+const ZONE_SPEED_PENALTY = {
+	ZoneType.CRASH: 1.0,
+	ZoneType.COLD: 1.0,
+	ZoneType.HEAT: 1.0,
+	ZoneType.GRAVITY: 0.7   # -30% speed at Lv0-1
+}
+const SPEED_PENALTY_IMMUNE_LEVEL := 2
+
+# Structure drain per second per zone (before adaptation). Lv2+ removes drain.
+const ZONE_STRUCTURE_DRAIN = {
+	ZoneType.CRASH: 0.0,
+	ZoneType.COLD: 0.0,
+	ZoneType.HEAT: 0.1,     # -0.1 HP/s at Lv0-1 (low to avoid punishing outposts)
+	ZoneType.GRAVITY: 0.0
+}
+const STRUCTURE_DRAIN_IMMUNE_LEVEL := 2
+
 const ZONE_NAMES = {
 	ZoneType.CRASH: "Crash Zone",
 	ZoneType.COLD: "极寒区",
@@ -49,3 +67,31 @@ func get_speed_bonus() -> float:
 	var bonus = ADAPTATION_BONUSES.get(current_zone, {})
 	var level_bonus = bonus.get(adaptations[current_zone], {})
 	return level_bonus.get("speed_bonus", 0.0)
+
+func get_speed_multiplier() -> float:
+	## Base speed multiplier for the current zone.
+	## GRAVITY zone slows the player at Lv0-1; Lv2+ restores normal speed.
+	if adaptations[current_zone] >= SPEED_PENALTY_IMMUNE_LEVEL:
+		return 1.0
+	return ZONE_SPEED_PENALTY.get(current_zone, 1.0)
+
+func get_structure_drain_rate() -> float:
+	## HP/s drained from structures in the current zone.
+	## HEAT zone damages structures at Lv0-1; Lv2+ makes them immune.
+	if adaptations[current_zone] >= STRUCTURE_DRAIN_IMMUNE_LEVEL:
+		return 0.0
+	return ZONE_STRUCTURE_DRAIN.get(current_zone, 0.0)
+
+
+func get_recommended_adaptation_level() -> int:
+	## Soft-gate hint shown in HUD. CRASH needs no adaptation; the three
+	## pressure zones recommend Lv2 (removes speed/structure penalty).
+	## Used by combat_hud to render "建议 Lv2+" next to the zone name.
+	if current_zone == ZoneType.CRASH:
+		return 0
+	return max(SPEED_PENALTY_IMMUNE_LEVEL, STRUCTURE_DRAIN_IMMUNE_LEVEL)
+
+
+func get_current_adaptation_level() -> int:
+	## Adaptation level for the current zone (0-4).
+	return int(adaptations.get(current_zone, 0))

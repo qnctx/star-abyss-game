@@ -7,6 +7,7 @@ const SOLAR_PANEL_SCRIPT := preload("res://scripts/solar_panel.gd")
 const RESEARCH_STATION_SCRIPT := preload("res://scripts/research_station.gd")
 const SLOW_FIELD_SCRIPT := preload("res://scripts/slow_field.gd")
 const SIGNAL_BEACON_SCRIPT := preload("res://scripts/signal_beacon.gd")
+const AIM_TARGETING := preload("res://scripts/aim_targeting.gd")
 const TURRET_COST := {"iron": 20, "void_crystal": 5}
 const O2_STATION_COST := {"iron": 15, "biomass": 10}
 const SHIELD_GENERATOR_COST := {"iron": 25, "void_crystal": 8, "energy_core": 1}
@@ -16,17 +17,22 @@ const SLOW_FIELD_COST := {"iron": 15, "biomass": 8, "energy": 4}
 const SIGNAL_BEACON_COST := {"iron": 30, "void_crystal": 10, "energy": 10, "blueprint": 2}
 const PLACEMENT_RANGE: float = 18.0
 const BUILD_DISTANCE: float = 6.0
+const BUILD_CURSOR_SENSITIVITY: float = 0.035
+const MIN_BUILD_CURSOR_DISTANCE: float = 2.2
 const MIN_BASE_DISTANCE: float = 2.5
 const MIN_STRUCTURE_DISTANCE: float = 2.0
 const RECYCLE_DISTANCE: float = 2.8
 const REFUND_RATE: float = 0.5
 const UPGRADE_DISTANCE: float = 2.8
 const REPAIR_DISTANCE: float = 2.8
+const AIM_STRUCTURE_RANGE: float = 8.0
+const AIM_STRUCTURE_RADIUS: float = 1.35
 const MAX_UPGRADE_LEVEL: int = 3
 const TURRET_UPGRADE_COST := {"iron": 10, "energy": 5, "blueprint": 1}
 const STRUCTURE_REPAIR_COST := {"iron": 5, "biomass": 2}
 const STRUCTURE_MAX_HEALTH: float = 100.0
 const STRUCTURE_REPAIR_AMOUNT: float = 35.0
+const MIN_PLAYER_BUILD_DISTANCE: float = 2.8
 const BUILD_TURRET: String = "turret"
 const BUILD_O2_STATION: String = "o2_station"
 const BUILD_SHIELD_GENERATOR: String = "shield_generator"
@@ -34,15 +40,27 @@ const BUILD_SOLAR_PANEL: String = "solar_panel"
 const BUILD_RESEARCH_STATION: String = "research_station"
 const BUILD_SLOW_FIELD: String = "slow_field"
 const BUILD_SIGNAL_BEACON: String = "signal_beacon"
+const BUILD_ORDER := [
+	BUILD_TURRET,
+	BUILD_O2_STATION,
+	BUILD_SHIELD_GENERATOR,
+	BUILD_SOLAR_PANEL,
+	BUILD_RESEARCH_STATION,
+	BUILD_SLOW_FIELD,
+	BUILD_SIGNAL_BEACON,
+]
 
 var build_mode: bool = false
 var recycle_mode: bool = false
 var selected_building: String = BUILD_TURRET
 var _preview: MeshInstance3D = null
 var _preview_material: StandardMaterial3D = null
+var _preview_label: Label3D = null
 var _can_place: bool = false
 var _position_is_valid: bool = false
 var _placement_position: Vector3 = Vector3.ZERO
+var _build_cursor_offset: Vector3 = Vector3.ZERO
+var _build_aim_valid: bool = true
 
 
 func _ready() -> void:
@@ -76,25 +94,28 @@ func _input(event: InputEvent) -> void:
 		unlock_selected_tech()
 		_refresh_preview_mesh()
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_1:
+	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_TAB:
+		_cycle_selected_building(-1 if event.shift_pressed else 1)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_1:
 		_select_building(BUILD_TURRET)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_2:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_2:
 		_select_building(BUILD_O2_STATION)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_3:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_3:
 		_select_building(BUILD_SHIELD_GENERATOR)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_4:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_4:
 		_select_building(BUILD_SOLAR_PANEL)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_5:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_5:
 		_select_building(BUILD_RESEARCH_STATION)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_6:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_6:
 		_select_building(BUILD_SLOW_FIELD)
 		get_viewport().set_input_as_handled()
-	elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_7:
+	elif event is InputEventKey and event.pressed and event.shift_pressed and event.physical_keycode == KEY_7:
 		_select_building(BUILD_SIGNAL_BEACON)
 		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed:
@@ -106,7 +127,7 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	_update_preview()
 
 
@@ -114,6 +135,8 @@ func _set_build_mode(enabled: bool) -> void:
 	build_mode = enabled
 	if not build_mode:
 		recycle_mode = false
+	else:
+		_reset_build_cursor()
 	set_process(build_mode)
 	_refresh_preview_mesh()
 	if _preview:
@@ -125,6 +148,23 @@ func _select_building(building_id: String) -> void:
 	_refresh_preview_mesh()
 
 
+func _cycle_selected_building(direction: int) -> void:
+	# 诊断日志：记录 Tab 切换前后 inventory 状态，用于定位"Tab 后资源消失"bug。
+	# 如果切换前后数字不一致，说明 Tab 触发了非预期消耗。
+	var _bp_before := int(InventoryManager.resources.get("blueprint", -1)) if InventoryManager else -1
+	var _iron_before := int(InventoryManager.resources.get("iron", -1)) if InventoryManager else -1
+	var index := BUILD_ORDER.find(selected_building)
+	if index < 0:
+		index = 0
+	index = wrapi(index + direction, 0, BUILD_ORDER.size())
+	_select_building(str(BUILD_ORDER[index]))
+	var _bp_after := int(InventoryManager.resources.get("blueprint", -1)) if InventoryManager else -1
+	var _iron_after := int(InventoryManager.resources.get("iron", -1)) if InventoryManager else -1
+	if _bp_before != _bp_after or _iron_before != _iron_after:
+		push_warning("[BuildManager] Tab 切换异常消耗资源！blueprint %d->%d, iron %d->%d" % [_bp_before, _bp_after, _iron_before, _iron_after])
+	print("[BuildManager] Tab 切换 -> %s | bp %d->%d | iron %d->%d" % [selected_building, _bp_before, _bp_after, _iron_before, _iron_after])
+
+
 func _create_preview() -> void:
 	_preview = MeshInstance3D.new()
 	_preview.name = "BuildPreview"
@@ -134,6 +174,16 @@ func _create_preview() -> void:
 	_preview.material_override = _preview_material
 	_preview.visible = false
 	add_child(_preview)
+	_preview_label = Label3D.new()
+	_preview_label.name = "BuildPreviewLabel"
+	_preview_label.position = Vector3(0.0, 1.25, 0.0)
+	_preview_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	_preview_label.font_size = 34
+	_preview_label.pixel_size = 0.009
+	_preview_label.modulate = Color(1.0, 0.95, 0.68)
+	_preview_label.outline_size = 8
+	_preview_label.outline_modulate = Color(0.02, 0.02, 0.02, 0.95)
+	_preview.add_child(_preview_label)
 	_refresh_preview_mesh()
 
 
@@ -176,17 +226,32 @@ func _refresh_preview_mesh() -> void:
 			cylinder_mesh.height = 1.2
 		mesh = cylinder_mesh
 	_preview.mesh = mesh
+	if _preview_label:
+		_preview_label.text = get_selected_label().to_upper()
+		if selected_building == BUILD_SOLAR_PANEL:
+			_preview_label.position.y = 1.05
+		elif selected_building == BUILD_SIGNAL_BEACON:
+			_preview_label.position.y = 1.65
+		else:
+			_preview_label.position.y = 1.25
 
 
 func _update_preview() -> void:
 	if not _preview:
 		return
 
-	var target_pos := _get_build_target_position()
-	_placement_position = _snap_to_terrain(target_pos)
+	var target_data := _get_build_target_data()
+	_build_aim_valid = bool(target_data.get("valid", true))
+	_placement_position = _snap_to_terrain(target_data.get("position", Vector3.ZERO))
 	if recycle_mode:
-		_position_is_valid = _find_recycle_target(_placement_position) != null
+		var recycle_target := _find_recycle_target(_placement_position)
+		if recycle_target:
+			_placement_position = recycle_target.global_position
+		_position_is_valid = recycle_target != null
 		_can_place = _position_is_valid
+	elif not _build_aim_valid:
+		_position_is_valid = false
+		_can_place = false
 	else:
 		_position_is_valid = _validate_position(_placement_position)
 		var has_resources := InventoryManager.has_resources(get_selected_cost())
@@ -194,6 +259,7 @@ func _update_preview() -> void:
 		_can_place = _position_is_valid and has_resources and unlocked
 
 	_preview.global_position = _placement_position
+	_preview.visible = build_mode and (_build_aim_valid or recycle_mode)
 	if recycle_mode and _can_place:
 		_preview_material.albedo_color = Color(0.25, 0.85, 1.0, 0.45)
 	elif recycle_mode:
@@ -220,7 +286,8 @@ func _try_place_structure() -> void:
 	if not InventoryManager.has_resources(cost):
 		return
 
-	InventoryManager.consume_resources(cost)
+	if not InventoryManager.consume_resources(cost):
+		return
 	var structure := _instantiate_selected_structure()
 	get_tree().current_scene.add_child(structure)
 	structure.global_position = _placement_position
@@ -277,7 +344,8 @@ func upgrade_structure(structure: Node3D) -> bool:
 	if not _apply_turret_upgrade(structure, current_level + 1):
 		return false
 
-	InventoryManager.consume_resources(TURRET_UPGRADE_COST)
+	if not InventoryManager.consume_resources(TURRET_UPGRADE_COST):
+		return false
 	structure.set_meta("upgrade_level", current_level + 1)
 	return true
 
@@ -295,7 +363,8 @@ func repair_structure(structure: Node3D) -> bool:
 	if not InventoryManager.has_resources(STRUCTURE_REPAIR_COST):
 		return false
 
-	InventoryManager.consume_resources(STRUCTURE_REPAIR_COST)
+	if not InventoryManager.consume_resources(STRUCTURE_REPAIR_COST):
+		return false
 	structure.set_meta("structure_health", minf(max_health, current_health + STRUCTURE_REPAIR_AMOUNT))
 	return true
 
@@ -431,15 +500,71 @@ func _apply_turret_upgrade(structure: Node3D, new_level: int) -> bool:
 
 
 func _get_build_target_position() -> Vector3:
+	return _get_build_target_data().get("position", Vector3.ZERO)
+
+
+func _get_build_target_data() -> Dictionary:
+	var targeting = AIM_TARGETING.new()
+	var ray := targeting.get_aim_ray(get_viewport(), PLACEMENT_RANGE)
+	if bool(ray.get("valid", false)):
+		var aim := targeting.get_terrain_aim_position(get_viewport(), PLACEMENT_RANGE, BUILD_DISTANCE)
+		var aim_position: Vector3 = aim.get("position", Vector3.ZERO)
+		if bool(aim.get("valid", false)):
+			aim_position = _keep_target_outside_player(aim_position)
+		return {
+			"valid": bool(aim.get("valid", false)),
+			"position": aim_position,
+		}
+
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if not player:
-		return Vector3.ZERO
+		return {"valid": true, "position": Vector3.ZERO}
+	if _build_cursor_offset.length() <= 0.01:
+		_reset_build_cursor()
+	return {"valid": true, "position": player.global_position + _build_cursor_offset}
 
+
+func _reset_build_cursor() -> void:
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if not player:
+		_build_cursor_offset = Vector3.FORWARD * BUILD_DISTANCE
+		return
+	_build_cursor_offset = _player_flat_forward(player) * BUILD_DISTANCE
+
+
+func _move_build_cursor(relative: Vector2) -> void:
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if not player:
+		return
+	var forward := _player_flat_forward(player)
+	var right := _player_flat_right(player)
+	_build_cursor_offset += right * relative.x * BUILD_CURSOR_SENSITIVITY
+	_build_cursor_offset -= forward * relative.y * BUILD_CURSOR_SENSITIVITY
+	_build_cursor_offset.y = 0.0
+	var distance := _build_cursor_offset.length()
+	if distance <= 0.01:
+		_build_cursor_offset = forward * MIN_BUILD_CURSOR_DISTANCE
+		return
+	if distance > PLACEMENT_RANGE:
+		_build_cursor_offset = _build_cursor_offset.normalized() * PLACEMENT_RANGE
+	elif distance < MIN_BUILD_CURSOR_DISTANCE:
+		_build_cursor_offset = _build_cursor_offset.normalized() * MIN_BUILD_CURSOR_DISTANCE
+
+
+func _player_flat_forward(player: Node3D) -> Vector3:
 	var forward := -player.global_transform.basis.z
 	forward.y = 0.0
 	if forward.length() <= 0.01:
 		forward = Vector3.FORWARD
-	return player.global_position + forward.normalized() * BUILD_DISTANCE
+	return forward.normalized()
+
+
+func _player_flat_right(player: Node3D) -> Vector3:
+	var right := player.global_transform.basis.x
+	right.y = 0.0
+	if right.length() <= 0.01:
+		right = Vector3.RIGHT
+	return right.normalized()
 
 
 func _snap_to_terrain(pos: Vector3) -> Vector3:
@@ -451,10 +576,27 @@ func _snap_to_terrain(pos: Vector3) -> Vector3:
 	return Vector3(x, y + 0.75, z)
 
 
+func _keep_target_outside_player(pos: Vector3) -> Vector3:
+	var player := get_tree().get_first_node_in_group("player") as Node3D
+	if not player:
+		return pos
+	var flat_offset := Vector3(pos.x - player.global_position.x, 0.0, pos.z - player.global_position.z)
+	if flat_offset.length() >= MIN_PLAYER_BUILD_DISTANCE:
+		return pos
+	var forward := _player_flat_forward(player)
+	if flat_offset.length() > 0.1:
+		forward = flat_offset.normalized()
+	return player.global_position + forward * MIN_PLAYER_BUILD_DISTANCE
+
+
 func _validate_position(pos: Vector3) -> bool:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
-	if player and player.global_position.distance_to(pos) > PLACEMENT_RANGE:
-		return false
+	if player:
+		var flat_distance := Vector2(player.global_position.x, player.global_position.z).distance_to(Vector2(pos.x, pos.z))
+		if flat_distance < MIN_PLAYER_BUILD_DISTANCE - 0.05:
+			return false
+		if player.global_position.distance_to(pos) > PLACEMENT_RANGE:
+			return false
 	if WorldGenerator and pos.distance_to(WorldGenerator.base_position) < MIN_BASE_DISTANCE:
 		return false
 	for structure in get_tree().get_nodes_in_group("built_structures"):
@@ -464,6 +606,12 @@ func _validate_position(pos: Vector3) -> bool:
 
 
 func _find_recycle_target(pos: Vector3) -> Node3D:
+	var aimed := _find_aimed_structure(RECYCLE_DISTANCE, AIM_STRUCTURE_RADIUS, func(_structure: Node3D) -> bool:
+		return true
+	)
+	if aimed:
+		return aimed
+
 	var nearest: Node3D = null
 	var nearest_distance := RECYCLE_DISTANCE
 	for structure in get_tree().get_nodes_in_group("built_structures"):
@@ -478,6 +626,12 @@ func _find_recycle_target(pos: Vector3) -> Node3D:
 
 
 func _find_upgrade_target(pos: Vector3) -> Node3D:
+	var aimed := _find_aimed_structure(UPGRADE_DISTANCE, AIM_STRUCTURE_RADIUS, func(structure: Node3D) -> bool:
+		return structure.get("damage") != null
+	)
+	if aimed:
+		return aimed
+
 	var nearest: Node3D = null
 	var nearest_distance := UPGRADE_DISTANCE
 	for structure in get_tree().get_nodes_in_group("built_structures"):
@@ -494,23 +648,46 @@ func _find_upgrade_target(pos: Vector3) -> Node3D:
 
 
 func _find_repair_target(pos: Vector3) -> Node3D:
+	var aimed := _find_aimed_structure(REPAIR_DISTANCE, AIM_STRUCTURE_RADIUS, func(structure: Node3D) -> bool:
+		return _is_repair_target(structure)
+	)
+	if aimed:
+		return aimed
+
 	var nearest: Node3D = null
 	var nearest_distance := REPAIR_DISTANCE
 	for structure in get_tree().get_nodes_in_group("built_structures"):
 		var structure_node := structure as Node3D
 		if not structure_node or not is_instance_valid(structure_node):
 			continue
-		if not structure_node.has_meta("structure_health"):
-			continue
-		var max_health: float = float(structure_node.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
-		var current_health: float = float(structure_node.get_meta("structure_health", max_health))
-		if current_health >= max_health:
+		if not _is_repair_target(structure_node):
 			continue
 		var distance := structure_node.global_position.distance_to(pos)
 		if distance < nearest_distance:
 			nearest_distance = distance
 			nearest = structure_node
 	return nearest
+
+
+func _find_aimed_structure(max_distance: float, radius: float, filter: Callable) -> Node3D:
+	return AIM_TARGETING.new().find_aimed_group(
+		get_viewport(),
+		get_tree(),
+		"built_structures",
+		maxf(max_distance, AIM_STRUCTURE_RANGE),
+		radius,
+		filter
+	)
+
+
+func _is_repair_target(structure_node: Node3D) -> bool:
+	if not structure_node or not is_instance_valid(structure_node):
+		return false
+	if not structure_node.has_meta("structure_health"):
+		return false
+	var max_health: float = float(structure_node.get_meta("structure_max_health", STRUCTURE_MAX_HEALTH))
+	var current_health: float = float(structure_node.get_meta("structure_health", max_health))
+	return current_health < max_health
 
 
 func _instantiate_selected_structure() -> Node3D:

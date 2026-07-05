@@ -4,6 +4,8 @@ signal weapon_fired()
 signal weapon_changed(weapon_name: String, ammo_count: int)
 signal ammo_changed(weapon_name: String, ammo_count: int)
 
+const AIM_TARGETING := preload("res://scripts/aim_targeting.gd")
+
 @export var current_weapon: String = "pistol"
 
 var weapon_data = {
@@ -34,10 +36,14 @@ func _ready():
 
 
 func _process(_delta):
+	if not _weapon_tool_active():
+		return
 	if Input.is_action_pressed("shoot") and can_fire:
 		fire()
 
 	# Weapon switching
+	if _toolbelt_exists():
+		return
 	for i in range(5):
 		if Input.is_action_just_pressed("weapon_switch_" + str(i + 1)):
 			var weapons = unlocked_weapons
@@ -82,25 +88,10 @@ func fire():
 
 
 func get_aim_direction() -> Vector3:
-	var camera = get_viewport().get_camera_3d()
-	if not camera:
+	var ray := AIM_TARGETING.new().get_aim_ray(get_viewport(), 80.0)
+	if not bool(ray.get("valid", false)):
 		return (global_transform.basis * Vector3.FORWARD).normalized()
-
-	var mouse_pos = get_viewport().get_mouse_position()
-	var ray_origin = camera.project_ray_origin(mouse_pos)
-	var ray_dir = camera.project_ray_normal(mouse_pos)
-
-	# Intersect with horizontal plane at player's Y
-	var aim_plane = Plane(Vector3.UP, global_position.y)
-	var hit_point = aim_plane.intersects_ray(ray_origin, ray_dir)
-
-	if hit_point == null:
-		return ray_dir.normalized()
-
-	var dir = (hit_point - global_position).normalized()
-	if dir.length_squared() <= 0.0001:
-		return ray_dir.normalized()
-	return dir
+	return (ray["direction"] as Vector3).normalized()
 
 
 func switch_weapon(weapon_name: String):
@@ -126,6 +117,15 @@ func _get_current_ammo() -> int:
 	if current_weapon in infinite_ammo_weapons:
 		return -1  # infinite
 	return ammo.get(current_weapon, 0)
+
+
+func _weapon_tool_active() -> bool:
+	var toolbelt := get_tree().current_scene.get_node_or_null("ToolbeltManager") if get_tree().current_scene else null
+	return not toolbelt or str(toolbelt.get("current_tool")) == "weapon"
+
+
+func _toolbelt_exists() -> bool:
+	return get_tree().current_scene and get_tree().current_scene.get_node_or_null("ToolbeltManager") != null
 
 
 func get_weapon_unlock_status(weapon_name: String) -> bool:

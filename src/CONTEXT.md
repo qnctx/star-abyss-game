@@ -11,7 +11,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 ### Player (玩家)
 - **Type**: `CharacterBody3D`
 - **Script**: `scripts/player.gd`
-- **Concept**: The controllable survivor. Moves with WASD, sprints with Shift.
+- **Concept**: The controllable survivor. Moves with WASD, sprints with Shift, and uses mouse yaw/pitch for first-person aiming.
 - **States**: alive / dead / respawning
 - **Key properties**:
   - `current_oxygen` (float, starts at 180s)
@@ -154,16 +154,54 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 ### Resource Scanner (资源/生存扫描器)
 - **Type**: `Node`
 - **Script**: `scripts/resource_scanner.gd`
-- **Concept**: Lightweight HUD scanner that reduces resource and O2 Plant hunting friction during the build/explore loop.
-- **Controls**: `G` cycles target scan type.
-- **Scan types**: iron, biomass, void_crystal, energy_core, oxygen_plant
+- **Concept**: Equipped scanner tool that makes hidden/buried resource hunting meaningful while still supporting O2 Plant navigation.
+- **Controls**: Equip `3` Scanner, then `G` cycles target scan type.
+- **Scan types**: iron, biomass, void_crystal, energy_core, oxygen_plant, blueprint
 - **Behaviors**:
-  - Finds nearest matching resource node in the `resource_nodes` group within `45m`
+  - Resource scan modes first find matching `buried_resources` within `45m`, reveal the nearest matching deposit, and report depth.
+  - If no buried deposit is found, resource modes fall back to visible `resource_nodes`.
   - `oxygen_plant` scans the `oxygen_plants` group instead
   - Reports distance and rough compass direction through `CombatHUD`
   - Updates automatically as resources are collected
   - Resource pickups are walk-over collection nodes with billboard labels: `IRON`, `BIO`, `CRYSTAL`, `CORE`, `BP`
-  - Scanner remains useful as navigation; current resource counts are shown by `CombatHUD`.
+  - Scanner is intentionally quiet unless the Scanner tool is equipped; current resource counts are shown by `CombatHUD`.
+
+### Aim Targeting (准星目标)
+- **Script**: `scripts/aim_targeting.gd`
+- **Concept**: Shared center-screen ray helper for weapon, build, harvest, and repair interactions.
+- **Behaviors**:
+  - Uses the active `Camera3D` and viewport center, not the mouse cursor position.
+  - Computes terrain hits mathematically through `WorldGenerator.get_height_at()` so terrain collision can remain disabled and avoid invisible wall sticking.
+  - Can select nearby nodes in groups by closest distance to the aim ray.
+
+### Toolbelt Manager (底部工具栏)
+- **Type**: `Node`
+- **Script**: `scripts/toolbelt_manager.gd`
+- **Concept**: One active hand tool at a time so weapon, scanner, harvest, build, and repair inputs stop fighting each other.
+- **Controls**:
+  - `1` Weapon
+  - `2` Harvester
+  - `3` Scanner
+  - `4` Build
+  - `5` Repair
+- **Behaviors**:
+  - `CombatHUD` shows the active tool row near the bottom of the screen and a center crosshair.
+  - Weapon firing only works while Weapon is active and fires along the crosshair ray.
+  - Build tool opens `BuildManager`; ordinary `1-5` always switch tools, while build type selection uses `Tab` or `Shift+1-7`.
+  - Harvester left-click uses the crosshair to collect visible resources or dig revealed buried resources.
+  - Repair left-click delegates to `BuildManager` structure repair and prioritizes the crosshair target.
+
+### Buried Resource (地下资源)
+- **Type**: `Node3D`
+- **Script**: `scripts/buried_resource.gd`
+- **Groups**: `buried_resources`
+- **Concept**: Hidden resource deposit that creates a real use case for scanner/harvester tool switching.
+- **State**: `resource_type`, `amount`, `depth`, `dig_required`, `dig_progress`, `is_revealed`
+- **Behaviors**:
+  - Starts invisible on the terrain surface.
+  - `ResourceScanner` reveals it and shows a depth/distance/direction hint.
+  - Harvester digs it over multiple left-clicks, then grants resources through `InventoryManager` and queues itself for deletion.
+  - Revealed deposits show a larger colored marker, vertical beam, resource icon, and `DIG TYPE x/y` label.
 
 ### Signal Beacon (信号台)
 - **Type**: `Node3D`
@@ -265,14 +303,20 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Script**: `scripts/projectile.gd` (turret), `scripts/player_projectile.gd` (player weapons)
 - **Concept**: Moving bullet that travels toward a target node and deals damage on arrival
 - **Turret projectiles**: follow `target` node via `look_at`
-- **Player projectiles**: use `direction` vector + `speed`, can have `slow_amount` (ice ray)
+- **Player projectiles**: use the shared crosshair aim direction + `speed`, can have `slow_amount` (ice ray)
 
 ### Resource Node (资源节点)
 - **Type**: `Area3D`
 - **Script**: `scripts/resource_node.gd`
-- **Concept**: Floating collectible resource scattered around the map. Bobbing animation.
+- **Concept**: Visible collectible resource scattered around the map. The pickup body stays near terrain height while the mesh/label bobs visually.
 - **Resource types**: iron, void_crystal, biomass, energy_core, blueprint
-- **Behaviors**: Player enters collision → `InventoryManager.add_resource()` → VFX particles → `queue_free()`
+- **Visual language**:
+  - `iron`: orange ore chunks on a dark rock base.
+  - `void_crystal`: purple crystal cluster.
+  - `biomass`: green spore/pod cluster.
+  - `energy_core`: cyan glowing core with dark shell pieces.
+  - `blueprint`: flat gold data chip with cyan trace lines.
+- **Behaviors**: Player enters collision or Harvester crosshair collection calls `collect()` → `InventoryManager.add_resource()` → VFX particles → `queue_free()`
 
 ### Zone (区域)
 - **Type**: Managed by `ZoneManager` (Node, Autoload candidate)
@@ -334,8 +378,9 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 ### Build / Recycle System
 - **Manager**: `scripts/build_manager.gd`
 - **Build controls**:
-  - `B` toggles build mode.
-  - `1-6` select buildable structures.
+  - `B` toggles build mode, or `4` selects the Build tool and opens build mode.
+  - `Tab` cycles buildable structures while build mode is active; `Shift+1-7` direct-selects building types.
+  - The center crosshair controls build placement; the preview follows terrain hits and hides when aiming into the sky.
   - Left click places a valid structure.
 - **Recycle controls**:
   - `X` toggles recycle mode while build mode is open.
@@ -367,7 +412,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 
 ### Weapon System
 - **Controller**: `scripts/weapon_controller.gd` (Node3D, attached to player)
-- **Concept**: Player fires one of 5 weapon types, selected by number keys 1-5.
+- **Concept**: Player fires the currently equipped weapon while the Toolbelt `Weapon` slot is active.
 - **Weapons**: pistol (infinite ammo), shotgun, rifle, flamethrower, ice_ray
 - **Quality tiers**: normal → fine → rare → epic → legendary (damage multipliers 1.0 → 1.9)
 - **Signals**: `weapon_fired`, `weapon_changed`, `ammo_changed`
@@ -378,7 +423,8 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Concept**: Tracks resource counts across the whole game.
 - **Resource types**: iron, void_crystal, biomass, energy, energy_core, blueprint, oxygen_canister
 - **Pickup rule**: Generated resource nodes are collected by walking into them; no key press is needed.
-- **Spawn rule**: Current world resources are generated once when the world is created; they do not randomly respawn after pickup yet.
+- **Buried pickup rule**: Buried resources require `3` Scanner to reveal and `2` Harvester crosshair left-clicks to dig.
+- **Spawn rule**: Current world resources and buried deposits are generated once when the world is created; they do not randomly respawn after pickup yet. Five visible `blueprint` data chips spawn near the crash basin with gold beacons so BP can be discovered before later research/cache rewards.
 - **Signals**: `resource_changed(resource_type, amount)`
 - **Methods**: `add_resource()`, `has_resources(requirements)`, `consume_resources(requirements)`
 
@@ -386,7 +432,7 @@ Set on a toxic planet. Player must manage oxygen, gather resources, build base d
 - **Script**: `scripts/world_generator.gd`
 - **Concept**: Procedural terrain generation (likely crash zone terrain).
 - **Provides**: `base_position` (Vector3), `get_spawn_position(min_dist, max_dist)`
-- **Resource placement**: Generated resource pickups are snapped close to terrain height for early ground collection. Decorative debris is kept grounded so it does not read as airborne loot.
+- **Resource placement**: Generated visible resource pickups are snapped close to terrain height for early ground collection, including five fixed BP data chips near the crash basin. Additional hidden buried resources are also placed on the terrain and only become visible after scanner reveal. Decorative debris is kept grounded so it does not read as airborne loot.
 
 ---
 
@@ -454,7 +500,9 @@ src/
 │   ├── slow_field.gd          # Buildable enemy slow/control field
 │   ├── solar_panel.gd         # Buildable daytime energy generator
 │   ├── research_station.gd    # Buildable energy-to-blueprint converter
-│   ├── resource_scanner.gd    # HUD nearest-resource scanner
+│   ├── toolbelt_manager.gd    # 1-5 active tool switching
+│   ├── resource_scanner.gd    # Equipped scanner for buried resource/O2 hints
+│   ├── buried_resource.gd     # Hidden diggable resource deposits
 │   ├── objective_tracker.gd   # HUD next-step objective tracker
 │   ├── weapon_controller.gd  # Weapon system
 │   ├── inventory_manager.gd  # Resource tracking

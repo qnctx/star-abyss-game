@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0reprototype000000000000000001"]
+[gd_scene load_steps=20 format=3 uid="uid://c0reprototype000000000000000001"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_player_script"]
 [ext_resource type="Script" path="res://scripts/oxygen_ui.gd" id="2_oxygen_ui_script"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/base_interaction.gd" id="20_base_interaction"]
 [ext_resource type="Script" path="res://scripts/resource_scanner.gd" id="21_resource_scanner"]
 [ext_resource type="Script" path="res://scripts/objective_tracker.gd" id="22_objective_tracker"]
+[ext_resource type="Script" path="res://scripts/toolbelt_manager.gd" id="23_toolbelt_manager"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -240,6 +241,9 @@ script = ExtResource("20_base_interaction")
 
 [node name="ResourceScanner" type="Node" parent="."]
 script = ExtResource("21_resource_scanner")
+
+[node name="ToolbeltManager" type="Node" parent="."]
+script = ExtResource("23_toolbelt_manager")
 
 [node name="ObjectiveTracker" type="Node" parent="."]
 script = ExtResource("22_objective_tracker")
