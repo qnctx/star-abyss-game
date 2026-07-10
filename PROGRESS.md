@@ -83,7 +83,7 @@ cd star-abyss-game/src
 
 ## 2026-06-25 - TEST_ISSUES Review Fix Slice
 
-- Reviewed `docs/TEST_ISSUES.md` and agreed with the severe issue priority, with one adjustment:
+- Reviewed the former `docs/TEST_ISSUES.md` (now merged into `docs/REVIEW.md`) and agreed with the severe issue priority, with one adjustment:
   - `spawn_resources()` should not become a daily auto-refresh because WorldGenerator already owns the world resource layout.
 - Fixed the immediate severe defects:
   - Ice projectiles now call `Enemy.apply_slow(source_id, multiplier)` with a stable source id.

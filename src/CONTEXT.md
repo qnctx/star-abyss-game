@@ -1,7 +1,7 @@
 # Star Abyss Voyage — Domain Context (CONTEXT.md)
 
 ## Project Overview
-**星渊迷航** — Top-down 2.5D survival roguelike with tower defense elements.
+**星渊迷航** — 3D survival game with first-person controls and tower-defense elements.
 Set on a toxic planet. Player must manage oxygen, gather resources, build base defenses, and survive night waves.
 
 ---

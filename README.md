@@ -28,27 +28,32 @@
 ## 开发路线图
 
 - [x] **Phase 0：概念设计** — Game Design Document 完成
-- [ ] **Phase 1：原型验证** — 核心机制可玩原型（O₂ + 建造 + 第一波塔防）
+- [x] **Phase 1：原型验证** — 已具备 O₂、采集、建造、昼夜防守与撤离闭环
 - [ ] **Phase 2：垂直切片** — Crash Zone 完整内容
 - [ ] **Phase 3：内容生产** — 全部区域 + 完整科技树
 - [ ] **Phase 4：打磨发布** — 优化、测试、发行
 
 ---
 
-## 技术栈（待定）
+## 技术栈
 
-| 选项 | 适用场景 |
+| 项目 | 当前选择 |
 |------|----------|
-| Unreal Engine 5 | 追求顶级画质 |
-| Unity | 独立开发，生态成熟 |
-| Godot 4 | 开源轻量，学习友好 |
+| 引擎 | Godot 4.6.2 |
+| 代码 | GDScript |
+| 游戏工程 | `src/` |
+| 浏览器原型 | `playable/star-abyss.html` |
 
 ---
 
 ## 文档
 
-- 📖 [完整 Game Design Document](docs/GAME_DESIGN_DOC.md)
-- 🗺️ Issues 中的详细开发任务
+- [当前玩法执行版](docs/GAMEPLAY_v3.md)
+- [完整 Game Design Document](docs/GAME_DESIGN_DOC.md)
+- [代码审查（唯一维护文档）](docs/REVIEW.md)
+- [手工测试计划](docs/TEST_PLAN.md)
+- [开发规则](docs/AI_DEVELOPMENT_RULES.md)
+- [历史进度](PROGRESS.md)
 
 ---
 
