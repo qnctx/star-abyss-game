@@ -1,162 +1,68 @@
-# Star Abyss HTML5 Prototype
+# Star Abyss HTML5 可玩规格原型
 
-A browser-playable HTML5 prototype of **Star Abyss Voyage** (星渊迷航), a top-down survival tower defense game.
+`playable/star-abyss.html` 是当前 v3 玩法的浏览器行为规格。它是纯 HTML/CSS/经典 JavaScript，运行不需要安装依赖、网络、CDN 或本地服务器；可直接双击并通过 `file://` 游玩。
 
-## Quick Start
+## 启动与存档
 
-1. Open `playable/star-abyss.html` in any modern browser (Chrome, Firefox, Safari, Edge)
-2. Press **SPACE** to start
-3. Defend your base pod through waves of night enemies!
+1. 双击 `playable/star-abyss.html`。
+2. 选择“新游戏”；标题页的“继续”读取浏览器 `localStorage` 单槽存档。
+3. 游戏会在昼夜切换、信号里程碑和页面隐藏时自动保存，也可点击“保存”或按 `P`。
+4. “新游戏”与“删除存档”会明确确认覆盖或删除。
 
-## Controls
+不同浏览器和不同文件路径可能使用不同的本地存储隔离区，存档不会跨浏览器同步。
 
-| Input | Action |
-|-------|--------|
-| WASD / Arrow Keys | Move player |
-| Mouse | Aim direction |
-| Left Click | Shoot |
-| Shift (hold) | Sprint (drains O2 faster) |
-| 1 / 2 / 3 | Select turret type |
-| E + Left Click | Place selected turret |
-| R | Restart (on Game Over screen) |
+## 操作
 
-## Core Mechanics
+| 输入 | 行为 |
+|---|---|
+| WASD / 方向键 | 移动 |
+| Shift | 冲刺（额外耗氧） |
+| 1–5 | 武器 / 采集器 / 扫描器 / 建造 / 维修 |
+| 左键 | 只执行当前工具的主操作 |
+| G | 循环扫描资源、O2 植株、研究素材和缓存 |
+| F | 使用附近 O2 植株 |
+| Q | 使用 O2 Kit |
+| B / T | 建筑 / 血清面板 |
+| X / U / Y | 回收附近结构 / 升级附近炮塔 / 解锁当前建筑科技 |
+| P | 手动保存 |
+| Esc / 右键 | 关闭面板或暂停 |
 
-### Oxygen System
-- Player starts with 180 seconds of O2
-- Normal drain: 1/sec, Sprint drain: +2.5/sec
-- At 0 O2, player dies and respawns at base with a 60-second O2 penalty
-- Displayed as a blue bar in the top-left HUD
+## 完整闭环
 
-### Day/Night Cycle
-- **Day**: 45 seconds — enemies do not spawn, safe to gather resources
-- **Night**: 25 seconds — enemies spawn and attack in waves
-- Smooth visual transition with darkening sky and visible stars at night
-- Fog patches drift across the map with purple/green hues
+- 2400×1800 俯视世界和跟随相机；坠毁、极寒、熔岩、重力四区均为软压力。
+- 可见与地下资源、扫描优先级、O2 植株、25 kg 负重软惩罚、每日保守补给。
+- 缺氧或受伤死亡后 3 秒复活，恢复 90 秒氧气和 4 秒无敌；Day 1 首次死亡免掉落，之后约半数资源合并到唯一死亡包。
+- 七种建筑：炮塔、氧气站、护盾、太阳能板、研究站、减速场、信号台；含放置校验、维修、50% 回收、炮塔三级升级和蓝图解锁。
+- 四区域 Lv1–Lv4 血清配方及适应公式。
+- 信号台每 12 秒原子消费 1 能量并推进 5%；25/50/75/100% 解锁日志和缓存。
+- 100% 进入强制夜晚的 180 秒撤离坚守，不会直接胜利；基地归零失败，倒计时归零胜利，可完整重开。
 
-### Enemy Waves
-- Night spawns enemies that pathfind toward the base pod
-- Wave count increases each night cycle (Wave 1: 7 enemies, Wave 2: 9, etc.)
-- Enemies are red hexagons with pulsing glow
-- Size and speed scale slightly with wave number
-- Enemies deal 10 damage on contact with the base (and die on impact)
+平衡以正常游玩 30–45 分钟为目标，但尚未完成真人长局统计验证。
 
-### Turret Defense
-Three turret types, selected with 1/2/3 and placed with E+Click:
+## 架构
 
-| Type | Cost | Fire Rate | Damage | Range | Special |
-|------|------|-----------|--------|-------|---------|
-| Machine Gun | 10 iron | 0.1s | 3 | 250 | Fast, cheap |
-| Laser | 25 iron | 0.6s | 30 | 350 | High single-target |
-| Missile | 50 iron | 1.2s | 20 | 300 | AoE splash (60 radius) |
+- `css/game.css`：响应式 HUD、面板、焦点和 reduced-motion。
+- `js/config.js`：所有稳定 ID、成本和数值的唯一来源。
+- `state/rules/world/buildings/combat/progression/save`：纯状态与领域规则。
+- `input.js`：互斥 action 输入、pressed/held 和失焦清理。
+- `renderer.js`：只绘制世界；信息密集 HUD 使用 DOM。
+- `main.js`：固定 1/60 秒模拟、状态切换和装配。
 
-- Turrets auto-target the nearest enemy in range
-- Barrel visually tracks the current target
-- Must be placed within 350px of the base
+所有浏览器代码只暴露 `window.StarAbyss` 命名空间。自动化另有不显示在 UI 中的 `window.__STAR_ABYSS_TEST__`，提供 `startNewGame`、`snapshot`、`advance`、`setState`、`save` 和 `load`。
 
-### Resources
-- Enemies drop **iron** (yellow) and **energy** (blue) on death
-- Walk over to collect — iron is used for turrets
-- Resources despawn after 30 seconds
+## 测试
 
-### Base Pod
-- Green glowing square at map center, 100 HP
-- Enemies deal 10 damage per contact
-- At 0 HP: Game Over
+```bash
+npm test
+npm install
+npm run test:e2e
+```
 
-## Architecture
+`npm test` 只使用 Node 内置测试运行器。Playwright 仅是开发期 E2E 依赖，不影响普通运行。
 
-### Game Loop
-- `requestAnimationFrame`-based at ~60fps
-- Fixed timestep with `dt` capping at 50ms to prevent spiral-of-death on tab switch
-- Separate `update(dt)` and `draw()` phases
+## 已知限制
 
-### Entity System
-Entities are plain JavaScript objects stored in arrays:
-
-| Array | Contents |
-|-------|----------|
-| `game.enemies` | Enemy objects with position, hp, speed, size, pulse phase |
-| `game.bullets` | Projectile objects with velocity, damage, range, owner |
-| `game.turrets` | Turret objects with type, position, fire timer, target angle |
-| `game.resources_drops` | Dropped resource items with position, type, bob animation |
-| `particles` | Visual-only particle effects |
-| `floatingTexts` | Damage/value numbers that float up and fade |
-
-### Collision Detection
-- Circle-vs-circle distance checks (`Math.hypot`)
-- No spatial partitioning — acceptable for prototype scale (<100 entities)
-- Collision radii: player (12px), enemies (variable), projectiles (2-4px), resources (20px pickup)
-
-### Rendering
-- Single Canvas 2D context
-- All graphics procedurally drawn (no sprites/images)
-- Layered rendering: background → fog → resources → base → turrets → enemies → player → bullets → particles → HUD
-- Screen shake via `ctx.translate()` on damage events
-
-### State Management
-- Single `game` object holds all mutable state
-- `game.state`: `'title'` | `'playing'` | `'over'`
-- `resetGameState()` for clean restarts
-
-## What's Implemented vs Simplified
-
-### Fully Implemented
-- Player movement with sprint
-- Oxygen drain and death/respawn cycle
-- Day/night cycle with visual transitions
-- Enemy spawning, pathfinding, and base/player damage
-- Three turret types with auto-targeting and projectiles
-- Resource drops and collection
-- Base HP and game over condition
-- Start screen, game over screen, HUD
-- Particle effects and screen shake
-- Wave scaling
-
-### Simplified from Full GDD
-- **Map**: Single screen, no procedural generation or chunking
-- **Player weapons**: Single weapon type (no unlocks/upgrades)
-- **Turret placement**: E+Click (no drag-and-drop grid system)
-- **Enemy AI**: Simple "move toward target" pathfinding (no obstacle avoidance)
-- **No items/upgrades**: No collectible power-ups or skill tree
-- **No multiplayer**: Single-player only
-- **No save/load**: Session-only gameplay
-- **Art**: All procedural — no hand-crafted sprites
-
-## Mapping to Godot Version
-
-| HTML5 Prototype | Godot Equivalent |
-|-----------------|------------------|
-| Canvas 2D + requestAnimationFrame | Node2D + `_process(delta)` |
-| `game.enemies[]` array | Enemy scene instances in a group |
-| `ctx.fillRect()` / `ctx.arc()` | `Polygon2D` / `Sprite2D` with shaders |
-| Keyboard input via `keys{}` | `Input.is_action_pressed()` |
-| Circle collision via `dist()` | `Area2D` with `CollisionShape2D` |
-| `drawHUD()` overlay | `CanvasLayer` with `Control` nodes |
-| Particle arrays | `GPUParticles2D` |
-| Screen shake via translate | `Camera2D` offset |
-
-The HTML5 prototype validates core mechanics and pacing before committing to Godot scene/resource architecture.
-
-## Known Limitations
-
-1. **No obstacle avoidance** — enemies walk in straight lines toward targets
-2. **No save system** — progress lost on refresh
-3. **Single screen map** — no camera scrolling or world generation
-4. **Fixed difficulty curve** — wave scaling is linear, no boss waves
-5. **No audio** — purely visual feedback
-6. **No mobile support** — keyboard/mouse only
-7. **Turret placement** is somewhat finicky — must hold E while clicking
-8. **Performance** — no spatial partitioning; could lag with 100+ entities
-
-## Future Improvements
-
-- Add procedural terrain with obstacles
-- Implement A* pathfinding for enemies
-- Add player weapon upgrades and turret upgrades
-- Camera system with map larger than screen
-- Audio: ambient music, SFX for shooting, damage, wave start
-- Mobile touch controls
-- Save/load via localStorage
-- Boss enemies at wave milestones
-- Resource types with different crafting uses
+- 世界和敌人使用直接移动及圆形距离判断，没有障碍寻路。
+- 无音频、触屏控制和跨设备存档。
+- 程序化图形用于验证规则，不代表最终美术。
+- Playwright 浏览器矩阵与完整 30–45 分钟真人通关需在安装开发依赖后继续执行。

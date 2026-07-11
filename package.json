@@ -1,0 +1,11 @@
+{
+  "name": "star-abyss-playable-tests",
+  "private": true,
+  "scripts": {
+    "test": "node --test playable/tests/*.test.js",
+    "test:e2e": "playwright test playable/tests/star-abyss.spec.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0"
+  }
+}

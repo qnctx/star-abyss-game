@@ -1,0 +1,569 @@
+{
+  "started": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 0,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "scanner",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 60m · G 选择下次扫描类别：铁"
+  },
+  "harvester": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 0,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "harvester",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 60m · G 选择下次扫描类别：铁"
+  },
+  "changedG": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 0,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "harvester",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 60m · G 选择下次扫描类别：生物质"
+  },
+  "afterHarvest": {
+    "mode": "playing",
+    "day": 1,
+    "isNight": false,
+    "player": {
+      "x": 1200,
+      "y": 900,
+      "hp": 100,
+      "oxygen": 180,
+      "alive": true,
+      "respawn": 0,
+      "invulnerable": 0
+    },
+    "base": {
+      "x": 1200,
+      "y": 900,
+      "hp": 400,
+      "shield": 0
+    },
+    "inventory": {
+      "iron": 1,
+      "void_crystal": 0,
+      "biomass": 0,
+      "energy": 0,
+      "energy_core": 0,
+      "blueprint": 0,
+      "oxygen_canister": 1
+    },
+    "adaptations": {
+      "crash": 0,
+      "cold": 0,
+      "heat": 0,
+      "gravity": 0
+    },
+    "unlocked": {
+      "turret": true,
+      "o2_station": true,
+      "solar_panel": true,
+      "research_station": true,
+      "signal_beacon": true,
+      "shield_generator": false,
+      "slow_field": false
+    },
+    "buildings": [],
+    "enemies": [],
+    "signal": {
+      "progress": 0,
+      "timer": 0,
+      "milestones": {},
+      "latest": "",
+      "log": [],
+      "extractionActive": false,
+      "extractionComplete": false,
+      "extractionRemaining": 0,
+      "evacuationSpawnCooldown": 0
+    },
+    "deathDrop": null,
+    "tool": "harvester",
+    "buildSelection": "turret"
+  },
+  "weapon": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 1,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "weapon",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 80m · G 选择下次扫描类别：生物质"
+  },
+  "build": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 1,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "build",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 80m · G 选择下次扫描类别：生物质"
+  },
+  "close": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 1,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "scanner",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 80m · G 选择下次扫描类别：生物质",
+    "notice": "采集 铁：取得 1，节点剩余 0应急系统上线。先采集铁与生物质，建造炮塔。"
+  },
+  "noRevive": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 2,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "scanner",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 80m · G 选择下次扫描类别：生物质"
+  },
+  "saved": true,
+  "loaded": {
+    "s": {
+      "mode": "playing",
+      "day": 1,
+      "isNight": false,
+      "player": {
+        "x": 1200,
+        "y": 900,
+        "hp": 100,
+        "oxygen": 180,
+        "alive": true,
+        "respawn": 0,
+        "invulnerable": 0
+      },
+      "base": {
+        "x": 1200,
+        "y": 900,
+        "hp": 400,
+        "shield": 0
+      },
+      "inventory": {
+        "iron": 2,
+        "void_crystal": 0,
+        "biomass": 0,
+        "energy": 0,
+        "energy_core": 0,
+        "blueprint": 0,
+        "oxygen_canister": 1
+      },
+      "adaptations": {
+        "crash": 0,
+        "cold": 0,
+        "heat": 0,
+        "gravity": 0
+      },
+      "unlocked": {
+        "turret": true,
+        "o2_station": true,
+        "solar_panel": true,
+        "research_station": true,
+        "signal_beacon": true,
+        "shield_generator": false,
+        "slow_field": false
+      },
+      "buildings": [],
+      "enemies": [],
+      "signal": {
+        "progress": 0,
+        "timer": 0,
+        "milestones": {},
+        "latest": "",
+        "log": [],
+        "extractionActive": false,
+        "extractionComplete": false,
+        "extractionRemaining": 0,
+        "evacuationSpawnCooldown": 0
+      },
+      "deathDrop": null,
+      "tool": "harvester",
+      "buildSelection": "turret"
+    },
+    "scan": "扫描导航：开启 · 铁 · 锁定 铁 · 东 80m · G 选择下次扫描类别：生物质"
+  },
+  "errors": []
+}

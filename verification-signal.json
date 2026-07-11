@@ -1,0 +1,17 @@
+{
+  "active": {
+    "progress": 100,
+    "active": true,
+    "remaining": 179.93333333333328,
+    "mode": "playing"
+  },
+  "victory": {
+    "mode": "victory",
+    "complete": true,
+    "ui": {
+      "endHidden": false,
+      "title": "撤离成功",
+      "mode": "victory"
+    }
+  }
+}

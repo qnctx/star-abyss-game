@@ -1,0 +1,52 @@
+{
+  "initial": {
+    "radio": true,
+    "api": true
+  },
+  "started": {
+    "mode": "playing",
+    "hud": true
+  },
+  "input": {
+    "tool": "build",
+    "buildingDelta": 0,
+    "bulletDelta": 0
+  },
+  "paused": {
+    "mode": "paused",
+    "hidden": false
+  },
+  "resumed": {
+    "mode": "playing",
+    "hidden": true
+  },
+  "signal": {
+    "progress": 100,
+    "active": true,
+    "remaining": 179.93333333333328,
+    "mode": "playing",
+    "radio": ""
+  },
+  "victory": {
+    "mode": "victory",
+    "complete": true,
+    "ui": {
+      "hidden": false,
+      "title": "撤离成功"
+    }
+  },
+  "death": {
+    "deadAlive": false,
+    "drop": null,
+    "recoveredAlive": true,
+    "oxygen": 90.44999999999997
+  },
+  "saved": true,
+  "canContinue": true,
+  "loaded": {
+    "mode": "playing",
+    "alive": true,
+    "oxygen": 90.74999999999996
+  },
+  "errors": 0
+}
