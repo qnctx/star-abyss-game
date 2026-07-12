@@ -10,8 +10,8 @@
     oxygen_canister: { label: '氧气罐', weight: 1.5, color: '#7dd7d0' }
   };
   SA.Config = {
-    schema: 3, saveKey: 'star_abyss_v3_slot', step: 1 / 60,
-    world: { width: 2400, height: 1800, baseX: 1200, baseY: 900, day: 300, night: 150, visibleCap: 90, undergroundCap: 60, resourceSeedCount: 62, plantSeedCount: 12, resourceMinRadius: 220, resourceRadiusRange: 820, plantMinRadius: 280, plantRadiusRange: 680, dailyVisibleSpawn: 3, dailyUndergroundSpawn: 2, dailyResourceMinRadius: 500, dailyResourceRadiusRange: 500 },
+    schema: 3, saveKey: 'star_abyss_v3_slot', manualSaveSlots: 3, step: 1 / 60,
+    world: { width: 2400, height: 1800, baseX: 1200, baseY: 900, edgeMargin: 30, day: 300, night: 150, visibleCap: 90, undergroundCap: 60, resourceSeedCount: 62, plantSeedCount: 12, resourceMinRadius: 220, resourceRadiusRange: 820, plantMinRadius: 280, plantRadiusRange: 680, dailyVisibleSpawn: 3, dailyUndergroundSpawn: 2, dailyResourceMinRadius: 500, dailyResourceRadiusRange: 500 },
     player: { speed: 180, sprint: 1.55, hp: 100, oxygen: 180, baseDrain: 0.32, capacity: 25, respawnOxygen: 90, invulnerability: 4, safeRecharge: 3, sprintOxygenMultiplier: 1.8 },
     base: { hp: 400, radius: 46, oxygenRadius: 105, shieldRecharge: 8, shieldPerGenerator: 65 },
     resources: resources,
@@ -28,14 +28,15 @@
       { id: 'repair', key: '5', label: '维修' }
     ],
     scanTypes: ['iron', 'biomass', 'void_crystal', 'energy_core', 'oxygen_plant', 'blueprint', 'cache'],
+    scanner: { baseRange: 360, rangePerLevel: 180, maxLevel: 3, upgradeRange: 65, upgradeCost: { iron: 12, energy: 3, blueprint: 1 } },
     buildings: {
-      turret: { label: '炮塔', cost: { iron: 20, void_crystal: 5 }, range: 280, hp: 100, color: '#b8a87d' },
-      o2_station: { label: '氧气站', cost: { iron: 15, biomass: 10 }, range: 125, hp: 100, color: '#74c8c2' },
-      shield_generator: { label: '护盾发生器', cost: { iron: 25, void_crystal: 8, energy_core: 1 }, range: 190, hp: 100, locked: true, color: '#7aa7d9' },
-      solar_panel: { label: '太阳能板', cost: { iron: 18, biomass: 6 }, hp: 100, color: '#d0b96e' },
-      research_station: { label: '研究站', cost: { iron: 20, void_crystal: 5, energy: 5 }, hp: 100, color: '#b5a6d8' },
-      slow_field: { label: '减速场', cost: { iron: 15, biomass: 8, energy: 4 }, range: 180, hp: 100, locked: true, color: '#82a8a5' },
-      signal_beacon: { label: '信号台', cost: { iron: 30, void_crystal: 10, energy: 10, blueprint: 2 }, hp: 100, color: '#d5d6c8' }
+      turret: { label: '炮塔', summary: '自动攻击范围内敌人；靠近后可按 U 升级。', cost: { iron: 20, void_crystal: 5 }, range: 280, hp: 100, color: '#b8a87d' },
+      o2_station: { label: '氧气站', summary: '进入范围即补满氧气，扩展安全探索半径。', cost: { iron: 15, biomass: 10 }, range: 125, hp: 100, color: '#74c8c2' },
+      shield_generator: { label: '护盾发生器', summary: '为基地提供护盾并持续回复，抵御夜袭。', cost: { iron: 25, void_crystal: 8, energy_core: 1 }, range: 190, hp: 100, locked: true, color: '#7aa7d9' },
+      solar_panel: { label: '太阳能板', summary: '白天每 18 秒产出 1 能量。', cost: { iron: 18, biomass: 6 }, hp: 100, color: '#d0b96e' },
+      research_station: { label: '研究站', summary: '每 60 秒消耗 2 能量，产出 1 蓝图。', cost: { iron: 20, void_crystal: 5, energy: 5 }, hp: 100, color: '#b5a6d8' },
+      slow_field: { label: '减速场', summary: '范围内敌人移速降至 55%，为防线减压。', cost: { iron: 15, biomass: 8, energy: 4 }, range: 180, hp: 100, locked: true, color: '#82a8a5' },
+      signal_beacon: { label: '信号台', summary: '每 12 秒消耗 1 能量，使信号推进 5%。', cost: { iron: 30, void_crystal: 10, energy: 10, blueprint: 2 }, hp: 100, color: '#d5d6c8' }
     },
     buildOrder: ['turret', 'o2_station', 'shield_generator', 'solar_panel', 'research_station', 'slow_field', 'signal_beacon'],
     unlocks: { shield_generator: { blueprint: 1 }, slow_field: { blueprint: 2 } },
@@ -54,7 +55,7 @@
       { id: 'signal_100', at: 100, message: '无线电：救援信号锁定。守住基地等待撤离。', x: 650, y: 1250, rewards: { energy_core: 1, blueprint: 2 } }
     ],
     signal: { interval: 12, energy: 1, progress: 5, extraction: 180, forcedNightWave: 10, forcedNightWavePerDay: 2, evacuationSpawnCooldown: 8, evacuationSpawnCount: 2, evacuationEnemyThreshold: 8 },
-    runtime: { maxFrameDelta: 0.25, maxTestSteps: 360000, shotCooldown: 0.2, normalNightWaveCap: 22, normalNightWaveBase: 3, normalNightWavePerDay: 2, buildRange: 240, buildBaseClearance: 95, buildSpacing: 48, repairRange: 110, repairTargetRange: 45, recycleRange: 105, turretUpgradeRange: 110, buildingHeatDamage: 0.1, solarInterval: 18, researchInterval: 60, researchEnergy: 2, turretCooldownMin: 0.18, turretCooldown: 0.55, turretCooldownLevelReduction: 0.09, turretRangePerLevel: 35, turretDamage: 8, turretDamagePerLevel: 5, projectileSpeed: 480, projectileDamage: 14, projectileLife: 1.1, enemySpawnMinRadius: 560, enemySpawnRadiusRange: 300, enemyHpPerDay: 5, enemyHpPerVariant: 8, enemySpeedPerVariant: 7, enemyRadiusBase: 13, enemyRadiusPerVariant: 2, enemyAttackCooldown: 0.8, structureContactDamage: 10, playerContactInvulnerability: 0.45, slowMultiplier: 0.55, playerTargetRange: 135, structureTargetRange: 110, projectileHitRadius: 18, turretBarrelLength: 22, turretBarrelWidth: 5, turretFireFlashDuration: 0.09, turretFireFlashLength: 13, turretFireFlashColor: '#ffe49a', harvestTargetRange: 40, harvestPlayerRange: 105, cacheCollectRange: 32, deathDropCollectRange: 30, plantUseRange: 34, noticeDuration: 4, noticeLimit: 4 },
-    enemy: { baseHp: 24, baseSpeed: 48, contactBase: 12, contactPlayer: 18, reward: { iron: 2, biomass: 1 } }
+    runtime: { maxFrameDelta: 0.25, maxTestSteps: 360000, shotCooldown: 0.2, normalNightWaveCap: 22, normalNightWaveBase: 3, normalNightWavePerDay: 2, buildBaseClearance: 95, buildSpacing: 48, repairRange: 110, repairTargetRange: 45, recycleRange: 105, turretUpgradeRange: 110, buildingHeatDamage: 0.1, solarInterval: 18, researchInterval: 60, researchEnergy: 2, turretCooldownMin: 0.18, turretCooldown: 0.55, turretCooldownLevelReduction: 0.09, turretRangePerLevel: 35, turretDamage: 8, turretDamagePerLevel: 5, projectileSpeed: 480, projectileDamage: 14, projectileLife: 1.1, enemySpawnMinRadius: 560, enemySpawnRadiusRange: 300, enemyHpPerDay: 5, enemyHpPerVariant: 8, enemySpeedPerVariant: 7, enemyRadiusBase: 13, enemyRadiusPerVariant: 2, enemyAttackCooldown: 0.8, structureContactDamage: 10, playerContactInvulnerability: 0.45, slowMultiplier: 0.55, playerTargetRange: 135, structureTargetRange: 110, projectileHitRadius: 18, turretBarrelLength: 22, turretBarrelWidth: 5, turretFireFlashDuration: 0.09, turretFireFlashLength: 13, turretFireFlashColor: '#ffe49a', harvestTargetRange: 40, harvestPlayerRange: 105, cacheCollectRange: 32, deathDropCollectRange: 30, plantUseRange: 34, noticeDuration: 4, noticeLimit: 4 },
+    enemy: { baseHp: 24, baseSpeed: 48, contactBase: 4, contactPlayer: 18, reward: { iron: 2, biomass: 1 } }
   };
 }(window.StarAbyss = window.StarAbyss || {}));

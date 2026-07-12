@@ -2,6 +2,11 @@
   'use strict';
   function distance(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function pointInWorld(point, margin) {
+    var world = SA.Config.world;
+    margin = margin === undefined ? 0 : margin;
+    return !!point && point.x >= margin && point.y >= margin && point.x <= world.width - margin && point.y <= world.height - margin;
+  }
   function zoneAt(x, y) {
     var dx = x - SA.Config.world.baseX, dy = y - SA.Config.world.baseY;
     if (Math.hypot(dx, dy) < 420) return 'crash';
@@ -29,5 +34,5 @@
   }
   function respawn(state) { state.player.alive = true; state.player.x = state.base.x; state.player.y = state.base.y + 70; state.player.hp = SA.Config.player.hp; state.player.oxygen = SA.Config.player.respawnOxygen; state.player.invulnerable = SA.Config.player.invulnerability; }
   function costText(cost) { return Object.keys(cost).map(function (k) { return cost[k] + ' ' + (SA.Config.resources[k] ? SA.Config.resources[k].label : k); }).join(' / '); }
-  SA.Rules = { distance: distance, clamp: clamp, zoneAt: zoneAt, weight: weight, weightSpeed: weightSpeed, weightOxygen: weightOxygen, zoneOxygen: zoneOxygen, zoneSpeed: zoneSpeed, has: has, consume: consume, add: add, dropHalf: dropHalf, die: die, respawn: respawn, costText: costText };
+  SA.Rules = { distance: distance, clamp: clamp, pointInWorld: pointInWorld, zoneAt: zoneAt, weight: weight, weightSpeed: weightSpeed, weightOxygen: weightOxygen, zoneOxygen: zoneOxygen, zoneSpeed: zoneSpeed, has: has, consume: consume, add: add, dropHalf: dropHalf, die: die, respawn: respawn, costText: costText };
 }(window.StarAbyss = window.StarAbyss || {}));

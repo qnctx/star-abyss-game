@@ -5,7 +5,7 @@
     var beacon = s.buildings.some(function (b) { return b.type === 'signal_beacon'; });
     if (beacon && s.signal.progress < 100 && !s.signal.extractionActive) {
       s.signal.timer += dt;
-      while (s.signal.timer >= C.signal.interval) { s.signal.timer -= C.signal.interval; if (!R.consume(s.inventory, { energy: C.signal.energy })) { s.signal.timer = 0; W.notice(s, '信号台断能：需要 1 能量。'); break; } setProgress(s, s.signal.progress + C.signal.progress); }
+      while (s.signal.timer >= C.signal.interval) { s.signal.timer -= C.signal.interval; if (!R.consume(s.inventory, { energy: C.signal.energy })) { s.signal.timer = 0; W.notice(s, '信号台断能：需要 1 能量。'); break; } W.notice(s, '信号台广播：消耗 1 能量，信号 +' + C.signal.progress + '%。'); setProgress(s, s.signal.progress + C.signal.progress); }
     }
     if (s.signal.extractionActive) { s.signal.extractionRemaining = Math.max(0, s.signal.extractionRemaining - dt); s.signal.evacuationSpawnCooldown = Math.max(0, s.signal.evacuationSpawnCooldown - dt); if (s.signal.extractionRemaining <= 0) { s.signal.extractionActive = false; s.signal.extractionComplete = true; s.mode = 'victory'; } }
   }

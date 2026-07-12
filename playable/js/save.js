@@ -8,6 +8,7 @@
     if (!raw || raw.schema !== C.schema || typeof raw !== 'object') return null;
     var s = SA.State.create(safeNumber(raw.seed, 73421, 1, 4294967295));
     ['day', 'phaseTime', 'time', 'score', 'kills', 'nextId'].forEach(function (k) { s[k] = safeNumber(raw[k], s[k], 0, 1e9); });
+    s.savedAt = safeNumber(raw.savedAt, 0, 0, 9e15);
     s.mode = ['playing', 'paused', 'victory', 'defeat'].indexOf(raw.mode) >= 0 ? raw.mode : 'playing'; s.isNight = !!raw.isNight; s.forcedNight = !!raw.forcedNight; s.firstDeathForgiven = !!raw.firstDeathForgiven;
     copyNumbers(s.player, raw.player, ['x', 'y', 'hp', 'oxygen', 'respawn', 'invulnerable']); s.player.alive = raw.player ? !!raw.player.alive : true;
     copyNumbers(s.base, raw.base, ['x', 'y', 'hp', 'shield']);
@@ -16,11 +17,12 @@
     Object.keys(s.adaptations).forEach(function (k) { s.adaptations[k] = Math.floor(safeNumber(raw.adaptations && raw.adaptations[k], 0, 0, 4)); });
     Object.keys(s.unlocked).forEach(function (k) { s.unlocked[k] = raw.unlocked && typeof raw.unlocked[k] === 'boolean' ? raw.unlocked[k] : s.unlocked[k]; });
     s.nodes = sanitizeArray(raw.nodes, node, 500); s.plants = sanitizeArray(raw.plants, plant, 100); s.caches = sanitizeArray(raw.caches, cache, 20); s.buildings = sanitizeArray(raw.buildings, building, 200); s.enemies = sanitizeArray(raw.enemies, enemy, 500); s.bullets = sanitizeArray(raw.bullets, bullet, 500);
-    if (raw.deathDrop && finite(raw.deathDrop.x, -1e7, 1e7) && finite(raw.deathDrop.y, -1e7, 1e7) && validItems(raw.deathDrop.items)) s.deathDrop = { x: raw.deathDrop.x, y: raw.deathDrop.y, items: items(raw.deathDrop.items) };
+    if (point(raw.deathDrop) && validItems(raw.deathDrop.items)) s.deathDrop = { x: raw.deathDrop.x, y: raw.deathDrop.y, items: items(raw.deathDrop.items) };
     sanitizeSignal(s, raw.signal);
     s.tool = C.tools.some(function (t) { return t.id === raw.tool; }) ? raw.tool : 'weapon';
     s.buildSelection = C.buildings[raw.buildSelection] ? raw.buildSelection : 'turret';
     s.scanIndex = Math.floor(safeNumber(raw.scanIndex, 0, 0, C.scanTypes.length - 1));
+    s.scannerLevel = Math.floor(safeNumber(raw.scannerLevel, 0, 0, C.scanner.maxLevel));
     s.scanTarget = typeof raw.scanTarget === 'string' ? raw.scanTarget.slice(0, 80) : null;
     var hasValidScanTarget = !!SA.World.scanTarget(s);
     if (raw.scanActive === false) { s.scanActive = false; s.scanType = null; s.scanTarget = null; }
@@ -31,11 +33,11 @@
     return s;
   }
   function sanitizeArray(value, mapper, limit) { if (!Array.isArray(value)) return []; var result = []; value.slice(0, limit).forEach(function (x) { var clean = mapper(x); if (clean) result.push(clean); }); return result; }
-  function point(x) { return x && typeof x === 'object' && finite(x.x, -1e7, 1e7) && finite(x.y, -1e7, 1e7); }
+  function point(x) { return x && typeof x === 'object' && finite(x.x, 0, C.world.width) && finite(x.y, 0, C.world.height); }
   function node(x) { if (!point(x) || !C.resources[x.type] || !finite(x.amount, 0, 1e7)) return null; return { id: text(x.id, 80), type: x.type, x: x.x, y: x.y, underground: !!x.underground, revealed: !!x.revealed, amount: Math.floor(x.amount), depth: safeNumber(x.depth, 0, 0, 1e4) }; }
   function plant(x) { return point(x) && finite(x.oxygen, 0, C.player.oxygen) ? { id: text(x.id, 80), x: x.x, y: x.y, oxygen: x.oxygen } : null; }
   function cache(x) { return point(x) && validItems(x.rewards) ? { id: text(x.id, 80), x: x.x, y: x.y, rewards: items(x.rewards), collected: !!x.collected } : null; }
-  function building(x) { var d = x && C.buildings[x.type]; if (!d || !point(x) || !finite(x.hp, 0, d.hp) || !finite(x.maxHp, 1, d.hp) || !finite(x.timer, -10, 1e7)) return null; return { id: text(x.id, 80), type: x.type, x: x.x, y: x.y, hp: x.hp, maxHp: x.maxHp, level: Math.floor(safeNumber(x.level, 0, 0, C.turretUpgrade.max)), timer: x.timer, aimAngle: safeNumber(x.aimAngle, 0, -Math.PI * 2, Math.PI * 2), fireFlash: safeNumber(x.fireFlash, 0, 0, C.runtime.turretFireFlashDuration) }; }
+  function building(x) { var d = x && C.buildings[x.type]; if (!d || !point(x) || !finite(x.hp, 0, d.hp) || !finite(x.maxHp, 1, d.hp) || !finite(x.timer, -1e7, 1e7)) return null; return { id: text(x.id, 80), type: x.type, x: x.x, y: x.y, hp: x.hp, maxHp: x.maxHp, level: Math.floor(safeNumber(x.level, 0, 0, C.turretUpgrade.max)), timer: safeNumber(x.timer, 0, 0, 1e7), aimAngle: safeNumber(x.aimAngle, 0, -Math.PI * 2, Math.PI * 2), fireFlash: safeNumber(x.fireFlash, 0, 0, C.runtime.turretFireFlashDuration), lastDamageCause: x.lastDamageCause === '高温侵蚀' || x.lastDamageCause === '敌袭' ? x.lastDamageCause : '' }; }
   function enemy(x) { if (!point(x) || !finite(x.hp, 0, 1e7) || !finite(x.maxHp, 1, 1e7) || !finite(x.speed, 0, 1e4) || !finite(x.radius, 1, 100)) return null; return { id: text(x.id, 80), x: x.x, y: x.y, hp: x.hp, maxHp: x.maxHp, speed: x.speed, radius: x.radius, attack: safeNumber(x.attack, 0, -10, 1e4), variant: Math.floor(safeNumber(x.variant, 0, 0, 2)), rewarded: !!x.rewarded, dead: !!x.dead }; }
   function bullet(x) { if (!point(x) || !finite(x.vx, -1e5, 1e5) || !finite(x.vy, -1e5, 1e5) || !finite(x.damage, 0, 1e5) || !finite(x.life, 0, 100)) return null; return { x: x.x, y: x.y, vx: x.vx, vy: x.vy, damage: x.damage, life: x.life, cause: x.cause === 'turret' ? 'turret' : 'player' }; }
   function validItems(value) { return value && typeof value === 'object' && Object.keys(value).every(function (k) { return C.resources[k] && finite(value[k], 0, 1e7); }); }
@@ -51,9 +53,29 @@
     if (s.signal.progress < 100) { s.signal.extractionActive = false; s.signal.extractionComplete = false; s.signal.extractionRemaining = 0; s.signal.evacuationSpawnCooldown = 0; s.forcedNight = false; }
   }
   function copyNumbers(to, from, keys) { if (!from || typeof from !== 'object') return; keys.forEach(function (k) { to[k] = safeNumber(from[k], to[k], -1e7, 1e7); }); }
-  function save(s) { try { s.savedAt = Date.now(); localStorage.setItem(C.saveKey, JSON.stringify(s)); return true; } catch (e) { return false; } }
-  function load() { try { var value = localStorage.getItem(C.saveKey); return value ? sanitize(JSON.parse(value)) : null; } catch (e) { return null; } }
-  function exists() { try { return !!localStorage.getItem(C.saveKey); } catch (e) { return false; } }
+  function keyForSlot(slot) { slot = Number(slot); return Number.isInteger(slot) && slot >= 1 && slot <= C.manualSaveSlots ? C.saveKey + '_manual_' + slot : null; }
+  function nameKeyForSlot(slot) { slot = Number(slot); return Number.isInteger(slot) && slot >= 1 && slot <= C.manualSaveSlots ? C.saveKey + '_manual_name_' + slot : null; }
+  function defaultSlotLabel(slot) { return '手动档位 ' + slot; }
+  function cleanSlotName(value) { return typeof value === 'string' ? value.replace(/[\u0000-\u001f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 24) : ''; }
+  function saveToKey(s, key) { try { s.savedAt = Date.now(); localStorage.setItem(key, JSON.stringify(s)); return true; } catch (e) { return false; } }
+  function loadFromKey(key) { try { var value = localStorage.getItem(key); return value ? sanitize(JSON.parse(value)) : null; } catch (e) { return null; } }
+  function rawFromKey(key) { try { var value = localStorage.getItem(key); return value ? JSON.parse(value) : null; } catch (e) { return null; } }
+  function slotInfoFromKey(key, slot, label) {
+    var raw = rawFromKey(key), state = raw && sanitize(raw);
+    if (!state) return { slot: slot, label: label, occupied: false, savedAt: 0, day: 0, isNight: false, buildingCount: 0 };
+    return { slot: slot, label: label, occupied: true, savedAt: state.savedAt || 0, day: state.day, isNight: state.isNight, buildingCount: state.buildings.length };
+  }
+  function save(s) { return saveToKey(s, C.saveKey); }
+  function load() { return loadFromKey(C.saveKey); }
+  function saveSlot(s, slot) { var key = keyForSlot(slot); return key ? saveToKey(s, key) : false; }
+  function loadSlot(slot) { var key = keyForSlot(slot); return key ? loadFromKey(key) : null; }
+  function autoInfo() { return slotInfoFromKey(C.saveKey, 0, '自动存档'); }
+  function slotName(slot) { var key = nameKeyForSlot(slot), value; if (!key) return ''; try { value = cleanSlotName(localStorage.getItem(key)); } catch (e) { value = ''; } return value || defaultSlotLabel(Number(slot)); }
+  function renameSlot(slot, name) { var key = nameKeyForSlot(slot), clean = cleanSlotName(name); if (!key) return false; try { if (clean) localStorage.setItem(key, clean); else localStorage.removeItem(key); return true; } catch (e) { return false; } }
+  function slotInfo(slot) { var key = keyForSlot(slot); return key ? slotInfoFromKey(key, Number(slot), slotName(slot)) : null; }
+  function listSlots() { var slots = [autoInfo()]; for (var i = 1; i <= C.manualSaveSlots; i += 1) slots.push(slotInfo(i)); return slots; }
+  function exists() { return autoInfo().occupied; }
   function remove() { try { localStorage.removeItem(C.saveKey); } catch (e) {} }
-  SA.Save = { sanitize: sanitize, save: save, load: load, exists: exists, remove: remove };
+  function removeAll() { try { remove(); for (var i = 1; i <= C.manualSaveSlots; i += 1) { localStorage.removeItem(keyForSlot(i)); localStorage.removeItem(nameKeyForSlot(i)); } } catch (e) {} }
+  SA.Save = { sanitize: sanitize, save: save, load: load, saveSlot: saveSlot, loadSlot: loadSlot, autoInfo: autoInfo, slotInfo: slotInfo, slotName: slotName, renameSlot: renameSlot, listSlots: listSlots, exists: exists, remove: remove, removeAll: removeAll };
 }(window.StarAbyss = window.StarAbyss || {}));
