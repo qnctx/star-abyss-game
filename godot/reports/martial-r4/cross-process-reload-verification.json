@@ -1,0 +1,106 @@
+{
+	"actual_ray": "{  }",
+	"checks": [
+		{
+			"label": "consumer is a distinct Godot operating-system process",
+			"ok": true
+		},
+		{
+			"label": "consumer uses only the fixed private cross-process test slot",
+			"ok": true
+		},
+		{
+			"label": "consumer opens the exact producer save bytes",
+			"ok": true
+		},
+		{
+			"label": "actual Main accepts producer generation and complete inline envelope",
+			"ok": true
+		},
+		{
+			"label": "real R-produced fallen state survives OS process restart",
+			"ok": true
+		},
+		{
+			"label": "original standing trunk collider is inactive again after process restart",
+			"ok": true
+		},
+		{
+			"label": "physical ray cannot hit the restored original standing trunk",
+			"ok": true
+		},
+		{
+			"label": "saved fallen authored mesh and replacement bodies materialize",
+			"ok": true
+		},
+		{
+			"label": "selected martial skill restores across OS processes",
+			"ok": true
+		},
+		{
+			"label": "saved skill cooldown restores before elapsed physics: descent",
+			"ok": true
+		},
+		{
+			"label": "consumer actually restores a nonzero remaining skill cooldown",
+			"ok": true
+		},
+		{
+			"label": "real R-produced fractured-rock state survives process restart",
+			"ok": true
+		},
+		{
+			"label": "one actual strike record survives process restart",
+			"ok": true
+		},
+		{
+			"label": "real terrain collider restores the saved crater depth across OS processes",
+			"ok": true
+		}
+	],
+	"consumer_pid": 15828,
+	"crater_ray": "{ \"position\": (94.99814, -2.717796, 169.9967), \"normal\": (0.004345, 0.994438, 0.105238), \"face_index\": 10295, \"collider_id\": 71689046314, \"collider\": TerrainCollision:<StaticBody3D#71689046314>, \"shape\": 0, \"rid\": RID(3294239916051) }",
+	"enabled_standing_shapes": 0,
+	"failed": [],
+	"generation": "ecology-r4.2",
+	"initial_cooldown": {
+		"cooldowns": {
+			"break": 0.0,
+			"descent": 13.4333333333332,
+			"fist": 0.0,
+			"slash": 0.0
+		},
+		"selected": "descent",
+		"version": 1
+	},
+	"physics_frame": 138,
+	"producer_crater_depth": 2.35333657264709,
+	"producer_pid": 34596.0,
+	"restored_crater_depth": 2.35333657264709,
+	"scope": "Real R destruction in prior OS process, then unmodified Main disk restore and authored fixture registration here. Natural ecology distribution is separate.",
+	"standing_collision_layer": 0,
+	"state": {
+		"broken": [],
+		"fall_pose": [
+			1.0,
+			0.0,
+			0.0,
+			0.0,
+			0.382683426141739,
+			-0.923879504203796,
+			0.0,
+			0.923879504203796,
+			0.382683426141739,
+			0.0,
+			0.592623889446259,
+			0.88692432641983
+		],
+		"fallen": true,
+		"health": {
+			"trunk": 0.0
+		},
+		"poses": {
+
+		}
+	}
+}

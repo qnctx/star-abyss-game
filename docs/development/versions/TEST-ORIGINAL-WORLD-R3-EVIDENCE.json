@@ -1,0 +1,233 @@
+{
+  "test": "TEST-ORIGINAL-WORLD-R3",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/4c37/star-abyss-game/artifacts/tests/TEST-ORIGINAL-WORLD-R3",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-ORIGINAL-WORLD-R3",
+  "archivedAt": "2026-09-12T15:51:18.098Z",
+  "files": [
+    {
+      "path": "browser-cleanup.json",
+      "sha256": "132677f1f541d1ac296fde8d8bda3b9c2052f751cc3c617f4d0e49fcc88899b5",
+      "bytes": 93
+    },
+    {
+      "path": "browser-final.json",
+      "sha256": "0f7b25793a3308cefa721558aa68470d36a62d3aca485fb985b6f4f7e1fb423d",
+      "bytes": 2536
+    },
+    {
+      "path": "camp-chase-a.png",
+      "sha256": "ead3678dfdb409c3ef4deebe42f82df8df88f80b27773aa5f559450898e6bd10",
+      "bytes": 84697
+    },
+    {
+      "path": "camp-chase-b.png",
+      "sha256": "67d5d4767e24ea3e3464ea4ddd7c402ee3836c5bd000106dd1d6e8d062d89dac",
+      "bytes": 84682
+    },
+    {
+      "path": "camp-idle.png",
+      "sha256": "b96f2695f91f5d3c0529ccd7154c38fdf05f4a02d03be7eb7d24c57eef6bb616",
+      "bytes": 75700
+    },
+    {
+      "path": "camp-original-avatar.png",
+      "sha256": "ac3aecc49064d468bbf3f9c4dc84c5b9f6b4c75b48c590c380a6bdd079cb0807",
+      "bytes": 80243
+    },
+    {
+      "path": "camp-patrol.png",
+      "sha256": "fedad4b88b69a7c2d80347e6e18ed24e307aea6f07bbe539ca8a5efbe2ca7083",
+      "bytes": 84563
+    },
+    {
+      "path": "camp-return.png",
+      "sha256": "0747d8eee73f05698a26532a23cf95b7099730fde667f26a50c8ac7f646a715d",
+      "bytes": 84611
+    },
+    {
+      "path": "camp-windup.png",
+      "sha256": "2ec04c1872cfdee49b39fa70a3aefb46cab042aadb07c0b490d82560061fdde6",
+      "bytes": 84838
+    },
+    {
+      "path": "continuity.json",
+      "sha256": "8e0981821629c0d432c1b6f494006a46e878e2ad759abfd219f15c956e8b6cd7",
+      "bytes": 22217
+    },
+    {
+      "path": "continuity.mjs",
+      "sha256": "053946dfa60fc8188c7cc52e48648bfb6a5e9ae7f8e68321a43b482bf7a5bc90",
+      "bytes": 1674
+    },
+    {
+      "path": "continuity.tap",
+      "sha256": "8ad1020a8db11275b923934d7060982b276ad30131c76e4535da7ed5d5ba2407",
+      "bytes": 397
+    },
+    {
+      "path": "developer-tests.tap",
+      "sha256": "4efa5d906150fdb923a8f7eafcf7e48f1cb9891b6a21644ba2c68a0f76bd8f85",
+      "bytes": 2469
+    },
+    {
+      "path": "developer-triangle-measurements.json",
+      "sha256": "97ab6be6b4cb2d1b66c5282c670c6091997e8236d9ef2a4bad52df25cb35363e",
+      "bytes": 1180
+    },
+    {
+      "path": "evidence-manifest.json",
+      "sha256": "772fd647c11311aba712af49de5c30740aa3cd92fc1390ef518e89fadbef3d58",
+      "bytes": 8833
+    },
+    {
+      "path": "exploratory-threshold.json",
+      "sha256": "16eccba95690b1721c38ec4a17d86b2e35fdd65a77f1559b92af017e32c4c56a",
+      "bytes": 883
+    },
+    {
+      "path": "final-hashes.json",
+      "sha256": "2abc9b3b9b525ad6d288b2893de973964ff27e25f9168f4e76083a10320d33f0",
+      "bytes": 96125
+    },
+    {
+      "path": "finalize.cjs",
+      "sha256": "c9844aea991602aecd3bbfce0e900711bf67b0bc35411b3602b3aaf87bf51a36",
+      "bytes": 2853
+    },
+    {
+      "path": "independent-final.tap",
+      "sha256": "af9aec052106ed3b8f5e29c667810c4ef76d2344cb2ef04f68e0aefac9f197dc",
+      "bytes": 2991
+    },
+    {
+      "path": "independent-measurements.json",
+      "sha256": "f9b9beaf23fe0f980439978d90715d254eb42fd570ffd7cb3b050263975371f2",
+      "bytes": 630146
+    },
+    {
+      "path": "independent.mjs",
+      "sha256": "add41d604245d7922057e9930fa78ab46edf50017a9a120db5d289612e3999da",
+      "bytes": 9078
+    },
+    {
+      "path": "independent.tap",
+      "sha256": "3d3cb0a639f0bc2225d7d23e68110685b40da0eef5637a00d33b09846cd78402",
+      "bytes": 2213
+    },
+    {
+      "path": "initial-hashes.json",
+      "sha256": "f68e96fef6f73e5cb6d42c29ac095bf41d5dc0559f07d104f450a271967e45fd",
+      "bytes": 59088
+    },
+    {
+      "path": "machine.json",
+      "sha256": "2b0c36fbc6efd6cef8cdaef98277eead15694c6dc902fce06a56165f58f55dd2",
+      "bytes": 166
+    },
+    {
+      "path": "old-head/package.json",
+      "sha256": "06afe94a62cba3628a50b78e16e2f40066b9f60c43b16aa0bcba68e60a9d2ea2",
+      "bytes": 274
+    },
+    {
+      "path": "old-head/playable/css/game.css",
+      "sha256": "1b330a8c5e43ec089b80e9b40c812839b73373a448da569c144527d96535c4b4",
+      "bytes": 10098
+    },
+    {
+      "path": "old-head/playable/star-abyss.html",
+      "sha256": "fe73cba6a9efbf44cd2650cc46fb5b2a9bb05d5de3287ce8081d7970eee5b0bd",
+      "bytes": 7102
+    },
+    {
+      "path": "old-head/playable/tests/star-abyss.spec.js",
+      "sha256": "7ffaf5b5af66383c620ed228de784d448d3478ead418f5c4627c40a51785c971",
+      "bytes": 2341
+    },
+    {
+      "path": "original-f-recovery.png",
+      "sha256": "2b754365080e36e8a9aa17e3f44b2a07d41cd71dcfc1f8b2da672899cf70e118",
+      "bytes": 85764
+    },
+    {
+      "path": "original-rock-render.mjs",
+      "sha256": "6f5838e969ca6f7be57600c2c23ae7e5888c514e0cdf3721e6b98d0e89f79932",
+      "bytes": 564183
+    },
+    {
+      "path": "readonly-dependencies.json",
+      "sha256": "d0a89b4e94400d6685e6ad80f39909fd079d168c71a70790ced4b6cc8466fa94",
+      "bytes": 1149
+    },
+    {
+      "path": "regression-setup.cjs",
+      "sha256": "3937e3b1dc30d45e1ba0e573a6fa28e9d1080c887c7ec36cd6f64fa6a8802b1b",
+      "bytes": 1688
+    },
+    {
+      "path": "regression.mjs",
+      "sha256": "33f57db4c9ed86dbab1a3d1cc62a7e4b0f3bb8bff0cbfb50f079d592de7bd981",
+      "bytes": 3880
+    },
+    {
+      "path": "rock-measurements.json",
+      "sha256": "1116a1034c3dd2f2138d703a4954f0146bf0136e66d068ecdb32f9144a404f86",
+      "bytes": 11062
+    },
+    {
+      "path": "rocks.mjs",
+      "sha256": "59e21364f1b89305b37e82a79349888124203155a7c9d8160532ba874d0e1c2b",
+      "bytes": 1655
+    },
+    {
+      "path": "route-log.json",
+      "sha256": "791f1067916600aa2137c1d3709b5c050b6240edad60634ebecfec47d92a814c",
+      "bytes": 1942
+    },
+    {
+      "path": "served.cjs",
+      "sha256": "4baa3ad19be7b6db1c71bbeca7459aab495df60aa704250aead4388ebaca2b66",
+      "bytes": 1299
+    },
+    {
+      "path": "served.html",
+      "sha256": "eadc709b7e02d1c53cf34af8fa159b69c58f78bfb5218d345c66d98cc3d6e1b1",
+      "bytes": 15893
+    },
+    {
+      "path": "served.json",
+      "sha256": "940b6ce5fa22c361c4075b140e2b88fe7ee319d2f65894d607dafe4fbd2746e5",
+      "bytes": 398
+    },
+    {
+      "path": "server-cleanup.json",
+      "sha256": "473e398e52d2fb1b861688176b42d604bf98bcbb1f0cd090d871e0aa9b770898",
+      "bytes": 96
+    },
+    {
+      "path": "setup.cjs",
+      "sha256": "c498c0a2fc6a07f4b50c8134d797c5bf5d02e38e60ed016a45b74fbe0eba1191",
+      "bytes": 1423
+    },
+    {
+      "path": "state-boundaries.json",
+      "sha256": "965558dabf28e575d47e4b9d9eea50ef1f70700b9e3e2529fbd47bf751723a53",
+      "bytes": 1300
+    },
+    {
+      "path": "state-boundaries.mjs",
+      "sha256": "7d7de001e1dd5de36643789af0fdd9bdd785eb94b264a460eb394185d18c5051",
+      "bytes": 2560
+    },
+    {
+      "path": "summary.cjs",
+      "sha256": "1aec901a8399b69876bf6ea28fb145ae7ffce5ca2442989a5b9275dc21e55af5",
+      "bytes": 801
+    },
+    {
+      "path": "summary.json",
+      "sha256": "9914cb2edba5b076be7c406fca2119531f58979d3e2fbd9bc73ea6c4cb44422e",
+      "bytes": 4052
+    }
+  ]
+}

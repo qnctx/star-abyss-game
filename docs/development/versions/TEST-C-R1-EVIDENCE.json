@@ -1,0 +1,83 @@
+{
+  "test": "TEST-C-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/e653/star-abyss-game/artifacts/tests/TEST-C-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-C-R1",
+  "archivedAt": "2026-09-12T08:48:43.992Z",
+  "files": [
+    {
+      "path": "developer-test.tap",
+      "sha256": "b1dd796160dcf2e172d934f6a39947d7ead0310c67ec9b80cd7b9e1f062ec4f4",
+      "bytes": 4656
+    },
+    {
+      "path": "frozen/playable/src/world-director/definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef",
+      "bytes": 1114
+    },
+    {
+      "path": "frozen/playable/src/world-director/director.mjs",
+      "sha256": "4fb26984e85b19c18e883c771435f03c7d298b368c943c1a7b424824357f624a",
+      "bytes": 20832
+    },
+    {
+      "path": "frozen/playable/src/world-director/rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02",
+      "bytes": 747
+    },
+    {
+      "path": "frozen/playable/tests/world-director.test.js",
+      "sha256": "78e4fd7c80e644b8dc93545151873c1d96fd564ee58dc8c8beb80d6a439efabb",
+      "bytes": 19931
+    },
+    {
+      "path": "hash-verification.json",
+      "sha256": "f6b987819885529759456dc2a3b2dbe2ab142d829058359d80f2b2b92412dc6f",
+      "bytes": 1384
+    },
+    {
+      "path": "independent-test.tap",
+      "sha256": "e69466d1d64a8747aa0994d336752ee912cdace217b317fe594cc67a38023274",
+      "bytes": 3295
+    },
+    {
+      "path": "independent.test.mjs",
+      "sha256": "b16c5e34dc9a276a3f862e8a84602f1301bd6554c50096e3e693bc16094cf445",
+      "bytes": 9679
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "3b67f4824703f069fdc251b5f95f3f18d5364a80c5d3220ae98eed361939c8ad",
+      "bytes": 1011
+    },
+    {
+      "path": "prepare.cjs",
+      "sha256": "2fe0541d754a6ba42c3b70ffed7dc47d01105518a68f238c01d67404dc196c2e",
+      "bytes": 1698
+    },
+    {
+      "path": "repro-historical-fragment.mjs",
+      "sha256": "34ff943a4e339987a78ad12199315f72ceaa86eda459f5f3253648698f52ab8a",
+      "bytes": 1690
+    },
+    {
+      "path": "repro-state.json",
+      "sha256": "412249b4bb44a749725baea160f1f5e62169280fa5dfb3e924c018f90f7684ba",
+      "bytes": 21851
+    },
+    {
+      "path": "repro.log",
+      "sha256": "6d70e25941dfd69b9543905bd99939285ca1d990a62bad35c2289a74d5eb1519",
+      "bytes": 420
+    },
+    {
+      "path": "run-results.json",
+      "sha256": "4c292169596964b6a8bd333d904820f90f48c134225c822084f055fbc369da8d",
+      "bytes": 2131
+    },
+    {
+      "path": "run.cjs",
+      "sha256": "d3646890d144f630ab43affa4982036550e04b1d1ceb99dab36b73effe0f7571",
+      "bytes": 1246
+    }
+  ]
+}

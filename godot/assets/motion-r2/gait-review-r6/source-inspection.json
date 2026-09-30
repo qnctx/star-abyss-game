@@ -1,0 +1,325 @@
+{
+  "blender": "5.2.1 LTS",
+  "bones": 51,
+  "actions": {
+    "air_cast": [
+      0.0,
+      48.0
+    ],
+    "air_cast_cleave": [
+      0.0,
+      145.0
+    ],
+    "air_cast_fist": [
+      0.0,
+      52.0
+    ],
+    "air_cast_palm": [
+      0.0,
+      49.0
+    ],
+    "air_cast_skyfall": [
+      0.0,
+      175.0
+    ],
+    "air_cast_sweep": [
+      0.0,
+      68.0
+    ],
+    "air_cross": [
+      0.0,
+      42.0
+    ],
+    "air_guard": [
+      0.0,
+      60.0
+    ],
+    "air_hit": [
+      0.0,
+      30.0
+    ],
+    "air_jab": [
+      0.0,
+      36.0
+    ],
+    "air_kick": [
+      0.0,
+      54.0
+    ],
+    "boost": [
+      0.0,
+      120.0
+    ],
+    "cast": [
+      0.0,
+      48.0
+    ],
+    "cast_cleave": [
+      0.0,
+      145.0
+    ],
+    "cast_fist": [
+      0.0,
+      52.0
+    ],
+    "cast_palm": [
+      0.0,
+      49.0
+    ],
+    "cast_skyfall": [
+      0.0,
+      175.0
+    ],
+    "cast_sweep": [
+      0.0,
+      68.0
+    ],
+    "combat_ready": [
+      0.0,
+      60.0
+    ],
+    "cross": [
+      0.0,
+      42.0
+    ],
+    "cruise": [
+      0.0,
+      120.0
+    ],
+    "guard": [
+      0.0,
+      60.0
+    ],
+    "hit": [
+      0.0,
+      30.0
+    ],
+    "idle": [
+      0.0,
+      120.0
+    ],
+    "jab": [
+      0.0,
+      36.0
+    ],
+    "jog": [
+      0.0,
+      35.0
+    ],
+    "kick": [
+      0.0,
+      54.0
+    ],
+    "sprint": [
+      0.0,
+      28.0
+    ],
+    "walk": [
+      0.0,
+      52.0
+    ]
+  },
+  "meshes": [
+    {
+      "name": "C2_AmberSpineChannel",
+      "vertices": 2174,
+      "materials": [
+        "C2_OriginalRearReference"
+      ],
+      "parent": "C2_NativeRig",
+      "world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "C2_AsymmetricRearShell",
+      "vertices": 2282,
+      "materials": [
+        "C2_OriginalRearReference"
+      ],
+      "parent": "C2_NativeRig",
+      "world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "C2_OriginalProportions",
+      "vertices": 82354,
+      "materials": [
+        "Designer_Logic_PBR",
+        "C2_OriginalRearReference.001"
+      ],
+      "parent": "C2_NativeRig",
+      "world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "C2_ArticulatedGloveL",
+      "vertices": 1228,
+      "materials": [
+        "C2_Glove_Taupe",
+        "C2_Glove_Seam",
+        "C2_Glove_Knuckle"
+      ],
+      "parent": "C2_NativeRig",
+      "world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "C2_ArticulatedGloveR",
+      "vertices": 1228,
+      "materials": [
+        "C2_Glove_Taupe",
+        "C2_Glove_Seam",
+        "C2_Glove_Knuckle"
+      ],
+      "parent": "C2_NativeRig",
+      "world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "rig_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

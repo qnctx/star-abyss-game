@@ -1,0 +1,33 @@
+{
+  "version": "DEV-A-R2",
+  "testWorktree": "7ab1",
+  "integratedAt": "2026-09-12T08:59:51.982Z",
+  "files": [
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-A-R2\\playable\\src\\d3-combat\\fixed.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-combat\\fixed.mjs",
+      "sha256": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-A-R2\\playable\\src\\d3-combat\\index.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-combat\\index.mjs",
+      "sha256": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-A-R2\\playable\\tests\\d3-combat.test.js",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\tests\\d3-combat.test.js",
+      "sha256": "c38647421bbe7bf952a1a99818718eebdad9b8218387d32fa14c105d7b22b74b"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-A-R2\\docs\\development\\reports\\DEV-A.md",
+      "target": "E:\\myProject\\star-abyss-game\\docs\\development\\reports\\DEV-A.md",
+      "sha256": "cf555608d42bdba222be14b2fe9158a68f327c2a42ce7f87e744e5046651adeb"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/7ab1/star-abyss-game/docs/development/reports/TEST-A-R2.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/TEST-A-R2.md",
+      "sha256": "2295f8826202e5b4864efde52228786b4218f778feb2325753b1d4ab12a1439b"
+    }
+  ],
+  "boundary": "module only; no scene or root transaction integration"
+}

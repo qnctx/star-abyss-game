@@ -1,0 +1,895 @@
+{
+  "method": "Compare independent full-shoe reconstruction reports. Same-tick fixed-material comparisons include their height and changed phase: if a point is no longer near the support plane its displacement must not be labelled sliding. Stage-level worst near-support windows relocate after transition phase changes. No captured pixels or visual acceptance inferred.",
+  "before": {
+    "sha256": "49e8dc0f3b119d8fb248067117283fdf1215add7af1f0c1704ae2beaf52f4244",
+    "driver_sha256": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "adapter_sha256": "25da2ccd82214314900b9dd6fc9c94f4cae94c6d168a7c1e75e2a1f2adfdaa33",
+    "records": 490,
+    "physics_delta_values": [
+      0.0166666666666667
+    ],
+    "time_scale": 1,
+    "physical_duration": 8.166666666666652,
+    "wall_span": 7.898243,
+    "captured_pixels": false,
+    "images_count": 0,
+    "probe_error_m": 0.0000019633872542815167,
+    "probe_coverage_gap_m": 0.00014883399064025138
+  },
+  "after": {
+    "sha256": "49e8dc0f3b119d8fb248067117283fdf1215add7af1f0c1704ae2beaf52f4244",
+    "driver_sha256": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "adapter_sha256": "28ef705eca58896697d173ae6488c0b59d74ab0d561a3b6743e1166e0c7e5091",
+    "records": 490,
+    "physics_delta_values": [
+      0.0166666666666667
+    ],
+    "time_scale": 1,
+    "physical_duration": 8.166666666666652,
+    "wall_span": 7.914186,
+    "captured_pixels": false,
+    "images_count": 0,
+    "probe_error_m": 0.0000019796131694240805,
+    "probe_coverage_gap_m": 0.0002550749819264786
+  },
+  "stages": {
+    "before": {
+      "idle": {
+        "min_y_mm": -0.30626263426472433,
+        "steady_min_y_mm": -0.30626263426472433,
+        "max_lift_mm": 0,
+        "worst_tick": 1
+      },
+      "walk": {
+        "min_y_mm": 0.9999917430576766,
+        "steady_min_y_mm": 1.6621474750831606,
+        "max_lift_mm": 19.0306732654572,
+        "worst_tick": 30
+      },
+      "jog": {
+        "min_y_mm": 0.9999974288998834,
+        "steady_min_y_mm": 1.0000221858379452,
+        "max_lift_mm": 0.48933720588684093,
+        "worst_tick": 215
+      },
+      "sprint": {
+        "min_y_mm": -2.905489349070388,
+        "steady_min_y_mm": 0.9999822387498913,
+        "max_lift_mm": 60,
+        "worst_tick": 341
+      },
+      "stop": {
+        "min_y_mm": -0.30626263426472433,
+        "steady_min_y_mm": null,
+        "max_lift_mm": 31.9826731681824,
+        "worst_tick": 476
+      }
+    },
+    "after": {
+      "idle": {
+        "min_y_mm": -0.30626263426472433,
+        "steady_min_y_mm": -0.30626263426472433,
+        "max_lift_mm": 0,
+        "worst_tick": 1
+      },
+      "walk": {
+        "min_y_mm": 0.9999917430576766,
+        "steady_min_y_mm": 1.6621474750831606,
+        "max_lift_mm": 19.0306732654572,
+        "worst_tick": 30
+      },
+      "jog": {
+        "min_y_mm": 0.999967662429158,
+        "steady_min_y_mm": 0.999967662429158,
+        "max_lift_mm": 12.7013454437256,
+        "worst_tick": 247
+      },
+      "sprint": {
+        "min_y_mm": 0.9999835168914561,
+        "steady_min_y_mm": 0.9999835168914561,
+        "max_lift_mm": 1.43979287147522,
+        "worst_tick": 431
+      },
+      "stop": {
+        "min_y_mm": -0.30626263426472433,
+        "steady_min_y_mm": null,
+        "max_lift_mm": 15.6007835865021,
+        "worst_tick": 476
+      }
+    }
+  },
+  "tick341": {
+    "before": {
+      "tick": 341,
+      "seconds": 5.68333333333332,
+      "phase": 0.192084195997241,
+      "clip": "sprint",
+      "stage": "sprint",
+      "stage_age": 0.133333333333333,
+      "visual_lift": 0.06,
+      "minima": {
+        "L": {
+          "y": -0.002905489349070388,
+          "source": {
+            "mesh_node": "C2_OriginalProportions",
+            "primitive": 0,
+            "vertex": 45427
+          },
+          "position": [
+            -0.11869191250816821,
+            -0.002905489349070388,
+            -19.759391651718516
+          ]
+        },
+        "R": {
+          "y": 0.20000685579700417,
+          "source": {
+            "mesh_node": "C2_OriginalProportions",
+            "primitive": 0,
+            "vertex": 5787
+          },
+          "position": [
+            0.10110595244334868,
+            0.20000685579700417,
+            -20.066791723818554
+          ]
+        }
+      },
+      "probe_minima": {
+        "L": -0.002905489349070388,
+        "R": 0.20000685579700417
+      }
+    },
+    "after": {
+      "tick": 341,
+      "seconds": 5.68333333333332,
+      "phase": 0.889304013217057,
+      "clip": "sprint",
+      "stage": "sprint",
+      "stage_age": 0.133333333333333,
+      "visual_lift": 0,
+      "minima": {
+        "L": {
+          "y": 0.050929304123990646,
+          "source": {
+            "mesh_node": "C2_OriginalProportions",
+            "primitive": 0,
+            "vertex": 45389
+          },
+          "position": [
+            -0.10467167773212983,
+            0.050929304123990646,
+            -20.154913376483947
+          ]
+        },
+        "R": {
+          "y": 0.4324499755280081,
+          "source": {
+            "mesh_node": "C2_OriginalProportions",
+            "primitive": 0,
+            "vertex": 14525
+          },
+          "position": [
+            0.16303009147940142,
+            0.4324499755280081,
+            -19.62403961360794
+          ]
+        }
+      },
+      "probe_minima": {
+        "L": 0.050929304123990646,
+        "R": 0.4324499755280081
+      }
+    }
+  },
+  "near_support_short_windows_4mm": {
+    "before": {
+      "idle_L": {
+        "windows": 7,
+        "max_mm": 0,
+        "worst": {
+          "side": "L",
+          "vertex": 45389,
+          "clip": "idle",
+          "start_tick": 1,
+          "end_tick": 25,
+          "duration_ms": 400.0000000000003,
+          "excursion_mm": 0,
+          "y_range_mm": [
+            2.2489676160722434,
+            2.2489676160722434
+          ],
+          "phase": [
+            0,
+            0
+          ]
+        }
+      },
+      "idle_R": {
+        "windows": 9,
+        "max_mm": 0,
+        "worst": {
+          "side": "R",
+          "vertex": 5787,
+          "clip": "idle",
+          "start_tick": 1,
+          "end_tick": 25,
+          "duration_ms": 400.0000000000003,
+          "excursion_mm": 0,
+          "y_range_mm": [
+            3.358346751337643,
+            3.358346751337643
+          ],
+          "phase": [
+            0,
+            0
+          ]
+        }
+      },
+      "walk_L": {
+        "windows": 36,
+        "max_mm": 55.579979967269026,
+        "worst": {
+          "side": "L",
+          "vertex": 45427,
+          "clip": "walk",
+          "start_tick": 157,
+          "end_tick": 164,
+          "duration_ms": 116.66666666666981,
+          "excursion_mm": 55.579979967269026,
+          "y_range_mm": [
+            1.9752472260467224,
+            2.657453656947306
+          ],
+          "phase": [
+            0.490476190476192,
+            0.623809523809526
+          ]
+        }
+      },
+      "walk_R": {
+        "windows": 39,
+        "max_mm": 118.15095603682877,
+        "worst": {
+          "side": "R",
+          "vertex": 5770,
+          "clip": "walk",
+          "start_tick": 30,
+          "end_tick": 32,
+          "duration_ms": 33.333333333332995,
+          "excursion_mm": 118.15095603682877,
+          "y_range_mm": [
+            0.999995840775713,
+            3.8984418069086813
+          ],
+          "phase": [
+            0.0714285714285714,
+            0.10952380952381
+          ]
+        }
+      },
+      "jog_L": {
+        "windows": 13,
+        "max_mm": 4.350954800368927,
+        "worst": {
+          "side": "L",
+          "vertex": 45427,
+          "clip": "jog",
+          "start_tick": 306,
+          "end_tick": 308,
+          "duration_ms": 33.33333333333055,
+          "excursion_mm": 4.350954800368927,
+          "y_range_mm": [
+            1.3175468275888336,
+            3.6915788336396305
+          ],
+          "phase": [
+            0.163134920634923,
+            0.219801587301589
+          ]
+        }
+      },
+      "jog_R": {
+        "windows": 17,
+        "max_mm": 25.80560486909309,
+        "worst": {
+          "side": "R",
+          "vertex": 5780,
+          "clip": "jog",
+          "start_tick": 214,
+          "end_tick": 215,
+          "duration_ms": 16.666666666669716,
+          "excursion_mm": 25.80560486909309,
+          "y_range_mm": [
+            0.9999974288998834,
+            3.249913804846763
+          ],
+          "phase": [
+            0.563134920634923,
+            0.58730158730159
+          ]
+        }
+      },
+      "sprint_L": {
+        "windows": 12,
+        "max_mm": 67.42442464871178,
+        "worst": {
+          "side": "L",
+          "vertex": 45389,
+          "clip": "sprint",
+          "start_tick": 337,
+          "end_tick": 338,
+          "duration_ms": 16.66666666667016,
+          "excursion_mm": 67.42442464871178,
+          "y_range_mm": [
+            0.9999946332203465,
+            2.039396720930794
+          ],
+          "phase": [
+            0.0517460317460335,
+            0.084837819185647
+          ]
+        }
+      },
+      "sprint_R": {
+        "windows": 13,
+        "max_mm": 23.792464319097895,
+        "worst": {
+          "side": "R",
+          "vertex": 14525,
+          "clip": "sprint",
+          "start_tick": 437,
+          "end_tick": 438,
+          "duration_ms": 16.66666666667016,
+          "excursion_mm": 23.792464319097895,
+          "y_range_mm": [
+            1.0050370457328206,
+            2.956689064007756
+          ],
+          "phase": [
+            0.670345065562461,
+            0.706576949620432
+          ]
+        }
+      },
+      "stop_L": {
+        "windows": 21,
+        "max_mm": 269.5354927783605,
+        "worst": {
+          "side": "L",
+          "vertex": 45427,
+          "clip": "walk",
+          "start_tick": 460,
+          "end_tick": 463,
+          "duration_ms": 49.99999999999982,
+          "excursion_mm": 269.5354927783605,
+          "y_range_mm": [
+            0.9999748941666096,
+            1.8129823511106453
+          ],
+          "phase": [
+            0.278174603174607,
+            0.301984126984131
+          ]
+        }
+      },
+      "stop_R": {
+        "windows": 9,
+        "max_mm": 4.255860100659889,
+        "worst": {
+          "side": "R",
+          "vertex": 5780,
+          "clip": "idle",
+          "start_tick": 471,
+          "end_tick": 490,
+          "duration_ms": 316.66666666667,
+          "excursion_mm": 4.255860100659889,
+          "y_range_mm": [
+            -0.30626263426472433,
+            2.289254604909494
+          ],
+          "phase": [
+            0.301984126984131,
+            0.301984126984131
+          ]
+        }
+      }
+    },
+    "after": {
+      "idle_L": {
+        "windows": 7,
+        "max_mm": 0,
+        "worst": {
+          "side": "L",
+          "vertex": 45389,
+          "clip": "idle",
+          "start_tick": 1,
+          "end_tick": 25,
+          "duration_ms": 400.0000000000003,
+          "excursion_mm": 0,
+          "y_range_mm": [
+            2.2489676160722434,
+            2.2489676160722434
+          ],
+          "phase": [
+            0,
+            0
+          ]
+        }
+      },
+      "idle_R": {
+        "windows": 9,
+        "max_mm": 0,
+        "worst": {
+          "side": "R",
+          "vertex": 5787,
+          "clip": "idle",
+          "start_tick": 1,
+          "end_tick": 25,
+          "duration_ms": 400.0000000000003,
+          "excursion_mm": 0,
+          "y_range_mm": [
+            3.358346751337643,
+            3.358346751337643
+          ],
+          "phase": [
+            0,
+            0
+          ]
+        }
+      },
+      "walk_L": {
+        "windows": 36,
+        "max_mm": 55.579979967269026,
+        "worst": {
+          "side": "L",
+          "vertex": 45427,
+          "clip": "walk",
+          "start_tick": 157,
+          "end_tick": 164,
+          "duration_ms": 116.66666666666981,
+          "excursion_mm": 55.579979967269026,
+          "y_range_mm": [
+            1.9752472260467224,
+            2.657453656947306
+          ],
+          "phase": [
+            0.490476190476192,
+            0.623809523809526
+          ]
+        }
+      },
+      "walk_R": {
+        "windows": 39,
+        "max_mm": 118.15095603682877,
+        "worst": {
+          "side": "R",
+          "vertex": 5770,
+          "clip": "walk",
+          "start_tick": 30,
+          "end_tick": 32,
+          "duration_ms": 33.333333333332995,
+          "excursion_mm": 118.15095603682877,
+          "y_range_mm": [
+            0.999995840775713,
+            3.8984418069086813
+          ],
+          "phase": [
+            0.0714285714285714,
+            0.10952380952381
+          ]
+        }
+      },
+      "jog_L": {
+        "windows": 18,
+        "max_mm": 155.43311408696175,
+        "worst": {
+          "side": "L",
+          "vertex": 45427,
+          "clip": "jog",
+          "start_tick": 208,
+          "end_tick": 212,
+          "duration_ms": 66.66666666666998,
+          "excursion_mm": 155.43311408696175,
+          "y_range_mm": [
+            0.9999756697414979,
+            2.710108403518624
+          ],
+          "phase": [
+            0.174973544973546,
+            0.236640211640213
+          ]
+        }
+      },
+      "jog_R": {
+        "windows": 16,
+        "max_mm": 13.492137228304605,
+        "worst": {
+          "side": "R",
+          "vertex": 5820,
+          "clip": "jog",
+          "start_tick": 222,
+          "end_tick": 223,
+          "duration_ms": 16.66666666667016,
+          "excursion_mm": 13.492137228304605,
+          "y_range_mm": [
+            1.7864898351661034,
+            2.548162079145097
+          ],
+          "phase": [
+            0.499140211640213,
+            0.527473544973546
+          ]
+        }
+      },
+      "sprint_L": {
+        "windows": 13,
+        "max_mm": 5.240560706809225,
+        "worst": {
+          "side": "L",
+          "vertex": 45425,
+          "clip": "sprint",
+          "start_tick": 376,
+          "end_tick": 377,
+          "duration_ms": 16.66666666667016,
+          "excursion_mm": 5.240560706809225,
+          "y_range_mm": [
+            0.9999920953266965,
+            3.5908546287330143
+          ],
+          "phase": [
+            0.157419955246043,
+            0.193651839304014
+          ]
+        }
+      },
+      "sprint_R": {
+        "windows": 10,
+        "max_mm": 8.854818290423552,
+        "worst": {
+          "side": "R",
+          "vertex": 14525,
+          "clip": "sprint",
+          "start_tick": 390,
+          "end_tick": 391,
+          "duration_ms": 16.66666666667016,
+          "excursion_mm": 8.854818290423552,
+          "y_range_mm": [
+            1.822861617816085,
+            1.9614748514578118
+          ],
+          "phase": [
+            0.664666332057638,
+            0.700898216115609
+          ]
+        }
+      },
+      "stop_L": {
+        "windows": 9,
+        "max_mm": 19.62623584720215,
+        "worst": {
+          "side": "L",
+          "vertex": 45389,
+          "clip": "walk",
+          "start_tick": 460,
+          "end_tick": 463,
+          "duration_ms": 49.99999999999982,
+          "excursion_mm": 19.62623584720215,
+          "y_range_mm": [
+            0.9999804174454575,
+            1.0000112513985937
+          ],
+          "phase": [
+            0.0177113010446357,
+            0.0415208248541594
+          ]
+        }
+      },
+      "stop_R": {
+        "windows": 16,
+        "max_mm": 167.69474100380262,
+        "worst": {
+          "side": "R",
+          "vertex": 5774,
+          "clip": "idle",
+          "start_tick": 464,
+          "end_tick": 467,
+          "duration_ms": 49.99999999999982,
+          "excursion_mm": 167.69474100380262,
+          "y_range_mm": [
+            0.9999887177845908,
+            3.705330034172615
+          ],
+          "phase": [
+            0.0415208248541594,
+            0.0415208248541594
+          ]
+        }
+      }
+    }
+  },
+  "same_tick_material_windows": [
+    {
+      "name": "start",
+      "side": "R",
+      "vertex": 5770,
+      "ticks": [
+        30,
+        32
+      ],
+      "before": {
+        "frames": 3,
+        "phase": [
+          0.0714285714285714,
+          0.10952380952381
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          1.6
+        ],
+        "max_excursion_mm": 118.15095654522344,
+        "y_range_mm": [
+          1.00000016391277,
+          3.89845483005047
+        ]
+      },
+      "after": {
+        "frames": 3,
+        "phase": [
+          0.0714285714285714,
+          0.10952380952381
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          1.6
+        ],
+        "max_excursion_mm": 118.15095654522344,
+        "y_range_mm": [
+          1.00000016391277,
+          3.89845483005047
+        ]
+      }
+    },
+    {
+      "name": "walk_to_jog",
+      "side": "R",
+      "vertex": 5780,
+      "ticks": [
+        214,
+        215
+      ],
+      "before": {
+        "frames": 2,
+        "phase": [
+          0.563134920634923,
+          0.58730158730159
+        ],
+        "clips": [
+          "jog"
+        ],
+        "speed": [
+          5.33333333333333,
+          5.8
+        ],
+        "max_excursion_mm": 25.805490467976238,
+        "y_range_mm": [
+          0.999999931082129,
+          3.24990972876549
+        ]
+      },
+      "after": {
+        "frames": 2,
+        "phase": [
+          0.279140211640213,
+          0.303306878306879
+        ],
+        "clips": [
+          "jog"
+        ],
+        "speed": [
+          5.33333333333333,
+          5.8
+        ],
+        "max_excursion_mm": 129.87432404233132,
+        "y_range_mm": [
+          110.027298331261,
+          120.58143317699401
+        ]
+      }
+    },
+    {
+      "name": "jog_to_sprint",
+      "side": "L",
+      "vertex": 45389,
+      "ticks": [
+        337,
+        338
+      ],
+      "before": {
+        "frames": 2,
+        "phase": [
+          0.0517460317460335,
+          0.084837819185647
+        ],
+        "clips": [
+          "sprint"
+        ],
+        "speed": [
+          8.66666666666667,
+          9.13333333333333
+        ],
+        "max_excursion_mm": 67.42420730991061,
+        "y_range_mm": [
+          1.00000016391277,
+          2.03939084894955
+        ]
+      },
+      "after": {
+        "frames": 2,
+        "phase": [
+          0.748965848965849,
+          0.782057636405463
+        ],
+        "clips": [
+          "sprint"
+        ],
+        "speed": [
+          8.66666666666667,
+          9.13333333333333
+        ],
+        "max_excursion_mm": 212.205888367059,
+        "y_range_mm": [
+          85.0499272346497,
+          90.7789021730423
+        ]
+      }
+    },
+    {
+      "name": "walk_release",
+      "side": "L",
+      "vertex": 45427,
+      "ticks": [
+        157,
+        164
+      ],
+      "before": {
+        "frames": 8,
+        "phase": [
+          0.490476190476192,
+          0.623809523809526
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          1.6
+        ],
+        "max_excursion_mm": 55.580021984514765,
+        "y_range_mm": [
+          1.9752532243728598,
+          2.65747308731079
+        ]
+      },
+      "after": {
+        "frames": 8,
+        "phase": [
+          0.490476190476192,
+          0.623809523809526
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          1.6
+        ],
+        "max_excursion_mm": 55.580021984514765,
+        "y_range_mm": [
+          1.9752532243728598,
+          2.65747308731079
+        ]
+      }
+    },
+    {
+      "name": "stop_walk",
+      "side": "L",
+      "vertex": 45427,
+      "ticks": [
+        460,
+        463
+      ],
+      "before": {
+        "frames": 4,
+        "phase": [
+          0.278174603174607,
+          0.301984126984131
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          0.199999999999998
+        ],
+        "max_excursion_mm": 269.53573290065253,
+        "y_range_mm": [
+          1.00000016391277,
+          1.81299261748791
+        ]
+      },
+      "after": {
+        "frames": 4,
+        "phase": [
+          0.0177113010446357,
+          0.0415208248541594
+        ],
+        "clips": [
+          "walk"
+        ],
+        "speed": [
+          1.6,
+          0.199999999999998
+        ],
+        "max_excursion_mm": 19.581185711347366,
+        "y_range_mm": [
+          70.6999525427818,
+          74.4618847966194
+        ]
+      }
+    },
+    {
+      "name": "stop_idle",
+      "side": "L",
+      "vertex": 45419,
+      "ticks": [
+        469,
+        490
+      ],
+      "before": {
+        "frames": 22,
+        "phase": [
+          0.301984126984131,
+          0.301984126984131
+        ],
+        "clips": [
+          "idle"
+        ],
+        "speed": [
+          0,
+          0
+        ],
+        "max_excursion_mm": 82.3539545469248,
+        "y_range_mm": [
+          0.926554203033447,
+          2.23281793296337
+        ]
+      },
+      "after": {
+        "frames": 22,
+        "phase": [
+          0.0415208248541594,
+          0.0415208248541594
+        ],
+        "clips": [
+          "idle"
+        ],
+        "speed": [
+          0,
+          0
+        ],
+        "max_excursion_mm": 66.33117382136773,
+        "y_range_mm": [
+          0.926554203033447,
+          16.4481829851866
+        ]
+      }
+    }
+  ]
+}

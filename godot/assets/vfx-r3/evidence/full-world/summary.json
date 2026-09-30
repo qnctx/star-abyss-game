@@ -1,0 +1,142 @@
+[
+  {
+    "tier": 4,
+    "view": 0,
+    "samples": 94,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.5666666666666673,
+    "wall_elapsed": 2.122123,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 115.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 5,
+    "view": 0,
+    "samples": 92,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.533333333333334,
+    "wall_elapsed": 2.379088,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 124.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 6,
+    "view": 0,
+    "samples": 110,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.833333333333333,
+    "wall_elapsed": 2.496919,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 116.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 8,
+    "view": 0,
+    "samples": 188,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.1333333333333284,
+    "wall_elapsed": 3.812667,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 124.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 9,
+    "view": 0,
+    "samples": 218,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.6333333333333266,
+    "wall_elapsed": 4.263062,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 117.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 4,
+    "view": 1,
+    "samples": 94,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.5666666666666673,
+    "wall_elapsed": 2.113006,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 116.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 5,
+    "view": 1,
+    "samples": 92,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.533333333333334,
+    "wall_elapsed": 2.146078,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 94.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 6,
+    "view": 1,
+    "samples": 110,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.833333333333333,
+    "wall_elapsed": 2.379998,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 83.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 8,
+    "view": 1,
+    "samples": 188,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.1333333333333284,
+    "wall_elapsed": 3.6437,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 83.0,
+    "primitives_scene_max": 0
+  },
+  {
+    "tier": 9,
+    "view": 1,
+    "samples": 218,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.6333333333333266,
+    "wall_elapsed": 4.196082,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 83.0,
+    "primitives_scene_max": 0
+  }
+]

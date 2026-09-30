@@ -1,0 +1,69 @@
+{
+  "version": "INTEGRATED-CREATURE-R2",
+  "date": "2026-09-13T16:19:23.727Z",
+  "scope": "Independent limited joint PASS: real combat/corpse/loot/reload and loading gates. Not whole game/platform acceptance.",
+  "report": "docs/development/reports/TEST-CORE-CREATURE-R2.md",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\integration-backups\\before-creature-final",
+  "files": [
+    {
+      "path": "playable/src/main.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/CORE-CREATURE-R2/playable/src/main.mjs",
+      "sha256": "c5fab690e5c2738f8ab54ba7cda643f985156f67e61d1b555da226f11854665b",
+      "before": "aba1993626bd30b717f9bd49f1bd89599bc238bd960e0649a37ba8cd56d19ac2"
+    },
+    {
+      "path": "playable/src/expedition-runtime/asset-startup.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/CORE-CREATURE-R2/playable/src/expedition-runtime/asset-startup.mjs",
+      "sha256": "61a5bcb4585ece462c2d3276e9b6244c34cf658f809a560434145c4b316bc50c",
+      "before": null
+    },
+    {
+      "path": "playable/src/expedition-world/index.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/src/expedition-world/index.mjs",
+      "sha256": "9b79d81ba33213b6afe2b661db1deea0d4347e6813c527b0a9799d00691da4ac",
+      "before": "1478c6864b7b5c1b840e96cbe4ee21aabb093ab338e5b55216cd18b56626d3bd"
+    },
+    {
+      "path": "playable/src/expedition-world/creature-asset.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/src/expedition-world/creature-asset.mjs",
+      "sha256": "a5ae823bc08d3c3816379cfe9b502bccc0938cea2a9a240999b3de564ac66220",
+      "before": null
+    },
+    {
+      "path": "playable/src/expedition-world/creature-rig.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/src/expedition-world/creature-rig.mjs",
+      "sha256": "ddbbcae6e14c090f958ebf1e7b7f1572a9dd14400037b0806d9d3e7e57798ce7",
+      "before": null
+    },
+    {
+      "path": "playable/src/expedition-world/creature-contact.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/src/expedition-world/creature-contact.mjs",
+      "sha256": "517299aa23532f688fa092c10d25e38460af0cb53c3fe8d2100ade0aec81e166",
+      "before": null
+    },
+    {
+      "path": "playable/src/expedition-world/creature-validation.mjs",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/src/expedition-world/creature-validation.mjs",
+      "sha256": "0cd087869b4627ea1af5cec8ea1c3a2b02ae1ce94efbddbce090fff9ed281244",
+      "before": null
+    },
+    {
+      "path": "playable/assets/creatures/rift-prowler-v1/rift-prowler.glb",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/assets/creatures/rift-prowler-v1/rift-prowler.glb",
+      "sha256": "39c6cc6ddafd84f9d269026618dec68f69eb6038bbd7810245a3376f22caf879",
+      "before": null
+    },
+    {
+      "path": "playable/assets/creatures/rift-prowler-v1/rig-map.json",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/WORLD-CREATURE-R3/playable/assets/creatures/rift-prowler-v1/rig-map.json",
+      "sha256": "8f6e54542099eec8554d56c68c32cea06a8509e8be6ff359aed7e160636b5ff5",
+      "before": null
+    },
+    {
+      "path": "playable/game.js",
+      "source": "C:/Users/HUAWEI/.codex/worktrees/f812/star-abyss-game/artifacts/tests/TEST-CORE-CREATURE-R2/tree/playable/game.js",
+      "sha256": "0875ddec709488787d1abc6aa065e02c5ee2c04df839f29feee88209f8baa0e6",
+      "before": "84a45490a8e799f1491fe9b80a9538bb9637764f10514eff070a3154e110bd49"
+    }
+  ]
+}

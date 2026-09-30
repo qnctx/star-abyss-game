@@ -1,0 +1,141 @@
+{
+  "version": "PHYSICS-SLOPE-R1",
+  "root": "C:\\Users\\HUAWEI\\.codex\\worktrees\\cb21\\star-abyss-game",
+  "target": "E:/myProject/star-abyss-game",
+  "createdAt": "2026-09-16T13:17:08.123Z",
+  "files": [
+    {
+      "file": "playable/game.js",
+      "sha256": "3b2d0fe462f2ffaa3e6c6136d73939192e1c43e726d8c386815a8bf2eb9d7de1",
+      "previousSha256": "c1c0baba42b3ce5e7ccbaf6a97f39ea9b153f542db3961f6b2b1abebcd3557e0"
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "sha256": "b53a66b2c4389bced6b725486b7bb4e88ab2a117b99978f5e940c9798ea7a5a0",
+      "previousSha256": "7af7266c18296d46d7ab311b3ce451a2762f3daf2e33e4b9d23229ee776cb425"
+    },
+    {
+      "file": "playable/src/scene.mjs",
+      "sha256": "be2a6748a3bc21efc23bbfac112bfb53d7432640ea65cb1a261c50ca7ed034d0",
+      "previousSha256": "6a3280eb26a559332b3f164f9207797199c918fc87ae0cf580870de0b1a03b11"
+    },
+    {
+      "file": "playable/src/mobility.mjs",
+      "sha256": "251a9f62c19b467f603f2e563773c94966af929d107e9179cc6e022a08055e52",
+      "previousSha256": "6488d04702f0d07f45d89b78cfae03108120ba526fa684ee8f8cc66ed830c9f0"
+    },
+    {
+      "file": "playable/src/vehicle-model.mjs",
+      "sha256": "c8ba635ef37786e491526764acd248b06e55dbe16a247c514bb5447270975df1",
+      "previousSha256": "c090f16eaf62dd356bb804993e743ae8a452b324a67fcbedb188194f3f436204"
+    },
+    {
+      "file": "playable/src/terrain-contact.mjs",
+      "sha256": "5777e671c7418759f6b17cdf9fedcc2e9794b6358a945a85c5635889dbc43f29",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/src/terrain-render-chunks.mjs",
+      "sha256": "716d94bc9d44e2af84e69807209fda657ae93abb3f11b10c37c680df692cb02a",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/src/planet-runtime.mjs",
+      "sha256": "689271b9bf46b9656b0ac3ae1b90e6c9add71a9cb711a9f22dcedb7b36399cfa",
+      "previousSha256": "5b1e87020897814545ab972e5cde6b7dad8bc4bb3efe3bc4993b89b944212bfa"
+    },
+    {
+      "file": "playable/src/planet-gameplay/save.mjs",
+      "sha256": "27a8025776a93591d914338e4f9d7f463b59e4271acdbc1c7b274ec621a37c2e",
+      "previousSha256": "bc78329e6b53bf40b7864a1cfe06cca9eec5b83154705a562dbbe18f0fb6d4ad"
+    },
+    {
+      "file": "playable/src/expedition-runtime/index.mjs",
+      "sha256": "f5857f8d79d7cb918afa7681b86274222e0b44c7ade4811e7a6180aefa4e068d",
+      "previousSha256": "7d6e280c4f1f35ed4126b1574f8104225463d1911f9c1a57eb58e04604a76b73"
+    },
+    {
+      "file": "playable/src/expedition-runtime/rules.mjs",
+      "sha256": "75140734f6f068cf13705ce01f4959a8469077536d0146626bc1c598749bfdb1",
+      "previousSha256": "46d7bad40c78e609719352bd421c0141bbeeca13d3a293e5326a75a98f6b27ae"
+    },
+    {
+      "file": "playable/src/expedition-runtime/creature-ai.mjs",
+      "sha256": "02ac4a181cecfd6d056ea588f14843c05305cc53b5f53d1fd15511e74d5035cc",
+      "previousSha256": "d43b79e6543d1b036dd7c361fd2d933861296fc7e1306fc784bcaf05385776f1"
+    },
+    {
+      "file": "playable/src/expedition-world/queries.mjs",
+      "sha256": "e9f5fc36c437164ee44527a6af54ef91d78f93308c3e399c66639962f91e6ad4",
+      "previousSha256": "015bffc9abc81e153acc4f65b87ce2eb62e75344d535bad6442f837ea17c8100"
+    },
+    {
+      "file": "playable/assets/vehicles/source-manifest.json",
+      "sha256": "8ab566b0a5b453720befac1ef4a0435fdde8ef243abf0ab3007ed85b82145598",
+      "previousSha256": "5112fd296aa98b6c6ce11c85ad8f7a0e10c3b8ad82c1677e1f4b5395447b82ba"
+    },
+    {
+      "file": "playable/tests/terrain-contact.test.mjs",
+      "sha256": "b2347e7d4a945030ff2d14e32e0dbc80d18a122ed25c708cb9fd606f6b6ffe71",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/terrain-render-chunks.test.mjs",
+      "sha256": "1c2f9fe779d4cd0c77b22d832966a68a476bd04376c0ecbff15b9d0e34e75b07",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/planet-contact-runtime.test.mjs",
+      "sha256": "561af21ee9f9d8d19867c81b925d87816888497fcfe3930c6025577bc0ade1d5",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/slope-creature-audit.test.mjs",
+      "sha256": "2d60e74cc988e1cbea3ec6d0d05b126f42d1a36d37f98366d2540d928b2c75f8",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/vehicle-slope-audit.test.mjs",
+      "sha256": "bad6aa7ac00e6e9a58717e66a86d30ffbe04ff01432b50f5b81a73e16eba5c05",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TEST-SLOPE-CREATURE-PHYSICS.md",
+      "sha256": "d6a223ad30972a080e8abfe2fa811e5061c8bff81b2a6517284b8de6e0b311d0",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TEST-VEHICLE-SLOPE-AUDIT.md",
+      "sha256": "012f76891d131c94b0490981c6136734fe18858219ab8e91bb3d1e1cdaef0165",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TERRAIN-RENDER-CHUNKS.md",
+      "sha256": "402c22eb141f6e2ef6fef197f12c17f21a4ed21949e0272ab7d10d3a5be06c78",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/PHYSICS-SLOPE-R1.md",
+      "sha256": "2a3fb8bf3c9a37506ecf88bfa7598034804893d474bcd4cc1ccd47f1ba6c4b78",
+      "previousSha256": null
+    },
+    {
+      "file": "PROGRESS.md",
+      "sha256": "a431d4b6f27e04afc1e6f9ba90388e4ee27bc5d17bad588ebdde2d915217d9b3",
+      "previousSha256": "3bcdf8cf777fb8f7a8ca6b05f9fbad293bba01fbe29d95a5a94813d58b1722e4"
+    }
+  ],
+  "conflicts": [],
+  "publishedAt": "2026-09-16T13:17:09.203Z",
+  "backup": "E:/myProject/star-abyss-game/artifacts/backups/physics-slope-r1",
+  "checks": [
+    {
+      "file": "artifacts/slope-full-legacy-tests.tap",
+      "sha256": "7daed59e71ed4a972bfa461c680421cfbf436cdaa8446fcb86aa8b6d9d96c3d1"
+    },
+    {
+      "file": "artifacts/physics-all-mjs.tap",
+      "sha256": "2740ff881df1208a1f5adf2f49571ed320a968d8b478e4282cc39bbadd2c7562"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "ground-walk-0.25": {
+    "actorRootLocation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "visualRootLocation": [
+      0.0,
+      0.13586702942848206,
+      0.0
+    ],
+    "minYByMesh": {
+      "RiftwingBody": -9.882527507443228e-08,
+      "RiftwingMembraneWings": 1.0254534482955933
+    },
+    "minY": -9.882527507443228e-08
+  },
+  "ground-walk-0.75": {
+    "actorRootLocation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "visualRootLocation": [
+      0.0,
+      0.13743431866168976,
+      0.0
+    ],
+    "minYByMesh": {
+      "RiftwingBody": -1.2739263866023975e-08,
+      "RiftwingMembraneWings": 1.027020812034607
+    },
+    "minY": -1.2739263866023975e-08
+  },
+  "land-1": {
+    "actorRootLocation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "visualRootLocation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "minYByMesh": {
+      "RiftwingBody": -1.1344267392132679e-07,
+      "RiftwingMembraneWings": 0.8895864486694336
+    },
+    "minY": -1.1344267392132679e-07
+  },
+  "death-1": {
+    "actorRootLocation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "visualRootLocation": [
+      0.0,
+      0.500704288482666,
+      0.0
+    ],
+    "minYByMesh": {
+      "RiftwingBody": -6.146728992462158e-08,
+      "RiftwingMembraneWings": 0.097747802734375
+    },
+    "minY": -6.146728992462158e-08
+  }
+}

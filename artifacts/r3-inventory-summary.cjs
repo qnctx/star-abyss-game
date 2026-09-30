@@ -1,0 +1,1 @@
+const fs=require('fs');const d=JSON.parse(fs.readFileSync('artifacts/r3-headed-layer-planet-terrain/mesh-inventory.json'));console.log(d.meshes.sort((a,b)=>(b.triangles||0)-(a.triangles||0)).slice(0,15));

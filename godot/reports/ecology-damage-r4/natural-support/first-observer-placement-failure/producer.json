@@ -1,0 +1,30 @@
+{
+	"checks": [
+		{
+			"label": "natural streamed physical outcrop available",
+			"ok": true
+		},
+		{
+			"label": "target belongs to production ecology cell",
+			"ok": true
+		},
+		{
+			"label": "selected natural target remains registered after local stream",
+			"ok": false
+		}
+	],
+	"evidence": {
+
+	},
+	"failed": [
+		"selected natural target remains registered after local stream"
+	],
+	"scope": "Natural production Ecology cells with real NativeWorld collider commit, direct service damage; actual R input is a separate martial audit",
+	"source_sha256": {
+		"res://scripts/native_environment_damage.gd": "681d4ff64c310c975f8abe18f5021d92d5373cfe737f3b105a017f140bc778ee",
+		"res://scripts/native_planet_ecology.gd": "73e2c462a670b31cf3d632834a00b65d0d05d9ebf9e664688fca2310f6b99db1",
+		"res://scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38",
+		"res://tests/native_environment_damage_natural_support.gd": "8f181505bdc7b104f07d5a15510679397750ff28e7d1fa76573b401d88e96dec"
+	},
+	"target": "ecology-r4.2:px/12/2269/2143:outcrop:2"
+}

@@ -1,0 +1,47 @@
+{
+  "utc": "2026-09-27T13:55:22",
+  "checks": [
+    {
+      "name": "source stable",
+      "pass": true
+    },
+    {
+      "name": "actual physics delta",
+      "pass": true
+    },
+    {
+      "name": "empty_cast Main result",
+      "pass": true
+    },
+    {
+      "name": "empty_cast visual phase",
+      "pass": true
+    },
+    {
+      "name": "empty_cast no opposite feedback",
+      "pass": true
+    },
+    {
+      "name": "empty_cast authoritative hp",
+      "pass": true
+    },
+    {
+      "name": "real_hit Main result",
+      "pass": true
+    },
+    {
+      "name": "real_hit visual phase",
+      "pass": true
+    },
+    {
+      "name": "real_hit no opposite feedback",
+      "pass": true
+    },
+    {
+      "name": "real_hit authoritative hp",
+      "pass": true
+    }
+  ],
+  "passed": 10,
+  "total": 10
+}

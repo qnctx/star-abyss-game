@@ -1,0 +1,8 @@
+{
+  "frames": 201,
+  "encoded_ms": 25580,
+  "expected_ms": 25580,
+  "physics_sample_start": 0.116666666666667,
+  "physics_sample_end": 25.5833333333332,
+  "method": "actual physics timestamp differences; cumulative GIF 10ms quantization"
+}

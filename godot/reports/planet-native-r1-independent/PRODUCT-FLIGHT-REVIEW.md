@@ -1,0 +1,15 @@
+# Final developer flight evidence — independent CPU audit
+
+**Orbital visual correction, 2026-09-29:** the large terrain color quadrilateral remains unresolved. The small avatar-adjacent patch discussed below must not be conflated with it. Main's later isolation recheck finds that hiding `_far_root` removes the large terrain patch while the small equipment silhouette persists. See `BASIN-FINAL-SCOPED-CONCLUSION.md`; no orbital art acceptance follows from this flight audit. Original observations and source-version-specific functional flight metrics below are retained, with no new GPU run or independent audit of later overwritten flight reports.
+
+Reviewed `planet-native-player/product-flight-final.json`, its normal product-flight test source and `product-orbit-final.png`; no Godot process launched. This is an independent audit of developer evidence, not an independently repeated flight.
+
+Report SHA256: `4907507dbdf8e70816c1cdd42c2e45f84fb425e86a4d2b755cf7c736462f6746`. Automated audit counts **12 passing checks**, **12 matching start/end source hashes**, and no mismatch against files on disk at audit time. Later Main edits must be compared separately. Details in `PRODUCT-FLIGHT-AUDIT.json`.
+
+The inspected test injects ordinary viewport key events and observes automatic Main/Player physics; no manual movement-step call or Player physics disabling was found. It records monotonic wall time and actual delta. Total **10555 physics frames / 175.916667 simulated seconds / 177.508 wall seconds**, wall/simulation ratio **1.009046**, time_scale 1. Initial launch has approximately 1.5 s wall setup overhead; total ratio is not a per-frame performance distribution.
+
+G climb reaches **125095.19 m AGL** at 76.30 simulation / 77.894 wall seconds. Release-G braking reaches zero radial speed at **136488.26 m**. C descent returns to **AGL 0**, flight inactive, with **0 unready frames** and minimum recorded AGL 0. Energy remains positive. This supports the developer's connected normal-input/physics flight claim for the captured source version; synthetic viewport input is not hardware keyboard or human feel. `snapshot_canonical()` validity is not a disk save/reload proof.
+
+The saved orbital image was taken near **125207.19 m AGL**, camera pitch -1.35, 1280×720. Independently viewed: globe curvature and blue sea / light land are clearly visible from the Player camera. However the lower globe extends beyond the viewport, so it is not an unclipped full-globe framing pass. A small rectangular high-frequency patch remains immediately behind/below the avatar; it is visible evidence, but this still image does not identify its exact geometry/material cause. Coastlines appear coarse at this scale. No seamless terrain/biome/art-quality pass follows from the screenshot-saving check.
+
+The older developer flight record without wall timing or matched source hashes remains historical and is superseded by this stronger flight evidence. Basin fine dark lines and temporal visual limits in `BASIN-1600-DYNAMIC-REVIEW.md` remain open. Main owns GPU for targeted diagnostics; this audit does not request another long flight or unchanged regression suites.

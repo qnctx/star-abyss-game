@@ -1,0 +1,133 @@
+{
+	"checks": [
+		{
+			"label": "real attack sphere simultaneously overlaps distinct wall and tree bodies",
+			"ok": true
+		},
+		{
+			"label": "ambiguous simultaneous initial overlap fails closed without tree damage",
+			"ok": true
+		}
+	],
+	"failed": [],
+	"samples": [
+		{
+			"cast_id": "1790702477574000-8c893946664d1b50:2",
+			"fractions": "[1.0, 1.0]",
+			"frame": 328,
+			"from": "(94.96137, 0.931804, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "trunk",
+					"safe_gap": -0.130823219299316,
+					"same_first_body": false,
+					"unsafe_gap": -0.327252352714539
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "stump",
+					"safe_gap": -0.0935846202850342,
+					"same_first_body": false,
+					"unsafe_gap": -0.267792844104767
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "stump",
+					"safe_gap": 0.129668591499329,
+					"same_first_body": false,
+					"unsafe_gap": 0.0134488325119019
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "trunk",
+					"safe_gap": 1.88882262229919,
+					"same_first_body": false,
+					"unsafe_gap": 1.85333830833435
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "branch_00",
+					"safe_gap": 2.52599213981628,
+					"same_first_body": false,
+					"unsafe_gap": 2.49318598175049
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "branch_01",
+					"safe_gap": 3.08495395088196,
+					"same_first_body": false,
+					"unsafe_gap": 3.06999366188049
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.96137, 0.932087, 169.3041), \"normal\": (0.0, 0.0, -1.0), \"rid\": RID(7352984010820), \"collider_id\": 124587608886, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.931804, 169.4241)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"ambiguous_overlap\": true, \"overlap_count\": 3, \"center\": (94.96137, 0.931804, 169.4241), \"unsafe_center\": (94.96137, 0.931804, 169.4241), \"point\": (94.96137, 0.931804, 169.3441), \"normal\": (0.0, 0.0, 1.0), \"shape\": 0, \"rid\": RID(0) }",
+			"to": "(94.96137, 0.932087, 169.2241)",
+			"unsafe": "(94.96137, 0.932087, 169.2241)"
+		},
+		{
+			"case": "ambiguous-wall-tree-overlap",
+			"result": {
+				"cast_id": "1790702477574000-8c893946664d1b50:2",
+				"contact": {
+					"from": "(94.96137, 0.931804, 169.4241)",
+					"query": {
+						"cast_id": "1790702477574000-8c893946664d1b50:2",
+						"contact_normal": "(0.0, 0.0, 1.0)",
+						"contact_point": "(94.96137, 0.931804, 169.3441)",
+						"contact_rid": "RID(0)",
+						"contact_shape": 0,
+						"damage_type": "blast",
+						"direction": "(0.000001, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.931804, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702477574000-8c893946664d1b50:2"
+					},
+					"safe": "(94.96137, 0.931804, 169.4241)",
+					"solid": {
+						"ambiguous_overlap": true,
+						"center": "(94.96137, 0.931804, 169.4241)",
+						"initial_overlap": true,
+						"normal": "(0.0, 0.0, 1.0)",
+						"overlap_count": 3,
+						"point": "(94.96137, 0.931804, 169.3441)",
+						"rid": "RID(0)",
+						"shape": 0,
+						"unsafe_center": "(94.96137, 0.931804, 169.4241)"
+					},
+					"surface": "(94.96137, 0.931804, 169.3441)",
+					"to": "(94.96137, 0.932087, 169.2241)",
+					"unsafe": "(94.96137, 0.931804, 169.4241)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.96137, 0.931804, 169.3441)",
+				"power": 1200.0
+			}
+		}
+	],
+	"scope": "Read-only sphere cast and analytic segment comparisons; actual damage comes only from normal R skill processing.",
+	"slot": "user://martial_contact_diagnostic_1530776.json"
+}

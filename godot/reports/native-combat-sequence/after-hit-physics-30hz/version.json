@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-09-27T12:45:10.821903+00:00",
+  "sha256": {
+    "scripts/native_player.gd": "a365391dcd4e916887c4a3be20e7edfde3b77a3a4d16f97bff6b3c693cd92449",
+    "scripts/native_motion_r2.gd": "6679ef4df0605ea4182ac66c9cfd92f7c9428220512f20af45ddf1d7150b6c82",
+    "assets/motion-r2/c2-motion-r2.glb": "b838cc6716d32569195123b4758d6912a0c650a447b4d6ae8cc5c3da908b9fa0"
+  }
+}

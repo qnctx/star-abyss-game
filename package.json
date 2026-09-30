@@ -2,10 +2,21 @@
   "name": "star-abyss-playable-tests",
   "private": true,
   "scripts": {
-    "test": "node --test playable/tests/*.test.js",
-    "test:e2e": "playwright test playable/tests/star-abyss.spec.js"
+    "build": "esbuild playable/src/main.mjs --bundle --format=iife --target=chrome105 --minify --legal-comments=eof --outfile=playable/game.js && node tools/build-performance-worker.cjs && npm run build:ascension",
+    "dev": "node playable/tests/static-server.js",
+    "preview:avatar": "esbuild playable/tests/c2-preview.mjs --bundle --format=iife --minify --outfile=docs/ui-implementation/c2-character-preview.js",
+    "test": "node tools/test-cpu.cjs",
+    "test:legacy": "node --test playable/tests/*.test.js",
+    "test:feature": "node tools/test-feature.cjs",
+    "test:release": "node tools/test-feature.cjs all",
+    "test:e2e": "node tools/test-feature.cjs all",
+    "build:ascension": "esbuild playable/src/ascension-gallery.mjs --bundle --format=iife --target=chrome105 --minify --outfile=playable/ascension-gallery.js"
   },
   "devDependencies": {
-    "@playwright/test": "^1.53.0"
+    "@playwright/test": "^1.53.0",
+    "esbuild": "0.25.9"
+  },
+  "dependencies": {
+    "three": "0.180.0"
   }
 }

@@ -1,0 +1,73 @@
+{
+	"capture": true,
+	"checks": [
+		{
+			"label": "independent authored C2 clips installed",
+			"ok": true
+		},
+		{
+			"label": "fist contacts near actual enemy mesh",
+			"ok": true
+		},
+		{
+			"label": "one authoritative release per R press",
+			"ok": true
+		},
+		{
+			"label": "fist cannot damage target five metres away",
+			"ok": true
+		},
+		{
+			"label": "wind slash is locked below R1",
+			"ok": true
+		},
+		{
+			"label": "finite wind slash reaches an unobstructed target",
+			"ok": true
+		},
+		{
+			"label": "solid wall stops wind slash",
+			"ok": true
+		},
+		{
+			"label": "early charge release cancels without delayed damage",
+			"ok": true
+		},
+		{
+			"label": "real right mouse input cancels charged cast",
+			"ok": true
+		},
+		{
+			"label": "fully charged short-range pressure impacts actual target",
+			"ok": true
+		},
+		{
+			"label": "martial cooldown and environment identity saved additively",
+			"ok": true
+		},
+		{
+			"label": "restore preserves current skill cooldown",
+			"ok": true
+		},
+		{
+			"label": "environment authoritative state shares the committed main snapshot",
+			"ok": true
+		},
+		{
+			"label": "failed main write leaves environment mirror unchanged",
+			"ok": true
+		},
+		{
+			"label": "valid inline authority restores despite a corrupt sidecar",
+			"ok": true
+		},
+		{
+			"label": "invalid inline state protects the original main save",
+			"ok": true
+		}
+	],
+	"failed": [],
+	"limitations": "Stationary real enemy isolates geometry; AI integration and environment destruction covered separately.",
+	"physics_frame": 1455,
+	"test_slot": "user://martial_r4_verify_basic.json"
+}

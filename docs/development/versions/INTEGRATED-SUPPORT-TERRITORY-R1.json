@@ -1,0 +1,101 @@
+{
+  "version": "SUPPORT-TERRITORY-R1",
+  "root": "C:\\Users\\HUAWEI\\.codex\\worktrees\\cb21\\star-abyss-game",
+  "target": "E:/myProject/star-abyss-game",
+  "createdAt": "2026-09-16T13:32:40.868Z",
+  "files": [
+    {
+      "file": "playable/game.js",
+      "sha256": "710efb5b57120cb081ab90558314799e3ba27bdc1092e65e74b41e661d04b5ac",
+      "previousSha256": "3b2d0fe462f2ffaa3e6c6136d73939192e1c43e726d8c386815a8bf2eb9d7de1"
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "sha256": "e81f5490537733c03168527dfb62ef5ff861cf1b0a81b9fce41e1fc1762b2353",
+      "previousSha256": "b53a66b2c4389bced6b725486b7bb4e88ab2a117b99978f5e940c9798ea7a5a0"
+    },
+    {
+      "file": "playable/src/layout.mjs",
+      "sha256": "d240391b0a17ce26446a863f34613646be0d6cab12988d795c3f8e4a4a985d25",
+      "previousSha256": "6afa1633a86f5c45ba83a9494f2d2197371e0826b97b02cd06d3c13f7afa6836"
+    },
+    {
+      "file": "playable/src/mobility.mjs",
+      "sha256": "f0225692601be64a657a39e6229ebd7807bb51a015de52faced866ee1c039575",
+      "previousSha256": "251a9f62c19b467f603f2e563773c94966af929d107e9179cc6e022a08055e52"
+    },
+    {
+      "file": "playable/src/expedition-runtime/index.mjs",
+      "sha256": "eeb2c0f966ac725297f17a7a3c67005f9287c7332e6cc5a9d4079fa92b444595",
+      "previousSha256": "f5857f8d79d7cb918afa7681b86274222e0b44c7ade4811e7a6180aefa4e068d"
+    },
+    {
+      "file": "playable/src/expedition-runtime/creature-ai.mjs",
+      "sha256": "be0780d69aee03be71b98000713ef096c63b8137eb927e52e82f2caf5ec42318",
+      "previousSha256": "02ac4a181cecfd6d056ea588f14843c05305cc53b5f53d1fd15511e74d5035cc"
+    },
+    {
+      "file": "playable/tests/mobility.test.js",
+      "sha256": "51297fca74beb32685e3a4db53eb2d238986ecbd28dd837da193e7edfb9c5146",
+      "previousSha256": "abf63ca78f3df311d5f20339c500269943d4af6853df9c02b9120324671e27cb"
+    },
+    {
+      "file": "playable/tests/creature-territory.test.mjs",
+      "sha256": "c30ffb9b5a583c59c2d3d5188e04fc552efd231fa393a3f1980b723987a3d35c",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/runtime-territory-independent.test.mjs",
+      "sha256": "ea17089304fa7a59a07c5db928fb345e98130044a1efe9b774d4130fd2ee8016",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/foot-support-independent.test.mjs",
+      "sha256": "3bcff51b336148d5a329a4bc79c12d0822189abf226ee79a3998cce6cb33bab2",
+      "previousSha256": null
+    },
+    {
+      "file": "playable/tests/foot-support.test.mjs",
+      "sha256": "2e8886b00b29a065b04fbd57fe1ee5d8b0d569bade2054539a69358c65c5ad1a",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TEST-CREATURE-TERRITORY.md",
+      "sha256": "680ae7deb86573dcc58e185f10991ea9aab835139ab52ee86408246350596551",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TEST-FOOT-SUPPORT-R2.md",
+      "sha256": "292b847f2f98c85082e28f3438fe9b44bcdfe0af660631e672e12d0a278b8782",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/reports/TEST-SUPPORT-TERRITORY-INDEPENDENT.md",
+      "sha256": "4158487ae79e211014927b2ff0d4b7b8baeaab63fc3fee53ad4f4050eab65fed",
+      "previousSha256": null
+    },
+    {
+      "file": "docs/development/SUPPORT-TERRITORY-R1.md",
+      "sha256": "06a60af5a50c3d82724bf0f8e80c769d3e05aae26a6321cab12fe2e02e2529cb",
+      "previousSha256": null
+    },
+    {
+      "file": "PROGRESS.md",
+      "sha256": "36c8810bb1ef04d2df988c1662453371d63421eafffda7c21502567378859eae",
+      "previousSha256": "a431d4b6f27e04afc1e6f9ba90388e4ee27bc5d17bad588ebdde2d915217d9b3"
+    }
+  ],
+  "conflicts": [],
+  "publishedAt": "2026-09-16T13:32:49.527Z",
+  "backup": "E:/myProject/star-abyss-game/artifacts/backups/support-territory-r1",
+  "checks": [
+    {
+      "file": "artifacts/support-territory-legacy.tap",
+      "sha256": "28ecff8e5af2b3a04af3719dbd7b194aa90c677b0a5b37502a0db08f70573c37"
+    },
+    {
+      "file": "artifacts/support-territory-modules.tap",
+      "sha256": "4dc0612239b57b8f23dc53996273c8b042fa3dae7b0329476a4a4ac49ffaebb1"
+    }
+  ]
+}

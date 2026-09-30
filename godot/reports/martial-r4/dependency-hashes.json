@@ -1,0 +1,38 @@
+{
+  "before": {
+    "native_main.gd": "645a13ac43d7fd34138412776d36fc92f5559713624ee7189e77219ded0d28c9",
+    "native_player.gd": "b35c432647dfeffb35e64c4ccb2736195b520644ff710dcb10ac9b15d19a36b2",
+    "native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "native_martial_skills.gd": "e3521c296ad4ba1fc2548e021406e7c3d95c4bf307f46f25f91534c53e557995",
+    "native_martial_library.gd": "407d5f33e5951b7bb170b1b6968a6875d80917e93e48eb1cb909c8b743c8a01d",
+    "native_vfx_martial.gd": "e05b87985166bfef7ab1a518ae7ad878d75996ed690798a364bd1fd9a8d35909",
+    "native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+    "native_surface_blink.gd": "30b0cdf1a70750d5d9eccf73537b131cc837de9e4353e06c4400f922948a7750",
+    "native_enemy_r3.gd": "71fd29464592b2b3db0436b41ca1df32fed1465c239ddbfff7456472270c3a9d",
+    "native_world.gd": "0da447b3a76b208eed40d816e5c8100cc6307c3651b8fc2e08b340f94a738ccf",
+    "native_planet.gd": "3e7ee7728ba07d2c253282cafa2c007b44c0d63b9dd59e03ad55326d593057a0",
+    "native_planet_field.gd": "3e2b934bb509f021e0f392a585c58e02953323e14060234bf39bc210a4e42af7",
+    "native_planet_ecology.gd": "c2d4ac153d539a5ecfbb9b92e4ce91a252cbdb7c275f36ee40cb71c13fd4b081",
+    "native_environment_damage.gd": "427103b3f21e95d95bf6221bda8cd7ef9717778204e6423ebc290a0deda24c27"
+  },
+  "after": {
+    "native_main.gd": "645a13ac43d7fd34138412776d36fc92f5559713624ee7189e77219ded0d28c9",
+    "native_player.gd": "b35c432647dfeffb35e64c4ccb2736195b520644ff710dcb10ac9b15d19a36b2",
+    "native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "native_martial_skills.gd": "e3521c296ad4ba1fc2548e021406e7c3d95c4bf307f46f25f91534c53e557995",
+    "native_martial_library.gd": "407d5f33e5951b7bb170b1b6968a6875d80917e93e48eb1cb909c8b743c8a01d",
+    "native_vfx_martial.gd": "e05b87985166bfef7ab1a518ae7ad878d75996ed690798a364bd1fd9a8d35909",
+    "native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+    "native_surface_blink.gd": "30b0cdf1a70750d5d9eccf73537b131cc837de9e4353e06c4400f922948a7750",
+    "native_enemy_r3.gd": "71fd29464592b2b3db0436b41ca1df32fed1465c239ddbfff7456472270c3a9d",
+    "native_world.gd": "0da447b3a76b208eed40d816e5c8100cc6307c3651b8fc2e08b340f94a738ccf",
+    "native_planet.gd": "3e7ee7728ba07d2c253282cafa2c007b44c0d63b9dd59e03ad55326d593057a0",
+    "native_planet_field.gd": "3e2b934bb509f021e0f392a585c58e02953323e14060234bf39bc210a4e42af7",
+    "native_planet_ecology.gd": "c2d4ac153d539a5ecfbb9b92e4ce91a252cbdb7c275f36ee40cb71c13fd4b081",
+    "native_environment_damage.gd": "427103b3f21e95d95bf6221bda8cd7ef9717778204e6423ebc290a0deda24c27"
+  },
+  "changed": [],
+  "normal_engine_physics": true,
+  "viewport": "default player camera 1152x720",
+  "window": "hidden independent process"
+}

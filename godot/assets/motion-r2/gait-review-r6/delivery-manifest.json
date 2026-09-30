@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-29",
+  "tool": "built-in image_gen",
+  "modelVersion": "not exposed; image 2.5 not verified",
+  "calls": 4,
+  "callLimit": 4,
+  "scope": "image design and review only",
+  "productionAllowed": false,
+  "identityReferences": [
+    "artifacts/c2-lux3d-20260912-r2/references/front.png",
+    "artifacts/c2-lux3d-20260912-r2/references/left.png",
+    "artifacts/c2-lux3d-20260912-r2/references/back.png"
+  ],
+  "unusedPrompt": "prompt-04-acceleration.txt (initial draft; never submitted)",
+  "outputs": [
+    {
+      "file": "01-walk.png",
+      "prompt": "prompt-01-walk.txt",
+      "source": "exec-eba9ad82-e279-4c3f-838d-a8da30f1d591.png",
+      "bytes": 2233902,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "cc10c5c647db0eaf85f5ec47048a3085b22a7d08a467cbe25066c69f3bc91b96",
+      "approvedByUser": false
+    },
+    {
+      "file": "02-alignment.png",
+      "prompt": "prompt-02-alignment.txt",
+      "source": "exec-79d3d3be-2073-477b-bce9-aad9ba855324.png",
+      "bytes": 2234608,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a39d71588f6ed99c4d5e1b3e137001d20e781fad417db0793e2d781383d1a8ad",
+      "approvedByUser": false
+    },
+    {
+      "file": "03-jog.png",
+      "prompt": "prompt-03-jog.txt",
+      "source": "exec-127bf5de-e979-4a25-ac63-46c5058e297b.png",
+      "bytes": 2075935,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "3f85fe3c6a09831b7881beca43129a7d91b5c356e379337b70e739e6428c6264",
+      "approvedByUser": false
+    },
+    {
+      "file": "04-acceleration.png",
+      "prompt": "prompt-04-acceleration-final.txt",
+      "source": "exec-815a4f85-41a1-4ddd-8b45-b311bbd7e393.png",
+      "bytes": 2076342,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "37389198c1000fd16ee9dff204869b654bde859db7c663c7d6501a5abf421378",
+      "approvedByUser": false
+    }
+  ]
+}

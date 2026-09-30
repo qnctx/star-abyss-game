@@ -1,0 +1,193 @@
+{
+	"checks": [
+		{
+			"detail": "",
+			"name": "normal scene physics remains active",
+			"pass": true
+		},
+		{
+			"detail": "{ \"ready\": true, \"point\": (0.0, 0.0, 190.0), \"normal\": (0.0, 1.0, 0.0), \"agl\": 0.0, \"water_depth\": 0.0, \"spacing\": 10.0 }",
+			"name": "normal spawn has physical ground",
+			"pass": true
+		},
+		{
+			"detail": "active=true agl=1.7109375",
+			"name": "injected G event reaches normal player input",
+			"pass": true
+		},
+		{
+			"detail": "agl=125095.193124536 elapsed=76.299999999997 energy=97.7109999999891",
+			"name": "normal G flight reaches whole-globe altitude",
+			"pass": true
+		},
+		{
+			"detail": "",
+			"name": "normal scene saves orbital canonical position",
+			"pass": true
+		},
+		{
+			"detail": "far=365095.03125",
+			"name": "normal orbital camera has full-globe far plane",
+			"pass": true
+		},
+		{
+			"detail": "{ \"path\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/planet-native-player/product-orbit-final.png\", \"saved\": true, \"width\": 1280, \"height\": 720, \"player_pitch\": -1.35, \"mouse_mode\": 2, \"agl\": 125207.19473687, \"wall_s\": 78.055 }",
+			"name": "normal Player orbital viewport screenshot saved",
+			"pass": true
+		},
+		{
+			"detail": "radial=0.0 agl=136488.26160614",
+			"name": "release G brakes climb",
+			"pass": true
+		},
+		{
+			"detail": "agl=0.0 min=0.0",
+			"name": "normal C flight brakes and lands on terrain",
+			"pass": true
+		},
+		{
+			"detail": "unready=0",
+			"name": "normal route retains loaded collision",
+			"pass": true
+		},
+		{
+			"detail": "delta=0.01666666666667..0.01666666666667",
+			"name": "normal engine time scale and physics delta",
+			"pass": true
+		},
+		{
+			"detail": "",
+			"name": "source files unchanged during full run",
+			"pass": true
+		}
+	],
+	"failures": [],
+	"milestones": {
+		"10km": {
+			"agl": 10042.4765625,
+			"c_event_held": false,
+			"energy": 98.750999999994,
+			"flight_active": true,
+			"g_event_held": true,
+			"mouse_mode": 2,
+			"physics_frames": 2498,
+			"radial_speed": 2152.03393554688,
+			"sim_s": 41.6333333333323,
+			"unready_frames": 0,
+			"wall_s": 43.228
+		},
+		"2km": {
+			"agl": 2002.7578125,
+			"c_event_held": false,
+			"energy": 99.2239999999963,
+			"flight_active": true,
+			"g_event_held": true,
+			"mouse_mode": 2,
+			"physics_frames": 1552,
+			"radial_speed": 90.000114440918,
+			"sim_s": 25.8666666666665,
+			"unready_frames": 0,
+			"wall_s": 27.462
+		},
+		"coast_braked": {
+			"agl": 136488.26160614,
+			"c_event_held": false,
+			"energy": 97.4094999999876,
+			"flight_active": true,
+			"g_event_held": false,
+			"mouse_mode": 2,
+			"physics_frames": 5181,
+			"radial_speed": 0.0,
+			"sim_s": 86.3499999999964,
+			"unready_frames": 0,
+			"wall_s": 87.944
+		},
+		"globe_view": {
+			"agl": 125095.193124536,
+			"c_event_held": false,
+			"energy": 97.7109999999891,
+			"flight_active": true,
+			"g_event_held": true,
+			"mouse_mode": 2,
+			"physics_frames": 4578,
+			"radial_speed": 3360.00390625,
+			"sim_s": 76.299999999997,
+			"unready_frames": 0,
+			"wall_s": 77.894
+		},
+		"landed": {
+			"agl": 0.0,
+			"c_event_held": false,
+			"energy": 94.7896666666415,
+			"flight_active": false,
+			"g_event_held": false,
+			"mouse_mode": 2,
+			"physics_frames": 10555,
+			"radial_speed": 0.0,
+			"sim_s": 175.916666666699,
+			"unready_frames": 0,
+			"wall_s": 177.507
+		},
+		"launched": {
+			"agl": 1.7109375,
+			"c_event_held": false,
+			"energy": 99.997,
+			"flight_active": true,
+			"g_event_held": true,
+			"mouse_mode": 2,
+			"physics_frames": 6,
+			"radial_speed": 16.406270980835,
+			"sim_s": 0.1,
+			"unready_frames": 0,
+			"wall_s": 1.605
+		}
+	},
+	"orbit_capture": {
+		"agl": 125207.19473687,
+		"height": 720,
+		"mouse_mode": 2,
+		"path": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/planet-native-player/product-orbit-final.png",
+		"player_pitch": -1.35,
+		"saved": true,
+		"wall_s": 78.055,
+		"width": 1280
+	},
+	"passed": 12,
+	"source_sha256_end": {
+		"res://assets/motion-r2/c2-motion-r2.glb": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+		"res://assets/terrain/planet_surface.gdshader": "bdfb2ce0504c83c3a0a4c0aeaaaf7c7a5167d8d01850ae44dacc9609bee62321",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_ascension.gd": "dc059acd9795073afae6909397f5b812e993e3b6a8d03336b7fdbc161b438fc5",
+		"res://scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+		"res://scripts/native_motion_r2.gd": "9a0dedd259116c87af95c1f2e40b5235417259d74d4819b24aaba5033989a4d0",
+		"res://scripts/native_planet.gd": "92d8e5aac5ed9f1fe0d225cf823bb99bb5eb88639af8f4db82ed8de93cb8d7bb",
+		"res://scripts/native_planet_coordinates.gd": "9127e807d3a24c1c1545e201129acac993ece672e8c57162273fcd15c01ad3e4",
+		"res://scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+		"res://scripts/native_player.gd": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+		"res://scripts/native_world.gd": "3f8ebef70c3cc1c449e05fed29c2b617f8143540fb15d59e1a11e9d79b6567e4",
+		"res://tests/native_planet_product_flight_verify.gd": "1057152f46a8f33390665659160af325d66ab62eb856db3c91425bdfeb96cf5b"
+	},
+	"source_sha256_start": {
+		"res://assets/motion-r2/c2-motion-r2.glb": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+		"res://assets/terrain/planet_surface.gdshader": "bdfb2ce0504c83c3a0a4c0aeaaaf7c7a5167d8d01850ae44dacc9609bee62321",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_ascension.gd": "dc059acd9795073afae6909397f5b812e993e3b6a8d03336b7fdbc161b438fc5",
+		"res://scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+		"res://scripts/native_motion_r2.gd": "9a0dedd259116c87af95c1f2e40b5235417259d74d4819b24aaba5033989a4d0",
+		"res://scripts/native_planet.gd": "92d8e5aac5ed9f1fe0d225cf823bb99bb5eb88639af8f4db82ed8de93cb8d7bb",
+		"res://scripts/native_planet_coordinates.gd": "9127e807d3a24c1c1545e201129acac993ece672e8c57162273fcd15c01ad3e4",
+		"res://scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+		"res://scripts/native_player.gd": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+		"res://scripts/native_world.gd": "3f8ebef70c3cc1c449e05fed29c2b617f8143540fb15d59e1a11e9d79b6567e4",
+		"res://tests/native_planet_product_flight_verify.gd": "1057152f46a8f33390665659160af325d66ab62eb856db3c91425bdfeb96cf5b"
+	},
+	"timing": {
+		"elapsed_delta": 175.916666666699,
+		"frames": 10555,
+		"max_delta": 0.0166666666666667,
+		"min_delta": 0.0166666666666667,
+		"time_scale": 1.0,
+		"wall_s": 177.508
+	},
+	"total": 12
+}

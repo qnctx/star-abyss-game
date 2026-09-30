@@ -1,0 +1,335 @@
+{
+  "environment-runtime.json": {
+    "sha256": "20d000ea60dbfa78f284577a151e6facabe6114e320d25547aa3e77c169149c1",
+    "keys": [
+      "checks",
+      "environment_events",
+      "failed",
+      "frame_states",
+      "landing_events",
+      "persistence_only",
+      "physics_frames",
+      "scope",
+      "slot"
+    ],
+    "data": {
+      "checks": [
+        {
+          "label": "R charged break fells an authored tree through the actual damage service",
+          "ok": true
+        },
+        {
+          "label": "charged tree contact has one authoritative environment hit",
+          "ok": true
+        },
+        {
+          "label": "real R-destroyed tree snapshot is saved for another Godot process",
+          "ok": true
+        },
+        {
+          "label": "low-fork oak loses the actual contacted trunk or subtree",
+          "ok": true
+        },
+        {
+          "label": "R charged break fractures the authored finite rock mass",
+          "ok": true
+        },
+        {
+          "label": "real G input prepares active R9 descent",
+          "ok": true
+        },
+        {
+          "label": "cancel before descent is accepted does not charge or deform",
+          "ok": true
+        },
+        {
+          "label": "real R enters accepted descent before cancellation",
+          "ok": true
+        },
+        {
+          "label": "real G safely brakes cancelled strike momentum and regains upward velocity",
+          "ok": true
+        },
+        {
+          "label": "release after accepted descent restores flight without impact",
+          "ok": true
+        },
+        {
+          "label": "cancelling an accepted descent keeps the spent cooldown",
+          "ok": true
+        },
+        {
+          "label": "accepted-descent cooldown expires through normal physics time",
+          "ok": true
+        },
+        {
+          "label": "real G restores legal strike altitude after cancelled-dive momentum and cooldown wait",
+          "ok": true
+        },
+        {
+          "label": "captures windup last frame and accepted dive frames",
+          "ok": true
+        },
+        {
+          "label": "windup to first dive frame does not rewind normalized clip time",
+          "ok": true
+        },
+        {
+          "label": "accepted descent holds the exact sampled dive key until physical contact",
+          "ok": true
+        },
+        {
+          "label": "held R produces exactly one actual ground-contact event",
+          "ok": true
+        },
+        {
+          "label": "active impact fells nearby real tree",
+          "ok": true
+        },
+        {
+          "label": "active impact fractures nearby real rock",
+          "ok": true
+        },
+        {
+          "label": "committed impact creates a real physical terrain depression",
+          "ok": true
+        },
+        {
+          "label": "one active impact persists one terrain deformation record",
+          "ok": true
+        },
+        {
+          "label": "cross-process fixture contains a real nonzero remaining skill cooldown",
+          "ok": true
+        },
+        {
+          "label": "tree rock and crater share a successful main save",
+          "ok": true
+        },
+        {
+          "label": "complete real tree rock crater save is handed to the next OS process",
+          "ok": true
+        },
+        {
+          "label": "Chinese controls fit the actual bottom HUD without clipped lines",
+          "ok": true
+        }
+      ],
+      "failed": [],
+      "landing_events": [
+        {
+          "id": 32503963,
+          "normal": "(0.007949, 0.999884, 0.012983)",
+          "point": "(94.94566, -0.368647, 170.3934)",
+          "speed": 18.0
+        }
+      ],
+      "persistence_only": true,
+      "physics_frames": 1908,
+      "scope": "Normal Main/Player physics and R/G input; actual authored tree/rock targets placed deterministically. Natural habitat distribution and moving AI are separate audits.",
+      "slot": "user://martial_r4_verify_environment.json"
+    }
+  },
+  "cross-process-reload-verification.json": {
+    "sha256": "a1d3d68ee4366a497480765a3ce6251d543378e73c220a021fc0c0f83f0b08f5",
+    "keys": [
+      "actual_ray",
+      "checks",
+      "consumer_pid",
+      "crater_ray",
+      "enabled_standing_shapes",
+      "failed",
+      "generation",
+      "initial_cooldown",
+      "physics_frame",
+      "producer_crater_depth",
+      "producer_pid",
+      "restored_crater_depth",
+      "scope",
+      "standing_collision_layer",
+      "state"
+    ],
+    "data": {
+      "actual_ray": "{  }",
+      "checks": [
+        {
+          "label": "consumer is a distinct Godot operating-system process",
+          "ok": true
+        },
+        {
+          "label": "consumer uses only the fixed private cross-process test slot",
+          "ok": true
+        },
+        {
+          "label": "consumer opens the exact producer save bytes",
+          "ok": true
+        },
+        {
+          "label": "actual Main accepts producer generation and complete inline envelope",
+          "ok": true
+        },
+        {
+          "label": "real R-produced fallen state survives OS process restart",
+          "ok": true
+        },
+        {
+          "label": "original standing trunk collider is inactive again after process restart",
+          "ok": true
+        },
+        {
+          "label": "physical ray cannot hit the restored original standing trunk",
+          "ok": true
+        },
+        {
+          "label": "saved fallen authored mesh and replacement bodies materialize",
+          "ok": true
+        },
+        {
+          "label": "selected martial skill restores across OS processes",
+          "ok": true
+        },
+        {
+          "label": "saved skill cooldown restores before elapsed physics: descent",
+          "ok": true
+        },
+        {
+          "label": "consumer actually restores a nonzero remaining skill cooldown",
+          "ok": true
+        },
+        {
+          "label": "real R-produced fractured-rock state survives process restart",
+          "ok": true
+        },
+        {
+          "label": "one actual strike record survives process restart",
+          "ok": true
+        },
+        {
+          "label": "real terrain collider restores the saved crater depth across OS processes",
+          "ok": true
+        }
+      ],
+      "consumer_pid": 15828,
+      "crater_ray": "{ \"position\": (94.99814, -2.717796, 169.9967), \"normal\": (0.004345, 0.994438, 0.105238), \"face_index\": 10295, \"collider_id\": 71689046314, \"collider\": TerrainCollision:<StaticBody3D#71689046314>, \"shape\": 0, \"rid\": RID(3294239916051) }",
+      "enabled_standing_shapes": 0,
+      "failed": [],
+      "generation": "ecology-r4.2",
+      "initial_cooldown": {
+        "cooldowns": {
+          "break": 0.0,
+          "descent": 13.4333333333332,
+          "fist": 0.0,
+          "slash": 0.0
+        },
+        "selected": "descent",
+        "version": 1
+      },
+      "physics_frame": 138,
+      "producer_crater_depth": 2.35333657264709,
+      "producer_pid": 34596.0,
+      "restored_crater_depth": 2.35333657264709,
+      "scope": "Real R destruction in prior OS process, then unmodified Main disk restore and authored fixture registration here. Natural ecology distribution is separate.",
+      "standing_collision_layer": 0
+    }
+  },
+  "cross-process-fixture.json": {
+    "sha256": "f92cedf06ccdb4e8ac5f520ddb909a3861bff8b131f8da1f49c18affaf3913e9",
+    "keys": [
+      "complete",
+      "cooldown",
+      "crater_depth",
+      "crater_origin",
+      "deformations",
+      "expected_rock_state",
+      "expected_state",
+      "first_process_real_r_input",
+      "generation",
+      "id",
+      "key",
+      "kind",
+      "main_sha256",
+      "position",
+      "producer_pid",
+      "run_id",
+      "slot"
+    ],
+    "data": {
+      "complete": true,
+      "cooldown": {
+        "cooldowns": {
+          "descent": 13.4333333333332
+        },
+        "selected": "descent",
+        "version": 1.0
+      },
+      "crater_depth": 2.35333657264709,
+      "crater_origin": [
+        95.0,
+        -0.364462375640869,
+        170.0
+      ],
+      "deformations": {
+        "planet_id": "star-abyss",
+        "planet_seed": "star-abyss-planet-v1",
+        "records": [
+          {
+            "center": [
+              0.999998688697815,
+              -0.00141994713339955,
+              -0.00079121527960524
+            ],
+            "depth": 2.392,
+            "id": "player:1790702560129000-847dc4258d50d0f3:6:0",
+            "radius": 12.0
+          }
+        ],
+        "version": 1.0
+      },
+      "first_process_real_r_input": true,
+      "generation": "ecology-r4.2",
+      "id": "martial-tree",
+      "key": "pine-1-0",
+      "kind": "tree",
+      "main_sha256": "437d60c8d0e46823ee30da4ded8bd0fe12d3f89783368e5c78ea8927d3e9d14e",
+      "position": [
+        95.0,
+        -0.329594731330872,
+        167.800003051758
+      ],
+      "producer_pid": 34596.0,
+      "run_id": "1450953",
+      "slot": "user://martial_r4_verify_cross_process.json"
+    }
+  },
+  "producer_dependencies": {
+    "keys": [
+      "before",
+      "after",
+      "changed",
+      "normal_engine_physics",
+      "viewport",
+      "window"
+    ],
+    "count_before": 1060,
+    "count_after": 1060,
+    "equal": true,
+    "reported_changed": [],
+    "current_mismatches": []
+  },
+  "consumer_dependencies": {
+    "keys": [
+      "before",
+      "after",
+      "changed",
+      "normal_engine_physics",
+      "viewport",
+      "window"
+    ],
+    "count_before": 1060,
+    "count_after": 1060,
+    "equal": true,
+    "reported_changed": [],
+    "current_mismatches": []
+  },
+  "producer_consumer_dependencies_equal": true
+}

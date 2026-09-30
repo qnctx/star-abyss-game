@@ -1,0 +1,148 @@
+{
+	"after_move": {
+		"asset_revision": "r3",
+		"band_triangles": [
+			949928,
+			849976,
+			857568
+		],
+		"cells": 333,
+		"instances": 718,
+		"kinds": {
+			"crystal": 0,
+			"floatrock": 0,
+			"grass": 200,
+			"outcrop": 30,
+			"pebble": 3,
+			"reed": 24,
+			"tree": 461
+		},
+		"max_instances": 900,
+		"max_triangles": 3200000,
+		"pending": 138,
+		"range": 900.0,
+		"rejected": {
+			"clearance": 1,
+			"footprint": 5,
+			"legacy": 0,
+			"not_ready": 121,
+			"slope": 0,
+			"water": 881
+		},
+		"triangles": 2657472
+	},
+	"baseline_repeat": true,
+	"duration_ms": 27528,
+	"field": {
+		"basin": 0.0,
+		"coast": 0.088346289465013,
+		"cold": 0.0,
+		"crystal": 0.0,
+		"forest": 0.517648377390927,
+		"height": 147.98338416882,
+		"legacy_weight": 0.0,
+		"moisture": 0.542986866341024,
+		"mountains": 0.0466650125827963,
+		"ocean": 0.0,
+		"river": 0.00000000000000000000000000000009,
+		"route_s": 17000.0008658445,
+		"storm": 0.0,
+		"temperature": 1.0,
+		"uplift": 1.0,
+		"volcanic": 0.0,
+		"water_depth": 0.0,
+		"water_height": 144.98338416882,
+		"wetland": 0.427864630152683
+	},
+	"max_distance_by_lod": [
+		85.38623046875,
+		205.822219848633,
+		916.726196289063
+	],
+	"mid_tiles": 25,
+	"move_selection_us": 31888,
+	"move_support_valid": true,
+	"near_tiles": 9,
+	"performance": {
+		"draw_calls": 211.0,
+		"ecology_update_us": {
+			"available": true,
+			"max": 8818.0,
+			"min": 799.0,
+			"p50": 1842.0,
+			"p95": 2458.0,
+			"samples": 799
+		},
+		"engine_fps": {
+			"available": true,
+			"max": 24.0,
+			"min": 22.0,
+			"p50": 23.0,
+			"p95": 24.0,
+			"samples": 799
+		},
+		"physics_cpu_ms": 3.413,
+		"physics_frame_interval_ms": {
+			"available": true,
+			"max": 99.479,
+			"min": 0.854,
+			"p50": 2.374,
+			"p95": 67.068,
+			"samples": 799
+		},
+		"process_cpu_ms": 79.025,
+		"rendered_primitives": 3760732.0,
+		"renderer": "OpenGL Compatibility Intel UHD Graphics, 1440x900, default vsync; standalone real-planet ecology scene, not full gameplay",
+		"viewport_render_cpu_ms": {
+			"available": true,
+			"max": 2.87700009346008,
+			"min": 1.07599997520447,
+			"p50": 1.35399997234344,
+			"p95": 1.81700003147125,
+			"samples": 799
+		},
+		"viewport_render_gpu_ms": {
+			"available": true,
+			"max": 48.0309982299805,
+			"min": 12.7030000686646,
+			"p50": 15.5609998703003,
+			"p95": 38.6759986877441,
+			"samples": 799
+		}
+	},
+	"snapshot": {
+		"asset_revision": "r3",
+		"band_triangles": [
+			949992,
+			849888,
+			1083376
+		],
+		"cells": 400,
+		"instances": 787,
+		"kinds": {
+			"crystal": 0,
+			"floatrock": 0,
+			"grass": 173,
+			"outcrop": 40,
+			"pebble": 1,
+			"reed": 14,
+			"tree": 559
+		},
+		"max_instances": 900,
+		"max_triangles": 3200000,
+		"pending": 208,
+		"range": 900.0,
+		"rejected": {
+			"clearance": 0,
+			"footprint": 4,
+			"legacy": 0,
+			"not_ready": 121,
+			"slope": 0,
+			"water": 837
+		},
+		"triangles": 2883256
+	},
+	"supported_cells": 400,
+	"utc_end": "2026-09-29T14:51:09",
+	"utc_start": "2026-09-29T14:50:34"
+}

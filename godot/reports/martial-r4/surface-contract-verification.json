@@ -1,0 +1,9 @@
+{
+  "checks": 53,
+  "failed": [],
+  "exit_code": 0,
+  "scope": "Contract fakes only; real physics and visual acceptance still required.",
+  "evidence": "Exact SURFACE_BLINK_CONTRACT summary archived from the completed headless tool stdout. This test did not originally write its own report.",
+  "script_sha256": "feede9ff092c9744a798a5df3087dbc965add939d4de99c6ad8f751490943420",
+  "module_sha256": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db"
+}

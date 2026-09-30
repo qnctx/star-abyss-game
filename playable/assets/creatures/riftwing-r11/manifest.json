@@ -1,0 +1,262 @@
+{
+  "species": "riftwing-r11",
+  "source": "../rift-prowler-v1/rift-prowler.glb",
+  "axis": "meters, Y up, -Z forward, +X right",
+  "root": "RiftwingRig",
+  "bones": [
+    "Root",
+    "Pelvis",
+    "LH_Upper",
+    "LH_Lower",
+    "LH_Foot",
+    "RH_Upper",
+    "RH_Lower",
+    "RH_Foot",
+    "Spine",
+    "Chest",
+    "LF_Upper",
+    "LF_Lower",
+    "LF_Foot",
+    "Neck",
+    "Head",
+    "RF_Upper",
+    "RF_Lower",
+    "RF_Foot",
+    "Wing_L_Root",
+    "Wing_L_Tip",
+    "Wing_R_Root",
+    "Wing_R_Tip",
+    "Tail01",
+    "Tail02"
+  ],
+  "wingBones": [
+    "Wing_L_Root",
+    "Wing_L_Tip",
+    "Wing_R_Root",
+    "Wing_R_Tip"
+  ],
+  "clips": [
+    {
+      "name": "ground-idle",
+      "duration": 2,
+      "loop": true
+    },
+    {
+      "name": "ground-walk",
+      "duration": 1.1,
+      "loop": true
+    },
+    {
+      "name": "ground-claw",
+      "duration": 0.8,
+      "loop": false
+    },
+    {
+      "name": "takeoff",
+      "duration": 1.2,
+      "loop": false
+    },
+    {
+      "name": "flight",
+      "duration": 0.9,
+      "loop": true
+    },
+    {
+      "name": "dive",
+      "duration": 1.0,
+      "loop": false
+    },
+    {
+      "name": "sweep",
+      "duration": 0.9,
+      "loop": false
+    },
+    {
+      "name": "land",
+      "duration": 1.3,
+      "loop": false
+    },
+    {
+      "name": "hit",
+      "duration": 0.6,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "duration": 1.5,
+      "loop": false
+    }
+  ],
+  "triangles": 45163,
+  "wingTriangles": 9196,
+  "materials": [
+    "Designer_Logic_PBR",
+    "Wing fibrous violet membrane",
+    "Wing charcoal layered armor",
+    "Wing subdued amethyst veins"
+  ],
+  "note": "In-place creature movement; runtime owns root travel/collision. Blend clips on the same rig; original quadruped is not replaced.",
+  "animatedBounds": {
+    "ground-idle": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -0.7448604106903076,
+          -1.1344267392132679e-07,
+          -1.2209645509719849
+        ],
+        "max": [
+          0.7448129653930664,
+          1.68911874294281,
+          2.0185956954956055
+        ]
+      },
+      "turnRadiusXZ": 2.151637890837378
+    },
+    "ground-walk": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -0.7448604106903076,
+          -9.882527507443228e-08,
+          -1.2629636526107788
+        ],
+        "max": [
+          0.7448129653930664,
+          1.8265531063079834,
+          2.0185956954956055
+        ]
+      },
+      "turnRadiusXZ": 2.151637890837378
+    },
+    "ground-claw": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -0.7448604106903076,
+          -2.4655253838545832e-08,
+          -1.5750294923782349
+        ],
+        "max": [
+          0.7448129653930664,
+          1.6891188621520996,
+          2.0185956954956055
+        ]
+      },
+      "turnRadiusXZ": 2.151637890837378
+    },
+    "takeoff": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.675722360610962,
+          -0.003008738160133362,
+          -1.2209645509719849
+        ],
+        "max": [
+          2.696502447128296,
+          1.8969364166259766,
+          2.1551995277404785
+        ]
+      },
+      "turnRadiusXZ": 3.45195748116075
+    },
+    "flight": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.6833930015563965,
+          -0.003008738160133362,
+          -1.2209645509719849
+        ],
+        "max": [
+          2.7042160034179688,
+          2.821955919265747,
+          1.221853256225586
+        ]
+      },
+      "turnRadiusXZ": 2.967441587106799
+    },
+    "dive": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.675722360610962,
+          -0.24349422752857208,
+          -1.4379771947860718
+        ],
+        "max": [
+          2.696502447128296,
+          1.8069363832473755,
+          1.221853256225586
+        ]
+      },
+      "turnRadiusXZ": 3.055962018758366
+    },
+    "sweep": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.6470584869384766,
+          -0.003008738160133362,
+          -1.405447244644165
+        ],
+        "max": [
+          2.6674094200134277,
+          1.881567358970642,
+          1.221853256225586
+        ]
+      },
+      "turnRadiusXZ": 3.015021554061305
+    },
+    "land": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.6846179962158203,
+          -0.004659550730139017,
+          -1.8380472660064697
+        ],
+        "max": [
+          2.70524263381958,
+          1.865533709526062,
+          2.163635015487671
+        ]
+      },
+      "turnRadiusXZ": 3.4640517011267935
+    },
+    "hit": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -2.4537878036499023,
+          -0.12889333069324493,
+          -1.2274380922317505
+        ],
+        "max": [
+          2.472730875015259,
+          1.8626435995101929,
+          1.4648925065994263
+        ]
+      },
+      "turnRadiusXZ": 2.874075161881623
+    },
+    "death": {
+      "samples": 17,
+      "bounds": {
+        "min": [
+          -1.6039342880249023,
+          -1.2852251529693604e-07,
+          -1.2209645509719849
+        ],
+        "max": [
+          0.7448129653930664,
+          1.9475195407867432,
+          2.2679312229156494
+        ]
+      },
+      "turnRadiusXZ": 2.7777899906540133
+    }
+  },
+  "glbBytes": 10786180
+}

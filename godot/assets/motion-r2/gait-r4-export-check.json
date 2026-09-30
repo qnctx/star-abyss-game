@@ -1,0 +1,13 @@
+{
+  "animation_count": 29,
+  "changed_animation_names": [
+    "jog",
+    "sprint",
+    "walk"
+  ],
+  "protected_26_exported_clips_identical": true,
+  "mesh_attributes_indices_identical": true,
+  "inverse_bind_accessors_identical": true,
+  "glb_sha256": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430",
+  "driver_sha256": "95d3a7df91e2dfe5128fd0a649c0e8696457f4d8dd07f178374a4018dabb78c6"
+}

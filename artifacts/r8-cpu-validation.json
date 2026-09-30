@@ -1,0 +1,64 @@
+{
+  "at": "2026-09-26T14:21:49.341Z",
+  "bundleSHA": "7427160201567fbbc47f53b70dc9b44c93580b73e41c88136a83c2b913e78c0b",
+  "gallerySHA": "0639b0abc5b872bd570a185103adff064e19098a317db89dd6e7aecf37274852",
+  "workerSHA": "063a70e9a14a31c6349f320400a6f8aabab1284cd2f10d72ce3f6362e25ca84b",
+  "targeted": {
+    "cases": 74,
+    "passed": 74,
+    "note": "Latest per-file results across the six-group 58-case run, its input test increment (30/30), plus actual GLB effects (1), tangent aim (3) and updated runtime world (11). No claim of full repository suite."
+  },
+  "independentCombatRegression": {
+    "cases": 59,
+    "passed": 59
+  },
+  "assetReimport": {
+    "renderer": "Cycles CPU",
+    "assets": [
+      {
+        "id": "qi-boost",
+        "triangles": 592,
+        "drawCalls": 1,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      },
+      {
+        "id": "aerial-crescent",
+        "triangles": 1588,
+        "drawCalls": 1,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      },
+      {
+        "id": "blink-aperture",
+        "triangles": 1850,
+        "drawCalls": 4,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      },
+      {
+        "id": "domain-gate",
+        "triangles": 4796,
+        "drawCalls": 3,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      },
+      {
+        "id": "void-fracture",
+        "triangles": 572,
+        "drawCalls": 3,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      },
+      {
+        "id": "dao-gate",
+        "triangles": 8928,
+        "drawCalls": 3,
+        "finiteVertices": true,
+        "nondegenerateFaces": true
+      }
+    ],
+    "totalTriangles": 18326
+  },
+  "packageChange": "Only adds reproducible ascension gallery build; previous difference was formatting."
+}

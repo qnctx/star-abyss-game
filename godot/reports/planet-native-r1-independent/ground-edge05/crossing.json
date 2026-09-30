@@ -1,0 +1,54 @@
+{
+  "crossing_count": 1,
+  "crossings": [
+    {
+      "before": {
+        "c": false,
+        "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.969303, -0.24587), Z: (0.0, 0.24587, 0.969303), O: (0.0, 3.905078, 204.526)]",
+        "d": false,
+        "delta": 0.0166666666666667,
+        "g": false,
+        "main_physics": true,
+        "mid": 0,
+        "player_physics": true,
+        "position": "(0.0, 0.000938, 200.0901)",
+        "stage": "ground-edge200",
+        "support": {
+          "agl": 0.000937854871153831,
+          "normal": "(0.0, 1.0, 0.0)",
+          "point": "(0.0, 0.0, 200.0901)",
+          "ready": true,
+          "spacing": 10.0,
+          "water_depth": 0.0
+        },
+        "tick": 110,
+        "velocity": "(0.0, 0.011347, -6.799991)",
+        "wall": 1.953792
+      },
+      "after": {
+        "c": false,
+        "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.969303, -0.24587), Z: (0.0, 0.24587, 0.969303), O: (0.0, 3.905078, 204.4121)]",
+        "d": false,
+        "delta": 0.0166666666666667,
+        "g": false,
+        "main_physics": true,
+        "mid": 0,
+        "player_physics": true,
+        "position": "(0.0, 0.000938, 199.9762)",
+        "stage": "ground-edge200",
+        "support": {
+          "agl": 0.000937596021685749,
+          "normal": "(0.0, 1.0, 0.0)",
+          "point": "(0.0, 0.0, 199.9762)",
+          "ready": true,
+          "spacing": 10.0,
+          "water_depth": 0.0
+        },
+        "tick": 111,
+        "velocity": "(0.0, 0.011341, -6.799991)",
+        "wall": 1.97572
+      }
+    }
+  ],
+  "reversed_steps": 0
+}

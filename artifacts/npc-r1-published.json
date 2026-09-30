@@ -1,0 +1,152 @@
+{
+  "published": "2026-09-16T23:56:15.432Z",
+  "destination": "E:\\myProject\\star-abyss-game",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\cb21\\star-abyss-game\\artifacts\\npc-r1-backup-1789602973760",
+  "files": [
+    {
+      "path": "playable/src/foundation/camp-assets.mjs",
+      "sha256": "c38cb8f7262bdc643a83cc5b8ffd7543738fed59c1e054116a744dfbdbb320c0",
+      "baseline": "9f82f2087adf9de712c066a90a064208d9f13af0b4bb7f4bf2d8068bb00a95f2",
+      "current": "9f82f2087adf9de712c066a90a064208d9f13af0b4bb7f4bf2d8068bb00a95f2",
+      "conflict": false,
+      "bytes": 215
+    },
+    {
+      "path": "playable/src/foundation/camp-scene.mjs",
+      "sha256": "8181f8a8f94b305105d18b59d996b06a2554a862cae116cf6e1352b530ebe2d5",
+      "baseline": "efab8b771177be43954b38085e227c878381a53e6e16a84e4fdb1fbae6037e1b",
+      "current": "efab8b771177be43954b38085e227c878381a53e6e16a84e4fdb1fbae6037e1b",
+      "conflict": false,
+      "bytes": 4607
+    },
+    {
+      "path": "playable/src/main.mjs",
+      "sha256": "9d969bc87636b3d99156388a76c27ebc7ac105bc0064f5aa08e82e2f9646c039",
+      "baseline": "b826af773e2b70f03c488dd57767abf270e41123dc582137158306559c1bcc29",
+      "current": "b826af773e2b70f03c488dd57767abf270e41123dc582137158306559c1bcc29",
+      "conflict": false,
+      "bytes": 65892
+    },
+    {
+      "path": "playable/src/progression-quests/assets.mjs",
+      "sha256": "ff687ce9effc78c90c43b6f1b14f477d18efe4ddfe4e96fc39b723c8019cc41b",
+      "baseline": "9eb90cc096fa347d467a2988ba5923c10c0d8b6b132cf5fffc4b8a8b06746d84",
+      "current": "9eb90cc096fa347d467a2988ba5923c10c0d8b6b132cf5fffc4b8a8b06746d84",
+      "conflict": false,
+      "bytes": 762
+    },
+    {
+      "path": "playable/src/progression-quests/npc-rig.mjs",
+      "sha256": "9a9a0e76b1e6c378fe9fb6a390d492f02ed8114e2c190d1272eca93f23e9134f",
+      "baseline": "0a1826c7737c4ab598fc13909b25ba19a339e72ac61b4582406a4752ff3062a0",
+      "current": "0a1826c7737c4ab598fc13909b25ba19a339e72ac61b4582406a4752ff3062a0",
+      "conflict": false,
+      "bytes": 3735
+    },
+    {
+      "path": "playable/src/progression-quests/scene.mjs",
+      "sha256": "3179c64be4250107b6819f4fe1b78e67cfb367bb3e724beaacdf4b77ff52037a",
+      "baseline": "b7144a56a8de80fc7ec86e1de73280531e06715678cdfdfccb41b14c6006617c",
+      "current": "b7144a56a8de80fc7ec86e1de73280531e06715678cdfdfccb41b14c6006617c",
+      "conflict": false,
+      "bytes": 4757
+    },
+    {
+      "path": "playable/src/progression-quests/verify-npc-geometry.mjs",
+      "sha256": "c39f61ce68adba8a28e3855e00a40db6212cceb871e29c18e2b0f0b60be5d083",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 2692
+    },
+    {
+      "path": "playable/src/scene.mjs",
+      "sha256": "d8e1a3ca94085fc4e765946d3c8d8667b173629399e688e40b62c3980099fe97",
+      "baseline": "39b1c601d8f0ae42283f6cc2f4329c81088280e770f4c3deac31188730f577d8",
+      "current": "39b1c601d8f0ae42283f6cc2f4329c81088280e770f4c3deac31188730f577d8",
+      "conflict": false,
+      "bytes": 38051
+    },
+    {
+      "path": "playable/assets/foundation/medical-bench-v1.glb",
+      "sha256": "1c84e40cc6b04fab7cdc925c99a2763975ae9e2084870757b1a65f2ec7931788",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 3739364
+    },
+    {
+      "path": "playable/assets/foundation/medical-vial-v1.glb",
+      "sha256": "8129a47c1d85c53ffcc2422682efb0d5be8fbf6811bbaf82b37e8c5a4f307c7f",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 1164172
+    },
+    {
+      "path": "playable/assets/foundation/su-he-v1.glb",
+      "sha256": "74b513e2170cd1da078f7b5be2a88789b0884d974b29a5ede093d85081af205c",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 11156788
+    },
+    {
+      "path": "playable/assets/progression-quests/manifest.json",
+      "sha256": "50f0d114a3ff0fde21a172d0d9db8f501ad6895b6acf5de3cb986f699224c8cd",
+      "baseline": "2f3019a85a370f21fdc934352fe49711c116c5e7dcb575369810c936e52c74c7",
+      "current": "2f3019a85a370f21fdc934352fe49711c116c5e7dcb575369810c936e52c74c7",
+      "conflict": false,
+      "bytes": 2335
+    },
+    {
+      "path": "playable/assets/progression-quests/N01-original.glb",
+      "sha256": "ed00ca069c1dd777238c2e09eb3730edbd3312d1286fac90c36794c27de2ed82",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 8783600
+    },
+    {
+      "path": "playable/assets/progression-quests/N03-original.glb",
+      "sha256": "12b22193f03d46ea3316d8f0f68da4398e369d78ae168e14808fecce86af13cb",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 10389128
+    },
+    {
+      "path": "playable/assets/progression-quests/N04-original.glb",
+      "sha256": "72e9c72edda59b7ad5661385d077ddc036eb889c4d84453eb4c948feb220b7cf",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 8942976
+    },
+    {
+      "path": "playable/assets/progression-quests/N05-original.glb",
+      "sha256": "d57748012c3b561aebb3df2a3c58bd641be61be0c9b4f96f84f1eb8ec516fe39",
+      "baseline": null,
+      "current": null,
+      "conflict": false,
+      "bytes": 9408624
+    },
+    {
+      "path": "playable/star-abyss.html",
+      "sha256": "5532f612e2efe24d55b2128a23265624ed368e485271eb4cad1b042df6b03dd8",
+      "baseline": "e0e7bdfa31c7a7546717c84f51e7b04934211c2b1af846fdbacff64492ddefd5",
+      "current": "e0e7bdfa31c7a7546717c84f51e7b04934211c2b1af846fdbacff64492ddefd5",
+      "conflict": false,
+      "bytes": 16024
+    },
+    {
+      "path": "playable/game.js",
+      "sha256": "ab12ece9e4f90d1846fdf9493d9600be3a98824333e173e8ddd991a1c6fa64e7",
+      "baseline": "645f929e6fd6d2082bf8fd3000436a1aec6dd3fa29fff16b80d992f0386232b7",
+      "current": "645f929e6fd6d2082bf8fd3000436a1aec6dd3fa29fff16b80d992f0386232b7",
+      "conflict": false,
+      "bytes": 21839626
+    }
+  ],
+  "gameSHA256": "ab12ece9e4f90d1846fdf9493d9600be3a98824333e173e8ddd991a1c6fa64e7"
+}

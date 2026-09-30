@@ -1,0 +1,584 @@
+{
+  "before": {
+    "after_move": {
+      "asset_revision": "r3",
+      "band_triangles": [
+        949928,
+        849976,
+        857568
+      ],
+      "cells": 333,
+      "instances": 718,
+      "kinds": {
+        "crystal": 0,
+        "floatrock": 0,
+        "grass": 200,
+        "outcrop": 30,
+        "pebble": 3,
+        "reed": 24,
+        "tree": 461
+      },
+      "max_instances": 900,
+      "max_triangles": 3200000,
+      "pending": 138,
+      "range": 900.0,
+      "rejected": {
+        "clearance": 1,
+        "footprint": 5,
+        "legacy": 0,
+        "not_ready": 121,
+        "slope": 0,
+        "water": 881
+      },
+      "triangles": 2657472
+    },
+    "baseline_repeat": true,
+    "duration_ms": 27528,
+    "field": {
+      "basin": 0.0,
+      "coast": 0.088346289465013,
+      "cold": 0.0,
+      "crystal": 0.0,
+      "forest": 0.517648377390927,
+      "height": 147.98338416882,
+      "legacy_weight": 0.0,
+      "moisture": 0.542986866341024,
+      "mountains": 0.0466650125827963,
+      "ocean": 0.0,
+      "river": 9e-32,
+      "route_s": 17000.0008658445,
+      "storm": 0.0,
+      "temperature": 1.0,
+      "uplift": 1.0,
+      "volcanic": 0.0,
+      "water_depth": 0.0,
+      "water_height": 144.98338416882,
+      "wetland": 0.427864630152683
+    },
+    "max_distance_by_lod": [
+      85.38623046875,
+      205.822219848633,
+      916.726196289063
+    ],
+    "mid_tiles": 25,
+    "move_selection_us": 31888,
+    "move_support_valid": true,
+    "near_tiles": 9,
+    "performance": {
+      "draw_calls": 211.0,
+      "ecology_update_us": {
+        "available": true,
+        "max": 8818.0,
+        "min": 799.0,
+        "p50": 1842.0,
+        "p95": 2458.0,
+        "samples": 799
+      },
+      "engine_fps": {
+        "available": true,
+        "max": 24.0,
+        "min": 22.0,
+        "p50": 23.0,
+        "p95": 24.0,
+        "samples": 799
+      },
+      "physics_cpu_ms": 3.413,
+      "physics_frame_interval_ms": {
+        "available": true,
+        "max": 99.479,
+        "min": 0.854,
+        "p50": 2.374,
+        "p95": 67.068,
+        "samples": 799
+      },
+      "process_cpu_ms": 79.025,
+      "rendered_primitives": 3760732.0,
+      "renderer": "OpenGL Compatibility Intel UHD Graphics, 1440x900, default vsync; standalone real-planet ecology scene, not full gameplay",
+      "viewport_render_cpu_ms": {
+        "available": true,
+        "max": 2.87700009346008,
+        "min": 1.07599997520447,
+        "p50": 1.35399997234344,
+        "p95": 1.81700003147125,
+        "samples": 799
+      },
+      "viewport_render_gpu_ms": {
+        "available": true,
+        "max": 48.0309982299805,
+        "min": 12.7030000686646,
+        "p50": 15.5609998703003,
+        "p95": 38.6759986877441,
+        "samples": 799
+      }
+    },
+    "snapshot": {
+      "asset_revision": "r3",
+      "band_triangles": [
+        949992,
+        849888,
+        1083376
+      ],
+      "cells": 400,
+      "instances": 787,
+      "kinds": {
+        "crystal": 0,
+        "floatrock": 0,
+        "grass": 173,
+        "outcrop": 40,
+        "pebble": 1,
+        "reed": 14,
+        "tree": 559
+      },
+      "max_instances": 900,
+      "max_triangles": 3200000,
+      "pending": 208,
+      "range": 900.0,
+      "rejected": {
+        "clearance": 0,
+        "footprint": 4,
+        "legacy": 0,
+        "not_ready": 121,
+        "slope": 0,
+        "water": 837
+      },
+      "triangles": 2883256
+    },
+    "supported_cells": 400,
+    "utc_end": "2026-09-29T14:51:09",
+    "utc_start": "2026-09-29T14:50:34"
+  },
+  "after": {
+    "after_move": {
+      "asset_revision": "r3",
+      "band_triangles": [
+        175364,
+        299672,
+        594036
+      ],
+      "cells": 336,
+      "instances": 785,
+      "kinds": {
+        "crystal": 0,
+        "floatrock": 0,
+        "grass": 282,
+        "outcrop": 31,
+        "pebble": 1,
+        "reed": 28,
+        "tree": 443
+      },
+      "max_instances": 900,
+      "max_triangles": 1300000,
+      "pending": 128,
+      "range": 900.0,
+      "rejected": {
+        "clearance": 0,
+        "footprint": 8,
+        "legacy": 0,
+        "not_ready": 121,
+        "slope": 0,
+        "water": 1279
+      },
+      "triangles": 1069072
+    },
+    "baseline_repeat": false,
+    "duration_ms": 26992,
+    "field": {
+      "basin": 0.0,
+      "coast": 0.088346289465013,
+      "cold": 0.0,
+      "crystal": 0.0,
+      "forest": 0.517648377390927,
+      "height": 147.98338416882,
+      "legacy_weight": 0.0,
+      "moisture": 0.542986866341024,
+      "mountains": 0.0466650125827963,
+      "ocean": 0.0,
+      "river": 9e-32,
+      "route_s": 17000.0008658445,
+      "storm": 0.0,
+      "temperature": 1.0,
+      "uplift": 1.0,
+      "volcanic": 0.0,
+      "water_depth": 0.0,
+      "water_height": 144.98338416882,
+      "wetland": 0.427864630152683
+    },
+    "max_distance_by_lod": [
+      31.5016117095947,
+      144.132019042969,
+      916.726196289063
+    ],
+    "mid_tiles": 25,
+    "move_selection_us": 29715,
+    "move_support_valid": true,
+    "near_tiles": 9,
+    "performance": {
+      "draw_calls": 209.0,
+      "ecology_update_us": {
+        "available": true,
+        "max": 10185.0,
+        "min": 1199.0,
+        "p50": 2313.0,
+        "p95": 2861.0,
+        "samples": 799
+      },
+      "engine_fps": {
+        "available": true,
+        "max": 60.0,
+        "min": 60.0,
+        "p50": 60.0,
+        "p95": 60.0,
+        "samples": 799
+      },
+      "physics_cpu_ms": 3.394,
+      "physics_frame_interval_ms": {
+        "available": true,
+        "max": 17.622,
+        "min": 15.542,
+        "p50": 16.667,
+        "p95": 17.073,
+        "samples": 799
+      },
+      "process_cpu_ms": 14.518,
+      "rendered_primitives": 1605315.0,
+      "renderer": "OpenGL Compatibility Intel UHD Graphics, 1440x900, default vsync; standalone real-planet ecology scene, not full gameplay",
+      "viewport_render_cpu_ms": {
+        "available": true,
+        "max": 2.04800009727478,
+        "min": 1.08700001239777,
+        "p50": 1.27699995040894,
+        "p95": 1.6690000295639,
+        "samples": 799
+      },
+      "viewport_render_gpu_ms": {
+        "available": true,
+        "max": 20.9799995422363,
+        "min": 7.92899990081787,
+        "p50": 12.9209995269775,
+        "p95": 13.4320001602173,
+        "samples": 799
+      }
+    },
+    "snapshot": {
+      "asset_revision": "r3",
+      "band_triangles": [
+        161864,
+        299832,
+        762022
+      ],
+      "cells": 421,
+      "instances": 829,
+      "kinds": {
+        "crystal": 0,
+        "floatrock": 0,
+        "grass": 204,
+        "outcrop": 43,
+        "pebble": 2,
+        "reed": 22,
+        "tree": 558
+      },
+      "max_instances": 900,
+      "max_triangles": 1300000,
+      "pending": 7,
+      "range": 900.0,
+      "rejected": {
+        "clearance": 0,
+        "footprint": 6,
+        "legacy": 0,
+        "not_ready": 121,
+        "slope": 0,
+        "water": 1223
+      },
+      "triangles": 1223718
+    },
+    "supported_cells": 421,
+    "utc_end": "2026-09-29T14:53:13",
+    "utc_start": "2026-09-29T14:52:41"
+  },
+  "triangle_reduction_percent": 57.5577749599758,
+  "same_field_values": true,
+  "all_traced_inputs_predate_after_run": true,
+  "inputs": {
+    "godot/assets/planet-ecology-r3/crystal-0-collision.tres": {
+      "sha256": "23c7d0d6cdb69fe2f8acceb7548135b4e3ca66c1dc20aa3e0bfbd009d37696e0",
+      "mtime_utc": "2026-09-29T14:41:17.975346+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/crystal-0.res": {
+      "sha256": "18ff686f57b1ef4e86c751a86d2e1ec3030d15970f26b727c3d04a63365bdb19",
+      "mtime_utc": "2026-09-29T14:41:17.974281+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/crystal-1-collision.tres": {
+      "sha256": "f5ceb43f1eadcee4ffdaad42a2f9815fc406763203edaf06ee8063db0bcff689",
+      "mtime_utc": "2026-09-29T14:41:17.982008+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/crystal-1.res": {
+      "sha256": "c88eb97dc64cf1f612c7c20888d34d74afa93f7a5c99684723ee1019ef20e8c8",
+      "mtime_utc": "2026-09-29T14:41:17.982008+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/crystal-2-collision.tres": {
+      "sha256": "a6eddc297b184652b122dc29b0d1f5aecc63e49af430294da89e797921f926d8",
+      "mtime_utc": "2026-09-29T14:41:17.986722+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/crystal-2.res": {
+      "sha256": "911e80c4f3c8f2dd0dc234b6869572ecb2ccc7b6021aa1cf8e8d765823f607a7",
+      "mtime_utc": "2026-09-29T14:41:17.986722+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/ecology_surface_r3.gdshader": {
+      "sha256": "cf0e7a9c6978576fc1dbbb238a2ba4b2ad04076d713da943cbb9fea371f815d9",
+      "mtime_utc": "2026-09-29T14:21:21.907251+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-0-collision.tres": {
+      "sha256": "8ffed6b365501e4e39791e76d633a9721928a666f30bd8d0335c6677ef333c09",
+      "mtime_utc": "2026-09-29T14:41:17.988608+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-0.res": {
+      "sha256": "9413131d56353bef1bbbb2c498a9563e4ee1f7a0fd68ed0aa4fca479500e32cd",
+      "mtime_utc": "2026-09-29T14:41:17.988608+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-1-collision.tres": {
+      "sha256": "865d47a4dcdbacfc6c806995d49a8ec26151682373bf1c83be21b727b2008823",
+      "mtime_utc": "2026-09-29T14:41:17.990612+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-1.res": {
+      "sha256": "53967184743d6817dca795bd1a1aedcfc3c585f4caf55f02e20495f73e64fbe0",
+      "mtime_utc": "2026-09-29T14:41:17.989607+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-2-collision.tres": {
+      "sha256": "3a5becbe50c4847ad131fc6f00a06270205beed2ca1ca1e8054c3cae609f4565",
+      "mtime_utc": "2026-09-29T14:41:17.992116+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/floatrock-2.res": {
+      "sha256": "0e25164ed08d23f9d00bd524f6df3ee067f12b045aab1d76e8cc2ef628ed246f",
+      "mtime_utc": "2026-09-29T14:41:17.991608+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/grass-0.res": {
+      "sha256": "5708b02165ed2d3214e72c0a43e83b4895cc9d18fc66baca03fe860260512c37",
+      "mtime_utc": "2026-09-29T14:41:17.993126+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/grass-1.res": {
+      "sha256": "e2086c0e894aa619cf36d5fe04cc56eb836092aed22bc9ae36ed5844840164da",
+      "mtime_utc": "2026-09-29T14:41:17.994130+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/grass-2.res": {
+      "sha256": "52f6a6ccb1fc05375ef195c08ec0524541c69d4c0df1fe90dd891dd5e962c114",
+      "mtime_utc": "2026-09-29T14:41:17.995126+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-0-collision.tres": {
+      "sha256": "d1edb3cbec1e5c0139f41b76f5ddd4f4d2f27fabe30934947b64b9e7d3f11188",
+      "mtime_utc": "2026-09-29T14:41:17.943809+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-0.res": {
+      "sha256": "26085c0690ce8e556a328ae58b4fc71530f2195674a3c9afff855037c848edd2",
+      "mtime_utc": "2026-09-29T14:41:17.943809+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-1-collision.tres": {
+      "sha256": "f8b5891b664a399d21d496db9c3c5720251fc1fb509418fa972f1bfb42508281",
+      "mtime_utc": "2026-09-29T14:41:17.953838+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-1.res": {
+      "sha256": "84159583e0722149dabd3f051bebbe9d78720bec5f77e461ebe8f1f5582b4e03",
+      "mtime_utc": "2026-09-29T14:41:17.952831+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-2-collision.tres": {
+      "sha256": "7c3f1e15d85c414e946dfd745393d7fb7dcf6d1e72b7c95fe2082ab2291dd0d7",
+      "mtime_utc": "2026-09-29T14:41:17.958114+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/outcrop-2.res": {
+      "sha256": "42b4d5b54c219fe48546050e574c29b198d146b18f5b58c742fca2334cae52e8",
+      "mtime_utc": "2026-09-29T14:41:17.956350+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-0-collision.tres": {
+      "sha256": "8c6efabac6abe62d928f9ea1fab536ecc8537de54de183a1ee65062f75ed2e8f",
+      "mtime_utc": "2026-09-29T14:41:17.923725+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-0.res": {
+      "sha256": "c2ed7841df8dab5e94facfd0f19098d04f3b5b707d7488b85ea630f5b69f5fe8",
+      "mtime_utc": "2026-09-29T14:41:17.922716+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-1-collision.tres": {
+      "sha256": "1324fe940ceb2ae921ede5f4d5fa383500540c509ce39d0aee996b5cfc03bf8f",
+      "mtime_utc": "2026-09-29T14:41:17.925725+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-1.res": {
+      "sha256": "ce57ca13829afa832301c461c2771d0df98498e00e2be557d4fe9a07f245d4ec",
+      "mtime_utc": "2026-09-29T14:41:17.924725+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-2-collision.tres": {
+      "sha256": "2067e812eb8a782188f04c0e5d214b820f340b5cb963e1a63a80d36963191627",
+      "mtime_utc": "2026-09-29T14:41:17.926726+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/pebble-2.res": {
+      "sha256": "679213544cbb7962c7fa0b523770bdb08790711f323c5520fc819818810fe4b3",
+      "mtime_utc": "2026-09-29T14:41:17.925725+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/reed-0.res": {
+      "sha256": "02d26f24ad040429b4a24b6c527a2deb34fef4ef3aa3e01206ea6bb4c468df5b",
+      "mtime_utc": "2026-09-29T14:41:17.918687+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/reed-1.res": {
+      "sha256": "924fe9c2ea0da1136679bd6d9517c2745db5bfad510eb2d636806943a4c88cdb",
+      "mtime_utc": "2026-09-29T14:41:17.920200+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/reed-2.res": {
+      "sha256": "4b05595a6876fdf04f5364ec15f46a63d25864e5926d6a3ec73601d8d842d751",
+      "mtime_utc": "2026-09-29T14:41:17.921211+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-0-collision.tres": {
+      "sha256": "8fcec7517f18d106795c8bb4bbfb70db42125d50378fd8abfce75fa2aab506a3",
+      "mtime_utc": "2026-09-29T14:41:17.904635+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-0.res": {
+      "sha256": "290ccb39b5eba73b1ba7911ca63edb597154468cc87924c2c52c6ef4cc8051fa",
+      "mtime_utc": "2026-09-29T14:41:17.902630+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-1-collision.tres": {
+      "sha256": "8fcec7517f18d106795c8bb4bbfb70db42125d50378fd8abfce75fa2aab506a3",
+      "mtime_utc": "2026-09-29T14:41:17.914684+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-1.res": {
+      "sha256": "e1af22f678200e1e121078d9402e1573ff92e15bd38bdd375ed6ef8d915ec930",
+      "mtime_utc": "2026-09-29T14:41:17.913684+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-2-collision.tres": {
+      "sha256": "8fcec7517f18d106795c8bb4bbfb70db42125d50378fd8abfce75fa2aab506a3",
+      "mtime_utc": "2026-09-29T14:41:17.916684+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/planet-ecology-r3/tree-2.res": {
+      "sha256": "6d4320f692ee41319254a4c89c1a308cc206a3449256dc66ae829277553fa360",
+      "mtime_utc": "2026-09-29T14:41:17.916684+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-nx-land.res": {
+      "sha256": "86daee2b6b991938d1e1cf4d8e545a62615c3216af6b52810b1ba5a674de6a2a",
+      "mtime_utc": "2026-09-29T14:51:01.339961+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-nx-water.res": {
+      "sha256": "848078eada437957edb57b09bfd432047e1a6a91e669223b5c6432657546c0c2",
+      "mtime_utc": "2026-09-29T14:51:01.343239+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-ny-land.res": {
+      "sha256": "fcae3eb78ff153472016fea40f6a221b3224641e3f97b78200df626210184f97",
+      "mtime_utc": "2026-09-29T14:51:01.349084+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-ny-water.res": {
+      "sha256": "3f30bfff1cf5578b7c3024b2545bf083d95f3fbbf637f7b60fa943f62d5a579f",
+      "mtime_utc": "2026-09-29T14:51:01.351625+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-nz-land.res": {
+      "sha256": "31c563a8018afd5ef660f005f7744189df3539f63261e3be4871228c3978c52f",
+      "mtime_utc": "2026-09-29T14:51:01.358496+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-nz-water.res": {
+      "sha256": "9c6607b4e5948fe569406167fb74ac658e3e73c0a7f19a082be9b06dcdf5ba37",
+      "mtime_utc": "2026-09-29T14:51:01.361526+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-px-land.res": {
+      "sha256": "65fd7e24ebd47dece987554c40981be76c135c791fa7a3840fa3ecf116bff57e",
+      "mtime_utc": "2026-09-29T14:51:01.331592+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-px-water.res": {
+      "sha256": "22b5146081043010ff89648bb1858502419bea7db3e6c36df93279858ca7ed29",
+      "mtime_utc": "2026-09-29T14:51:01.336641+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-py-land.res": {
+      "sha256": "6624e3cb177aac0826f1fd48a60ebfee8f4220a27083b31858438de18cd87b59",
+      "mtime_utc": "2026-09-29T14:51:01.344490+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-py-water.res": {
+      "sha256": "93ba06e18c05f960def2974161c41ee86c996ef8ce3749bce8de7d636446f61b",
+      "mtime_utc": "2026-09-29T14:51:01.347567+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-pz-land.res": {
+      "sha256": "862392e98716fbadf13781b8263d99cd92e8a6d6f4903d429d74cc5dad4f7bbb",
+      "mtime_utc": "2026-09-29T14:51:01.354196+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet-far-pz-water.res": {
+      "sha256": "efef5fce8cbf036cfab980a044dbba6352439266d5616cb0f4b57e39cdfe96af",
+      "mtime_utc": "2026-09-29T14:51:01.357462+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet_surface.gdshader": {
+      "sha256": "15181a23c79f7061a524e749912b67e85eef36d36db52f7f1f449512706267f8",
+      "mtime_utc": "2026-09-29T14:41:15.889564+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/assets/terrain/planet_water.gdshader": {
+      "sha256": "e1f3a75b651a6eaac33f7ecc267c9a3b3935ff22501aa24cc88e60e657956ff3",
+      "mtime_utc": "2026-09-29T13:52:33.164415+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/scripts/native_planet.gd": {
+      "sha256": "3e7ee7728ba07d2c253282cafa2c007b44c0d63b9dd59e03ad55326d593057a0",
+      "mtime_utc": "2026-09-29T14:49:35.147343+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/scripts/native_planet_ecology.gd": {
+      "sha256": "df1c96a56b2d7ef85f73ece23de3460893b11184ff00ac496dd46b4fe2bf1fde",
+      "mtime_utc": "2026-09-29T14:43:48.723902+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/scripts/native_planet_field.gd": {
+      "sha256": "3e2b934bb509f021e0f392a585c58e02953323e14060234bf39bc210a4e42af7",
+      "mtime_utc": "2026-09-29T14:03:10.581114+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/scripts/native_planet_field_r3.gd": {
+      "sha256": "27d1b8776bf245edc3a44ac6cd90e318be4a7442961775c02505df110e04cabc",
+      "mtime_utc": "2026-09-29T14:06:50.940236+00:00",
+      "unchanged_since_run_start": true
+    },
+    "godot/tests/native_ecology_r3_integrated.gd": {
+      "sha256": "32028484090e1670516103afa17d3408c1bb7e9eb9072c85a7d86b4b1248b33f",
+      "mtime_utc": "2026-09-29T14:49:22.782234+00:00",
+      "unchanged_since_run_start": true
+    }
+  },
+  "measurement_context": "Paired sequential tests after material_capture completed and independent GPU acceptance paused. Existing game process PID34324 (started 20:48:54 local) remained unchanged in both runs; it was not terminated. No claim of exclusive machine/GPU ownership. Same camera, 1440x900, OpenGL Intel UHD, default vsync; this is the real-planet ecology test, not the complete main scene."
+}

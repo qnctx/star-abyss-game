@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "bundleSHA": "cc030126f022fa9e6365dfa76958589132274b45f64d12c2334d50b9ca4a893e",
+  "evidence": [
+    "artifacts/r6-candidate/airborne-Space-rise.png",
+    "artifacts/r6-candidate/ground-G-first-flight.png",
+    "artifacts/r6-candidate/ground-G-third-flight.png",
+    "artifacts/r6-candidate/ground-Space-first-flight.png",
+    "artifacts/r6-candidate/ground-Space-third-flight.png",
+    "artifacts/r6-candidate/L0-Space-jump.png",
+    "artifacts/r6-candidate/report.json",
+    "artifacts/r6-candidate/vehicle-Space-brake.png"
+  ],
+  "at": "2026-09-26T13:16:11.961Z"
+}

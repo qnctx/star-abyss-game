@@ -1,0 +1,10 @@
+# R3 第1张参考图准备稿（尚未调用生图）
+
+授权范围由总控确认；最多使用本轮分配给人物动作的一张，不自动重试或追加付费批次。输入参考：本目录`reference.png`，已目视检查；只作为C2身份与服装参考。
+
+Use case: stylized-concept.
+Asset type: a practical production reference sheet for Blender character animation and articulated glove modeling.
+Input image: identity reference only. Preserve the exact C2 lunar explorer: ivory hood, black opaque visor, pale angular shoulder armor, fitted taupe armored suit, forearm guards and shin plates, original adult human proportions. No costume redesign or weapons.
+Primary request: ONE spacious wide reference sheet with readable full-body key poses and a large glove anatomy strip. Upper two rows show (1) weighted walk heel contact, (2) walk passing pose with supported center of mass, (3) athletic run push-off with opposite arm, (4) run recovery with folded trailing leg, (5) compact right-fist chamber with rear hip coiled, (6) right straight punch release with hip/shoulder rotation, (7) left open-palm forward release, (8) broad right-arm horizontal sweeping release with torso twist, (9) right overhead knife-hand chamber, (10) right vertical downward cleave follow-through, (11) airborne two-arm overhead charge with knees softly tucked, (12) airborne downward right-palm strike and controlled counterbalancing left arm. Ground poses have plausible planted soles and knee alignment. Show decisive silhouettes, short anticipation, force transmission, and recovery, without copying an existing character or specific franchise move.
+Bottom strip: large closeups of the matching dark taupe glove at neutral relaxed hand, tightly closed martial fist with four fingers fully folded and thumb outside, clearly open palm with five separated fingers, and straight knife-hand. Show front and side views of the closed fist. Visible knuckle plates, flexible crease panels, tapered anatomical fingers, no mitten shape. Keep original forearm cuff shape so the glove joins C2.
+Style: clean realistic game concept render, neutral charcoal studio background, even soft light, no VFX obscuring the body, no labels required, no crowded overlaps, no exaggerated body proportions, no oversized glowing shapes.

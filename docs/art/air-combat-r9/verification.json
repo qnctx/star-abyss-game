@@ -1,0 +1,20 @@
+{
+  "version": "air-combat-r9",
+  "clips": 8,
+  "bones": 19,
+  "samplesChecked": 808,
+  "contactProgress": 0.45,
+  "normalizedQuaternions": true,
+  "boost": {
+    "headAheadAndAboveHips": true,
+    "torsoNearHorizontal": true,
+    "legsStraightAndBehind": true,
+    "gaze": [
+      0,
+      -0.10480711349409587,
+      -0.9944925685800954
+    ]
+  },
+  "punchesExtendForward": true,
+  "kickRisesAbovePelvis": true
+}

@@ -1,0 +1,20 @@
+{
+  "httpStatus": 200,
+  "httpHash": "fd8906d3ef11f4cec49976a94ab79f9b58d6fe9b9343b50072ae66be202e51bc",
+  "evidence": [
+    "artifacts/r3-baseline/report.json",
+    "artifacts/r3b-candidate/report.json",
+    "artifacts/r3b-candidate/camp-still.png",
+    "artifacts/r3b-candidate/camp-turn.png",
+    "artifacts/r3b-candidate/flight-fast-turn.png",
+    "artifacts/r3b-published.json",
+    "artifacts/r3b-browser-final/camp-after.png",
+    "artifacts/r3b-browser-final/camp-before.png",
+    "artifacts/r3b-browser-final/flight-V-third-person.png",
+    "artifacts/r3b-browser-final/npc-dialog.png",
+    "artifacts/r3b-browser-final/npc-shadow-after.png",
+    "artifacts/r3b-browser-final/npc-shadow-before.png",
+    "artifacts/r3b-browser-final/report.json"
+  ],
+  "complete": true
+}

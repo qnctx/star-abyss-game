@@ -1,0 +1,30 @@
+{
+  "playable/game.js": {
+    "local": "9e65b24a63fbd4b6fe26a80f077419d2f398b7170886141e22721251d1dac8b3",
+    "live": "9e65b24a63fbd4b6fe26a80f077419d2f398b7170886141e22721251d1dac8b3"
+  },
+  "playable/star-abyss.html": {
+    "local": "6e14c65c5f759bd1e3fd41540d1331ae10673f6245a2c6e84c4e3e8a57f01243",
+    "live": "6e14c65c5f759bd1e3fd41540d1331ae10673f6245a2c6e84c4e3e8a57f01243"
+  },
+  "playable/src/flight-hud.mjs": {
+    "local": "a64041a8c3ed6d4ae04fd989a34a06fbd539681052516fdaaa4debb21babf150",
+    "live": "a64041a8c3ed6d4ae04fd989a34a06fbd539681052516fdaaa4debb21babf150"
+  },
+  "playable/src/planet-gameplay/flight.mjs": {
+    "local": "8305b2e3c5016c7a27f64756a58f2302cc659e430f599c60648917ebf7930579",
+    "live": "8305b2e3c5016c7a27f64756a58f2302cc659e430f599c60648917ebf7930579"
+  },
+  "playable/src/test-lab.mjs": {
+    "local": "323d1fbcf0fbbb76d497fa109aae148315f1b06dcc3f69dd3f5415da8fb018bd",
+    "live": "323d1fbcf0fbbb76d497fa109aae148315f1b06dcc3f69dd3f5415da8fb018bd"
+  },
+  "playable/tests/ascension-flight-r8.test.mjs": {
+    "local": "761c5e8de44e2098e9133977155759d49611cc420e57745914300784e99b7d37",
+    "live": "761c5e8de44e2098e9133977155759d49611cc420e57745914300784e99b7d37"
+  },
+  "playable/tests/flight-hud-r2.test.mjs": {
+    "local": "51f8799f3042e119dc98123bc0b5716645759502ff39ef0828f9827f7fd30a1d",
+    "live": "51f8799f3042e119dc98123bc0b5716645759502ff39ef0828f9827f7fd30a1d"
+  }
+}

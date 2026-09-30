@@ -1,0 +1,48 @@
+{
+  "version": "TEST-LAB-R1",
+  "at": "2026-09-16T14:36:36.869Z",
+  "checks": [
+    {
+      "file": "playable/game.js",
+      "url": "http://127.0.0.1:4173/game.js",
+      "sha256": "30bf987130cde0c864a5a6765696f7702864c8f46c202ed5b113550841f8fa8b",
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "file": "playable/checkpoint-worker.js",
+      "url": "http://127.0.0.1:4173/checkpoint-worker.js",
+      "sha256": "a5d4a7dad9cae4543ba4df295de256f15448ac525066c7233b0d4817b1babd7b",
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "file": "playable/test-lab.html",
+      "url": "http://127.0.0.1:4173/test-lab.html",
+      "sha256": "6e51c56908794eed4216a8aa0cee1a0de5b087f2a0bde5e35b147f250d2f1876",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "file": "playable/css/test-lab.css",
+      "url": "http://127.0.0.1:4173/css/test-lab.css",
+      "sha256": "f0e90b2c6e03399fc5b678321af0831ae595f3f72882256e429d43168c1e719a",
+      "contentType": "text/css; charset=utf-8"
+    }
+  ],
+  "tests": {
+    "legacy": 395,
+    "modules": 167,
+    "combinedBrowser": 8
+  },
+  "native": {
+    "viewport": "670x793",
+    "pixelRatio": 1.25,
+    "walking": {
+      "fromZ": 190,
+      "toZ": 104,
+      "samples": 180,
+      "averageMs": 16.666,
+      "p95Ms": 16.8,
+      "maxMs": 17,
+      "over33ms": 0
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "controller": "01a0aa0f-8ae3-7741-a5bd-ca72f9ffa5bc",
+  "workers": [
+    {
+      "title": "星渊｜星球地形与流式加载",
+      "threadId": "01a0aa0e-9ad6-77b0-ae08-37f2dd36590f",
+      "cwd": "C:/Users/HUAWEI/.codex/worktrees/7eee/star-abyss-game"
+    },
+    {
+      "title": "星渊｜星球地貌概念图与美术",
+      "threadId": "01a0aa0e-9ae3-7dc1-ab03-7625bde5a0be",
+      "cwd": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game"
+    },
+    {
+      "title": "星渊｜星球探索与高空飞行",
+      "threadId": "01a0aa0e-a519-7352-b389-5c87e52611e0",
+      "cwd": "C:/Users/HUAWEI/.codex/worktrees/9b63/star-abyss-game"
+    }
+  ],
+  "release": {
+    "version": "PLANET-MVP-R1",
+    "status": "published",
+    "url": "http://127.0.0.1:4173/",
+    "at": "2026-09-16T12:51:44.744Z"
+  }
+}

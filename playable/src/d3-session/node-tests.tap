@@ -1,0 +1,75 @@
+TAP version 13
+# Subtest: finite harvest, partial mirror, final token, JSON reload and original retry
+ok 1 - finite harvest, partial mirror, final token, JSON reload and original retry
+  ---
+  duration_ms: 29.6168
+  ...
+# Subtest: full container, cancelled request and denied authorization never write or consume
+ok 2 - full container, cancelled request and denied authorization never write or consume
+  ---
+  duration_ms: 7.962
+  ...
+# Subtest: false and exception root writes leave all children unchanged; original request can recover
+ok 3 - false and exception root writes leave all children unchanged; original request can recover
+  ---
+  duration_ms: 16.6451
+  ...
+# Subtest: lost response reloads latest root, old receipt cannot overwrite later progress
+ok 4 - lost response reloads latest root, old receipt cannot overwrite later progress
+  ---
+  duration_ms: 11.0204
+  ...
+# Subtest: concurrent harvest contenders: one root CAS wins and quantities conserved
+ok 5 - concurrent harvest contenders: one root CAS wins and quantities conserved
+  ---
+  duration_ms: 7.7118
+  ...
+# Subtest: real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+ok 6 - real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+  ---
+  duration_ms: 28.2982
+  ...
+# Subtest: death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+ok 7 - death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+  ---
+  duration_ms: 16.5789
+  ...
+# Subtest: unique B original identity + C owner move together; failed write cannot split ownership
+ok 8 - unique B original identity + C owner move together; failed write cannot split ownership
+  ---
+  duration_ms: 3.8083
+  ...
+# Subtest: next generation uses C actual IDs and preserves prior saved history
+ok 9 - next generation uses C actual IDs and preserves prior saved history
+  ---
+  duration_ms: 10.9464
+  ...
+# Subtest: configuration missing, forged event operation and backwards clock are rejected
+ok 10 - configuration missing, forged event operation and backwards clock are rejected
+  ---
+  duration_ms: 2.157
+  ...
+# Subtest: cancellation during async authorization and mutable caller request cannot leak partial state
+ok 11 - cancellation during async authorization and mutable caller request cannot leak partial state
+  ---
+  duration_ms: 2.9715
+  ...
+# Subtest: last actual member death creates one vacancy while all unpicked manifests survive
+ok 12 - last actual member death creates one vacancy while all unpicked manifests survive
+  ---
+  duration_ms: 22.702
+  ...
+# Subtest: bad or async materializers reject before any root write
+ok 13 - bad or async materializers reject before any root write
+  ---
+  duration_ms: 5.6377
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 232.4752

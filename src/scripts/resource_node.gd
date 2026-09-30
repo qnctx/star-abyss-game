@@ -279,7 +279,6 @@ func collect() -> bool:
 
 func _spawn_pickup_vfx():
 	var particles = GPUParticles3D.new()
-	particles.emitting = true
 	particles.one_shot = true
 	particles.lifetime = 0.5
 	particles.amount = 8
@@ -309,6 +308,5 @@ func _spawn_pickup_vfx():
 	particles.material_override = mat_override
 
 	particles.process_material = mat
-	await get_tree().create_timer(0.6).timeout
-	if is_instance_valid(particles):
-		particles.queue_free()
+	particles.finished.connect(particles.queue_free, CONNECT_ONE_SHOT)
+	particles.emitting = true

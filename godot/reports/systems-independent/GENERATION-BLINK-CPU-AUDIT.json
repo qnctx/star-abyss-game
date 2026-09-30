@@ -1,0 +1,249 @@
+{
+  "environment-generation-guard/20260929T172358Z_2c5ddd325999/result.json": {
+    "seed_pid": 23868,
+    "probe_pid": 21688,
+    "seed_checks": 16,
+    "probe_checks": 56,
+    "failed": [],
+    "passed": true,
+    "returncodes": [
+      0,
+      0
+    ],
+    "before": {
+      "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+      "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+      "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+      "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+      "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+    },
+    "post_exit": {
+      "backup": {
+        "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\\u661f\u6e0a \u00b7 \u539f\u751f\u8fc1\u79fb\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak",
+        "before": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+        "after": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+      },
+      "main": {
+        "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\\u661f\u6e0a \u00b7 \u539f\u751f\u8fc1\u79fb\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+        "before": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+        "after": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+      },
+      "mirror": {
+        "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\\u661f\u6e0a \u00b7 \u539f\u751f\u8fc1\u79fb\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json",
+        "before": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+        "after": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+      },
+      "mirror_backup": {
+        "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\\u661f\u6e0a \u00b7 \u539f\u751f\u8fc1\u79fb\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak",
+        "before": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+        "after": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+      },
+      "valid_current_source": {
+        "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\\u661f\u6e0a \u00b7 \u539f\u751f\u8fc1\u79fb\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json",
+        "before": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6",
+        "after": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+      }
+    },
+    "close_path": "NativeMain.notification(Node.NOTIFICATION_WM_CLOSE_REQUEST)",
+    "report_sha256": "fec80b6caab8c45f8633523547063812317beaa473220cc1839274ff6968587a"
+  },
+  "surface-blink-runtime/1535947/runtime-verification.json": {
+    "default_slot_observation_scope": "Read-only hashes during this test window; external user activity may change these files. Test Main is bound to the independent slot before entering the tree.",
+    "delta_max": 0.0166666666666667,
+    "delta_min": 0.0166666666666667,
+    "physics_frames": 3719,
+    "physics_seconds": 61.9833333333311,
+    "remote_fixture": "Optional remote fixture preloads real origin support; this does not claim a cold-cache benchmark.",
+    "run_id": "1535947",
+    "scope": "Real runtime input and physics; fixture relocation is not flight-distance evidence.",
+    "slot": "user://surface_blink_runtime_verify_1535947.json",
+    "visual_acceptance": "Screenshots captured; human image inspection still required.",
+    "checks": 138,
+    "failed": [],
+    "hashes_equal": true,
+    "hash_count": 13,
+    "cases": [
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r7-locked",
+        "accepted": false,
+        "before_agl": 120.0,
+        "after_agl": 120.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-125km-out-of-range",
+        "accepted": false,
+        "before_agl": 125002.097951898,
+        "after_agl": 125002.097951898
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-toggle-cancel",
+        "accepted": true,
+        "before_agl": 120.0,
+        "after_agl": 120.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-movement-cancel",
+        "accepted": true,
+        "before_agl": 120.0,
+        "after_agl": 118.296875
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-blocked-destination",
+        "accepted": false,
+        "before_agl": 120.0,
+        "after_agl": 120.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-new-obstacle-after-prepare",
+        "accepted": true,
+        "before_agl": 120.0,
+        "after_agl": 120.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r8-120m-arrival",
+        "accepted": true,
+        "before_agl": 120.0,
+        "after_agl": 0.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r9-120m-arrival",
+        "accepted": true,
+        "before_agl": 120.0,
+        "after_agl": 0.0
+      },
+      {
+        "keys": [
+          "accepted",
+          "after",
+          "before",
+          "energy_steps",
+          "input_message",
+          "kind",
+          "label",
+          "outcomes",
+          "resolution",
+          "trace",
+          "wall_ms",
+          "windup_physics_frames"
+        ],
+        "label": "r9-125km-arrival",
+        "accepted": true,
+        "before_agl": 125002.097951898,
+        "after_agl": 0.0
+      }
+    ],
+    "report_sha256": "fc9c0c44341dc77da28d44205e39773561cff4516c6b74c404dd31587b4c55df"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "cross": {
+    "max_ankle_frame_delta_m": 0.0519705936312675,
+    "root_travel_m": 0.061,
+    "support_ankle_world_drift_m": 0.000000108482090865891
+  },
+  "failures": [],
+  "guard": {
+    "max_ankle_frame_delta_m": 0.0518979914486408,
+    "root_travel_m": 0.061,
+    "support_ankle_world_drift_m": 0.000000121057610158459
+  },
+  "hit": {
+    "max_ankle_frame_delta_m": 0.0523838624358177,
+    "root_travel_m": 0.061,
+    "support_ankle_world_drift_m": 0.000000154857403344977
+  },
+  "jab": {
+    "max_ankle_frame_delta_m": 0.0518858842551708,
+    "root_travel_m": 0.061,
+    "support_ankle_world_drift_m": 0.000000123778335137104
+  },
+  "kick": {
+    "max_ankle_frame_delta_m": 0.111099094152451,
+    "root_travel_m": 0.061,
+    "support_ankle_world_drift_m": 0.000000211260427818161
+  },
+  "kick_cancel_rear_ankle_height_m": 0.139999955892563,
+  "scope": "support ankle position with 6.1cm single-clip translation and 0.307m capped three-hit chain; air selection; finite rig; immutable rest; visual hitstop; kick cancel landing. Not sole contact, hand anatomy or artistic acceptance.",
+  "travelling_chain": {
+    "left_support_drift_m": 0.000000191408886962563,
+    "rear_support_before_kick_drift_m": 0.0000000988431239079546,
+    "root_travel_m": 0.307167381048203
+  },
+  "unreachable_knockback_max_ankle_y_m": 0.140150099992752
+}

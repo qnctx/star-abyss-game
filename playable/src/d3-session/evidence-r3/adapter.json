@@ -1,0 +1,522 @@
+{
+  "pass": true,
+  "oldReaderError": "invalidScenePose",
+  "before": {
+    "combat": {
+      "actors": [
+        {
+          "attack": "4",
+          "barriers": [],
+          "defense": "0",
+          "hp": "100",
+          "id": "player",
+          "level": 1,
+          "maxHp": "100",
+          "realm": 0,
+          "resistance": "0",
+          "resource": "100",
+          "shields": [],
+          "spellPower": "0"
+        }
+      ],
+      "casts": [],
+      "hits": [],
+      "practice": [],
+      "version": 2,
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+    },
+    "director": {
+      "anchors": {
+        "Z0-HERB-01": {
+          "current": null,
+          "generation": -1,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        },
+        "Z0-LAIR-01": {
+          "current": null,
+          "generation": -1,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        }
+      },
+      "offlineHighWater": 0,
+      "revision": 3,
+      "rngVersion": "fnv1a-utf8-mulberry32-v1",
+      "schemaVersion": 1,
+      "simHighWater": 0,
+      "transactions": {
+        "initial-claim": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              },
+              {
+                "action": "claim",
+                "fragmentIds": [],
+                "ownerId": "player",
+                "transactionId": "initial-claim"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": "player",
+            "revision": 2,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "claimed",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+          },
+          "signature": "{\"action\":\"claim\",\"expectedUniqueRevision\":1,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":\"player\",\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-manifest": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": null,
+            "revision": 1,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "manifested",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+          },
+          "signature": "{\"action\":\"manifest\",\"expectedUniqueRevision\":0,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":null,\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-reservation": {
+          "result": [
+            {
+              "fragments": [],
+              "history": [],
+              "itemInstanceId": "original-weapon",
+              "ownerId": null,
+              "revision": 0,
+              "rootArtifactId": "original-root",
+              "sourceEventId": "authored-initial-unique",
+              "status": "reserved",
+              "uniqueDefinitionId": "MYW-demo",
+              "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+            }
+          ],
+          "signature": "{\"claims\":[{\"itemInstanceId\":\"original-weapon\",\"rootArtifactId\":\"original-root\",\"uniqueDefinitionId\":\"MYW-demo\"}],\"op\":\"uniqueReserve\",\"sourceEventId\":\"authored-initial-unique\"}"
+        }
+      },
+      "uniqueLedger": {
+        "MYW-demo": {
+          "fragments": [],
+          "history": [
+            {
+              "action": "manifest",
+              "fragmentIds": [],
+              "ownerId": null,
+              "transactionId": "initial-manifest"
+            },
+            {
+              "action": "claim",
+              "fragmentIds": [],
+              "ownerId": "player",
+              "transactionId": "initial-claim"
+            }
+          ],
+          "itemInstanceId": "original-weapon",
+          "ownerId": "player",
+          "revision": 2,
+          "rootArtifactId": "original-root",
+          "sourceEventId": "authored-initial-unique",
+          "status": "claimed",
+          "uniqueDefinitionId": "MYW-demo",
+          "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+        }
+      },
+      "usedVacancyTokens": {},
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2",
+      "worldSeed": "DEV-I-v1"
+    },
+    "drops": [],
+    "events": [],
+    "inventory": {
+      "containers": [
+        {
+          "access": "open",
+          "containerId": "pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "other-pack",
+          "depleted": false,
+          "holderId": "other",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "full-pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 0,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        }
+      ],
+      "holders": [
+        {
+          "baseMassGrams": "0",
+          "holderId": "player",
+          "safeCarryGrams": "100000"
+        },
+        {
+          "baseMassGrams": "0",
+          "holderId": "other",
+          "safeCarryGrams": "100000"
+        }
+      ],
+      "items": [
+        {
+          "attributes": {},
+          "containerId": "pack",
+          "definitionId": "weapon",
+          "itemInstanceId": "original-weapon",
+          "lots": [
+            {
+              "quantity": 1,
+              "rootItemId": "original-weapon",
+              "sourceInstanceId": null
+            }
+          ],
+          "maxStack": 1,
+          "quality": 3,
+          "quantity": 1,
+          "rootArtifactId": "original-root",
+          "rootItemId": "original-weapon",
+          "slotsPerStack": 1,
+          "splitId": null,
+          "status": "normal",
+          "tier": 0,
+          "uniqueDefinitionId": "MYW-demo",
+          "unitMassGrams": "1",
+          "unitVolumeMl": "1"
+        }
+      ],
+      "outbox": [],
+      "receipts": [],
+      "revision": 0,
+      "schemaVersion": 1,
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+    },
+    "receipts": [],
+    "revision": 0,
+    "scene": {
+      "cooldowns": {},
+      "enemies": {},
+      "hurt": {},
+      "logs": [],
+      "pending": {},
+      "player": {
+        "pitch": 1.35,
+        "x": 2999.58,
+        "yaw": 0,
+        "z": 190
+      },
+      "time": 0,
+      "version": 1
+    },
+    "schemaVersion": 1,
+    "simTime": 0,
+    "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+  },
+  "after": {
+    "combat": {
+      "actors": [
+        {
+          "attack": "4",
+          "barriers": [],
+          "defense": "0",
+          "hp": "100",
+          "id": "player",
+          "level": 1,
+          "maxHp": "100",
+          "realm": 0,
+          "resistance": "0",
+          "resource": "100",
+          "shields": [],
+          "spellPower": "0"
+        }
+      ],
+      "casts": [],
+      "hits": [],
+      "practice": [],
+      "version": 2,
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+    },
+    "director": {
+      "anchors": {
+        "Z0-HERB-01": {
+          "current": null,
+          "generation": -1,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        },
+        "Z0-LAIR-01": {
+          "current": null,
+          "generation": -1,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        }
+      },
+      "offlineHighWater": 0,
+      "revision": 3,
+      "rngVersion": "fnv1a-utf8-mulberry32-v1",
+      "schemaVersion": 1,
+      "simHighWater": 0,
+      "transactions": {
+        "initial-claim": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              },
+              {
+                "action": "claim",
+                "fragmentIds": [],
+                "ownerId": "player",
+                "transactionId": "initial-claim"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": "player",
+            "revision": 2,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "claimed",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+          },
+          "signature": "{\"action\":\"claim\",\"expectedUniqueRevision\":1,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":\"player\",\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-manifest": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": null,
+            "revision": 1,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "manifested",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+          },
+          "signature": "{\"action\":\"manifest\",\"expectedUniqueRevision\":0,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":null,\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-reservation": {
+          "result": [
+            {
+              "fragments": [],
+              "history": [],
+              "itemInstanceId": "original-weapon",
+              "ownerId": null,
+              "revision": 0,
+              "rootArtifactId": "original-root",
+              "sourceEventId": "authored-initial-unique",
+              "status": "reserved",
+              "uniqueDefinitionId": "MYW-demo",
+              "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+            }
+          ],
+          "signature": "{\"claims\":[{\"itemInstanceId\":\"original-weapon\",\"rootArtifactId\":\"original-root\",\"uniqueDefinitionId\":\"MYW-demo\"}],\"op\":\"uniqueReserve\",\"sourceEventId\":\"authored-initial-unique\"}"
+        }
+      },
+      "uniqueLedger": {
+        "MYW-demo": {
+          "fragments": [],
+          "history": [
+            {
+              "action": "manifest",
+              "fragmentIds": [],
+              "ownerId": null,
+              "transactionId": "initial-manifest"
+            },
+            {
+              "action": "claim",
+              "fragmentIds": [],
+              "ownerId": "player",
+              "transactionId": "initial-claim"
+            }
+          ],
+          "itemInstanceId": "original-weapon",
+          "ownerId": "player",
+          "revision": 2,
+          "rootArtifactId": "original-root",
+          "sourceEventId": "authored-initial-unique",
+          "status": "claimed",
+          "uniqueDefinitionId": "MYW-demo",
+          "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+        }
+      },
+      "usedVacancyTokens": {},
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2",
+      "worldSeed": "DEV-I-v1"
+    },
+    "drops": [],
+    "events": [],
+    "inventory": {
+      "containers": [
+        {
+          "access": "open",
+          "containerId": "pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "other-pack",
+          "depleted": false,
+          "holderId": "other",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "full-pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 0,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        }
+      ],
+      "holders": [
+        {
+          "baseMassGrams": "0",
+          "holderId": "player",
+          "safeCarryGrams": "100000"
+        },
+        {
+          "baseMassGrams": "0",
+          "holderId": "other",
+          "safeCarryGrams": "100000"
+        }
+      ],
+      "items": [
+        {
+          "attributes": {},
+          "containerId": "pack",
+          "definitionId": "weapon",
+          "itemInstanceId": "original-weapon",
+          "lots": [
+            {
+              "quantity": 1,
+              "rootItemId": "original-weapon",
+              "sourceInstanceId": null
+            }
+          ],
+          "maxStack": 1,
+          "quality": 3,
+          "quantity": 1,
+          "rootArtifactId": "original-root",
+          "rootItemId": "original-weapon",
+          "slotsPerStack": 1,
+          "splitId": null,
+          "status": "normal",
+          "tier": 0,
+          "uniqueDefinitionId": "MYW-demo",
+          "unitMassGrams": "1",
+          "unitVolumeMl": "1"
+        }
+      ],
+      "outbox": [],
+      "receipts": [],
+      "revision": 0,
+      "schemaVersion": 1,
+      "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+    },
+    "receipts": [],
+    "revision": 0,
+    "scene": {
+      "cooldowns": {},
+      "enemies": {},
+      "hurt": {},
+      "logs": [],
+      "pending": {},
+      "player": {
+        "pitch": 1.35,
+        "x": 2999.58,
+        "yaw": 0,
+        "z": 190
+      },
+      "time": 0,
+      "version": 1
+    },
+    "schemaVersion": 1,
+    "simTime": 0,
+    "worldId": "I-R3-adapter-a389f4ea-947a-42b9-811f-ba8a56f210e2"
+  },
+  "adapterConfigurationCopied": true,
+  "invalidWriteRejected": true
+}

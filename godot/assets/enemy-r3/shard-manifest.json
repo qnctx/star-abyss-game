@@ -1,0 +1,17 @@
+{
+  "reference": "docs/art/creatures/rift-prowler-v1/concept.png",
+  "source": "existing original RiftwingBody shoulder armour mesh",
+  "source_anchor": [
+    0.2501894235610962,
+    0.21557936072349548,
+    1.1802598237991333
+  ],
+  "source_centroid": [
+    0.20175766944885254,
+    0.21085715293884277,
+    1.1562259197235107
+  ],
+  "triangles": 9944,
+  "changes": "detached sculpted patch; closed 0.025 m fractured rim; restrained violet fracture material",
+  "new_paid_generation": false
+}

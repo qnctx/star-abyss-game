@@ -1,0 +1,117 @@
+{
+  "failures": [],
+  "results": [
+    {
+      "direction": "(0.0, 0.0, -1.0)",
+      "gait": "jog",
+      "rate": 1.0,
+      "speed": 6.8
+    },
+    {
+      "direction": "(0.0, 0.0, 1.0)",
+      "gait": "jog",
+      "rate": 1.0,
+      "speed": 6.8
+    },
+    {
+      "direction": "(-1.0, 0.0, 0.0)",
+      "gait": "jog",
+      "rate": 1.0,
+      "speed": 6.8
+    },
+    {
+      "direction": "(1.0, 0.0, 0.0)",
+      "gait": "jog",
+      "rate": 1.0,
+      "speed": 6.8
+    },
+    {
+      "direction": "(0.0, 0.0, -1.0)",
+      "gait": "sprint",
+      "rate": 1.0,
+      "speed": 10.0
+    },
+    {
+      "direction": "(0.0, 0.0, 1.0)",
+      "gait": "sprint",
+      "rate": 1.0,
+      "speed": 10.0
+    },
+    {
+      "direction": "(-1.0, 0.0, 0.0)",
+      "gait": "sprint",
+      "rate": 1.0,
+      "speed": 10.0
+    },
+    {
+      "direction": "(1.0, 0.0, 0.0)",
+      "gait": "sprint",
+      "rate": 1.0,
+      "speed": 10.0
+    },
+    {
+      "speed": 6.8,
+      "stance_world_ankle_drift_m": 0.00346052646636963
+    },
+    {
+      "speed": 10.0,
+      "stance_world_ankle_drift_m": 0.0166474282741547
+    },
+    {
+      "action": "jab",
+      "forward_m": 0.464217722415924,
+      "lateral_m": 0.0640497952699661,
+      "movement": "(0.0, 0.0, 0.0)",
+      "wrist_minus_shoulder_world": "(0.06405, -0.010248, -0.464218)"
+    },
+    {
+      "action": "jab",
+      "forward_m": 0.464217722415924,
+      "lateral_m": 0.0640497952699661,
+      "movement": "(0.0, 0.0, -0.2)",
+      "wrist_minus_shoulder_world": "(0.06405, -0.010248, -0.464218)"
+    },
+    {
+      "action": "jab",
+      "forward_m": 0.464217722415924,
+      "lateral_m": 0.0640497952699661,
+      "movement": "(0.2, 0.0, 0.0)",
+      "wrist_minus_shoulder_world": "(0.06405, -0.010248, -0.464218)"
+    },
+    {
+      "action": "jab",
+      "forward_m": 0.464217722415924,
+      "lateral_m": 0.0640497952699661,
+      "movement": "(0.0, 0.0, 0.2)",
+      "wrist_minus_shoulder_world": "(0.06405, -0.010248, -0.464218)"
+    },
+    {
+      "action": "cross",
+      "forward_m": 0.467488646507263,
+      "lateral_m": 0.0642249286174774,
+      "movement": "(0.0, 0.0, 0.0)",
+      "wrist_minus_shoulder_world": "(-0.064225, -0.011588, -0.467489)"
+    },
+    {
+      "action": "cross",
+      "forward_m": 0.467488646507263,
+      "lateral_m": 0.0642249286174774,
+      "movement": "(0.0, 0.0, -0.2)",
+      "wrist_minus_shoulder_world": "(-0.064225, -0.011588, -0.467489)"
+    },
+    {
+      "action": "cross",
+      "forward_m": 0.467488646507263,
+      "lateral_m": 0.0642249286174774,
+      "movement": "(0.2, 0.0, 0.0)",
+      "wrist_minus_shoulder_world": "(-0.064225, -0.011588, -0.467489)"
+    },
+    {
+      "action": "cross",
+      "forward_m": 0.467488646507263,
+      "lateral_m": 0.0642249286174774,
+      "movement": "(0.0, 0.0, 0.2)",
+      "wrist_minus_shoulder_world": "(-0.064225, -0.011588, -0.467489)"
+    }
+  ]
+}

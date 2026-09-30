@@ -1,0 +1,495 @@
+{
+  "version": 2,
+  "reference": "docs/art/camp-v2/camp-architecture-reference.png",
+  "units": "meters",
+  "runtimeAxes": "Y up; entrance toward +Z",
+  "materials": "10 embedded PBR vertex-independent materials, no external textures",
+  "suggestedLayout": [
+    {
+      "id": "command",
+      "position": [
+        -10,
+        0,
+        -5
+      ],
+      "rotationY": 0.3
+    },
+    {
+      "id": "medical",
+      "position": [
+        0,
+        0,
+        -11
+      ],
+      "rotationY": 0
+    },
+    {
+      "id": "workshop",
+      "position": [
+        10,
+        0,
+        -4
+      ],
+      "rotationY": -0.4
+    }
+  ],
+  "buildings": [
+    {
+      "id": "command",
+      "asset": "assets/camp-v2/command.glb",
+      "source": "command.blend",
+      "triangles": 7712,
+      "meshBatches": 8,
+      "bodySize": [
+        6.8,
+        4.1,
+        4.8
+      ],
+      "frontDirection": [
+        0,
+        0,
+        1
+      ],
+      "entrance": [
+        0,
+        0.81,
+        2.6
+      ],
+      "approach": [
+        0,
+        0,
+        5.3
+      ],
+      "platform": {
+        "center": [
+          0,
+          0.65,
+          3.12
+        ],
+        "size": [
+          7.35,
+          0.18,
+          1.5
+        ]
+      },
+      "stairs": {
+        "center": [
+          0,
+          0.35,
+          4.38
+        ],
+        "width": 2.15,
+        "rise": 0.16,
+        "run": 0.32,
+        "count": 4
+      },
+      "bodyCollision": {
+        "center": [
+          0,
+          2,
+          -0.048
+        ],
+        "halfExtents": [
+          3.4,
+          2,
+          2.4
+        ]
+      },
+      "note": "Front airlock physically open; split body collision around doorway for interior traversal. Workshop service counter intentionally occupies front opening; interact from exterior platform.",
+      "collisionBoxes": [
+        {
+          "name": "leftWall",
+          "center": [
+            -3.4,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.8
+          ]
+        },
+        {
+          "name": "rightWall",
+          "center": [
+            3.4,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.8
+          ]
+        },
+        {
+          "name": "backWall",
+          "center": [
+            0,
+            2,
+            -2.4
+          ],
+          "size": [
+            6.8,
+            2.6,
+            0.22
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            -2.2125,
+            2,
+            2.4
+          ],
+          "size": [
+            2.375,
+            2.6,
+            0.25
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            2.2125,
+            2,
+            2.4
+          ],
+          "size": [
+            2.375,
+            2.6,
+            0.25
+          ]
+        }
+      ],
+      "walkableFloor": {
+        "center": [
+          0,
+          0.73,
+          0
+        ],
+        "size": [
+          6.64,
+          0.12,
+          4.64
+        ]
+      },
+      "doorClearance": {
+        "width": 1.89,
+        "height": 2.33,
+        "floorHeight": 0.81
+      },
+      "fileBytes": 430996
+    },
+    {
+      "id": "medical",
+      "asset": "assets/camp-v2/medical.glb",
+      "source": "medical.blend",
+      "triangles": 7324,
+      "meshBatches": 8,
+      "bodySize": [
+        6.4,
+        4.1,
+        4.6
+      ],
+      "frontDirection": [
+        0,
+        0,
+        1
+      ],
+      "entrance": [
+        0,
+        0.81,
+        2.5
+      ],
+      "approach": [
+        0,
+        0,
+        5.199999999999999
+      ],
+      "platform": {
+        "center": [
+          0,
+          0.65,
+          3.0199999999999996
+        ],
+        "size": [
+          6.95,
+          0.18,
+          1.5
+        ]
+      },
+      "stairs": {
+        "center": [
+          0,
+          0.35,
+          4.279999999999999
+        ],
+        "width": 2.15,
+        "rise": 0.16,
+        "run": 0.32,
+        "count": 4
+      },
+      "bodyCollision": {
+        "center": [
+          0,
+          2,
+          -0.046
+        ],
+        "halfExtents": [
+          3.2,
+          2,
+          2.3
+        ]
+      },
+      "note": "Front airlock physically open; split body collision around doorway for interior traversal. Workshop service counter intentionally occupies front opening; interact from exterior platform.",
+      "collisionBoxes": [
+        {
+          "name": "leftWall",
+          "center": [
+            -3.2,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.6
+          ]
+        },
+        {
+          "name": "rightWall",
+          "center": [
+            3.2,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.6
+          ]
+        },
+        {
+          "name": "backWall",
+          "center": [
+            0,
+            2,
+            -2.3
+          ],
+          "size": [
+            6.4,
+            2.6,
+            0.22
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            -2.1125,
+            2,
+            2.3
+          ],
+          "size": [
+            2.1750000000000003,
+            2.6,
+            0.25
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            2.1125,
+            2,
+            2.3
+          ],
+          "size": [
+            2.1750000000000003,
+            2.6,
+            0.25
+          ]
+        }
+      ],
+      "walkableFloor": {
+        "center": [
+          0,
+          0.73,
+          0
+        ],
+        "size": [
+          6.24,
+          0.12,
+          4.4399999999999995
+        ]
+      },
+      "doorClearance": {
+        "width": 1.89,
+        "height": 2.33,
+        "floorHeight": 0.81
+      },
+      "fileBytes": 408372
+    },
+    {
+      "id": "workshop",
+      "asset": "assets/camp-v2/workshop.glb",
+      "source": "workshop.blend",
+      "triangles": 9680,
+      "meshBatches": 8,
+      "bodySize": [
+        7.6,
+        4.1,
+        4.8
+      ],
+      "frontDirection": [
+        0,
+        0,
+        1
+      ],
+      "entrance": [
+        0,
+        0.81,
+        2.6
+      ],
+      "approach": [
+        0,
+        0,
+        5.3
+      ],
+      "platform": {
+        "center": [
+          0,
+          0.65,
+          3.12
+        ],
+        "size": [
+          8.15,
+          0.18,
+          1.5
+        ]
+      },
+      "stairs": {
+        "center": [
+          0,
+          0.35,
+          4.38
+        ],
+        "width": 2.15,
+        "rise": 0.16,
+        "run": 0.32,
+        "count": 4
+      },
+      "bodyCollision": {
+        "center": [
+          0,
+          2,
+          -0.048
+        ],
+        "halfExtents": [
+          3.8,
+          2,
+          2.4
+        ]
+      },
+      "note": "Front airlock physically open; split body collision around doorway for interior traversal. Workshop service counter intentionally occupies front opening; interact from exterior platform.",
+      "collisionBoxes": [
+        {
+          "name": "leftWall",
+          "center": [
+            -3.8,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.8
+          ]
+        },
+        {
+          "name": "rightWall",
+          "center": [
+            3.8,
+            2,
+            0
+          ],
+          "size": [
+            0.22,
+            2.6,
+            4.8
+          ]
+        },
+        {
+          "name": "backWall",
+          "center": [
+            0,
+            2,
+            -2.4
+          ],
+          "size": [
+            7.6,
+            2.6,
+            0.22
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            -3.2,
+            2,
+            2.4
+          ],
+          "size": [
+            1.1999999999999997,
+            2.6,
+            0.25
+          ]
+        },
+        {
+          "name": "frontJamb",
+          "center": [
+            3.2,
+            2,
+            2.4
+          ],
+          "size": [
+            1.1999999999999997,
+            2.6,
+            0.25
+          ]
+        },
+        {
+          "name": "serviceCounter",
+          "center": [
+            0,
+            1.22,
+            2.53
+          ],
+          "size": [
+            4.85,
+            0.98,
+            0.96
+          ]
+        }
+      ],
+      "walkableFloor": {
+        "center": [
+          0,
+          0.73,
+          0
+        ],
+        "size": [
+          7.4399999999999995,
+          0.12,
+          4.64
+        ]
+      },
+      "doorClearance": {
+        "width": 5.2,
+        "height": 2.33,
+        "floorHeight": 0.81
+      },
+      "fileBytes": 533160
+    }
+  ]
+}

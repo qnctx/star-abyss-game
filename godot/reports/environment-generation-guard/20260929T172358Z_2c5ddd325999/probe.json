@@ -1,0 +1,487 @@
+{
+	"checks": [
+		{
+			"details": {
+
+			},
+			"label": "private fixture slot and report arguments are explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "fixture generation is intentionally incompatible",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "seed manifest is readable",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main resource loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real player/world restoration settles under normal physics",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "incompatible fixture loads in a distinct process",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "player/inventory/slot progress still loads despite environment mismatch",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "world investigation progress still loads: beacon",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "probe runs the requested current generation",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: Main stays save-protected",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_protected_reason": "environment_generation_mismatch"
+			},
+			"label": "after_ready: public save_protected_reason remains available",
+			"ok": true
+		},
+		{
+			"details": {
+				"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+			},
+			"label": "after_ready: mismatch reason remains explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: incompatible environment was not restored",
+			"ok": true
+		},
+		{
+			"details": {
+				"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+			},
+			"label": "after_ready: visible persistent HUD explains unrestored environment and save protection",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: original backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: original main bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: original mirror bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: original mirror_backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_ready: original valid_current_source bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+				"clock_wraps": 1,
+				"game_seconds": 13.1666666666669,
+				"wall_msec": 13000
+			},
+			"label": "normal physics crosses at least one real 12-second auto-save period",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real auto-save refuses an incompatible environment",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: Main stays save-protected",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_protected_reason": "environment_generation_mismatch"
+			},
+			"label": "after_real_auto_save: public save_protected_reason remains available",
+			"ok": true
+		},
+		{
+			"details": {
+				"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+			},
+			"label": "after_real_auto_save: mismatch reason remains explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: incompatible environment was not restored",
+			"ok": true
+		},
+		{
+			"details": {
+				"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+			},
+			"label": "after_real_auto_save: visible persistent HUD explains unrestored environment and save protection",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: original backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: original main bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: original mirror bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: original mirror_backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_auto_save: original valid_current_source bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "explicit save refuses an incompatible environment",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: Main stays save-protected",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_protected_reason": "environment_generation_mismatch"
+			},
+			"label": "after_explicit_save: public save_protected_reason remains available",
+			"ok": true
+		},
+		{
+			"details": {
+				"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+			},
+			"label": "after_explicit_save: mismatch reason remains explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: incompatible environment was not restored",
+			"ok": true
+		},
+		{
+			"details": {
+				"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+			},
+			"label": "after_explicit_save: visible persistent HUD explains unrestored environment and save protection",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: original backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: original main bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: original mirror bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: original mirror_backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_explicit_save: original valid_current_source bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real F5 never claims save success",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: Main stays save-protected",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_protected_reason": "environment_generation_mismatch"
+			},
+			"label": "after_real_f5: public save_protected_reason remains available",
+			"ok": true
+		},
+		{
+			"details": {
+				"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+			},
+			"label": "after_real_f5: mismatch reason remains explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: incompatible environment was not restored",
+			"ok": true
+		},
+		{
+			"details": {
+				"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+			},
+			"label": "after_real_f5: visible persistent HUD explains unrestored environment and save protection",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: original backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: original main bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: original mirror bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: original mirror_backup bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "after_real_f5: original valid_current_source bytes unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main remains initialized and active immediately before the real close",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real close refuses an incompatible environment",
+			"ok": true
+		}
+	],
+	"close_handler_returned": true,
+	"close_path": "NativeMain.notification(Node.NOTIFICATION_WM_CLOSE_REQUEST)",
+	"close_requested": true,
+	"close_save_error": 44,
+	"expected_generation": "ecology-r4.2",
+	"failed": [],
+	"limitations": "Generation and storage protection only. The valid unstreamed state marker does not prove physical tree destruction.",
+	"mode": "probe",
+	"old_generation": "ecology-r4.1",
+	"pid": 21688,
+	"samples": [
+		{
+			"hashes": {
+				"backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+			},
+			"last_save_error": 0,
+			"main_physics_active": true,
+			"physics_frame": 5,
+			"player_physics_active": true,
+			"protected_reason": "environment_generation_mismatch",
+			"save_clock": 0.05,
+			"stage": "after_ready",
+			"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+			"time": 0.05,
+			"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+		},
+		{
+			"hashes": {
+				"backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+			},
+			"last_save_error": 44,
+			"main_physics_active": true,
+			"physics_frame": 795,
+			"player_physics_active": true,
+			"protected_reason": "environment_generation_mismatch",
+			"save_clock": 1.21666666666667,
+			"stage": "after_real_auto_save",
+			"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+			"time": 13.2166666666669,
+			"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+		},
+		{
+			"hashes": {
+				"backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+			},
+			"last_save_error": 44,
+			"main_physics_active": true,
+			"physics_frame": 795,
+			"player_physics_active": true,
+			"protected_reason": "environment_generation_mismatch",
+			"save_clock": 1.21666666666667,
+			"stage": "after_explicit_save",
+			"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+			"time": 13.2166666666669,
+			"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+		},
+		{
+			"hashes": {
+				"backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+				"mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+				"valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+			},
+			"last_save_error": 44,
+			"main_physics_active": true,
+			"physics_frame": 813,
+			"player_physics_active": true,
+			"protected_reason": "environment_generation_mismatch",
+			"save_clock": 1.53333333333333,
+			"stage": "after_real_f5",
+			"state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+			"time": 13.5333333333336,
+			"visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+		}
+	],
+	"slot": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+}

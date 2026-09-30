@@ -51,6 +51,8 @@ func _run() -> void:
         print("========================================\n")
 
         _cleanup_test_scene()
+        await process_frame
+        await process_frame
         quit(0 if _failed == 0 else 1)
 
 
@@ -1276,6 +1278,7 @@ func _test_enemy_reward_rules() -> void:
         check("base breach death does not grant boss energy core", inventory_manager.resources.get("energy_core", -1) == 0)
         check("base breach death does not grant boss blueprint", inventory_manager.resources.get("blueprint", -1) == 0)
         check("base breach death decrements enemy count", game_manager.enemies_alive == 0)
+        breached_enemy.free()
 
         inventory_manager.resources["iron"] = old_iron
         inventory_manager.resources["biomass"] = old_biomass

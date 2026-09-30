@@ -1,0 +1,125 @@
+TAP version 13
+# Subtest: new players and old complete-only snapshots do not gain high flight
+ok 1 - new players and old complete-only snapshots do not gain high flight
+  ---
+  duration_ms: 1.5304
+  ...
+# Subtest: route enforces ordered ground samples, vehicle repair and return to service
+ok 2 - route enforces ordered ground samples, vehicle repair and return to service
+  ---
+  duration_ms: 0.2459
+  ...
+# Subtest: sampling refuses airborne, mounted, submerged and unloaded samples
+ok 3 - sampling refuses airborne, mounted, submerged and unloaded samples
+  ---
+  duration_ms: 0.1717
+  ...
+# Subtest: malformed progression cannot turn coast-only into completed route
+ok 4 - malformed progression cannot turn coast-only into completed route
+  ---
+  duration_ms: 0.1005
+  ...
+# Subtest: AGL, not mountain elevation, determines safe speed; camera is continuous
+ok 5 - AGL, not mountain elevation, determines safe speed; camera is continuous
+  ---
+  duration_ms: 4.4201
+  ...
+# Subtest: launch gate, bounded dt, held input and real energy consumption
+ok 6 - launch gate, bounded dt, held input and real energy consumption
+  ---
+  duration_ms: 0.4935
+  ...
+# Subtest: terrain streaming and collision failures stop all movement
+ok 7 - terrain streaming and collision failures stop all movement
+  ---
+  duration_ms: 0.2947
+  ...
+# Subtest: sweep receives complete high-speed motion; no endpoint-only collision test
+ok 8 - sweep receives complete high-speed motion; no endpoint-only collision test
+  ---
+  duration_ms: 0.1457
+  ...
+# Subtest: exhaustion descends, safely lands, and never regains charge in air
+ok 9 - exhaustion descends, safely lands, and never regains charge in air
+  ---
+  duration_ms: 0.7097
+  ...
+# Subtest: ceiling and unsafe ocean endpoint are enforced
+ok 10 - ceiling and unsafe ocean endpoint are enforced
+  ---
+  duration_ms: 0.3858
+  ...
+# Subtest: save preserves every legacy field and round-trips canonical coordinates without held input
+ok 11 - save preserves every legacy field and round-trips canonical coordinates without held input
+  ---
+  duration_ms: 0.6868
+  ...
+# Subtest: unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+ok 12 - unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+  ---
+  duration_ms: 0.4448
+  ...
+# Subtest: runtime adapter requires real stream and solid readiness callbacks
+ok 13 - runtime adapter requires real stream and solid readiness callbacks
+  ---
+  duration_ms: 3.289
+  ...
+# Subtest: actual field preserves old basin contact and dry ground sample
+ok 14 - actual field preserves old basin contact and dry ground sample
+  ---
+  duration_ms: 2.3118
+  ...
+# Subtest: local tangent east and north remain continuous across longitude seam and near pole
+ok 15 - local tangent east and north remain continuous across longitude seam and near pole
+  ---
+  duration_ms: 27.7537
+  ...
+# Subtest: radial movement does not accumulate tangent-plane altitude error
+ok 16 - radial movement does not accumulate tangent-plane altitude error
+  ---
+  duration_ms: 3.0866
+  ...
+# Subtest: sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+ok 17 - sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+  ---
+  duration_ms: 10.649
+  ...
+# Subtest: actual spherical field supports takeoff, descent and contact without changing legacy body
+ok 18 - actual spherical field supports takeoff, descent and contact without changing legacy body
+  ---
+  duration_ms: 41.6245
+  ...
+# Subtest: unready destination halts actual flight before crossing chunk boundary
+ok 19 - unready destination halts actual flight before crossing chunk boundary
+  ---
+  duration_ms: 0.866
+  ...
+# Subtest: spherical canonical save reload survives far origin and architecture envelope
+ok 20 - spherical canonical save reload survives far origin and architecture envelope
+  ---
+  duration_ms: 0.5943
+  ...
+# Subtest: negative legacy basin is dry and supports launch and landing below sea level
+ok 21 - negative legacy basin is dry and supports launch and landing below sea level
+  ---
+  duration_ms: 18.6494
+  ...
+# Subtest: surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+ok 22 - surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+  ---
+  duration_ms: 0.9173
+  ...
+# Subtest: legacy yaw converts forward/strafe to the actual tangent axes
+ok 23 - legacy yaw converts forward/strafe to the actual tangent axes
+  ---
+  duration_ms: 0.2221
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 200.4214

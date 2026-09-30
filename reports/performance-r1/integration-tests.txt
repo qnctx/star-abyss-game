@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: finite harvest, partial mirror, final token, JSON reload and original retry
+ok 1 - finite harvest, partial mirror, final token, JSON reload and original retry
+  ---
+  duration_ms: 129.7989
+  ...
+# Subtest: full container, cancelled request and denied authorization never write or consume
+ok 2 - full container, cancelled request and denied authorization never write or consume
+  ---
+  duration_ms: 24.3238
+  ...
+# Subtest: false and exception root writes leave all children unchanged; original request can recover
+ok 3 - false and exception root writes leave all children unchanged; original request can recover
+  ---
+  duration_ms: 71.778
+  ...
+# Subtest: lost response reloads latest root, old receipt cannot overwrite later progress
+ok 4 - lost response reloads latest root, old receipt cannot overwrite later progress
+  ---
+  duration_ms: 42.9151
+  ...
+# Subtest: concurrent harvest contenders: one root CAS wins and quantities conserved
+ok 5 - concurrent harvest contenders: one root CAS wins and quantities conserved
+  ---
+  duration_ms: 29.3384
+  ...
+# Subtest: real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+ok 6 - real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+  ---
+  duration_ms: 296.4242
+  ...
+# Subtest: death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+ok 7 - death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+  ---
+  duration_ms: 102.6596
+  ...
+# Subtest: unique B original identity + C owner move together; failed write cannot split ownership
+ok 8 - unique B original identity + C owner move together; failed write cannot split ownership
+  ---
+  duration_ms: 119.1244
+  ...
+# Subtest: next generation uses C actual IDs and preserves prior saved history
+ok 9 - next generation uses C actual IDs and preserves prior saved history
+  ---
+  duration_ms: 47.9854
+  ...
+# Subtest: configuration missing, forged event operation and backwards clock are rejected
+ok 10 - configuration missing, forged event operation and backwards clock are rejected
+  ---
+  duration_ms: 12.6455
+  ...
+# Subtest: cancellation during async authorization and mutable caller request cannot leak partial state
+ok 11 - cancellation during async authorization and mutable caller request cannot leak partial state
+  ---
+  duration_ms: 12.3509
+  ...
+# Subtest: last actual member death creates one vacancy while all unpicked manifests survive
+ok 12 - last actual member death creates one vacancy while all unpicked manifests survive
+  ---
+  duration_ms: 141.1881
+  ...
+# Subtest: bad or async materializers reject before any root write
+ok 13 - bad or async materializers reject before any root write
+  ---
+  duration_ms: 12.0072
+  ...
+# Subtest: R2 checkpoint/rescue: seven scenario groups, explicit memory CAS only
+ok 14 - R2 checkpoint/rescue: seven scenario groups, explicit memory CAS only
+  ---
+  duration_ms: 1388.64
+  ...
+# Subtest: R3 configured original-world bounds: five groups, memory CAS only
+ok 15 - R3 configured original-world bounds: five groups, memory CAS only
+  ---
+  duration_ms: 630.4767
+  ...
+# Subtest: real radial controller follows slopes, falls off a cliff, preserves falling saves and lands
+ok 16 - real radial controller follows slopes, falls off a cliff, preserves falling saves and lands
+  ---
+  duration_ms: 11121.3466
+  ...
+# Subtest: support-based restore accepts a raised crest plane, rejects penetration, migrates only valid old center saves
+ok 17 - support-based restore accepts a raised crest plane, rejects penetration, migrates only valid old center saves
+  ---
+  duration_ms: 0.5367
+  ...
+# Subtest: integrated terrain/gameplay save roundtrip preserves chapter pose and canonical high orbit
+ok 18 - integrated terrain/gameplay save roundtrip preserves chapter pose and canonical high orbit
+  ---
+  duration_ms: 17403.4695
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17998.8518

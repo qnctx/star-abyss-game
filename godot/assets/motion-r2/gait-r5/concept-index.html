@@ -1,0 +1,43 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C2 R5 动作图板审查索引</title>
+<style>*{box-sizing:border-box}body{background:#111821;color:#e7edf4;font:16px/1.6 system-ui;margin:0;padding:24px}h1{font-size:26px;margin:0 0 8px}h2{font-size:21px}p{max-width:100ch}a{color:#97d7ff}nav{display:flex;gap:12px;flex-wrap:wrap}button{font:inherit;cursor:pointer;background:#243648;color:white;border:1px solid #506c83;border-radius:6px;padding:8px 16px}button[aria-pressed=true]{background:#335977;border-color:#a6d7ff}.layout{display:grid;grid-template-columns:minmax(600px,1fr) 360px;gap:20px;margin-top:20px}.board{position:relative;align-self:start;background:#f8f5ef}.board img{display:block;width:100%;height:auto}.region{position:absolute;border:3px solid var(--tone);border-radius:0;background:transparent;padding:0}.region:hover,.region:focus-visible{outline:3px solid #111;outline-offset:2px;background:#ffffff20}.region span{position:absolute;left:3px;bottom:3px;color:white;background:var(--tone);font-size:12px;line-height:1.4;padding:2px 6px;white-space:normal;text-align:left;max-width:calc(100% - 6px)}.detail{background:#1b2733;padding:18px;border-radius:8px;align-self:start;position:sticky;top:20px}.pass{color:#88e6b2}.reject{color:#ffaaaa}.missing{background:#403222;border-left:4px solid #eab968;padding:15px}table{border-collapse:collapse;width:100%;margin-top:18px}td,th{border:1px solid #3b4f60;padding:10px;text-align:left;vertical-align:top}.note{color:#b6c6d2;font-size:14px}@media(max-width:1000px){.layout{grid-template-columns:1fr}.detail{position:static}.region span{font-size:10px}body{padding:12px}}</style>
+<h1>C2 R5 · 新生成动作图板审查索引</h1><p>本轮两张内置 imagegen 原图保留。彩框与下方相位表是人工审查索引，不是第三张生成图。整周期仍未通过，缺失关键姿势等待获准补图。</p>
+<nav><button id="walk" aria-pressed="true">步行原图</button><button id="run" aria-pressed="false">跑步／冲刺原图</button><a href="CONCEPT-REVIEW.md">完整审核记录</a></nav>
+<div class="layout"><div class="board" id="board"><img id="source" src="concept-walk-r5.png" alt="未经修改的新生成C2步行动作原图"></div><aside class="detail" id="detail" aria-live="polite"><h2>选择一个彩框</h2><p><span class="pass">绿色：采用局部姿态</span><br><span class="reject">红色：排除该相位解释</span></p><p>画面中的印刷编号和L/R标识有错误。实际骨骼左右身份须遵循下方明确的相位表。</p></aside></div>
+<h2>修正后的制作相位表</h2><p>右半周期由左半周期推导：时间加0.5，交换骨骼L/R并反射身体横向坐标；角色前进方向保持相同。不能仅交换图中文字，也不能把整个人物水平翻转成倒走。</p>
+<table><thead><tr><th>动作／相位</th><th>支撑与摆动关系</th><th>新图来源与缺口</th></tr></thead><tbody>
+<tr><td>walk 0.00 / 0.50</td><td>左／右前脚跟接触，另一脚后方前掌支撑</td><td>采用walk 01的脚跟接触剪影；05作为反侧轮廓参考。脚跟放大细节缺失。</td></tr>
+<tr><td>walk 0.10 / 0.60</td><td>前脚承重屈膝、全掌加载，后跟抬起</td><td>采用walk 02／06局部姿态。</td></tr>
+<tr><td>walk 0.25 / 0.75</td><td>支撑腿经过身体下方；对侧鞋低位经过支撑踝</td><td class="reject">缺少准确图。排除03／07，不照错制作。</td></tr>
+<tr><td>walk 0.40 / 0.90</td><td>支撑脚跟升起、前掌滚动；对侧鞋低位前送</td><td>TOE细节可用；全身UP面板不足，需要准确经过姿态支持过渡。</td></tr>
+<tr><td>run 0.00 / 0.50</td><td>软膝着地，另一腿在身后收跟</td><td>采用RUN 1与SOFT LANDING细节；反侧由明确L/R交换生成，拒绝印刷后半周期作为顺序。</td></tr>
+<tr><td>run 0.08 / 0.58</td><td>承重腿缓冲；对侧腿经过</td><td>RUN 2只采用支撑缓冲，摆动腿经过需单独校正。</td></tr>
+<tr><td>run 0.18 / 0.68</td><td>后脚尖推离、对侧屈膝前送</td><td>RUN 3局部姿态；手臂与前送腿相反。</td></tr>
+<tr><td>run 0.30 / 0.80</td><td>双脚离地，后腿收跟，前脚以软膝准备落地</td><td>RUN 4离地意图和REAR HEEL RECOVERY细节；5–8不作整段顺序。</td></tr>
+<tr><td>sprint</td><td>同样交替承重／推离／腾空，增加躯干前倾与身后收跟</td><td>仅采用SPRINT 1的前倾／推离轮廓；缺准确收腿、经过、着地／腾空的完整关系，不能重复一帧凑周期。</td></tr>
+</tbody></table>
+<h2>待补的关键姿势</h2><div class="missing">① 真正脚跟接地：脚跟压地、前掌和脚尖抬起。② 自然步行经过：支撑腿在身体下，摆动鞋低位经过另一踝。③ 冲刺身后屈膝收跟／经过：膝盖不抬到腰间、没有直腿前踢；需清楚左右腿身份及下一次软膝落地关系。</div>
+<p class="note">产品GLB/驱动在概念审核期间保持R4版本。原图与实际提示词：concept-walk-r5.png / prompt-walk.txt；concept-run-sprint-r5.png / prompt-run-sprint.txt。未经新授权不增加生成调用。</p>
+<script>
+const sets={walk:{file:'concept-walk-r5.png',items:[
+['01 接触',true,1.5,8,24,31,'采用前脚跟接触、后脚尖支撑和放松摆臂。制作绑定为L接触相位0.00，R相位0.50由骨骼交换派生。'],
+['02 承重',true,27.7,8,22.9,31,'采用膝柔和承重和全掌加载。相位0.10；不依赖图片错写的腿部字母。'],
+['03 错误经过',false,51.4,8,23.3,31,'后鞋仍留在后方，没有低位通过支撑踝。不能据此制作passing。等待补图。'],
+['04 重复接触',false,76.8,8,21.5,31,'不是清楚的UP：前鞋已接近再次落地，左右标识不一致。排除该相位。'],
+['05 反侧接触',true,1.5,41.8,24,30.4,'只作反侧接触轮廓参考。实际L/R交换和手臂反相由骨骼相位表定义。'],
+['06 反侧承重',true,27.7,41.8,22.9,30.4,'采用反侧软膝加载意图，对应0.60。'],
+['07 错误经过',false,51.4,41.8,23.3,30.4,'同03，摆动腿没有通过身体下方。排除。'],
+['08 重复接触',false,76.8,41.8,21.5,30.4,'同04，相位和标识不可靠。排除。'],
+['HEEL 图画反了',false,25,76,14.7,19,'HEEL标签与图形矛盾：前掌触地、后跟高。不可作脚跟接触规范。'],
+['FLAT / TOE 局部采用',true,40.2,76,30.6,19,'采用平掌与脚尖支撑时踝上升的关系，始终以真正鞋底为接触几何。']
+]},run:{file:'concept-run-sprint-r5.png',items:[
+['RUN 1 软着地',true,1.5,8,10.4,34,'采用软膝着地与后腿收跟，映射L接触0.00；R接触0.50由明确骨骼交换生成。'],
+['RUN 2 缓冲',true,12.6,8,8.6,34,'只采用支撑腿缓冲，不把后鞋位置直接当成准确经过姿势。'],
+['RUN 3 后蹬',true,21.1,8,9.2,34,'采用身后脚尖推离、另一腿屈膝前送。'],
+['RUN 4 腾空',true,30.4,8,9.6,34,'双脚离地意图可用，腿身份必须与此前连续定义一致。'],
+['RUN 5–8 相位排除',false,40.5,8,39.2,34,'后半段腿/手臂未明确反相，8实际落地而不是预期flight。不能照印刷顺序复制。'],
+['SPRINT 局部前倾／推离',true,1,53.5,11.6,34,'只采用第一幅躯干前倾和后蹬的局部剪影。它不是完整冲刺周期。'],
+['SPRINT 其余重复',false,12.9,53.5,66.7,34,'大量重复同一推离姿态，缺承重、经过、收腿与离地关系。不能强凑完整3D周期。'],
+['落地／收跟细节',true,83.6,8,15,47.8,'局部膝屈落地、鞋底接触及身后收跟形态可用。不是整体时序验证。']
+]}};
+function show(name){const s=sets[name],board=document.querySelector('#board');board.querySelectorAll('button').forEach(e=>e.remove());document.querySelector('#source').src=s.file;for(const n of ['walk','run'])document.querySelector('#'+n).setAttribute('aria-pressed',String(n===name));for(const [label,ok,x,y,w,h,desc] of s.items){const b=document.createElement('button');b.className='region';b.style.cssText=`left:${x}%;top:${y}%;width:${w}%;height:${h}%;--tone:${ok?'#176943':'#aa3333'}`;b.setAttribute('aria-label',label);b.innerHTML='<span>'+label+'</span>';b.onclick=()=>{document.querySelector('#detail').innerHTML='<h2>'+label+'</h2><p class="'+(ok?'pass':'reject')+'">'+(ok?'局部姿态可采用':'排除该相位解释')+'</p><p>'+desc+'</p>'};board.appendChild(b)}}document.querySelector('#walk').onclick=()=>show('walk');document.querySelector('#run').onclick=()=>show('run');show('walk');
+</script></html>

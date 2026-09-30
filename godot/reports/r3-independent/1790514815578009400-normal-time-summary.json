@@ -1,0 +1,220 @@
+{
+  "utc": "2026-09-27T13:10:36",
+  "changed_during_run": [
+    "native_player.gd"
+  ],
+  "time_scale": 1.0,
+  "phases": {
+    "warmup": {
+      "samples": 60,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 0.8725339999999999,
+      "physics_seconds": 1.0000000000000027,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "",
+        "idle"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "walk": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 1.9941220000000002,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "idle"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "jog": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 2.0009309999999996,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "idle"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "sprint": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 2.0010410000000007,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "idle"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "space": {
+      "samples": 60,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 1.0005080000000002,
+      "physics_seconds": 1.0000000000000027,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "idle"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "pitch_up": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 2.0008730000000003,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "cruise"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "pitch_down": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 2.001988,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "cruise"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "descend": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 2.000041,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "cruise"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "descend_boost": {
+      "samples": 120,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 1.9941069999999999,
+      "physics_seconds": 1.9999999999999991,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "cruise"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    },
+    "air_space": {
+      "samples": 60,
+      "all_physics": true,
+      "delta_min_max": [
+        0.0166666666666667,
+        0.0166666666666667
+      ],
+      "wall_seconds": 1.000437,
+      "physics_seconds": 1.0000000000000027,
+      "stable_speed_mean": 0.0,
+      "stable_vy_mean": 0.0,
+      "pitch": 0.0,
+      "clips": [
+        "cruise"
+      ],
+      "cast_seen": false,
+      "feet_names": [
+        "ankleL",
+        "ankleR"
+      ]
+    }
+  }
+}

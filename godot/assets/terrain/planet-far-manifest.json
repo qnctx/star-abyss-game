@@ -1,0 +1,10 @@
+{
+  "segments": 192,
+  "sources": {
+    "scripts/native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+    "scripts/native_planet_field.gd": "5455ad25b6fd56cb6aa2ed0307a9c2d61dc631cba723ec7af339b6d192436c2b",
+    "scripts/native_planet_field_r3.gd": "27d1b8776bf245edc3a44ac6cd90e318be4a7442961775c02505df110e04cabc",
+    "scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38"
+  },
+  "version": 3
+}

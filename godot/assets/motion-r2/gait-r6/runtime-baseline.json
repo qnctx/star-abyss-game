@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-29",
+  "files": [
+    {
+      "file": "godot/scripts/native_motion_r2.gd",
+      "sha256": "95d3a7df91e2dfe5128fd0a649c0e8696457f4d8dd07f178374a4018dabb78c6"
+    },
+    {
+      "file": "godot/scripts/native_player.gd",
+      "sha256": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615"
+    },
+    {
+      "file": "godot/scripts/native_main.gd",
+      "sha256": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87"
+    },
+    {
+      "file": "godot/project.godot",
+      "sha256": "103630ed45b0568168c7a091808b5ce8843602d932fabb8deb123dde92b13ecf"
+    }
+  ]
+}

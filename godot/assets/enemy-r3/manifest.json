@@ -1,0 +1,77 @@
+{
+  "references": [
+    {
+      "path": "docs\\art\\creatures\\riftwing-r11\\concept.png",
+      "sha256": "5923d1dbac85dbf6c240fbfce91b855cf6a13c3a19ba48ba41a632f2243df2b8"
+    },
+    {
+      "path": "docs\\art\\creatures\\rift-prowler-v1\\concept.png",
+      "sha256": "1ea14c464b2f99299789b23954f1adb50c8c7e8a569db3d093dcbc21291ea3d0"
+    }
+  ],
+  "source": "playable/assets/creatures/riftwing-r11/riftwing-r11.blend",
+  "preserves": "body sculpt, skin weights, original materials, wing geometry and original locomotion clips",
+  "new_actions": [
+    {
+      "id": "ground-claw",
+      "windup": 0.48,
+      "active": 0.14,
+      "recovery": 0.82
+    },
+    {
+      "id": "r3-lunge",
+      "windup": 0.82,
+      "active": 0.36,
+      "recovery": 1.18
+    },
+    {
+      "id": "r3-tail",
+      "windup": 0.72,
+      "active": 0.22,
+      "recovery": 1.0
+    },
+    {
+      "id": "r3-rise",
+      "windup": 0.86,
+      "active": 0.3,
+      "recovery": 1.18
+    },
+    {
+      "id": "r3-shard",
+      "windup": 1.05,
+      "active": 0.12,
+      "recovery": 1.05
+    },
+    {
+      "id": "sweep",
+      "windup": 0.65,
+      "active": 0.2,
+      "recovery": 1.1
+    },
+    {
+      "id": "dive",
+      "windup": 0.95,
+      "active": 0.5,
+      "recovery": 1.4
+    }
+  ],
+  "clips": [
+    "death",
+    "dive",
+    "flight",
+    "ground-claw",
+    "ground-idle",
+    "ground-walk",
+    "hit",
+    "land",
+    "r3-lunge",
+    "r3-rise",
+    "r3-shard",
+    "r3-tail",
+    "sweep",
+    "takeoff"
+  ],
+  "paid_generation_calls": 0,
+  "ground_variant": "same original prowler body, excludes additional wing mesh",
+  "root_motion": "none: physical root travel and height remain engine owned"
+}

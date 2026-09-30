@@ -1,0 +1,48 @@
+{
+  "renderer": "Cycles CPU",
+  "assets": [
+    {
+      "id": "qi-boost",
+      "triangles": 592,
+      "drawCalls": 1,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    },
+    {
+      "id": "aerial-crescent",
+      "triangles": 1588,
+      "drawCalls": 1,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    },
+    {
+      "id": "blink-aperture",
+      "triangles": 1850,
+      "drawCalls": 4,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    },
+    {
+      "id": "domain-gate",
+      "triangles": 4796,
+      "drawCalls": 3,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    },
+    {
+      "id": "void-fracture",
+      "triangles": 572,
+      "drawCalls": 3,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    },
+    {
+      "id": "dao-gate",
+      "triangles": 8928,
+      "drawCalls": 3,
+      "finiteVertices": true,
+      "nondegenerateFaces": true
+    }
+  ],
+  "totalTriangles": 18326
+}

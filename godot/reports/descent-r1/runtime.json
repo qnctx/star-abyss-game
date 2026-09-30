@@ -1,0 +1,314 @@
+{
+	"cadence_frames": 1173,
+	"checks": [
+		{
+			"detail": "{ \"frame\": 287, \"sim_s\": 14.1166666666667, \"agl\": 96.5703125, \"radial_speed\": -65.0000762939453, \"tangent_speed\": 0.00007282041042, \"energy\": 99.580000000002, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.81999999999124, \"c_held\": true, \"shift_held\": false, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/c-100m.png\", \"image_ok\": true }",
+			"name": "c reaches and brakes at 100m",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 329, \"sim_s\": 16.2166666666668, \"agl\": 24.8515625, \"radial_speed\": -12.8125152587891, \"tangent_speed\": 0.00014485919382, \"energy\": 99.5170000000023, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.03680710946166, \"c_held\": true, \"shift_held\": false }",
+			"name": "c slows through 25m",
+			"pass": true
+		},
+		{
+			"detail": "min=0.0 final=0.0",
+			"name": "c lands dry with no penetration",
+			"pass": true
+		},
+		{
+			"detail": "[]",
+			"name": "c ordinary descent never triggers strike",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 703, \"sim_s\": 34.9166666666668, \"agl\": 94.078125, \"radial_speed\": -117.031394958496, \"tangent_speed\": 0.00005778670311, \"energy\": 95.6545000000016, \"flight_active\": true, \"boosting\": true, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.99999987563036, \"c_held\": true, \"shift_held\": true, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/shift-c-100m.png\", \"image_ok\": true }",
+			"name": "shift-c reaches and brakes at 100m",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 727, \"sim_s\": 36.1166666666668, \"agl\": 24.1640625, \"radial_speed\": -20.4687767028809, \"tangent_speed\": 0.00024496015976, \"energy\": 93.8185000000017, \"flight_active\": true, \"boosting\": true, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.99999999990715, \"c_held\": true, \"shift_held\": true }",
+			"name": "shift-c slows through 25m",
+			"pass": true
+		},
+		{
+			"detail": "min=0.0 final=0.0",
+			"name": "shift-c lands dry with no penetration",
+			"pass": true
+		},
+		{
+			"detail": "[]",
+			"name": "shift-c ordinary descent never triggers strike",
+			"pass": true
+		},
+		{
+			"detail": "shift=2.64999999999985 regular=4.35000000000006",
+			"name": "Shift+C reaches 100m sooner",
+			"pass": true
+		},
+		{
+			"detail": "agl=22.0",
+			"name": "dry R6 strike arms at real loaded height",
+			"pass": true
+		},
+		{
+			"detail": "[{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }] []",
+			"name": "strike emits one valid physical dry contact",
+			"pass": true
+		},
+		{
+			"detail": "[{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }]",
+			"name": "contact signal does not repeat",
+			"pass": true
+		},
+		{
+			"detail": "[{ \"id\": 12002, \"reason\": \"test early cancel\", \"frame\": 911 }] [{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }]",
+			"name": "early cancel emits failure without contact",
+			"pass": true
+		},
+		{
+			"detail": "prepared=true agl=999.998718261719 speed=-999.999938964844",
+			"name": "1km/s incoming descent starts from loaded 1000m pose",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 1021, \"sim_s\": 50.8166666666659, \"agl\": 95.265625, \"radial_speed\": -65.0000762939453, \"tangent_speed\": 0.0002328811388, \"energy\": 99.8590000000007, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.81999999999954, \"c_held\": true, \"shift_held\": false, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/fast-c-100m.png\", \"image_ok\": true }",
+			"name": "1km/s approach brakes before 100m",
+			"pass": true
+		},
+		{
+			"detail": "minimum=0.0 final=0.0",
+			"name": "1km/s approach lands without terrain penetration or strike",
+			"pass": true
+		},
+		{
+			"detail": "",
+			"name": "relevant sources stayed frozen",
+			"pass": true
+		},
+		{
+			"detail": "settled=1173 warmup=7 delta=0.05..0.05",
+			"name": "real 20Hz physics callback and time scale",
+			"pass": true
+		}
+	],
+	"failure_events": [
+		{
+			"frame": 911,
+			"id": 12002,
+			"reason": "test early cancel"
+		}
+	],
+	"failures": [],
+	"frames": 1180,
+	"landing_events": [
+		{
+			"frame": 878,
+			"id": 12001,
+			"normal": "(0.0, 1.0, 0.0)",
+			"point": "(0.0, 0.0, 190.0004)",
+			"speed": 18.0
+		}
+	],
+	"max_delta": 0.05,
+	"min_delta": 0.05,
+	"sim_s": 58.7666666666655,
+	"source_sha256_end": {
+		"res://assets/martial-r4/c2-martial-r4.glb": "df3c95a4712e4bfdc1f74bb0c32229ff3dca44007ae74b0318b9986f25db4a70",
+		"res://assets/planet-ecology-r4/ecology_r4.gdshader": "405d09b60f9183cdcdb2626e89c6f49273f4fef0140bc2ef996e8f4524d52373",
+		"res://assets/planet-ecology-r4/manifest.json": "231a4bb2a392e662211ea81cfc50f5c6cbe1f3c9862b634f6c90a2c72254a746",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+		"res://scripts/native_environment_damage.gd": "3fd4932322010b4ba98c2631e1c16e8803df1d4190f216b1e05bcf10d674bce6",
+		"res://scripts/native_environment_damage_assets.gd": "c1217046e3d4082a93ca1d2aae2e3340b1fcbbf81549e8708d24921c8d5a4607",
+		"res://scripts/native_main.gd": "3851e65847230e05598c70de9eb6305e8ed65a0e3b57243be9e7cf7a7f4029ef",
+		"res://scripts/native_martial_skills.gd": "2279304f16f66ad7969f289148fe9db65d88222471a10c54e7f48cd11654a345",
+		"res://scripts/native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+		"res://scripts/native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+		"res://scripts/native_planet_ecology.gd": "30d2e1d5f8049a6c6777b15ac7980f6f9abad77c8beddeb2e013c978e57071ea",
+		"res://scripts/native_player.gd": "a7c5dc6275aa9d2ec3e9a0730b39efa390ce6d52b3935a70bc8ed24fda4fa9c8",
+		"res://scripts/native_surface_blink.gd": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db",
+		"res://scripts/native_surface_deformation.gd": "f8c2b392b272ffcc9d04d84ab57262ffbc44c113f3ad7a27ab3479926eb5d01d",
+		"res://scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38"
+	},
+	"source_sha256_start": {
+		"res://assets/martial-r4/c2-martial-r4.glb": "df3c95a4712e4bfdc1f74bb0c32229ff3dca44007ae74b0318b9986f25db4a70",
+		"res://assets/planet-ecology-r4/ecology_r4.gdshader": "405d09b60f9183cdcdb2626e89c6f49273f4fef0140bc2ef996e8f4524d52373",
+		"res://assets/planet-ecology-r4/manifest.json": "231a4bb2a392e662211ea81cfc50f5c6cbe1f3c9862b634f6c90a2c72254a746",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+		"res://scripts/native_environment_damage.gd": "3fd4932322010b4ba98c2631e1c16e8803df1d4190f216b1e05bcf10d674bce6",
+		"res://scripts/native_environment_damage_assets.gd": "c1217046e3d4082a93ca1d2aae2e3340b1fcbbf81549e8708d24921c8d5a4607",
+		"res://scripts/native_main.gd": "3851e65847230e05598c70de9eb6305e8ed65a0e3b57243be9e7cf7a7f4029ef",
+		"res://scripts/native_martial_skills.gd": "2279304f16f66ad7969f289148fe9db65d88222471a10c54e7f48cd11654a345",
+		"res://scripts/native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+		"res://scripts/native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+		"res://scripts/native_planet_ecology.gd": "30d2e1d5f8049a6c6777b15ac7980f6f9abad77c8beddeb2e013c978e57071ea",
+		"res://scripts/native_player.gd": "a7c5dc6275aa9d2ec3e9a0730b39efa390ce6d52b3935a70bc8ed24fda4fa9c8",
+		"res://scripts/native_surface_blink.gd": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db",
+		"res://scripts/native_surface_deformation.gd": "f8c2b392b272ffcc9d04d84ab57262ffbc44c113f3ad7a27ab3479926eb5d01d",
+		"res://scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38"
+	},
+	"states": {
+		"c-100m": {
+			"agl": 96.5703125,
+			"boosting": false,
+			"c_held": true,
+			"energy": 99.580000000002,
+			"flight_active": true,
+			"frame": 287,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/c-100m.png",
+			"image_ok": true,
+			"pose_mode": "dive",
+			"pose_weight": 0.819999999991243,
+			"radial_speed": -65.0000762939453,
+			"shift_held": false,
+			"sim_s": 14.1166666666667,
+			"strike_active": false,
+			"tangent_speed": 0.0000728204104234464
+		},
+		"c-25m": {
+			"agl": 24.8515625,
+			"boosting": false,
+			"c_held": true,
+			"energy": 99.5170000000023,
+			"flight_active": true,
+			"frame": 329,
+			"pose_mode": "dive",
+			"pose_weight": 0.0368071094616613,
+			"radial_speed": -12.8125152587891,
+			"shift_held": false,
+			"sim_s": 16.2166666666668,
+			"strike_active": false,
+			"tangent_speed": 0.000144859193824232
+		},
+		"c-landed": {
+			"agl": 0.0,
+			"boosting": false,
+			"c_held": false,
+			"energy": 99.5445000000031,
+			"flight_active": false,
+			"frame": 445,
+			"pose_mode": "ground",
+			"pose_weight": 0.0000000000000000926713533573113,
+			"radial_speed": 0.0,
+			"shift_held": false,
+			"sim_s": 22.0166666666668,
+			"strike_active": false,
+			"tangent_speed": 0.0
+		},
+		"c-start": {
+			"agl": 371.2734375,
+			"boosting": false,
+			"c_held": false,
+			"energy": 99.7105000000014,
+			"flight_active": true,
+			"frame": 200,
+			"pose_mode": "hover",
+			"pose_weight": 0.00000773733730825435,
+			"radial_speed": 0.0,
+			"shift_held": false,
+			"sim_s": 9.76666666666667,
+			"strike_active": false,
+			"tangent_speed": 0.0
+		},
+		"fast-c-100m": {
+			"agl": 95.265625,
+			"boosting": false,
+			"c_held": true,
+			"energy": 99.8590000000007,
+			"flight_active": true,
+			"frame": 1021,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/fast-c-100m.png",
+			"image_ok": true,
+			"pose_mode": "dive",
+			"pose_weight": 0.819999999999536,
+			"radial_speed": -65.0000762939453,
+			"shift_held": false,
+			"sim_s": 50.8166666666659,
+			"strike_active": false,
+			"tangent_speed": 0.000232881138799712
+		},
+		"shift-c-100m": {
+			"agl": 94.078125,
+			"boosting": true,
+			"c_held": true,
+			"energy": 95.6545000000016,
+			"flight_active": true,
+			"frame": 703,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/shift-c-100m.png",
+			"image_ok": true,
+			"pose_mode": "dive",
+			"pose_weight": 0.99999987563036,
+			"radial_speed": -117.031394958496,
+			"shift_held": true,
+			"sim_s": 34.9166666666668,
+			"strike_active": false,
+			"tangent_speed": 0.0000577867031097412
+		},
+		"shift-c-25m": {
+			"agl": 24.1640625,
+			"boosting": true,
+			"c_held": true,
+			"energy": 93.8185000000017,
+			"flight_active": true,
+			"frame": 727,
+			"pose_mode": "dive",
+			"pose_weight": 0.999999999907147,
+			"radial_speed": -20.4687767028809,
+			"shift_held": true,
+			"sim_s": 36.1166666666668,
+			"strike_active": false,
+			"tangent_speed": 0.000244960159761831
+		},
+		"shift-c-landed": {
+			"agl": 0.0,
+			"boosting": false,
+			"c_held": false,
+			"energy": 86.3965000000021,
+			"flight_active": false,
+			"frame": 825,
+			"pose_mode": "ground",
+			"pose_weight": 0.740818220681718,
+			"radial_speed": -0.000000222885731204769,
+			"shift_held": false,
+			"sim_s": 41.0166666666665,
+			"strike_active": false,
+			"tangent_speed": 0.000140769931022078
+		},
+		"shift-c-start": {
+			"agl": 375.7734375,
+			"boosting": false,
+			"c_held": false,
+			"energy": 99.7090000000014,
+			"flight_active": true,
+			"frame": 650,
+			"pose_mode": "hover",
+			"pose_weight": 0.00000773733739566515,
+			"radial_speed": 0.0,
+			"shift_held": false,
+			"sim_s": 32.266666666667,
+			"strike_active": false,
+			"tangent_speed": 0.0
+		},
+		"strike-contact": {
+			"agl": 0.0,
+			"boosting": false,
+			"c_held": false,
+			"energy": 99.9355000000003,
+			"flight_active": false,
+			"frame": 879,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/strike-contact.png",
+			"image_ok": true,
+			"pose_mode": "ground",
+			"pose_weight": 0.139208119489581,
+			"radial_speed": 0.000000322143932862673,
+			"shift_held": false,
+			"sim_s": 43.7166666666663,
+			"strike_active": false,
+			"tangent_speed": 0.00431395089253783
+		}
+	},
+	"wall_s": 62.326,
+	"warmup_frames": 7
+}

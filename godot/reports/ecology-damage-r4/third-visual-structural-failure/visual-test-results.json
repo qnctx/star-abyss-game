@@ -1,0 +1,19 @@
+{
+	"actual_godot_frames": true,
+	"damage": {
+		"dirty": false,
+		"dynamic_fragments": 0,
+		"generation": "ecology-r4.1",
+		"max_dynamic_fragments": 24,
+		"max_persistent_entities": 2048,
+		"modified": 2,
+		"moving_trees": 0,
+		"registered": 2,
+		"save_bound": true,
+		"state_error": ""
+	},
+	"failures": [
+		"trunk broken"
+	],
+	"scope": "isolated authored assets and real physics; not whole game acceptance"
+}

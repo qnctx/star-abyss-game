@@ -1,0 +1,6 @@
+{
+  "scope": "Historical diagnostic after foot-lock reach fix, before Sol single-impulse physics fix. NOT a valid trajectory benchmark: this early harness called move_and_slide from render frames while advancing gravity at 1/30s, so engine displacement delta differed. AGL/height numbers must not be used as runtime measurements. Not a measurement of the earlier independent f034-f038 screenshot. Loaded-source hash was not recorded.",
+  "guard": {"max_agl_m": 0.0, "max_speed_mps": 1.5, "max_ankle_above_support_m": 0.1685937345},
+  "ordinary_impact": {"max_agl_m": 0.3262922168, "max_speed_mps": 16.5816192627},
+  "launch": {"max_agl_m": 4.8812565804, "max_speed_mps": 131.0582275391}
+}

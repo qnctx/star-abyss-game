@@ -1,0 +1,415 @@
+{
+  "time": "2026-09-25T08:13:01.725Z",
+  "roots": [
+    "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game",
+    "C:/Users/HUAWEI/.codex/worktrees/cb21/star-abyss-game",
+    "E:/myProject/star-abyss-game"
+  ],
+  "compared": 305,
+  "differences": [
+    {
+      "file": "playable/src/d3-session/evidence-r3/node.json",
+      "hashes": [
+        "9f7efa26fbcf5ff9042337ccefd9f6850c6a24baf32f53339468aaeed707ca34",
+        "ea574f9f67c4f6d14314a3c3476e132cc764545838c224ca2943596db89fb0af",
+        "9f7efa26fbcf5ff9042337ccefd9f6850c6a24baf32f53339468aaeed707ca34"
+      ]
+    },
+    {
+      "file": "playable/src/d3-session/evidence-r3/r2-node-regression.json",
+      "hashes": [
+        "4b8018dae779c52fc10e18c4e390d9503d10ae009e1e2e685536088bfab79eff",
+        "fd7f5934c1d7909ad35d3bef7ebb7d6b6431c91edce211bd043616a4946731e4",
+        "4b8018dae779c52fc10e18c4e390d9503d10ae009e1e2e685536088bfab79eff"
+      ]
+    },
+    {
+      "file": "docs/development/LOCAL-PREVIEW-RECOVERY.md",
+      "hashes": [
+        "ef2e9e10b6770dd4333a7c2c3af6798d8b2f7345c612a1d01f56593a0c95b3cd",
+        "ef2e9e10b6770dd4333a7c2c3af6798d8b2f7345c612a1d01f56593a0c95b3cd",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/PLANET-ACTIVE-TASKS.json",
+      "hashes": [
+        "75dfb749f6072c8cee95be377a9b33ffb649c7301cda2b281adce8baa987cfc2",
+        "35e7bc7818b4f610adecb57e7e9f58ed88910324a43400f905380fd301f9e8b3",
+        "75dfb749f6072c8cee95be377a9b33ffb649c7301cda2b281adce8baa987cfc2"
+      ]
+    },
+    {
+      "file": "docs/development/PLAYABILITY-STATUS.md",
+      "hashes": [
+        "dc90c25a2deae7cdb5eee316650fe08267f1e023dadf046a65f566249cfc4faf",
+        "dc90c25a2deae7cdb5eee316650fe08267f1e023dadf046a65f566249cfc4faf",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-NPC-MODELS-GPU-R1.md",
+      "hashes": [
+        "867c8ab7493b5d0bafbfd106350b3101f31e60b8fdc7d391f0c3a8f8b08f2831",
+        "867c8ab7493b5d0bafbfd106350b3101f31e60b8fdc7d391f0c3a8f8b08f2831",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-PHASE1-R4.md",
+      "hashes": [
+        "9965af9ad86d36aa1b2d266dfd3ad6f2fa1d32ad67e020ffa9fb872044557067",
+        null,
+        "9965af9ad86d36aa1b2d266dfd3ad6f2fa1d32ad67e020ffa9fb872044557067"
+      ]
+    },
+    {
+      "file": "docs/development/SEVEN-MODELS-R1.md",
+      "hashes": [
+        "ac0501dc876910046c4bab42ddf26892db2142b60b506841275f580584cd465c",
+        "ac0501dc876910046c4bab42ddf26892db2142b60b506841275f580584cd465c",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/versions/INTEGRATED-PHASE1-R4.json",
+      "hashes": [
+        "31c3b2db3ce411e4c2e57740f3c607f8be8218c78f7dfefb3d1539e02fc6a5f5",
+        null,
+        "31c3b2db3ce411e4c2e57740f3c607f8be8218c78f7dfefb3d1539e02fc6a5f5"
+      ]
+    },
+    {
+      "file": "docs/development/versions/PHASE1-R4-ENTRY-CHECK.json",
+      "hashes": [
+        "d8fb13a3d12d7a2fedd159b8b73fee46aa9f56cada391b02791586a433e81298",
+        null,
+        "d8fb13a3d12d7a2fedd159b8b73fee46aa9f56cada391b02791586a433e81298"
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/quests.test.mjs",
+      "hashes": [
+        null,
+        "241d200cd4b18a09194b5509fd7180f1fd133d5aaf3ce0d1067d07b3effab67c",
+        null
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/scene.test.mjs",
+      "hashes": [
+        null,
+        "1ca46486f6f0cca50f406343e3261a5d6dc912e34f84af0a5e715e8acfb53b41",
+        null
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/verify-layout.cjs",
+      "hashes": [
+        null,
+        "d77bc4b5c2a604c145762c4397c83af9db5c5a9ec5a9027a799a0b737945b4ec",
+        null
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/verify-npcs.cjs",
+      "hashes": [
+        null,
+        "438d979c2f84027edce24d2dad2c95f502e7ec0d073f89a354e7295f02732b05",
+        null
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/verify-world.cjs",
+      "hashes": [
+        null,
+        "3cae582726ae52c70d5347a4bb76418800a56a16c76e0972f3e79c5d7171f248",
+        null
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/verify.html",
+      "hashes": [
+        null,
+        "35bfccecd01064b4384fdfb507b496c3026dc26020cc49424b1458ae743cf72d",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/COMBAT-DB7C-INDEPENDENT-AUDIT.md",
+      "hashes": [
+        null,
+        "32db34bc80cc7fd270cfb3dea237fd41fb14f5caf4ef1b59b5839b76d0a9e693",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/FOUNDATION-CAMP-MEDICINE-R1.md",
+      "hashes": [
+        null,
+        "43d5b8d3db67ec80bc9271191ec64b32743de6fd247c95f9e88aafa8151a75e2",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/FOUNDATION-R2.md",
+      "hashes": [
+        null,
+        "3349f989925f9ce11d70cd164fcd46adade8f332bf1366865f3eb1ecb364158a",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/HIGH-ALTITUDE-TERRAIN-R1.md",
+      "hashes": [
+        null,
+        "13fb1eda05c918ff586d4ab19c9936466e75210d20caf66a91297446c5c1dc22",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/PLAN-NPC-FULL-LOOP-GPU-R1.md",
+      "hashes": [
+        null,
+        "e473b3b840f0a7fdbc07395eae5df2a769e7aeeb5e298c23a5ddd45b1c8da04c",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/REVIEW-MAIN-MENU-INTEGRATION.md",
+      "hashes": [
+        null,
+        "49124c967494fa636b5ee8612e093a7b3923a3760af1159453a2ee95fb4c141b",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/REVIEW-SEVEN-ASSET-ACCEPTANCE.md",
+      "hashes": [
+        null,
+        "ef787c863ed3dd8260ca80a683471440b1a7df72c5077ab400ed8df89bd387bc",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-ATLAS-TERRAIN.md",
+      "hashes": [
+        null,
+        "5f800ba0c5342152c17e17d1c341d0d60349bba76e5b45a3044e0eed68a620fd",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-CAMP-MEDICINE-INDEPENDENT-R1.md",
+      "hashes": [
+        null,
+        "22c7fd8b8f7334cac9b8bd9be9cdae188ed9890bb80dff3ba61c776632015598",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-EXPLORATION-INDEPENDENT-R1.md",
+      "hashes": [
+        null,
+        "1be3cf7300ad76295f0e84147fbe620eec9246510829c3325c7e26127f73084b",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-PROGRESSION-QUESTS-INDEPENDENT-R1.md",
+      "hashes": [
+        null,
+        "1ed7ddbf41ff0933c5af141597ed7e567b99b098af58f43ec3db66497fb18794",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-YUAN-YING-FLIGHT-INDEPENDENT.md",
+      "hashes": [
+        null,
+        "04889a3a7222e92300fa84a6b67e38b0a94ab89c3cb9f13694ff5db87fc93b3b",
+        null
+      ]
+    },
+    {
+      "file": "docs/development/reports/TEST-YUAN-YING-FLIGHT-R1.md",
+      "hashes": [
+        null,
+        "77408965dd4bc3362f5caa5dc454ae90bc9669eab862f035acfbe087ab8ea03d",
+        null
+      ]
+    },
+    {
+      "file": "package.json",
+      "hashes": [
+        "45e833e88645809b6b1e80ffd751bdef9873c923eca810c278aaf3b1fa181703",
+        "73719dbb22ab44de8a98a906ed8eb53dc3d673df1de90ec6c4578c9ae9ff5f5f",
+        "73719dbb22ab44de8a98a906ed8eb53dc3d673df1de90ec6c4578c9ae9ff5f5f"
+      ]
+    },
+    {
+      "file": "artifacts/npc-loop-browser-qa.cjs",
+      "hashes": [
+        null,
+        "ff3f4c83deccff32350c1891925a80b4427be3eab9d3c7e672b239c05f7f6b05",
+        null
+      ]
+    }
+  ],
+  "published": [
+    {
+      "file": "playable/src/foundation/camp-assets.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/foundation/camp-scene.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/assets.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/npc-rig.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/scene.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/progression-quests/verify-npc-geometry.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/src/scene.mjs",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/foundation/medical-bench-v1.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/foundation/medical-vial-v1.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/foundation/su-he-v1.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/progression-quests/manifest.json",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/progression-quests/N01-original.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/progression-quests/N03-original.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/progression-quests/N04-original.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/assets/progression-quests/N05-original.glb",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/star-abyss.html",
+      "matches": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "file": "playable/game.js",
+      "matches": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "textChecks": [
+    {
+      "file": "package.json",
+      "normalizedEqual": true
+    },
+    {
+      "file": "playable/star-abyss.html",
+      "normalizedEqual": true
+    }
+  ]
+}

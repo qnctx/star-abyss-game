@@ -1,0 +1,425 @@
+{
+	"manual_feel_verified": false,
+	"records": [
+		{
+			"file": "claw-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.283333333333333,
+				"attack_id": "claw",
+				"clip": "ground-claw",
+				"clock": 0.900000000000001,
+				"cooldowns": {
+					"claw": 2.71666666666667
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.283333333333334,
+				"physics_time": 0.900000000000001,
+				"projectile": false,
+				"returning": false,
+				"serial": 1,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "claw-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.616666666666667,
+				"attack_id": "claw",
+				"clip": "ground-claw",
+				"clock": 1.23333333333333,
+				"cooldowns": {
+					"claw": 2.71666666666667
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.133333333333333,
+				"physics_time": 1.23333333333333,
+				"projectile": false,
+				"returning": false,
+				"serial": 1,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "lunge-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.483333333333333,
+				"attack_id": "lunge",
+				"clip": "r3-lunge",
+				"clock": 1.71666666666667,
+				"cooldowns": {
+					"lunge": 6.43333333333333
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.483333333333332,
+				"physics_time": 1.71666666666667,
+				"projectile": false,
+				"returning": false,
+				"serial": 2,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "lunge-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 1.11666666666667,
+				"attack_id": "lunge",
+				"clip": "r3-lunge",
+				"clock": 2.35,
+				"cooldowns": {
+					"lunge": 6.43333333333333
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.283333333333332,
+				"physics_time": 2.35,
+				"projectile": false,
+				"returning": false,
+				"serial": 2,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "tail-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.416666666666667,
+				"attack_id": "tail",
+				"clip": "r3-tail",
+				"clock": 2.76666666666666,
+				"cooldowns": {
+					"tail": 6.55
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.416666666666665,
+				"physics_time": 2.76666666666666,
+				"projectile": false,
+				"returning": false,
+				"serial": 3,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "tail-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.916666666666668,
+				"attack_id": "tail",
+				"clip": "r3-tail",
+				"clock": 3.26666666666666,
+				"cooldowns": {
+					"tail": 6.55
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.183333333333333,
+				"physics_time": 3.26666666666666,
+				"projectile": false,
+				"returning": false,
+				"serial": 3,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "rise-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.5,
+				"attack_id": "rise",
+				"clip": "r3-rise",
+				"clock": 3.76666666666666,
+				"cooldowns": {
+					"rise": 9.26666666666666
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.499999999999998,
+				"physics_time": 3.76666666666666,
+				"projectile": false,
+				"returning": false,
+				"serial": 4,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "rise-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 1.11666666666667,
+				"attack_id": "rise",
+				"clip": "r3-rise",
+				"clock": 4.38333333333332,
+				"cooldowns": {
+					"rise": 9.26666666666666
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.249999999999999,
+				"physics_time": 4.38333333333332,
+				"projectile": false,
+				"returning": false,
+				"serial": 4,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "shard-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.6,
+				"attack_id": "shard",
+				"clip": "r3-shard",
+				"clock": 4.98333333333332,
+				"cooldowns": {
+					"shard": 10.1833333333333
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.599999999999998,
+				"physics_time": 4.98333333333332,
+				"projectile": false,
+				"returning": false,
+				"serial": 5,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "shard-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 1.18333333333333,
+				"attack_id": "shard",
+				"clip": "r3-shard",
+				"clock": 5.56666666666665,
+				"cooldowns": {
+					"shard": 10.1833333333333
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "recovery",
+				"phase_elapsed": 0.0,
+				"physics_time": 5.56666666666665,
+				"projectile": true,
+				"returning": false,
+				"serial": 5,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "sweep-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.383333333333333,
+				"attack_id": "sweep",
+				"clip": "sweep",
+				"clock": 5.94999999999998,
+				"cooldowns": {
+					"sweep": 8.96666666666665
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "air",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.383333333333332,
+				"physics_time": 5.94999999999998,
+				"projectile": false,
+				"returning": false,
+				"serial": 6,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "sweep-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.833333333333334,
+				"attack_id": "sweep",
+				"clip": "sweep",
+				"clock": 6.39999999999998,
+				"cooldowns": {
+					"sweep": 8.96666666666665
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 311040.0,
+				"mode": "air",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.183333333333333,
+				"physics_time": 6.39999999999998,
+				"projectile": false,
+				"returning": false,
+				"serial": 6,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "dive-windup",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.55,
+				"attack_id": "dive",
+				"clip": "dive",
+				"clock": 6.94999999999998,
+				"cooldowns": {
+					"dive": 12.9
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "air",
+				"perceived": true,
+				"phase": "windup",
+				"phase_elapsed": 0.549999999999998,
+				"physics_time": 6.94999999999998,
+				"projectile": false,
+				"returning": false,
+				"serial": 7,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "dive-contact",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 1.35,
+				"attack_id": "dive",
+				"clip": "dive",
+				"clock": 7.74999999999998,
+				"cooldowns": {
+					"dive": 12.9
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 311040.0,
+				"locked_direction": "(0.0, -0.024992, -0.999688)",
+				"max_hp": 311040.0,
+				"mode": "air",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.399999999999999,
+				"physics_time": 7.74999999999998,
+				"projectile": false,
+				"returning": false,
+				"serial": 7,
+				"tactic": "attack",
+				"variant": "elite"
+			}
+		},
+		{
+			"file": "ground-variant-claw",
+			"state": {
+				"aggro": true,
+				"attack_elapsed": 0.516666666666667,
+				"attack_id": "claw",
+				"clip": "ground-claw",
+				"clock": 8.4,
+				"cooldowns": {
+					"claw": 9.98333333333331
+				},
+				"delta": 0.0166666666666667,
+				"home": "(1370.0, -2.004462, -1030.0)",
+				"hp": 86400.0,
+				"locked_direction": "(0.0, 0.0, -1.0)",
+				"max_hp": 86400.0,
+				"mode": "ground",
+				"perceived": true,
+				"phase": "active",
+				"phase_elapsed": 0.033333333333335,
+				"physics_time": 8.4,
+				"projectile": false,
+				"returning": false,
+				"serial": 8,
+				"tactic": "attack",
+				"variant": "ground"
+			}
+		}
+	]
+}

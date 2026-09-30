@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEV-I 同根存档验证</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;background:#101824;color:#e4eef9;max-width:1100px;margin:32px auto;padding:0 20px}h1{font-size:26px}button{font:inherit;padding:10px 16px;margin:4px;border:1px solid #6194bb;border-radius:6px;background:#213e58;color:white;cursor:pointer}button:disabled{opacity:.5;cursor:wait}.buttons{display:flex;flex-wrap:wrap;gap:6px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#182738;padding:16px;border-radius:8px}details{margin-top:15px}p{max-width:90ch}</style>
+<h1>DEV-I 同根存档验证</h1>
+<p>真实 IndexedDB + A/B/C 模块。仅验证本地存储联动：空间与授权采用明确的逻辑夹具，未接游戏 3D。所有按钮等根事务完成后才更新快照。失败后从数据库重载。</p>
+<div class="buttons"><button id="load">初始化 / 重载演示存档</button><button id="spawn">生成一处资源</button><button id="harvest">采收一份</button><button id="kill">生成怪群并击败一只</button><button id="pickup">拾取尸体清单</button><button id="unique">转移完整唯一物</button><button id="suite">运行真实 IDB 故障套件</button></div>
+<p id="status" role="status">尚未连接。请初始化存档，或直接运行故障套件。</p>
+<pre id="log">验证日志</pre><details><summary>完整权威根快照</summary><pre id="state"></pre></details>
+<script type="module" src="./browser-verifier.mjs"></script></html>

@@ -1,0 +1,548 @@
+[
+  {
+    "run": "20260929T150246153471Z",
+    "argv": [
+      "godot/tests/terrain_r3_independent_capture.py",
+      "--frozen"
+    ],
+    "integrity": {
+      "exit_code": 0,
+      "production_changed_during_run": [],
+      "foreground_before": 2755244,
+      "foreground_after": 2755244,
+      "final_acceptance": false,
+      "reason": "Await explicit integration freeze and visual review"
+    },
+    "checks": 52,
+    "failures": [],
+    "views": [
+      {
+        "label": "basin-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 178.32,
+          "median_ms": 5.588,
+          "p95_ms": 6.903,
+          "p99_ms": 7.274,
+          "max_ms": 8.079,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 833136.0,
+        "draw_calls": 291.0
+      },
+      {
+        "label": "basin-1600m",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 129.35,
+          "median_ms": 7.925,
+          "p95_ms": 11.216,
+          "p99_ms": 11.85,
+          "max_ms": 15.758,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 738432.0,
+        "draw_calls": 169.0
+      },
+      {
+        "label": "route-3000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 191.37,
+          "median_ms": 5.123,
+          "p95_ms": 6.999,
+          "p99_ms": 7.226,
+          "max_ms": 8.005,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 617277.0,
+        "draw_calls": 130.0
+      },
+      {
+        "label": "route-3000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 161.0,
+          "median_ms": 6.136,
+          "p95_ms": 7.86,
+          "p99_ms": 8.038,
+          "max_ms": 9.18,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 626759.0,
+        "draw_calls": 137.0
+      },
+      {
+        "label": "route-4000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 148.78,
+          "median_ms": 6.707,
+          "p95_ms": 10.205,
+          "p99_ms": 11.294,
+          "max_ms": 11.66,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 705357.0,
+        "draw_calls": 198.0
+      },
+      {
+        "label": "route-4000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 138.33,
+          "median_ms": 7.277,
+          "p95_ms": 10.463,
+          "p99_ms": 10.624,
+          "max_ms": 11.16,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 729107.0,
+        "draw_calls": 194.0
+      },
+      {
+        "label": "route-8000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 87.94,
+          "median_ms": 9.63,
+          "p95_ms": 23.427,
+          "p99_ms": 24.328,
+          "max_ms": 25.99,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 1114075.0,
+        "draw_calls": 200.0
+      },
+      {
+        "label": "route-8000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 140.23,
+          "median_ms": 7.414,
+          "p95_ms": 10.261,
+          "p99_ms": 10.594,
+          "max_ms": 11.412,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 710625.0,
+        "draw_calls": 192.0
+      },
+      {
+        "label": "route-17000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 59.93,
+          "median_ms": 12.845,
+          "p95_ms": 35.301,
+          "p99_ms": 36.867,
+          "max_ms": 37.186,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 1675690.0,
+        "draw_calls": 249.0
+      },
+      {
+        "label": "route-17000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 110.83,
+          "median_ms": 8.652,
+          "p95_ms": 17.484,
+          "p99_ms": 17.75,
+          "max_ms": 18.257,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 829380.0,
+        "draw_calls": 251.0
+      },
+      {
+        "label": "route-27000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 91.38,
+          "median_ms": 6.752,
+          "p95_ms": 23.878,
+          "p99_ms": 24.789,
+          "max_ms": 25.893,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 1008518.0,
+        "draw_calls": 273.0
+      },
+      {
+        "label": "route-27000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 96.71,
+          "median_ms": 9.096,
+          "p95_ms": 20.052,
+          "p99_ms": 20.309,
+          "max_ms": 20.775,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 914758.0,
+        "draw_calls": 250.0
+      },
+      {
+        "label": "route-34000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 96.51,
+          "median_ms": 9.52,
+          "p95_ms": 20.463,
+          "p99_ms": 20.925,
+          "max_ms": 22.109,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 990334.0,
+        "draw_calls": 258.0
+      },
+      {
+        "label": "route-34000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 114.57,
+          "median_ms": 8.596,
+          "p95_ms": 19.045,
+          "p99_ms": 19.462,
+          "max_ms": 20.942,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 887547.0,
+        "draw_calls": 234.0
+      },
+      {
+        "label": "route-42000-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 225.03,
+          "median_ms": 4.185,
+          "p95_ms": 8.028,
+          "p99_ms": 9.421,
+          "max_ms": 10.065,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 642375.0,
+        "draw_calls": 155.0
+      },
+      {
+        "label": "route-42000-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 227.04,
+          "median_ms": 3.702,
+          "p95_ms": 7.909,
+          "p99_ms": 9.261,
+          "max_ms": 21.281,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 641863.0,
+        "draw_calls": 154.0
+      },
+      {
+        "label": "special-cold-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 103.0,
+          "median_ms": 8.776,
+          "p95_ms": 20.321,
+          "p99_ms": 21.635,
+          "max_ms": 24.223,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 950472.0,
+        "draw_calls": 200.0
+      },
+      {
+        "label": "special-cold-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 127.82,
+          "median_ms": 6.484,
+          "p95_ms": 13.19,
+          "p99_ms": 13.572,
+          "max_ms": 14.419,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 783640.0,
+        "draw_calls": 199.0
+      },
+      {
+        "label": "special-volcanic-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 110.51,
+          "median_ms": 8.293,
+          "p95_ms": 18.401,
+          "p99_ms": 18.757,
+          "max_ms": 18.947,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 902544.0,
+        "draw_calls": 234.0
+      },
+      {
+        "label": "special-volcanic-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 232.1,
+          "median_ms": 3.868,
+          "p95_ms": 8.445,
+          "p99_ms": 10.669,
+          "max_ms": 13.109,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 529260.0,
+        "draw_calls": 130.0
+      },
+      {
+        "label": "special-crystal-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 63.86,
+          "median_ms": 13.82,
+          "p95_ms": 27.092,
+          "p99_ms": 32.112,
+          "max_ms": 41.571,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 1113370.0,
+        "draw_calls": 244.0
+      },
+      {
+        "label": "special-crystal-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 88.98,
+          "median_ms": 9.552,
+          "p95_ms": 21.748,
+          "p99_ms": 23.942,
+          "max_ms": 29.247,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 838844.0,
+        "draw_calls": 200.0
+      },
+      {
+        "label": "special-storm-ground",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 58.92,
+          "median_ms": 16.313,
+          "p95_ms": 28.969,
+          "p99_ms": 31.998,
+          "max_ms": 40.521,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 1298464.0,
+        "draw_calls": 233.0
+      },
+      {
+        "label": "special-storm-overview",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 109.25,
+          "median_ms": 7.885,
+          "p95_ms": 17.401,
+          "p99_ms": 20.157,
+          "max_ms": 23.808,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 761436.0,
+        "draw_calls": 180.0
+      },
+      {
+        "label": "orbit-player",
+        "timing": {
+          "samples": 120,
+          "fps_mean": 88.29,
+          "median_ms": 11.047,
+          "p95_ms": 18.346,
+          "p99_ms": 21.522,
+          "max_ms": 25.456,
+          "over50ms": 0
+        },
+        "camera_near": 0.0500000007450581,
+        "triangles": 980096.0,
+        "draw_calls": 264.0
+      }
+    ],
+    "errors": []
+  },
+  {
+    "run": "20260929T150553883848Z",
+    "argv": [
+      "godot/tests/terrain_r3_independent_capture.py",
+      "--flight",
+      "--frozen"
+    ],
+    "integrity": {
+      "exit_code": 1,
+      "production_changed_during_run": [
+        "godot/assets/martial-r4/build.py",
+        "godot/assets/martial-r4/c2-martial-r4.glb",
+        "godot/assets/martial-r4/manifest.json",
+        "godot/assets/martial-r4/prompt.txt",
+        "godot/assets/martial-r4/reference.png",
+        "godot/assets/martial-r4/source/.gdignore",
+        "godot/assets/martial-r4/source/c2-martial-r4.blend",
+        "godot/assets/planet-ecology-r4/build_ecology_r4.py",
+        "godot/assets/planet-ecology-r4/ecology_r4.gdshader",
+        "godot/scripts/native_ai_camp_npc.gd",
+        "godot/scripts/native_ai_decision.gd",
+        "godot/scripts/native_ai_npc.gd",
+        "godot/scripts/native_enemy_r3.gd",
+        "godot/scripts/native_motion_r2.gd",
+        "godot/scripts/native_player.gd"
+      ],
+      "foreground_before": 2755244,
+      "foreground_after": 2755244,
+      "final_acceptance": false,
+      "reason": "Await explicit integration freeze and visual review"
+    },
+    "flight": {
+      "total": 12,
+      "passed": 10,
+      "failures": [
+        "normal C flight brakes and lands on terrain: agl=1132.3359375 min=0.578125",
+        "source files unchanged during full run: "
+      ],
+      "timing": {
+        "elapsed_delta": 387.199999999977,
+        "frames": 23232,
+        "max_delta": 0.0166666666666667,
+        "min_delta": 0.0166666666666667,
+        "time_scale": 1.0,
+        "wall_s": 391.097
+      },
+      "milestones": {
+        "10km": {
+          "agl": 10006.609375,
+          "c_event_held": false,
+          "energy": 98.751499999994,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 2497,
+          "radial_speed": 2143.5966796875,
+          "sim_s": 41.6166666666656,
+          "unready_frames": 0,
+          "wall_s": 44.198
+        },
+        "1600m": {
+          "agl": 1602.1015625,
+          "c_event_held": false,
+          "energy": 99.3574999999969,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 1285,
+          "radial_speed": 90.0001068115234,
+          "sim_s": 21.4166666666667,
+          "unready_frames": 0,
+          "wall_s": 23.983
+        },
+        "2km": {
+          "agl": 2001.2578125,
+          "c_event_held": false,
+          "energy": 99.2244999999963,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 1551,
+          "radial_speed": 90.000114440918,
+          "sim_s": 25.8499999999998,
+          "unready_frames": 0,
+          "wall_s": 28.439
+        },
+        "coast_braked": {
+          "agl": 136439.136808085,
+          "c_event_held": false,
+          "energy": 97.4099999999876,
+          "flight_active": true,
+          "g_event_held": false,
+          "mouse_mode": 2,
+          "physics_frames": 5180,
+          "radial_speed": 0.0,
+          "sim_s": 86.3333333333297,
+          "unready_frames": 0,
+          "wall_s": 88.914
+        },
+        "globe_view": {
+          "agl": 125039.192318507,
+          "c_event_held": false,
+          "energy": 97.7114999999891,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 4577,
+          "radial_speed": 3360.00415039063,
+          "sim_s": 76.2833333333303,
+          "unready_frames": 0,
+          "wall_s": 78.862
+        },
+        "landed": {
+          "agl": 1132.3359375,
+          "c_event_held": false,
+          "energy": 88.3839999999445,
+          "flight_active": true,
+          "g_event_held": false,
+          "mouse_mode": 2,
+          "physics_frames": 23232,
+          "radial_speed": 0.0,
+          "sim_s": 387.199999999977,
+          "unready_frames": 0,
+          "wall_s": 391.094
+        },
+        "launched": {
+          "agl": 1.7109375,
+          "c_event_held": false,
+          "energy": 99.997,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 6,
+          "radial_speed": 16.406270980835,
+          "sim_s": 0.1,
+          "unready_frames": 0,
+          "wall_s": 1.354
+        }
+      }
+    },
+    "render_timing": {
+      "samples": 41783,
+      "fps_mean": 107.21,
+      "median_ms": 8.842,
+      "p95_ms": 15.195,
+      "p99_ms": 18.917,
+      "max_ms": 564.996,
+      "over50ms": 30
+    },
+    "errors": []
+  }
+]

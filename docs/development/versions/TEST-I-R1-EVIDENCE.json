@@ -1,0 +1,293 @@
+{
+  "test": "TEST-I-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/62b6/star-abyss-game/artifacts/tests/TEST-I-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-I-R1",
+  "archivedAt": "2026-09-12T09:29:52.880Z",
+  "files": [
+    {
+      "path": "audit.cjs",
+      "sha256": "be279bcdcdd60032268f43054e1035cef5adfe007703767a4efe270723aa4f27",
+      "bytes": 2436
+    },
+    {
+      "path": "browser-console.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "developer-browser.json",
+      "sha256": "25723c34d12a3c2821e816ed0dbc77f1cd582079d677f8aa381c83cf01dab0ea",
+      "bytes": 429949
+    },
+    {
+      "path": "developer-browser.png",
+      "sha256": "d8cfa25c5b2177f00f5f0d5c6c38d3e32ebb5311a19be9af5b06fe13410e04e6",
+      "bytes": 65590
+    },
+    {
+      "path": "developer-node-exit.json",
+      "sha256": "4530df44852c924bc0ca24f7af7df2c59f425dfb69aad7c30c836ae3a0ea6850",
+      "bytes": 32
+    },
+    {
+      "path": "developer-node.tap",
+      "sha256": "6e7487f2468074f2aff667bf1377af7a1ff0d689b63f96835ac5cbb98056cf5a",
+      "bytes": 2912
+    },
+    {
+      "path": "evidence-index.cjs",
+      "sha256": "7265807ef196792ad268247ba8238227d4253bc09dc018dd945478e1e841de25",
+      "bytes": 1041
+    },
+    {
+      "path": "evidence-index.json",
+      "sha256": "cde62ab91a9992123d088e474181935d43a3033d7bf50f693c1faa164966ecc0",
+      "bytes": 5735
+    },
+    {
+      "path": "final-audit.json",
+      "sha256": "3ec4dca98267a6e846183cad9dab170cc09cb7a81d6944fdcb721f9fd6da150d",
+      "bytes": 12392
+    },
+    {
+      "path": "frozen/docs/development/reports/DEV-I.md",
+      "sha256": "56f73698d2c4a53d65586e97f8b4536bb0b88f18dad799d7b96055c6e63294b3",
+      "bytes": 13041
+    },
+    {
+      "path": "frozen/manifest.json",
+      "sha256": "ec2cf824a10cdad30abe417dc7d55edf2ff6f0b60ba1ca38581c849896e67232",
+      "bytes": 4260
+    },
+    {
+      "path": "frozen/playable/src/d3-combat/fixed.mjs",
+      "sha256": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59",
+      "bytes": 4008
+    },
+    {
+      "path": "frozen/playable/src/d3-combat/index.mjs",
+      "sha256": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4",
+      "bytes": 20323
+    },
+    {
+      "path": "frozen/playable/src/d3-inventory/index.mjs",
+      "sha256": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566",
+      "bytes": 16259
+    },
+    {
+      "path": "frozen/playable/src/d3-session/browser-evidence.json",
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2",
+      "bytes": 429937
+    },
+    {
+      "path": "frozen/playable/src/d3-session/browser-verifier.mjs",
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c",
+      "bytes": 9329
+    },
+    {
+      "path": "frozen/playable/src/d3-session/demo-fixture.mjs",
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830",
+      "bytes": 3871
+    },
+    {
+      "path": "frozen/playable/src/d3-session/finalize.cjs",
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be",
+      "bytes": 1862
+    },
+    {
+      "path": "frozen/playable/src/d3-session/index.mjs",
+      "sha256": "957137435aa500781190588921975d5a052b84816dc8ba6d1edb2487f4f99f4e",
+      "bytes": 13971
+    },
+    {
+      "path": "frozen/playable/src/d3-session/indexeddb.mjs",
+      "sha256": "60e180a2e4485b567b99c4cd42d7b65f2fc75b8b6fcbd65007620cf217236309",
+      "bytes": 3074
+    },
+    {
+      "path": "frozen/playable/src/d3-session/node-tests.tap",
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481",
+      "bytes": 2912
+    },
+    {
+      "path": "frozen/playable/src/d3-session/serve.cjs",
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51",
+      "bytes": 1318
+    },
+    {
+      "path": "frozen/playable/src/d3-session/verify-dependencies.cjs",
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f",
+      "bytes": 1153
+    },
+    {
+      "path": "frozen/playable/src/d3-session/verify.html",
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b",
+      "bytes": 1594
+    },
+    {
+      "path": "frozen/playable/src/d3-session/version.json",
+      "sha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8",
+      "bytes": 3647
+    },
+    {
+      "path": "frozen/playable/src/world-director/definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef",
+      "bytes": 1114
+    },
+    {
+      "path": "frozen/playable/src/world-director/director.mjs",
+      "sha256": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358",
+      "bytes": 21223
+    },
+    {
+      "path": "frozen/playable/src/world-director/rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02",
+      "bytes": 747
+    },
+    {
+      "path": "frozen/playable/src/world-director/verification/replay-r1.cjs",
+      "sha256": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a",
+      "bytes": 2851
+    },
+    {
+      "path": "frozen/playable/tests/d3-session.test.js",
+      "sha256": "b88edafbf397bd2d212e05b6d9b40299bc24f65c2100f6d480737c43de830220",
+      "bytes": 11390
+    },
+    {
+      "path": "hash-verification.json",
+      "sha256": "b3b25ef375212c7a83ed658fecaa264d3cd9162962bc2afcd791ff2db11b62c6",
+      "bytes": 6311
+    },
+    {
+      "path": "independent-browser-final.png",
+      "sha256": "5c4f6859f187996782513b512f6a36931b27b0ec7a1f0b1585b72e52a469e72f",
+      "bytes": 66923
+    },
+    {
+      "path": "independent-browser-initial-nine.json",
+      "sha256": "34c56538cc1fbb8ebd7f4c4320f4aef1265e5781ff37b62b06a38cebb046670c",
+      "bytes": 4161897
+    },
+    {
+      "path": "independent-browser.json",
+      "sha256": "0a423a590b1fcdf25a5f5c11707e07189e36977fe3d34cc919e67a42ec03b185",
+      "bytes": 4630423
+    },
+    {
+      "path": "independent-browser.png",
+      "sha256": "a352d04ea9a4046f5ad88135f430fb98f45e2fb16f90b85ff232fe19f37db800",
+      "bytes": 63984
+    },
+    {
+      "path": "independent-node-exit.json",
+      "sha256": "ac9fcc22ad2c4091e1c03a4a4280601b48f58180d7224e3b47ba894727c1a309",
+      "bytes": 79
+    },
+    {
+      "path": "independent-node.json",
+      "sha256": "ead00e77a362e8bcf3f2501e58c2240d803989045f0109886bbc99a6fbd0b2c5",
+      "bytes": 4585774
+    },
+    {
+      "path": "independent.mjs",
+      "sha256": "64106b46ed943af686cea3b60df08b012e4bf05062f947cdff20373580d02734",
+      "bytes": 14566
+    },
+    {
+      "path": "index.html",
+      "sha256": "661c2b90d67a26906d5bfeeeee5a45719c3564fa1df528b94064c16f4bed1634",
+      "bytes": 1686
+    },
+    {
+      "path": "inspect.cjs",
+      "sha256": "095298ba2e2c296058a73665629d43b97f25c0d6fefa13f2c1a4328f3dc64ba8",
+      "bytes": 291
+    },
+    {
+      "path": "manual-1.json",
+      "sha256": "ba17cdd009a413cd13c465b2f835b9b3ace881039794f5e4394bee911080d105",
+      "bytes": 7756
+    },
+    {
+      "path": "manual-2.json",
+      "sha256": "c94dd5abc830846e9fd54751fd4d2f2993e4f1615b64572113b6e2b4b85c6e83",
+      "bytes": 13170
+    },
+    {
+      "path": "manual-3.json",
+      "sha256": "fd36c554b518be0a0d5706e825aecfcd620c7b4166f552e9a025b8fe9ed44758",
+      "bytes": 16756
+    },
+    {
+      "path": "manual-4.json",
+      "sha256": "294601aafddbc694e3ce939acca012bde553143b07c0fe9af8c8419e701bf6e6",
+      "bytes": 37973
+    },
+    {
+      "path": "manual-5.json",
+      "sha256": "2e885abb3dfbacd46ebf98daf09bf6e87974c11e22082a0721cbdc8f0eef83fe",
+      "bytes": 40113
+    },
+    {
+      "path": "manual-6.json",
+      "sha256": "52b2c202253e0af5e7060407f357b7f7d6f412354c83466f723a4d9a83639e4c",
+      "bytes": 43160
+    },
+    {
+      "path": "manual-7.json",
+      "sha256": "3bb69d212c85282b71f35de16be82735444d68266d7a807b5f6bd3ae42e175f0",
+      "bytes": 42442
+    },
+    {
+      "path": "manual-after-refresh.json",
+      "sha256": "847270e34579e68dd0fc55bf303018f04b5a791afe7a337bf5ec77bc6837680d",
+      "bytes": 40091
+    },
+    {
+      "path": "manual-after-refresh.png",
+      "sha256": "3250c806cb38b27318bfc3840868560ee305c18926068d662ea8c5576625b844",
+      "bytes": 41923
+    },
+    {
+      "path": "manual-before-refresh.json",
+      "sha256": "847270e34579e68dd0fc55bf303018f04b5a791afe7a337bf5ec77bc6837680d",
+      "bytes": 40091
+    },
+    {
+      "path": "manual-before-refresh.png",
+      "sha256": "dab865eaa539bf69fa355cd8536bdc95ba1bc0a597ce568c5d6a2b97bf2e9143",
+      "bytes": 75089
+    },
+    {
+      "path": "manual-recorder.mjs",
+      "sha256": "2c9b8e49aff4a64fc591d4257ad9101dde0bf071c866c30bbb3966223e4b326d",
+      "bytes": 941
+    },
+    {
+      "path": "refresh-proof.json",
+      "sha256": "c3cb05257eb51bfbb4c71baaa8316976b7f771b0f82fe1222dc39bf11d5931e8",
+      "bytes": 160
+    },
+    {
+      "path": "run-node.cjs",
+      "sha256": "531f4d65e9aabfc48958e076c0322893b8a25bc695b1364f0c8d775dea97e2f2",
+      "bytes": 1564
+    },
+    {
+      "path": "server-info.json",
+      "sha256": "2f03086b0474f0bbc1d11d77ba479f0eda729d0b2d795c188bf5ae789ea85423",
+      "bytes": 603
+    },
+    {
+      "path": "server.cjs",
+      "sha256": "b76e1e2a62c7edbfcaf4f188d82b727b449b46c281e5894a28247a7c4d87ef23",
+      "bytes": 1896
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "f4775d9a421db61e0f8bc26974b3f8675e564efa8b2abe64f6769b17db9c16aa",
+      "bytes": 1383
+    }
+  ]
+}

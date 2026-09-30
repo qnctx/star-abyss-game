@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>星球资产 · 独立美术预览</title>
+<style>body{margin:0;background:#171b23;color:#e4e1ed;font:16px system-ui}header{padding:18px 28px;position:absolute;background:#171b23dd;z-index:1;max-width:900px}b{font-size:21px}p{margin:7px 0}canvas{display:block}</style>
+<header><b>星球地表资产 · 独立美术预览</b><p>分枝树与折叶树冠 / 河岸卵石 / 湿地芦苇 · 按连续地表概念图制作</p><p>这是资产验证场景，非游戏截图；间距仅用于检查网格。地形、流水与玩法由总控集成。</p></header>
+<script type="module">
+import * as THREE from '/three/three.module.js';
+import {createPlanetArtBatch} from '/playable/src/planet-art/index.mjs';
+const scene=new THREE.Scene();scene.background=new THREE.Color('#55516b');scene.fog=new THREE.Fog('#55516b',32,85);
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,200);camera.position.set(15,9,24);camera.lookAt(0,3,0);
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;document.body.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight('#d1c5ed','#5d584b',2.4));const sun=new THREE.DirectionalLight('#ffe3c8',3);sun.position.set(-8,18,10);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-15;sun.shadow.camera.right=15;sun.shadow.camera.top=15;sun.shadow.camera.bottom=-15;scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStandardMaterial({color:'#65635e',roughness:1}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+const metrics={};
+for(const [kind,records] of [
+ ['tree',[{position:[-4,0,-1],scale:1,yaw:0},{position:[-7,0,-4],scale:.78,yaw:2}]],
+ ['reed',Array.from({length:12},(_,i)=>({position:[2+(i%4)*1.2,0,-3+Math.floor(i/4)*1.3],scale:.9+(i%3)*.1,yaw:i}))],
+ ['pebble',Array.from({length:15},(_,i)=>({position:[-2+(i%5)*1.3,0,3+Math.floor(i/5)*1.2],scale:1,yaw:i}))]
+]){const batch=createPlanetArtBatch(THREE,{kind,records:records.map(r=>({...r,up:[0,1,0]}))});scene.add(batch.mesh);metrics[kind]={triangles:batch.mesh.geometry.attributes.position.count/3,instances:records.length};}
+renderer.render(scene,camera);window.planetArtPreview={ready:true,metrics,drawCalls:renderer.info.render.calls};
+onresize=()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.render(scene,camera);};
+</script></html>

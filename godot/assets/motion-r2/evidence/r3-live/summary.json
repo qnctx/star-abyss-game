@@ -1,0 +1,151 @@
+{
+  "method": "real Godot _physics_process(delta), one adapter tick per callback; synthetic states in model fixture, not real keyboard feel",
+  "frames": 1537,
+  "actual_delta_min": 0.0166666666666667,
+  "actual_delta_max": 0.0166666666666667,
+  "actual_delta_mean": 0.016666666666666555,
+  "physics_seconds": 25.6166666666665,
+  "wall_seconds": 26.766331,
+  "time_scale": 1,
+  "bone_count": 51,
+  "failures": [],
+  "pending_asset_requirements": [],
+  "cases": [
+    {
+      "name": "walk",
+      "frames": 121,
+      "clips": [
+        "walk"
+      ],
+      "release_crossings": 0,
+      "max_adjacent_planted_ankle_m": 1.237783418363036e-7
+    },
+    {
+      "name": "jog",
+      "frames": 121,
+      "clips": [
+        "jog"
+      ],
+      "release_crossings": 0,
+      "max_adjacent_planted_ankle_m": 2.0914776429602275e-7
+    },
+    {
+      "name": "sprint",
+      "frames": 121,
+      "clips": [
+        "sprint"
+      ],
+      "release_crossings": 0,
+      "max_adjacent_planted_ankle_m": 1.4901161199398771e-7
+    },
+    {
+      "name": "stop",
+      "frames": 48,
+      "clips": [
+        "idle"
+      ],
+      "release_crossings": 0,
+      "max_adjacent_planted_ankle_m": null
+    },
+    {
+      "name": "cast_fist:ground",
+      "frames": 66,
+      "clips": [
+        "cast_fist",
+        "combat_ready"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": 1.2013700283424084e-7
+    },
+    {
+      "name": "cast_fist:air",
+      "frames": 66,
+      "clips": [
+        "air_cast_fist",
+        "air_guard"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": null
+    },
+    {
+      "name": "cast_palm:ground",
+      "frames": 64,
+      "clips": [
+        "cast_palm",
+        "combat_ready"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": 1.1920928999487046e-7
+    },
+    {
+      "name": "cast_palm:air",
+      "frames": 64,
+      "clips": [
+        "air_cast_palm",
+        "air_guard"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": null
+    },
+    {
+      "name": "cast_sweep:ground",
+      "frames": 83,
+      "clips": [
+        "cast_sweep",
+        "combat_ready"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": 1.2013700271030525e-7
+    },
+    {
+      "name": "cast_sweep:air",
+      "frames": 83,
+      "clips": [
+        "air_cast_sweep",
+        "air_guard"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": null
+    },
+    {
+      "name": "cast_cleave:ground",
+      "frames": 160,
+      "clips": [
+        "cast_cleave",
+        "combat_ready"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": 1.7943374161213364e-7
+    },
+    {
+      "name": "cast_cleave:air",
+      "frames": 160,
+      "clips": [
+        "air_cast_cleave",
+        "air_guard"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": null
+    },
+    {
+      "name": "cast_skyfall:ground",
+      "frames": 190,
+      "clips": [
+        "cast_skyfall",
+        "combat_ready"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": 2.0914776325585626e-7
+    },
+    {
+      "name": "cast_skyfall:air",
+      "frames": 190,
+      "clips": [
+        "air_cast_skyfall",
+        "air_guard"
+      ],
+      "release_crossings": 1,
+      "max_adjacent_planted_ankle_m": null
+    }
+  ]
+}

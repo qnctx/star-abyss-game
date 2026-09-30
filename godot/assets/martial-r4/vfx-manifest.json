@@ -1,0 +1,32 @@
+{
+  "fist": {
+    "vertices": 150,
+    "triangles": 144,
+    "reference": "A"
+  },
+  "slash": {
+    "vertices": 294,
+    "triangles": 288,
+    "reference": "B"
+  },
+  "charge": {
+    "vertices": 444,
+    "triangles": 430,
+    "reference": "C"
+  },
+  "pressure": {
+    "vertices": 360,
+    "triangles": 350,
+    "reference": "C"
+  },
+  "impact": {
+    "vertices": 224,
+    "triangles": 210,
+    "reference": "C"
+  },
+  "aperture": {
+    "vertices": 544,
+    "triangles": 536,
+    "reference": "C"
+  }
+}

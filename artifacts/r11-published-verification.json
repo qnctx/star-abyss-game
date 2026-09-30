@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "bundleSHA": "9e65b24a63fbd4b6fe26a80f077419d2f398b7170886141e22721251d1dac8b3",
+  "servedFiles": [
+    "playable/assets/creatures/riftwing-r11/manifest.json",
+    "playable/assets/creatures/riftwing-r11/riftwing-r11.blend",
+    "playable/assets/creatures/riftwing-r11/riftwing-r11.glb",
+    "playable/checkpoint-worker.js",
+    "playable/src/avatar.mjs",
+    "playable/src/d3-session/scene.mjs",
+    "playable/src/expedition-runtime/index.mjs",
+    "playable/src/expedition-runtime/queries.mjs",
+    "playable/src/expedition-runtime/riftwing-ai.mjs",
+    "playable/src/expedition-runtime/rules.mjs",
+    "playable/src/expedition-ui/index.mjs",
+    "playable/src/expedition-world/index.mjs",
+    "playable/src/expedition-world/queries.mjs",
+    "playable/src/expedition-world/riftwing-asset.mjs",
+    "playable/src/ground-combat-recoil.mjs",
+    "playable/src/input.mjs",
+    "playable/src/main.mjs",
+    "playable/src/test-lab.mjs",
+    "playable/tests/input.test.js",
+    "playable/tests/riftwing-integration-r11.test.mjs",
+    "playable/tests/riftwing-r11.test.mjs",
+    "playable/game.js"
+  ],
+  "evidence": [
+    "artifacts/r11-candidate/air-punch-third-person.png",
+    "artifacts/r11-candidate/air-pursuit-third-person.png",
+    "artifacts/r11-candidate/both-ground-third-person.png",
+    "artifacts/r11-candidate/ground-approach-third-person.png",
+    "artifacts/r11-candidate/ground-claw-third-person.png",
+    "artifacts/r11-candidate/ground-drop.png",
+    "artifacts/r11-candidate/ground-kill-or-limit.png",
+    "artifacts/r11-candidate/ground-loot-inventory.png",
+    "artifacts/r11-candidate/ground-punch.png",
+    "artifacts/r11-candidate/reload-no-respawn.png",
+    "artifacts/r11-candidate/report.json",
+    "artifacts/r11-candidate/takeoff-third-person.png"
+  ],
+  "at": "2026-09-26T17:13:41.130Z"
+}

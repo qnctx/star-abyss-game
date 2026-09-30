@@ -1,0 +1,142 @@
+[
+  {
+    "tier": 4,
+    "view": 0,
+    "samples": 61,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.0166666666666693,
+    "wall_elapsed": 0.868697,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 5,
+    "view": 0,
+    "samples": 56,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 0.9333333333333359,
+    "wall_elapsed": 0.914038,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 6,
+    "view": 0,
+    "samples": 69,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.1500000000000021,
+    "wall_elapsed": 1.130349,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 8,
+    "view": 0,
+    "samples": 139,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 2.3166666666666647,
+    "wall_elapsed": 2.297685,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 9,
+    "view": 0,
+    "samples": 163,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 2.7166666666666632,
+    "wall_elapsed": 2.696999,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 4,
+    "view": 1,
+    "samples": 61,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.0166666666666693,
+    "wall_elapsed": 0.996354,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 5,
+    "view": 1,
+    "samples": 56,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 0.9333333333333359,
+    "wall_elapsed": 0.896585,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 6,
+    "view": 1,
+    "samples": 69,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.1500000000000021,
+    "wall_elapsed": 1.113247,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 8,
+    "view": 1,
+    "samples": 139,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 2.3166666666666647,
+    "wall_elapsed": 2.331174,
+    "resource_versions": [
+      "r2-contract-preview"
+    ],
+    "draw_calls_scene_max": 12.0,
+    "primitives_scene_max": 64326.0
+  },
+  {
+    "tier": 9,
+    "view": 1,
+    "samples": 163,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 2.7166666666666632,
+    "wall_elapsed": 2.693957,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 6.0,
+    "primitives_scene_max": 64166.0
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "source": "Existing generated reference → existing authored geometry → native adaptation",
+  "newGenerations": 0,
+  "files": {
+    "../../../docs/art/planet-v1/planet-ecology-concept.png": "4f8ca9f680a2a9d8efba4863f15fb673841f7f3a1883136f92bf6d996afbf62b",
+    "../../../docs/art/planet-v1/surface-transition-concept.png": "cf152196d583b53ea7eb2ce42ad643d17bc5004228053e432eceffabc196f49d",
+    "../../../playable/src/planet-art/index.mjs": "3bda72e0a29568160bc4e12c00770013790327fb7e097eecdb6d24baf3bfdf23",
+    "export.mjs": "d00600c871efe608942d7026a1a16127dd5eb241fa0db524cf3594e841f6945f",
+    "tree-0.json": "552c160b2b3ecf92aa18c153612cc0e56e20d8ccfb6be68bed18cb6120d61593",
+    "tree-1.json": "4efde9272b8a09ab6ca643b99bb138fef0f66f1f61382e5f66030fbfb7e8c8b9",
+    "reed-0.json": "d93d0bc8d6a0d0902bb913a5f651b3d8bb5ab1a8e7c8c8d1fe0d6091f5dd7dfa",
+    "reed-1.json": "aff953348c730c8eb81836f9d2f02a669a12d08014b15de053e25f7740c326e9",
+    "pebble-0.json": "200497801b3892cb30f19f06b6403abe98a9f59067a20291330dcf01cfc97ec2",
+    "pebble-1.json": "03882ebbb71a204c2811b71f8ece7624db2fe9629e48ff4cacb6dbbe04bccfd4"
+  }
+}

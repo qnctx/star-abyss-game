@@ -1,0 +1,58 @@
+{
+  "status": "First producer run by controller failed 4 of 144 checks and is archived. CPU review corrected two assertion semantics and added an independent shape-overlap probe; revised source has not been run by author. Post-crater anchored-base floating remains a required failure.",
+  "producer": "res://tests/native_martial_support_persistence_runtime.gd",
+  "consumer": "res://tests/native_martial_support_persistence_reload.gd",
+  "output": "res://reports/martial-support-r43",
+  "private_slots": [
+    "user://martial_support_r43_producer.json",
+    "user://martial_support_r43_reopen.json"
+  ],
+  "frozen_sources": {
+    "native_environment_damage.gd": "681d4ff64c310c975f8abe18f5021d92d5373cfe737f3b105a017f140bc778ee",
+    "native_planet_ecology.gd": "73e2c462a670b31cf3d632834a00b65d0d05d9ebf9e664688fca2310f6b99db1"
+  },
+  "preservation": "Original environment runtime/reload scripts, base verify script and martial-r4 reports remain unchanged. New scripts use SUPPORT_OUT and override inherited frame capture output.",
+  "execution_order": [
+    "In an authorized GPU window, run producer with --path godot --script res://tests/native_martial_support_persistence_runtime.gd -- --persistence-only (add --capture for images).",
+    "Wait for the producer OS process to exit. complete must be true in reports/martial-support-r43/cross-process-fixture.json.",
+    "Start a distinct Godot process with --path godot --script res://tests/native_martial_support_persistence_reload.gd (add -- --capture for images).",
+    "Review environment-runtime.json and cross-process-reload-verification.json, both support_fixtures, geometry_deltas, support_waits and live_support_samples. A failed or absent run is not certification."
+  ],
+  "actual_path": [
+    "Real R input fractures martial-rock. Original key and world origin, observed moving debris, real shapes, mesh transforms and settled pre-crater terrain contact are recorded.",
+    "martial-rock is unregistered as in the original runner. The actual R descent fractures martial-impact-rock and creates a physical crater.",
+    "After the crater exists, martial-rock is re-registered at the same original origin using normal register_entity. This avoids a second blast clearing the already-broken rock and lets the normal support queue adjust its saved pose to the crater.",
+    "Both rocks settle through normal environment physics. Final fragment geometry and terrain contacts are captured before the successful Main save.",
+    "Consumer uses unmodified Main disk restore, recreates both authored rocks at the recorded original origins, waits for normal support and debris settlement, then checks actual shape owners, first-hit rays, mesh pose, hull geometry and loaded terrain contact."
+  ],
+  "independent_geometry_evidence": {
+    "entity_ray": "Physics ray mask 1 records whether sampled external rays first hit the corresponding real part body inside mesh bounds. Only the player RID is excluded. Absence of an own-body first hit is an exposure observation, not proof that an enabled shape is invalid or completely enclosed.",
+    "entity_shape_overlap": "A 0.025 m sphere query at each enabled actual convex child's interior vertex centroid uses mask 1 without excluding any world bodies. Every enabled convex child must appear in actual intersect_shape results with both the expected body RID and its exact shape owner. All query poses, hits, group/entity/part tags and the 256-result cap are retained. No collision layer or body is modified. This independent probe is pending execution.",
+    "terrain_ray": "Direct world-space physics rays, mask 32 and native_terrain in the basin (mask 16 and native_planet_terrain outside). No analytic height fallback and no call to production _fragment_clearance.",
+    "contact": "Every unique actual mesh vertex from every surface is transformed by the actual MeshInstance3D global transform and probed against loaded terrain. Exact duplicate local vertices are deduplicated without stride sampling. Lowest clearance must be within 0.20 m, with no missing support. All per-vertex ray endpoints, hits/misses, RID, shape, terrain group/tag, impact-refined parent, normal and signed clearance are retained, including missing/penetrating indices and lowest/closest ray-surface contacts. This is a radial ray contact, not a global nearest-mesh-surface calculation.",
+    "enabled_shapes": "Records child CollisionShape3D enabled properties, backend enabled shape-owner counts, collision layers/masks and convex hull world bounds; verifies the original intact collider is inactive.",
+    "anchored_base": "The asset builder cuts the fixed stump from the original rock hull below local y=0.24; the hull deliberately extends below local ground. An unbroken stump is an authored anchored base, not a detached fragment. Embedded underside vertices do not fail a fragment no-penetration rule, but its lowest terrain clearance must still be <=0.20 m so crater-induced floating remains a failure. All original clearance evidence is retained.",
+    "cross_process_tolerance_m": 0.20,
+    "comparison": "Compares each mesh world origin, maximum corresponding unique vertex error across every surface, actual collision hull world bounds and terrain contact position. Body origins are recorded but may differ between a centered RigidBody and a reconstructed StaticBody; the transformed geometry must match."
+  },
+  "live_to_settled": "Snapshots are recorded only when a real unfrozen RigidBody appears in the environment debris list, at the actually observed age buckets. Final snapshots follow at least 12 consecutive quiet physics frames. Empty live_support_samples means no live motion was observed and must not be described as a live-motion pass.",
+  "bounded_wait": "At most 900 normal physics frames or 45 wall-clock seconds per support wait, with no manual process call, forced settle, freeze, direct import_state or skill.step.",
+  "caller_fixture_scope": "Inherited caller helpers explicitly reset realm, energy, health, position and martial cooldowns; producer stops and repositions hostile AI. These isolate deterministic actual authored targets. Main, Player, World, environment support and debris physics continue normally.",
+  "first_failure_review": {
+    "archive": "res://reports/martial-support-r43/first-failed",
+    "preserved": "All eight original report/log/image/hash files, complete:false handoff, original test sources and scope, with archive manifests. cpu-failure-audit.json retains original per-part geometry and occluder details.",
+    "martial_rock_base_before_crater": {"lowest_clearance_m": -0.228255197405815, "vertex": [94.6056137084961, -0.502245545387268, 164.256973266602], "terrain_rid": 1821066133512, "assessment": "Author-designed embedded base; the original absolute-clearance assertion applied the wrong role."},
+    "martial_rock_base_after_crater": {"lowest_clearance_m": 1.04759657382965, "vertex": [94.6056137084961, -0.502245545387268, 164.256973266602], "terrain_rid": 27088358735968, "assessment": "Real positive gap above refined crater terrain. Remains a required failure."},
+    "impact_rock_base_after_crater": {"lowest_clearance_m": 0.927302181720734, "vertex": [91.6056137084961, -0.487938284873962, 164.756973266602], "terrain_rid": 27088358735968, "assessment": "Real positive gap above refined crater terrain. Remains a required failure."},
+    "impact_rock_chunk_4": {"unique_vertices": 81, "lowest_clearance_m": 0.00164031772874296, "penetrating_vertices": 0, "external_rays": 30, "own_first_hits": 0, "terrain_first_hits": 10, "impact_chunk_1_first_hits": 8, "assessment": "Existing rays document occluders; they do not establish missing or disabled collision. Revised own-shape overlap must establish its RID and shape through a real physics query before this check can pass."},
+    "source_evidence": ["assets/planet-ecology-r4/build_ecology_r4.py:202-211 original hull", "assets/planet-ecology-r4/build_ecology_r4.py:246-249 anchored base cut", "scripts/native_environment_damage.gd:485-500 support roots and stump exclusion"]
+  },
+  "not_claimed": [
+    "Natural ecology distribution or natural streaming placement end-to-end",
+    "Moving-enemy AI integration",
+    "Natural player progression or cooldown balance",
+    "Whole-game completion",
+    "Performance benchmark unaffected by geometry sampling",
+    "Visual approval based only on numeric geometry checks"
+  ]
+}

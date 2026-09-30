@@ -1,0 +1,17 @@
+{
+  "scope": "Independent CPU headless service tests; test script parse failed before any assertions executed",
+  "generation": "ecology-r4.2",
+  "start_utc": "2026-09-29 16:36:31 UTC",
+  "end_utc": "2026-09-29 16:36:31 UTC",
+  "elapsed_seconds": 0.0557,
+  "exit_code": 1,
+  "assertions_executed": 0,
+  "pass": false,
+  "failures": [
+    {"file": "godot/tests/native_environment_damage_independent.gd", "line": 534, "message": "Cannot infer the type of removed variable because the value does not have a set type"},
+    {"file": "godot/tests/native_environment_damage_independent.gd", "line": 576, "message": "Cannot infer the type of removed_group variable because the value does not have a set type"},
+    {"file": "godot/tests/native_environment_damage_independent.gd", "line": 587, "message": "Cannot infer the type of removed_family variable because the value does not have a set type"}
+  ],
+  "deferred": ["All service assertions", "GPU MultiMesh visibility verification", "Final visual acceptance"],
+  "evidence_note": "This report records the observed runner result; no in-engine JSON report was produced because script parsing stopped initialization. The three errors belong to the independent test, not production source."
+}

@@ -1,0 +1,6 @@
+const {chromium}=require('@playwright/test'),{build}=require('esbuild'),fs=require('node:fs'),path=require('node:path');
+(async()=>{
+ const out=path.resolve('playable/assets/vehicles');fs.mkdirSync(out,{recursive:true});
+ const bundle=await build({entryPoints:['tools/export-skimmer-source.mjs'],bundle:true,format:'iife',write:false});
+ const browser=await chromium.launch({headless:true});try{const page=await browser.newPage();await page.setContent('<html></html>');await page.addScriptTag({content:bundle.outputFiles[0].text});const result=await page.evaluate(()=>window.exportSkimmer());const asset=Buffer.from(result.base64,'base64');fs.writeFileSync(path.join(out,'survey-skimmer-cockpit-v1.glb'),asset);const hash=b=>require('node:crypto').createHash('sha256').update(b).digest('hex');fs.writeFileSync(path.join(out,'source-manifest.json'),JSON.stringify({asset:hash(asset),sources:Object.fromEntries(['playable/src/vehicle-model.mjs','playable/src/vehicle-cockpit.mjs','playable/src/vehicle-rig.mjs'].map(f=>[f,hash(fs.readFileSync(f))]))},null,2));console.log(JSON.stringify({bytes:result.bytes,path:out}));}finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

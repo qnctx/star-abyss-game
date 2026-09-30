@@ -1,0 +1,408 @@
+{
+  "version": "DEV-I-R3",
+  "threadId": "01a094d9-4b8a-7890-a238-0effc66ca873",
+  "workspace": "C:\\Users\\HUAWEI\\.codex\\worktrees\\7737\\star-abyss-game",
+  "gitBaseline": "5fdb455d3c46601ebd584e64bcf72a2b5c82baf4",
+  "frozenAt": "2026-09-12T14:12:45.594Z",
+  "baseline": "DEV-I-R2",
+  "baselineFiles": [
+    {
+      "relative": "docs/development/reports/DEV-I.md",
+      "sha256": "2fa5cbdfa39c8976b5c8558432ae95f6a99cbfa1ee5f6d1eb475ffce7e130c84",
+      "bytes": 23169
+    },
+    {
+      "relative": "playable/src/d3-session/browser-evidence.json",
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2",
+      "bytes": 429937
+    },
+    {
+      "relative": "playable/src/d3-session/browser-verifier.mjs",
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c",
+      "bytes": 9329
+    },
+    {
+      "relative": "playable/src/d3-session/demo-fixture.mjs",
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830",
+      "bytes": 3871
+    },
+    {
+      "relative": "playable/src/d3-session/finalize-r2.cjs",
+      "sha256": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357",
+      "bytes": 2584
+    },
+    {
+      "relative": "playable/src/d3-session/finalize.cjs",
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be",
+      "bytes": 1862
+    },
+    {
+      "relative": "playable/src/d3-session/index.mjs",
+      "sha256": "ef2a19df4ee209864cf318df0e87b6e36673ef14f8cc3913362bfed879e0c687",
+      "bytes": 15122
+    },
+    {
+      "relative": "playable/src/d3-session/indexeddb.mjs",
+      "sha256": "60e180a2e4485b567b99c4cd42d7b65f2fc75b8b6fcbd65007620cf217236309",
+      "bytes": 3074
+    },
+    {
+      "relative": "playable/src/d3-session/node-tests-r2.tap",
+      "sha256": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122",
+      "bytes": 3119
+    },
+    {
+      "relative": "playable/src/d3-session/node-tests.tap",
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481",
+      "bytes": 2912
+    },
+    {
+      "relative": "playable/src/d3-session/r1-browser-regression-r2.json",
+      "sha256": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389",
+      "bytes": 4613027
+    },
+    {
+      "relative": "playable/src/d3-session/r1-independent-r2.mjs",
+      "sha256": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9",
+      "bytes": 14471
+    },
+    {
+      "relative": "playable/src/d3-session/r1-regression-r2.json",
+      "sha256": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce",
+      "bytes": 4894622
+    },
+    {
+      "relative": "playable/src/d3-session/replay-r1-r2.cjs",
+      "sha256": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b",
+      "bytes": 2192
+    },
+    {
+      "relative": "playable/src/d3-session/scene-browser-r2.json",
+      "sha256": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4",
+      "bytes": 4578925
+    },
+    {
+      "relative": "playable/src/d3-session/scene-cases-r2.mjs",
+      "sha256": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540",
+      "bytes": 10648
+    },
+    {
+      "relative": "playable/src/d3-session/scene-node-r2.json",
+      "sha256": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b",
+      "bytes": 4549428
+    },
+    {
+      "relative": "playable/src/d3-session/scene.mjs",
+      "sha256": "f7d5c9a1fd5d5a9075a5d064af65c032f4db08e818a6dabbead02fbeb430a0a2",
+      "bytes": 4780
+    },
+    {
+      "relative": "playable/src/d3-session/serve-r2.cjs",
+      "sha256": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96",
+      "bytes": 1411
+    },
+    {
+      "relative": "playable/src/d3-session/serve.cjs",
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51",
+      "bytes": 1318
+    },
+    {
+      "relative": "playable/src/d3-session/verify-dependencies.cjs",
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f",
+      "bytes": 1153
+    },
+    {
+      "relative": "playable/src/d3-session/verify-r2.html",
+      "sha256": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e",
+      "bytes": 2518
+    },
+    {
+      "relative": "playable/src/d3-session/verify.html",
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b",
+      "bytes": 1594
+    },
+    {
+      "relative": "playable/src/d3-session/version.json",
+      "sha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8",
+      "bytes": 3647
+    },
+    {
+      "relative": "playable/tests/d3-session.test.js",
+      "sha256": "3a574f1cb1f48e95fc2475a160986ad1629028de5208277950e141d3ed0ecb9a",
+      "bytes": 12411
+    },
+    {
+      "relative": "playable/src/d3-session/version-r2.json",
+      "sha256": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7",
+      "bytes": 9914
+    }
+  ],
+  "dependencies": [
+    {
+      "relative": "playable/src/d3-combat/fixed.mjs",
+      "sha256": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59"
+    },
+    {
+      "relative": "playable/src/d3-combat/index.mjs",
+      "sha256": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4"
+    },
+    {
+      "relative": "playable/src/d3-inventory/index.mjs",
+      "sha256": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566"
+    },
+    {
+      "relative": "playable/src/world-director/definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef"
+    },
+    {
+      "relative": "playable/src/world-director/director.mjs",
+      "sha256": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358"
+    },
+    {
+      "relative": "playable/src/world-director/rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02"
+    },
+    {
+      "relative": "playable/src/world-director/verification/replay-r1.cjs",
+      "sha256": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a"
+    }
+  ],
+  "files": [
+    {
+      "relative": "playable/src/d3-session/browser-evidence.json",
+      "bytes": 429937,
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2",
+      "previousSha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2"
+    },
+    {
+      "relative": "playable/src/d3-session/browser-verifier.mjs",
+      "bytes": 9329,
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c",
+      "previousSha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c"
+    },
+    {
+      "relative": "playable/src/d3-session/demo-fixture.mjs",
+      "bytes": 3871,
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830",
+      "previousSha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830"
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/adapter.json",
+      "bytes": 15451,
+      "sha256": "b0d88e298e241cd462d10083e1c70eebcb1c02500afde827b8c4da314cfe8617",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/baseline.json",
+      "bytes": 4767,
+      "sha256": "385ff61eac9295b0fab856e7406bbcc10cc0467d6b130d5dccb7054f580e9906",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/browser.json",
+      "bytes": 1491916,
+      "sha256": "689fb4bdeb23c18a080e989e5085539445806c4e471f10f634a46cffcd3b18d2",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/cases.mjs",
+      "bytes": 7102,
+      "sha256": "ed627b5f5f6209092a8ba2ff15474847fd7f1399048dbda8e04be4b268498762",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/finalize.cjs",
+      "bytes": 2706,
+      "sha256": "15d6d977e78753ca8ca02d98cb4be8fffd0142e82ee0ed026e17508b3e226236",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/node.json",
+      "bytes": 1489713,
+      "sha256": "f6f6fc7e8fda64553c49ccd4315374930f764b61be474828b0482928a5d11d49",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/node.tap",
+      "bytes": 3298,
+      "sha256": "aa669eaa330762b3acbe72846759eeae50149044856a216eb66c09c4f792669b",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/r2-browser-regression.json",
+      "bytes": 4646578,
+      "sha256": "c6e48e03d48adb564cd016338595ed499cb1f16b520b077354e613699b1c697b",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/r2-node-regression.json",
+      "bytes": 4549542,
+      "sha256": "46e036ad209a669da1edb395c12b3edc54a7077662c523bababafe5439b8d2f3",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/refresh.json",
+      "bytes": 35981,
+      "sha256": "3a1e83e7fab7ebe00b2298d7ac00c25f89ee353a7fc3f449cba540cc0edfc168",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/serve.cjs",
+      "bytes": 1219,
+      "sha256": "cbfd8d7cfab1ee03e81b9b7d2f26d5e6963fdb55d1e713696f0a1cf3507109fd",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/evidence-r3/verify.html",
+      "bytes": 4415,
+      "sha256": "2c26435fb0814502f0a0484e74cf6090c25850af390decc468cb8b31ffcc3fcb",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/finalize-r2.cjs",
+      "bytes": 2584,
+      "sha256": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357",
+      "previousSha256": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357"
+    },
+    {
+      "relative": "playable/src/d3-session/finalize.cjs",
+      "bytes": 1862,
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be",
+      "previousSha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be"
+    },
+    {
+      "relative": "playable/src/d3-session/index.mjs",
+      "bytes": 15324,
+      "sha256": "2f2511939da9432ef91050683746fb009bf8624f94c1fcc857077bea7b290138",
+      "previousSha256": "ef2a19df4ee209864cf318df0e87b6e36673ef14f8cc3913362bfed879e0c687"
+    },
+    {
+      "relative": "playable/src/d3-session/indexeddb.mjs",
+      "bytes": 3958,
+      "sha256": "90889958782525218e52d9f23f7f68fda910dd658a3eebb3506ae9e6fc28615d",
+      "previousSha256": "60e180a2e4485b567b99c4cd42d7b65f2fc75b8b6fcbd65007620cf217236309"
+    },
+    {
+      "relative": "playable/src/d3-session/node-tests-r2.tap",
+      "bytes": 3119,
+      "sha256": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122",
+      "previousSha256": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122"
+    },
+    {
+      "relative": "playable/src/d3-session/node-tests.tap",
+      "bytes": 2912,
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481",
+      "previousSha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481"
+    },
+    {
+      "relative": "playable/src/d3-session/prepare-r3.cjs",
+      "bytes": 1178,
+      "sha256": "871200879fd1d957e0dc61467b18be73342c65918decc3a8b4d57395c80e8893",
+      "previousSha256": null
+    },
+    {
+      "relative": "playable/src/d3-session/r1-browser-regression-r2.json",
+      "bytes": 4613027,
+      "sha256": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389",
+      "previousSha256": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389"
+    },
+    {
+      "relative": "playable/src/d3-session/r1-independent-r2.mjs",
+      "bytes": 14471,
+      "sha256": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9",
+      "previousSha256": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9"
+    },
+    {
+      "relative": "playable/src/d3-session/r1-regression-r2.json",
+      "bytes": 4894622,
+      "sha256": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce",
+      "previousSha256": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce"
+    },
+    {
+      "relative": "playable/src/d3-session/replay-r1-r2.cjs",
+      "bytes": 2192,
+      "sha256": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b",
+      "previousSha256": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b"
+    },
+    {
+      "relative": "playable/src/d3-session/scene-browser-r2.json",
+      "bytes": 4578925,
+      "sha256": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4",
+      "previousSha256": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4"
+    },
+    {
+      "relative": "playable/src/d3-session/scene-cases-r2.mjs",
+      "bytes": 10648,
+      "sha256": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540",
+      "previousSha256": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540"
+    },
+    {
+      "relative": "playable/src/d3-session/scene-node-r2.json",
+      "bytes": 4549428,
+      "sha256": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b",
+      "previousSha256": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b"
+    },
+    {
+      "relative": "playable/src/d3-session/scene.mjs",
+      "bytes": 5539,
+      "sha256": "ac1c5d63f3aa853b5434e3936b5ba36382cc2b75bd9845d27f064dee796c360e",
+      "previousSha256": "f7d5c9a1fd5d5a9075a5d064af65c032f4db08e818a6dabbead02fbeb430a0a2"
+    },
+    {
+      "relative": "playable/src/d3-session/serve-r2.cjs",
+      "bytes": 1411,
+      "sha256": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96",
+      "previousSha256": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96"
+    },
+    {
+      "relative": "playable/src/d3-session/serve.cjs",
+      "bytes": 1318,
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51",
+      "previousSha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51"
+    },
+    {
+      "relative": "playable/src/d3-session/verify-dependencies.cjs",
+      "bytes": 1153,
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f",
+      "previousSha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f"
+    },
+    {
+      "relative": "playable/src/d3-session/verify-r2.html",
+      "bytes": 2518,
+      "sha256": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e",
+      "previousSha256": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e"
+    },
+    {
+      "relative": "playable/src/d3-session/verify.html",
+      "bytes": 1594,
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b",
+      "previousSha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b"
+    },
+    {
+      "relative": "playable/src/d3-session/version-r2.json",
+      "bytes": 9914,
+      "sha256": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7",
+      "previousSha256": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7"
+    },
+    {
+      "relative": "playable/src/d3-session/version.json",
+      "bytes": 3647,
+      "sha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8",
+      "previousSha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8"
+    },
+    {
+      "relative": "playable/tests/d3-session.test.js",
+      "bytes": 13504,
+      "sha256": "a57881ca8b7c622ba236d1e6c30d457f609f809767b8f6756e26b5909f5b0336",
+      "previousSha256": "3a574f1cb1f48e95fc2475a160986ad1629028de5208277950e141d3ed0ecb9a"
+    },
+    {
+      "relative": "docs/development/reports/DEV-I.md",
+      "bytes": 31043,
+      "sha256": "4939bd4e32b400ac1cfae3ef00f9811267e20a4c16d48a2a825222e0a37436cd",
+      "previousSha256": "2fa5cbdfa39c8976b5c8558432ae95f6a99cbfa1ee5f6d1eb475ffce7e130c84"
+    }
+  ],
+  "node": "15/15 (R2 seven groups + R3 five groups inside two wrapper tests)",
+  "browser": "R3 5/5 + adapter 1/1 + R2 7/7 + actual page refresh"
+}

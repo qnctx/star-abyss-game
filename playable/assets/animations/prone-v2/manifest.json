@@ -1,0 +1,29 @@
+{
+  "asset": "1079b3104d6c9371cc2223ddfe713849b6b8449ff713a4d737898f5585cf1bb1",
+  "bytes": 18560620,
+  "joints": 19,
+  "clips": [
+    {
+      "name": "ProneDown",
+      "duration": 0.9
+    },
+    {
+      "name": "ProneIdle",
+      "duration": 2
+    },
+    {
+      "name": "ProneCrawl",
+      "duration": 2
+    },
+    {
+      "name": "ProneUp",
+      "duration": 0.9
+    }
+  ],
+  "sources": {
+    "playable/src/tactical-pose.mjs": "6bdf55c57adc468c9722e04561587dc4224bf8933635e990e75058f21435650b",
+    "playable/src/character-retarget.mjs": "1cf93bb992b80eb2d18bc04d4af8f30136bb4a7a07b7df4ac7fac61d33733520",
+    "playable/src/prone-hands.mjs": "96997889b289d9ba21f3abb60a399c2e81618e427189a224248de2dc569d11bd",
+    "playable/src/character-asset.mjs": "6ef631fd1510cd6460d94de694abe8ba72b1a948847bb83edef65e564db42fe4"
+  }
+}

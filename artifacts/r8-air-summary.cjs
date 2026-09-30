@@ -1,0 +1,1 @@
+const r=require('./r8-air-check/report.json');console.log(JSON.stringify(r.realms.map(x=>({realm:x.realm,sha:x.bundleSHA,states:x.states.map(s=>({label:s.label,active:s.ascension?.active,enemies:s.enemies?.map(e=>({id:e.id,hp:e.hp})),created:s.drops?.filter(d=>d.created).length,keys:Object.keys(s)}))})),null,2));

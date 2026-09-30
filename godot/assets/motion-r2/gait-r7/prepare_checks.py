@@ -1,0 +1,11 @@
+from pathlib import Path
+p=Path('godot/assets/motion-r2')
+export=(p/'gait-r6/verify_export.py').read_text()
+export=export.replace("target=p/('gait-r6/candidate.glb' if '--candidate' in sys.argv else 'c2-motion-r2.glb')", "target=p/'gait-r7/candidate.glb'")
+export=export.replace("p/'source/gait-r6-before/c2-motion-r2.glb'", "p/'source/gait-r7-before/c2-motion-r2.glb'")
+export=export.replace("(p/('gait-r6/candidate-export-check.json' if '--candidate' in sys.argv else 'gait-r6/export-check.json'))", "(p/'gait-r7/export-check.json')")
+target=p/'gait-r7/verify_export.py';assert not target.exists();target.write_text(export)
+dense=(p/'gait-r6/verify_source_dense.py').read_text()
+dense=dense.replace("source=p/('source/gait-r6-candidate/candidate.blend' if '--candidate' in sys.argv else 'source/c2-motion-r2.blend')", "source=p/'source/gait-r7-candidate/candidate.blend'")
+dense=dense.replace("p/'gait-r6/dense-source-check.json'", "p/'gait-r7/dense-source-check.json'")
+target=p/'gait-r7/verify_source_dense.py';assert not target.exists();target.write_text(dense)

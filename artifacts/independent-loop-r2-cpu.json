@@ -1,0 +1,33 @@
+{
+  "source": "C:/Users/HUAWEI/.codex/worktrees/cb21/star-abyss-game/artifacts/npc-loop-breakthrough/medicine-crafted-and-used.json",
+  "initial": {
+    "revision": 50,
+    "simTime": 40.681866666666146,
+    "dueAt": 43.681866666666146,
+    "medicine": [
+      {
+        "quantity": 1,
+        "status": "locked"
+      }
+    ],
+    "cooldownUntil": 0,
+    "questStatus": "active",
+    "evidence": {
+      "gathered": {
+        "moon-moss": 3,
+        "meteor-iron": 2
+      },
+      "kills": 1,
+      "bloodStudy": true
+    },
+    "questReady": true
+  },
+  "reducerOnly": {
+    "earlyUseRejected": true,
+    "afterDueUseCleared": true,
+    "medicineRemaining": 0,
+    "cooldownUntil": 88.68186666666614,
+    "q01Status": "claimed"
+  },
+  "limitation": "Reducer replay does not verify runtime authorization, browser timing, persistent CAS, or natural level-one completion."
+}

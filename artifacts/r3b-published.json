@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "bundleSHA": "fd8906d3ef11f4cec49976a94ab79f9b58d6fe9b9343b50072ae66be202e51bc",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\artifacts\\r3b-release-backup-1790335701962",
+  "files": [
+    "playable/game.js",
+    "playable/src/dynamic-shadow-scheduler.mjs",
+    "playable/src/dynamic-shadow-scheduler.test.mjs",
+    "playable/src/scene.mjs",
+    "playable/src/main.mjs",
+    "playable/src/progression-quests/scene.mjs",
+    "playable/src/progression-quests/scene.test.mjs",
+    "playable/src/foundation/camp-scene.mjs",
+    "playable/src/render-budget.mjs",
+    "playable/tests/render-budget.test.js",
+    "docs/development/CAMP-SHADOW-R3.md",
+    "playable/src/planet/scene-adapter.mjs",
+    "playable/tests/planet-legacy-chunk-cull-r3.test.mjs",
+    "docs/development/PLANET-LEGACY-CULL-R3.md"
+  ],
+  "untouched": 397
+}

@@ -1,0 +1,46 @@
+{
+  "baselineSHA": "710efb5b57120cb081ab90558314799e3ba27bdc1092e65e74b41e661d04b5ac",
+  "before": {
+    "raf": {
+      "count": 25,
+      "p50": 1450,
+      "p95": 1866.6000000000058,
+      "p99": 2616.5999999999767,
+      "max": 2616.5999999999767,
+      "over33": 24,
+      "over50": 24
+    },
+    "startPlayer": {
+      "x": 0,
+      "z": 190,
+      "heading": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "vx": 0,
+      "vz": 0,
+      "y": 0,
+      "spaceHoldTime": 0,
+      "eyeHeight": 1.72,
+      "lean": 0
+    },
+    "endPlayer": {
+      "x": 3.147404074466659,
+      "z": 186.3966742727795,
+      "heading": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "vx": 0.00014527504922041122,
+      "vz": -6.938091431934884e-9,
+      "y": 0,
+      "spaceHoldTime": 0,
+      "eyeHeight": 1.72,
+      "lean": 0
+    },
+    "ratio": 1,
+    "calls": 313,
+    "triangles": 674584,
+    "revision": 2,
+    "errors": [],
+    "workers": []
+  }
+}

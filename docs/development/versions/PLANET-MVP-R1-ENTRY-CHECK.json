@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-16T12:50:01.128Z",
+  "rows": [
+    {
+      "path": "star-abyss.html",
+      "status": 200,
+      "bytes": 16280,
+      "sha256": "0a989b580529b785079a966459149fb76ca402cfddbab249a5657f255ff764b3"
+    },
+    {
+      "path": "game.js?v=planet-mvp-r1",
+      "status": 200,
+      "bytes": 21669410,
+      "sha256": "c1c0baba42b3ce5e7ccbaf6a97f39ea9b153f542db3961f6b2b1abebcd3557e0"
+    },
+    {
+      "path": "css/game.css",
+      "status": 200,
+      "bytes": 32547,
+      "sha256": "7257dc798c70a15e67b60b1ad44f6a536a375da5b61aa1e4089213aa76b1b407"
+    },
+    {
+      "path": "assets/environments/phase1/basalt-albedo.png",
+      "status": 200,
+      "bytes": 3643836,
+      "sha256": "d31afc9865f08cbf84f4c4cd5a95a7e6aca5441271dc8764276c013ef8c8e841"
+    },
+    {
+      "path": "assets/creatures/rift-prowler-v1/rift-prowler.glb",
+      "status": 200,
+      "bytes": 9029072,
+      "sha256": "39c6cc6ddafd84f9d269026618dec68f69eb6038bbd7810245a3376f22caf879"
+    }
+  ]
+}

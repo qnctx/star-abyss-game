@@ -1,0 +1,20 @@
+{
+  "type": "standalone headless WebGL asset preview; not gameplay",
+  "errors": [],
+  "ready": true,
+  "metrics": {
+    "tree": {
+      "triangles": 4420,
+      "instances": 2
+    },
+    "reed": {
+      "triangles": 846,
+      "instances": 12
+    },
+    "pebble": {
+      "triangles": 630,
+      "instances": 15
+    }
+  },
+  "drawCalls": 4
+}

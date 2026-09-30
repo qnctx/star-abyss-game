@@ -1,0 +1,17 @@
+{
+  "flight": {
+    "source": "native_planet_product_flight_verify.gd",
+    "source_sha": "1057152f46a8f33390665659160af325d66ab62eb856db3c91425bdfeb96cf5b",
+    "adapted_sha": "973df4cec700fd765151d4655f09faeb57753e0b233615b5414a5af48cfa4f93"
+  },
+  "edge": {
+    "source": "native_planet_edge_cross_verify.gd",
+    "source_sha": "1409d9045821c5d1ac8f863dfa7336d96540f16734868ce6edeb068f6b983c0b",
+    "adapted_sha": "3e040eb6504b0e5de9bb8229595d93a76c7ae1573515dc857d30905d56b736c6"
+  },
+  "vehicle": {
+    "source": "native_planet_vehicle_verify.gd",
+    "source_sha": "f4dd638ca3a16e2809047ba340dead49d6efc9e01aa2863e3f4a64cb3d3cfd32",
+    "adapted_sha": "43f424519b869e49eee70309cc32baca922c6a1e0c33e0513ed0498233fac881"
+  }
+}

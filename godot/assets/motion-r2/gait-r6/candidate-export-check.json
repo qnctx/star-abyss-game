@@ -1,0 +1,61 @@
+{
+  "animation_count": 29,
+  "changed_animation_names": [
+    "jog",
+    "sprint",
+    "walk"
+  ],
+  "protected_26_exported_clips_identical": true,
+  "mesh_attributes_indices_material_assignment_identical": true,
+  "inverse_bind_accessors_identical": true,
+  "material_json_identical": true,
+  "embedded_texture_bytes_identical": true,
+  "joint_count": 51,
+  "glb_sha256": "1aca36aaf92094bee3b2a1f596b0cfdb51a6c2d2c3280c3425737fbf7c13e5b2",
+  "image_comparison": {
+    "before": [
+      [
+        "back",
+        "image/png",
+        "ea6c2177ad1de3cd105630b0ec6c926a0ccb4618e17f74e573151554fa354d03"
+      ],
+      [
+        "C2_GloveLeather_R3",
+        "image/png",
+        "003e50ef1813eb66c668de6b0c88507380d4a8e174de43567af52d5413257e8e"
+      ],
+      [
+        "Image_0",
+        "image/png",
+        "425c032a64c0baec365f6b4f52ee3fd3f9bab83d4884432a8fe23f5b4d0acbf1"
+      ],
+      [
+        "Image_1",
+        "image/png",
+        "86a4e2512a939cf83df70087da080033765cd690dde0295f5364e2a5da34d221"
+      ]
+    ],
+    "after": [
+      [
+        "back",
+        "image/png",
+        "ea6c2177ad1de3cd105630b0ec6c926a0ccb4618e17f74e573151554fa354d03"
+      ],
+      [
+        "glove-leather-r3",
+        "image/png",
+        "003e50ef1813eb66c668de6b0c88507380d4a8e174de43567af52d5413257e8e"
+      ],
+      [
+        "Image_0",
+        "image/png",
+        "425c032a64c0baec365f6b4f52ee3fd3f9bab83d4884432a8fe23f5b4d0acbf1"
+      ],
+      [
+        "Image_1",
+        "image/png",
+        "86a4e2512a939cf83df70087da080033765cd690dde0295f5364e2a5da34d221"
+      ]
+    ]
+  }
+}

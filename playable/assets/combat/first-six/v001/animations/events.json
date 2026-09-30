@@ -1,0 +1,49 @@
+{
+  "joints": 19,
+  "clips": [
+    "WS01",
+    "WS03",
+    "ES05",
+    "ES13",
+    "HS04",
+    "HS06"
+  ],
+  "events": [
+    {
+      "skillId": "WS01",
+      "release": 0.35,
+      "activeEnd": 0.47,
+      "recoveryEnd": 0.87
+    },
+    {
+      "skillId": "WS03",
+      "release": 0.2,
+      "activeEnd": 0.32,
+      "recoveryEnd": 0.62
+    },
+    {
+      "skillId": "ES05",
+      "release": 0.4,
+      "activeEnd": 0.4,
+      "recoveryEnd": 0.7
+    },
+    {
+      "skillId": "ES13",
+      "release": 0.8,
+      "activeEnd": 0.8,
+      "recoveryEnd": 1.2000000000000002
+    },
+    {
+      "skillId": "HS04",
+      "release": 0.4,
+      "activeEnd": 0.4,
+      "recoveryEnd": 0.8
+    },
+    {
+      "skillId": "HS06",
+      "release": 0.25,
+      "activeEnd": 0.25,
+      "recoveryEnd": 0.55
+    }
+  ]
+}

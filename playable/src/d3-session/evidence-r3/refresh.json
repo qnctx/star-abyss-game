@@ -1,0 +1,840 @@
+{
+  "pass": true,
+  "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24",
+  "revision": 9,
+  "root": {
+    "combat": {
+      "actors": [
+        {
+          "attack": "4",
+          "barriers": [],
+          "defense": "0",
+          "hp": "100",
+          "id": "player",
+          "level": 1,
+          "maxHp": "100",
+          "realm": 0,
+          "resistance": "0",
+          "resource": "100",
+          "shields": [],
+          "spellPower": "0"
+        },
+        {
+          "attack": "300",
+          "barriers": [],
+          "defeatEligible": true,
+          "defense": "80",
+          "hp": "9",
+          "id": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+          "level": 1,
+          "maxHp": "10",
+          "realm": 0,
+          "resistance": "0",
+          "resource": "100",
+          "shields": [],
+          "spellPower": "0"
+        },
+        {
+          "attack": "300",
+          "barriers": [],
+          "defeatEligible": true,
+          "defense": "80",
+          "hp": "10",
+          "id": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]",
+          "level": 1,
+          "maxHp": "10",
+          "realm": 0,
+          "resistance": "0",
+          "resource": "100",
+          "shields": [],
+          "spellPower": "0"
+        }
+      ],
+      "casts": [
+        {
+          "castId": "cast",
+          "cost": "0",
+          "interrupted": true,
+          "resourceKind": "capacitor",
+          "signature": "{\"castId\":\"cast\",\"skill\":{\"channel\":\"physical\",\"id\":\"basic\",\"kind\":\"basic\",\"maxTargets\":20,\"minimumRealm\":0,\"weights\":[\"0.25\",\"0.25\",\"0.5\"]},\"sourceId\":\"player\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "snapshot": {
+            "learnedTier": 0,
+            "mastery": 1,
+            "maxTargets": 20,
+            "raw": "4",
+            "segments": [
+              [
+                {
+                  "amount": "1",
+                  "channel": "physical",
+                  "element": null,
+                  "id": "main",
+                  "penetration": {
+                    "flat": "0",
+                    "percent": "0"
+                  }
+                }
+              ],
+              [
+                {
+                  "amount": "1",
+                  "channel": "physical",
+                  "element": null,
+                  "id": "main",
+                  "penetration": {
+                    "flat": "0",
+                    "percent": "0"
+                  }
+                }
+              ],
+              [
+                {
+                  "amount": "2",
+                  "channel": "physical",
+                  "element": null,
+                  "id": "main",
+                  "penetration": {
+                    "flat": "0",
+                    "percent": "0"
+                  }
+                }
+              ]
+            ],
+            "skillId": "basic",
+            "source": {
+              "attack": "4",
+              "realm": 0,
+              "spellPower": "0"
+            },
+            "total": "4"
+          },
+          "sourceId": "player",
+          "targets": [
+            {
+              "carry": "0.33333333",
+              "carryExact": {
+                "denominator": "3",
+                "numerator": "1"
+              },
+              "targetId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+            }
+          ]
+        },
+        {
+          "castId": "fatal",
+          "cost": "0",
+          "interrupted": true,
+          "resourceKind": "capacitor",
+          "signature": "{\"castId\":\"fatal\",\"skill\":{\"channel\":\"physical\",\"id\":\"bite\",\"kind\":\"basic\",\"minimumRealm\":0},\"sourceId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "snapshot": {
+            "learnedTier": 0,
+            "mastery": 1,
+            "maxTargets": 1,
+            "raw": "300",
+            "segments": [
+              [
+                {
+                  "amount": "300",
+                  "channel": "physical",
+                  "element": null,
+                  "id": "main",
+                  "penetration": {
+                    "flat": "0",
+                    "percent": "0"
+                  }
+                }
+              ]
+            ],
+            "skillId": "bite",
+            "source": {
+              "attack": "300",
+              "realm": 0,
+              "spellPower": "0"
+            },
+            "total": "300"
+          },
+          "sourceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+          "targets": [
+            {
+              "carry": "0",
+              "carryExact": {
+                "denominator": "1",
+                "numerator": "0"
+              },
+              "targetId": "player"
+            }
+          ]
+        }
+      ],
+      "hits": [
+        {
+          "castId": "cast",
+          "hitId": "hit-0",
+          "result": {
+            "carry": "0.33333333",
+            "carryExact": {
+              "denominator": "3",
+              "numerator": "1"
+            },
+            "components": [
+              {
+                "barrierAbsorption": [],
+                "beforePersonalShield": "0.33333333",
+                "channel": "physical",
+                "componentId": "main",
+                "effectiveDefense": "80",
+                "element": null,
+                "incoming": "1",
+                "lifeLoss": "0",
+                "overflow": "1",
+                "shieldAbsorption": []
+              }
+            ],
+            "defeated": false,
+            "lifeLoss": "0",
+            "target": {
+              "attack": "300",
+              "barriers": [],
+              "defeatEligible": true,
+              "defense": "80",
+              "hp": "10",
+              "id": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+              "level": 1,
+              "maxHp": "10",
+              "realm": 0,
+              "resistance": "0",
+              "resource": "100",
+              "shields": [],
+              "spellPower": "0"
+            }
+          },
+          "segment": 0,
+          "signature": "{\"castId\":\"cast\",\"hitId\":\"hit-0\",\"segment\":0,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "targetId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+        },
+        {
+          "castId": "cast",
+          "hitId": "hit-1",
+          "result": {
+            "carry": "0.66666666",
+            "carryExact": {
+              "denominator": "3",
+              "numerator": "2"
+            },
+            "components": [
+              {
+                "barrierAbsorption": [],
+                "beforePersonalShield": "0.33333333",
+                "channel": "physical",
+                "componentId": "main",
+                "effectiveDefense": "80",
+                "element": null,
+                "incoming": "1",
+                "lifeLoss": "0",
+                "overflow": "1",
+                "shieldAbsorption": []
+              }
+            ],
+            "defeated": false,
+            "lifeLoss": "0",
+            "target": {
+              "attack": "300",
+              "barriers": [],
+              "defeatEligible": true,
+              "defense": "80",
+              "hp": "10",
+              "id": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+              "level": 1,
+              "maxHp": "10",
+              "realm": 0,
+              "resistance": "0",
+              "resource": "100",
+              "shields": [],
+              "spellPower": "0"
+            }
+          },
+          "segment": 1,
+          "signature": "{\"castId\":\"cast\",\"hitId\":\"hit-1\",\"segment\":1,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "targetId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+        },
+        {
+          "castId": "cast",
+          "hitId": "hit-2",
+          "result": {
+            "carry": "0.33333333",
+            "carryExact": {
+              "denominator": "3",
+              "numerator": "1"
+            },
+            "components": [
+              {
+                "barrierAbsorption": [],
+                "beforePersonalShield": "0.66666666",
+                "channel": "physical",
+                "componentId": "main",
+                "effectiveDefense": "80",
+                "element": null,
+                "incoming": "2",
+                "lifeLoss": "1",
+                "overflow": "2",
+                "shieldAbsorption": []
+              }
+            ],
+            "defeated": false,
+            "lifeLoss": "1",
+            "target": {
+              "attack": "300",
+              "barriers": [],
+              "defeatEligible": true,
+              "defense": "80",
+              "hp": "9",
+              "id": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+              "level": 1,
+              "maxHp": "10",
+              "realm": 0,
+              "resistance": "0",
+              "resource": "100",
+              "shields": [],
+              "spellPower": "0"
+            }
+          },
+          "segment": 2,
+          "signature": "{\"castId\":\"cast\",\"hitId\":\"hit-2\",\"segment\":2,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "targetId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+        },
+        {
+          "castId": "fatal",
+          "hitId": "fatal-hit",
+          "result": {
+            "carry": "0",
+            "carryExact": {
+              "denominator": "1",
+              "numerator": "0"
+            },
+            "components": [
+              {
+                "barrierAbsorption": [],
+                "beforePersonalShield": "300",
+                "channel": "physical",
+                "componentId": "main",
+                "effectiveDefense": "0",
+                "element": null,
+                "incoming": "300",
+                "lifeLoss": "100",
+                "overflow": "300",
+                "shieldAbsorption": []
+              }
+            ],
+            "defeated": true,
+            "lifeLoss": "100",
+            "target": {
+              "attack": "4",
+              "barriers": [],
+              "defense": "0",
+              "hp": "0",
+              "id": "player",
+              "level": 1,
+              "maxHp": "100",
+              "realm": 0,
+              "resistance": "0",
+              "resource": "100",
+              "shields": [],
+              "spellPower": "0"
+            }
+          },
+          "segment": 0,
+          "signature": "{\"castId\":\"fatal\",\"hitId\":\"fatal-hit\",\"segment\":0,\"targetId\":\"player\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+          "targetId": "player"
+        }
+      ],
+      "practice": [],
+      "version": 2,
+      "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+    },
+    "director": {
+      "anchors": {
+        "Z0-HERB-01": {
+          "current": null,
+          "generation": -1,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        },
+        "Z0-LAIR-01": {
+          "current": {
+            "anchorId": "Z0-LAIR-01",
+            "combination": {
+              "appearance": "a",
+              "count": 2,
+              "family": "M00",
+              "id": "east-pair",
+              "layout": "east-entry",
+              "route": "east-patrol",
+              "weight": 1
+            },
+            "compositionFingerprint": "[\"M00\",2,\"east-entry\",\"east-patrol\",\"a\",[]]",
+            "consumptionEvents": [],
+            "cooldownSeconds": 570,
+            "generation": 0,
+            "instanceId": "[\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\",\"Z0-LAIR-01\",0]",
+            "kind": "monster",
+            "lifeState": "active",
+            "lootProfileId": "BIO-R0-NORMAL-V1",
+            "lootSeed": 0.30620888294652104,
+            "members": [
+              {
+                "consumed": false,
+                "instanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+                "lootSeed": 0.5032030350994319
+              },
+              {
+                "consumed": false,
+                "instanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]",
+                "lootSeed": 0.4974168031476438
+              }
+            ],
+            "offlineCredit": true,
+            "placementId": "Z0-LAIR-01",
+            "planId": "[\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\",\"Z0-LAIR-01\",0,\"plan\"]",
+            "qualityProfileId": null,
+            "qualitySeed": 0.8818589593283832,
+            "remaining": 2,
+            "rulesVersion": "DEV-C-1",
+            "tokenId": null,
+            "viewAcknowledged": false
+          },
+          "generation": 0,
+          "history": [],
+          "plan": null,
+          "reservation": null,
+          "token": null
+        }
+      },
+      "offlineHighWater": 0,
+      "revision": 5,
+      "rngVersion": "fnv1a-utf8-mulberry32-v1",
+      "schemaVersion": 1,
+      "simHighWater": 2,
+      "transactions": {
+        "[\"reserve\",\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0,\\\"plan\\\"]\"]": {
+          "result": {
+            "planId": "[\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\",\"Z0-LAIR-01\",0,\"plan\"]",
+            "reservationId": "[\"reservation\",\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0,\\\"plan\\\"]\"]",
+            "revision": 4
+          },
+          "signature": "{\"op\":\"reserve\",\"plan\":{\"anchorId\":\"Z0-LAIR-01\",\"combination\":{\"appearance\":\"a\",\"count\":2,\"family\":\"M00\",\"id\":\"east-pair\",\"layout\":\"east-entry\",\"route\":\"east-patrol\",\"weight\":1},\"compositionFingerprint\":\"[\\\"M00\\\",2,\\\"east-entry\\\",\\\"east-patrol\\\",\\\"a\\\",[]]\",\"cooldownSeconds\":570,\"generation\":0,\"kind\":\"monster\",\"lootProfileId\":\"BIO-R0-NORMAL-V1\",\"lootSeed\":0.30620888294652104,\"offlineCredit\":true,\"placementId\":\"Z0-LAIR-01\",\"planId\":\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0,\\\"plan\\\"]\",\"qualityProfileId\":null,\"qualitySeed\":0.8818589593283832,\"rulesVersion\":\"DEV-C-1\",\"tokenId\":null}}"
+        },
+        "[\"session\",\"spawn\",\"05-real-defeat-rescue-large-map-retains-enemy-injury-26\"]": {
+          "result": {
+            "anchorId": "Z0-LAIR-01",
+            "combination": {
+              "appearance": "a",
+              "count": 2,
+              "family": "M00",
+              "id": "east-pair",
+              "layout": "east-entry",
+              "route": "east-patrol",
+              "weight": 1
+            },
+            "compositionFingerprint": "[\"M00\",2,\"east-entry\",\"east-patrol\",\"a\",[]]",
+            "consumptionEvents": [],
+            "cooldownSeconds": 570,
+            "generation": 0,
+            "instanceId": "[\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\",\"Z0-LAIR-01\",0]",
+            "kind": "monster",
+            "lifeState": "active",
+            "lootProfileId": "BIO-R0-NORMAL-V1",
+            "lootSeed": 0.30620888294652104,
+            "members": [
+              {
+                "consumed": false,
+                "instanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+                "lootSeed": 0.5032030350994319
+              },
+              {
+                "consumed": false,
+                "instanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]",
+                "lootSeed": 0.4974168031476438
+              }
+            ],
+            "offlineCredit": true,
+            "placementId": "Z0-LAIR-01",
+            "planId": "[\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\",\"Z0-LAIR-01\",0,\"plan\"]",
+            "qualityProfileId": null,
+            "qualitySeed": 0.8818589593283832,
+            "remaining": 2,
+            "rulesVersion": "DEV-C-1",
+            "tokenId": null,
+            "viewAcknowledged": false
+          },
+          "signature": "{\"anchorId\":\"Z0-LAIR-01\",\"op\":\"commitPlan\",\"reservationId\":\"[\\\"reservation\\\",\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0,\\\\\\\"plan\\\\\\\"]\\\"]\"}"
+        },
+        "initial-claim": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              },
+              {
+                "action": "claim",
+                "fragmentIds": [],
+                "ownerId": "player",
+                "transactionId": "initial-claim"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": "player",
+            "revision": 2,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "claimed",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+          },
+          "signature": "{\"action\":\"claim\",\"expectedUniqueRevision\":1,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":\"player\",\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-manifest": {
+          "result": {
+            "fragments": [],
+            "history": [
+              {
+                "action": "manifest",
+                "fragmentIds": [],
+                "ownerId": null,
+                "transactionId": "initial-manifest"
+              }
+            ],
+            "itemInstanceId": "original-weapon",
+            "ownerId": null,
+            "revision": 1,
+            "rootArtifactId": "original-root",
+            "sourceEventId": "authored-initial-unique",
+            "status": "manifested",
+            "uniqueDefinitionId": "MYW-demo",
+            "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+          },
+          "signature": "{\"action\":\"manifest\",\"expectedUniqueRevision\":0,\"fragmentIds\":[],\"op\":\"uniqueTransition\",\"ownerId\":null,\"uniqueDefinitionId\":\"MYW-demo\"}"
+        },
+        "initial-reservation": {
+          "result": [
+            {
+              "fragments": [],
+              "history": [],
+              "itemInstanceId": "original-weapon",
+              "ownerId": null,
+              "revision": 0,
+              "rootArtifactId": "original-root",
+              "sourceEventId": "authored-initial-unique",
+              "status": "reserved",
+              "uniqueDefinitionId": "MYW-demo",
+              "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+            }
+          ],
+          "signature": "{\"claims\":[{\"itemInstanceId\":\"original-weapon\",\"rootArtifactId\":\"original-root\",\"uniqueDefinitionId\":\"MYW-demo\"}],\"op\":\"uniqueReserve\",\"sourceEventId\":\"authored-initial-unique\"}"
+        }
+      },
+      "uniqueLedger": {
+        "MYW-demo": {
+          "fragments": [],
+          "history": [
+            {
+              "action": "manifest",
+              "fragmentIds": [],
+              "ownerId": null,
+              "transactionId": "initial-manifest"
+            },
+            {
+              "action": "claim",
+              "fragmentIds": [],
+              "ownerId": "player",
+              "transactionId": "initial-claim"
+            }
+          ],
+          "itemInstanceId": "original-weapon",
+          "ownerId": "player",
+          "revision": 2,
+          "rootArtifactId": "original-root",
+          "sourceEventId": "authored-initial-unique",
+          "status": "claimed",
+          "uniqueDefinitionId": "MYW-demo",
+          "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+        }
+      },
+      "usedVacancyTokens": {},
+      "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24",
+      "worldSeed": "DEV-I-v1"
+    },
+    "drops": [
+      {
+        "container": {
+          "access": "open",
+          "containerId": "[\"session\",\"corpse\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\"]",
+          "depleted": false,
+          "holderId": null,
+          "kind": "ground",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        "created": false,
+        "lootSeed": 0.5032030350994319,
+        "manifest": [
+          {
+            "attributes": {},
+            "containerId": "[\"session\",\"corpse\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\"]",
+            "definitionId": "monster-material",
+            "itemInstanceId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",0]",
+            "lots": [
+              {
+                "quantity": 2,
+                "rootItemId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",0]",
+                "sourceInstanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+              }
+            ],
+            "maxStack": 20,
+            "quality": 3,
+            "quantity": 2,
+            "rootArtifactId": null,
+            "rootItemId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",0]",
+            "slotsPerStack": 1,
+            "sourceInstanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]",
+            "splitId": null,
+            "status": "normal",
+            "tier": 0,
+            "uniqueDefinitionId": null,
+            "unitMassGrams": "1",
+            "unitVolumeMl": "1"
+          }
+        ],
+        "memberId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",0]"
+      },
+      {
+        "container": {
+          "access": "open",
+          "containerId": "[\"session\",\"corpse\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",1]\"]",
+          "depleted": false,
+          "holderId": null,
+          "kind": "ground",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        "created": false,
+        "lootSeed": 0.4974168031476438,
+        "manifest": [
+          {
+            "attributes": {},
+            "containerId": "[\"session\",\"corpse\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",1]\"]",
+            "definitionId": "monster-material",
+            "itemInstanceId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",1]\",0]",
+            "lots": [
+              {
+                "quantity": 2,
+                "rootItemId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",1]\",0]",
+                "sourceInstanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]"
+              }
+            ],
+            "maxStack": 20,
+            "quality": 3,
+            "quantity": 2,
+            "rootArtifactId": null,
+            "rootItemId": "[\"session\",\"loot\",\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",1]\",0]",
+            "slotsPerStack": 1,
+            "sourceInstanceId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]",
+            "splitId": null,
+            "status": "normal",
+            "tier": 0,
+            "uniqueDefinitionId": null,
+            "unitMassGrams": "1",
+            "unitVolumeMl": "1"
+          }
+        ],
+        "memberId": "[\"[\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\",\\\"Z0-LAIR-01\\\",0]\",1]"
+      }
+    ],
+    "events": [],
+    "inventory": {
+      "containers": [
+        {
+          "access": "open",
+          "containerId": "pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "other-pack",
+          "depleted": false,
+          "holderId": "other",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 20,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        },
+        {
+          "access": "open",
+          "containerId": "full-pack",
+          "depleted": false,
+          "holderId": "player",
+          "kind": "backpack",
+          "maxMassGrams": "100000",
+          "maxSlots": 0,
+          "maxVolumeMl": "100000",
+          "shellMassGrams": "0",
+          "sourceInstanceId": null,
+          "transmissionPpm": 1000000
+        }
+      ],
+      "holders": [
+        {
+          "baseMassGrams": "0",
+          "holderId": "player",
+          "safeCarryGrams": "100000"
+        },
+        {
+          "baseMassGrams": "0",
+          "holderId": "other",
+          "safeCarryGrams": "100000"
+        }
+      ],
+      "items": [
+        {
+          "attributes": {},
+          "containerId": "pack",
+          "definitionId": "weapon",
+          "itemInstanceId": "original-weapon",
+          "lots": [
+            {
+              "quantity": 1,
+              "rootItemId": "original-weapon",
+              "sourceInstanceId": null
+            }
+          ],
+          "maxStack": 1,
+          "quality": 3,
+          "quantity": 1,
+          "rootArtifactId": "original-root",
+          "rootItemId": "original-weapon",
+          "slotsPerStack": 1,
+          "splitId": null,
+          "status": "normal",
+          "tier": 0,
+          "uniqueDefinitionId": "MYW-demo",
+          "unitMassGrams": "1",
+          "unitVolumeMl": "1"
+        }
+      ],
+      "outbox": [],
+      "receipts": [],
+      "revision": 0,
+      "schemaVersion": 1,
+      "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+    },
+    "receipts": [
+      {
+        "eventIds": [],
+        "revision": 1,
+        "signature": "{\"expectedRevision\":0,\"kind\":\"checkpoint\",\"scene\":{\"cooldowns\":{},\"enemies\":{},\"hurt\":{},\"logs\":[],\"pending\":{},\"player\":{\"pitch\":1.35,\"x\":-2300,\"yaw\":0,\"z\":2800},\"time\":1,\"version\":1},\"simTime\":1,\"transactionId\":\"05-real-defeat-rescue-large-map-retains-enemy-injury-25\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 1,
+        "transactionId": "05-real-defeat-rescue-large-map-retains-enemy-injury-25"
+      },
+      {
+        "eventIds": [],
+        "revision": 2,
+        "signature": "{\"anchorId\":\"Z0-LAIR-01\",\"expectedRevision\":1,\"kind\":\"spawn\",\"simTime\":2,\"transactionId\":\"05-real-defeat-rescue-large-map-retains-enemy-injury-26\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 2,
+        "transactionId": "05-real-defeat-rescue-large-map-retains-enemy-injury-26"
+      },
+      {
+        "eventIds": [],
+        "revision": 3,
+        "signature": "{\"cast\":{\"castId\":\"cast\",\"skill\":{\"channel\":\"physical\",\"id\":\"basic\",\"kind\":\"basic\",\"maxTargets\":20,\"minimumRealm\":0,\"weights\":[\"0.25\",\"0.25\",\"0.5\"]},\"sourceId\":\"player\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"expectedRevision\":2,\"kind\":\"cast\",\"simTime\":3,\"transactionId\":\"cast\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 3,
+        "transactionId": "cast"
+      },
+      {
+        "eventIds": [],
+        "revision": 4,
+        "signature": "{\"expectedRevision\":3,\"hit\":{\"castId\":\"cast\",\"hitId\":\"hit-0\",\"segment\":0,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"kind\":\"hit\",\"simTime\":4,\"transactionId\":\"hit-0\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 4,
+        "transactionId": "hit-0"
+      },
+      {
+        "eventIds": [],
+        "revision": 5,
+        "signature": "{\"expectedRevision\":4,\"hit\":{\"castId\":\"cast\",\"hitId\":\"hit-1\",\"segment\":1,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"kind\":\"hit\",\"simTime\":5,\"transactionId\":\"hit-1\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 5,
+        "transactionId": "hit-1"
+      },
+      {
+        "eventIds": [],
+        "revision": 6,
+        "signature": "{\"expectedRevision\":5,\"hit\":{\"castId\":\"cast\",\"hitId\":\"hit-2\",\"segment\":2,\"targetId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"kind\":\"hit\",\"simTime\":6,\"transactionId\":\"hit-2\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 6,
+        "transactionId": "hit-2"
+      },
+      {
+        "eventIds": [],
+        "revision": 7,
+        "signature": "{\"cast\":{\"castId\":\"fatal\",\"skill\":{\"channel\":\"physical\",\"id\":\"bite\",\"kind\":\"basic\",\"minimumRealm\":0},\"sourceId\":\"[\\\"[\\\\\\\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\\\\\\\",\\\\\\\"Z0-LAIR-01\\\\\\\",0]\\\",0]\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"expectedRevision\":6,\"kind\":\"cast\",\"simTime\":7,\"transactionId\":\"05-real-defeat-rescue-large-map-retains-enemy-injury-27\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 7,
+        "transactionId": "05-real-defeat-rescue-large-map-retains-enemy-injury-27"
+      },
+      {
+        "eventIds": [],
+        "revision": 8,
+        "signature": "{\"expectedRevision\":7,\"hit\":{\"castId\":\"fatal\",\"hitId\":\"fatal-hit\",\"segment\":0,\"targetId\":\"player\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"},\"kind\":\"hit\",\"simTime\":8,\"transactionId\":\"05-real-defeat-rescue-large-map-retains-enemy-injury-28\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 8,
+        "transactionId": "05-real-defeat-rescue-large-map-retains-enemy-injury-28"
+      },
+      {
+        "eventIds": [],
+        "revision": 9,
+        "signature": "{\"expectedRevision\":8,\"kind\":\"rescue\",\"simTime\":9,\"transactionId\":\"05-real-defeat-rescue-large-map-retains-enemy-injury-29\",\"worldId\":\"DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24\"}",
+        "simTime": 9,
+        "transactionId": "05-real-defeat-rescue-large-map-retains-enemy-injury-29"
+      }
+    ],
+    "revision": 9,
+    "scene": {
+      "cooldowns": {},
+      "enemies": {},
+      "hurt": {},
+      "logs": [],
+      "pending": {},
+      "player": {
+        "pitch": 0,
+        "x": 0,
+        "yaw": 0,
+        "z": 190
+      },
+      "time": 9,
+      "version": 1
+    },
+    "schemaVersion": 1,
+    "simTime": 9,
+    "worldId": "DEV-I-R3-browser-05-real-defeat-rescue-large-map-retains-enemy-injury-1789222208256-24"
+  },
+  "at": "2026-09-12T14:11:08.536Z"
+}

@@ -1,0 +1,72 @@
+{
+  "triangles": 45163,
+  "primitives": 4,
+  "materials": 4,
+  "skins": 1,
+  "bones": [
+    24
+  ],
+  "animations": [
+    {
+      "name": "death",
+      "channels": 72,
+      "samples": 72,
+      "duration": 1.5
+    },
+    {
+      "name": "dive",
+      "channels": 72,
+      "samples": 72,
+      "duration": 1
+    },
+    {
+      "name": "flight",
+      "channels": 72,
+      "samples": 72,
+      "duration": 0.9
+    },
+    {
+      "name": "ground-claw",
+      "channels": 72,
+      "samples": 72,
+      "duration": 0.8
+    },
+    {
+      "name": "ground-idle",
+      "channels": 72,
+      "samples": 72,
+      "duration": 2
+    },
+    {
+      "name": "ground-walk",
+      "channels": 72,
+      "samples": 72,
+      "duration": 1.1
+    },
+    {
+      "name": "hit",
+      "channels": 72,
+      "samples": 72,
+      "duration": 0.6
+    },
+    {
+      "name": "land",
+      "channels": 72,
+      "samples": 72,
+      "duration": 1.3
+    },
+    {
+      "name": "sweep",
+      "channels": 72,
+      "samples": 72,
+      "duration": 0.9
+    },
+    {
+      "name": "takeoff",
+      "channels": 72,
+      "samples": 72,
+      "duration": 1.2
+    }
+  ],
+  "bytes": 10786180
+}

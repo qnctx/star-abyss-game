@@ -1,0 +1,64 @@
+[
+	{
+		"body_aabb": "[P: (-0.500105, -0.0, -1.220486), S: (0.998776, 1.596071, 2.442303)]",
+		"body_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+		"clips": [
+			"death",
+			"dive",
+			"flight",
+			"ground-claw",
+			"ground-idle",
+			"ground-walk",
+			"hit",
+			"land",
+			"sweep",
+			"takeoff"
+		],
+		"path": "res://assets/riftwing-r11.glb",
+		"vertices": 43275
+	},
+	{
+		"body_aabb": "[P: (-0.500105, -0.0, -1.220486), S: (0.998776, 1.596071, 2.442303)]",
+		"body_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+		"clips": [
+			"death",
+			"dive",
+			"flight",
+			"ground-claw",
+			"ground-idle",
+			"ground-walk",
+			"hit",
+			"land",
+			"r3-lunge",
+			"r3-rise",
+			"r3-shard",
+			"r3-tail",
+			"sweep",
+			"takeoff"
+		],
+		"path": "res://assets/enemy-r3/riftwing-r3.glb",
+		"vertices": 43275
+	},
+	{
+		"body_aabb": "[P: (-0.500105, -0.0, -1.220486), S: (0.998776, 1.596071, 2.442303)]",
+		"body_transform": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]",
+		"clips": [
+			"death",
+			"dive",
+			"flight",
+			"ground-claw",
+			"ground-idle",
+			"ground-walk",
+			"hit",
+			"land",
+			"r3-lunge",
+			"r3-rise",
+			"r3-shard",
+			"r3-tail",
+			"sweep",
+			"takeoff"
+		],
+		"path": "res://assets/enemy-r3/rift-prowler-r3.glb",
+		"vertices": 43275
+	}
+]

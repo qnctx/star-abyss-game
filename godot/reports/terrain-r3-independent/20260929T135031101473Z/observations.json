@@ -1,0 +1,85 @@
+{
+	"checks": [
+		{
+			"name": "complete main: player/vehicle/enemy/world",
+			"pass": true
+		},
+		{
+			"name": "capture basin-ground",
+			"pass": true
+		},
+		{
+			"name": "isolated save contains progression/vehicle/planet",
+			"pass": true
+		},
+		{
+			"name": "capture basin-1600m",
+			"pass": true
+		},
+		{
+			"name": "capture orbit-player",
+			"pass": true
+		},
+		{
+			"name": "capture orbit-equipment-isolation",
+			"pass": true
+		}
+	],
+	"limitations": [
+		"static placement is not flight traversal",
+		"save serialization is not reload compatibility",
+		"special region coordinates pending integration",
+		"UI clickability and visual approval require review"
+	],
+	"observations": [
+		{
+			"label": "basin-ground",
+			"position": [
+				0.0,
+				0.100000001490116,
+				190.0
+			],
+			"surface": {
+				"agl": 0.100000001490116,
+				"normal": "(0.0, 1.0, 0.0)",
+				"point": "(0.0, 0.0, 190.0)",
+				"ready": true,
+				"spacing": 10.0,
+				"water_depth": 0.0
+			}
+		},
+		{
+			"label": "basin-1600m",
+			"position": [
+				0.0,
+				1600.0,
+				190.0
+			],
+			"surface": {
+				"agl": 1600.0,
+				"normal": "(0.0, 1.0, 0.0)",
+				"point": "(0.0, 0.0, 190.0)",
+				"ready": true,
+				"spacing": 10.0,
+				"water_depth": 0.0
+			}
+		},
+		{
+			"label": "orbit-player",
+			"position": [
+				0.0,
+				125000.0,
+				190.0
+			],
+			"surface": {
+				"agl": 125000.0,
+				"normal": "(0.0, 1.0, 0.0)",
+				"point": "(0.0, 0.0, 190.0)",
+				"ready": true,
+				"spacing": 10.0,
+				"water_depth": 0.0
+			}
+		}
+	],
+	"phase": "pre-freeze baseline"
+}

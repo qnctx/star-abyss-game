@@ -1,0 +1,42 @@
+[
+  {
+    "case": "jog-W",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "sprint-W",
+    "gait": "sprint",
+    "rate": 1.0
+  },
+  {
+    "case": "jog-S",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "jog-A",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "jog-D",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "moving-jab",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "strafe-guard",
+    "gait": "jog",
+    "rate": 1.0
+  },
+  {
+    "case": "boost-jab",
+    "gait": "sprint",
+    "rate": 12.0
+  }
+]

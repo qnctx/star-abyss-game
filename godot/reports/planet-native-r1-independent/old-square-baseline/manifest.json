@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-27T14:44:25.653929+00:00",
+  "sources": {
+    "godot/scripts/native_world.gd": "2d88df9646bb3e4ec61f4d8acd6929a8aafcdf7f13f6fd3de624d4475167c40a",
+    "godot/scripts/native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2",
+    "godot/scripts/native_main.gd": "f61c67a14dae9c2f8f9f2fd2fc63818574275eaf5ee5b14d33ff6bb9c4b3a898",
+    "godot/scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5"
+  }
+}

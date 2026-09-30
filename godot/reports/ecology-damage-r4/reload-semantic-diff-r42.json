@@ -1,0 +1,19 @@
+{
+  "numeric_differences": [
+    {
+      "path": "/rock-target/poses/chunk_1/5",
+      "before": -0.000740040093660355,
+      "after": -0.00074004009366035,
+      "delta": 5.095750210681871e-18
+    },
+    {
+      "path": "/rock-target/poses/chunk_1/7",
+      "before": 0.000758782378397882,
+      "after": 0.00075878237839788,
+      "delta": 1.951563910473908e-18
+    }
+  ],
+  "material_differences": [],
+  "tolerance": 0.00001,
+  "scope": "all keys/types/health/broken/fragment roots strict; tolerance only numeric serialization"
+}

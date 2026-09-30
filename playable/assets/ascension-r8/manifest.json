@@ -1,0 +1,186 @@
+{
+  "version": "ascension-r8",
+  "reference": "docs/art/ascension-r8/ascension-reference.png",
+  "coordinates": "meters, Y up, +Z portal/slash normal; origin at effect center; qi helix extends along Y",
+  "runtime": "Scale/rotate at runtime. No lights, collision, physics or gameplay semantics. Disable castShadow/receiveShadow; pool instances and limit concurrency.",
+  "totalTriangles": 18326,
+  "assets": [
+    {
+      "id": "qi-boost",
+      "glb": "assets/ascension-r8/qi-boost.glb",
+      "blend": "qi-boost.blend",
+      "triangles": 592,
+      "drawCalls": 1,
+      "materials": [
+        "energy"
+      ],
+      "bounds": {
+        "min": [
+          -0.6683632135391235,
+          -2.001127004623413,
+          -0.5794751644134521
+        ],
+        "max": [
+          0.6663819551467896,
+          1.399999976158142,
+          0.7790138721466064
+        ]
+      },
+      "size": [
+        1.334745168685913,
+        3.401126980781555,
+        1.3584890365600586
+      ],
+      "bytes": 47492
+    },
+    {
+      "id": "aerial-crescent",
+      "glb": "assets/ascension-r8/aerial-crescent.glb",
+      "blend": "aerial-crescent.blend",
+      "triangles": 1588,
+      "drawCalls": 1,
+      "materials": [
+        "energy.001"
+      ],
+      "bounds": {
+        "min": [
+          -0.1744554489850998,
+          -1.6303658485412598,
+          -0.008999999612569809
+        ],
+        "max": [
+          1.9991055727005005,
+          1.9867677688598633,
+          0.21899999678134918
+        ]
+      },
+      "size": [
+        2.1735610216856003,
+        3.617133617401123,
+        0.227999996393919
+      ],
+      "bytes": 70148
+    },
+    {
+      "id": "blink-aperture",
+      "glb": "assets/ascension-r8/blink-aperture.glb",
+      "blend": "blink-aperture.blend",
+      "triangles": 1850,
+      "drawCalls": 4,
+      "materials": [
+        "silver.002",
+        "obsidian.002",
+        "gold.002",
+        "energy.002"
+      ],
+      "bounds": {
+        "min": [
+          -1.641339659690857,
+          -1.7501298189163208,
+          -0.13648025691509247
+        ],
+        "max": [
+          1.7894999980926514,
+          1.752611517906189,
+          0.2035607397556305
+        ]
+      },
+      "size": [
+        3.4308396577835083,
+        3.5027413368225098,
+        0.34004099667072296
+      ],
+      "bytes": 95348
+    },
+    {
+      "id": "domain-gate",
+      "glb": "assets/ascension-r8/domain-gate.glb",
+      "blend": "domain-gate.blend",
+      "triangles": 4796,
+      "drawCalls": 3,
+      "materials": [
+        "silver.003",
+        "gold.003",
+        "energy.003"
+      ],
+      "bounds": {
+        "min": [
+          -1.9167499542236328,
+          -1.9167499542236328,
+          -0.14720000326633453
+        ],
+        "max": [
+          1.9167499542236328,
+          1.9512782096862793,
+          0.24899999797344208
+        ]
+      },
+      "size": [
+        3.8334999084472656,
+        3.868028163909912,
+        0.3962000012397766
+      ],
+      "bytes": 219000
+    },
+    {
+      "id": "void-fracture",
+      "glb": "assets/ascension-r8/void-fracture.glb",
+      "blend": "void-fracture.blend",
+      "triangles": 572,
+      "drawCalls": 3,
+      "materials": [
+        "silver.004",
+        "obsidian.004",
+        "energy.004"
+      ],
+      "bounds": {
+        "min": [
+          -2.018834114074707,
+          -2.0566844940185547,
+          -0.30959704518318176
+        ],
+        "max": [
+          2.0739998817443848,
+          2.0610718727111816,
+          0.3970409035682678
+        ]
+      },
+      "size": [
+        4.092833995819092,
+        4.117756366729736,
+        0.7066379487514496
+      ],
+      "bytes": 47020
+    },
+    {
+      "id": "dao-gate",
+      "glb": "assets/ascension-r8/dao-gate.glb",
+      "blend": "dao-gate.blend",
+      "triangles": 8928,
+      "drawCalls": 3,
+      "materials": [
+        "silver.005",
+        "gold.005",
+        "energy.005"
+      ],
+      "bounds": {
+        "min": [
+          -2.503999948501587,
+          -2.452500104904175,
+          -0.2199999988079071
+        ],
+        "max": [
+          2.5039966106414795,
+          2.452500104904175,
+          0.24899999797344208
+        ]
+      },
+      "size": [
+        5.007996559143066,
+        4.90500020980835,
+        0.4689999967813492
+      ],
+      "bytes": 420752
+    }
+  ]
+}

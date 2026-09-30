@@ -1,0 +1,792 @@
+{
+	"checks": [
+		{
+			"label": "same-aim actual R environment contact: probe-pine",
+			"ok": true
+		},
+		{
+			"label": "same-aim actual R environment contact: probe-rock",
+			"ok": true
+		},
+		{
+			"label": "non-environment first wall blocks a tree behind it",
+			"ok": true
+		},
+		{
+			"label": "first tree receives impact and shields a farther enemy",
+			"ok": true
+		},
+		{
+			"label": "real charged hand sphere initially overlaps the thin blocker",
+			"ok": true
+		},
+		{
+			"label": "initial-overlap wall does not pass environmental damage through",
+			"ok": true
+		},
+		{
+			"label": "real attack sphere simultaneously overlaps distinct wall and tree bodies",
+			"ok": false
+		},
+		{
+			"label": "ambiguous simultaneous initial overlap fails closed without tree damage",
+			"ok": false
+		}
+	],
+	"failed": [
+		"real attack sphere simultaneously overlaps distinct wall and tree bodies",
+		"ambiguous simultaneous initial overlap fails closed without tree damage"
+	],
+	"samples": [
+		{
+			"cast_id": "1790702347412000-e935c374e83e7d32:1",
+			"fractions": "[0.0859375, 0.091796875]",
+			"frame": 210,
+			"from": "(94.96137, 0.932937, 168.6241)",
+			"nearest": [
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 0.00074276876449586,
+					"same_first_body": true,
+					"unsafe_gap": -0.000423515319824208
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.0233809716224671,
+					"same_first_body": true,
+					"unsafe_gap": 0.0222826368331909
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.210254309654236,
+					"same_first_body": true,
+					"unsafe_gap": 0.209412811279297
+				},
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 1.93327409744263,
+					"same_first_body": true,
+					"unsafe_gap": 1.9329686832428
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_00",
+					"safe_gap": 2.56788323783875,
+					"same_first_body": true,
+					"unsafe_gap": 2.56760548019409
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_01",
+					"safe_gap": 3.11284963989258,
+					"same_first_body": true,
+					"unsafe_gap": 3.11270849609375
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(6012954214470), \"collider_id\": 98968799847, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.932961, 168.607)",
+			"safe_to_unsafe": 0.00117492792196572,
+			"solid": "{ \"center\": (94.96137, 0.932961, 168.607), \"unsafe_center\": (94.96137, 0.932963, 168.6058), \"shape\": 2, \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(6012954214470) }",
+			"to": "(94.96137, 0.93322, 168.4241)",
+			"unsafe": "(94.96137, 0.932963, 168.6058)"
+		},
+		{
+			"result": {
+				"cast_id": "1790702347412000-e935c374e83e7d32:1",
+				"contact": {
+					"from": "(94.96137, 0.932937, 168.6241)",
+					"query": {
+						"cast_id": "1790702347412000-e935c374e83e7d32:1",
+						"contact_normal": "(-0.131127, -0.012414, 0.991288)",
+						"contact_point": "(95.01639, 0.938172, 168.1899)",
+						"contact_rid": "RID(6012954214470)",
+						"contact_shape": 2,
+						"damage_type": "blast",
+						"direction": "(0.0, 0.001416, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.932937, 168.6241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.018356341868639,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": true,
+						"changed": 1,
+						"hit_points": [
+							"(95.01642, 0.938182, 168.1899)"
+						],
+						"hits": [
+							{
+								"blocked": true,
+								"collider": "<Freed Object>",
+								"damage": 1200.0,
+								"destroyed": true,
+								"entity_id": "probe-pine",
+								"kind": "tree",
+								"normal": "(-0.13106, -0.012428, 0.991297)",
+								"part": "trunk",
+								"point": "(95.01642, 0.938182, 168.1899)",
+								"rid": "RID(7168300417090)"
+							}
+						],
+						"query_id": "1790702347412000-e935c374e83e7d32:1"
+					},
+					"safe": "(94.96137, 0.932961, 168.607)",
+					"solid": {
+						"center": "(94.96137, 0.932961, 168.607)",
+						"normal": "(-0.131127, -0.012414, 0.991288)",
+						"point": "(95.01639, 0.938172, 168.1899)",
+						"rid": "RID(6012954214470)",
+						"shape": 2,
+						"unsafe_center": "(94.96137, 0.932963, 168.6058)"
+					},
+					"surface": "(95.01639, 0.938172, 168.1899)",
+					"to": "(94.96137, 0.93322, 168.4241)",
+					"unsafe": "(94.96137, 0.932963, 168.6058)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 1,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.01642, 0.938182, 168.1899)",
+				"power": 1200.0
+			},
+			"state": {
+				"broken": [],
+				"fall_pose": [
+					1.0,
+					0.0,
+					0.0,
+					0.0,
+					0.382683426141739,
+					-0.923879504203796,
+					0.0,
+					0.923879504203796,
+					0.382683426141739,
+					0.0,
+					0.592623889446259,
+					0.88692432641983
+				],
+				"fallen": true,
+				"health": {
+					"trunk": 0.0
+				},
+				"poses": {
+
+				}
+			},
+			"target": "probe-pine"
+		},
+		{
+			"result": {
+				"cast_id": "1790702347412000-e935c374e83e7d32:2",
+				"contact": {
+					"from": "(95.08851, 0.881428, 170.2924)",
+					"query": {
+						"cast_id": "1790702347412000-e935c374e83e7d32:2",
+						"contact_normal": "(0.0463, 0.2698, 0.961803)",
+						"contact_point": "(95.06707, 0.767332, 169.8598)",
+						"contact_rid": "RID(7795365642310)",
+						"contact_shape": 0,
+						"damage_type": "blast",
+						"direction": "(-0.068344, -0.037372, -0.996962)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(95.04884, 0.85977, 169.7147)",
+						"origin": "(95.08851, 0.881428, 170.2924)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0300289839506149,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": true,
+						"changed": 1,
+						"hit_points": [
+							"(95.06707, 0.76733, 169.8598)"
+						],
+						"hits": [
+							{
+								"blocked": true,
+								"collider": "<Freed Object>",
+								"damage": 1200.0,
+								"destroyed": true,
+								"entity_id": "probe-rock",
+								"kind": "outcrop",
+								"normal": "(0.36026, -0.091639, 0.92834)",
+								"part": "chunk_3",
+								"point": "(95.06707, 0.76733, 169.8598)",
+								"rid": "RID(8851927597156)"
+							}
+						],
+						"query_id": "1790702347412000-e935c374e83e7d32:2"
+					},
+					"safe": "(95.08655, 0.880359, 170.2639)",
+					"solid": {
+						"center": "(95.08655, 0.880359, 170.2639)",
+						"normal": "(0.0463, 0.2698, 0.961803)",
+						"point": "(95.06707, 0.767332, 169.8598)",
+						"rid": "RID(7795365642310)",
+						"shape": 0,
+						"unsafe_center": "(95.08646, 0.880306, 170.2625)"
+					},
+					"surface": "(95.06707, 0.767332, 169.8598)",
+					"to": "(95.05562, 0.863473, 169.8135)",
+					"unsafe": "(95.08646, 0.880306, 170.2625)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 1,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.06707, 0.76733, 169.8598)",
+				"power": 1200.0
+			},
+			"state": {
+				"broken": [
+					"chunk_0",
+					"chunk_1",
+					"chunk_2",
+					"chunk_3",
+					"chunk_4",
+					"chunk_5"
+				],
+				"fallen": true,
+				"fragment_roots": {
+					"chunk_0": "chunk_0",
+					"chunk_1": "chunk_1",
+					"chunk_2": "chunk_2",
+					"chunk_3": "chunk_3",
+					"chunk_4": "chunk_4",
+					"chunk_5": "chunk_5"
+				},
+				"health": {
+					"rock": 0.0
+				},
+				"poses": {
+					"chunk_0": [
+						0.996050655841827,
+						0.0887813791632652,
+						0.00105208798777312,
+						-0.088163822889328,
+						0.990385413169861,
+						-0.1066018268466,
+						-0.0105062276124954,
+						0.106088049709797,
+						0.99430125951767,
+						-1.26635849475861,
+						0.159910559654236,
+						-1.84760105609894
+					],
+					"chunk_1": [
+						0.993241131305695,
+						-0.101823188364506,
+						0.0557156205177307,
+						0.106812663376331,
+						0.989687860012054,
+						-0.0954410880804062,
+						-0.0454229600727558,
+						0.100747138261795,
+						0.993874669075012,
+						0.977866291999817,
+						0.19609272480011,
+						-1.6826376914978
+					],
+					"chunk_2": [
+						0.958743155002594,
+						0.27970016002655,
+						-0.0507871434092522,
+						-0.284269750118256,
+						0.942364633083344,
+						-0.176464289426804,
+						-0.00149707996752113,
+						0.183621183037758,
+						0.982995927333832,
+						-1.07226634025574,
+						-0.0979207754135132,
+						-0.690859436988831
+					],
+					"chunk_3": [
+						0.984610199928284,
+						-0.170345172286034,
+						0.0390541329979897,
+						0.174718797206879,
+						0.964581668376923,
+						-0.197625070810318,
+						-0.0040064244531095,
+						0.20140714943409,
+						0.979499399662018,
+						0.921676278114319,
+						-0.238926768302917,
+						-0.797884345054626
+					],
+					"chunk_4": [
+						0.996216595172882,
+						-0.0637920275330544,
+						0.0590174831449986,
+						0.0718394815921783,
+						0.986645102500916,
+						-0.146187022328377,
+						-0.0489037409424782,
+						0.149873718619347,
+						0.987494945526123,
+						1.05338513851166,
+						-2.1582396030426,
+						-1.98137283325195
+					],
+					"chunk_5": [
+						0.999850988388062,
+						0.00393773941323161,
+						0.0168076995760202,
+						-0.00147953548002988,
+						0.989601075649261,
+						-0.143831476569176,
+						-0.0171992890536785,
+						0.143785178661346,
+						0.989459455013275,
+						0.237270027399063,
+						0.169571280479431,
+						-2.67597937583923
+					]
+				}
+			},
+			"target": "probe-rock"
+		},
+		{
+			"cast_id": "1790702347412000-e935c374e83e7d32:3",
+			"fractions": "[0.66796875, 0.671875]",
+			"frame": 452,
+			"from": "(94.96137, 0.931804, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-wall-tree",
+					"part": "trunk",
+					"safe_gap": 0.680889403343201,
+					"same_first_body": false,
+					"unsafe_gap": 0.680112277984619
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "stump",
+					"safe_gap": 0.681934750747681,
+					"same_first_body": false,
+					"unsafe_gap": 0.681172526550293
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "stump",
+					"safe_gap": 0.768972394943237,
+					"same_first_body": false,
+					"unsafe_gap": 0.768283961296082
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "trunk",
+					"safe_gap": 2.18655306816101,
+					"same_first_body": false,
+					"unsafe_gap": 2.18618661880493
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "branch_00",
+					"safe_gap": 2.79721592330933,
+					"same_first_body": false,
+					"unsafe_gap": 2.79688332939148
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "branch_01",
+					"safe_gap": 3.23887698554993,
+					"same_first_body": false,
+					"unsafe_gap": 3.23868315124512
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.96137, 0.931994, 168.87), \"normal\": (0.0, 0.0, 1.0), \"rid\": RID(9354438770756), \"collider_id\": 156917303832, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.931993, 169.2905)",
+			"safe_to_unsafe": 0.000778198998887092,
+			"solid": "{ \"center\": (94.96137, 0.931993, 169.2905), \"unsafe_center\": (94.96137, 0.931994, 169.2898), \"shape\": 0, \"point\": (94.96137, 0.931994, 168.87), \"normal\": (0.0, 0.0, 1.0), \"rid\": RID(9354438770756) }",
+			"to": "(94.96137, 0.932087, 169.2241)",
+			"unsafe": "(94.96137, 0.931994, 169.2898)"
+		},
+		{
+			"case": "wall-before-tree",
+			"result": {
+				"cast_id": "1790702347412000-e935c374e83e7d32:3",
+				"contact": {
+					"from": "(94.96137, 0.931804, 169.4241)",
+					"query": {
+						"cast_id": "1790702347412000-e935c374e83e7d32:3",
+						"contact_normal": "(0.0, 0.0, 1.0)",
+						"contact_point": "(94.96137, 0.931994, 168.87)",
+						"contact_rid": "RID(9354438770756)",
+						"contact_shape": 0,
+						"damage_type": "blast",
+						"direction": "(0.0, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.931804, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.134369030594826,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702347412000-e935c374e83e7d32:3"
+					},
+					"safe": "(94.96137, 0.931993, 169.2905)",
+					"solid": {
+						"center": "(94.96137, 0.931993, 169.2905)",
+						"normal": "(0.0, 0.0, 1.0)",
+						"point": "(94.96137, 0.931994, 168.87)",
+						"rid": "RID(9354438770756)",
+						"shape": 0,
+						"unsafe_center": "(94.96137, 0.931994, 169.2898)"
+					},
+					"surface": "(94.96137, 0.931994, 168.87)",
+					"to": "(94.96137, 0.932087, 169.2241)",
+					"unsafe": "(94.96137, 0.931994, 169.2898)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.96137, 0.931994, 168.87)",
+				"power": 1200.0
+			}
+		},
+		{
+			"cast_id": "1790702347412000-e935c374e83e7d32:4",
+			"fractions": "[0.0859375, 0.091796875]",
+			"frame": 573,
+			"from": "(94.96137, 0.932937, 168.6241)",
+			"nearest": [
+				{
+					"id": "probe-shield-tree",
+					"part": "trunk",
+					"safe_gap": 0.00074276876449586,
+					"same_first_body": true,
+					"unsafe_gap": -0.000423515319824208
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "stump",
+					"safe_gap": 0.0233809716224671,
+					"same_first_body": true,
+					"unsafe_gap": 0.0222826368331909
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "stump",
+					"safe_gap": 0.210254309654236,
+					"same_first_body": true,
+					"unsafe_gap": 0.209412811279297
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "trunk",
+					"safe_gap": 1.93327409744263,
+					"same_first_body": true,
+					"unsafe_gap": 1.9329686832428
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "branch_00",
+					"safe_gap": 2.56788323783875,
+					"same_first_body": true,
+					"unsafe_gap": 2.56760548019409
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "branch_01",
+					"safe_gap": 3.11284963989258,
+					"same_first_body": true,
+					"unsafe_gap": 3.11270849609375
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(10565619548230), \"collider_id\": 179751094871, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.932961, 168.607)",
+			"safe_to_unsafe": 0.00117492792196572,
+			"solid": "{ \"center\": (94.96137, 0.932961, 168.607), \"unsafe_center\": (94.96137, 0.932963, 168.6058), \"shape\": 2, \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(10565619548230) }",
+			"to": "(94.96137, 0.93322, 168.4241)",
+			"unsafe": "(94.96137, 0.932963, 168.6058)"
+		},
+		{
+			"cast_id": "1790702347412000-e935c374e83e7d32:6",
+			"fractions": "[1.0, 1.0]",
+			"frame": 796,
+			"from": "(94.96137, 0.931804, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-overlap-tree",
+					"part": "trunk",
+					"safe_gap": 0.814087783813477,
+					"same_first_body": false,
+					"unsafe_gap": 0.614682948112488
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "stump",
+					"safe_gap": 0.813011086654663,
+					"same_first_body": false,
+					"unsafe_gap": 0.61694852180481
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "stump",
+					"safe_gap": 0.888240812301636,
+					"same_first_body": false,
+					"unsafe_gap": 0.710515020370484
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "trunk",
+					"safe_gap": 2.25181896209717,
+					"same_first_body": false,
+					"unsafe_gap": 2.15585524559021
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "branch_00",
+					"safe_gap": 2.85648153686523,
+					"same_first_body": false,
+					"unsafe_gap": 2.76938556098938
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "branch_01",
+					"safe_gap": 3.27333323860168,
+					"same_first_body": false,
+					"unsafe_gap": 3.22289817237854
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.96137, 0.932087, 169.3741), \"normal\": (0.0, 0.0, -1.0), \"rid\": RID(13365938225220), \"collider_id\": 229059332707, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.931804, 169.4241)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"ambiguous_overlap\": false, \"overlap_count\": 1, \"center\": (94.96137, 0.931804, 169.4241), \"unsafe_center\": (94.96137, 0.931804, 169.4241), \"point\": (94.96137, 0.931804, 169.4141), \"normal\": (0.0, 0.0, 1.0), \"shape\": 0, \"rid\": RID(13365938225220) }",
+			"to": "(94.96137, 0.932087, 169.2241)",
+			"unsafe": "(94.96137, 0.932087, 169.2241)"
+		},
+		{
+			"case": "initial-overlap-wall",
+			"result": {
+				"cast_id": "1790702347412000-e935c374e83e7d32:6",
+				"contact": {
+					"from": "(94.96137, 0.931804, 169.4241)",
+					"query": {
+						"cast_id": "1790702347412000-e935c374e83e7d32:6",
+						"contact_normal": "(0.0, 0.0, 1.0)",
+						"contact_point": "(94.96137, 0.931804, 169.4141)",
+						"contact_rid": "RID(13365938225220)",
+						"contact_shape": 0,
+						"damage_type": "blast",
+						"direction": "(0.000001, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.931804, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702347412000-e935c374e83e7d32:6"
+					},
+					"safe": "(94.96137, 0.931804, 169.4241)",
+					"solid": {
+						"ambiguous_overlap": false,
+						"center": "(94.96137, 0.931804, 169.4241)",
+						"initial_overlap": true,
+						"normal": "(0.0, 0.0, 1.0)",
+						"overlap_count": 1,
+						"point": "(94.96137, 0.931804, 169.4141)",
+						"rid": "RID(13365938225220)",
+						"shape": 0,
+						"unsafe_center": "(94.96137, 0.931804, 169.4241)"
+					},
+					"surface": "(94.96137, 0.931804, 169.4141)",
+					"to": "(94.96137, 0.932087, 169.2241)",
+					"unsafe": "(94.96137, 0.931804, 169.4241)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.96137, 0.931804, 169.4141)",
+				"power": 1200.0
+			}
+		},
+		{
+			"cast_id": "1790702347412000-e935c374e83e7d32:8",
+			"fractions": "[1.0, 1.0]",
+			"frame": 1035,
+			"from": "(94.84277, 0.894503, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "trunk",
+					"safe_gap": -0.335036808729172,
+					"same_first_body": true,
+					"unsafe_gap": -0.498656267404556
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "stump",
+					"safe_gap": -0.305676781463623,
+					"same_first_body": true,
+					"unsafe_gap": -0.445258819389343
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "stump",
+					"safe_gap": -0.0274003763198852,
+					"same_first_body": true,
+					"unsafe_gap": -0.103492977142334
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "trunk",
+					"safe_gap": 1.91042572975159,
+					"same_first_body": true,
+					"unsafe_gap": 1.89426285743713
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "branch_00",
+					"safe_gap": 2.54511831665039,
+					"same_first_body": true,
+					"unsafe_gap": 2.529050573349
+				},
+				{
+					"id": "probe-ambiguous-tree",
+					"part": "branch_01",
+					"safe_gap": 3.10699503326416,
+					"same_first_body": true,
+					"unsafe_gap": 3.10471193695068
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.78811, 0.904117, 169.2799), \"normal\": (-0.694912, 0.118616, 0.709244), \"rid\": RID(15603616186438), \"collider_id\": 276421413662, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.84277, 0.894503, 169.4241)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"ambiguous_overlap\": false, \"overlap_count\": 3, \"center\": (94.84277, 0.894503, 169.4241), \"unsafe_center\": (94.84277, 0.894503, 169.4241), \"point\": (94.88135, 0.889385, 169.3486), \"normal\": (-0.454043, 0.060233, 0.888941), \"shape\": 2, \"rid\": RID(15603616186438) }",
+			"to": "(94.84277, 0.894787, 169.2241)",
+			"unsafe": "(94.84277, 0.894787, 169.2241)"
+		},
+		{
+			"case": "ambiguous-wall-tree-overlap",
+			"result": {
+				"cast_id": "1790702347412000-e935c374e83e7d32:8",
+				"contact": {
+					"from": "(94.84277, 0.894503, 169.4241)",
+					"query": {
+						"cast_id": "1790702347412000-e935c374e83e7d32:8",
+						"contact_normal": "(-0.454043, 0.060233, 0.888941)",
+						"contact_point": "(94.88135, 0.889385, 169.3486)",
+						"contact_rid": "RID(15603616186438)",
+						"contact_shape": 2,
+						"damage_type": "blast",
+						"direction": "(0.000001, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.84277, 0.894503, 169.4241)",
+						"origin": "(94.84277, 0.894503, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": true,
+						"changed": 1,
+						"hit_points": [
+							"(94.88134, 0.889386, 169.3486)"
+						],
+						"hits": [
+							{
+								"blocked": true,
+								"collider": "<Freed Object>",
+								"damage": 1200.0,
+								"destroyed": true,
+								"entity_id": "probe-ambiguous-tree",
+								"kind": "tree",
+								"normal": "(-0.45403, 0.060234, 0.888948)",
+								"part": "trunk",
+								"point": "(94.88134, 0.889386, 169.3486)",
+								"rid": "RID(16664473108578)"
+							}
+						],
+						"query_id": "1790702347412000-e935c374e83e7d32:8"
+					},
+					"safe": "(94.84277, 0.894503, 169.4241)",
+					"solid": {
+						"ambiguous_overlap": false,
+						"center": "(94.84277, 0.894503, 169.4241)",
+						"initial_overlap": true,
+						"normal": "(-0.454043, 0.060233, 0.888941)",
+						"overlap_count": 3,
+						"point": "(94.88135, 0.889385, 169.3486)",
+						"rid": "RID(15603616186438)",
+						"shape": 2,
+						"unsafe_center": "(94.84277, 0.894503, 169.4241)"
+					},
+					"surface": "(94.88135, 0.889385, 169.3486)",
+					"to": "(94.84277, 0.894787, 169.2241)",
+					"unsafe": "(94.84277, 0.894503, 169.4241)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 1,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.88134, 0.889386, 169.3486)",
+				"power": 1200.0
+			}
+		}
+	],
+	"scope": "Read-only sphere cast and analytic segment comparisons; actual damage comes only from normal R skill processing.",
+	"slot": "user://martial_contact_diagnostic_1564480.json"
+}

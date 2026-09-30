@@ -1,0 +1,150 @@
+{
+	"samples": [
+		{
+			"cast_id": "1790701241020000-0c9d21570ae6dc9a:1",
+			"fractions": "[0.0859375, 0.091796875]",
+			"frame": 210,
+			"from": "(94.96137, 0.932937, 168.6241)",
+			"nearest": [
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 0.00074276876449586,
+					"same_first_body": true,
+					"unsafe_gap": -0.000423515319824208
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.0233809716224671,
+					"same_first_body": true,
+					"unsafe_gap": 0.0222826368331909
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.210254309654236,
+					"same_first_body": true,
+					"unsafe_gap": 0.209412811279297
+				},
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 1.93327409744263,
+					"same_first_body": true,
+					"unsafe_gap": 1.9329686832428
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_00",
+					"safe_gap": 2.56788323783875,
+					"same_first_body": true,
+					"unsafe_gap": 2.56760548019409
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_01",
+					"safe_gap": 3.11284963989258,
+					"same_first_body": true,
+					"unsafe_gap": 3.11270849609375
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(6012954214470), \"collider_id\": 98968799847, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.932961, 168.607)",
+			"safe_to_unsafe": 0.00117492792196572,
+			"solid": "{ \"center\": (94.96137, 0.932961, 168.607), \"point\": (95.01638, 0.938167, 168.1899), \"normal\": (-0.131159, -0.012408, 0.991284), \"rid\": RID(6012954214470) }",
+			"to": "(94.96137, 0.93322, 168.4241)",
+			"unsafe": "(94.96137, 0.932963, 168.6058)"
+		},
+		{
+			"result": {
+				"cast_id": "1790701241020000-0c9d21570ae6dc9a:1",
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.01638, 0.938167, 168.1899)",
+				"power": 1200.0
+			},
+			"state": {
+
+			},
+			"target": "probe-pine"
+		},
+		{
+			"cast_id": "1790701241020000-0c9d21570ae6dc9a:2",
+			"fractions": "[1.0, 1.0]",
+			"frame": 322,
+			"from": "(95.04884, 0.85977, 169.7147)",
+			"nearest": [
+				{
+					"id": "probe-rock",
+					"part": "chunk_3",
+					"safe_gap": -0.303483722686768,
+					"same_first_body": true,
+					"unsafe_gap": -0.440509317398071
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_2",
+					"safe_gap": -0.265063395309448,
+					"same_first_body": true,
+					"unsafe_gap": -0.43551277141571
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_1",
+					"safe_gap": 1.19389302101135,
+					"same_first_body": true,
+					"unsafe_gap": 1.02984172668457
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_0",
+					"safe_gap": 1.62732856903076,
+					"same_first_body": true,
+					"unsafe_gap": 1.44976895484924
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_4",
+					"safe_gap": 1.7181512008667,
+					"same_first_body": true,
+					"unsafe_gap": 1.5375887046814
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_5",
+					"safe_gap": 2.82764485244751,
+					"same_first_body": true,
+					"unsafe_gap": 2.62812855606079
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01984, 0.973631, 169.7578), \"normal\": (-0.10745, 0.420908, 0.900717), \"rid\": RID(7322919239750), \"collider_id\": 123211876952, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(95.04884, 0.85977, 169.7147)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"center\": (95.04884, 0.85977, 169.7147), \"point\": (95.03918, 0.897568, 169.7956), \"normal\": (-0.10745, 0.420908, 0.900717), \"rid\": RID(7322919239750) }",
+			"to": "(95.04884, 0.860053, 169.5147)",
+			"unsafe": "(95.04884, 0.860053, 169.5147)"
+		},
+		{
+			"result": {
+				"cast_id": "1790701241020000-0c9d21570ae6dc9a:2",
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.06711, 0.767372, 169.8598)",
+				"power": 1200.0
+			},
+			"state": {
+
+			},
+			"target": "probe-rock"
+		}
+	],
+	"scope": "Read-only sphere cast and analytic segment comparisons; actual damage comes only from normal R skill processing.",
+	"slot": "user://martial_contact_diagnostic_1492120.json"
+}

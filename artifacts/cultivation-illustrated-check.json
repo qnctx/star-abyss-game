@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "chapters": 30,
+  "views": [
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "viewport": 1440,
+      "images": true
+    },
+    {
+      "width": 768,
+      "pageWidth": 768,
+      "viewport": 768,
+      "images": true
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "viewport": 390,
+      "images": true
+    }
+  ],
+  "browserErrors": [],
+  "allChapterImagesDecoded": true,
+  "tablesRectangular": true,
+  "crossRealm": {
+    "a": 83.19024,
+    "d": 69.3252,
+    "h": 831.9024000000002,
+    "fusedA": 266.208768,
+    "fusedD": 152.51544,
+    "temporaryHp": 415.9512000000001,
+    "normalHit": 66,
+    "fusedHit": 212,
+    "enemyHit": 32,
+    "enemyHitFused": 18
+  },
+  "legendaryChance100": 0.005982214876434355,
+  "legendaryChance600": 0.035360748369476114
+}

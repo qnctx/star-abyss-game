@@ -1,0 +1,53 @@
+{
+  "reference": "reference.png: existing fist/guard panels",
+  "source_body_bones_preserved": 19,
+  "added_bones": [
+    "palmL",
+    "index1L",
+    "index2L",
+    "index3L",
+    "middle1L",
+    "middle2L",
+    "middle3L",
+    "ring1L",
+    "ring2L",
+    "ring3L",
+    "little1L",
+    "little2L",
+    "little3L",
+    "thumb1L",
+    "thumb2L",
+    "thumb3L",
+    "palmR",
+    "index1R",
+    "index2R",
+    "index3R",
+    "middle1R",
+    "middle2R",
+    "middle3R",
+    "ring1R",
+    "ring2R",
+    "ring3R",
+    "little1R",
+    "little2R",
+    "little3R",
+    "thumb1R",
+    "thumb2R",
+    "thumb3R"
+  ],
+  "removed_old_glove_vertices": {
+    "C2_OriginalProportions": 2534
+  },
+  "glove_meshes": [
+    {
+      "name": "C2_ArticulatedGloveL",
+      "vertices": 1228,
+      "faces": 1132
+    },
+    {
+      "name": "C2_ArticulatedGloveR",
+      "vertices": 1228,
+      "faces": 1132
+    }
+  ]
+}

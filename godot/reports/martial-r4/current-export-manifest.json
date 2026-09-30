@@ -1,0 +1,162 @@
+{
+  "created": "2026-09-29T16:10:22.407Z",
+  "scope": "CPU-exported current source files; not a Godot reimport or visual acceptance",
+  "files": [
+    {
+      "path": "res://assets/martial-r4/aperture.glb",
+      "size": 38944,
+      "sha256": "9aa0adae50fa66eec9e7f90acfc56f0dfb73dda6f8ad0dfc870f38b76162fc07",
+      "md5": "fb79fbd87320687f987b4872955003ca",
+      "import_artifact": ".godot/imported/aperture.glb-3034c3903a5903383d088b23858d626e.scn",
+      "cached_source_md5": "fb79fbd87320687f987b4872955003ca",
+      "cache_matches_current": true
+    },
+    {
+      "path": "res://assets/martial-r4/build.py",
+      "size": 9685,
+      "sha256": "0006b0656946ecfb0a536911213a32b680d3d5f4e32c3ed451f400c6dfc0a938",
+      "md5": "bf0b9064b60584310c81baf72d44e86b"
+    },
+    {
+      "path": "res://assets/martial-r4/build_vfx.py",
+      "size": 3222,
+      "sha256": "98f6775c77d5ab636cf108779d3c1d9a4034a3028966a14e236942ef5687b290",
+      "md5": "1aca0031273414930fe94037c221dcd4"
+    },
+    {
+      "path": "res://assets/martial-r4/c2-martial-r4.glb",
+      "size": 947940,
+      "sha256": "df3c95a4712e4bfdc1f74bb0c32229ff3dca44007ae74b0318b9986f25db4a70",
+      "md5": "8fdb5d88130e70a2e3b7a870d076a9bd",
+      "import_artifact": ".godot/imported/c2-martial-r4.glb-1207a4b9181aeb5facd9b6331e6c7de5.scn",
+      "cached_source_md5": "146965e15d8bf9d1d216901dcdda9249",
+      "cache_matches_current": false
+    },
+    {
+      "path": "res://assets/martial-r4/charge.glb",
+      "size": 31524,
+      "sha256": "edcc2dfc7bb907c9136f0a3ef8a893a66507f1908ffc96e182aa867a8e9219e1",
+      "md5": "b9faf3cd4487aa274e489e1a1788e98c",
+      "import_artifact": ".godot/imported/charge.glb-9a66dd09a4e8a2d2efebd3bf7bf5f16c.scn",
+      "cached_source_md5": "6b19dab05aa2093cfb10a0526af8d89d",
+      "cache_matches_current": false
+    },
+    {
+      "path": "res://assets/martial-r4/fist.glb",
+      "size": 11492,
+      "sha256": "e9004b06a3cbf412631104032909e6ac7a6790372dc7a7fdc44347c75272a858",
+      "md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "import_artifact": ".godot/imported/fist.glb-49d76d9e90ebed69d5fb84e16d250bf5.scn",
+      "cached_source_md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "cache_matches_current": true
+    },
+    {
+      "path": "res://assets/martial-r4/impact-reference.png",
+      "size": 2807180,
+      "sha256": "2f6b2c3ccf25c858bd522dfbeb2da6f92d6f67d2c4e37b4541b160a6f087748f",
+      "md5": "5c8b21eda143637cebf1b3b17d2ac6b5"
+    },
+    {
+      "path": "res://assets/martial-r4/impact.glb",
+      "size": 16116,
+      "sha256": "22b76b851f888df13ff2f0f8542e3c1ee9a1af1cae88446661511919201e03d8",
+      "md5": "015176318d0fac91a580637012189032",
+      "import_artifact": ".godot/imported/impact.glb-327f522c117212a27333a862c13cbeed.scn",
+      "cached_source_md5": "015176318d0fac91a580637012189032",
+      "cache_matches_current": true
+    },
+    {
+      "path": "res://assets/martial-r4/manifest.json",
+      "size": 2245,
+      "sha256": "249c48109f035794ef771e8ac0fbbe859a28424977c547cceed7713f791690e2",
+      "md5": "18731cc266f60dc4f60007045c965708"
+    },
+    {
+      "path": "res://assets/martial-r4/martial_qi.gdshader",
+      "size": 754,
+      "sha256": "bda77a2337cbdb210f052e07524dee79582dac081f6eaa2909fd118e14a808eb",
+      "md5": "e9eb5f1593cb04fbbaba6598092f3873"
+    },
+    {
+      "path": "res://assets/martial-r4/pressure.glb",
+      "size": 25924,
+      "sha256": "85c4a24d743331c82e430205fda979e94384f8a8290bb63ec3550e1b9dcb00b6",
+      "md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "import_artifact": ".godot/imported/pressure.glb-8107ff8ba82abed47dd64b050177d7d3.scn",
+      "cached_source_md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "cache_matches_current": true
+    },
+    {
+      "path": "res://assets/martial-r4/reference.png",
+      "size": 2279438,
+      "sha256": "c042b7981e0ca5f7e6bcfc24d5a66b55be08545ebab0e0da2723c8a74854578f",
+      "md5": "9839dfa9d9114fd1d409e55077d92f10"
+    },
+    {
+      "path": "res://assets/martial-r4/slash.glb",
+      "size": 21580,
+      "sha256": "cef73e847907b9206dc8bfd28ba10fd99598478cc2132278b79a549c535d46c6",
+      "md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "import_artifact": ".godot/imported/slash.glb-10852c8b3692666bfb230d50c0a654d8.scn",
+      "cached_source_md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "cache_matches_current": true
+    },
+    {
+      "path": "res://assets/martial-r4/vfx-manifest.json",
+      "size": 532,
+      "sha256": "783087075e11b361f26a067051636398f8f08431e5613d74486bf1584e647cec",
+      "md5": "2518734ddde51dfca42f679ed43eb816"
+    },
+    {
+      "path": "res://assets/martial-r4/source/aperture.blend",
+      "size": 100360,
+      "sha256": "ed4bb7a4d288c9284d7f200a7f8bf457277c458b1bbf71816c998132c6aeae58",
+      "md5": "47fc61eac358a837b5f8f815272a8beb",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/c2-martial-r4.blend",
+      "size": 11878242,
+      "sha256": "4cb0d0873a199bf51fade27123163d6b89f34fdba872d756153bdf065ac8db77",
+      "md5": "dbd8afd126fc7b3c99c6369de759b441",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/charge.blend",
+      "size": 97529,
+      "sha256": "015842bf21019bee953706b91acc67b865485ed979144818955aa63b6c9a045e",
+      "md5": "7c1f5b1043259c25febbd46f39fb3e47",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/fist.blend",
+      "size": 91643,
+      "sha256": "cc9eed08014d708a611ae8f292cc4bd73b4f04fafac3c0f1772a6e658fb0d9cd",
+      "md5": "1309b481c67a44b53948f0a75939f8cc",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/impact.blend",
+      "size": 92964,
+      "sha256": "e50b48a4ad3f3d037cf5cf7491f7cceff734e6fe5c7433bf25b8f5d8d3bd08b3",
+      "md5": "aadc9a36df6a46ac838e8fac475194fe",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/pressure.blend",
+      "size": 96178,
+      "sha256": "c7cbe5d5ca70c107024ed97d7ab37831728d00eecfdd2042a41a3cc0027573e0",
+      "md5": "30bd59ad0794e26cb8a54e88171956e4",
+      "import_expected": false
+    },
+    {
+      "path": "res://assets/martial-r4/source/slash.blend",
+      "size": 93823,
+      "sha256": "a614411c9a94feb5528ae4e909b466209a3fd8f451e57c4ccd0c40817b153db7",
+      "md5": "7c60b3c29c615636ebe0141ba31e1dca",
+      "import_expected": false
+    }
+  ],
+  "shared_motion_sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+  "manifest_shared_hash_matches": true
+}

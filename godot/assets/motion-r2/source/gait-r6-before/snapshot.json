@@ -1,0 +1,32 @@
+{
+  "godot\\assets\\motion-r2\\source\\c2-motion-r2.blend": {
+    "backup": "c2-motion-r2.blend",
+    "sha256": "dbaaef56bcae00fda16c56dce5948790015a9c7cae462e8f003d1dbf2deb8bfd",
+    "bytes": 20511723
+  },
+  "godot\\assets\\motion-r2\\c2-motion-r2.glb": {
+    "backup": "c2-motion-r2.glb",
+    "sha256": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430",
+    "bytes": 15336252
+  },
+  "godot\\assets\\motion-r2\\clips.json": {
+    "backup": "clips.json",
+    "sha256": "e19b4cb9fa263faeba42ab05d7a8fe6150aed975d34c1cd333e4056418386934",
+    "bytes": 1631
+  },
+  "godot\\assets\\motion-r2\\build_gait_r4.py": {
+    "backup": "build_gait_r4.py",
+    "sha256": "2c918d7406e972b3b7ad0c7506458ed589a49ece9bc5228cf1d8c66d5bde5c07",
+    "bytes": 5428
+  },
+  "godot\\assets\\motion-r2\\gait_r4.py": {
+    "backup": "gait_r4.py",
+    "sha256": "69e50887a63697b2ec3e5e185bcaca800d5b16b5b4dd3ad6ac091dca2e74f324",
+    "bytes": 5584
+  },
+  "godot\\scripts\\native_motion_r2.gd": {
+    "backup": "native_motion_r2.gd",
+    "sha256": "95d3a7df91e2dfe5128fd0a649c0e8696457f4d8dd07f178374a4018dabb78c6",
+    "bytes": 18768
+  }
+}

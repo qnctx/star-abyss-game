@@ -1,0 +1,130 @@
+{
+  "root": "E:/myProject/star-abyss-game",
+  "files": [
+    {
+      "file": "artifacts/r2-build-inputs.json",
+      "sha": "de2675613bc1fb1b2e4b6fa43ac0c822810cd570cb1933024a27514dafd098f7",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-build-inputs.json"
+    },
+    {
+      "file": "artifacts/r2-published.json",
+      "sha": "f707ee566ebc1ec55bece04c4394b7f47a04e6fc3b5fd3c9e7bb85c01393a8b4",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-published.json"
+    },
+    {
+      "file": "artifacts/r2-published-verification.json",
+      "sha": "0a60a8bc260ea7828a7caa6ff8d5892fbb1b1732420cfd9da33101ed496cf9f1",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-published-verification.json"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/camp-overview.png",
+      "sha": "c596cb8e88e7a0e349e21dd2e61e906b7cd01a44787f78087458e4d5aa44a03e",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\camp-overview.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/N01-dialog.png",
+      "sha": "0731468d9a3a07bd26d72b056a487a05d77e9344271046c5c76086039182d90f",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\N01-dialog.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/N02-dialog.png",
+      "sha": "2d51016741981515db4be92bfd22b9e97896965893ba066b90ae65f69ba3885c",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\N02-dialog.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/N03-dialog.png",
+      "sha": "eb524be10758772b10ce075684bbc82e7cde806387262bc15fb7e21d68c1370e",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\N03-dialog.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/N04-dialog.png",
+      "sha": "9c9aa4b63ec357dc2521081e000cbe57dfbffedea51766c5a4a4771ccb3e190d",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\N04-dialog.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/N05-dialog.png",
+      "sha": "48fc26a34e621f25abaea5a6c46c0c74595a24efc43c83ce14fd132558519779",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\N05-dialog.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/platform-entry.png",
+      "sha": "8b284351ae88e20e21b0dc5c2ea9fa85524b5cee2bad9fa7dd24a98ac75c59e9",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\platform-entry.png"
+    },
+    {
+      "file": "artifacts/r2-integrated-browser/report.json",
+      "sha": "9625d6fc7c7db5b4cf3f4a70d8476e0df68589fd015115723c45cd26a7589165",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-integrated-browser\\report.json"
+    },
+    {
+      "file": "artifacts/r2-candidate-performance/camp-stationary.png",
+      "sha": "762d76552354635043714b6ddde1172db8146ededb7100de052cf5850f1dfacd",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-candidate-performance\\camp-stationary.png"
+    },
+    {
+      "file": "artifacts/r2-candidate-performance/high-flight-2000m.png",
+      "sha": "83bb0c757309e8e2e595f4177b7854683a9bb31a015d9ff0851f5935aabe515e",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-candidate-performance\\high-flight-2000m.png"
+    },
+    {
+      "file": "artifacts/r2-candidate-performance/low-flight-30m.png",
+      "sha": "43c83b15e9cd745a9881992f167c4e7126a8684b3c1b72c2c419d922ab58dcdf",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-candidate-performance\\low-flight-30m.png"
+    },
+    {
+      "file": "artifacts/r2-candidate-performance/report.json",
+      "sha": "071e7475d62443362edfb0feed5fcb00b314848b01b9587ec5ae9ad37ca8359b",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-candidate-performance\\report.json"
+    },
+    {
+      "file": "artifacts/r2-candidate-performance/view-switch.png",
+      "sha": "d4ed6d745d1b104427b47e4b6b12bd61de109f3dd17ec835d25804129862d51b",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-candidate-performance\\view-switch.png"
+    },
+    {
+      "file": "artifacts/r2-browser-hud-final/report.json",
+      "sha": "42ca27cd514e79f9c6dfa4f3b1d36f4adee16b630b3aa088db06e1539bb713d7",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-hud-final\\report.json"
+    },
+    {
+      "file": "artifacts/r2-browser-hud-final/toast-1440x900.png",
+      "sha": "ba5f7e48c8697b41b26089ffa30f7a5d5124a343795c36fbde78e6b2ad1e9f46",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-hud-final\\toast-1440x900.png"
+    },
+    {
+      "file": "artifacts/r2-browser-hud-final/toast-390x640.png",
+      "sha": "30228dd0436572a3648a214326524e1d2fd4f2df8283f689d39567e1559f93a3",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-hud-final\\toast-390x640.png"
+    },
+    {
+      "file": "artifacts/r2-browser-hud-final/toast-670x700.png",
+      "sha": "fafe908a3b872a3aa9c3264827768a3c2d0ad971ba673de54f8f9e7ca33d8027",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-hud-final\\toast-670x700.png"
+    },
+    {
+      "file": "artifacts/r2-browser-hud-final/toast-900x500.png",
+      "sha": "558f082978c669356c5c624492443d59fdfa88ae6657b34d2bfc8365440f66e0",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-hud-final\\toast-900x500.png"
+    },
+    {
+      "file": "artifacts/r2-browser-ground-ready-retest/30m-descent-end.png",
+      "sha": "12b8c7951cc2c3e96ed0f29a41cbe67f9acd23e3de236321b9a5ecda313b2336",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-ground-ready-retest\\30m-descent-end.png"
+    },
+    {
+      "file": "artifacts/r2-browser-ground-ready-retest/cruise-end.png",
+      "sha": "32a9bb487539427f35810fbbd8faac6423333cf2029d3ac9d38b1a1451118bfd",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-ground-ready-retest\\cruise-end.png"
+    },
+    {
+      "file": "artifacts/r2-browser-ground-ready-retest/descent-end.png",
+      "sha": "0467e2a68be73d24474e10c303ce977373e0e7dac533b4e83692a52f04004131",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-ground-ready-retest\\descent-end.png"
+    },
+    {
+      "file": "artifacts/r2-browser-ground-ready-retest/report.json",
+      "sha": "fe1152a7a3a67038a3f2a5d75248140b7168401123ca4e92899dd379a8b3623c",
+      "destination": "E:\\myProject\\star-abyss-game\\artifacts\\r2-browser-ground-ready-retest\\report.json"
+    }
+  ]
+}

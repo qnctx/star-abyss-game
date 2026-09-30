@@ -1,0 +1,283 @@
+{
+  "test": "TEST-ORIGINAL-WORLD-R2",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/4a51/star-abyss-game/artifacts/tests/TEST-ORIGINAL-WORLD-R2",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-ORIGINAL-WORLD-R2",
+  "archivedAt": "2026-09-12T15:29:38.507Z",
+  "files": [
+    {
+      "path": "browser-final.json",
+      "sha256": "b8538cbafb374c149f26856bbd62e1c3260f20447fd3311b89b4f844f915dd17",
+      "bytes": 413
+    },
+    {
+      "path": "camp.png",
+      "sha256": "0315bffff942e9e02a5bd8a3689b80d53d1427b7b302f1817892ec67b663ee27",
+      "bytes": 85764
+    },
+    {
+      "path": "corpse-measurements.json",
+      "sha256": "d46dfc618a5c013e0b28a55de5964af88140fcfee6337cff5a112c8ef31649a6",
+      "bytes": 4822
+    },
+    {
+      "path": "corpse.mjs",
+      "sha256": "0fba28b439da1ec0c0b79493f1aad67d76f82bd3200789cdb8a048302ea2bf6b",
+      "bytes": 1898
+    },
+    {
+      "path": "corpse.tap",
+      "sha256": "4c326909de5d76c7808694331e5922d23eb97d4409093366bf592e18fd1191dd",
+      "bytes": 2375
+    },
+    {
+      "path": "dependencies.cjs",
+      "sha256": "68aba8e9dd74f2a6af01a4afb35c7c275bd75de4e2546aed134909bb02552a37",
+      "bytes": 523
+    },
+    {
+      "path": "developer-tests.tap",
+      "sha256": "66286425d40073c6fdf78049db9863eafc951bdd59b8d20d7d0ac66f9669b592",
+      "bytes": 1391
+    },
+    {
+      "path": "east-arrival.png",
+      "sha256": "90b66f45f641a4b7f2ed7fe4dae007461f1e1a4c36d0f7f2cb9df38668ff8c9a",
+      "bytes": 88678
+    },
+    {
+      "path": "east-hooves.png",
+      "sha256": "702c16bd588f6a75a5042fa025c030af7e8d1ca13cc0104c1339526da0cc1bf2",
+      "bytes": 99134
+    },
+    {
+      "path": "east-transit.png",
+      "sha256": "a1d68fe54f913002df1377c735afcc7bbf3f851ca9721b66dac484030d5a4bb7",
+      "bytes": 84749
+    },
+    {
+      "path": "evidence-manifest.json",
+      "sha256": "c3fea4f7eb5447a5ca40a77ab0932caa13e9f3ebd62723cf2e7e14da22d06452",
+      "bytes": 10594
+    },
+    {
+      "path": "final-hashes.json",
+      "sha256": "1e811de1b8f4657e00f4631b22151d99fd29053ef16127484e85151dee203e54",
+      "bytes": 80133
+    },
+    {
+      "path": "finalize.cjs",
+      "sha256": "fdaf1dfe6874905662a02620d758ed144223913d659d229e33c4ad757594e077",
+      "bytes": 1968
+    },
+    {
+      "path": "fixture-build.cjs",
+      "sha256": "58b44a8d4b7eac34cd2732042731c3b1dcb3635ab47046cccebb32ee512d19cc",
+      "bytes": 290
+    },
+    {
+      "path": "fixture-dead.png",
+      "sha256": "b7ddcf0759a78a0ce02940c69284b8d18bad59c724a9b6104a0d23ad991a0a58",
+      "bytes": 34967
+    },
+    {
+      "path": "fixture-idle.png",
+      "sha256": "0d6e7898bd5edc14577dd4662806f058a6fe7c1529436495bd63e66616621f7c",
+      "bytes": 35492
+    },
+    {
+      "path": "fixture-windup.png",
+      "sha256": "bb731c4fae839dba84606ef77bd8e63109c9e148cddcbd343edcb7bea997289c",
+      "bytes": 36150
+    },
+    {
+      "path": "fixture.bundle.js",
+      "sha256": "063a65b8806146f2c72d0ef0d539ec9364f5c8bfd046b2a79b13fb43740cbd35",
+      "bytes": 1654534
+    },
+    {
+      "path": "fixture.html",
+      "sha256": "92d6824244febe46688129a50d05e03ca3b75ef5bd034b9f16788dffc29b8fcb",
+      "bytes": 561
+    },
+    {
+      "path": "fixture.mjs",
+      "sha256": "6da0f238d25b4ae2f2bc88a242f377a7b484db300cca6d9b74dee18fcc7a4747",
+      "bytes": 1937
+    },
+    {
+      "path": "http-check.cjs",
+      "sha256": "65bbcc6832a5b5be4b7eb3b34a3052261184af1bcac2f1a5baab3fb50c6d8906",
+      "bytes": 647
+    },
+    {
+      "path": "independent-measurements.json",
+      "sha256": "703ee217ab0b35e6e8b8595cd5252f0424698857c43f9c5b5b64b78d5200b24f",
+      "bytes": 70630
+    },
+    {
+      "path": "independent.mjs",
+      "sha256": "60528b541cc83a8adf08bfd0b2bbb73717d3541cd841d55ca6c9f04010a8e98a",
+      "bytes": 6874
+    },
+    {
+      "path": "independent.tap",
+      "sha256": "099f3245402ac9bb1ad733181cbb9e48de9c347e0535787eca4a90cf89752fea",
+      "bytes": 2082
+    },
+    {
+      "path": "initial-hashes.json",
+      "sha256": "14a8375c8a44813b269ff3dbab5386e3b90be1269d51a077e98d468e00993099",
+      "bytes": 38598
+    },
+    {
+      "path": "inspect.cjs",
+      "sha256": "ea35ae5d9b61e7c7f310e485086bb5e5dc5c43c1d9d9249fba7f2001ff88e504",
+      "bytes": 200
+    },
+    {
+      "path": "machine.json",
+      "sha256": "ae77633e92a2aad5580713bb0a5ae2e72e51d88d33e67932a634fb29da587cb2",
+      "bytes": 354
+    },
+    {
+      "path": "measure-summary.cjs",
+      "sha256": "0fef6cd9ae655fcbe09876754cd994e5d28594c65d36600c206306353b1c7a8f",
+      "bytes": 412
+    },
+    {
+      "path": "north-arrival.png",
+      "sha256": "0128d736a71daa6583b1000cbf36bc2a02f822eabacaf34adbf82c225195c0f1",
+      "bytes": 84943
+    },
+    {
+      "path": "north-hooves.png",
+      "sha256": "3aefdca32ad8ed140939f79c0e77486134d6f39175f47a7aefec25d3536ba223",
+      "bytes": 94802
+    },
+    {
+      "path": "north-transit.png",
+      "sha256": "ac33f6f3bf564813a9376e8832cc9eff2c1a5e166719c6aeb6b3d1f760dd66ff",
+      "bytes": 88342
+    },
+    {
+      "path": "old-head/package.json",
+      "sha256": "06afe94a62cba3628a50b78e16e2f40066b9f60c43b16aa0bcba68e60a9d2ea2",
+      "bytes": 274
+    },
+    {
+      "path": "old-head/playable/css/game.css",
+      "sha256": "1b330a8c5e43ec089b80e9b40c812839b73373a448da569c144527d96535c4b4",
+      "bytes": 10098
+    },
+    {
+      "path": "old-head/playable/star-abyss.html",
+      "sha256": "fe73cba6a9efbf44cd2650cc46fb5b2a9bb05d5de3287ce8081d7970eee5b0bd",
+      "bytes": 7102
+    },
+    {
+      "path": "old-head/playable/tests/star-abyss.spec.js",
+      "sha256": "7ffaf5b5af66383c620ed228de784d448d3478ead418f5c4627c40a51785c971",
+      "bytes": 2341
+    },
+    {
+      "path": "original-rock-render.mjs",
+      "sha256": "6f5838e969ca6f7be57600c2c23ae7e5888c514e0cdf3721e6b98d0e89f79932",
+      "bytes": 564183
+    },
+    {
+      "path": "original-route.png",
+      "sha256": "31f1f47f9596aef8f364d5f5702964270284bbe07a9e65b594b0b7c884fad1a5",
+      "bytes": 78743
+    },
+    {
+      "path": "readonly-dependencies.json",
+      "sha256": "59d4153b098eea55528b3d9fae64477fb7e0fdd864889b90942972cb400157f5",
+      "bytes": 1149
+    },
+    {
+      "path": "rock-measurements.json",
+      "sha256": "1116a1034c3dd2f2138d703a4954f0146bf0136e66d068ecdb32f9144a404f86",
+      "bytes": 11062
+    },
+    {
+      "path": "rock-test-build.cjs",
+      "sha256": "cda77af9cf13e08ec8b38afb4118570b669d6f87c4f6b3247c4aebf213369be0",
+      "bytes": 320
+    },
+    {
+      "path": "rocks.mjs",
+      "sha256": "40bfd44af2af45057ea17ccab075f7200a2c0d89eb8c5c7d80ce38851f681675",
+      "bytes": 1655
+    },
+    {
+      "path": "rocks.tap",
+      "sha256": "17dcd27e270657d1a7ade3e6e36019b71794588c9d52e1b8a58c2a5af5e89a9a",
+      "bytes": 320
+    },
+    {
+      "path": "route-log.json",
+      "sha256": "7e9812ff5b8080c981f274f7e12a207595d2448547d0559c24f7dea96813888f",
+      "bytes": 20633
+    },
+    {
+      "path": "served.json",
+      "sha256": "741b2017061df655ea53f14ddef0edefdd61559bee723a907bb1dc85102cd06b",
+      "bytes": 318
+    },
+    {
+      "path": "service-stopped.json",
+      "sha256": "45c260ec0e00a7b72ef979861471af8e268599ed6e54cdb83aaf9f3e40577ed5",
+      "bytes": 261
+    },
+    {
+      "path": "setup.cjs",
+      "sha256": "2eeba12e04e0212835520ea16d2a165e42c980a0ed92e6cf9cfa1725e739657f",
+      "bytes": 1499
+    },
+    {
+      "path": "state-boundaries.json",
+      "sha256": "d0232c3ede7951db6eb27d708743486dc51027c41e75d70c3969aed108a1a916",
+      "bytes": 1291
+    },
+    {
+      "path": "state-boundaries.mjs",
+      "sha256": "a08aa69ea1d50bbe7809478cdf90c1d99bffa5d5b935044b31b45be7377032d5",
+      "bytes": 2560
+    },
+    {
+      "path": "state-boundaries.tap",
+      "sha256": "1469c6e070a1b4bb5781068985f641582c5c07748293abff267bb63c7c004aca",
+      "bytes": 382
+    },
+    {
+      "path": "vehicle-first-person.png",
+      "sha256": "f52c3dbe4f6ae93bba9ba509b5d02ebe5ecfbd3781a203ed4ab2eae40d702c51",
+      "bytes": 88761
+    },
+    {
+      "path": "vehicle.png",
+      "sha256": "17dd5aacf09e05114906722ff26fae9b65a34f18ea3dcc5d97f548f1579b5d88",
+      "bytes": 79103
+    },
+    {
+      "path": "west-arrival.png",
+      "sha256": "d1dae4ae0b437e53b9712d6bca730a9b19c94e620aaee219ea8d9fdeb8fc4dc5",
+      "bytes": 88577
+    },
+    {
+      "path": "west-hooves.png",
+      "sha256": "5dfc85055b1e49dc8fa55921c35fc5293d4acc0339203218eb7166d3db7fda56",
+      "bytes": 95060
+    },
+    {
+      "path": "west-lod.png",
+      "sha256": "ebeeea28fd95da79694e048e0d73a817b4a5d4a19a29aee0cb3aa8a52af8efb1",
+      "bytes": 80133
+    },
+    {
+      "path": "west-original-survey.png",
+      "sha256": "d8abb3330fff9ad0416cb301f06336b3bad282a039ee8627eeddae92714ced88",
+      "bytes": 87359
+    }
+  ]
+}

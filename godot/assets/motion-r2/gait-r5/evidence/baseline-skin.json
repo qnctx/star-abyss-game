@@ -1,0 +1,5710 @@
+{
+	"method": "MeshInstance3D.bake_mesh_from_current_skeleton_pose after actual render; all skinned vertices scanned in world coordinates against actor root flat plane. Actual automatic physics, may stall rendering during GPU readback.",
+	"physics_frames": 442,
+	"records": [
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 2,
+			"seconds": 0.0166666666666667,
+			"stage": "idle",
+			"tick": 1,
+			"wall": 0.000491
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 3,
+			"seconds": 0.0333333333333333,
+			"stage": "idle",
+			"tick": 2,
+			"wall": 0.000572
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 4,
+			"seconds": 0.05,
+			"stage": "idle",
+			"tick": 3,
+			"wall": 0.000624
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 5,
+			"seconds": 0.0666666666666667,
+			"stage": "idle",
+			"tick": 4,
+			"wall": 0.000673
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 6,
+			"seconds": 0.0833333333333333,
+			"stage": "idle",
+			"tick": 5,
+			"wall": 0.00072
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 7,
+			"seconds": 0.1,
+			"stage": "idle",
+			"tick": 6,
+			"wall": 0.000766
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 8,
+			"seconds": 0.116666666666667,
+			"stage": "idle",
+			"tick": 7,
+			"wall": 0.000812
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 9,
+			"seconds": 0.133333333333333,
+			"stage": "idle",
+			"tick": 8,
+			"wall": 0.359522
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 10,
+			"seconds": 0.15,
+			"stage": "idle",
+			"tick": 9,
+			"wall": 0.359619
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 11,
+			"seconds": 0.166666666666667,
+			"stage": "idle",
+			"tick": 10,
+			"wall": 0.359677
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 12,
+			"seconds": 0.183333333333333,
+			"stage": "idle",
+			"tick": 11,
+			"wall": 0.35973
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 13,
+			"seconds": 0.2,
+			"stage": "idle",
+			"tick": 12,
+			"wall": 0.359786
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 14,
+			"seconds": 0.216666666666667,
+			"stage": "idle",
+			"tick": 13,
+			"wall": 0.359841
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 15,
+			"seconds": 0.233333333333333,
+			"stage": "idle",
+			"tick": 14,
+			"wall": 0.359889
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 16,
+			"seconds": 0.25,
+			"stage": "idle",
+			"tick": 15,
+			"wall": 0.359938
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 17,
+			"seconds": 0.266666666666667,
+			"stage": "idle",
+			"tick": 16,
+			"wall": 0.474343
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 18,
+			"seconds": 0.283333333333333,
+			"stage": "idle",
+			"tick": 17,
+			"wall": 0.474443
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 19,
+			"seconds": 0.3,
+			"stage": "idle",
+			"tick": 18,
+			"wall": 0.474499
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 20,
+			"seconds": 0.316666666666667,
+			"stage": "idle",
+			"tick": 19,
+			"wall": 0.474551
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 21,
+			"seconds": 0.333333333333333,
+			"stage": "idle",
+			"tick": 20,
+			"wall": 0.474602
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 22,
+			"seconds": 0.35,
+			"stage": "idle",
+			"tick": 21,
+			"wall": 0.474652
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 23,
+			"seconds": 0.366666666666667,
+			"stage": "idle",
+			"tick": 22,
+			"wall": 0.474699
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 24,
+			"seconds": 0.383333333333333,
+			"stage": "idle",
+			"tick": 23,
+			"wall": 0.474745
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 25,
+			"seconds": 0.4,
+			"stage": "idle",
+			"tick": 24,
+			"wall": 0.588812
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 26,
+			"seconds": 0.416666666666667,
+			"stage": "idle",
+			"tick": 25,
+			"wall": 0.58891
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 27,
+			"seconds": 0.433333333333333,
+			"stage": "idle",
+			"tick": 26,
+			"wall": 0.588967
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 28,
+			"seconds": 0.45,
+			"stage": "idle",
+			"tick": 27,
+			"wall": 0.589019
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 29,
+			"seconds": 0.466666666666667,
+			"stage": "idle",
+			"tick": 28,
+			"wall": 0.58907
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 30,
+			"seconds": 0.483333333333333,
+			"stage": "idle",
+			"tick": 29,
+			"wall": 0.589123
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 31,
+			"seconds": 0.5,
+			"stage": "idle",
+			"tick": 30,
+			"wall": 0.58917
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0,
+			"physics_frame": 32,
+			"seconds": 0.516666666666667,
+			"stage": "idle",
+			"tick": 31,
+			"wall": 0.701556
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.019047619047619,
+			"physics_frame": 33,
+			"seconds": 0.533333333333333,
+			"stage": "walk",
+			"tick": 32,
+			"wall": 0.701703
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0380952380952381,
+			"physics_frame": 34,
+			"seconds": 0.55,
+			"stage": "walk",
+			"tick": 33,
+			"wall": 0.701791
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0571428571428571,
+			"physics_frame": 35,
+			"seconds": 0.566666666666667,
+			"stage": "walk",
+			"tick": 34,
+			"wall": 0.701867
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0761904761904762,
+			"physics_frame": 36,
+			"seconds": 0.583333333333333,
+			"stage": "walk",
+			"tick": 35,
+			"wall": 0.701939
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0952380952380952,
+			"physics_frame": 37,
+			"seconds": 0.6,
+			"stage": "walk",
+			"tick": 36,
+			"wall": 0.702011
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.114285714285714,
+			"physics_frame": 38,
+			"seconds": 0.616666666666667,
+			"stage": "walk",
+			"tick": 37,
+			"wall": 0.702085
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.133333333333333,
+			"physics_frame": 39,
+			"seconds": 0.633333333333334,
+			"stage": "walk",
+			"tick": 38,
+			"wall": 0.809348
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.152380952380952,
+			"physics_frame": 40,
+			"seconds": 0.65,
+			"stage": "walk",
+			"tick": 39,
+			"wall": 0.809479
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.171428571428571,
+			"physics_frame": 41,
+			"seconds": 0.666666666666667,
+			"stage": "walk",
+			"tick": 40,
+			"wall": 0.809565
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.19047619047619,
+			"physics_frame": 42,
+			"seconds": 0.683333333333334,
+			"stage": "walk",
+			"tick": 41,
+			"wall": 0.809636
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.20952380952381,
+			"physics_frame": 43,
+			"seconds": 0.700000000000001,
+			"stage": "walk",
+			"tick": 42,
+			"wall": 0.809698
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.228571428571429,
+			"physics_frame": 44,
+			"seconds": 0.716666666666667,
+			"stage": "walk",
+			"tick": 43,
+			"wall": 0.809762
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.247619047619048,
+			"physics_frame": 45,
+			"seconds": 0.733333333333334,
+			"stage": "walk",
+			"tick": 44,
+			"wall": 0.919658
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.266666666666667,
+			"physics_frame": 46,
+			"seconds": 0.750000000000001,
+			"stage": "walk",
+			"tick": 45,
+			"wall": 0.919781
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.285714285714286,
+			"physics_frame": 47,
+			"seconds": 0.766666666666667,
+			"stage": "walk",
+			"tick": 46,
+			"wall": 0.919853
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.304761904761905,
+			"physics_frame": 48,
+			"seconds": 0.783333333333334,
+			"stage": "walk",
+			"tick": 47,
+			"wall": 0.91993
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.323809523809524,
+			"physics_frame": 49,
+			"seconds": 0.800000000000001,
+			"stage": "walk",
+			"tick": 48,
+			"wall": 0.919995
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.342857142857143,
+			"physics_frame": 50,
+			"seconds": 0.816666666666668,
+			"stage": "walk",
+			"tick": 49,
+			"wall": 0.920057
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.361904761904762,
+			"physics_frame": 51,
+			"seconds": 0.833333333333334,
+			"stage": "walk",
+			"tick": 50,
+			"wall": 0.920115
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.380952380952381,
+			"physics_frame": 52,
+			"seconds": 0.850000000000001,
+			"stage": "walk",
+			"tick": 51,
+			"wall": 1.026848
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.4,
+			"physics_frame": 53,
+			"seconds": 0.866666666666668,
+			"stage": "walk",
+			"tick": 52,
+			"wall": 1.026964
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.419047619047619,
+			"physics_frame": 54,
+			"seconds": 0.883333333333334,
+			"stage": "walk",
+			"tick": 53,
+			"wall": 1.027032
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.438095238095238,
+			"physics_frame": 55,
+			"seconds": 0.900000000000001,
+			"stage": "walk",
+			"tick": 54,
+			"wall": 1.027101
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.457142857142857,
+			"physics_frame": 56,
+			"seconds": 0.916666666666668,
+			"stage": "walk",
+			"tick": 55,
+			"wall": 1.027166
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.476190476190476,
+			"physics_frame": 57,
+			"seconds": 0.933333333333335,
+			"stage": "walk",
+			"tick": 56,
+			"wall": 1.027233
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.495238095238095,
+			"physics_frame": 58,
+			"seconds": 0.950000000000001,
+			"stage": "walk",
+			"tick": 57,
+			"wall": 1.133606
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.514285714285714,
+			"physics_frame": 59,
+			"seconds": 0.966666666666668,
+			"stage": "walk",
+			"tick": 58,
+			"wall": 1.133724
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.533333333333333,
+			"physics_frame": 60,
+			"seconds": 0.983333333333335,
+			"stage": "walk",
+			"tick": 59,
+			"wall": 1.133796
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.552380952380952,
+			"physics_frame": 61,
+			"seconds": 1.0,
+			"stage": "walk",
+			"tick": 60,
+			"wall": 1.133859
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.571428571428571,
+			"physics_frame": 62,
+			"seconds": 1.01666666666667,
+			"stage": "walk",
+			"tick": 61,
+			"wall": 1.133918
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.59047619047619,
+			"physics_frame": 63,
+			"seconds": 1.03333333333333,
+			"stage": "walk",
+			"tick": 62,
+			"wall": 1.133978
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.60952380952381,
+			"physics_frame": 64,
+			"seconds": 1.05,
+			"stage": "walk",
+			"tick": 63,
+			"wall": 1.134034
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.628571428571429,
+			"physics_frame": 65,
+			"seconds": 1.06666666666667,
+			"stage": "walk",
+			"tick": 64,
+			"wall": 1.242738
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.647619047619048,
+			"physics_frame": 66,
+			"seconds": 1.08333333333333,
+			"stage": "walk",
+			"tick": 65,
+			"wall": 1.242849
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.666666666666667,
+			"physics_frame": 67,
+			"seconds": 1.1,
+			"stage": "walk",
+			"tick": 66,
+			"wall": 1.242914
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.685714285714286,
+			"physics_frame": 68,
+			"seconds": 1.11666666666667,
+			"stage": "walk",
+			"tick": 67,
+			"wall": 1.242977
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.704761904761905,
+			"physics_frame": 69,
+			"seconds": 1.13333333333333,
+			"stage": "walk",
+			"tick": 68,
+			"wall": 1.243046
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.723809523809524,
+			"physics_frame": 70,
+			"seconds": 1.15,
+			"stage": "walk",
+			"tick": 69,
+			"wall": 1.243117
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.742857142857143,
+			"physics_frame": 71,
+			"seconds": 1.16666666666667,
+			"stage": "walk",
+			"tick": 70,
+			"wall": 1.353442
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.761904761904762,
+			"physics_frame": 72,
+			"seconds": 1.18333333333333,
+			"stage": "walk",
+			"tick": 71,
+			"wall": 1.353581
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.780952380952381,
+			"physics_frame": 73,
+			"seconds": 1.2,
+			"stage": "walk",
+			"tick": 72,
+			"wall": 1.353659
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.8,
+			"physics_frame": 74,
+			"seconds": 1.21666666666667,
+			"stage": "walk",
+			"tick": 73,
+			"wall": 1.353727
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.81904761904762,
+			"physics_frame": 75,
+			"seconds": 1.23333333333333,
+			"stage": "walk",
+			"tick": 74,
+			"wall": 1.353793
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.838095238095239,
+			"physics_frame": 76,
+			"seconds": 1.25,
+			"stage": "walk",
+			"tick": 75,
+			"wall": 1.35387
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.857142857142858,
+			"physics_frame": 77,
+			"seconds": 1.26666666666667,
+			"stage": "walk",
+			"tick": 76,
+			"wall": 1.353949
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.876190476190477,
+			"physics_frame": 78,
+			"seconds": 1.28333333333333,
+			"stage": "walk",
+			"tick": 77,
+			"wall": 1.474498
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.895238095238096,
+			"physics_frame": 79,
+			"seconds": 1.3,
+			"stage": "walk",
+			"tick": 78,
+			"wall": 1.474595
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.914285714285715,
+			"physics_frame": 80,
+			"seconds": 1.31666666666667,
+			"stage": "walk",
+			"tick": 79,
+			"wall": 1.474663
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.933333333333334,
+			"physics_frame": 81,
+			"seconds": 1.33333333333333,
+			"stage": "walk",
+			"tick": 80,
+			"wall": 1.474727
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.952380952380953,
+			"physics_frame": 82,
+			"seconds": 1.35,
+			"stage": "walk",
+			"tick": 81,
+			"wall": 1.474789
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.971428571428572,
+			"physics_frame": 83,
+			"seconds": 1.36666666666667,
+			"stage": "walk",
+			"tick": 82,
+			"wall": 1.474856
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.990476190476191,
+			"physics_frame": 84,
+			"seconds": 1.38333333333333,
+			"stage": "walk",
+			"tick": 83,
+			"wall": 1.474925
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.00952380952381038,
+			"physics_frame": 85,
+			"seconds": 1.4,
+			"stage": "walk",
+			"tick": 84,
+			"wall": 1.5838
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0285714285714294,
+			"physics_frame": 86,
+			"seconds": 1.41666666666667,
+			"stage": "walk",
+			"tick": 85,
+			"wall": 1.583915
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0476190476190485,
+			"physics_frame": 87,
+			"seconds": 1.43333333333333,
+			"stage": "walk",
+			"tick": 86,
+			"wall": 1.583985
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0666666666666675,
+			"physics_frame": 88,
+			"seconds": 1.45,
+			"stage": "walk",
+			"tick": 87,
+			"wall": 1.584056
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0857142857142866,
+			"physics_frame": 89,
+			"seconds": 1.46666666666667,
+			"stage": "walk",
+			"tick": 88,
+			"wall": 1.58412
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.104761904761906,
+			"physics_frame": 90,
+			"seconds": 1.48333333333333,
+			"stage": "walk",
+			"tick": 89,
+			"wall": 1.584184
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.123809523809525,
+			"physics_frame": 91,
+			"seconds": 1.5,
+			"stage": "walk",
+			"tick": 90,
+			"wall": 1.696117
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.142857142857144,
+			"physics_frame": 92,
+			"seconds": 1.51666666666667,
+			"stage": "walk",
+			"tick": 91,
+			"wall": 1.69623
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.161904761904763,
+			"physics_frame": 93,
+			"seconds": 1.53333333333333,
+			"stage": "walk",
+			"tick": 92,
+			"wall": 1.696297
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.180952380952382,
+			"physics_frame": 94,
+			"seconds": 1.55,
+			"stage": "walk",
+			"tick": 93,
+			"wall": 1.696358
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.200000000000001,
+			"physics_frame": 95,
+			"seconds": 1.56666666666667,
+			"stage": "walk",
+			"tick": 94,
+			"wall": 1.696419
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.21904761904762,
+			"physics_frame": 96,
+			"seconds": 1.58333333333333,
+			"stage": "walk",
+			"tick": 95,
+			"wall": 1.696483
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.238095238095239,
+			"physics_frame": 97,
+			"seconds": 1.6,
+			"stage": "walk",
+			"tick": 96,
+			"wall": 1.696537
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.257142857142858,
+			"physics_frame": 98,
+			"seconds": 1.61666666666667,
+			"stage": "walk",
+			"tick": 97,
+			"wall": 1.813081
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.276190476190477,
+			"physics_frame": 99,
+			"seconds": 1.63333333333333,
+			"stage": "walk",
+			"tick": 98,
+			"wall": 1.813205
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.295238095238096,
+			"physics_frame": 100,
+			"seconds": 1.65,
+			"stage": "walk",
+			"tick": 99,
+			"wall": 1.813277
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.314285714285715,
+			"physics_frame": 101,
+			"seconds": 1.66666666666667,
+			"stage": "walk",
+			"tick": 100,
+			"wall": 1.813343
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.333333333333334,
+			"physics_frame": 102,
+			"seconds": 1.68333333333333,
+			"stage": "walk",
+			"tick": 101,
+			"wall": 1.813405
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.352380952380953,
+			"physics_frame": 103,
+			"seconds": 1.7,
+			"stage": "walk",
+			"tick": 102,
+			"wall": 1.813468
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.371428571428572,
+			"physics_frame": 104,
+			"seconds": 1.71666666666667,
+			"stage": "walk",
+			"tick": 103,
+			"wall": 1.920587
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.390476190476191,
+			"physics_frame": 105,
+			"seconds": 1.73333333333333,
+			"stage": "walk",
+			"tick": 104,
+			"wall": 1.920697
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.40952380952381,
+			"physics_frame": 106,
+			"seconds": 1.75,
+			"stage": "walk",
+			"tick": 105,
+			"wall": 1.920773
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.428571428571429,
+			"physics_frame": 107,
+			"seconds": 1.76666666666667,
+			"stage": "walk",
+			"tick": 106,
+			"wall": 1.920837
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.447619047619048,
+			"physics_frame": 108,
+			"seconds": 1.78333333333333,
+			"stage": "walk",
+			"tick": 107,
+			"wall": 1.920899
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.466666666666667,
+			"physics_frame": 109,
+			"seconds": 1.8,
+			"stage": "walk",
+			"tick": 108,
+			"wall": 1.92096
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.485714285714286,
+			"physics_frame": 110,
+			"seconds": 1.81666666666667,
+			"stage": "walk",
+			"tick": 109,
+			"wall": 1.921017
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.504761904761905,
+			"physics_frame": 111,
+			"seconds": 1.83333333333333,
+			"stage": "walk",
+			"tick": 110,
+			"wall": 2.032378
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.523809523809525,
+			"physics_frame": 112,
+			"seconds": 1.85,
+			"stage": "walk",
+			"tick": 111,
+			"wall": 2.032491
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.542857142857144,
+			"physics_frame": 113,
+			"seconds": 1.86666666666666,
+			"stage": "walk",
+			"tick": 112,
+			"wall": 2.032559
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.561904761904763,
+			"physics_frame": 114,
+			"seconds": 1.88333333333333,
+			"stage": "walk",
+			"tick": 113,
+			"wall": 2.032621
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.580952380952382,
+			"physics_frame": 115,
+			"seconds": 1.9,
+			"stage": "walk",
+			"tick": 114,
+			"wall": 2.032681
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.600000000000001,
+			"physics_frame": 116,
+			"seconds": 1.91666666666666,
+			"stage": "walk",
+			"tick": 115,
+			"wall": 2.032741
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.61904761904762,
+			"physics_frame": 117,
+			"seconds": 1.93333333333333,
+			"stage": "walk",
+			"tick": 116,
+			"wall": 2.032796
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.638095238095239,
+			"physics_frame": 118,
+			"seconds": 1.95,
+			"stage": "walk",
+			"tick": 117,
+			"wall": 2.141836
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.657142857142858,
+			"physics_frame": 119,
+			"seconds": 1.96666666666666,
+			"stage": "walk",
+			"tick": 118,
+			"wall": 2.142006
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.676190476190477,
+			"physics_frame": 120,
+			"seconds": 1.98333333333333,
+			"stage": "walk",
+			"tick": 119,
+			"wall": 2.142088
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.695238095238096,
+			"physics_frame": 121,
+			"seconds": 2.0,
+			"stage": "walk",
+			"tick": 120,
+			"wall": 2.142155
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.714285714285715,
+			"physics_frame": 122,
+			"seconds": 2.01666666666666,
+			"stage": "walk",
+			"tick": 121,
+			"wall": 2.142218
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.733333333333335,
+			"physics_frame": 123,
+			"seconds": 2.03333333333333,
+			"stage": "walk",
+			"tick": 122,
+			"wall": 2.142282
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.752380952380954,
+			"physics_frame": 124,
+			"seconds": 2.05,
+			"stage": "walk",
+			"tick": 123,
+			"wall": 2.254592
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.771428571428573,
+			"physics_frame": 125,
+			"seconds": 2.06666666666666,
+			"stage": "walk",
+			"tick": 124,
+			"wall": 2.254711
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.790476190476192,
+			"physics_frame": 126,
+			"seconds": 2.08333333333333,
+			"stage": "walk",
+			"tick": 125,
+			"wall": 2.254782
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.809523809523811,
+			"physics_frame": 127,
+			"seconds": 2.1,
+			"stage": "walk",
+			"tick": 126,
+			"wall": 2.254844
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.82857142857143,
+			"physics_frame": 128,
+			"seconds": 2.11666666666666,
+			"stage": "walk",
+			"tick": 127,
+			"wall": 2.254903
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.847619047619049,
+			"physics_frame": 129,
+			"seconds": 2.13333333333333,
+			"stage": "walk",
+			"tick": 128,
+			"wall": 2.254963
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.866666666666668,
+			"physics_frame": 130,
+			"seconds": 2.15,
+			"stage": "walk",
+			"tick": 129,
+			"wall": 2.255026
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.885714285714287,
+			"physics_frame": 131,
+			"seconds": 2.16666666666666,
+			"stage": "walk",
+			"tick": 130,
+			"wall": 2.365661
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.904761904761906,
+			"physics_frame": 132,
+			"seconds": 2.18333333333333,
+			"stage": "walk",
+			"tick": 131,
+			"wall": 2.365779
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.923809523809525,
+			"physics_frame": 133,
+			"seconds": 2.2,
+			"stage": "walk",
+			"tick": 132,
+			"wall": 2.365877
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.942857142857145,
+			"physics_frame": 134,
+			"seconds": 2.21666666666666,
+			"stage": "walk",
+			"tick": 133,
+			"wall": 2.365947
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.961904761904764,
+			"physics_frame": 135,
+			"seconds": 2.23333333333333,
+			"stage": "walk",
+			"tick": 134,
+			"wall": 2.366006
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.980952380952383,
+			"physics_frame": 136,
+			"seconds": 2.25,
+			"stage": "walk",
+			"tick": 135,
+			"wall": 2.366066
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.00000000000000177635683940025,
+			"physics_frame": 137,
+			"seconds": 2.26666666666666,
+			"stage": "walk",
+			"tick": 136,
+			"wall": 2.479428
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0190476190476208,
+			"physics_frame": 138,
+			"seconds": 2.28333333333333,
+			"stage": "walk",
+			"tick": 137,
+			"wall": 2.479554
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0380952380952399,
+			"physics_frame": 139,
+			"seconds": 2.3,
+			"stage": "walk",
+			"tick": 138,
+			"wall": 2.479727
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0571428571428589,
+			"physics_frame": 140,
+			"seconds": 2.31666666666666,
+			"stage": "walk",
+			"tick": 139,
+			"wall": 2.479824
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.076190476190478,
+			"physics_frame": 141,
+			"seconds": 2.33333333333333,
+			"stage": "walk",
+			"tick": 140,
+			"wall": 2.479893
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.095238095238097,
+			"physics_frame": 142,
+			"seconds": 2.35,
+			"stage": "walk",
+			"tick": 141,
+			"wall": 2.479964
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.114285714285716,
+			"physics_frame": 143,
+			"seconds": 2.36666666666666,
+			"stage": "walk",
+			"tick": 142,
+			"wall": 2.480022
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.133333333333335,
+			"physics_frame": 144,
+			"seconds": 2.38333333333333,
+			"stage": "walk",
+			"tick": 143,
+			"wall": 2.588882
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.152380952380954,
+			"physics_frame": 145,
+			"seconds": 2.4,
+			"stage": "walk",
+			"tick": 144,
+			"wall": 2.588978
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.171428571428573,
+			"physics_frame": 146,
+			"seconds": 2.41666666666666,
+			"stage": "walk",
+			"tick": 145,
+			"wall": 2.589043
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.190476190476192,
+			"physics_frame": 147,
+			"seconds": 2.43333333333333,
+			"stage": "walk",
+			"tick": 146,
+			"wall": 2.589102
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.209523809523811,
+			"physics_frame": 148,
+			"seconds": 2.45,
+			"stage": "walk",
+			"tick": 147,
+			"wall": 2.589161
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.22857142857143,
+			"physics_frame": 149,
+			"seconds": 2.46666666666666,
+			"stage": "walk",
+			"tick": 148,
+			"wall": 2.589221
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.247619047619049,
+			"physics_frame": 150,
+			"seconds": 2.48333333333333,
+			"stage": "walk",
+			"tick": 149,
+			"wall": 2.589276
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.266666666666668,
+			"physics_frame": 151,
+			"seconds": 2.5,
+			"stage": "walk",
+			"tick": 150,
+			"wall": 2.708084
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.285714285714287,
+			"physics_frame": 152,
+			"seconds": 2.51666666666666,
+			"stage": "walk",
+			"tick": 151,
+			"wall": 2.70823
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.304761904761906,
+			"physics_frame": 153,
+			"seconds": 2.53333333333333,
+			"stage": "walk",
+			"tick": 152,
+			"wall": 2.708302
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.33309523809524,
+			"physics_frame": 154,
+			"seconds": 2.55,
+			"stage": "jog",
+			"tick": 153,
+			"wall": 2.708575
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.361428571428573,
+			"physics_frame": 155,
+			"seconds": 2.56666666666666,
+			"stage": "jog",
+			"tick": 154,
+			"wall": 2.708717
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.389761904761906,
+			"physics_frame": 156,
+			"seconds": 2.58333333333333,
+			"stage": "jog",
+			"tick": 155,
+			"wall": 2.708827
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.41809523809524,
+			"physics_frame": 157,
+			"seconds": 2.6,
+			"stage": "jog",
+			"tick": 156,
+			"wall": 2.708907
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.446428571428573,
+			"physics_frame": 158,
+			"seconds": 2.61666666666666,
+			"stage": "jog",
+			"tick": 157,
+			"wall": 2.823123
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.474761904761906,
+			"physics_frame": 159,
+			"seconds": 2.63333333333333,
+			"stage": "jog",
+			"tick": 158,
+			"wall": 2.823295
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.50309523809524,
+			"physics_frame": 160,
+			"seconds": 2.65,
+			"stage": "jog",
+			"tick": 159,
+			"wall": 2.823403
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.531428571428573,
+			"physics_frame": 161,
+			"seconds": 2.66666666666666,
+			"stage": "jog",
+			"tick": 160,
+			"wall": 2.823488
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.559761904761906,
+			"physics_frame": 162,
+			"seconds": 2.68333333333333,
+			"stage": "jog",
+			"tick": 161,
+			"wall": 2.823568
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.58809523809524,
+			"physics_frame": 163,
+			"seconds": 2.7,
+			"stage": "jog",
+			"tick": 162,
+			"wall": 2.823633
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.616428571428573,
+			"physics_frame": 164,
+			"seconds": 2.71666666666666,
+			"stage": "jog",
+			"tick": 163,
+			"wall": 2.823689
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.644761904761906,
+			"physics_frame": 165,
+			"seconds": 2.73333333333333,
+			"stage": "jog",
+			"tick": 164,
+			"wall": 2.934313
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.67309523809524,
+			"physics_frame": 166,
+			"seconds": 2.75,
+			"stage": "jog",
+			"tick": 165,
+			"wall": 2.934421
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.701428571428573,
+			"physics_frame": 167,
+			"seconds": 2.76666666666666,
+			"stage": "jog",
+			"tick": 166,
+			"wall": 2.934483
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.729761904761906,
+			"physics_frame": 168,
+			"seconds": 2.78333333333333,
+			"stage": "jog",
+			"tick": 167,
+			"wall": 2.93454
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.75809523809524,
+			"physics_frame": 169,
+			"seconds": 2.79999999999999,
+			"stage": "jog",
+			"tick": 168,
+			"wall": 2.934596
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.786428571428573,
+			"physics_frame": 170,
+			"seconds": 2.81666666666666,
+			"stage": "jog",
+			"tick": 169,
+			"wall": 2.934651
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.814761904761906,
+			"physics_frame": 171,
+			"seconds": 2.83333333333333,
+			"stage": "jog",
+			"tick": 170,
+			"wall": 2.934705
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.84309523809524,
+			"physics_frame": 172,
+			"seconds": 2.84999999999999,
+			"stage": "jog",
+			"tick": 171,
+			"wall": 3.044956
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.871428571428573,
+			"physics_frame": 173,
+			"seconds": 2.86666666666666,
+			"stage": "jog",
+			"tick": 172,
+			"wall": 3.04506
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.899761904761906,
+			"physics_frame": 174,
+			"seconds": 2.88333333333333,
+			"stage": "jog",
+			"tick": 173,
+			"wall": 3.045121
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.92809523809524,
+			"physics_frame": 175,
+			"seconds": 2.89999999999999,
+			"stage": "jog",
+			"tick": 174,
+			"wall": 3.045176
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.956428571428573,
+			"physics_frame": 176,
+			"seconds": 2.91666666666666,
+			"stage": "jog",
+			"tick": 175,
+			"wall": 3.045232
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.984761904761906,
+			"physics_frame": 177,
+			"seconds": 2.93333333333333,
+			"stage": "jog",
+			"tick": 176,
+			"wall": 3.045287
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0130952380952396,
+			"physics_frame": 178,
+			"seconds": 2.94999999999999,
+			"stage": "jog",
+			"tick": 177,
+			"wall": 3.15547
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0414285714285729,
+			"physics_frame": 179,
+			"seconds": 2.96666666666666,
+			"stage": "jog",
+			"tick": 178,
+			"wall": 3.155582
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0697619047619063,
+			"physics_frame": 180,
+			"seconds": 2.98333333333333,
+			"stage": "jog",
+			"tick": 179,
+			"wall": 3.155661
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0980952380952396,
+			"physics_frame": 181,
+			"seconds": 2.99999999999999,
+			"stage": "jog",
+			"tick": 180,
+			"wall": 3.155743
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.126428571428573,
+			"physics_frame": 182,
+			"seconds": 3.01666666666666,
+			"stage": "jog",
+			"tick": 181,
+			"wall": 3.155811
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.154761904761906,
+			"physics_frame": 183,
+			"seconds": 3.03333333333333,
+			"stage": "jog",
+			"tick": 182,
+			"wall": 3.155879
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.18309523809524,
+			"physics_frame": 184,
+			"seconds": 3.04999999999999,
+			"stage": "jog",
+			"tick": 183,
+			"wall": 3.155939
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.211428571428573,
+			"physics_frame": 185,
+			"seconds": 3.06666666666666,
+			"stage": "jog",
+			"tick": 184,
+			"wall": 3.265126
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.239761904761906,
+			"physics_frame": 186,
+			"seconds": 3.08333333333333,
+			"stage": "jog",
+			"tick": 185,
+			"wall": 3.265227
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.26809523809524,
+			"physics_frame": 187,
+			"seconds": 3.09999999999999,
+			"stage": "jog",
+			"tick": 186,
+			"wall": 3.265294
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.296428571428573,
+			"physics_frame": 188,
+			"seconds": 3.11666666666666,
+			"stage": "jog",
+			"tick": 187,
+			"wall": 3.265353
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.324761904761906,
+			"physics_frame": 189,
+			"seconds": 3.13333333333333,
+			"stage": "jog",
+			"tick": 188,
+			"wall": 3.265418
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.35309523809524,
+			"physics_frame": 190,
+			"seconds": 3.14999999999999,
+			"stage": "jog",
+			"tick": 189,
+			"wall": 3.265484
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.381428571428573,
+			"physics_frame": 191,
+			"seconds": 3.16666666666666,
+			"stage": "jog",
+			"tick": 190,
+			"wall": 3.265536
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.409761904761906,
+			"physics_frame": 192,
+			"seconds": 3.18333333333333,
+			"stage": "jog",
+			"tick": 191,
+			"wall": 3.373224
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.438095238095239,
+			"physics_frame": 193,
+			"seconds": 3.19999999999999,
+			"stage": "jog",
+			"tick": 192,
+			"wall": 3.373323
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.466428571428573,
+			"physics_frame": 194,
+			"seconds": 3.21666666666666,
+			"stage": "jog",
+			"tick": 193,
+			"wall": 3.373383
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.494761904761906,
+			"physics_frame": 195,
+			"seconds": 3.23333333333333,
+			"stage": "jog",
+			"tick": 194,
+			"wall": 3.37344
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.52309523809524,
+			"physics_frame": 196,
+			"seconds": 3.24999999999999,
+			"stage": "jog",
+			"tick": 195,
+			"wall": 3.373508
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.551428571428573,
+			"physics_frame": 197,
+			"seconds": 3.26666666666666,
+			"stage": "jog",
+			"tick": 196,
+			"wall": 3.373575
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.579761904761906,
+			"physics_frame": 198,
+			"seconds": 3.28333333333333,
+			"stage": "jog",
+			"tick": 197,
+			"wall": 3.373633
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.608095238095239,
+			"physics_frame": 199,
+			"seconds": 3.29999999999999,
+			"stage": "jog",
+			"tick": 198,
+			"wall": 3.482257
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.636428571428573,
+			"physics_frame": 200,
+			"seconds": 3.31666666666666,
+			"stage": "jog",
+			"tick": 199,
+			"wall": 3.482371
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.664761904761906,
+			"physics_frame": 201,
+			"seconds": 3.33333333333333,
+			"stage": "jog",
+			"tick": 200,
+			"wall": 3.482439
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.693095238095239,
+			"physics_frame": 202,
+			"seconds": 3.34999999999999,
+			"stage": "jog",
+			"tick": 201,
+			"wall": 3.482501
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.721428571428573,
+			"physics_frame": 203,
+			"seconds": 3.36666666666666,
+			"stage": "jog",
+			"tick": 202,
+			"wall": 3.482561
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.749761904761906,
+			"physics_frame": 204,
+			"seconds": 3.38333333333333,
+			"stage": "jog",
+			"tick": 203,
+			"wall": 3.482618
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.778095238095239,
+			"physics_frame": 205,
+			"seconds": 3.39999999999999,
+			"stage": "jog",
+			"tick": 204,
+			"wall": 3.589535
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.806428571428573,
+			"physics_frame": 206,
+			"seconds": 3.41666666666666,
+			"stage": "jog",
+			"tick": 205,
+			"wall": 3.589625
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.834761904761906,
+			"physics_frame": 207,
+			"seconds": 3.43333333333333,
+			"stage": "jog",
+			"tick": 206,
+			"wall": 3.589683
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.863095238095239,
+			"physics_frame": 208,
+			"seconds": 3.44999999999999,
+			"stage": "jog",
+			"tick": 207,
+			"wall": 3.589739
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.891428571428573,
+			"physics_frame": 209,
+			"seconds": 3.46666666666666,
+			"stage": "jog",
+			"tick": 208,
+			"wall": 3.589792
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.919761904761906,
+			"physics_frame": 210,
+			"seconds": 3.48333333333333,
+			"stage": "jog",
+			"tick": 209,
+			"wall": 3.589847
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.948095238095239,
+			"physics_frame": 211,
+			"seconds": 3.49999999999999,
+			"stage": "jog",
+			"tick": 210,
+			"wall": 3.589897
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.976428571428573,
+			"physics_frame": 212,
+			"seconds": 3.51666666666666,
+			"stage": "jog",
+			"tick": 211,
+			"wall": 3.699203
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.00476190476190608,
+			"physics_frame": 213,
+			"seconds": 3.53333333333333,
+			"stage": "jog",
+			"tick": 212,
+			"wall": 3.699319
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0330952380952394,
+			"physics_frame": 214,
+			"seconds": 3.54999999999999,
+			"stage": "jog",
+			"tick": 213,
+			"wall": 3.69939
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0614285714285727,
+			"physics_frame": 215,
+			"seconds": 3.56666666666666,
+			"stage": "jog",
+			"tick": 214,
+			"wall": 3.699452
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0897619047619061,
+			"physics_frame": 216,
+			"seconds": 3.58333333333333,
+			"stage": "jog",
+			"tick": 215,
+			"wall": 3.699512
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.118095238095239,
+			"physics_frame": 217,
+			"seconds": 3.59999999999999,
+			"stage": "jog",
+			"tick": 216,
+			"wall": 3.699572
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.146428571428573,
+			"physics_frame": 218,
+			"seconds": 3.61666666666666,
+			"stage": "jog",
+			"tick": 217,
+			"wall": 3.699627
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.174761904761906,
+			"physics_frame": 219,
+			"seconds": 3.63333333333333,
+			"stage": "jog",
+			"tick": 218,
+			"wall": 3.80617
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.203095238095239,
+			"physics_frame": 220,
+			"seconds": 3.64999999999999,
+			"stage": "jog",
+			"tick": 219,
+			"wall": 3.806279
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.231428571428573,
+			"physics_frame": 221,
+			"seconds": 3.66666666666666,
+			"stage": "jog",
+			"tick": 220,
+			"wall": 3.806344
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.259761904761906,
+			"physics_frame": 222,
+			"seconds": 3.68333333333333,
+			"stage": "jog",
+			"tick": 221,
+			"wall": 3.806411
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.288095238095239,
+			"physics_frame": 223,
+			"seconds": 3.69999999999999,
+			"stage": "jog",
+			"tick": 222,
+			"wall": 3.806467
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.316428571428573,
+			"physics_frame": 224,
+			"seconds": 3.71666666666666,
+			"stage": "jog",
+			"tick": 223,
+			"wall": 3.806521
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.344761904761906,
+			"physics_frame": 225,
+			"seconds": 3.73333333333333,
+			"stage": "jog",
+			"tick": 224,
+			"wall": 3.915306
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.373095238095239,
+			"physics_frame": 226,
+			"seconds": 3.74999999999999,
+			"stage": "jog",
+			"tick": 225,
+			"wall": 3.915399
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.401428571428573,
+			"physics_frame": 227,
+			"seconds": 3.76666666666666,
+			"stage": "jog",
+			"tick": 226,
+			"wall": 3.915459
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.429761904761906,
+			"physics_frame": 228,
+			"seconds": 3.78333333333332,
+			"stage": "jog",
+			"tick": 227,
+			"wall": 3.915514
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.458095238095239,
+			"physics_frame": 229,
+			"seconds": 3.79999999999999,
+			"stage": "jog",
+			"tick": 228,
+			"wall": 3.915568
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.486428571428573,
+			"physics_frame": 230,
+			"seconds": 3.81666666666666,
+			"stage": "jog",
+			"tick": 229,
+			"wall": 3.915628
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.514761904761906,
+			"physics_frame": 231,
+			"seconds": 3.83333333333332,
+			"stage": "jog",
+			"tick": 230,
+			"wall": 4.024368
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.543095238095239,
+			"physics_frame": 232,
+			"seconds": 3.84999999999999,
+			"stage": "jog",
+			"tick": 231,
+			"wall": 4.024467
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.571428571428573,
+			"physics_frame": 233,
+			"seconds": 3.86666666666666,
+			"stage": "jog",
+			"tick": 232,
+			"wall": 4.024534
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.599761904761906,
+			"physics_frame": 234,
+			"seconds": 3.88333333333332,
+			"stage": "jog",
+			"tick": 233,
+			"wall": 4.024596
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.628095238095239,
+			"physics_frame": 235,
+			"seconds": 3.89999999999999,
+			"stage": "jog",
+			"tick": 234,
+			"wall": 4.024656
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.656428571428573,
+			"physics_frame": 236,
+			"seconds": 3.91666666666666,
+			"stage": "jog",
+			"tick": 235,
+			"wall": 4.024725
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.684761904761906,
+			"physics_frame": 237,
+			"seconds": 3.93333333333332,
+			"stage": "jog",
+			"tick": 236,
+			"wall": 4.024787
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.713095238095239,
+			"physics_frame": 238,
+			"seconds": 3.94999999999999,
+			"stage": "jog",
+			"tick": 237,
+			"wall": 4.134337
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.741428571428573,
+			"physics_frame": 239,
+			"seconds": 3.96666666666666,
+			"stage": "jog",
+			"tick": 238,
+			"wall": 4.13444
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.769761904761906,
+			"physics_frame": 240,
+			"seconds": 3.98333333333332,
+			"stage": "jog",
+			"tick": 239,
+			"wall": 4.134503
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.798095238095239,
+			"physics_frame": 241,
+			"seconds": 3.99999999999999,
+			"stage": "jog",
+			"tick": 240,
+			"wall": 4.134559
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.826428571428573,
+			"physics_frame": 242,
+			"seconds": 4.01666666666666,
+			"stage": "jog",
+			"tick": 241,
+			"wall": 4.134612
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.854761904761906,
+			"physics_frame": 243,
+			"seconds": 4.03333333333332,
+			"stage": "jog",
+			"tick": 242,
+			"wall": 4.134668
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.883095238095239,
+			"physics_frame": 244,
+			"seconds": 4.04999999999999,
+			"stage": "jog",
+			"tick": 243,
+			"wall": 4.242696
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.911428571428572,
+			"physics_frame": 245,
+			"seconds": 4.06666666666666,
+			"stage": "jog",
+			"tick": 244,
+			"wall": 4.242788
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.939761904761906,
+			"physics_frame": 246,
+			"seconds": 4.08333333333332,
+			"stage": "jog",
+			"tick": 245,
+			"wall": 4.242848
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.968095238095239,
+			"physics_frame": 247,
+			"seconds": 4.09999999999999,
+			"stage": "jog",
+			"tick": 246,
+			"wall": 4.242903
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.996428571428572,
+			"physics_frame": 248,
+			"seconds": 4.11666666666666,
+			"stage": "jog",
+			"tick": 247,
+			"wall": 4.242958
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0247619047619059,
+			"physics_frame": 249,
+			"seconds": 4.13333333333332,
+			"stage": "jog",
+			"tick": 248,
+			"wall": 4.243036
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0530952380952392,
+			"physics_frame": 250,
+			"seconds": 4.14999999999999,
+			"stage": "jog",
+			"tick": 249,
+			"wall": 4.243094
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0814285714285725,
+			"physics_frame": 251,
+			"seconds": 4.16666666666666,
+			"stage": "jog",
+			"tick": 250,
+			"wall": 4.352315
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.109761904761906,
+			"physics_frame": 252,
+			"seconds": 4.18333333333332,
+			"stage": "jog",
+			"tick": 251,
+			"wall": 4.352422
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.138095238095239,
+			"physics_frame": 253,
+			"seconds": 4.19999999999999,
+			"stage": "jog",
+			"tick": 252,
+			"wall": 4.352493
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.166428571428573,
+			"physics_frame": 254,
+			"seconds": 4.21666666666666,
+			"stage": "jog",
+			"tick": 253,
+			"wall": 4.352554
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.194761904761906,
+			"physics_frame": 255,
+			"seconds": 4.23333333333332,
+			"stage": "jog",
+			"tick": 254,
+			"wall": 4.352613
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.223095238095239,
+			"physics_frame": 256,
+			"seconds": 4.24999999999999,
+			"stage": "jog",
+			"tick": 255,
+			"wall": 4.35267
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.251428571428573,
+			"physics_frame": 257,
+			"seconds": 4.26666666666666,
+			"stage": "jog",
+			"tick": 256,
+			"wall": 4.465466
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.279761904761906,
+			"physics_frame": 258,
+			"seconds": 4.28333333333332,
+			"stage": "jog",
+			"tick": 257,
+			"wall": 4.465568
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.308095238095239,
+			"physics_frame": 259,
+			"seconds": 4.29999999999999,
+			"stage": "jog",
+			"tick": 258,
+			"wall": 4.465628
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.336428571428572,
+			"physics_frame": 260,
+			"seconds": 4.31666666666666,
+			"stage": "jog",
+			"tick": 259,
+			"wall": 4.465683
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.364761904761906,
+			"physics_frame": 261,
+			"seconds": 4.33333333333332,
+			"stage": "jog",
+			"tick": 260,
+			"wall": 4.465737
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.393095238095239,
+			"physics_frame": 262,
+			"seconds": 4.34999999999999,
+			"stage": "jog",
+			"tick": 261,
+			"wall": 4.465792
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.421428571428572,
+			"physics_frame": 263,
+			"seconds": 4.36666666666666,
+			"stage": "jog",
+			"tick": 262,
+			"wall": 4.465842
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.449761904761906,
+			"physics_frame": 264,
+			"seconds": 4.38333333333332,
+			"stage": "jog",
+			"tick": 263,
+			"wall": 4.572711
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.478095238095239,
+			"physics_frame": 265,
+			"seconds": 4.39999999999999,
+			"stage": "jog",
+			"tick": 264,
+			"wall": 4.572808
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.506428571428572,
+			"physics_frame": 266,
+			"seconds": 4.41666666666666,
+			"stage": "jog",
+			"tick": 265,
+			"wall": 4.572881
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.534761904761906,
+			"physics_frame": 267,
+			"seconds": 4.43333333333332,
+			"stage": "jog",
+			"tick": 266,
+			"wall": 4.572948
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.563095238095239,
+			"physics_frame": 268,
+			"seconds": 4.44999999999999,
+			"stage": "jog",
+			"tick": 267,
+			"wall": 4.573016
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.591428571428572,
+			"physics_frame": 269,
+			"seconds": 4.46666666666666,
+			"stage": "jog",
+			"tick": 268,
+			"wall": 4.573081
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.619761904761906,
+			"physics_frame": 270,
+			"seconds": 4.48333333333332,
+			"stage": "jog",
+			"tick": 269,
+			"wall": 4.683862
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.648095238095239,
+			"physics_frame": 271,
+			"seconds": 4.49999999999999,
+			"stage": "jog",
+			"tick": 270,
+			"wall": 4.683967
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.676428571428572,
+			"physics_frame": 272,
+			"seconds": 4.51666666666666,
+			"stage": "jog",
+			"tick": 271,
+			"wall": 4.684032
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.704761904761906,
+			"physics_frame": 273,
+			"seconds": 4.53333333333332,
+			"stage": "jog",
+			"tick": 272,
+			"wall": 4.68409
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.733095238095239,
+			"physics_frame": 274,
+			"seconds": 4.54999999999999,
+			"stage": "jog",
+			"tick": 273,
+			"wall": 4.684146
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.76932712215321,
+			"physics_frame": 275,
+			"seconds": 4.56666666666666,
+			"stage": "sprint",
+			"tick": 274,
+			"wall": 4.684248
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.805559006211181,
+			"physics_frame": 276,
+			"seconds": 4.58333333333332,
+			"stage": "sprint",
+			"tick": 275,
+			"wall": 4.684322
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.841790890269152,
+			"physics_frame": 277,
+			"seconds": 4.59999999999999,
+			"stage": "sprint",
+			"tick": 276,
+			"wall": 4.791856
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.878022774327123,
+			"physics_frame": 278,
+			"seconds": 4.61666666666666,
+			"stage": "sprint",
+			"tick": 277,
+			"wall": 4.792028
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.914254658385094,
+			"physics_frame": 279,
+			"seconds": 4.63333333333332,
+			"stage": "sprint",
+			"tick": 278,
+			"wall": 4.792113
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.950486542443065,
+			"physics_frame": 280,
+			"seconds": 4.64999999999999,
+			"stage": "sprint",
+			"tick": 279,
+			"wall": 4.792193
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.986718426501036,
+			"physics_frame": 281,
+			"seconds": 4.66666666666666,
+			"stage": "sprint",
+			"tick": 280,
+			"wall": 4.792274
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0229503105590074,
+			"physics_frame": 282,
+			"seconds": 4.68333333333332,
+			"stage": "sprint",
+			"tick": 281,
+			"wall": 4.79235
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0591821946169784,
+			"physics_frame": 283,
+			"seconds": 4.69999999999999,
+			"stage": "sprint",
+			"tick": 282,
+			"wall": 4.898925
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0954140786749495,
+			"physics_frame": 284,
+			"seconds": 4.71666666666666,
+			"stage": "sprint",
+			"tick": 283,
+			"wall": 4.899025
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.13164596273292,
+			"physics_frame": 285,
+			"seconds": 4.73333333333332,
+			"stage": "sprint",
+			"tick": 284,
+			"wall": 4.89909
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.167877846790891,
+			"physics_frame": 286,
+			"seconds": 4.74999999999999,
+			"stage": "sprint",
+			"tick": 285,
+			"wall": 4.899151
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.204109730848863,
+			"physics_frame": 287,
+			"seconds": 4.76666666666666,
+			"stage": "sprint",
+			"tick": 286,
+			"wall": 4.899208
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.240341614906834,
+			"physics_frame": 288,
+			"seconds": 4.78333333333332,
+			"stage": "sprint",
+			"tick": 287,
+			"wall": 4.899265
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.276573498964805,
+			"physics_frame": 289,
+			"seconds": 4.79999999999999,
+			"stage": "sprint",
+			"tick": 288,
+			"wall": 4.899317
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.312805383022776,
+			"physics_frame": 290,
+			"seconds": 4.81666666666665,
+			"stage": "sprint",
+			"tick": 289,
+			"wall": 5.008037
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.349037267080747,
+			"physics_frame": 291,
+			"seconds": 4.83333333333332,
+			"stage": "sprint",
+			"tick": 290,
+			"wall": 5.008139
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.385269151138718,
+			"physics_frame": 292,
+			"seconds": 4.84999999999999,
+			"stage": "sprint",
+			"tick": 291,
+			"wall": 5.0082
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.421501035196689,
+			"physics_frame": 293,
+			"seconds": 4.86666666666665,
+			"stage": "sprint",
+			"tick": 292,
+			"wall": 5.008258
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.45773291925466,
+			"physics_frame": 294,
+			"seconds": 4.88333333333332,
+			"stage": "sprint",
+			"tick": 293,
+			"wall": 5.008314
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.493964803312631,
+			"physics_frame": 295,
+			"seconds": 4.89999999999999,
+			"stage": "sprint",
+			"tick": 294,
+			"wall": 5.008371
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.530196687370602,
+			"physics_frame": 296,
+			"seconds": 4.91666666666665,
+			"stage": "sprint",
+			"tick": 295,
+			"wall": 5.115726
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.566428571428573,
+			"physics_frame": 297,
+			"seconds": 4.93333333333332,
+			"stage": "sprint",
+			"tick": 296,
+			"wall": 5.115827
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.602660455486544,
+			"physics_frame": 298,
+			"seconds": 4.94999999999999,
+			"stage": "sprint",
+			"tick": 297,
+			"wall": 5.115893
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.638892339544515,
+			"physics_frame": 299,
+			"seconds": 4.96666666666665,
+			"stage": "sprint",
+			"tick": 298,
+			"wall": 5.115954
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.675124223602486,
+			"physics_frame": 300,
+			"seconds": 4.98333333333332,
+			"stage": "sprint",
+			"tick": 299,
+			"wall": 5.116013
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.711356107660457,
+			"physics_frame": 301,
+			"seconds": 4.99999999999999,
+			"stage": "sprint",
+			"tick": 300,
+			"wall": 5.116071
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.747587991718428,
+			"physics_frame": 302,
+			"seconds": 5.01666666666665,
+			"stage": "sprint",
+			"tick": 301,
+			"wall": 5.116123
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.783819875776399,
+			"physics_frame": 303,
+			"seconds": 5.03333333333332,
+			"stage": "sprint",
+			"tick": 302,
+			"wall": 5.22393
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.82005175983437,
+			"physics_frame": 304,
+			"seconds": 5.04999999999999,
+			"stage": "sprint",
+			"tick": 303,
+			"wall": 5.224029
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.856283643892341,
+			"physics_frame": 305,
+			"seconds": 5.06666666666665,
+			"stage": "sprint",
+			"tick": 304,
+			"wall": 5.224095
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.892515527950312,
+			"physics_frame": 306,
+			"seconds": 5.08333333333332,
+			"stage": "sprint",
+			"tick": 305,
+			"wall": 5.224151
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.928747412008283,
+			"physics_frame": 307,
+			"seconds": 5.09999999999999,
+			"stage": "sprint",
+			"tick": 306,
+			"wall": 5.224204
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.964979296066254,
+			"physics_frame": 308,
+			"seconds": 5.11666666666665,
+			"stage": "sprint",
+			"tick": 307,
+			"wall": 5.224259
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.00121118012422539,
+			"physics_frame": 309,
+			"seconds": 5.13333333333332,
+			"stage": "sprint",
+			"tick": 308,
+			"wall": 5.334928
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0374430641821964,
+			"physics_frame": 310,
+			"seconds": 5.14999999999999,
+			"stage": "sprint",
+			"tick": 309,
+			"wall": 5.335034
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0736749482401674,
+			"physics_frame": 311,
+			"seconds": 5.16666666666665,
+			"stage": "sprint",
+			"tick": 310,
+			"wall": 5.3351
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.109906832298138,
+			"physics_frame": 312,
+			"seconds": 5.18333333333332,
+			"stage": "sprint",
+			"tick": 311,
+			"wall": 5.33516
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.146138716356109,
+			"physics_frame": 313,
+			"seconds": 5.19999999999999,
+			"stage": "sprint",
+			"tick": 312,
+			"wall": 5.335219
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.18237060041408,
+			"physics_frame": 314,
+			"seconds": 5.21666666666665,
+			"stage": "sprint",
+			"tick": 313,
+			"wall": 5.335277
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.218602484472051,
+			"physics_frame": 315,
+			"seconds": 5.23333333333332,
+			"stage": "sprint",
+			"tick": 314,
+			"wall": 5.335329
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.254834368530023,
+			"physics_frame": 316,
+			"seconds": 5.24999999999999,
+			"stage": "sprint",
+			"tick": 315,
+			"wall": 5.441892
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.291066252587994,
+			"physics_frame": 317,
+			"seconds": 5.26666666666665,
+			"stage": "sprint",
+			"tick": 316,
+			"wall": 5.441989
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.327298136645965,
+			"physics_frame": 318,
+			"seconds": 5.28333333333332,
+			"stage": "sprint",
+			"tick": 317,
+			"wall": 5.442057
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.363530020703936,
+			"physics_frame": 319,
+			"seconds": 5.29999999999999,
+			"stage": "sprint",
+			"tick": 318,
+			"wall": 5.442115
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.399761904761907,
+			"physics_frame": 320,
+			"seconds": 5.31666666666665,
+			"stage": "sprint",
+			"tick": 319,
+			"wall": 5.442172
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.435993788819878,
+			"physics_frame": 321,
+			"seconds": 5.33333333333332,
+			"stage": "sprint",
+			"tick": 320,
+			"wall": 5.442229
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.472225672877849,
+			"physics_frame": 322,
+			"seconds": 5.34999999999999,
+			"stage": "sprint",
+			"tick": 321,
+			"wall": 5.549722
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.50845755693582,
+			"physics_frame": 323,
+			"seconds": 5.36666666666665,
+			"stage": "sprint",
+			"tick": 322,
+			"wall": 5.549843
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.544689440993791,
+			"physics_frame": 324,
+			"seconds": 5.38333333333332,
+			"stage": "sprint",
+			"tick": 323,
+			"wall": 5.549916
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.580921325051762,
+			"physics_frame": 325,
+			"seconds": 5.39999999999999,
+			"stage": "sprint",
+			"tick": 324,
+			"wall": 5.549981
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.617153209109733,
+			"physics_frame": 326,
+			"seconds": 5.41666666666665,
+			"stage": "sprint",
+			"tick": 325,
+			"wall": 5.550043
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.653385093167704,
+			"physics_frame": 327,
+			"seconds": 5.43333333333332,
+			"stage": "sprint",
+			"tick": 326,
+			"wall": 5.550105
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.689616977225675,
+			"physics_frame": 328,
+			"seconds": 5.44999999999999,
+			"stage": "sprint",
+			"tick": 327,
+			"wall": 5.550158
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.725848861283646,
+			"physics_frame": 329,
+			"seconds": 5.46666666666665,
+			"stage": "sprint",
+			"tick": 328,
+			"wall": 5.662906
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.762080745341617,
+			"physics_frame": 330,
+			"seconds": 5.48333333333332,
+			"stage": "sprint",
+			"tick": 329,
+			"wall": 5.663011
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.798312629399588,
+			"physics_frame": 331,
+			"seconds": 5.49999999999999,
+			"stage": "sprint",
+			"tick": 330,
+			"wall": 5.663071
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.834544513457559,
+			"physics_frame": 332,
+			"seconds": 5.51666666666665,
+			"stage": "sprint",
+			"tick": 331,
+			"wall": 5.663127
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.87077639751553,
+			"physics_frame": 333,
+			"seconds": 5.53333333333332,
+			"stage": "sprint",
+			"tick": 332,
+			"wall": 5.663181
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.907008281573501,
+			"physics_frame": 334,
+			"seconds": 5.54999999999999,
+			"stage": "sprint",
+			"tick": 333,
+			"wall": 5.663236
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.943240165631472,
+			"physics_frame": 335,
+			"seconds": 5.56666666666665,
+			"stage": "sprint",
+			"tick": 334,
+			"wall": 5.771737
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.979472049689443,
+			"physics_frame": 336,
+			"seconds": 5.58333333333332,
+			"stage": "sprint",
+			"tick": 335,
+			"wall": 5.771837
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0157039337474145,
+			"physics_frame": 337,
+			"seconds": 5.59999999999999,
+			"stage": "sprint",
+			"tick": 336,
+			"wall": 5.771912
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0519358178053855,
+			"physics_frame": 338,
+			"seconds": 5.61666666666665,
+			"stage": "sprint",
+			"tick": 337,
+			"wall": 5.771976
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0881677018633566,
+			"physics_frame": 339,
+			"seconds": 5.63333333333332,
+			"stage": "sprint",
+			"tick": 338,
+			"wall": 5.772036
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.124399585921328,
+			"physics_frame": 340,
+			"seconds": 5.64999999999999,
+			"stage": "sprint",
+			"tick": 339,
+			"wall": 5.772097
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.160631469979299,
+			"physics_frame": 341,
+			"seconds": 5.66666666666665,
+			"stage": "sprint",
+			"tick": 340,
+			"wall": 5.772153
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.19686335403727,
+			"physics_frame": 342,
+			"seconds": 5.68333333333332,
+			"stage": "sprint",
+			"tick": 341,
+			"wall": 5.882314
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.233095238095241,
+			"physics_frame": 343,
+			"seconds": 5.69999999999999,
+			"stage": "sprint",
+			"tick": 342,
+			"wall": 5.88242
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.269327122153212,
+			"physics_frame": 344,
+			"seconds": 5.71666666666665,
+			"stage": "sprint",
+			"tick": 343,
+			"wall": 5.882485
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.305559006211183,
+			"physics_frame": 345,
+			"seconds": 5.73333333333332,
+			"stage": "sprint",
+			"tick": 344,
+			"wall": 5.882545
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.341790890269154,
+			"physics_frame": 346,
+			"seconds": 5.74999999999998,
+			"stage": "sprint",
+			"tick": 345,
+			"wall": 5.882601
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.378022774327125,
+			"physics_frame": 347,
+			"seconds": 5.76666666666665,
+			"stage": "sprint",
+			"tick": 346,
+			"wall": 5.882662
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.414254658385096,
+			"physics_frame": 348,
+			"seconds": 5.78333333333332,
+			"stage": "sprint",
+			"tick": 347,
+			"wall": 5.992156
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.450486542443067,
+			"physics_frame": 349,
+			"seconds": 5.79999999999998,
+			"stage": "sprint",
+			"tick": 348,
+			"wall": 5.992257
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.486718426501038,
+			"physics_frame": 350,
+			"seconds": 5.81666666666665,
+			"stage": "sprint",
+			"tick": 349,
+			"wall": 5.992319
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.522950310559009,
+			"physics_frame": 351,
+			"seconds": 5.83333333333332,
+			"stage": "sprint",
+			"tick": 350,
+			"wall": 5.992395
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.55918219461698,
+			"physics_frame": 352,
+			"seconds": 5.84999999999998,
+			"stage": "sprint",
+			"tick": 351,
+			"wall": 5.992464
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.595414078674951,
+			"physics_frame": 353,
+			"seconds": 5.86666666666665,
+			"stage": "sprint",
+			"tick": 352,
+			"wall": 5.992646
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.631645962732922,
+			"physics_frame": 354,
+			"seconds": 5.88333333333332,
+			"stage": "sprint",
+			"tick": 353,
+			"wall": 5.99283
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.667877846790893,
+			"physics_frame": 355,
+			"seconds": 5.89999999999998,
+			"stage": "sprint",
+			"tick": 354,
+			"wall": 6.100725
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.704109730848864,
+			"physics_frame": 356,
+			"seconds": 5.91666666666665,
+			"stage": "sprint",
+			"tick": 355,
+			"wall": 6.10083
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.740341614906835,
+			"physics_frame": 357,
+			"seconds": 5.93333333333332,
+			"stage": "sprint",
+			"tick": 356,
+			"wall": 6.100895
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.776573498964806,
+			"physics_frame": 358,
+			"seconds": 5.94999999999998,
+			"stage": "sprint",
+			"tick": 357,
+			"wall": 6.100953
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.812805383022777,
+			"physics_frame": 359,
+			"seconds": 5.96666666666665,
+			"stage": "sprint",
+			"tick": 358,
+			"wall": 6.101045
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.849037267080748,
+			"physics_frame": 360,
+			"seconds": 5.98333333333332,
+			"stage": "sprint",
+			"tick": 359,
+			"wall": 6.101102
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.885269151138719,
+			"physics_frame": 361,
+			"seconds": 5.99999999999998,
+			"stage": "sprint",
+			"tick": 360,
+			"wall": 6.101152
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.92150103519669,
+			"physics_frame": 362,
+			"seconds": 6.01666666666665,
+			"stage": "sprint",
+			"tick": 361,
+			"wall": 6.21735
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.957732919254662,
+			"physics_frame": 363,
+			"seconds": 6.03333333333332,
+			"stage": "sprint",
+			"tick": 362,
+			"wall": 6.217448
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.993964803312633,
+			"physics_frame": 364,
+			"seconds": 6.04999999999998,
+			"stage": "sprint",
+			"tick": 363,
+			"wall": 6.217515
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0301966873706037,
+			"physics_frame": 365,
+			"seconds": 6.06666666666665,
+			"stage": "sprint",
+			"tick": 364,
+			"wall": 6.217596
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0664285714285747,
+			"physics_frame": 366,
+			"seconds": 6.08333333333332,
+			"stage": "sprint",
+			"tick": 365,
+			"wall": 6.21766
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.102660455486546,
+			"physics_frame": 367,
+			"seconds": 6.09999999999998,
+			"stage": "sprint",
+			"tick": 366,
+			"wall": 6.217723
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.138892339544517,
+			"physics_frame": 368,
+			"seconds": 6.11666666666665,
+			"stage": "sprint",
+			"tick": 367,
+			"wall": 6.217779
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.175124223602488,
+			"physics_frame": 369,
+			"seconds": 6.13333333333332,
+			"stage": "sprint",
+			"tick": 368,
+			"wall": 6.326969
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.211356107660459,
+			"physics_frame": 370,
+			"seconds": 6.14999999999998,
+			"stage": "sprint",
+			"tick": 369,
+			"wall": 6.327081
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.24758799171843,
+			"physics_frame": 371,
+			"seconds": 6.16666666666665,
+			"stage": "sprint",
+			"tick": 370,
+			"wall": 6.327144
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.283819875776401,
+			"physics_frame": 372,
+			"seconds": 6.18333333333332,
+			"stage": "sprint",
+			"tick": 371,
+			"wall": 6.327205
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.320051759834372,
+			"physics_frame": 373,
+			"seconds": 6.19999999999998,
+			"stage": "sprint",
+			"tick": 372,
+			"wall": 6.327259
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.356283643892343,
+			"physics_frame": 374,
+			"seconds": 6.21666666666665,
+			"stage": "sprint",
+			"tick": 373,
+			"wall": 6.327317
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.392515527950314,
+			"physics_frame": 375,
+			"seconds": 6.23333333333332,
+			"stage": "sprint",
+			"tick": 374,
+			"wall": 6.434785
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.428747412008285,
+			"physics_frame": 376,
+			"seconds": 6.24999999999998,
+			"stage": "sprint",
+			"tick": 375,
+			"wall": 6.434886
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.464979296066256,
+			"physics_frame": 377,
+			"seconds": 6.26666666666665,
+			"stage": "sprint",
+			"tick": 376,
+			"wall": 6.434948
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.501211180124227,
+			"physics_frame": 378,
+			"seconds": 6.28333333333332,
+			"stage": "sprint",
+			"tick": 377,
+			"wall": 6.435021
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.537443064182198,
+			"physics_frame": 379,
+			"seconds": 6.29999999999998,
+			"stage": "sprint",
+			"tick": 378,
+			"wall": 6.435087
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.573674948240169,
+			"physics_frame": 380,
+			"seconds": 6.31666666666665,
+			"stage": "sprint",
+			"tick": 379,
+			"wall": 6.435151
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.60990683229814,
+			"physics_frame": 381,
+			"seconds": 6.33333333333332,
+			"stage": "sprint",
+			"tick": 380,
+			"wall": 6.43521
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.646138716356111,
+			"physics_frame": 382,
+			"seconds": 6.34999999999998,
+			"stage": "sprint",
+			"tick": 381,
+			"wall": 6.541916
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.682370600414082,
+			"physics_frame": 383,
+			"seconds": 6.36666666666665,
+			"stage": "sprint",
+			"tick": 382,
+			"wall": 6.542028
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.718602484472053,
+			"physics_frame": 384,
+			"seconds": 6.38333333333332,
+			"stage": "sprint",
+			"tick": 383,
+			"wall": 6.542091
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.754834368530024,
+			"physics_frame": 385,
+			"seconds": 6.39999999999998,
+			"stage": "sprint",
+			"tick": 384,
+			"wall": 6.542149
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.791066252587995,
+			"physics_frame": 386,
+			"seconds": 6.41666666666665,
+			"stage": "sprint",
+			"tick": 385,
+			"wall": 6.542207
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.827298136645966,
+			"physics_frame": 387,
+			"seconds": 6.43333333333332,
+			"stage": "sprint",
+			"tick": 386,
+			"wall": 6.542275
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.863530020703937,
+			"physics_frame": 388,
+			"seconds": 6.44999999999998,
+			"stage": "sprint",
+			"tick": 387,
+			"wall": 6.542332
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.899761904761909,
+			"physics_frame": 389,
+			"seconds": 6.46666666666665,
+			"stage": "sprint",
+			"tick": 388,
+			"wall": 6.653283
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.93599378881988,
+			"physics_frame": 390,
+			"seconds": 6.48333333333332,
+			"stage": "sprint",
+			"tick": 389,
+			"wall": 6.65339
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.972225672877851,
+			"physics_frame": 391,
+			"seconds": 6.49999999999998,
+			"stage": "sprint",
+			"tick": 390,
+			"wall": 6.653454
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.00845755693582162,
+			"physics_frame": 392,
+			"seconds": 6.51666666666665,
+			"stage": "sprint",
+			"tick": 391,
+			"wall": 6.653529
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0446894409937926,
+			"physics_frame": 393,
+			"seconds": 6.53333333333332,
+			"stage": "sprint",
+			"tick": 392,
+			"wall": 6.653595
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.0809213250517637,
+			"physics_frame": 394,
+			"seconds": 6.54999999999998,
+			"stage": "sprint",
+			"tick": 393,
+			"wall": 6.653658
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 395,
+			"seconds": 6.56666666666665,
+			"stage": "sprint",
+			"tick": 394,
+			"wall": 6.762705
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 396,
+			"seconds": 6.58333333333332,
+			"stage": "stop",
+			"tick": 395,
+			"wall": 6.762847
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 397,
+			"seconds": 6.59999999999998,
+			"stage": "stop",
+			"tick": 396,
+			"wall": 6.762929
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 398,
+			"seconds": 6.61666666666665,
+			"stage": "stop",
+			"tick": 397,
+			"wall": 6.763003
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 399,
+			"seconds": 6.63333333333332,
+			"stage": "stop",
+			"tick": 398,
+			"wall": 6.76308
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 400,
+			"seconds": 6.64999999999998,
+			"stage": "stop",
+			"tick": 399,
+			"wall": 6.763154
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 401,
+			"seconds": 6.66666666666665,
+			"stage": "stop",
+			"tick": 400,
+			"wall": 6.763222
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 402,
+			"seconds": 6.68333333333331,
+			"stage": "stop",
+			"tick": 401,
+			"wall": 6.870108
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 403,
+			"seconds": 6.69999999999998,
+			"stage": "stop",
+			"tick": 402,
+			"wall": 6.870315
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 404,
+			"seconds": 6.71666666666665,
+			"stage": "stop",
+			"tick": 403,
+			"wall": 6.870404
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 405,
+			"seconds": 6.73333333333331,
+			"stage": "stop",
+			"tick": 404,
+			"wall": 6.870463
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 406,
+			"seconds": 6.74999999999998,
+			"stage": "stop",
+			"tick": 405,
+			"wall": 6.870516
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 407,
+			"seconds": 6.76666666666665,
+			"stage": "stop",
+			"tick": 406,
+			"wall": 6.870578
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 408,
+			"seconds": 6.78333333333331,
+			"stage": "stop",
+			"tick": 407,
+			"wall": 6.870638
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 409,
+			"seconds": 6.79999999999998,
+			"stage": "stop",
+			"tick": 408,
+			"wall": 6.978053
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 410,
+			"seconds": 6.81666666666665,
+			"stage": "stop",
+			"tick": 409,
+			"wall": 6.978154
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 411,
+			"seconds": 6.83333333333331,
+			"stage": "stop",
+			"tick": 410,
+			"wall": 6.97821
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 412,
+			"seconds": 6.84999999999998,
+			"stage": "stop",
+			"tick": 411,
+			"wall": 6.978261
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 413,
+			"seconds": 6.86666666666665,
+			"stage": "stop",
+			"tick": 412,
+			"wall": 6.97831
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 414,
+			"seconds": 6.88333333333331,
+			"stage": "stop",
+			"tick": 413,
+			"wall": 6.97836
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 415,
+			"seconds": 6.89999999999998,
+			"stage": "stop",
+			"tick": 414,
+			"wall": 7.085924
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 416,
+			"seconds": 6.91666666666665,
+			"stage": "stop",
+			"tick": 415,
+			"wall": 7.086024
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 417,
+			"seconds": 6.93333333333331,
+			"stage": "stop",
+			"tick": 416,
+			"wall": 7.08608
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 418,
+			"seconds": 6.94999999999998,
+			"stage": "stop",
+			"tick": 417,
+			"wall": 7.086132
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 419,
+			"seconds": 6.96666666666665,
+			"stage": "stop",
+			"tick": 418,
+			"wall": 7.086182
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 420,
+			"seconds": 6.98333333333331,
+			"stage": "stop",
+			"tick": 419,
+			"wall": 7.086233
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 421,
+			"seconds": 6.99999999999998,
+			"stage": "stop",
+			"tick": 420,
+			"wall": 7.08628
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 422,
+			"seconds": 7.01666666666665,
+			"stage": "stop",
+			"tick": 421,
+			"wall": 7.192457
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 423,
+			"seconds": 7.03333333333331,
+			"stage": "stop",
+			"tick": 422,
+			"wall": 7.19255
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 424,
+			"seconds": 7.04999999999998,
+			"stage": "stop",
+			"tick": 423,
+			"wall": 7.192606
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 425,
+			"seconds": 7.06666666666665,
+			"stage": "stop",
+			"tick": 424,
+			"wall": 7.192657
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 426,
+			"seconds": 7.08333333333331,
+			"stage": "stop",
+			"tick": 425,
+			"wall": 7.192706
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 427,
+			"seconds": 7.09999999999998,
+			"stage": "stop",
+			"tick": 426,
+			"wall": 7.192756
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 428,
+			"seconds": 7.11666666666665,
+			"stage": "stop",
+			"tick": 427,
+			"wall": 7.301527
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 429,
+			"seconds": 7.13333333333331,
+			"stage": "stop",
+			"tick": 428,
+			"wall": 7.301621
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 430,
+			"seconds": 7.14999999999998,
+			"stage": "stop",
+			"tick": 429,
+			"wall": 7.301676
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 431,
+			"seconds": 7.16666666666665,
+			"stage": "stop",
+			"tick": 430,
+			"wall": 7.301727
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 432,
+			"seconds": 7.18333333333331,
+			"stage": "stop",
+			"tick": 431,
+			"wall": 7.301778
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 433,
+			"seconds": 7.19999999999998,
+			"stage": "stop",
+			"tick": 432,
+			"wall": 7.301828
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 434,
+			"seconds": 7.21666666666665,
+			"stage": "stop",
+			"tick": 433,
+			"wall": 7.301874
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 435,
+			"seconds": 7.23333333333331,
+			"stage": "stop",
+			"tick": 434,
+			"wall": 7.410542
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 436,
+			"seconds": 7.24999999999998,
+			"stage": "stop",
+			"tick": 435,
+			"wall": 7.410645
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 437,
+			"seconds": 7.26666666666665,
+			"stage": "stop",
+			"tick": 436,
+			"wall": 7.410702
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 438,
+			"seconds": 7.28333333333331,
+			"stage": "stop",
+			"tick": 437,
+			"wall": 7.410755
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 439,
+			"seconds": 7.29999999999998,
+			"stage": "stop",
+			"tick": 438,
+			"wall": 7.410805
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 440,
+			"seconds": 7.31666666666665,
+			"stage": "stop",
+			"tick": 439,
+			"wall": 7.410858
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 441,
+			"seconds": 7.33333333333331,
+			"stage": "stop",
+			"tick": 440,
+			"wall": 7.520239
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 442,
+			"seconds": 7.34999999999998,
+			"stage": "stop",
+			"tick": 441,
+			"wall": 7.520335
+		},
+		{
+			"delta": 0.0166666666666667,
+			"phase": 0.117153209109735,
+			"physics_frame": 443,
+			"seconds": 7.36666666666665,
+			"stage": "stop",
+			"tick": 442,
+			"wall": 7.52039
+		}
+	],
+	"samples": [
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-0.0740607678890228
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.0,
+			"physics_frame": 8,
+			"sample_wall": 0.359309,
+			"seconds": 0.116666666666667,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "idle",
+			"tick": 7,
+			"wall": 0.000812
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-0.0740607678890228
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.0,
+			"physics_frame": 16,
+			"sample_wall": 0.474142,
+			"seconds": 0.25,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "idle",
+			"tick": 15,
+			"wall": 0.359938
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-0.0740607678890228
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.0,
+			"physics_frame": 24,
+			"sample_wall": 0.588619,
+			"seconds": 0.383333333333333,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "idle",
+			"tick": 23,
+			"wall": 0.474745
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-0.0740607678890228
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.0,
+			"physics_frame": 31,
+			"sample_wall": 0.701383,
+			"seconds": 0.5,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "idle",
+			"tick": 30,
+			"wall": 0.58917
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 4998,
+				"world": [
+					0.120053172111511,
+					-0.00716715771704912,
+					0.0326342731714249
+				]
+			},
+			"min_y": -0.00716715771704912,
+			"phase": 0.114285714285714,
+			"physics_frame": 38,
+			"sample_wall": 0.809086,
+			"seconds": 0.616666666666667,
+			"side_min_y": {
+				"L": -0.00595758995041251,
+				"R": -0.00716715771704912
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 37,
+			"wall": 0.702085
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.108955301344395,
+					-0.0000377867836505175,
+					-0.369601011276245
+				]
+			},
+			"min_y": -0.0000377867836505175,
+			"phase": 0.228571428571429,
+			"physics_frame": 44,
+			"sample_wall": 0.919402,
+			"seconds": 0.716666666666667,
+			"side_min_y": {
+				"L": -0.0000377867836505175,
+				"R": 0.0258584376424551
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 43,
+			"wall": 0.809762
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179015010595322,
+					-0.0134839182719588,
+					-0.592885553836823
+				]
+			},
+			"min_y": -0.0134839182719588,
+			"phase": 0.361904761904762,
+			"physics_frame": 51,
+			"sample_wall": 1.026606,
+			"seconds": 0.833333333333334,
+			"side_min_y": {
+				"L": 0.00137014454230666,
+				"R": -0.0134839182719588
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 50,
+			"wall": 0.920115
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.17980132997036,
+					-0.0399235971271992,
+					-0.809958398342133
+				]
+			},
+			"min_y": -0.0399235971271992,
+			"phase": 0.476190476190476,
+			"physics_frame": 57,
+			"sample_wall": 1.133397,
+			"seconds": 0.933333333333335,
+			"side_min_y": {
+				"L": 0.00713393092155457,
+				"R": -0.0399235971271992
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 56,
+			"wall": 1.027233
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123601496219635,
+					-0.000302717351587489,
+					-1.05907893180847
+				]
+			},
+			"min_y": -0.000302717351587489,
+			"phase": 0.60952380952381,
+			"physics_frame": 64,
+			"sample_wall": 1.242506,
+			"seconds": 1.05,
+			"side_min_y": {
+				"L": 0.00746525079011917,
+				"R": -0.000302717351587489
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 63,
+			"wall": 1.134034
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123601883649826,
+					-0.000337633508024737,
+					-1.05907702445984
+				]
+			},
+			"min_y": -0.000337633508024737,
+			"phase": 0.723809523809524,
+			"physics_frame": 70,
+			"sample_wall": 1.353227,
+			"seconds": 1.15,
+			"side_min_y": {
+				"L": 0.0254630222916603,
+				"R": -0.000337633508024737
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 69,
+			"wall": 1.243117
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118470199406147,
+					-0.00459314184263349,
+					-1.28103971481323
+				]
+			},
+			"min_y": -0.00459314184263349,
+			"phase": 0.857142857142858,
+			"physics_frame": 77,
+			"sample_wall": 1.474302,
+			"seconds": 1.26666666666667,
+			"side_min_y": {
+				"L": -0.00459314184263349,
+				"R": 0.00105394062120467
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 76,
+			"wall": 1.353949
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.119528368115425,
+					-0.0333622358739376,
+					-1.53220701217651
+				]
+			},
+			"min_y": -0.0333622358739376,
+			"phase": 0.990476190476191,
+			"physics_frame": 84,
+			"sample_wall": 1.58357,
+			"seconds": 1.38333333333333,
+			"side_min_y": {
+				"L": -0.0333622358739376,
+				"R": 0.0124802589416504
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 83,
+			"wall": 1.474925
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 42913,
+				"world": [
+					-0.123874753713608,
+					-0.000612342497333884,
+					-1.63109242916107
+				]
+			},
+			"min_y": -0.000612342497333884,
+			"phase": 0.104761904761906,
+			"physics_frame": 90,
+			"sample_wall": 1.695873,
+			"seconds": 1.48333333333333,
+			"side_min_y": {
+				"L": -0.000612342497333884,
+				"R": 0.00835280120372772
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 89,
+			"wall": 1.584184
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.108954504132271,
+					-0.000417593633756042,
+					-1.76964092254639
+				]
+			},
+			"min_y": -0.000417593633756042,
+			"phase": 0.238095238095239,
+			"physics_frame": 97,
+			"sample_wall": 1.812824,
+			"seconds": 1.6,
+			"side_min_y": {
+				"L": -0.000417593633756042,
+				"R": 0.0261832177639008
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 96,
+			"wall": 1.696537
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5030,
+				"world": [
+					0.108765371143818,
+					-0.0087779751047492,
+					-1.97379612922668
+				]
+			},
+			"min_y": -0.0087779751047492,
+			"phase": 0.352380952380953,
+			"physics_frame": 103,
+			"sample_wall": 1.920371,
+			"seconds": 1.7,
+			"side_min_y": {
+				"L": 0.000206319498829544,
+				"R": -0.0087779751047492
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 102,
+			"wall": 1.813468
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179923832416534,
+					-0.0381484143435955,
+					-2.22134518623352
+				]
+			},
+			"min_y": -0.0381484143435955,
+			"phase": 0.485714285714286,
+			"physics_frame": 110,
+			"sample_wall": 2.032139,
+			"seconds": 1.81666666666667,
+			"side_min_y": {
+				"L": 0.00558653473854065,
+				"R": -0.0381484143435955
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 109,
+			"wall": 1.921017
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.12363388389349,
+					-0.000326207984471694,
+					-2.45906138420105
+				]
+			},
+			"min_y": -0.000326207984471694,
+			"phase": 0.61904761904762,
+			"physics_frame": 117,
+			"sample_wall": 2.141568,
+			"seconds": 1.93333333333333,
+			"side_min_y": {
+				"L": 0.0107861906290054,
+				"R": -0.000326207984471694
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 116,
+			"wall": 2.032796
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123633831739426,
+					-0.000329233414959162,
+					-2.459059715271
+				]
+			},
+			"min_y": -0.000329233414959162,
+			"phase": 0.733333333333335,
+			"physics_frame": 123,
+			"sample_wall": 2.254367,
+			"seconds": 2.03333333333333,
+			"side_min_y": {
+				"L": 0.0262005217373371,
+				"R": -0.000329233414959162
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 122,
+			"wall": 2.142282
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118546478450298,
+					-0.0087397862225771,
+					-2.71355652809143
+				]
+			},
+			"min_y": -0.0087397862225771,
+			"phase": 0.866666666666668,
+			"physics_frame": 130,
+			"sample_wall": 2.365165,
+			"seconds": 2.15,
+			"side_min_y": {
+				"L": -0.0087397862225771,
+				"R": 0.00228936364874244
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 129,
+			"wall": 2.255026
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.119444273412228,
+					-0.037503756582737,
+					-2.92235803604126
+				]
+			},
+			"min_y": -0.037503756582737,
+			"phase": 0.980952380952383,
+			"physics_frame": 136,
+			"sample_wall": 2.47921,
+			"seconds": 2.25,
+			"side_min_y": {
+				"L": -0.037503756582737,
+				"R": 0.0134361088275909
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 135,
+			"wall": 2.366066
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.108948521316051,
+					0.00000705418642610312,
+					-3.1695990562439
+				]
+			},
+			"min_y": 0.00000705418642610312,
+			"phase": 0.114285714285716,
+			"physics_frame": 143,
+			"sample_wall": 2.588706,
+			"seconds": 2.36666666666666,
+			"side_min_y": {
+				"L": 0.00000705418642610312,
+				"R": 0.0117445066571236
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 142,
+			"wall": 2.480022
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.10894850641489,
+					-0.00000684632686898112,
+					-3.1695990562439
+				]
+			},
+			"min_y": -0.00000684632686898112,
+			"phase": 0.247619047619049,
+			"physics_frame": 150,
+			"sample_wall": 2.707873,
+			"seconds": 2.48333333333333,
+			"side_min_y": {
+				"L": -0.00000684632686898112,
+				"R": 0.0269548539072275
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "walk",
+			"tick": 149,
+			"wall": 2.589276
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5030,
+				"world": [
+					0.109140485525131,
+					-0.00129337294492871,
+					-3.72911429405212
+				]
+			},
+			"min_y": -0.00129337294492871,
+			"phase": 0.41809523809524,
+			"physics_frame": 157,
+			"sample_wall": 2.822915,
+			"seconds": 2.6,
+			"side_min_y": {
+				"L": 0.0459079407155514,
+				"R": -0.00129337294492871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 156,
+			"wall": 2.708907
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 4999,
+				"world": [
+					0.112709745764732,
+					0.0125652030110359,
+					-4.39314746856689
+				]
+			},
+			"min_y": 0.0125652030110359,
+			"phase": 0.616428571428573,
+			"physics_frame": 164,
+			"sample_wall": 2.934102,
+			"seconds": 2.71666666666666,
+			"side_min_y": {
+				"L": 0.0448995530605316,
+				"R": 0.0125652030110359
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 163,
+			"wall": 2.823689
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118443891406059,
+					0.00402885442599654,
+					-5.45726871490479
+				]
+			},
+			"min_y": 0.00402885442599654,
+			"phase": 0.814761904761906,
+			"physics_frame": 171,
+			"sample_wall": 3.044775,
+			"seconds": 2.83333333333333,
+			"side_min_y": {
+				"L": 0.00402885442599654,
+				"R": 0.189200401306152
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 170,
+			"wall": 2.934705
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.11945565789938,
+					-0.0107944495975971,
+					-6.07795238494873
+				]
+			},
+			"min_y": -0.0107944495975971,
+			"phase": 0.984761904761906,
+			"physics_frame": 177,
+			"sample_wall": 3.155278,
+			"seconds": 2.93333333333333,
+			"side_min_y": {
+				"L": -0.0107944495975971,
+				"R": 0.165133208036423
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 176,
+			"wall": 3.045287
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37089,
+				"world": [
+					-0.148953571915627,
+					-0.0126516669988632,
+					-6.47990608215332
+				]
+			},
+			"min_y": -0.0126516669988632,
+			"phase": 0.18309523809524,
+			"physics_frame": 184,
+			"sample_wall": 3.264868,
+			"seconds": 3.04999999999999,
+			"side_min_y": {
+				"L": -0.0126516669988632,
+				"R": 0.0405195131897926
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 183,
+			"wall": 3.155939
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179286226630211,
+					-0.0020599274430424,
+					-7.72269248962402
+				]
+			},
+			"min_y": -0.0020599274430424,
+			"phase": 0.381428571428573,
+			"physics_frame": 191,
+			"sample_wall": 3.373034,
+			"seconds": 3.16666666666666,
+			"side_min_y": {
+				"L": 0.199493899941444,
+				"R": -0.0020599274430424
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 190,
+			"wall": 3.265536
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 4999,
+				"world": [
+					0.112675458192825,
+					-0.00218388787470758,
+					-8.39120769500732
+				]
+			},
+			"min_y": -0.00218388787470758,
+			"phase": 0.579761904761906,
+			"physics_frame": 198,
+			"sample_wall": 3.481999,
+			"seconds": 3.28333333333333,
+			"side_min_y": {
+				"L": 0.0518306940793991,
+				"R": -0.00218388787470758
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 197,
+			"wall": 3.373633
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118047520518303,
+					0.0167173445224762,
+					-9.14265155792236
+				]
+			},
+			"min_y": 0.0167173445224762,
+			"phase": 0.749761904761906,
+			"physics_frame": 204,
+			"sample_wall": 3.589375,
+			"seconds": 3.38333333333333,
+			"side_min_y": {
+				"L": 0.0167173445224762,
+				"R": 0.0647502094507217
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 203,
+			"wall": 3.482618
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.119197882711887,
+					-0.00906959734857082,
+					-9.95123386383057
+				]
+			},
+			"min_y": -0.00906959734857082,
+			"phase": 0.948095238095239,
+			"physics_frame": 211,
+			"sample_wall": 3.699022,
+			"seconds": 3.49999999999999,
+			"side_min_y": {
+				"L": -0.00906959734857082,
+				"R": 0.187152117490768
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 210,
+			"wall": 3.589897
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37086,
+				"world": [
+					-0.130676463246346,
+					0.00306075066328049,
+					-10.4501323699951
+				]
+			},
+			"min_y": 0.00306075066328049,
+			"phase": 0.146428571428573,
+			"physics_frame": 218,
+			"sample_wall": 3.805967,
+			"seconds": 3.61666666666666,
+			"side_min_y": {
+				"L": 0.00306075066328049,
+				"R": 0.0441683083772659
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 217,
+			"wall": 3.699627
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179295763373375,
+					0.0036154817789793,
+					-11.4585180282593
+				]
+			},
+			"min_y": 0.0036154817789793,
+			"phase": 0.316428571428573,
+			"physics_frame": 224,
+			"sample_wall": 3.915135,
+			"seconds": 3.71666666666666,
+			"side_min_y": {
+				"L": 0.195680260658264,
+				"R": 0.0036154817789793
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 223,
+			"wall": 3.806521
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5030,
+				"world": [
+					0.109770677983761,
+					-0.0101348552852869,
+					-12.0879907608032
+				]
+			},
+			"min_y": -0.0101348552852869,
+			"phase": 0.486428571428573,
+			"physics_frame": 230,
+			"sample_wall": 4.024178,
+			"seconds": 3.81666666666666,
+			"side_min_y": {
+				"L": 0.166966050863266,
+				"R": -0.0101348552852869
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 229,
+			"wall": 3.915628
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5004,
+				"world": [
+					0.151861310005188,
+					-0.00359152257442474,
+					-12.4885034561157
+				]
+			},
+			"min_y": -0.00359152257442474,
+			"phase": 0.684761904761906,
+			"physics_frame": 237,
+			"sample_wall": 4.134142,
+			"seconds": 3.93333333333332,
+			"side_min_y": {
+				"L": 0.0398634560406208,
+				"R": -0.00359152257442474
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 236,
+			"wall": 4.024787
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.11863961070776,
+					0.000521352514624596,
+					-13.6285066604614
+				]
+			},
+			"min_y": 0.000521352514624596,
+			"phase": 0.854761904761906,
+			"physics_frame": 243,
+			"sample_wall": 4.242499,
+			"seconds": 4.03333333333332,
+			"side_min_y": {
+				"L": 0.000521352514624596,
+				"R": 0.202190488576889
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 242,
+			"wall": 4.134668
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.108996860682964,
+					-0.00796588975936174,
+					-14.3568134307861
+				]
+			},
+			"min_y": -0.00796588975936174,
+			"phase": 0.0530952380952392,
+			"physics_frame": 250,
+			"sample_wall": 4.352113,
+			"seconds": 4.14999999999999,
+			"side_min_y": {
+				"L": -0.00796588975936174,
+				"R": 0.0743952468037605
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 249,
+			"wall": 4.243094
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37089,
+				"world": [
+					-0.148860424757004,
+					0.0126913636922836,
+					-14.5447750091553
+				]
+			},
+			"min_y": 0.0126913636922836,
+			"phase": 0.223095238095239,
+			"physics_frame": 256,
+			"sample_wall": 4.465276,
+			"seconds": 4.24999999999999,
+			"side_min_y": {
+				"L": 0.0126913636922836,
+				"R": 0.0264449659734964
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 255,
+			"wall": 4.35267
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179529100656509,
+					-0.00587007403373718,
+					-15.8579053878784
+				]
+			},
+			"min_y": -0.00587007403373718,
+			"phase": 0.421428571428572,
+			"physics_frame": 263,
+			"sample_wall": 4.572516,
+			"seconds": 4.36666666666666,
+			"side_min_y": {
+				"L": 0.193412512540817,
+				"R": -0.00587007403373718
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 262,
+			"wall": 4.465842
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 4999,
+				"world": [
+					0.112593449652195,
+					0.00559162721037865,
+					-16.3770122528076
+				]
+			},
+			"min_y": 0.00559162721037865,
+			"phase": 0.591428571428572,
+			"physics_frame": 269,
+			"sample_wall": 4.683649,
+			"seconds": 4.46666666666666,
+			"side_min_y": {
+				"L": 0.0470402836799622,
+				"R": 0.00559162721037865
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "jog",
+			"tick": 268,
+			"wall": 4.573081
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.11808592826128,
+					0.0180739499628544,
+					-17.3931312561035
+				]
+			},
+			"min_y": 0.0180739499628544,
+			"phase": 0.805559006211181,
+			"physics_frame": 276,
+			"sample_wall": 4.79167,
+			"seconds": 4.58333333333332,
+			"side_min_y": {
+				"L": 0.0180739499628544,
+				"R": 0.0580203458666801
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 275,
+			"wall": 4.684322
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 42913,
+				"world": [
+					-0.123596139252186,
+					-0.00371140101924539,
+					-18.4144153594971
+				]
+			},
+			"min_y": -0.00371140101924539,
+			"phase": 0.0229503105590074,
+			"physics_frame": 282,
+			"sample_wall": 4.898726,
+			"seconds": 4.68333333333332,
+			"side_min_y": {
+				"L": -0.00371140101924539,
+				"R": 0.0985497683286667
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 281,
+			"wall": 4.79235
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.178740754723549,
+					0.00633772555738688,
+					-19.6330547332764
+				]
+			},
+			"min_y": 0.00633772555738688,
+			"phase": 0.276573498964805,
+			"physics_frame": 289,
+			"sample_wall": 5.007845,
+			"seconds": 4.79999999999999,
+			"side_min_y": {
+				"L": 0.186705276370049,
+				"R": 0.00633772555738688
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 288,
+			"wall": 4.899317
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5030,
+				"world": [
+					0.110026262700558,
+					-0.0131069216877222,
+					-20.6121845245361
+				]
+			},
+			"min_y": -0.0131069216877222,
+			"phase": 0.493964803312631,
+			"physics_frame": 295,
+			"sample_wall": 5.115533,
+			"seconds": 4.89999999999999,
+			"side_min_y": {
+				"L": 0.143060579895973,
+				"R": -0.0131069216877222
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 294,
+			"wall": 5.008371
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.117912746965885,
+					0.0134775061160326,
+					-21.7778034210205
+				]
+			},
+			"min_y": 0.0134775061160326,
+			"phase": 0.747587991718428,
+			"physics_frame": 302,
+			"sample_wall": 5.223737,
+			"seconds": 5.01666666666665,
+			"side_min_y": {
+				"L": 0.0134775061160326,
+				"R": 0.113646954298019
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 301,
+			"wall": 5.116123
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.119372576475143,
+					-0.01355947740376,
+					-22.7816200256348
+				]
+			},
+			"min_y": -0.01355947740376,
+			"phase": 0.964979296066254,
+			"physics_frame": 308,
+			"sample_wall": 5.334722,
+			"seconds": 5.11666666666665,
+			"side_min_y": {
+				"L": -0.01355947740376,
+				"R": 0.181611329317093
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 307,
+			"wall": 5.224259
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5030,
+				"world": [
+					0.108539879322052,
+					0.025214958935976,
+					-23.8880805969238
+				]
+			},
+			"min_y": 0.025214958935976,
+			"phase": 0.218602484472051,
+			"physics_frame": 315,
+			"sample_wall": 5.4417,
+			"seconds": 5.23333333333332,
+			"side_min_y": {
+				"L": 0.0364549234509468,
+				"R": 0.025214958935976
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 314,
+			"wall": 5.335329
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179685100913048,
+					-0.0103263547644019,
+					-24.9598140716553
+				]
+			},
+			"min_y": -0.0103263547644019,
+			"phase": 0.435993788819878,
+			"physics_frame": 321,
+			"sample_wall": 5.549537,
+			"seconds": 5.33333333333332,
+			"side_min_y": {
+				"L": 0.207078576087952,
+				"R": -0.0103263547644019
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 320,
+			"wall": 5.442229
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5004,
+				"world": [
+					0.151910543441772,
+					0.0101273953914642,
+					-25.6144390106201
+				]
+			},
+			"min_y": 0.0101273953914642,
+			"phase": 0.689616977225675,
+			"physics_frame": 328,
+			"sample_wall": 5.66268,
+			"seconds": 5.44999999999999,
+			"side_min_y": {
+				"L": 0.0365292839705944,
+				"R": 0.0101273953914642
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 327,
+			"wall": 5.550158
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118979625403881,
+					-0.00742716761305928,
+					-27.1510524749756
+				]
+			},
+			"min_y": -0.00742716761305928,
+			"phase": 0.907008281573501,
+			"physics_frame": 334,
+			"sample_wall": 5.77153,
+			"seconds": 5.54999999999999,
+			"side_min_y": {
+				"L": -0.00742716761305928,
+				"R": 0.230563133955002
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 333,
+			"wall": 5.663236
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37089,
+				"world": [
+					-0.149076968431473,
+					-0.0185663923621178,
+					-27.8696365356445
+				]
+			},
+			"min_y": -0.0185663923621178,
+			"phase": 0.160631469979299,
+			"physics_frame": 341,
+			"sample_wall": 5.882106,
+			"seconds": 5.66666666666665,
+			"side_min_y": {
+				"L": -0.0185663923621178,
+				"R": 0.0428639985620975
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 340,
+			"wall": 5.772153
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179298982024193,
+					-0.00446562189608812,
+					-29.3233032226563
+				]
+			},
+			"min_y": -0.00446562189608812,
+			"phase": 0.378022774327125,
+			"physics_frame": 347,
+			"sample_wall": 5.99196,
+			"seconds": 5.76666666666665,
+			"side_min_y": {
+				"L": 0.253630608320236,
+				"R": -0.00446562189608812
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 346,
+			"wall": 5.882662
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5002,
+				"world": [
+					0.132964253425598,
+					-0.00224205106496811,
+					-30.1473731994629
+				]
+			},
+			"min_y": -0.00224205106496811,
+			"phase": 0.631645962732922,
+			"physics_frame": 354,
+			"sample_wall": 6.10051,
+			"seconds": 5.88333333333332,
+			"side_min_y": {
+				"L": 0.0442913509905338,
+				"R": -0.00224205106496811
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 353,
+			"wall": 5.99283
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118838638067245,
+					-0.00482786120846868,
+					-31.6614189147949
+				]
+			},
+			"min_y": -0.00482786120846868,
+			"phase": 0.885269151138719,
+			"physics_frame": 361,
+			"sample_wall": 6.217164,
+			"seconds": 5.99999999999998,
+			"side_min_y": {
+				"L": -0.00482786120846868,
+				"R": 0.248670071363449
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 360,
+			"wall": 6.101152
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37086,
+				"world": [
+					-0.130724534392357,
+					0.00375260412693024,
+					-32.4401969909668
+				]
+			},
+			"min_y": 0.00375260412693024,
+			"phase": 0.138892339544517,
+			"physics_frame": 368,
+			"sample_wall": 6.326743,
+			"seconds": 6.11666666666665,
+			"side_min_y": {
+				"L": 0.00375260412693024,
+				"R": 0.0440522022545338
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 367,
+			"wall": 6.217779
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5035,
+				"world": [
+					0.179187208414078,
+					-0.00234986958093941,
+					-33.8281173706055
+				]
+			},
+			"min_y": -0.00234986958093941,
+			"phase": 0.356283643892343,
+			"physics_frame": 374,
+			"sample_wall": 6.434597,
+			"seconds": 6.21666666666665,
+			"side_min_y": {
+				"L": 0.267989128828049,
+				"R": -0.00234986958093941
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 373,
+			"wall": 6.327317
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 4999,
+				"world": [
+					0.112831100821495,
+					0.00743839517235756,
+					-34.6831130981445
+				]
+			},
+			"min_y": 0.00743839517235756,
+			"phase": 0.60990683229814,
+			"physics_frame": 381,
+			"sample_wall": 6.54167,
+			"seconds": 6.33333333333332,
+			"side_min_y": {
+				"L": 0.0456044897437096,
+				"R": 0.00743839517235756
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 380,
+			"wall": 6.43521
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 40933,
+				"world": [
+					-0.118716068565845,
+					-0.00255722785368562,
+					-36.1665954589844
+				]
+			},
+			"min_y": -0.00255722785368562,
+			"phase": 0.863530020703937,
+			"physics_frame": 388,
+			"sample_wall": 6.653097,
+			"seconds": 6.44999999999998,
+			"side_min_y": {
+				"L": -0.00255722785368562,
+				"R": 0.262423992156982
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 387,
+			"wall": 6.542332
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37082,
+				"world": [
+					-0.111508898437023,
+					-0.00495817419141531,
+					-36.9816665649414
+				]
+			},
+			"min_y": -0.00495817419141531,
+			"phase": 0.0809213250517637,
+			"physics_frame": 394,
+			"sample_wall": 6.762443,
+			"seconds": 6.54999999999998,
+			"side_min_y": {
+				"L": -0.00495817419141531,
+				"R": 0.0489237122237682
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "sprint",
+			"tick": 393,
+			"wall": 6.653658
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 37084,
+				"world": [
+					-0.10938622802496,
+					-0.0107261519879103,
+					-37.1234741210938
+				]
+			},
+			"min_y": -0.0107261519879103,
+			"phase": 0.117153209109735,
+			"physics_frame": 401,
+			"sample_wall": 6.869715,
+			"seconds": 6.66666666666665,
+			"side_min_y": {
+				"L": -0.0107261519879103,
+				"R": -0.00407301960512996
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 400,
+			"wall": 6.763222
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 408,
+			"sample_wall": 6.977873,
+			"seconds": 6.78333333333331,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 407,
+			"wall": 6.870638
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 414,
+			"sample_wall": 7.085754,
+			"seconds": 6.88333333333331,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 413,
+			"wall": 6.97836
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 421,
+			"sample_wall": 7.19228,
+			"seconds": 6.99999999999998,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 420,
+			"wall": 7.08628
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 427,
+			"sample_wall": 7.30134,
+			"seconds": 7.09999999999998,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 426,
+			"wall": 7.192756
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 434,
+			"sample_wall": 7.41029,
+			"seconds": 7.21666666666665,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 433,
+			"wall": 7.301874
+		},
+		{
+			"delta": 0.0166666666666667,
+			"lowest": {
+				"mesh": "C2_OriginalProportions",
+				"surface": 0,
+				"vertex": 5007,
+				"world": [
+					0.123580567538738,
+					-0.000306249537970871,
+					-37.1807250976563
+				]
+			},
+			"min_y": -0.000306249537970871,
+			"phase": 0.117153209109735,
+			"physics_frame": 440,
+			"sample_wall": 7.520062,
+			"seconds": 7.31666666666665,
+			"side_min_y": {
+				"L": 0.000599623075686395,
+				"R": -0.000306249537970871
+			},
+			"skinned_vertex_count": 91207,
+			"stage": "stop",
+			"tick": 439,
+			"wall": 7.410858
+		}
+	],
+	"stage_min_y": {
+		"idle": -0.000306249537970871,
+		"jog": -0.0126516669988632,
+		"sprint": -0.0185663923621178,
+		"stop": -0.0107261519879103,
+		"walk": -0.0399235971271992
+	},
+	"time_scale": 1.0
+}

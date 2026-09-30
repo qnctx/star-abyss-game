@@ -1,0 +1,92 @@
+{
+  "version": "INTEGRATED-ORIGINAL-CORE-R2",
+  "scope": "Independent tested scope passed; driving/native vehicle occlusion untested; continuous load multipliers unfinished",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\integration-backups\\original-before-core-r2",
+  "testedBundle": true,
+  "files": [
+    {
+      "path": "playable/src/main.mjs",
+      "sha256": "aba1993626bd30b717f9bd49f1bd89599bc238bd960e0649a37ba8cd56d19ac2",
+      "before": "ff6922bc21ad47911af4a6cfd08ca16299994f1701b09ed8a4486f545a1e051d",
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/main.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/control-gate.mjs",
+      "sha256": "b9f468c4f577e4daaa2c2e605b6ee7b3086e3bffa86c731e2d90f1ad34c3cf98",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/control-gate.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/effects.mjs",
+      "sha256": "cff2182991fae02f5a87848d1c001711adc298abc948fc216dbe0e3b98bae400",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/effects.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/index.mjs",
+      "sha256": "3a117b54f223010443f6b4ada6ef8a1d331c47d13f5b62d5352797f5ad186f7e",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/index.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/legacy.mjs",
+      "sha256": "789c19b578a9fcb6c74f8f58752ab64b0c7842f2700122cf4ab651b06de6f001",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/legacy.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/path.mjs",
+      "sha256": "e7287016d0f7b06a2a35f5cdae946e28f5c12441292759c0142190da3023aac9",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/path.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/queries.mjs",
+      "sha256": "29c266657b517834f3c5dc065a9b6c38a863e68e4760cc7fa1934b51544c770a",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/queries.mjs"
+    },
+    {
+      "path": "playable/src/expedition-runtime/rules.mjs",
+      "sha256": "46d7bad40c78e609719352bd421c0141bbeeca13d3a293e5326a75a98f6b27ae",
+      "before": null,
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries/DEV-ORIGINAL-CORE-R2/playable/src/expedition-runtime/rules.mjs"
+    },
+    {
+      "path": "playable/src/expedition-ui/index.mjs",
+      "sha256": "404b50c71f30dca855f5763b4c008b8e37a42392643153ac695bd7796338ff2c",
+      "before": null,
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c0e3/star-abyss-game/artifacts/deliveries/DEV-ORIGINAL-UI-R3/playable/src/expedition-ui/index.mjs"
+    },
+    {
+      "path": "playable/css/game.css",
+      "sha256": "4125a8d07d4c7d358bacb0e8059b5634d78bc248a030b788d2b49afd792732f1",
+      "before": "5999e0bc1cb0d5140d31292e3008d159933a5649ef8accb2f0178466d4a97d80",
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c0e3/star-abyss-game/artifacts/deliveries/DEV-ORIGINAL-UI-R3/playable/css/game.css"
+    },
+    {
+      "path": "playable/src/expedition-world/definitions.mjs",
+      "sha256": "22113b8ab0ea745b1a9945f8dbfae71fe4e3e3bb28b99abdc96ad317d91894e7",
+      "before": null,
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c0e3/star-abyss-game/artifacts/deliveries/DEV-ORIGINAL-WORLD-R3/playable/src/expedition-world/definitions.mjs"
+    },
+    {
+      "path": "playable/src/expedition-world/queries.mjs",
+      "sha256": "015bffc9abc81e153acc4f65b87ce2eb62e75344d535bad6442f837ea17c8100",
+      "before": null,
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c0e3/star-abyss-game/artifacts/deliveries/DEV-ORIGINAL-WORLD-R3/playable/src/expedition-world/queries.mjs"
+    },
+    {
+      "path": "playable/src/expedition-world/index.mjs",
+      "sha256": "1478c6864b7b5c1b840e96cbe4ee21aabb093ab338e5b55216cd18b56626d3bd",
+      "before": null,
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c0e3/star-abyss-game/artifacts/deliveries/DEV-ORIGINAL-WORLD-R3/playable/src/expedition-world/index.mjs"
+    },
+    {
+      "path": "playable/game.js",
+      "sha256": "84a45490a8e799f1491fe9b80a9538bb9637764f10514eff070a3154e110bd49",
+      "before": "9703737f30428f905906ae38e8934a46ef8f01e9ffc0e4e2bb9e5d2d5d9049d9",
+      "source": "C:/Users/HUAWEI/.codex/worktrees/1f9b/star-abyss-game/artifacts/tests/TEST-ORIGINAL-CORE-R2/tree/artifacts/original-core-r2/preview/game.js"
+    }
+  ]
+}

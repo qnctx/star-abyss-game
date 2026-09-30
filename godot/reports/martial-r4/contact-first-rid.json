@@ -1,0 +1,574 @@
+{
+	"checks": [
+		{
+			"label": "same-aim actual R environment contact: probe-pine",
+			"ok": true
+		},
+		{
+			"label": "same-aim actual R environment contact: probe-rock",
+			"ok": false
+		},
+		{
+			"label": "non-environment first wall blocks a tree behind it",
+			"ok": true
+		},
+		{
+			"label": "first tree receives impact and shields a farther enemy",
+			"ok": true
+		},
+		{
+			"label": "real charged hand sphere initially overlaps the thin blocker",
+			"ok": true
+		},
+		{
+			"label": "initial-overlap wall does not pass environmental damage through",
+			"ok": true
+		}
+	],
+	"failed": [
+		"same-aim actual R environment contact: probe-rock"
+	],
+	"samples": [
+		{
+			"cast_id": "1790702030109000-e0574d2b718de653:1",
+			"fractions": "[0.0859375, 0.091796875]",
+			"frame": 210,
+			"from": "(94.96137, 0.932937, 168.6241)",
+			"nearest": [
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 0.00074276876449586,
+					"same_first_body": true,
+					"unsafe_gap": -0.000423515319824208
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.0233809716224671,
+					"same_first_body": true,
+					"unsafe_gap": 0.0222826368331909
+				},
+				{
+					"id": "probe-pine",
+					"part": "stump",
+					"safe_gap": 0.210254309654236,
+					"same_first_body": true,
+					"unsafe_gap": 0.209412811279297
+				},
+				{
+					"id": "probe-pine",
+					"part": "trunk",
+					"safe_gap": 1.93327409744263,
+					"same_first_body": true,
+					"unsafe_gap": 1.9329686832428
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_00",
+					"safe_gap": 2.56788323783875,
+					"same_first_body": true,
+					"unsafe_gap": 2.56760548019409
+				},
+				{
+					"id": "probe-pine",
+					"part": "branch_01",
+					"safe_gap": 3.11284963989258,
+					"same_first_body": true,
+					"unsafe_gap": 3.11270849609375
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(6012954214470), \"collider_id\": 98968799847, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.932961, 168.607)",
+			"safe_to_unsafe": 0.00117492792196572,
+			"solid": "{ \"center\": (94.96137, 0.932961, 168.607), \"unsafe_center\": (94.96137, 0.932963, 168.6058), \"shape\": 2, \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(6012954214470) }",
+			"to": "(94.96137, 0.93322, 168.4241)",
+			"unsafe": "(94.96137, 0.932963, 168.6058)"
+		},
+		{
+			"result": {
+				"cast_id": "1790702030109000-e0574d2b718de653:1",
+				"contact": {
+					"from": "(94.96137, 0.932937, 168.6241)",
+					"query": {
+						"cast_id": "1790702030109000-e0574d2b718de653:1",
+						"contact_rid": "RID(6012954214470)",
+						"damage_type": "blast",
+						"direction": "(0.0, 0.001416, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.932937, 168.6241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.018356341868639,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": true,
+						"changed": 1,
+						"hit_points": [
+							"(95.01642, 0.938182, 168.1899)"
+						],
+						"hits": [
+							{
+								"blocked": true,
+								"collider": "<Freed Object>",
+								"damage": 1200.0,
+								"destroyed": true,
+								"entity_id": "probe-pine",
+								"kind": "tree",
+								"normal": "(-0.13106, -0.012428, 0.991297)",
+								"part": "trunk",
+								"point": "(95.01642, 0.938182, 168.1899)",
+								"rid": "RID(7168300417090)"
+							}
+						],
+						"query_id": "1790702030109000-e0574d2b718de653:1"
+					},
+					"safe": "(94.96137, 0.932961, 168.607)",
+					"solid": {
+						"center": "(94.96137, 0.932961, 168.607)",
+						"normal": "(-0.131127, -0.012414, 0.991288)",
+						"point": "(95.01639, 0.938172, 168.1899)",
+						"rid": "RID(6012954214470)",
+						"shape": 2,
+						"unsafe_center": "(94.96137, 0.932963, 168.6058)"
+					},
+					"surface": "(95.01639, 0.938172, 168.1899)",
+					"to": "(94.96137, 0.93322, 168.4241)",
+					"unsafe": "(94.96137, 0.932963, 168.6058)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 1,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.01642, 0.938182, 168.1899)",
+				"power": 1200.0
+			},
+			"state": {
+				"broken": [],
+				"fall_pose": [
+					1.0,
+					0.0,
+					0.0,
+					0.0,
+					0.382683426141739,
+					-0.923879504203796,
+					0.0,
+					0.923879504203796,
+					0.382683426141739,
+					0.0,
+					0.592623889446259,
+					0.88692432641983
+				],
+				"fallen": true,
+				"health": {
+					"trunk": 0.0
+				},
+				"poses": {
+
+				}
+			},
+			"target": "probe-pine"
+		},
+		{
+			"cast_id": "1790702030109000-e0574d2b718de653:2",
+			"fractions": "[1.0, 1.0]",
+			"frame": 322,
+			"from": "(95.04884, 0.85977, 169.7147)",
+			"nearest": [
+				{
+					"id": "probe-rock",
+					"part": "chunk_3",
+					"safe_gap": -0.303483722686768,
+					"same_first_body": true,
+					"unsafe_gap": -0.440509317398071
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_2",
+					"safe_gap": -0.265063395309448,
+					"same_first_body": true,
+					"unsafe_gap": -0.43551277141571
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_1",
+					"safe_gap": 1.19389302101135,
+					"same_first_body": true,
+					"unsafe_gap": 1.02984172668457
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_0",
+					"safe_gap": 1.62732856903076,
+					"same_first_body": true,
+					"unsafe_gap": 1.44976895484924
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_4",
+					"safe_gap": 1.7181512008667,
+					"same_first_body": true,
+					"unsafe_gap": 1.5375887046814
+				},
+				{
+					"id": "probe-rock",
+					"part": "chunk_5",
+					"safe_gap": 2.82764485244751,
+					"same_first_body": true,
+					"unsafe_gap": 2.62812855606079
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01984, 0.973631, 169.7578), \"normal\": (-0.10745, 0.420908, 0.900717), \"rid\": RID(7795365642310), \"collider_id\": 128211487320, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(95.04884, 0.85977, 169.7147)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"center\": (95.04884, 0.85977, 169.7147), \"unsafe_center\": (95.04884, 0.85977, 169.7147), \"point\": (95.03918, 0.897568, 169.7956), \"normal\": (-0.10745, 0.420908, 0.900717), \"rid\": RID(7795365642310) }",
+			"to": "(95.04884, 0.860053, 169.5147)",
+			"unsafe": "(95.04884, 0.860053, 169.5147)"
+		},
+		{
+			"result": {
+				"cast_id": "1790702030109000-e0574d2b718de653:2",
+				"contact": {
+					"from": "(95.08851, 0.881428, 170.2924)",
+					"query": {
+						"cast_id": "1790702030109000-e0574d2b718de653:2",
+						"contact_rid": "RID(7795365642310)",
+						"damage_type": "blast",
+						"direction": "(-0.068344, -0.037372, -0.996962)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(95.04884, 0.85977, 169.7147)",
+						"origin": "(95.08851, 0.881428, 170.2924)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0300289839506149,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702030109000-e0574d2b718de653:2"
+					},
+					"safe": "(95.08655, 0.880359, 170.2639)",
+					"solid": {
+						"center": "(95.08655, 0.880359, 170.2639)",
+						"normal": "(0.0463, 0.2698, 0.961803)",
+						"point": "(95.06707, 0.767332, 169.8598)",
+						"rid": "RID(7795365642310)",
+						"shape": 0,
+						"unsafe_center": "(95.08646, 0.880306, 170.2625)"
+					},
+					"surface": "(95.06707, 0.767332, 169.8598)",
+					"to": "(95.05562, 0.863473, 169.8135)",
+					"unsafe": "(95.08646, 0.880306, 170.2625)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(95.06707, 0.767332, 169.8598)",
+				"power": 1200.0
+			},
+			"state": {
+
+			},
+			"target": "probe-rock"
+		},
+		{
+			"cast_id": "1790702030109000-e0574d2b718de653:3",
+			"fractions": "[0.66796875, 0.671875]",
+			"frame": 452,
+			"from": "(94.96137, 0.931804, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-wall-tree",
+					"part": "trunk",
+					"safe_gap": 0.680889403343201,
+					"same_first_body": false,
+					"unsafe_gap": 0.680112277984619
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "stump",
+					"safe_gap": 0.681934750747681,
+					"same_first_body": false,
+					"unsafe_gap": 0.681172526550293
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "stump",
+					"safe_gap": 0.768972394943237,
+					"same_first_body": false,
+					"unsafe_gap": 0.768283961296082
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "trunk",
+					"safe_gap": 2.18655306816101,
+					"same_first_body": false,
+					"unsafe_gap": 2.18618661880493
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "branch_00",
+					"safe_gap": 2.79721592330933,
+					"same_first_body": false,
+					"unsafe_gap": 2.79688332939148
+				},
+				{
+					"id": "probe-wall-tree",
+					"part": "branch_01",
+					"safe_gap": 3.23887698554993,
+					"same_first_body": false,
+					"unsafe_gap": 3.23868315124512
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.96137, 0.931994, 168.87), \"normal\": (0.0, 0.0, 1.0), \"rid\": RID(9156870275140), \"collider_id\": 154383944466, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.931993, 169.2905)",
+			"safe_to_unsafe": 0.000778198998887092,
+			"solid": "{ \"center\": (94.96137, 0.931993, 169.2905), \"unsafe_center\": (94.96137, 0.931994, 169.2898), \"shape\": 0, \"point\": (94.96137, 0.931994, 168.87), \"normal\": (0.0, 0.0, 1.0), \"rid\": RID(9156870275140) }",
+			"to": "(94.96137, 0.932087, 169.2241)",
+			"unsafe": "(94.96137, 0.931994, 169.2898)"
+		},
+		{
+			"case": "wall-before-tree",
+			"result": {
+				"cast_id": "1790702030109000-e0574d2b718de653:3",
+				"contact": {
+					"from": "(94.96137, 0.931804, 169.4241)",
+					"query": {
+						"cast_id": "1790702030109000-e0574d2b718de653:3",
+						"contact_rid": "RID(9156870275140)",
+						"damage_type": "blast",
+						"direction": "(0.0, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.931804, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.134369030594826,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702030109000-e0574d2b718de653:3"
+					},
+					"safe": "(94.96137, 0.931993, 169.2905)",
+					"solid": {
+						"center": "(94.96137, 0.931993, 169.2905)",
+						"normal": "(0.0, 0.0, 1.0)",
+						"point": "(94.96137, 0.931994, 168.87)",
+						"rid": "RID(9156870275140)",
+						"shape": 0,
+						"unsafe_center": "(94.96137, 0.931994, 169.2898)"
+					},
+					"surface": "(94.96137, 0.931994, 168.87)",
+					"to": "(94.96137, 0.932087, 169.2241)",
+					"unsafe": "(94.96137, 0.931994, 169.2898)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.96137, 0.931994, 168.87)",
+				"power": 1200.0
+			}
+		},
+		{
+			"cast_id": "1790702030109000-e0574d2b718de653:4",
+			"fractions": "[0.0859375, 0.091796875]",
+			"frame": 573,
+			"from": "(94.96137, 0.932937, 168.6241)",
+			"nearest": [
+				{
+					"id": "probe-shield-tree",
+					"part": "trunk",
+					"safe_gap": 0.00074276876449586,
+					"same_first_body": true,
+					"unsafe_gap": -0.000423515319824208
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "stump",
+					"safe_gap": 0.0233809716224671,
+					"same_first_body": true,
+					"unsafe_gap": 0.0222826368331909
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "stump",
+					"safe_gap": 0.210254309654236,
+					"same_first_body": true,
+					"unsafe_gap": 0.209412811279297
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "trunk",
+					"safe_gap": 1.93327409744263,
+					"same_first_body": true,
+					"unsafe_gap": 1.9329686832428
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "branch_00",
+					"safe_gap": 2.56788323783875,
+					"same_first_body": true,
+					"unsafe_gap": 2.56760548019409
+				},
+				{
+					"id": "probe-shield-tree",
+					"part": "branch_01",
+					"safe_gap": 3.11284963989258,
+					"same_first_body": true,
+					"unsafe_gap": 3.11270849609375
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(10368051052614), \"collider_id\": 177217735466, \"shape\": 2, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.932961, 168.607)",
+			"safe_to_unsafe": 0.00117492792196572,
+			"solid": "{ \"center\": (94.96137, 0.932961, 168.607), \"unsafe_center\": (94.96137, 0.932963, 168.6058), \"shape\": 2, \"point\": (95.01639, 0.938172, 168.1899), \"normal\": (-0.131127, -0.012414, 0.991288), \"rid\": RID(10368051052614) }",
+			"to": "(94.96137, 0.93322, 168.4241)",
+			"unsafe": "(94.96137, 0.932963, 168.6058)"
+		},
+		{
+			"cast_id": "1790702030109000-e0574d2b718de653:6",
+			"fractions": "[1.0, 1.0]",
+			"frame": 796,
+			"from": "(94.96137, 0.931804, 169.4241)",
+			"nearest": [
+				{
+					"id": "probe-overlap-tree",
+					"part": "trunk",
+					"safe_gap": 0.814087783813477,
+					"same_first_body": false,
+					"unsafe_gap": 0.614682948112488
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "stump",
+					"safe_gap": 0.813011086654663,
+					"same_first_body": false,
+					"unsafe_gap": 0.61694852180481
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "stump",
+					"safe_gap": 0.888240812301636,
+					"same_first_body": false,
+					"unsafe_gap": 0.710515020370484
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "trunk",
+					"safe_gap": 2.25181896209717,
+					"same_first_body": false,
+					"unsafe_gap": 2.15585524559021
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "branch_00",
+					"safe_gap": 2.85648153686523,
+					"same_first_body": false,
+					"unsafe_gap": 2.76938556098938
+				},
+				{
+					"id": "probe-overlap-tree",
+					"part": "branch_01",
+					"safe_gap": 3.27333323860168,
+					"same_first_body": false,
+					"unsafe_gap": 3.22289817237854
+				}
+			],
+			"radius": 0.42,
+			"rest": "{ \"point\": (94.96137, 0.932087, 169.3741), \"normal\": (0.0, 0.0, -1.0), \"rid\": RID(13168369729604), \"collider_id\": 226525973091, \"shape\": 0, \"linear_velocity\": (0.0, 0.0, 0.0) }",
+			"safe": "(94.96137, 0.931804, 169.4241)",
+			"safe_to_unsafe": 0.199997156858444,
+			"solid": "{ \"initial_overlap\": true, \"center\": (94.96137, 0.931804, 169.4241), \"unsafe_center\": (94.96137, 0.931804, 169.4241), \"point\": (94.96137, 0.931804, 169.4141), \"normal\": (0.0, 0.0, 1.0), \"rid\": RID(13168369729604) }",
+			"to": "(94.96137, 0.932087, 169.2241)",
+			"unsafe": "(94.96137, 0.932087, 169.2241)"
+		},
+		{
+			"case": "initial-overlap-wall",
+			"result": {
+				"cast_id": "1790702030109000-e0574d2b718de653:6",
+				"contact": {
+					"from": "(94.96137, 0.931804, 169.4241)",
+					"query": {
+						"cast_id": "1790702030109000-e0574d2b718de653:6",
+						"contact_rid": "RID(13168369729604)",
+						"damage_type": "blast",
+						"direction": "(0.000001, 0.001417, -0.999999)",
+						"exclude_rids": [
+							"RID(515396075521)"
+						],
+						"max_targets": 1,
+						"occlusion_origin": "(94.96137, 0.931804, 169.4241)",
+						"origin": "(94.96137, 0.931804, 169.4241)",
+						"phase": 0,
+						"power": 1200.0,
+						"radius": 0.42,
+						"reach": 0.0,
+						"source": "player",
+						"stop_on_first": true
+					},
+					"radius": 0.42,
+					"response": {
+						"blocked": false,
+						"changed": 0,
+						"hit_points": [],
+						"hits": [],
+						"query_id": "1790702030109000-e0574d2b718de653:6"
+					},
+					"safe": "(94.96137, 0.931804, 169.4241)",
+					"solid": {
+						"center": "(94.96137, 0.931804, 169.4241)",
+						"initial_overlap": true,
+						"normal": "(0.0, 0.0, 1.0)",
+						"point": "(94.96137, 0.931804, 169.4141)",
+						"rid": "RID(13168369729604)",
+						"unsafe_center": "(94.96137, 0.931804, 169.4241)"
+					},
+					"surface": "(94.96137, 0.931804, 169.4141)",
+					"to": "(94.96137, 0.932087, 169.2241)",
+					"unsafe": "(94.96137, 0.931804, 169.4241)"
+				},
+				"enemy_hits": [],
+				"environment_hits": 0,
+				"kind": "break",
+				"landed": true,
+				"point": "(94.96137, 0.931804, 169.4141)",
+				"power": 1200.0
+			}
+		}
+	],
+	"scope": "Read-only sphere cast and analytic segment comparisons; actual damage comes only from normal R skill processing.",
+	"slot": "user://martial_contact_diagnostic_1469283.json"
+}

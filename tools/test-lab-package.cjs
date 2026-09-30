@@ -1,0 +1,10 @@
+const fs=require('fs'),crypto=require('crypto'),cp=require('child_process'),path=require('path');
+const baseline='docs/test-lab/main.baseline.mjs';
+const diff=cp.spawnSync('git',['diff','--no-index','--',baseline,'playable/src/main.mjs'],{encoding:'utf8'});
+if(diff.status>1)throw Error(diff.stderr);
+fs.writeFileSync('docs/test-lab/main-integration.patch',diff.stdout.replace(/^diff --git .*$/m,'diff --git a/playable/src/main.mjs b/playable/src/main.mjs').replace(/^--- .*$/m,'--- a/playable/src/main.mjs').replace(/^\+\+\+ .*$/m,'+++ b/playable/src/main.mjs'));
+const files=['playable/src/test-lab.mjs','playable/src/test-lab-storage.mjs','playable/css/test-lab.css','playable/test-lab.html','playable/tests/test-lab.test.mjs','tools/test-lab-integrate.cjs','tools/test-lab-integration-check.cjs','tools/test-lab-browser.cjs','tools/test-lab-package.cjs','docs/test-lab/README.md','docs/test-lab/main-integration.json','docs/test-lab/main-integration.patch','docs/test-lab/browser-report.json','docs/test-lab/TEST_REPORT.md','docs/test-lab/camp.png','docs/test-lab/panel-1440.png','docs/test-lab/panel-1024.png'];
+const sha=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+fs.writeFileSync('docs/test-lab/SHA256.json',JSON.stringify({baselineMainSHA256:sha(baseline),validatedIntegratedMainSHA256:sha('playable/src/main.mjs'),note:'Do not copy integrated main.mjs or game.js; controller applies exact integration patch then rebuilds.',files:files.filter(f=>fs.existsSync(f)).map(file=>({file:path.resolve(file),sha256:sha(file)}))},null,2));
+console.log('Packaged '+files.length+' delivery files; main baseline SHA256 '+sha(baseline));
+console.log('Browser checks: '+JSON.parse(fs.readFileSync('docs/test-lab/browser-report.json','utf8')).checks.length);

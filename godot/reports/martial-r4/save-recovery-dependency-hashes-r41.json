@@ -1,0 +1,35 @@
+{
+  "before": {
+    "native_main.gd": "3851e65847230e05598c70de9eb6305e8ed65a0e3b57243be9e7cf7a7f4029ef",
+    "native_player.gd": "b35c432647dfeffb35e64c4ccb2736195b520644ff710dcb10ac9b15d19a36b2",
+    "native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "native_martial_skills.gd": "2279304f16f66ad7969f289148fe9db65d88222471a10c54e7f48cd11654a345",
+    "native_martial_library.gd": "407d5f33e5951b7bb170b1b6968a6875d80917e93e48eb1cb909c8b743c8a01d",
+    "native_vfx_martial.gd": "689b6dcfb914d5c2046272101809780c437f7a405a1db9fb3696681cda3f2f17",
+    "native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+    "native_surface_blink.gd": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db",
+    "native_enemy_r3.gd": "71fd29464592b2b3db0436b41ca1df32fed1465c239ddbfff7456472270c3a9d",
+    "native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38",
+    "native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+    "native_planet_field.gd": "5455ad25b6fd56cb6aa2ed0307a9c2d61dc631cba723ec7af339b6d192436c2b",
+    "native_planet_ecology.gd": "30d2e1d5f8049a6c6777b15ac7980f6f9abad77c8beddeb2e013c978e57071ea",
+    "native_environment_damage.gd": "3fd4932322010b4ba98c2631e1c16e8803df1d4190f216b1e05bcf10d674bce6"
+  },
+  "after": {
+    "native_main.gd": "3851e65847230e05598c70de9eb6305e8ed65a0e3b57243be9e7cf7a7f4029ef",
+    "native_player.gd": "b35c432647dfeffb35e64c4ccb2736195b520644ff710dcb10ac9b15d19a36b2",
+    "native_motion_r2.gd": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968",
+    "native_martial_skills.gd": "2279304f16f66ad7969f289148fe9db65d88222471a10c54e7f48cd11654a345",
+    "native_martial_library.gd": "407d5f33e5951b7bb170b1b6968a6875d80917e93e48eb1cb909c8b743c8a01d",
+    "native_vfx_martial.gd": "689b6dcfb914d5c2046272101809780c437f7a405a1db9fb3696681cda3f2f17",
+    "native_ascension.gd": "0d7c1d1f90af2fbb73473b8e8d4a5b4bc4325785f4ed80a53dae9bccdd541387",
+    "native_surface_blink.gd": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db",
+    "native_enemy_r3.gd": "71fd29464592b2b3db0436b41ca1df32fed1465c239ddbfff7456472270c3a9d",
+    "native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38",
+    "native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+    "native_planet_field.gd": "5455ad25b6fd56cb6aa2ed0307a9c2d61dc631cba723ec7af339b6d192436c2b",
+    "native_planet_ecology.gd": "30d2e1d5f8049a6c6777b15ac7980f6f9abad77c8beddeb2e013c978e57071ea",
+    "native_environment_damage.gd": "3fd4932322010b4ba98c2631e1c16e8803df1d4190f216b1e05bcf10d674bce6"
+  },
+  "changed": []
+}

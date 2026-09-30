@@ -1,0 +1,101 @@
+{
+  "utc": "2026-09-27T13:56:30.653226+00:00",
+  "head": "5fdb455d3c46601ebd584e64bcf72a2b5c82baf4",
+  "files": {
+    "godot/scripts/native_ascension.gd": "d9666312e3b4e862d4c2020fcedde4a7bf2e5af885cdff64d1b997094b627812",
+    "godot/scripts/native_camp.gd": "8a1a97605cc3d29b36175cda6caeb587f7892a9bb7f42baf1214846c86956283",
+    "godot/scripts/native_enemy_r3.gd": "69d1431f424afb243cf9e4a3e16b804d4adf719801fea3618b96e3344cd78446",
+    "godot/scripts/native_main.gd": "f61c67a14dae9c2f8f9f2fd2fc63818574275eaf5ee5b14d33ff6bb9c4b3a898",
+    "godot/scripts/native_motion_r2.gd": "02f549b4cc919b6bde4338ed04306e22c62873da09a9304e2990e9901df92398",
+    "godot/scripts/native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2",
+    "godot/scripts/native_riftwing.gd": "fb1286421a53c110a8d714d7ee54fb13ad1778a14dabb0afcab72f36707cdf0f",
+    "godot/scripts/native_vfx_r2.gd": "dfae816c4d60e2f71a7dd2bcf873b8acce4b54c352a1f4e112d207245d8f2ee4",
+    "godot/scripts/native_vfx_r3.gd": "fb554f9ff173db5eefb0b4aac4aaace7af88ca292fd433774c4546b19b3b6872",
+    "godot/scripts/native_world.gd": "2d88df9646bb3e4ec61f4d8acd6929a8aafcdf7f13f6fd3de624d4475167c40a",
+    "godot/project.godot": "103630ed45b0568168c7a091808b5ce8843602d932fabb8deb123dde92b13ecf",
+    "godot/scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "godot/assets/motion-r2/c2-motion-r2.glb": "e0f5cb5d91a87b99907f9f0678de6079d984898c9a886080c0ec1ab6aa84f8e9",
+    "godot/assets/enemy-r3/rift-prowler-existing.glb": "39c6cc6ddafd84f9d269026618dec68f69eb6038bbd7810245a3376f22caf879",
+    "godot/assets/enemy-r3/rift-prowler-r3.glb": "98d821878dc87bc66ac49da1ee5222445baed6febbc1fc000c108887079c7d15",
+    "godot/assets/enemy-r3/rift-shard-r3.glb": "8352a01856c1c68c807338af3cd0950b6b7a89916ddcbcd05304e8feffe6689f",
+    "godot/assets/enemy-r3/riftwing-r3.glb": "c540a88d83ef1916e214e5755fb13ca2f4e4f22b1b50541929dbcc90ad72bd01",
+    "godot/assets/vfx-r3/qi-charge-r3.glb": "df4f9f937e748fb16829e24b83bda78949512c5fca035f8e8adf9eedb3d64e5c",
+    "godot/assets/vfx-r3/qi-cleave-r3.glb": "dc7da2b7a37f2fd5c2ff43da17283cf4251790b25a2bf4ccd57deb279643f12b",
+    "godot/assets/vfx-r3/qi-fist-r3.glb": "a9d55f16549d76c392719c3cb0e12dc605a883b4668114dce66ac80e777d5d55",
+    "godot/assets/vfx-r3/qi-impact-r3.glb": "76095158f75735733536b059c4db4d3dc6ddff7ad515e713476682d5dab8c3fe",
+    "godot/assets/vfx-r3/qi-palm-r3.glb": "d0d95d6464eacf63a4a95728666409f42ed3ab74f75e6a146e4ed4077e72b5e8",
+    "godot/assets/vfx-r3/qi-skyfall-r3.glb": "54e45c8fc43efa93b28b592e83ce84701a2e2a43229b744f7638cfc3088bbd04",
+    "godot/assets/vfx-r3/qi-sweep-r3.glb": "3d85952614904adca26b88981006319656c22c5f8cb542015a99688f423f89ed",
+    "godot/assets/vfx-r3/qi_ribbon.gdshader": "b5f008c3b34c969089e3e68d10ddac4aedae6bdbb40b00677ae1282401b3f7cf"
+  },
+  "evidence": {
+    "combat-live.json": {
+      "utc": "2026-09-27T13:49:47",
+      "sha256": "673a5c7186017d6717afabb350e52d855044e2e25438635a1abd345cb3ffac2f",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd"
+      ]
+    },
+    "visual-final.json": {
+      "utc": "2026-09-27T13:41:01",
+      "sha256": "47586b002d518f67ae6523c75ac09984b14b36db6715739c18a6f297a57fe9a3",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd",
+        "godot/assets/vfx-r3/qi-cleave-r3.glb"
+      ]
+    },
+    "cleave-final.json": {
+      "utc": "2026-09-27T13:45:57",
+      "sha256": "e6656b103c05e33766af27f6e7116b8b6e485352e00ea4597474fa2b606980ed",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd"
+      ]
+    },
+    "melee-final-2.0.json": {
+      "utc": "2026-09-27T13:40:13",
+      "sha256": "12417f278d10fbfc6f485983b677052fe6e5c516cb1ef0f95ed9274bfdd626b1",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd",
+        "godot/assets/vfx-r3/qi-cleave-r3.glb"
+      ]
+    },
+    "melee-final-2.3.json": {
+      "utc": "2026-09-27T13:40:22",
+      "sha256": "e5cb7c4d4f0fd725a70950b99fdf488214d371597c453acc064afcbc9ed26a62",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd",
+        "godot/assets/vfx-r3/qi-cleave-r3.glb"
+      ]
+    },
+    "melee-final-2.6.json": {
+      "utc": "2026-09-27T13:40:31",
+      "sha256": "78830d9614275213f59a9510bb64ca6b31f379739201a2e72c6ffe96a39bb803",
+      "mismatches_to_current": [
+        "godot/scripts/native_ascension.gd",
+        "godot/scripts/native_main.gd",
+        "godot/scripts/native_vfx_r3.gd",
+        "godot/assets/vfx-r3/qi-cleave-r3.glb"
+      ]
+    },
+    "hit-miss-final.json": {
+      "utc": "2026-09-27T13:55:22",
+      "sha256": "4adc7dbbd8269351c397049cd0e5111c5407e72eada81aabc6249bceede1c786",
+      "mismatches_to_current": []
+    },
+    "small-ui.json": {
+      "utc": "2026-09-27T13:51:55",
+      "sha256": "c4a7e91188b5a5853a38ab9e69ede41576be6a391e2fed2bfd8a7c5d11a1b3f5",
+      "mismatches_to_current": []
+    }
+  }
+}

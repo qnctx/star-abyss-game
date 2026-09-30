@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>C2 走跑动作 R6</title>
+  <style>
+    :root { font-family: Inter, "Microsoft YaHei", "PingFang SC", sans-serif; color: #e8eef1; background: #11191f; font-synthesis: none; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 280px; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; cursor: pointer; }
+    button:disabled { cursor: wait; opacity: .48; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #e8b66b; outline-offset: 4px; }
+    main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 30px 0 28px; }
+    header { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 8px; color: #deb77c; font-size: 12px; letter-spacing: .13em; }
+    h1 { font-size: clamp(25px, 4vw, 37px); font-weight: 650; line-height: 1.35; margin: 0; letter-spacing: .015em; }
+    .intro { margin: 0; color: #aabac4; font-size: 14px; line-height: 1.8; }
+    .viewer { overflow: hidden; border: 1px solid #34434c; border-radius: 16px; background: #1b282f; }
+    #stage { position: relative; height: clamp(360px, 61vh, 660px); min-width: 0; }
+    #stage canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+    .status { position: absolute; top: 16px; left: 16px; right: 16px; width: fit-content; max-width: calc(100% - 32px); padding: 10px 14px; border-radius: 9px; background: #111a22e8; color: #dbe6ec; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; pointer-events: none; }
+    .status[data-error="true"] { color: #ffd4c3; border: 1px solid #d58b70; }
+    .status[hidden] { display: none; }
+    .controls { border-top: 1px solid #34434c; background: #172229; padding: 18px 20px; display: grid; gap: 16px; }
+    .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+    .control-group { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; }
+    .group-label { font-size: 13px; color: #a9bbc6; margin-right: 5px; }
+    .choice { min-height: 44px; padding: 9px 15px; border: 1px solid #455962; border-radius: 8px; background: #223139; color: #e4edf2; line-height: 1.5; white-space: normal; }
+    .choice:hover:enabled { border-color: #9db2bb; background: #2b3f48; }
+    .choice[aria-pressed="true"] { border-color: #e9be7b; background: #dcb278; color: #1b242a; }
+    #toggle-play { min-width: 96px; }
+    .readout { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; color: #a9bbc6; font-size: 12px; line-height: 1.8; }
+    #playback-summary { color: #d0dce2; }
+    .records { margin-top: 24px; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 16px 24px; }
+    h2 { margin: 0 0 7px; font-size: 17px; font-weight: 600; }
+    .records p { color: #aabac4; font-size: 13px; line-height: 1.8; margin: 0; max-width: 750px; }
+    .record-links { display: flex; flex-wrap: wrap; gap: 9px; }
+    .record-links a { display: inline-flex; align-items: center; justify-content: center; color: #e6c591; text-decoration: none; border: 1px solid #675945; border-radius: 8px; min-height: 44px; padding: 9px 14px; font-size: 13px; line-height: 1.6; }
+    .record-links a:hover { background: #342d23; }
+    .footnote { color: #7f95a3; font-size: 12px; line-height: 1.8; margin: 18px 0 0; }
+    @media (max-width: 700px) {
+      main { width: calc(100% - 24px); padding-top: 20px; }
+      header { margin-bottom: 16px; }
+      .intro { font-size: 13px; }
+      #stage { height: min(58vh, 540px); min-height: 335px; }
+      .controls { padding: 14px 12px; }
+      .control-row { align-items: start; gap: 14px; }
+      .records { grid-template-columns: 1fr; }
+      .choice { padding-inline: 12px; }
+    }
+    @media (max-width: 380px) {
+      .group-label { flex-basis: 100%; }
+      .control-group { gap: 7px; }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">STAR ABYSS · MOTION STUDY</p><h1>C2 走跑动作 R6</h1></div>
+      <p class="intro">拖动环视 · 滚轮缩放<br>切换动作与视角，查看完整循环</p>
+    </header>
+    <section class="viewer" aria-label="C2 真实 3D 动作预览">
+      <div id="stage">
+        <div id="load-status" class="status" role="status">正在加载真实 C2 角色与动作…</div>
+      </div>
+      <div class="controls">
+        <div class="control-row">
+          <div class="control-group" role="group" aria-label="选择动作">
+            <span class="group-label">动作</span>
+            <button class="choice" data-motion="walk" aria-pressed="true" disabled>自然步行</button>
+            <button class="choice" data-motion="jog" aria-pressed="false" disabled>跑步</button>
+            <button class="choice" data-motion="sprint" aria-pressed="false" disabled>加速跑</button>
+          </div>
+          <button id="toggle-play" class="choice" aria-pressed="false" disabled>暂停</button>
+        </div>
+        <div class="control-row">
+          <div class="control-group" role="group" aria-label="选择摄像机视角">
+            <span class="group-label">视角</span>
+            <button class="choice" data-view="side" aria-pressed="true">侧面</button>
+            <button class="choice" data-view="front" aria-pressed="false">正面</button>
+            <button class="choice" data-view="back" aria-pressed="false">背面</button>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <span id="playback-summary">GLB 原始动作片段 · 正常速度</span>
+          <span>拖动后可点击视角按钮复位</span>
+        </div>
+      </div>
+    </section>
+    <section class="records" aria-labelledby="records-title">
+      <div>
+        <h2 id="records-title">Godot 实际游戏记录</h2>
+        <p>上方直接播放角色 GLB 中的动作。下方 GIF 来自 Godot 实际运行，包含游戏中的地面处理和动作切换，可对照查看。</p>
+      </div>
+      <div class="record-links">
+        <a href="../evidence/gait-r6/final/all-side.gif" target="_blank" rel="noopener">侧面记录 ↗</a>
+        <a href="../evidence/gait-r6/final/all-front.gif" target="_blank" rel="noopener">正面记录 ↗</a>
+        <a href="../evidence/gait-r6/final/all-back.gif" target="_blank" rel="noopener">背面记录 ↗</a>
+      </div>
+    </section>
+    <p class="footnote">当前版本供查看与反馈。预览加载的是现有 C2 角色，不改变游戏资产。</p>
+    <noscript><p class="status" role="alert">此 3D 预览需要启用 JavaScript。</p></noscript>
+  </main>
+  <script>
+    // Dependency failures happen before an ES module can run its own handler.
+    window.addEventListener('error', function (event) {
+      if (event.target && event.target.tagName === 'SCRIPT') {
+        const status = document.getElementById('load-status');
+        status.hidden = false;
+        status.dataset.error = 'true';
+        status.setAttribute('role', 'alert');
+        status.textContent = '无法加载 3D 预览程序。请从项目本地 HTTP 服务打开本页，并确认 Three.js 文件可访问。';
+      }
+    }, true);
+  </script>
+  <script type="module" src="./preview.mjs"></script>
+</body>
+</html>

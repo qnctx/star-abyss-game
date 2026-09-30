@@ -1,0 +1,28 @@
+{
+  "version": "DEV-B-R1",
+  "testThreadId": "01a094c1-f134-7d81-926b-34c8a88a27ec",
+  "integratedAt": "2026-09-12T08:42:58.832Z",
+  "files": [
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-B-R1\\playable\\src\\d3-inventory\\index.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-inventory\\index.mjs",
+      "sha256": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-B-R1\\playable\\tests\\d3-inventory.test.js",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\tests\\d3-inventory.test.js",
+      "sha256": "c842c7b1923370ee3d6307fefd457a9c2843642f7afe65ac4feab5b8b956ede5"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/bb9f/star-abyss-game/docs/development/reports/DEV-B.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/DEV-B.md",
+      "sha256": "d99b4e5a024a7946d6dd85a4e0e435aec6968f94123949c26c09ba30661d6f14"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/118a/star-abyss-game/docs/development/reports/TEST-B-R1.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/TEST-B-R1.md",
+      "sha256": "079ad1e171eaa126e67763aace5ed8ff2cd318d0cf07946fa2a65b5b25492602"
+    }
+  ],
+  "boundary": "module only; no scene or root transaction integration"
+}

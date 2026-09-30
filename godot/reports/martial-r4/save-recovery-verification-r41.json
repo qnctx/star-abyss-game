@@ -1,0 +1,793 @@
+{
+	"checks": [
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": false,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_baseline.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "fresh private scene has a writable environment service",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0
+			},
+			"label": "live service accepts a schema-valid persistence marker",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0
+			},
+			"label": "real Main creates the valid baseline and both inline envelopes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "unload does not rewrite the baseline",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_baseline.json.environment-r4.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_baseline.json.environment-r4.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": false,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_baseline.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "full scene reload accepts the committed main snapshot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "full scene reload preserves selected skill and cooldowns",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "full reload uses same-commit environment instead of stale sidecar",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "main and environment retain the same slot identity",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_backup.json.bak"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_backup.json.bak"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_backup.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_backup.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": false,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_backup.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "bad primary restores actual progression from valid backup",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "recovery preserves both valid backup and original bad bytes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "first post-recovery save commits the restored game",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "first post-recovery save keeps verified backup hash unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": false,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_backup.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "post-recovery commit survives another complete scene reload",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_double_bad.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_double_bad.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_double_bad.json.bak"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_double_bad.json.bak"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": true,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_double_bad.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "both unreadable candidates block saving",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "blocked save preserves both corrupt candidates byte-for-byte",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "double-corrupt files also survive teardown unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json.environment-r4.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json.environment-r4.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": true,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "explicit invalid inline empty_object cannot fall back to a valid old sidecar",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "invalid inline empty_object preserves main and mirror bytes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_null.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_null.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_null.json.environment-r4.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_null.json.environment-r4.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": true,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_inline_null.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "explicit invalid inline null cannot fall back to a valid old sidecar",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "invalid inline null preserves main and mirror bytes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_array.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_array.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_array.json.environment-r4.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_inline_array.json.environment-r4.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": true,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_inline_array.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "explicit invalid inline array cannot fall back to a valid old sidecar",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "invalid inline array preserves main and mirror bytes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_surface_bad.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_surface_bad.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": true,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_surface_bad.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "malformed surface record blocks saving with a valid planet envelope",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "bad surface state remains untouched after attempted save",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5.json.environment-r4.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5.json.environment-r4.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "previous Main and environment are absent before boot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main scene loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+				"save_blocked": false,
+				"slot": "user://martial_r4_verify_recovery_2624_821051_f5.json"
+			},
+			"label": "Main initialization and restore finish",
+			"ok": true
+		},
+		{
+			"details": {
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5_parent_is_file.json"
+			},
+			"label": "fixture write remains in this run's private prefix",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_recovery_2624_821051_f5_parent_is_file.json"
+			},
+			"label": "fixture file flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 7
+			},
+			"label": "real F5 input reports an actual FileAccess write failure",
+			"ok": true
+		},
+		{
+			"details": {
+				"notice": "主档保存失败，原档已保留"
+			},
+			"label": "F5 write failure does not show a success notice",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "failed F5 leaves original main and environment mirror unchanged",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "Main unload completes before next instance",
+			"ok": true
+		}
+	],
+	"failed": [],
+	"fixture_prefix": "user://martial_r4_verify_recovery_2624_821051",
+	"limitations": "Real scene/store lifecycle only; valid unstreamed environment marker isolates persistence. No visual, combat, or environment destruction acceptance.",
+	"physics_frame": 116,
+	"private_slots": [
+		"user://martial_r4_verify_recovery_2624_821051_baseline.json",
+		"user://martial_r4_verify_recovery_2624_821051_backup.json",
+		"user://martial_r4_verify_recovery_2624_821051_double_bad.json",
+		"user://martial_r4_verify_recovery_2624_821051_inline_empty_object.json",
+		"user://martial_r4_verify_recovery_2624_821051_inline_null.json",
+		"user://martial_r4_verify_recovery_2624_821051_inline_array.json",
+		"user://martial_r4_verify_recovery_2624_821051_surface_bad.json",
+		"user://martial_r4_verify_recovery_2624_821051_f5.json",
+		"user://martial_r4_verify_recovery_2624_821051_f5_parent_is_file.json"
+	]
+}

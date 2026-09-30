@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-27T14:07:57",
+  "time_scale": 1.0,
+  "source_sha256": {
+    "res://assets/motion-r2/c2-motion-r2.glb": "e0f5cb5d91a87b99907f9f0678de6079d984898c9a886080c0ec1ab6aa84f8e9",
+    "res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "res://scripts/native_motion_r2.gd": "02f549b4cc919b6bde4338ed04306e22c62873da09a9304e2990e9901df92398",
+    "res://scripts/native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2"
+  },
+  "changed_during_run": [],
+  "camera": "same world, orthographic 2.3m, center foot+0.98m, front/side/back at 5m, 480px",
+  "physics_rows": 810,
+  "captured_triplets": 101,
+  "wall_seconds": 16.353897,
+  "physics_seconds": 13.50000000000025,
+  "median_capture_interval": 0.15676749999999973,
+  "max_capture_interval": 0.232018,
+  "all_physics": true,
+  "input_mismatches": 12
+}

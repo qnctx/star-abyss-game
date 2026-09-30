@@ -1,0 +1,49 @@
+{
+  "guard": {
+    "max_agl_m": 0.0,
+    "max_speed_mps": 1.5,
+    "clips": [
+      "guard"
+    ],
+    "max_ankle_above_support_m": 0.153439521789551,
+    "physics_step_s": 0.03333333333333333,
+    "max_root_rise_from_pre_hit_m": 0.0,
+    "support_height_range_m": [
+      0.0,
+      0.0
+    ]
+  },
+  "impact": {
+    "max_agl_m": 0.0,
+    "max_speed_mps": 6.0,
+    "clips": [
+      "combat_ready",
+      "hit"
+    ],
+    "max_ankle_above_support_m": 0.140150099992752,
+    "physics_step_s": 0.03333333333333333,
+    "max_root_rise_from_pre_hit_m": 0.0,
+    "support_height_range_m": [
+      0.0,
+      0.0
+    ]
+  },
+  "launch": {
+    "max_agl_m": 0.971808195114136,
+    "max_speed_mps": 16.4419994354248,
+    "clips": [
+      "air_guard",
+      "air_hit",
+      "combat_ready",
+      "idle",
+      "walk"
+    ],
+    "max_ankle_above_support_m": 1.29180264472961,
+    "physics_step_s": 0.03333333333333333,
+    "max_root_rise_from_pre_hit_m": 0.971808195114136,
+    "support_height_range_m": [
+      0.0,
+      0.0
+    ]
+  }
+}

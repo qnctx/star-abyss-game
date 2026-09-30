@@ -1,0 +1,1670 @@
+{
+  "playable/game.js": {
+    "live": "fd8906d3ef11f4cec49976a94ab79f9b58d6fe9b9343b50072ae66be202e51bc",
+    "local": "fd8906d3ef11f4cec49976a94ab79f9b58d6fe9b9343b50072ae66be202e51bc"
+  },
+  "playable/star-abyss.html": {
+    "live": "5532f612e2efe24d55b2128a23265624ed368e485271eb4cad1b042df6b03dd8",
+    "local": "7d35521c77a858c5a7922a4ffb606f3de53eebac0ea4a46022e1dfaebfdccf67"
+  },
+  "playable/test-lab.html": {
+    "live": "6e51c56908794eed4216a8aa0cee1a0de5b087f2a0bde5e35b147f250d2f1876",
+    "local": "6e51c56908794eed4216a8aa0cee1a0de5b087f2a0bde5e35b147f250d2f1876"
+  },
+  "playable/css/game.css": {
+    "live": "8ccf25ffd269274801649392ca83fa3ce5fcea4b6d85829e50a437e4e39c9963",
+    "local": "8ccf25ffd269274801649392ca83fa3ce5fcea4b6d85829e50a437e4e39c9963"
+  },
+  "playable/css/test-lab.css": {
+    "live": "f0e90b2c6e03399fc5b678321af0831ae595f3f72882256e429d43168c1e719a",
+    "local": "f0e90b2c6e03399fc5b678321af0831ae595f3f72882256e429d43168c1e719a"
+  },
+  "playable/css/flight-hud.css": {
+    "live": "cbd8f3093208689b6ae3ef2d8d162cbdf2fa5bc48b9ffa85e49efbcff7821f55",
+    "local": "cbd8f3093208689b6ae3ef2d8d162cbdf2fa5bc48b9ffa85e49efbcff7821f55"
+  },
+  "playable/src/audio.mjs": {
+    "live": "f9b463121d0662c643d1a4e3c70f86164c0a56a90d0528611b9d34ed444db9d7",
+    "local": "f9b463121d0662c643d1a4e3c70f86164c0a56a90d0528611b9d34ed444db9d7"
+  },
+  "playable/src/authored-motion-data.mjs": {
+    "live": "522924b1ad7584b712b648456718ce23914cf5bdbd270f5eb744379fb25653d0",
+    "local": "522924b1ad7584b712b648456718ce23914cf5bdbd270f5eb744379fb25653d0"
+  },
+  "playable/src/authored-motion.mjs": {
+    "live": "3e734c6e6e1bd571ef690b64f08a3fb46824894966b7cc91b4782fa3a4aedb2c",
+    "local": "3e734c6e6e1bd571ef690b64f08a3fb46824894966b7cc91b4782fa3a4aedb2c"
+  },
+  "playable/src/avatar-materials.mjs": {
+    "live": "09973ca96f945cba50219fff94227fd4a2bdac4b8e1aa2e8f20b02fce07ebc4c",
+    "local": "09973ca96f945cba50219fff94227fd4a2bdac4b8e1aa2e8f20b02fce07ebc4c"
+  },
+  "playable/src/avatar-shapes.mjs": {
+    "live": "207efe4b330f98a15af3681b649f0f5e27348d4022046f9c81e11cc1627c9256",
+    "local": "207efe4b330f98a15af3681b649f0f5e27348d4022046f9c81e11cc1627c9256"
+  },
+  "playable/src/avatar.mjs": {
+    "live": "ec50db0e1c5f2258489bc90b9f56f40f21a7931dd35911cda3aaa7e97b8ab6fa",
+    "local": "ec50db0e1c5f2258489bc90b9f56f40f21a7931dd35911cda3aaa7e97b8ab6fa"
+  },
+  "playable/src/calibration-ui.mjs": {
+    "live": "d93f8fcabcf224ad4dd1c6ed6b4556fb8a74f4b1372d9eb900a1a837a076b865",
+    "local": "d93f8fcabcf224ad4dd1c6ed6b4556fb8a74f4b1372d9eb900a1a837a076b865"
+  },
+  "playable/src/calibration.mjs": {
+    "live": "2c82c16583029a5c19b673a21fd17fd12548528800400ea827498c301ad0e642",
+    "local": "2c82c16583029a5c19b673a21fd17fd12548528800400ea827498c301ad0e642"
+  },
+  "playable/src/camera.mjs": {
+    "live": "a1c5cd25209c21b912db98acd567814a4ae7881a387003e7916ac1e0d3366fe3",
+    "local": "a1c5cd25209c21b912db98acd567814a4ae7881a387003e7916ac1e0d3366fe3"
+  },
+  "playable/src/camp-v2/activity.mjs": {
+    "live": "5a4580be1a9a3daff7eda1a157c98ae79ddae4e4a83c171cb6433da8a6c89556",
+    "local": "5a4580be1a9a3daff7eda1a157c98ae79ddae4e4a83c171cb6433da8a6c89556"
+  },
+  "playable/src/camp-v2/integration.test.mjs": {
+    "live": "ebffa2e25f4135e0c1b1f9b43610175971f89af96ede5407f7981c57eae2cdc5",
+    "local": "ebffa2e25f4135e0c1b1f9b43610175971f89af96ede5407f7981c57eae2cdc5"
+  },
+  "playable/src/camp-v2/layout.mjs": {
+    "live": "20944636a713a8b0b3e45b6724ac15fc71bd692d7d35a1416554ec6d37d55960",
+    "local": "20944636a713a8b0b3e45b6724ac15fc71bd692d7d35a1416554ec6d37d55960"
+  },
+  "playable/src/camp-v2/scene.mjs": {
+    "live": "615939ed1dbe444df8529dbc0f9a74888377576d548ec296d3b4d9e294e934f5",
+    "local": "615939ed1dbe444df8529dbc0f9a74888377576d548ec296d3b4d9e294e934f5"
+  },
+  "playable/src/cartography.mjs": {
+    "live": "7559e14aa4625c1a2cf6ad7ff42bb7a2a12d5c0360d876e9a4b534629efa79c6",
+    "local": "7559e14aa4625c1a2cf6ad7ff42bb7a2a12d5c0360d876e9a4b534629efa79c6"
+  },
+  "playable/src/character-asset.mjs": {
+    "live": "6ef631fd1510cd6460d94de694abe8ba72b1a948847bb83edef65e564db42fe4",
+    "local": "6ef631fd1510cd6460d94de694abe8ba72b1a948847bb83edef65e564db42fe4"
+  },
+  "playable/src/character-retarget.mjs": {
+    "live": "1cf93bb992b80eb2d18bc04d4af8f30136bb4a7a07b7df4ac7fac61d33733520",
+    "local": "1cf93bb992b80eb2d18bc04d4af8f30136bb4a7a07b7df4ac7fac61d33733520"
+  },
+  "playable/src/combat-pose.mjs": {
+    "live": "95297b6411a2448daf404db5805a9c7b4745b7f43832c27c9245335af00cd378",
+    "local": "95297b6411a2448daf404db5805a9c7b4745b7f43832c27c9245335af00cd378"
+  },
+  "playable/src/combat-skills/definitions.mjs": {
+    "live": "d7356a7c11813210b04a89945543281925a9755c43c008291aacf3461c639df1",
+    "local": "d7356a7c11813210b04a89945543281925a9755c43c008291aacf3461c639df1"
+  },
+  "playable/src/combat-skills/geometry.mjs": {
+    "live": "8906a2140a5f312d51fd05de31ddc264d9a63c2b50e2440e8dc1927373f5c4fe",
+    "local": "8906a2140a5f312d51fd05de31ddc264d9a63c2b50e2440e8dc1927373f5c4fe"
+  },
+  "playable/src/combat-skills/instructor.mjs": {
+    "live": "6f5be618a80d861e9149320169e5c405ae4f0acac6d46089f5011aac1d516bdb",
+    "local": "6f5be618a80d861e9149320169e5c405ae4f0acac6d46089f5011aac1d516bdb"
+  },
+  "playable/src/combat-skills/pose.mjs": {
+    "live": "ec63be92d2144cfc9baeb70be2153659a36209e95314cb6b1ca17d0d38e08b25",
+    "local": "ec63be92d2144cfc9baeb70be2153659a36209e95314cb6b1ca17d0d38e08b25"
+  },
+  "playable/src/combat-skills/runtime.mjs": {
+    "live": "2571ab67d69dd873c1222e74f3f64817b586abdc514300ff92bbfe1fd1313f6c",
+    "local": "2571ab67d69dd873c1222e74f3f64817b586abdc514300ff92bbfe1fd1313f6c"
+  },
+  "playable/src/combat-skills/state.mjs": {
+    "live": "9bf0e2b7f7d707a33facfeef51ae75302bf5b647dccfb41590b7dddf4c05b578",
+    "local": "9bf0e2b7f7d707a33facfeef51ae75302bf5b647dccfb41590b7dddf4c05b578"
+  },
+  "playable/src/combat-skills/ui.mjs": {
+    "live": "4e3e4c44aeaa77164a315a726b655f63ae074a011baf55db0f1a900b08a75351",
+    "local": "4e3e4c44aeaa77164a315a726b655f63ae074a011baf55db0f1a900b08a75351"
+  },
+  "playable/src/combat-skills/visual.mjs": {
+    "live": "8c2c619b87c2b1ef3c1961c164df71ebbee22664ccf0a05f9c3abd6e2131bf3c",
+    "local": "8c2c619b87c2b1ef3c1961c164df71ebbee22664ccf0a05f9c3abd6e2131bf3c"
+  },
+  "playable/src/combat-skills/weapons.mjs": {
+    "live": "268edb498954c711ff4483c5b498ce34789dcdbda58fa957cf1fed3a31692bd3",
+    "local": "268edb498954c711ff4483c5b498ce34789dcdbda58fa957cf1fed3a31692bd3"
+  },
+  "playable/src/d3-combat/fixed.mjs": {
+    "live": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59",
+    "local": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59"
+  },
+  "playable/src/d3-combat/index.mjs": {
+    "live": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4",
+    "local": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4"
+  },
+  "playable/src/d3-inventory/index.mjs": {
+    "live": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566",
+    "local": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566"
+  },
+  "playable/src/d3-session/browser-evidence.json": {
+    "live": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2",
+    "local": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2"
+  },
+  "playable/src/d3-session/browser-verifier.mjs": {
+    "live": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c",
+    "local": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c"
+  },
+  "playable/src/d3-session/demo-fixture.mjs": {
+    "live": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830",
+    "local": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830"
+  },
+  "playable/src/d3-session/evidence-r3/adapter.json": {
+    "live": "b0d88e298e241cd462d10083e1c70eebcb1c02500afde827b8c4da314cfe8617",
+    "local": "b0d88e298e241cd462d10083e1c70eebcb1c02500afde827b8c4da314cfe8617"
+  },
+  "playable/src/d3-session/evidence-r3/baseline.json": {
+    "live": "385ff61eac9295b0fab856e7406bbcc10cc0467d6b130d5dccb7054f580e9906",
+    "local": "385ff61eac9295b0fab856e7406bbcc10cc0467d6b130d5dccb7054f580e9906"
+  },
+  "playable/src/d3-session/evidence-r3/browser.json": {
+    "live": "689fb4bdeb23c18a080e989e5085539445806c4e471f10f634a46cffcd3b18d2",
+    "local": "689fb4bdeb23c18a080e989e5085539445806c4e471f10f634a46cffcd3b18d2"
+  },
+  "playable/src/d3-session/evidence-r3/cases.mjs": {
+    "live": "ed627b5f5f6209092a8ba2ff15474847fd7f1399048dbda8e04be4b268498762",
+    "local": "ed627b5f5f6209092a8ba2ff15474847fd7f1399048dbda8e04be4b268498762"
+  },
+  "playable/src/d3-session/evidence-r3/finalize.cjs": {
+    "live": "15d6d977e78753ca8ca02d98cb4be8fffd0142e82ee0ed026e17508b3e226236",
+    "local": "15d6d977e78753ca8ca02d98cb4be8fffd0142e82ee0ed026e17508b3e226236"
+  },
+  "playable/src/d3-session/evidence-r3/node.json": {
+    "live": "9f7efa26fbcf5ff9042337ccefd9f6850c6a24baf32f53339468aaeed707ca34",
+    "local": "9f7efa26fbcf5ff9042337ccefd9f6850c6a24baf32f53339468aaeed707ca34"
+  },
+  "playable/src/d3-session/evidence-r3/node.tap": {
+    "live": "aa669eaa330762b3acbe72846759eeae50149044856a216eb66c09c4f792669b",
+    "local": "aa669eaa330762b3acbe72846759eeae50149044856a216eb66c09c4f792669b"
+  },
+  "playable/src/d3-session/evidence-r3/r2-browser-regression.json": {
+    "live": "c6e48e03d48adb564cd016338595ed499cb1f16b520b077354e613699b1c697b",
+    "local": "c6e48e03d48adb564cd016338595ed499cb1f16b520b077354e613699b1c697b"
+  },
+  "playable/src/d3-session/evidence-r3/r2-node-regression.json": {
+    "live": "4b8018dae779c52fc10e18c4e390d9503d10ae009e1e2e685536088bfab79eff",
+    "local": "4b8018dae779c52fc10e18c4e390d9503d10ae009e1e2e685536088bfab79eff"
+  },
+  "playable/src/d3-session/evidence-r3/refresh.json": {
+    "live": "3a1e83e7fab7ebe00b2298d7ac00c25f89ee353a7fc3f449cba540cc0edfc168",
+    "local": "3a1e83e7fab7ebe00b2298d7ac00c25f89ee353a7fc3f449cba540cc0edfc168"
+  },
+  "playable/src/d3-session/evidence-r3/serve.cjs": {
+    "live": "cbfd8d7cfab1ee03e81b9b7d2f26d5e6963fdb55d1e713696f0a1cf3507109fd",
+    "local": "cbfd8d7cfab1ee03e81b9b7d2f26d5e6963fdb55d1e713696f0a1cf3507109fd"
+  },
+  "playable/src/d3-session/evidence-r3/verify.html": {
+    "live": "2c26435fb0814502f0a0484e74cf6090c25850af390decc468cb8b31ffcc3fcb",
+    "local": "2c26435fb0814502f0a0484e74cf6090c25850af390decc468cb8b31ffcc3fcb"
+  },
+  "playable/src/d3-session/finalize-r2.cjs": {
+    "live": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357",
+    "local": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357"
+  },
+  "playable/src/d3-session/finalize.cjs": {
+    "live": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be",
+    "local": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be"
+  },
+  "playable/src/d3-session/index.mjs": {
+    "live": "952dcd7a6917be66af8a976d33b466c6382ebc67fa5cae670629ba3fec2d09d9",
+    "local": "952dcd7a6917be66af8a976d33b466c6382ebc67fa5cae670629ba3fec2d09d9"
+  },
+  "playable/src/d3-session/indexeddb.mjs": {
+    "live": "90889958782525218e52d9f23f7f68fda910dd658a3eebb3506ae9e6fc28615d",
+    "local": "90889958782525218e52d9f23f7f68fda910dd658a3eebb3506ae9e6fc28615d"
+  },
+  "playable/src/d3-session/node-tests-r2.tap": {
+    "live": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122",
+    "local": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122"
+  },
+  "playable/src/d3-session/node-tests.tap": {
+    "live": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481",
+    "local": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481"
+  },
+  "playable/src/d3-session/prepare-r3.cjs": {
+    "live": "871200879fd1d957e0dc61467b18be73342c65918decc3a8b4d57395c80e8893",
+    "local": "871200879fd1d957e0dc61467b18be73342c65918decc3a8b4d57395c80e8893"
+  },
+  "playable/src/d3-session/r1-browser-regression-r2.json": {
+    "live": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389",
+    "local": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389"
+  },
+  "playable/src/d3-session/r1-independent-r2.mjs": {
+    "live": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9",
+    "local": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9"
+  },
+  "playable/src/d3-session/r1-regression-r2.json": {
+    "live": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce",
+    "local": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce"
+  },
+  "playable/src/d3-session/replay-r1-r2.cjs": {
+    "live": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b",
+    "local": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b"
+  },
+  "playable/src/d3-session/scene-browser-r2.json": {
+    "live": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4",
+    "local": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4"
+  },
+  "playable/src/d3-session/scene-cases-r2.mjs": {
+    "live": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540",
+    "local": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540"
+  },
+  "playable/src/d3-session/scene-node-r2.json": {
+    "live": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b",
+    "local": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b"
+  },
+  "playable/src/d3-session/scene.mjs": {
+    "live": "ac1c5d63f3aa853b5434e3936b5ba36382cc2b75bd9845d27f064dee796c360e",
+    "local": "ac1c5d63f3aa853b5434e3936b5ba36382cc2b75bd9845d27f064dee796c360e"
+  },
+  "playable/src/d3-session/serve-r2.cjs": {
+    "live": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96",
+    "local": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96"
+  },
+  "playable/src/d3-session/serve.cjs": {
+    "live": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51",
+    "local": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51"
+  },
+  "playable/src/d3-session/verify-dependencies.cjs": {
+    "live": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f",
+    "local": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f"
+  },
+  "playable/src/d3-session/verify-r2.html": {
+    "live": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e",
+    "local": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e"
+  },
+  "playable/src/d3-session/verify.html": {
+    "live": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b",
+    "local": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b"
+  },
+  "playable/src/d3-session/version-r2.json": {
+    "live": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7",
+    "local": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7"
+  },
+  "playable/src/d3-session/version-r3.json": {
+    "live": "ce42b6d0363105791b0a3a3cae9060221f749b6a7ec8ae7ae4cb51cf1cc742bd",
+    "local": "ce42b6d0363105791b0a3a3cae9060221f749b6a7ec8ae7ae4cb51cf1cc742bd"
+  },
+  "playable/src/d3-session/version.json": {
+    "live": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8",
+    "local": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8"
+  },
+  "playable/src/dash-effect.mjs": {
+    "live": "eb4972c9d9c1abfa0b2c12605789d7fc3e3571cf5149d1e2954e81f2b9605373",
+    "local": "eb4972c9d9c1abfa0b2c12605789d7fc3e3571cf5149d1e2954e81f2b9605373"
+  },
+  "playable/src/dash.mjs": {
+    "live": "1835d4387121fa8cdc56cd1f0a374cd20467d564174ce444f81e029a236774e0",
+    "local": "1835d4387121fa8cdc56cd1f0a374cd20467d564174ce444f81e029a236774e0"
+  },
+  "playable/src/dynamic-shadow-scheduler.mjs": {
+    "live": "f61fda70d20de3de7b5f274a22271f486e987e0a4fe695c80f45542118bd00eb",
+    "local": "f61fda70d20de3de7b5f274a22271f486e987e0a4fe695c80f45542118bd00eb"
+  },
+  "playable/src/dynamic-shadow-scheduler.test.mjs": {
+    "live": "42de3cd6f46497013caf445d00ac90ee314162fa2415d952fa4f2f0b14895bd1",
+    "local": "42de3cd6f46497013caf445d00ac90ee314162fa2415d952fa4f2f0b14895bd1"
+  },
+  "playable/src/endurance.mjs": {
+    "live": "d8ecb450dc47fb288783972e8e79a87e3076e712dc7eb608b93466201bdd683f",
+    "local": "d8ecb450dc47fb288783972e8e79a87e3076e712dc7eb608b93466201bdd683f"
+  },
+  "playable/src/equipment-control.mjs": {
+    "live": "01161efcdfcd76687458c6824f9766b3b366233a9f3b3034e89f0cd403af3bb6",
+    "local": "01161efcdfcd76687458c6824f9766b3b366233a9f3b3034e89f0cd403af3bb6"
+  },
+  "playable/src/equipment-viewmodel.mjs": {
+    "live": "a70d2854eee434d54be99f407bf11cf02e08df1eec3a7fba9a175225571f9f67",
+    "local": "a70d2854eee434d54be99f407bf11cf02e08df1eec3a7fba9a175225571f9f67"
+  },
+  "playable/src/evolution.mjs": {
+    "live": "047059cc174749a6cebc8175002912fd0f3b9ae826b91926d45272938c0b248e",
+    "local": "047059cc174749a6cebc8175002912fd0f3b9ae826b91926d45272938c0b248e"
+  },
+  "playable/src/expedition-runtime/asset-startup.mjs": {
+    "live": "61a5bcb4585ece462c2d3276e9b6244c34cf658f809a560434145c4b316bc50c",
+    "local": "61a5bcb4585ece462c2d3276e9b6244c34cf658f809a560434145c4b316bc50c"
+  },
+  "playable/src/expedition-runtime/control-gate.mjs": {
+    "live": "b9f468c4f577e4daaa2c2e605b6ee7b3086e3bffa86c731e2d90f1ad34c3cf98",
+    "local": "b9f468c4f577e4daaa2c2e605b6ee7b3086e3bffa86c731e2d90f1ad34c3cf98"
+  },
+  "playable/src/expedition-runtime/creature-ai.mjs": {
+    "live": "be0780d69aee03be71b98000713ef096c63b8137eb927e52e82f2caf5ec42318",
+    "local": "be0780d69aee03be71b98000713ef096c63b8137eb927e52e82f2caf5ec42318"
+  },
+  "playable/src/expedition-runtime/effects.mjs": {
+    "live": "ca035cb059135d6f0245995b49ca80e2a22b092b53596b4e456ae084a78e8265",
+    "local": "ca035cb059135d6f0245995b49ca80e2a22b092b53596b4e456ae084a78e8265"
+  },
+  "playable/src/expedition-runtime/index.mjs": {
+    "live": "8ec3ac4501bec3178315fd1883ac3df69554603ab3f7f86dc20d70cdcebc38af",
+    "local": "8ec3ac4501bec3178315fd1883ac3df69554603ab3f7f86dc20d70cdcebc38af"
+  },
+  "playable/src/expedition-runtime/legacy.mjs": {
+    "live": "789c19b578a9fcb6c74f8f58752ab64b0c7842f2700122cf4ab651b06de6f001",
+    "local": "789c19b578a9fcb6c74f8f58752ab64b0c7842f2700122cf4ab651b06de6f001"
+  },
+  "playable/src/expedition-runtime/path.mjs": {
+    "live": "e7287016d0f7b06a2a35f5cdae946e28f5c12441292759c0142190da3023aac9",
+    "local": "e7287016d0f7b06a2a35f5cdae946e28f5c12441292759c0142190da3023aac9"
+  },
+  "playable/src/expedition-runtime/queries.mjs": {
+    "live": "29c266657b517834f3c5dc065a9b6c38a863e68e4760cc7fa1934b51544c770a",
+    "local": "29c266657b517834f3c5dc065a9b6c38a863e68e4760cc7fa1934b51544c770a"
+  },
+  "playable/src/expedition-runtime/rules.mjs": {
+    "live": "75140734f6f068cf13705ce01f4959a8469077536d0146626bc1c598749bfdb1",
+    "local": "75140734f6f068cf13705ce01f4959a8469077536d0146626bc1c598749bfdb1"
+  },
+  "playable/src/expedition-ui/index.mjs": {
+    "live": "8a0f081e1cef1a5457b5c02127b137ee88a89e2dc554e52c90f4e5d1f3c8c427",
+    "local": "8a0f081e1cef1a5457b5c02127b137ee88a89e2dc554e52c90f4e5d1f3c8c427"
+  },
+  "playable/src/expedition-world/creature-asset.mjs": {
+    "live": "a5ae823bc08d3c3816379cfe9b502bccc0938cea2a9a240999b3de564ac66220",
+    "local": "a5ae823bc08d3c3816379cfe9b502bccc0938cea2a9a240999b3de564ac66220"
+  },
+  "playable/src/expedition-world/creature-contact.mjs": {
+    "live": "517299aa23532f688fa092c10d25e38460af0cb53c3fe8d2100ade0aec81e166",
+    "local": "517299aa23532f688fa092c10d25e38460af0cb53c3fe8d2100ade0aec81e166"
+  },
+  "playable/src/expedition-world/creature-rig.mjs": {
+    "live": "8a82c76d336e578419855668504da057bd1b623abe997f468ba19a8bac931e41",
+    "local": "8a82c76d336e578419855668504da057bd1b623abe997f468ba19a8bac931e41"
+  },
+  "playable/src/expedition-world/creature-validation.mjs": {
+    "live": "0cd087869b4627ea1af5cec8ea1c3a2b02ae1ce94efbddbce090fff9ed281244",
+    "local": "0cd087869b4627ea1af5cec8ea1c3a2b02ae1ce94efbddbce090fff9ed281244"
+  },
+  "playable/src/expedition-world/definitions.mjs": {
+    "live": "22113b8ab0ea745b1a9945f8dbfae71fe4e3e3bb28b99abdc96ad317d91894e7",
+    "local": "22113b8ab0ea745b1a9945f8dbfae71fe4e3e3bb28b99abdc96ad317d91894e7"
+  },
+  "playable/src/expedition-world/index.mjs": {
+    "live": "9b79d81ba33213b6afe2b661db1deea0d4347e6813c527b0a9799d00691da4ac",
+    "local": "9b79d81ba33213b6afe2b661db1deea0d4347e6813c527b0a9799d00691da4ac"
+  },
+  "playable/src/expedition-world/queries.mjs": {
+    "live": "e9f5fc36c437164ee44527a6af54ef91d78f93308c3e399c66639962f91e6ad4",
+    "local": "e9f5fc36c437164ee44527a6af54ef91d78f93308c3e399c66639962f91e6ad4"
+  },
+  "playable/src/exploration-content/catalog.mjs": {
+    "live": "caca923465bc79a88a475630a1d273df61567f48c4c1b3802d59d44cbaffebf1",
+    "local": "caca923465bc79a88a475630a1d273df61567f48c4c1b3802d59d44cbaffebf1"
+  },
+  "playable/src/exploration-content/runtime.mjs": {
+    "live": "109fc469719434e9dd4b32f8566ac7a7919ca6745081cab2a7299f6c18771d4e",
+    "local": "109fc469719434e9dd4b32f8566ac7a7919ca6745081cab2a7299f6c18771d4e"
+  },
+  "playable/src/exploration-content/state.mjs": {
+    "live": "362c3eacffe82abcb7f1e511791fc7ecc99b8195fe028a81a09f44d8c305e7f8",
+    "local": "362c3eacffe82abcb7f1e511791fc7ecc99b8195fe028a81a09f44d8c305e7f8"
+  },
+  "playable/src/exploration-content/visual.mjs": {
+    "live": "3a907b73bf4196ef76d8c2b98cc852049d3eb8ccc3f7ed4e8b26a0b2c76ba7e0",
+    "local": "3a907b73bf4196ef76d8c2b98cc852049d3eb8ccc3f7ed4e8b26a0b2c76ba7e0"
+  },
+  "playable/src/flight-hud.mjs": {
+    "live": "3ab0d109bb4d243d9688edb2c063426fa4067f36783612234e857272d0c1cfab",
+    "local": "3ab0d109bb4d243d9688edb2c063426fa4067f36783612234e857272d0c1cfab"
+  },
+  "playable/src/footing.mjs": {
+    "live": "3b2774873ff296ab81c18b7d2245468a4e4e4568c2070e7d328e728e286e235c",
+    "local": "3b2774873ff296ab81c18b7d2245468a4e4e4568c2070e7d328e728e286e235c"
+  },
+  "playable/src/footstep-audio.mjs": {
+    "live": "d1aa30b3c215746ba2076f450a94e2360d18d6805f0ae9662559541c9fc49da7",
+    "local": "d1aa30b3c215746ba2076f450a94e2360d18d6805f0ae9662559541c9fc49da7"
+  },
+  "playable/src/foundation/camp-assets.mjs": {
+    "live": "c38cb8f7262bdc643a83cc5b8ffd7543738fed59c1e054116a744dfbdbb320c0",
+    "local": "c38cb8f7262bdc643a83cc5b8ffd7543738fed59c1e054116a744dfbdbb320c0"
+  },
+  "playable/src/foundation/camp-collision.mjs": {
+    "live": "d91eb6eba624c06d8903843c3722ce50b341edaa4bd206ca4042ce05146069d3",
+    "local": "d91eb6eba624c06d8903843c3722ce50b341edaa4bd206ca4042ce05146069d3"
+  },
+  "playable/src/foundation/camp-data.mjs": {
+    "live": "d312f05d1cd40dc75d4552d303ed4f6f1c813ecf760f176ff87add5ded217bdd",
+    "local": "d312f05d1cd40dc75d4552d303ed4f6f1c813ecf760f176ff87add5ded217bdd"
+  },
+  "playable/src/foundation/camp-scene.mjs": {
+    "live": "291b558fbed013739d8acf6cd7cc9261f5961c48bb1c27cf48cded1f441d9394",
+    "local": "291b558fbed013739d8acf6cd7cc9261f5961c48bb1c27cf48cded1f441d9394"
+  },
+  "playable/src/foundation/camp-state.mjs": {
+    "live": "3ffab5fca503494951c3fc2f7b628bf070f862913dea56a3500c62646528a9b1",
+    "local": "3ffab5fca503494951c3fc2f7b628bf070f862913dea56a3500c62646528a9b1"
+  },
+  "playable/src/foundation/camp-ui.mjs": {
+    "live": "88e0eeb38c934e637c0d5ee1c4e6affb8319d7f8c25282e36414086a4d69d461",
+    "local": "88e0eeb38c934e637c0d5ee1c4e6affb8319d7f8c25282e36414086a4d69d461"
+  },
+  "playable/src/foundation/physical-props.mjs": {
+    "live": "ad9599415452032c19728081e917988f75fbd77d37f39df520f80b9e77940f7f",
+    "local": "ad9599415452032c19728081e917988f75fbd77d37f39df520f80b9e77940f7f"
+  },
+  "playable/src/foundation/stamina-grant.mjs": {
+    "live": "e13f8c60476a94cde8aa9d7abc33f90f644a24114e3a97f538fdb20cc9575acb",
+    "local": "e13f8c60476a94cde8aa9d7abc33f90f644a24114e3a97f538fdb20cc9575acb"
+  },
+  "playable/src/gait.mjs": {
+    "live": "e60112871c70027f5b044a03a38a08e71d1ee38fe524c88b79ba675d9ad77496",
+    "local": "e60112871c70027f5b044a03a38a08e71d1ee38fe524c88b79ba675d9ad77496"
+  },
+  "playable/src/ground-cover.mjs": {
+    "live": "9a797991e100c5099bf2b519cf27674b1ee4fb7df9b58c60e1a3d81588869730",
+    "local": "9a797991e100c5099bf2b519cf27674b1ee4fb7df9b58c60e1a3d81588869730"
+  },
+  "playable/src/humanoid-rig.mjs": {
+    "live": "934b7852f28673632346310ded16c64631b6bc40d0561d621210caa8da87cf12",
+    "local": "934b7852f28673632346310ded16c64631b6bc40d0561d621210caa8da87cf12"
+  },
+  "playable/src/input.mjs": {
+    "live": "750568e7be05f43f4c8cec5cccfc1218ce30d873c0666d67dc95da26d289184c",
+    "local": "750568e7be05f43f4c8cec5cccfc1218ce30d873c0666d67dc95da26d289184c"
+  },
+  "playable/src/layout.mjs": {
+    "live": "a1c37a96c14b80d9e533d1526e533c0492cc8e1ad021e2403315b605ab7d19cb",
+    "local": "a1c37a96c14b80d9e533d1526e533c0492cc8e1ad021e2403315b605ab7d19cb"
+  },
+  "playable/src/look-control.mjs": {
+    "live": "2ea5fc72d8d40c89560f37652d7f126accd48db34578b79f80de5287b6a4f99e",
+    "local": "2ea5fc72d8d40c89560f37652d7f126accd48db34578b79f80de5287b6a4f99e"
+  },
+  "playable/src/main.mjs": {
+    "live": "a997d8ae49533490411a3a6904cd7798d2b138db75283a015bbde7fb5170b061",
+    "local": "a997d8ae49533490411a3a6904cd7798d2b138db75283a015bbde7fb5170b061"
+  },
+  "playable/src/meteor-scene.mjs": {
+    "live": "e7e3dea2e5cd2502b5b1f921f9d346f129de156fa0086d7bcfcd29b70b44740f",
+    "local": "e7e3dea2e5cd2502b5b1f921f9d346f129de156fa0086d7bcfcd29b70b44740f"
+  },
+  "playable/src/mobility.mjs": {
+    "live": "717f8ebbf84a25d564b544c86426d6c81176ea36d65220b361bfc0124d71ee33",
+    "local": "717f8ebbf84a25d564b544c86426d6c81176ea36d65220b361bfc0124d71ee33"
+  },
+  "playable/src/movement.mjs": {
+    "live": "f36a83075f1877c50eb467e0f185333277322247171e8837b2db021f960d08a0",
+    "local": "f36a83075f1877c50eb467e0f185333277322247171e8837b2db021f960d08a0"
+  },
+  "playable/src/navigation.mjs": {
+    "live": "f8cdc65ac2d7018d4964b8eb8a963cabcc8d62c833f93b9c8f3f57f130839dc6",
+    "local": "f8cdc65ac2d7018d4964b8eb8a963cabcc8d62c833f93b9c8f3f57f130839dc6"
+  },
+  "playable/src/performance/checkpoint-client.mjs": {
+    "live": "4912b26fbba4161033c69a94e5b45ac413671ab56697fc2351e13dca0ba55e25",
+    "local": "4912b26fbba4161033c69a94e5b45ac413671ab56697fc2351e13dca0ba55e25"
+  },
+  "playable/src/performance/checkpoint-worker.mjs": {
+    "live": "887cc6fdbeafa772beb6c9503f20be0d54a8a08e5acdecdc43ccf2890b345a1a",
+    "local": "887cc6fdbeafa772beb6c9503f20be0d54a8a08e5acdecdc43ccf2890b345a1a"
+  },
+  "playable/src/phase1-geology.mjs": {
+    "live": "4d99bd83b6d072a20e257f854101face8bde041ce52b325dd190d0ebc9d6fdca",
+    "local": "4d99bd83b6d072a20e257f854101face8bde041ce52b325dd190d0ebc9d6fdca"
+  },
+  "playable/src/phase1-outcrops.mjs": {
+    "live": "96906523e3e2331c4a4e65e9c81904a92cbb7b1068fcdd5e7691c3d420ea6b25",
+    "local": "96906523e3e2331c4a4e65e9c81904a92cbb7b1068fcdd5e7691c3d420ea6b25"
+  },
+  "playable/src/phase1-terrain.mjs": {
+    "live": "824112ef119c997f21f07f1b5184da9ad2d7aeb1cc6ab65bcd4e7dc9a0e1e928",
+    "local": "824112ef119c997f21f07f1b5184da9ad2d7aeb1cc6ab65bcd4e7dc9a0e1e928"
+  },
+  "playable/src/planet/chunks.mjs": {
+    "live": "83f53b80bbda6052b241fb69731b44ca74a4490c4ee52cf1aaee7f86cd0b74b5",
+    "local": "83f53b80bbda6052b241fb69731b44ca74a4490c4ee52cf1aaee7f86cd0b74b5"
+  },
+  "playable/src/planet/coordinates.mjs": {
+    "live": "0d9c40d6100db68094262c508b2c2742091a2eaa2359187c60f813295eac0bc9",
+    "local": "0d9c40d6100db68094262c508b2c2742091a2eaa2359187c60f813295eac0bc9"
+  },
+  "playable/src/planet/field.mjs": {
+    "live": "3fd591951e2913a820976767c8e5ba2a34f157ad19e9d1cf7b283dd83d538985",
+    "local": "3fd591951e2913a820976767c8e5ba2a34f157ad19e9d1cf7b283dd83d538985"
+  },
+  "playable/src/planet/high-altitude.mjs": {
+    "live": "1b87f657374e3c8620a85858cd94dd26cb28551bb7efd17f9749951d10c84c5f",
+    "local": "1b87f657374e3c8620a85858cd94dd26cb28551bb7efd17f9749951d10c84c5f"
+  },
+  "playable/src/planet/index.mjs": {
+    "live": "9fe2de8b6226e6b62b81d60218795551f3cf5b65da28a3f372c072cda990526a",
+    "local": "9fe2de8b6226e6b62b81d60218795551f3cf5b65da28a3f372c072cda990526a"
+  },
+  "playable/src/planet/scene-adapter.mjs": {
+    "live": "c9b02ebc020f9a1ec2b93d7727f36c32c93656f9d215e5d984f17d6f8705c53f",
+    "local": "c9b02ebc020f9a1ec2b93d7727f36c32c93656f9d215e5d984f17d6f8705c53f"
+  },
+  "playable/src/planet-art/index.mjs": {
+    "live": "3bda72e0a29568160bc4e12c00770013790327fb7e097eecdb6d24baf3bfdf23",
+    "local": "3bda72e0a29568160bc4e12c00770013790327fb7e097eecdb6d24baf3bfdf23"
+  },
+  "playable/src/planet-art/surface-material.mjs": {
+    "live": "9ceaf9d61b223131c7df20f877efe0925d696c24d146ede58314294f9876e496",
+    "local": "9ceaf9d61b223131c7df20f877efe0925d696c24d146ede58314294f9876e496"
+  },
+  "playable/src/planet-ecology.mjs": {
+    "live": "680f3b2e55597fe6cb1ec1401da27aeb9c22c2d05e0ff4e65f5904dcb1f27836",
+    "local": "680f3b2e55597fe6cb1ec1401da27aeb9c22c2d05e0ff4e65f5904dcb1f27836"
+  },
+  "playable/src/planet-gameplay/flight.mjs": {
+    "live": "993d1d64840480b4f812aea6c37875c8f958dc4ea06cd60421506a18afa4dacf",
+    "local": "993d1d64840480b4f812aea6c37875c8f958dc4ea06cd60421506a18afa4dacf"
+  },
+  "playable/src/planet-gameplay/index.mjs": {
+    "live": "ad11b29e7e48addb192bd2fc18e79062e91e0eef12e8dda9334378b1254d61fb",
+    "local": "ad11b29e7e48addb192bd2fc18e79062e91e0eef12e8dda9334378b1254d61fb"
+  },
+  "playable/src/planet-gameplay/progression.mjs": {
+    "live": "c6ae10d0d6d19fff00dacb36dc40d4b715b860409416ba4b3e19b0edf978f9a1",
+    "local": "c6ae10d0d6d19fff00dacb36dc40d4b715b860409416ba4b3e19b0edf978f9a1"
+  },
+  "playable/src/planet-gameplay/runtime-world.mjs": {
+    "live": "28ebe2e518c9f78378fe0cccc20177c74bd97a84bab0b36c6527cfb59f21a66f",
+    "local": "28ebe2e518c9f78378fe0cccc20177c74bd97a84bab0b36c6527cfb59f21a66f"
+  },
+  "playable/src/planet-gameplay/save.mjs": {
+    "live": "27a8025776a93591d914338e4f9d7f463b59e4271acdbc1c7b274ec621a37c2e",
+    "local": "27a8025776a93591d914338e4f9d7f463b59e4271acdbc1c7b274ec621a37c2e"
+  },
+  "playable/src/planet-map.mjs": {
+    "live": "07fd4d28a17c4eb0b3c013bfaecbe86cc73416ae60706c73a0a96d429916ced3",
+    "local": "07fd4d28a17c4eb0b3c013bfaecbe86cc73416ae60706c73a0a96d429916ced3"
+  },
+  "playable/src/planet-parking.mjs": {
+    "live": "c50809e0abcd3972d0ef1424559957981daab24dc0b819d506919dac2c758d78",
+    "local": "c50809e0abcd3972d0ef1424559957981daab24dc0b819d506919dac2c758d78"
+  },
+  "playable/src/planet-runtime.mjs": {
+    "live": "97f685f5285994df839058ad0bf807dab33241d1b41bc70598960e67ba657ebd",
+    "local": "97f685f5285994df839058ad0bf807dab33241d1b41bc70598960e67ba657ebd"
+  },
+  "playable/src/progression-quests/assets.mjs": {
+    "live": "ff687ce9effc78c90c43b6f1b14f477d18efe4ddfe4e96fc39b723c8019cc41b",
+    "local": "ff687ce9effc78c90c43b6f1b14f477d18efe4ddfe4e96fc39b723c8019cc41b"
+  },
+  "playable/src/progression-quests/controls.mjs": {
+    "live": "fc0e05437fddca7c7994100949c4d8fda10c69195f1d1382a93d8ab052f0ed57",
+    "local": "fc0e05437fddca7c7994100949c4d8fda10c69195f1d1382a93d8ab052f0ed57"
+  },
+  "playable/src/progression-quests/data.mjs": {
+    "live": "3f9b2155df87b20ebc474828b4a41c5ef211066a10101eca92ad784e107cc97c",
+    "local": "3f9b2155df87b20ebc474828b4a41c5ef211066a10101eca92ad784e107cc97c"
+  },
+  "playable/src/progression-quests/dialog-layout.test.mjs": {
+    "live": "7ebb05e5659a81ff950291e1db592cc70d97687a667324b5329b4386c21f35c1",
+    "local": "7ebb05e5659a81ff950291e1db592cc70d97687a667324b5329b4386c21f35c1"
+  },
+  "playable/src/progression-quests/index.mjs": {
+    "live": "18640143e6a65c0c3e281b6549888422081049e0370362f502a5e483c2248e19",
+    "local": "18640143e6a65c0c3e281b6549888422081049e0370362f502a5e483c2248e19"
+  },
+  "playable/src/progression-quests/lab-storage.mjs": {
+    "live": "3f644339add6590459f0dbb0f67bca9062b87c9bbe0830f2b7d65602932d66ac",
+    "local": "3f644339add6590459f0dbb0f67bca9062b87c9bbe0830f2b7d65602932d66ac"
+  },
+  "playable/src/progression-quests/npc-rig.mjs": {
+    "live": "a6838a55a6900442f8fc60fb32b2928909fcd8d3caa7fcdf299a6997768685cd",
+    "local": "a6838a55a6900442f8fc60fb32b2928909fcd8d3caa7fcdf299a6997768685cd"
+  },
+  "playable/src/progression-quests/quests.test.mjs": {
+    "live": "8617ddf644848d405cdaccd9e217d5bb8ef2757bf3ebddbaa3d777c1ac428ae3",
+    "local": "8617ddf644848d405cdaccd9e217d5bb8ef2757bf3ebddbaa3d777c1ac428ae3"
+  },
+  "playable/src/progression-quests/runtime.mjs": {
+    "live": "98b678b1d97e155ff3562e88b09ab4c286559e54f9cc5402a700d86bd841947a",
+    "local": "98b678b1d97e155ff3562e88b09ab4c286559e54f9cc5402a700d86bd841947a"
+  },
+  "playable/src/progression-quests/scene.mjs": {
+    "live": "3b6d1c0d666f17c6613f987a758c0948812ec66b8c82febd40620f31f9401206",
+    "local": "3b6d1c0d666f17c6613f987a758c0948812ec66b8c82febd40620f31f9401206"
+  },
+  "playable/src/progression-quests/scene.test.mjs": {
+    "live": "e0b6a10ca8fd6600ef361df0279249bd4b3f1fb1a6fbe8fed858219d18b388e8",
+    "local": "e0b6a10ca8fd6600ef361df0279249bd4b3f1fb1a6fbe8fed858219d18b388e8"
+  },
+  "playable/src/progression-quests/ui.mjs": {
+    "live": "9f975074df8ea63715d1d3075dc3f665db225f4165824292bcbdc4e025172f56",
+    "local": "9f975074df8ea63715d1d3075dc3f665db225f4165824292bcbdc4e025172f56"
+  },
+  "playable/src/progression-quests/verify-npc-geometry.mjs": {
+    "live": "c39f61ce68adba8a28e3855e00a40db6212cceb871e29c18e2b0f0b60be5d083",
+    "local": "c39f61ce68adba8a28e3855e00a40db6212cceb871e29c18e2b0f0b60be5d083"
+  },
+  "playable/src/prone-hands.mjs": {
+    "live": "96997889b289d9ba21f3abb60a399c2e81618e427189a224248de2dc569d11bd",
+    "local": "96997889b289d9ba21f3abb60a399c2e81618e427189a224248de2dc569d11bd"
+  },
+  "playable/src/render-budget.mjs": {
+    "live": "e93b66f0372e739c4b21f0da2df09caf7ad4be297dcff419b3b7b3a0b9cd9170",
+    "local": "e93b66f0372e739c4b21f0da2df09caf7ad4be297dcff419b3b7b3a0b9cd9170"
+  },
+  "playable/src/rock-render-chunks.mjs": {
+    "live": "1281de75e8ed31a4235f8202339206091244d06d8e713bd967af4fde6908710b",
+    "local": "1281de75e8ed31a4235f8202339206091244d06d8e713bd967af4fde6908710b"
+  },
+  "playable/src/rocks.mjs": {
+    "live": "bf384af0b0e0ccad037420150a33a2ed2d5bce776cfbaa730d86c4b9b2340642",
+    "local": "bf384af0b0e0ccad037420150a33a2ed2d5bce776cfbaa730d86c4b9b2340642"
+  },
+  "playable/src/scan-effect.mjs": {
+    "live": "31b3a785c3862649a7eb88e3674af75f5716ac8d5be0bd4d2ac6db36c283e0fd",
+    "local": "31b3a785c3862649a7eb88e3674af75f5716ac8d5be0bd4d2ac6db36c283e0fd"
+  },
+  "playable/src/scene.mjs": {
+    "live": "5850379a425ec13b9a3aa524c1bc686aa95832dac59fe07b1d09f773f56802eb",
+    "local": "5850379a425ec13b9a3aa524c1bc686aa95832dac59fe07b1d09f773f56802eb"
+  },
+  "playable/src/stamina.mjs": {
+    "live": "39ed0f04a770d153c6831bdc283bf5ba32803f49fb4b3e0e227d3b7655ad6dc0",
+    "local": "39ed0f04a770d153c6831bdc283bf5ba32803f49fb4b3e0e227d3b7655ad6dc0"
+  },
+  "playable/src/story.mjs": {
+    "live": "e95ae4240810e92f25a86533a2042dbc339d5f74c8f0a50afd365de34a41157c",
+    "local": "e95ae4240810e92f25a86533a2042dbc339d5f74c8f0a50afd365de34a41157c"
+  },
+  "playable/src/survey-scene.mjs": {
+    "live": "d91d7575c7647f9b7334214ffe9103a14a32f6169664607b5cbb0587f8000727",
+    "local": "d91d7575c7647f9b7334214ffe9103a14a32f6169664607b5cbb0587f8000727"
+  },
+  "playable/src/survey-sites.mjs": {
+    "live": "73976fdc9eec1c2dd3363daf42881ee5fb5a8f9c50760a629aa51bf8ab0da5b7",
+    "local": "73976fdc9eec1c2dd3363daf42881ee5fb5a8f9c50760a629aa51bf8ab0da5b7"
+  },
+  "playable/src/survey.mjs": {
+    "live": "cd7978455f7fa5b7a6df081110bb7beeb0d1663aaee4d65cdfad216a334ecb82",
+    "local": "cd7978455f7fa5b7a6df081110bb7beeb0d1663aaee4d65cdfad216a334ecb82"
+  },
+  "playable/src/tactical-control.mjs": {
+    "live": "6b22a4f32882cd13349c91f93bcee2d3fbb71d34007ed7fdbeb3f805109818ec",
+    "local": "6b22a4f32882cd13349c91f93bcee2d3fbb71d34007ed7fdbeb3f805109818ec"
+  },
+  "playable/src/tactical-pose.mjs": {
+    "live": "6bdf55c57adc468c9722e04561587dc4224bf8933635e990e75058f21435650b",
+    "local": "6bdf55c57adc468c9722e04561587dc4224bf8933635e990e75058f21435650b"
+  },
+  "playable/src/terrain-contact.mjs": {
+    "live": "5777e671c7418759f6b17cdf9fedcc2e9794b6358a945a85c5635889dbc43f29",
+    "local": "5777e671c7418759f6b17cdf9fedcc2e9794b6358a945a85c5635889dbc43f29"
+  },
+  "playable/src/terrain-render-chunks.mjs": {
+    "live": "716d94bc9d44e2af84e69807209fda657ae93abb3f11b10c37c680df692cb02a",
+    "local": "716d94bc9d44e2af84e69807209fda657ae93abb3f11b10c37c680df692cb02a"
+  },
+  "playable/src/test-lab-storage.mjs": {
+    "live": "09a86a5fb0c54830acba6acc8b7dcd676dd88e845564e9b985d603d9878a3e53",
+    "local": "09a86a5fb0c54830acba6acc8b7dcd676dd88e845564e9b985d603d9878a3e53"
+  },
+  "playable/src/test-lab.mjs": {
+    "live": "93c44e518f87637c20564bc14dfe68154f6a94a739d41c2c77f2f8198614bf1b",
+    "local": "93c44e518f87637c20564bc14dfe68154f6a94a739d41c2c77f2f8198614bf1b"
+  },
+  "playable/src/ui.mjs": {
+    "live": "2cfa01bbbad46f4c7347fa6b4c15bcce8fdf8ba88516f6f3f75603636b249673",
+    "local": "2cfa01bbbad46f4c7347fa6b4c15bcce8fdf8ba88516f6f3f75603636b249673"
+  },
+  "playable/src/vehicle-cockpit.mjs": {
+    "live": "046212e4dd12da694f0ea3a7b13b6b9dc8fafbe12e4707f299a5db018c00d35a",
+    "local": "046212e4dd12da694f0ea3a7b13b6b9dc8fafbe12e4707f299a5db018c00d35a"
+  },
+  "playable/src/vehicle-model.mjs": {
+    "live": "ac871c538d30640427edf5b39989d7f97a4ac61fc8d8e21f66832bd753c8fe8d",
+    "local": "ac871c538d30640427edf5b39989d7f97a4ac61fc8d8e21f66832bd753c8fe8d"
+  },
+  "playable/src/vehicle-rig.mjs": {
+    "live": "af0a2470db66b4623da7a7d586b9f71124cd91e8cfbf024a55de5ec7d5e132f6",
+    "local": "af0a2470db66b4623da7a7d586b9f71124cd91e8cfbf024a55de5ec7d5e132f6"
+  },
+  "playable/src/world-director/definitions.mjs": {
+    "live": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef",
+    "local": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef"
+  },
+  "playable/src/world-director/director.mjs": {
+    "live": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358",
+    "local": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358"
+  },
+  "playable/src/world-director/rng.mjs": {
+    "live": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02",
+    "local": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02"
+  },
+  "playable/src/world-director/verification/replay-r1.cjs": {
+    "live": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a",
+    "local": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a"
+  },
+  "playable/src/yuan-ying-flight-pose.mjs": {
+    "live": "b187ea01d279c136eae4c102caa6015c2d0712f70ceb7fc7d613ea57a4af22c3",
+    "local": "b187ea01d279c136eae4c102caa6015c2d0712f70ceb7fc7d613ea57a4af22c3"
+  },
+  "playable/src/yuan-ying-flight-vfx.mjs": {
+    "live": "3a3931dcf2ad67b0bb0f9fb07432bc3abb394bc8682e401e064aee68a57c4a24",
+    "local": "3a3931dcf2ad67b0bb0f9fb07432bc3abb394bc8682e401e064aee68a57c4a24"
+  },
+  "docs/development/CAMP-BLENDER-R2.md": {
+    "live": "42b8323409012c5187b631c51258867a6026e2eb05e13278857927634d8e64e8",
+    "local": "42b8323409012c5187b631c51258867a6026e2eb05e13278857927634d8e64e8"
+  },
+  "docs/development/CAMP-SHADOW-R3.md": {
+    "live": "85cc6bd61b2d079ddc2c51b7a2797a51484e7230c71debecc037205ba03040b4",
+    "local": "85cc6bd61b2d079ddc2c51b7a2797a51484e7230c71debecc037205ba03040b4"
+  },
+  "docs/development/CAMP-V2-R2.md": {
+    "live": "4ff4e680ec5f5e40832232696fdcd4dd90b64890a0024096abc48f659caacb41",
+    "local": "4ff4e680ec5f5e40832232696fdcd4dd90b64890a0024096abc48f659caacb41"
+  },
+  "docs/development/CONTROL.md": {
+    "live": "3596541f72d19919f194c9da9082a2b8a8d6a82f93ef32efcf2c564d6d381c61",
+    "local": "3596541f72d19919f194c9da9082a2b8a8d6a82f93ef32efcf2c564d6d381c61"
+  },
+  "docs/development/CONTROLLER-TAKEOVER-R2.md": {
+    "live": "03dfeecf1aff1b0a469ae8412e8060d171915c6d43fb2bf5be04c634d82fd75c",
+    "local": "03dfeecf1aff1b0a469ae8412e8060d171915c6d43fb2bf5be04c634d82fd75c"
+  },
+  "docs/development/DESIGN_CHANGE_SUPREME_FACTIONS.md": {
+    "live": "534a79ba0246490e4a830282501aab797b028b37be17c2789be522dedc972cf6",
+    "local": "534a79ba0246490e4a830282501aab797b028b37be17c2789be522dedc972cf6"
+  },
+  "docs/development/FLIGHT-ART-R2.md": {
+    "live": "b82782ac2bce187526305d323842674dbc7819347dda7601bb81d8a2bdd2b48c",
+    "local": "b82782ac2bce187526305d323842674dbc7819347dda7601bb81d8a2bdd2b48c"
+  },
+  "docs/development/FLIGHT-HUD-R2.md": {
+    "live": "440b342a4d8b43fe4d80ebee57431b0aa9b504ddea4c27041729067731950395",
+    "local": "440b342a4d8b43fe4d80ebee57431b0aa9b504ddea4c27041729067731950395"
+  },
+  "docs/development/FLIGHT-R2.md": {
+    "live": "bbb19f450eadd2c089c29a91319105e1601607069a49f24850625df5250d00fb",
+    "local": "bbb19f450eadd2c089c29a91319105e1601607069a49f24850625df5250d00fb"
+  },
+  "docs/development/HANDOFF.md": {
+    "live": "70bca2a93f8f69801d0c59454cf6d773626f80d33c8bef36643557de4f544d83",
+    "local": "70bca2a93f8f69801d0c59454cf6d773626f80d33c8bef36643557de4f544d83"
+  },
+  "docs/development/LOCAL-PREVIEW-RECOVERY.md": {
+    "live": null,
+    "local": "ef2e9e10b6770dd4333a7c2c3af6798d8b2f7345c612a1d01f56593a0c95b3cd"
+  },
+  "docs/development/LOOP-RECOVERY-R2.md": {
+    "live": null,
+    "local": "1e590159dd2b1c354d7593c23f4bf8751162fcfcd523ffb9b786f1e38c5a5203"
+  },
+  "docs/development/NPC-ACTIVITY-ART-R2.md": {
+    "live": "3839959469a352eab474b825c60142c9bef458698153fa7b358099205b6be0cf",
+    "local": "3839959469a352eab474b825c60142c9bef458698153fa7b358099205b6be0cf"
+  },
+  "docs/development/NPC-DIALOG-R2.md": {
+    "live": "729505ec6a90c6723baf8d1eb673a9f3b11f5cfbb14079615e1b5e5b9e085909",
+    "local": "729505ec6a90c6723baf8d1eb673a9f3b11f5cfbb14079615e1b5e5b9e085909"
+  },
+  "docs/development/ORIGINAL_GAME_PLAYTEST.md": {
+    "live": "46b7e8f1adfbcdea2ddee90e94362e18fc6aa92714ae5b0787442f36710da1b8",
+    "local": "46b7e8f1adfbcdea2ddee90e94362e18fc6aa92714ae5b0787442f36710da1b8"
+  },
+  "docs/development/ORIGINAL_GAME_REBASE.md": {
+    "live": "2df9cf22e2ffb9a7cd2f0d1c367754515deb4c065d1ab9b56b471a0790407c9a",
+    "local": "2df9cf22e2ffb9a7cd2f0d1c367754515deb4c065d1ab9b56b471a0790407c9a"
+  },
+  "docs/development/PERFORMANCE-PLAYTEST-R2.md": {
+    "live": "e7a2f089c0d945c2d07fd66c8a13098ac3d82c48a9d71a1a2ae11513c10809da",
+    "local": "e7a2f089c0d945c2d07fd66c8a13098ac3d82c48a9d71a1a2ae11513c10809da"
+  },
+  "docs/development/PHASE1_PLAY_GUIDE.md": {
+    "live": "160539d833641fa20fc8ab933be637e6f404ab831905847815ab53dfecb7fc70",
+    "local": "160539d833641fa20fc8ab933be637e6f404ab831905847815ab53dfecb7fc70"
+  },
+  "docs/development/PHYSICS-SLOPE-R1.md": {
+    "live": "2a3fb8bf3c9a37506ecf88bfa7598034804893d474bcd4cc1ccd47f1ba6c4b78",
+    "local": "2a3fb8bf3c9a37506ecf88bfa7598034804893d474bcd4cc1ccd47f1ba6c4b78"
+  },
+  "docs/development/PLANET-ACTIVE-TASKS.json": {
+    "live": "75dfb749f6072c8cee95be377a9b33ffb649c7301cda2b281adce8baa987cfc2",
+    "local": "75dfb749f6072c8cee95be377a9b33ffb649c7301cda2b281adce8baa987cfc2"
+  },
+  "docs/development/PLANET-ARCHITECTURE.md": {
+    "live": "21c054f6bca2eb7a61c508a8891c6ed6686ad9dcfad0d23cedddd5702ee20b8a",
+    "local": "21c054f6bca2eb7a61c508a8891c6ed6686ad9dcfad0d23cedddd5702ee20b8a"
+  },
+  "docs/development/PLANET-CONTROLLER-HANDOFF.md": {
+    "live": "680af01d158ecb23ecaa495aef38fe197d3168d50d1399eed171f44874e07c55",
+    "local": "680af01d158ecb23ecaa495aef38fe197d3168d50d1399eed171f44874e07c55"
+  },
+  "docs/development/PLANET-INTEGRATION.md": {
+    "live": "d54a99c4e6db520c3878c2a0981fe1e1bf9d0009e65207db24d622ee0be0cb5d",
+    "local": "d54a99c4e6db520c3878c2a0981fe1e1bf9d0009e65207db24d622ee0be0cb5d"
+  },
+  "docs/development/PLANET-LEGACY-CULL-R3.md": {
+    "live": "3917c743f12b3e868685ddd7b904df1c060a09b2490f3c37e2c10a507bbce5fc",
+    "local": "3917c743f12b3e868685ddd7b904df1c060a09b2490f3c37e2c10a507bbce5fc"
+  },
+  "docs/development/PLANET-MAP.md": {
+    "live": "f0281b29c53579cfbe3fef0bfeeff14d8b7d0673fd1caf00a616f0b45629759d",
+    "local": "f0281b29c53579cfbe3fef0bfeeff14d8b7d0673fd1caf00a616f0b45629759d"
+  },
+  "docs/development/PLANET-MVP-R1-RELEASE.md": {
+    "live": "b56a74a8b0f271112782e99c60e6c8ba1dad0a456fc16eab973eb209fb9c0b13",
+    "local": "b56a74a8b0f271112782e99c60e6c8ba1dad0a456fc16eab973eb209fb9c0b13"
+  },
+  "docs/development/PLANET-PARALLEL-TASKS.json": {
+    "live": "54644fd949ecc20f27a887c53005a27ed5887d2622fe2d19a1fc1d293b8f4c44",
+    "local": "54644fd949ecc20f27a887c53005a27ed5887d2622fe2d19a1fc1d293b8f4c44"
+  },
+  "docs/development/PLAYABILITY-STATUS.md": {
+    "live": "0b117bca2ec2dca6db9545b2f30f5f7503050f18bd4d04675d993446eeab685d",
+    "local": "0b117bca2ec2dca6db9545b2f30f5f7503050f18bd4d04675d993446eeab685d"
+  },
+  "docs/development/reports/CONTROL-R1.md": {
+    "live": "c0bfff8ba05a72d9ec1fc9318ff2c536d35bd1b3369e930a1277067fca312800",
+    "local": "c0bfff8ba05a72d9ec1fc9318ff2c536d35bd1b3369e930a1277067fca312800"
+  },
+  "docs/development/reports/DEV-A.md": {
+    "live": "cf555608d42bdba222be14b2fe9158a68f327c2a42ce7f87e744e5046651adeb",
+    "local": "cf555608d42bdba222be14b2fe9158a68f327c2a42ce7f87e744e5046651adeb"
+  },
+  "docs/development/reports/DEV-B.md": {
+    "live": "d99b4e5a024a7946d6dd85a4e0e435aec6968f94123949c26c09ba30661d6f14",
+    "local": "d99b4e5a024a7946d6dd85a4e0e435aec6968f94123949c26c09ba30661d6f14"
+  },
+  "docs/development/reports/DEV-C.md": {
+    "live": "58db20f6847f4270e93b74a3434ea9c46f19040d6db4f688c9c2107faf1f20b8",
+    "local": "58db20f6847f4270e93b74a3434ea9c46f19040d6db4f688c9c2107faf1f20b8"
+  },
+  "docs/development/reports/DEV-D1.md": {
+    "live": "c88a09df731cdab1a007e68b0b865cacb3d2cccf68fd5b41a3663f73e5a63160",
+    "local": "c88a09df731cdab1a007e68b0b865cacb3d2cccf68fd5b41a3663f73e5a63160"
+  },
+  "docs/development/reports/DEV-I.md": {
+    "live": "4939bd4e32b400ac1cfae3ef00f9811267e20a4c16d48a2a825222e0a37436cd",
+    "local": "4939bd4e32b400ac1cfae3ef00f9811267e20a4c16d48a2a825222e0a37436cd"
+  },
+  "docs/development/reports/INDEPENDENT-LOOP-AUDIT-R2.md": {
+    "live": null,
+    "local": "f0779ed7c48db05d439bfe674b1765bed370127c8d0765dd415c54e8fec0bbd6"
+  },
+  "docs/development/reports/PHASE1-CREATURE-RESPONSIVENESS.md": {
+    "live": "766aa76b2ab39c553418ad19cfc6d99cddecef117299d29e58cea4922daa126c",
+    "local": "766aa76b2ab39c553418ad19cfc6d99cddecef117299d29e58cea4922daa126c"
+  },
+  "docs/development/reports/PHASE1-GEOLOGY-SURFACE.md": {
+    "live": "c5d22144f4f16370d638f9e1631b4cec7f54045f4f959689df8f1d55345bd033",
+    "local": "c5d22144f4f16370d638f9e1631b4cec7f54045f4f959689df8f1d55345bd033"
+  },
+  "docs/development/reports/PHASE1-INDEPENDENT-PREP.md": {
+    "live": "76b5b9bcf977b650517feea6532f9cd373ff800c461ea06816a3fd16882c4e52",
+    "local": "76b5b9bcf977b650517feea6532f9cd373ff800c461ea06816a3fd16882c4e52"
+  },
+  "docs/development/reports/PHASE1-MAP-IMPLEMENTATION.md": {
+    "live": "415a102b0439d9258a59f5b9a52d874117589ed1e4a0916bcf61600a201f0ffd",
+    "local": "415a102b0439d9258a59f5b9a52d874117589ed1e4a0916bcf61600a201f0ffd"
+  },
+  "docs/development/reports/PHASE1-OUTCROPS.md": {
+    "live": "c735002d838d50073e3c903ae67475d1206523748daee839b1586bc7253844d3",
+    "local": "c735002d838d50073e3c903ae67475d1206523748daee839b1586bc7253844d3"
+  },
+  "docs/development/reports/PHASE1-SCOPE-AUDIT.md": {
+    "live": "7abe2dcf90e53547044e77a6d55a54ac9816298ae76c898f03043021c08f0f6e",
+    "local": "7abe2dcf90e53547044e77a6d55a54ac9816298ae76c898f03043021c08f0f6e"
+  },
+  "docs/development/reports/PLANET-GAMEPLAY-R1.md": {
+    "live": "492e678597e7ac10af45da73fce1675aed0107042ae6fc0eea6051d6eef7376a",
+    "local": "492e678597e7ac10af45da73fce1675aed0107042ae6fc0eea6051d6eef7376a"
+  },
+  "docs/development/reports/PLANET-GAMEPLAY-R1.tap": {
+    "live": "51de39631c7df91fb61c3ba98e712c771e3dcfba2bfc5e9ab1bb4a2078d4d083",
+    "local": "51de39631c7df91fb61c3ba98e712c771e3dcfba2bfc5e9ab1bb4a2078d4d083"
+  },
+  "docs/development/reports/PLANET-GAMEPLAY-R2.md": {
+    "live": "49e661d0ae34d53ae008785c2b0ef25cb8f137907b53e98471117fe073b0c96f",
+    "local": "49e661d0ae34d53ae008785c2b0ef25cb8f137907b53e98471117fe073b0c96f"
+  },
+  "docs/development/reports/PLANET-GAMEPLAY-R2.tap": {
+    "live": "f9420c2c658a017bda27f48cf8ecc93c0873a3102e9e1ca47ada8a67fdc64bdf",
+    "local": "f9420c2c658a017bda27f48cf8ecc93c0873a3102e9e1ca47ada8a67fdc64bdf"
+  },
+  "docs/development/reports/PLANET-INTEGRATION-AUDIT.md": {
+    "live": "8bb576547678afd3f2089430843d00997266d50deeb993c38bd14860fe0d684a",
+    "local": "8bb576547678afd3f2089430843d00997266d50deeb993c38bd14860fe0d684a"
+  },
+  "docs/development/reports/R2-BROWSER-ACCEPTANCE.md": {
+    "live": "f53d86410fc1c15ce5779419ec349c0285014ee12b15a7d171e07f7227686d7d",
+    "local": "f53d86410fc1c15ce5779419ec349c0285014ee12b15a7d171e07f7227686d7d"
+  },
+  "docs/development/reports/R2-INDEPENDENT-REVIEW.md": {
+    "live": "b7046c5beecd5fe2f4922abe2b665e13c96b0f1fda864377a69ca04f054fcc29",
+    "local": "b7046c5beecd5fe2f4922abe2b665e13c96b0f1fda864377a69ca04f054fcc29"
+  },
+  "docs/development/reports/R3-BROWSER-INDEPENDENT.md": {
+    "live": null,
+    "local": "1e4419db27a66e4e37e7911498b0ad5b41122b991179bfa6432ec38c8a31bc12"
+  },
+  "docs/development/reports/TERRAIN-RENDER-CHUNKS.md": {
+    "live": "402c22eb141f6e2ef6fef197f12c17f21a4ed21949e0272ab7d10d3a5be06c78",
+    "local": "402c22eb141f6e2ef6fef197f12c17f21a4ed21949e0272ab7d10d3a5be06c78"
+  },
+  "docs/development/reports/TEST-A-R1.md": {
+    "live": "0b668224e24d8d98f5740f29b8385692f4ce3425cedbccc60e9e258ddf63f47d",
+    "local": "0b668224e24d8d98f5740f29b8385692f4ce3425cedbccc60e9e258ddf63f47d"
+  },
+  "docs/development/reports/TEST-A-R2.md": {
+    "live": "2295f8826202e5b4864efde52228786b4218f778feb2325753b1d4ab12a1439b",
+    "local": "2295f8826202e5b4864efde52228786b4218f778feb2325753b1d4ab12a1439b"
+  },
+  "docs/development/reports/TEST-B-R1.md": {
+    "live": "079ad1e171eaa126e67763aace5ed8ff2cd318d0cf07946fa2a65b5b25492602",
+    "local": "079ad1e171eaa126e67763aace5ed8ff2cd318d0cf07946fa2a65b5b25492602"
+  },
+  "docs/development/reports/TEST-C-R1.md": {
+    "live": "1e185dd7e995e29446acce6277ca81c9fcafd5080ca41faad496d72539aa4bcc",
+    "local": "1e185dd7e995e29446acce6277ca81c9fcafd5080ca41faad496d72539aa4bcc"
+  },
+  "docs/development/reports/TEST-C-R2.md": {
+    "live": "c80cbb19ed05dd5ad6d757d9ce34a2eb25cc4ec17b9a59c9c20161d89c9da2dd",
+    "local": "c80cbb19ed05dd5ad6d757d9ce34a2eb25cc4ec17b9a59c9c20161d89c9da2dd"
+  },
+  "docs/development/reports/TEST-CORE-CREATURE-R2.md": {
+    "live": "483075fcb051a164d91da50e0b4673bae106652cc33c844649b474cdb944fdae",
+    "local": "483075fcb051a164d91da50e0b4673bae106652cc33c844649b474cdb944fdae"
+  },
+  "docs/development/reports/TEST-CREATURE-TERRITORY.md": {
+    "live": "680ae7deb86573dcc58e185f10991ea9aab835139ab52ee86408246350596551",
+    "local": "680ae7deb86573dcc58e185f10991ea9aab835139ab52ee86408246350596551"
+  },
+  "docs/development/reports/TEST-D1-R1.md": {
+    "live": "f5ce35bfaa7f75183c0b3f6f03b11b201acbd2b12d3b7dfa871d1c9462adc029",
+    "local": "f5ce35bfaa7f75183c0b3f6f03b11b201acbd2b12d3b7dfa871d1c9462adc029"
+  },
+  "docs/development/reports/TEST-D1-R2.md": {
+    "live": "1f19b33772191c282d1d21a27a1449c214a42853a4f3a06172af229a9cc27e23",
+    "local": "1f19b33772191c282d1d21a27a1449c214a42853a4f3a06172af229a9cc27e23"
+  },
+  "docs/development/reports/TEST-FOOT-SUPPORT-R2.md": {
+    "live": "292b847f2f98c85082e28f3438fe9b44bcdfe0af660631e672e12d0a278b8782",
+    "local": "292b847f2f98c85082e28f3438fe9b44bcdfe0af660631e672e12d0a278b8782"
+  },
+  "docs/development/reports/TEST-I-R1.md": {
+    "live": "8c140e994e53329995b33630b611f5a7810cff33b9b5a45e220f42d5ccf0661e",
+    "local": "8c140e994e53329995b33630b611f5a7810cff33b9b5a45e220f42d5ccf0661e"
+  },
+  "docs/development/reports/TEST-I-R2.md": {
+    "live": "0d4d9a669b2ab34bafbd30522314e29ddc089df5188598aceb31ba8ff966169d",
+    "local": "0d4d9a669b2ab34bafbd30522314e29ddc089df5188598aceb31ba8ff966169d"
+  },
+  "docs/development/reports/TEST-I-R3.md": {
+    "live": "44f9031a5f19147d9a98dcea228bb0ccdecdbc0a0d24db39b013523e66cf9ee1",
+    "local": "44f9031a5f19147d9a98dcea228bb0ccdecdbc0a0d24db39b013523e66cf9ee1"
+  },
+  "docs/development/reports/TEST-NPC-MODELS-GPU-R1.md": {
+    "live": null,
+    "local": "867c8ab7493b5d0bafbfd106350b3101f31e60b8fdc7d391f0c3a8f8b08f2831"
+  },
+  "docs/development/reports/TEST-ORIGINAL-CORE-R1.md": {
+    "live": "f951eaf9585c54104223eefc3e23933075b0aed9e04c343343520a5abee89860",
+    "local": "f951eaf9585c54104223eefc3e23933075b0aed9e04c343343520a5abee89860"
+  },
+  "docs/development/reports/TEST-ORIGINAL-CORE-R2.md": {
+    "live": "5f0fae33021b63e302806afe2202ed5b7af1f3e345a7c77a14a8bff003890f65",
+    "local": "5f0fae33021b63e302806afe2202ed5b7af1f3e345a7c77a14a8bff003890f65"
+  },
+  "docs/development/reports/TEST-ORIGINAL-UI-R1.md": {
+    "live": "2525a86e36d2858ddee49e8bcb4dcb544c1fb7762b0c0cf9293b24993a23a644",
+    "local": "2525a86e36d2858ddee49e8bcb4dcb544c1fb7762b0c0cf9293b24993a23a644"
+  },
+  "docs/development/reports/TEST-ORIGINAL-UI-R2.md": {
+    "live": "a1ab6c06d15b9e4ae562d7cc5fb900c102707c095721d46b5ff5e259be443c07",
+    "local": "a1ab6c06d15b9e4ae562d7cc5fb900c102707c095721d46b5ff5e259be443c07"
+  },
+  "docs/development/reports/TEST-ORIGINAL-UI-R3.md": {
+    "live": "5159d9892d65b4d9980a67df54cb69aaddb7a4a887924f59aa69a38d72430f06",
+    "local": "5159d9892d65b4d9980a67df54cb69aaddb7a4a887924f59aa69a38d72430f06"
+  },
+  "docs/development/reports/TEST-ORIGINAL-WORLD-R2.md": {
+    "live": "ab0246a5e1478eb2d3a711a1bf142cf1e4c9d80a315908bfc497f335fd34c8ed",
+    "local": "ab0246a5e1478eb2d3a711a1bf142cf1e4c9d80a315908bfc497f335fd34c8ed"
+  },
+  "docs/development/reports/TEST-ORIGINAL-WORLD-R3.md": {
+    "live": "bd666703f113866e549cadda992f35c071465f1eecd87aa828e49cc4cc2b4e1e",
+    "local": "bd666703f113866e549cadda992f35c071465f1eecd87aa828e49cc4cc2b4e1e"
+  },
+  "docs/development/reports/TEST-PHASE1-CAMERA-FIX.md": {
+    "live": "58785be23b7ad1fdca1d04c2746e13aa9aca96da8da54bc44cf0f1725ed2b85d",
+    "local": "58785be23b7ad1fdca1d04c2746e13aa9aca96da8da54bc44cf0f1725ed2b85d"
+  },
+  "docs/development/reports/TEST-PHASE1-R1.md": {
+    "live": "4e5c99bdf984182917662e31d838aa68eef50a34393ee626fb84562df88b151e",
+    "local": "4e5c99bdf984182917662e31d838aa68eef50a34393ee626fb84562df88b151e"
+  },
+  "docs/development/reports/TEST-PHASE1-R2-OUTCROPS.md": {
+    "live": "1d7e3ca50073cf0cb292eeda47d55c2f5357c3cf3db17faae53a6d7dd4cacc79",
+    "local": "1d7e3ca50073cf0cb292eeda47d55c2f5357c3cf3db17faae53a6d7dd4cacc79"
+  },
+  "docs/development/reports/TEST-PHASE1-R2.md": {
+    "live": "bf603c1ce1ecfb5aad8ce7b48f618e89fed7dc1c774bfc3b2ae9cbd00a32d578",
+    "local": "bf603c1ce1ecfb5aad8ce7b48f618e89fed7dc1c774bfc3b2ae9cbd00a32d578"
+  },
+  "docs/development/reports/TEST-PHASE1-R3.md": {
+    "live": "8ce80e12daf6d1cf2bb4aba21a5e5fb8e8619d9816dff19e61a8239b5ca15bad",
+    "local": "8ce80e12daf6d1cf2bb4aba21a5e5fb8e8619d9816dff19e61a8239b5ca15bad"
+  },
+  "docs/development/reports/TEST-PHASE1-R4-PHYSICAL.md": {
+    "live": "0f0776dcc5928f70db1fc7972fcaf5563ff4ef30c0e1f822bcabdb28a8d07189",
+    "local": "0f0776dcc5928f70db1fc7972fcaf5563ff4ef30c0e1f822bcabdb28a8d07189"
+  },
+  "docs/development/reports/TEST-PHASE1-R4.md": {
+    "live": "9965af9ad86d36aa1b2d266dfd3ad6f2fa1d32ad67e020ffa9fb872044557067",
+    "local": "9965af9ad86d36aa1b2d266dfd3ad6f2fa1d32ad67e020ffa9fb872044557067"
+  },
+  "docs/development/reports/TEST-PLANET-GLOBAL-AUDIT.md": {
+    "live": "a0e6cbc1b6d96a4ba20109e2de880243c4a350619d197a48cde744646cb4ab9d",
+    "local": "a0e6cbc1b6d96a4ba20109e2de880243c4a350619d197a48cde744646cb4ab9d"
+  },
+  "docs/development/reports/TEST-PLANET-INTEGRATION-R2.md": {
+    "live": "506197579313679a9d57f5d9d7589b36d196010fd76fd70d84fa7c7efa651e75",
+    "local": "506197579313679a9d57f5d9d7589b36d196010fd76fd70d84fa7c7efa651e75"
+  },
+  "docs/development/reports/TEST-SLOPE-CREATURE-PHYSICS.md": {
+    "live": "d6a223ad30972a080e8abfe2fa811e5061c8bff81b2a6517284b8de6e0b311d0",
+    "local": "d6a223ad30972a080e8abfe2fa811e5061c8bff81b2a6517284b8de6e0b311d0"
+  },
+  "docs/development/reports/TEST-SUPPORT-TERRITORY-INDEPENDENT.md": {
+    "live": "4158487ae79e211014927b2ff0d4b7b8baeaab63fc3fee53ad4f4050eab65fed",
+    "local": "4158487ae79e211014927b2ff0d4b7b8baeaab63fc3fee53ad4f4050eab65fed"
+  },
+  "docs/development/reports/TEST-VEHICLE-SLOPE-AUDIT.md": {
+    "live": "012f76891d131c94b0490981c6136734fe18858219ab8e91bb3d1e1cdaef0165",
+    "local": "012f76891d131c94b0490981c6136734fe18858219ab8e91bb3d1e1cdaef0165"
+  },
+  "docs/development/reports/TEST-WORLD-CREATURE-R1.md": {
+    "live": "03e20d00799c8a9c47ee36d7459783c2e2463dc168e20ede12bc540029c27df4",
+    "local": "03e20d00799c8a9c47ee36d7459783c2e2463dc168e20ede12bc540029c27df4"
+  },
+  "docs/development/reports/TEST-WORLD-CREATURE-R2.md": {
+    "live": "f59f2f82f5a9fb66ccb315f260aa509030332f57b1726d7bcb4928a9b22403d9",
+    "local": "f59f2f82f5a9fb66ccb315f260aa509030332f57b1726d7bcb4928a9b22403d9"
+  },
+  "docs/development/reports/TEST-WORLD-CREATURE-R3.md": {
+    "live": "49aa8adbd41a82c00a4ff44f4ea57cc1fdb65c67d06f522d515e9acdd4cf9811",
+    "local": "49aa8adbd41a82c00a4ff44f4ea57cc1fdb65c67d06f522d515e9acdd4cf9811"
+  },
+  "docs/development/SEVEN-MODELS-R1.md": {
+    "live": null,
+    "local": "ac0501dc876910046c4bab42ddf26892db2142b60b506841275f580584cd465c"
+  },
+  "docs/development/SUPPORT-TERRITORY-R1.md": {
+    "live": "06a60af5a50c3d82724bf0f8e80c769d3e05aae26a6321cab12fe2e02e2529cb",
+    "local": "06a60af5a50c3d82724bf0f8e80c769d3e05aae26a6321cab12fe2e02e2529cb"
+  },
+  "docs/development/TASKS.md": {
+    "live": "d6404bdd277fb10ffc408c7888400fdf4abebd49b8ff4531c4c761ab63158ef1",
+    "local": "d6404bdd277fb10ffc408c7888400fdf4abebd49b8ff4531c4c761ab63158ef1"
+  },
+  "docs/development/TERRAIN-STREAM-R2.md": {
+    "live": "416687c75475abe5a447b03cb9ba990bb7817572b28268cd512f71b92185ab87",
+    "local": "416687c75475abe5a447b03cb9ba990bb7817572b28268cd512f71b92185ab87"
+  },
+  "docs/development/TEST-LAB-INTEGRATION.md": {
+    "live": "585c1434b849e7c5adf92b86ec3d40109a006332348409b6a2c3c4616568c6c5",
+    "local": "585c1434b849e7c5adf92b86ec3d40109a006332348409b6a2c3c4616568c6c5"
+  },
+  "docs/development/TEST-LAB-R1-RELEASE.md": {
+    "live": "318cf42e59a429da04dfc75f890f983cfcf034c7f8fff66c239375360856351e",
+    "local": "318cf42e59a429da04dfc75f890f983cfcf034c7f8fff66c239375360856351e"
+  },
+  "docs/development/USER-PLAYTEST-2026-09-25.md": {
+    "live": "f41110e0adec58edaa7de87e99a007c1e73f73ef901bef51361732013ea8a4e9",
+    "local": "f41110e0adec58edaa7de87e99a007c1e73f73ef901bef51361732013ea8a4e9"
+  },
+  "docs/development/USER-PLAYTEST-R2-IMPLEMENTATION.md": {
+    "live": "487b3f10380338741f85b20b2ecfb0e4da0bf409f22ca6158296abc6ca236716",
+    "local": "487b3f10380338741f85b20b2ecfb0e4da0bf409f22ca6158296abc6ca236716"
+  },
+  "docs/development/versions/CREATURE-R2-ENTRY-CHECK.json": {
+    "live": "0698a25562814fc14342de3b2608c2cdd515d8d0c8fda62818ae7e8a39cf11d4",
+    "local": "0698a25562814fc14342de3b2608c2cdd515d8d0c8fda62818ae7e8a39cf11d4"
+  },
+  "docs/development/versions/INTEGRATED-A-R2.json": {
+    "live": "3bfd20fe7fddfdae98de8223f127e3c82e3ca3f1013e7f029652ae2fc383ad27",
+    "local": "3bfd20fe7fddfdae98de8223f127e3c82e3ca3f1013e7f029652ae2fc383ad27"
+  },
+  "docs/development/versions/INTEGRATED-B-R1.json": {
+    "live": "5d9d6e99322610dd3fa33554e0964670679f24030d9a3d71c29beaa29156815d",
+    "local": "5d9d6e99322610dd3fa33554e0964670679f24030d9a3d71c29beaa29156815d"
+  },
+  "docs/development/versions/INTEGRATED-C-R2.json": {
+    "live": "8e2d782ccb71ebb14f5fb86c078028f3faafa283ce6f376ec2b791595230f8c4",
+    "local": "8e2d782ccb71ebb14f5fb86c078028f3faafa283ce6f376ec2b791595230f8c4"
+  },
+  "docs/development/versions/INTEGRATED-CREATURE-R2.json": {
+    "live": "16ba69a97668cc0e62516ee0b0044d4f8b3345df718e3ce96c19c32ad384da6c",
+    "local": "16ba69a97668cc0e62516ee0b0044d4f8b3345df718e3ce96c19c32ad384da6c"
+  },
+  "docs/development/versions/INTEGRATED-D1-R2.json": {
+    "live": "2d368c99631a7c08c028b18d7e3d2979575c219c80af16e27f91f9cd3550a652",
+    "local": "2d368c99631a7c08c028b18d7e3d2979575c219c80af16e27f91f9cd3550a652"
+  },
+  "docs/development/versions/INTEGRATED-I-R1.json": {
+    "live": "ec505d105c34055c24930500be77fc39321d00e355f0ff4fd61408dfb96a8a29",
+    "local": "ec505d105c34055c24930500be77fc39321d00e355f0ff4fd61408dfb96a8a29"
+  },
+  "docs/development/versions/INTEGRATED-I-R2.json": {
+    "live": "65a90d16cb8d9bc79078a226e5b42fe5fa4e87249cdf80f0d637cb48a0f26f46",
+    "local": "65a90d16cb8d9bc79078a226e5b42fe5fa4e87249cdf80f0d637cb48a0f26f46"
+  },
+  "docs/development/versions/INTEGRATED-I-R3.json": {
+    "live": "92efe2995d437308ea4d8689dcffcff5c97d674f84a67a23a176b7e663bd109c",
+    "local": "92efe2995d437308ea4d8689dcffcff5c97d674f84a67a23a176b7e663bd109c"
+  },
+  "docs/development/versions/INTEGRATED-ORIGINAL-CORE-R2.json": {
+    "live": "09176b1e6037124fa470dc2ef86d21cc4c642d6920b68ff28714a059536f2fd5",
+    "local": "09176b1e6037124fa470dc2ef86d21cc4c642d6920b68ff28714a059536f2fd5"
+  },
+  "docs/development/versions/INTEGRATED-PHASE1-R4.json": {
+    "live": "31c3b2db3ce411e4c2e57740f3c607f8be8218c78f7dfefb3d1539e02fc6a5f5",
+    "local": "31c3b2db3ce411e4c2e57740f3c607f8be8218c78f7dfefb3d1539e02fc6a5f5"
+  },
+  "docs/development/versions/INTEGRATED-PHYSICS-SLOPE-R1.json": {
+    "live": "9126f40084291555a8aa4142e09d09d29a3dfcbce0f2ba1d29e262bc119f11b2",
+    "local": "9126f40084291555a8aa4142e09d09d29a3dfcbce0f2ba1d29e262bc119f11b2"
+  },
+  "docs/development/versions/INTEGRATED-PLANET-MVP-R1.json": {
+    "live": "271e694d72920a20c4672e060ab7630306095f12b698b65e26836123266bfe91",
+    "local": "271e694d72920a20c4672e060ab7630306095f12b698b65e26836123266bfe91"
+  },
+  "docs/development/versions/INTEGRATED-SUPPORT-TERRITORY-R1.json": {
+    "live": "34301b13c6c489ed237ba8b475133f001301b6b010714b6af4eccfb27812d7cd",
+    "local": "34301b13c6c489ed237ba8b475133f001301b6b010714b6af4eccfb27812d7cd"
+  },
+  "docs/development/versions/INTEGRATED-TEST-LAB-R1.json": {
+    "live": "1ea4287af5127fd49965730ae80a89d403657d36f3a186b32cd11308c043733f",
+    "local": "1ea4287af5127fd49965730ae80a89d403657d36f3a186b32cd11308c043733f"
+  },
+  "docs/development/versions/ORIGINAL-CORE-R2-ENTRY-CHECK.json": {
+    "live": "4d8301562fa9487c610a705a8c5490f4671ba4c875b580fd62e6faff5be3b7bd",
+    "local": "4d8301562fa9487c610a705a8c5490f4671ba4c875b580fd62e6faff5be3b7bd"
+  },
+  "docs/development/versions/PHASE1-R4-ENTRY-CHECK.json": {
+    "live": "d8fb13a3d12d7a2fedd159b8b73fee46aa9f56cada391b02791586a433e81298",
+    "local": "d8fb13a3d12d7a2fedd159b8b73fee46aa9f56cada391b02791586a433e81298"
+  },
+  "docs/development/versions/PHYSICS-SLOPE-R1-ENTRY-CHECK.json": {
+    "live": "2e08b37b37502f2eb820e88f4b57b31fc5abd23793312754b1e4aae86042a904",
+    "local": "2e08b37b37502f2eb820e88f4b57b31fc5abd23793312754b1e4aae86042a904"
+  },
+  "docs/development/versions/PLANET-MVP-R1-ENTRY-CHECK.json": {
+    "live": "9805729293351abda8aa281cb126d99bfad45a1686278ebca7ccd28236eb46ff",
+    "local": "9805729293351abda8aa281cb126d99bfad45a1686278ebca7ccd28236eb46ff"
+  },
+  "docs/development/versions/SUPPORT-TERRITORY-R1-ENTRY-CHECK.json": {
+    "live": "8aee589742d42b71618239e4f6518c9452b32773f26082444c3e961414d4fc68",
+    "local": "8aee589742d42b71618239e4f6518c9452b32773f26082444c3e961414d4fc68"
+  },
+  "docs/development/versions/TEST-A-R1-EVIDENCE.json": {
+    "live": "f050995d96b5f8651fadaad6006c3d272b913280e54bc925ae68d648f3a83cd2",
+    "local": "f050995d96b5f8651fadaad6006c3d272b913280e54bc925ae68d648f3a83cd2"
+  },
+  "docs/development/versions/TEST-A-R2-EVIDENCE.json": {
+    "live": "c44a87492eaf443a3710f9b0396955281f78d34904722c3f7248f1f2a53c6874",
+    "local": "c44a87492eaf443a3710f9b0396955281f78d34904722c3f7248f1f2a53c6874"
+  },
+  "docs/development/versions/TEST-B-R1-EVIDENCE.json": {
+    "live": "10086ef489d45eb6415f379767eca6a83a80f0e742eb44ccb08382b6a6b7abf8",
+    "local": "10086ef489d45eb6415f379767eca6a83a80f0e742eb44ccb08382b6a6b7abf8"
+  },
+  "docs/development/versions/TEST-C-R1-EVIDENCE.json": {
+    "live": "49ae9e6f89fe345282d2e7119c83444d12e11111aa08e917e80890ec3c180ac6",
+    "local": "49ae9e6f89fe345282d2e7119c83444d12e11111aa08e917e80890ec3c180ac6"
+  },
+  "docs/development/versions/TEST-C-R2-EVIDENCE.json": {
+    "live": "65bdca1148821bed3b7d54637cad21c9627f6c8421403ac9e3346415fa485a19",
+    "local": "65bdca1148821bed3b7d54637cad21c9627f6c8421403ac9e3346415fa485a19"
+  },
+  "docs/development/versions/TEST-D1-R1-EVIDENCE.json": {
+    "live": "b8015f64a405acd4271feee80fb0e91ff1de4add2b98a2a1cc042bef69794e56",
+    "local": "b8015f64a405acd4271feee80fb0e91ff1de4add2b98a2a1cc042bef69794e56"
+  },
+  "docs/development/versions/TEST-D1-R2-EVIDENCE.json": {
+    "live": "2a083eaac5b32e7e10a5768dda21078ee230bd1f17a4d3217d424f3a37382cbb",
+    "local": "2a083eaac5b32e7e10a5768dda21078ee230bd1f17a4d3217d424f3a37382cbb"
+  },
+  "docs/development/versions/TEST-I-R1-EVIDENCE.json": {
+    "live": "f1ce5602527097675d80d7060b462c21205b6ff7331ac9057c4e7f01ffe09ad9",
+    "local": "f1ce5602527097675d80d7060b462c21205b6ff7331ac9057c4e7f01ffe09ad9"
+  },
+  "docs/development/versions/TEST-I-R2-EVIDENCE.json": {
+    "live": "bf1ef01721ce854fe6141e0ccc9f9e39870e2c45635bf9b3166a6e4b688ab096",
+    "local": "bf1ef01721ce854fe6141e0ccc9f9e39870e2c45635bf9b3166a6e4b688ab096"
+  },
+  "docs/development/versions/TEST-I-R3-EVIDENCE.json": {
+    "live": "971357bb271364c3deb076a74090dc47d0e86de8829c44dcb4f9c924de2e2617",
+    "local": "971357bb271364c3deb076a74090dc47d0e86de8829c44dcb4f9c924de2e2617"
+  },
+  "docs/development/versions/TEST-LAB-R1-ENTRY-CHECK.json": {
+    "live": "c5f2d9a01bb7a01bca0e1f347fb536f9dea4271d50537c09bb251751a6003e49",
+    "local": "c5f2d9a01bb7a01bca0e1f347fb536f9dea4271d50537c09bb251751a6003e49"
+  },
+  "docs/development/versions/TEST-ORIGINAL-CORE-R1-EVIDENCE.json": {
+    "live": "ed19675adf68da4852b027aec0dcf64a0bcf06b467721f7f8ae653dca22c0fca",
+    "local": "ed19675adf68da4852b027aec0dcf64a0bcf06b467721f7f8ae653dca22c0fca"
+  },
+  "docs/development/versions/TEST-ORIGINAL-CORE-R2-EVIDENCE.json": {
+    "live": "36c272c230705cc578d3e08e93cd32494758513db3e3e3f84e53df3e726eeac1",
+    "local": "36c272c230705cc578d3e08e93cd32494758513db3e3e3f84e53df3e726eeac1"
+  },
+  "docs/development/versions/TEST-ORIGINAL-UI-R1-EVIDENCE.json": {
+    "live": "b96e28cebeb8b166369e816fe015d3457709f2f8e88bc53cb88b3c8117493a6d",
+    "local": "b96e28cebeb8b166369e816fe015d3457709f2f8e88bc53cb88b3c8117493a6d"
+  },
+  "docs/development/versions/TEST-ORIGINAL-UI-R2-EVIDENCE.json": {
+    "live": "044a33c7b97df83a4ebbef71a0227ed01162f6547d5763d44ebb1442c8c90c3f",
+    "local": "044a33c7b97df83a4ebbef71a0227ed01162f6547d5763d44ebb1442c8c90c3f"
+  },
+  "docs/development/versions/TEST-ORIGINAL-UI-R3-EVIDENCE.json": {
+    "live": "919d7ec6b8fd3bc5b01143cdef3129a9bf7e3bbefa981d400e484ebf7d9371c4",
+    "local": "919d7ec6b8fd3bc5b01143cdef3129a9bf7e3bbefa981d400e484ebf7d9371c4"
+  },
+  "docs/development/versions/TEST-ORIGINAL-WORLD-R2-EVIDENCE.json": {
+    "live": "2bc0f5ce713be04bfb93aa5f2f4dfe612f3d0e43b3bbe34dc7e6dc97e4ef687d",
+    "local": "2bc0f5ce713be04bfb93aa5f2f4dfe612f3d0e43b3bbe34dc7e6dc97e4ef687d"
+  },
+  "docs/development/versions/TEST-ORIGINAL-WORLD-R3-EVIDENCE.json": {
+    "live": "09d1e918e8792a2f4324690d7094a963d5a02c18133ba33f99ad66e576b2bdee",
+    "local": "09d1e918e8792a2f4324690d7094a963d5a02c18133ba33f99ad66e576b2bdee"
+  },
+  "playable/tests/audio.test.js": {
+    "live": "365515c7e5e896010e4a7b620b29ccef7fd6cd7ba087fd674ce99869fd49bc16",
+    "local": "365515c7e5e896010e4a7b620b29ccef7fd6cd7ba087fd674ce99869fd49bc16"
+  },
+  "playable/tests/authored-motion.test.js": {
+    "live": "bb3c41de952ce266b50cd5575718d3ea5503855e4e6122d5dd9b3520520e0d87",
+    "local": "bb3c41de952ce266b50cd5575718d3ea5503855e4e6122d5dd9b3520520e0d87"
+  },
+  "playable/tests/avatar-shapes.test.js": {
+    "live": "518b6055dd6a1ef8a9e5f60a44a1de2d6f243f14c75dbeaec150007337b4fe0a",
+    "local": "518b6055dd6a1ef8a9e5f60a44a1de2d6f243f14c75dbeaec150007337b4fe0a"
+  },
+  "playable/tests/avatar-visual.spec.js": {
+    "live": "e227862ccb8fbc7cf80534ff53eface90c2670889069d1b0b2a07a112ebc836d",
+    "local": "e227862ccb8fbc7cf80534ff53eface90c2670889069d1b0b2a07a112ebc836d"
+  },
+  "playable/tests/c2-directional.spec.js": {
+    "live": "14e96766c946b5dc10dd65f2349a69d3f7edf99e672e5fd054ab1d479192ae11",
+    "local": "14e96766c946b5dc10dd65f2349a69d3f7edf99e672e5fd054ab1d479192ae11"
+  },
+  "playable/tests/c2-preview.mjs": {
+    "live": "1d6df1bf4adc73415f94318dbf7d609153baa802bef70c2940b1fabf7432bc3c",
+    "local": "1d6df1bf4adc73415f94318dbf7d609153baa802bef70c2940b1fabf7432bc3c"
+  },
+  "playable/tests/calibration-controls.js": {
+    "live": "5d45ba05fb7ab2611b172e87257bea8924cf8e3ff0a082c661519deb3437a44b",
+    "local": "5d45ba05fb7ab2611b172e87257bea8924cf8e3ff0a082c661519deb3437a44b"
+  },
+  "playable/tests/calibration-ui.spec.js": {
+    "live": "e1a5de204aabcb143ac3d98dce0e3003501ade8f71018d37b28588543f548724",
+    "local": "e1a5de204aabcb143ac3d98dce0e3003501ade8f71018d37b28588543f548724"
+  },
+  "playable/tests/calibration.test.js": {
+    "live": "8e4aac38941367550eb3cd7b37696ddad0d6dccc3ccf1ea171115c25fd68e66c",
+    "local": "8e4aac38941367550eb3cd7b37696ddad0d6dccc3ccf1ea171115c25fd68e66c"
+  },
+  "playable/tests/character-retarget.test.js": {
+    "live": "70cea8d9c54a38f2bdb286d7e12e9fea8535c6ad091f76d469cf80f79e483d92",
+    "local": "70cea8d9c54a38f2bdb286d7e12e9fea8535c6ad091f76d469cf80f79e483d92"
+  },
+  "playable/tests/checkpoint-performance.mjs": {
+    "live": "98fc89515186fed1c277debddd9ee85fcb691f6fb147b7a8c599da1cea058834",
+    "local": "98fc89515186fed1c277debddd9ee85fcb691f6fb147b7a8c599da1cea058834"
+  },
+  "playable/tests/checkpoint-scheduling.test.mjs": {
+    "live": "910a004d7f5c3c5aa222161b65110c07add87c9fbfcb570e7f659f6c78b07529",
+    "local": "910a004d7f5c3c5aa222161b65110c07add87c9fbfcb570e7f659f6c78b07529"
+  },
+  "playable/tests/creature-ai.test.mjs": {
+    "live": "c3b6933e51758847793397513854e9fbd01ee2537c9ab19af3c50af036ee8ef2",
+    "local": "c3b6933e51758847793397513854e9fbd01ee2537c9ab19af3c50af036ee8ef2"
+  },
+  "playable/tests/creature-territory.test.mjs": {
+    "live": "c30ffb9b5a583c59c2d3d5188e04fc552efd231fa393a3f1980b723987a3d35c",
+    "local": "c30ffb9b5a583c59c2d3d5188e04fc552efd231fa393a3f1980b723987a3d35c"
+  },
+  "playable/tests/d3-combat.test.js": {
+    "live": "c38647421bbe7bf952a1a99818718eebdad9b8218387d32fa14c105d7b22b74b",
+    "local": "c38647421bbe7bf952a1a99818718eebdad9b8218387d32fa14c105d7b22b74b"
+  },
+  "playable/tests/d3-inventory.test.js": {
+    "live": "c842c7b1923370ee3d6307fefd457a9c2843642f7afe65ac4feab5b8b956ede5",
+    "local": "c842c7b1923370ee3d6307fefd457a9c2843642f7afe65ac4feab5b8b956ede5"
+  },
+  "playable/tests/d3-session.test.js": {
+    "live": "a57881ca8b7c622ba236d1e6c30d457f609f809767b8f6756e26b5909f5b0336",
+    "local": "a57881ca8b7c622ba236d1e6c30d457f609f809767b8f6756e26b5909f5b0336"
+  },
+  "playable/tests/dash-effect.test.js": {
+    "live": "36d0df2ffcec3c5f79a2f4252b5daecc4f7809ea809e42f43319e4bf11b2aba4",
+    "local": "36d0df2ffcec3c5f79a2f4252b5daecc4f7809ea809e42f43319e4bf11b2aba4"
+  },
+  "playable/tests/dash-integration.spec.js": {
+    "live": "6492dd12f5875ce4667ee32a82c17dcd5cffcda9e464399d22b220c1592a7138",
+    "local": "6492dd12f5875ce4667ee32a82c17dcd5cffcda9e464399d22b220c1592a7138"
+  },
+  "playable/tests/dash.test.js": {
+    "live": "d4cf3050a2c3a12fda04de1b8f2539e74de1e47f4a60a49b215fb54448b18f0e",
+    "local": "d4cf3050a2c3a12fda04de1b8f2539e74de1e47f4a60a49b215fb54448b18f0e"
+  },
+  "playable/tests/desktop-controls.spec.js": {
+    "live": "85d194a0a9caaeb75720ed6a48dc93c454773ac5ec26b801b6b4cbd7670b4e8d",
+    "local": "85d194a0a9caaeb75720ed6a48dc93c454773ac5ec26b801b6b4cbd7670b4e8d"
+  },
+  "playable/tests/desktop-posture.spec.js": {
+    "live": "fe9368236402bc52232c89091eea42086beca249251ee48fa5410781f5736a78",
+    "local": "fe9368236402bc52232c89091eea42086beca249251ee48fa5410781f5736a78"
+  },
+  "playable/tests/driving-direction.test.js": {
+    "live": "b9c4911e16751f25c503f21587a16f5142d3688bf530adabcb2348c076f8bead",
+    "local": "b9c4911e16751f25c503f21587a16f5142d3688bf530adabcb2348c076f8bead"
+  },
+  "playable/tests/equipment-control.test.js": {
+    "live": "03c89b615dc852dfff4f3e26d4223ef4c8b6978b517d1a4b3f4fa362c18b6d5c",
+    "local": "03c89b615dc852dfff4f3e26d4223ef4c8b6978b517d1a4b3f4fa362c18b6d5c"
+  },
+  "playable/tests/evolution.spec.js": {
+    "live": "a6e0046adf08495e5130ed681974639e3910fa4ade0505f97dfc51340ced8798",
+    "local": "a6e0046adf08495e5130ed681974639e3910fa4ade0505f97dfc51340ced8798"
+  },
+  "playable/tests/evolution.test.js": {
+    "live": "9c68abd254907b2040809f12980f9d3822122eb8f5b394f5e286c03198496e2d",
+    "local": "9c68abd254907b2040809f12980f9d3822122eb8f5b394f5e286c03198496e2d"
+  },
+  "playable/tests/exploration-r2.spec.js": {
+    "live": "7687783d26222b0de8565bd23c44136d20b3cae25c01db081fa4b58a5cbffdc1",
+    "local": "7687783d26222b0de8565bd23c44136d20b3cae25c01db081fa4b58a5cbffdc1"
+  },
+  "playable/tests/exploration.spec.js": {
+    "live": "b9029c1a666f0bca929e9e4582f1479d765ede2b68877cf8f4b7c1cc9c0676a1",
+    "local": "b9029c1a666f0bca929e9e4582f1479d765ede2b68877cf8f4b7c1cc9c0676a1"
+  },
+  "playable/tests/feature-runner.test.js": {
+    "live": "646a7108ef241f135c39cc25fed75d05daea8fa04bcdd2f8262d1d7dd2a8cd24",
+    "local": "646a7108ef241f135c39cc25fed75d05daea8fa04bcdd2f8262d1d7dd2a8cd24"
+  },
+  "playable/tests/flight-hud-r2.test.mjs": {
+    "live": "a9ebe9558162376388961feb50d00b9b854806bcf2c62d3a1a70de7024bb9713",
+    "local": "a9ebe9558162376388961feb50d00b9b854806bcf2c62d3a1a70de7024bb9713"
+  },
+  "playable/tests/flight-r2.test.mjs": {
+    "live": "452b2a5cb1d643e15c3c536b5b8dff8a63ff62d39b8065f2b65601fcf712d20f",
+    "local": "452b2a5cb1d643e15c3c536b5b8dff8a63ff62d39b8065f2b65601fcf712d20f"
+  },
+  "playable/tests/foot-support-independent.test.mjs": {
+    "live": "3bcff51b336148d5a329a4bc79c12d0822189abf226ee79a3998cce6cb33bab2",
+    "local": "3bcff51b336148d5a329a4bc79c12d0822189abf226ee79a3998cce6cb33bab2"
+  },
+  "playable/tests/foot-support.test.mjs": {
+    "live": "2e8886b00b29a065b04fbd57fe1ee5d8b0d569bade2054539a69358c65c5ad1a",
+    "local": "2e8886b00b29a065b04fbd57fe1ee5d8b0d569bade2054539a69358c65c5ad1a"
+  },
+  "playable/tests/footing.test.js": {
+    "live": "7bc6b3faa93694db3a3fe8f543898672c45450f15556a0def5723976bc1f6baa",
+    "local": "7bc6b3faa93694db3a3fe8f543898672c45450f15556a0def5723976bc1f6baa"
+  },
+  "playable/tests/gait-benchmark.mjs": {
+    "live": "8479ce2bb624340c8f21293d8ba77bc44228b4b8fa667cc68e6fcad766bae36b",
+    "local": "8479ce2bb624340c8f21293d8ba77bc44228b4b8fa667cc68e6fcad766bae36b"
+  },
+  "playable/tests/gait-performance.test.js": {
+    "live": "fea8a5fc0d013aa4c6b24270f12cd91059b65df47df294fe9c11286257c86751",
+    "local": "fea8a5fc0d013aa4c6b24270f12cd91059b65df47df294fe9c11286257c86751"
+  },
+  "playable/tests/gait-preview.mjs": {
+    "live": "602b983ed0ddcb7578be02e5b6ffca9a3c06ecfbcb1a6eb0f267b894ce5592a4",
+    "local": "602b983ed0ddcb7578be02e5b6ffca9a3c06ecfbcb1a6eb0f267b894ce5592a4"
+  },
+  "playable/tests/gait-visual.spec.js": {
+    "live": "2f6cdc424da8c2f449962abeaf11cd7f157ff8e418cb8073b3fe049f36205c01",
+    "local": "2f6cdc424da8c2f449962abeaf11cd7f157ff8e418cb8073b3fe049f36205c01"
+  },
+  "playable/tests/gait.test.js": {
+    "live": "83efd84cef70577e0038141bd6ed244405ef837f6ae0622aeb64783b70248ee7",
+    "local": "83efd84cef70577e0038141bd6ed244405ef837f6ae0622aeb64783b70248ee7"
+  },
+  "playable/tests/growth-movement.test.js": {
+    "live": "52e6659f20cd5c223b94da3b78682fff24d5768864d1807712ffd8a77619b2de",
+    "local": "52e6659f20cd5c223b94da3b78682fff24d5768864d1807712ffd8a77619b2de"
+  },
+  "playable/tests/idle-stability.test.js": {
+    "live": "dd780db9beee0ea55fd754013efbc103cdff14ae17932c1f9b1f4680643fcfc5",
+    "local": "dd780db9beee0ea55fd754013efbc103cdff14ae17932c1f9b1f4680643fcfc5"
+  },
+  "playable/tests/input.test.js": {
+    "live": "c84fe10d6ce5f28d734b0851f0dec3b411d6ab89fe79cb0e20c00e61cdae82b5",
+    "local": "c84fe10d6ce5f28d734b0851f0dec3b411d6ab89fe79cb0e20c00e61cdae82b5"
+  },
+  "playable/tests/investigation-visual.spec.js": {
+    "live": "457e8471cae42e51628f90123a5f27cb00e31669ed5e0d1124e6318ac137616e",
+    "local": "457e8471cae42e51628f90123a5f27cb00e31669ed5e0d1124e6318ac137616e"
+  },
+  "playable/tests/investigation.spec.js": {
+    "live": "9051c9b866880bf018bbe38da666d2f673da96b964142c675835ebdfb3bc1a41",
+    "local": "9051c9b866880bf018bbe38da666d2f673da96b964142c675835ebdfb3bc1a41"
+  },
+  "playable/tests/legacy-outer-grid-cache-r2.test.mjs": {
+    "live": "fd36e94ae12daecefa7e9a4bb8e2ba0be60da18a658dfcb3c981fafba87ff4eb",
+    "local": "fd36e94ae12daecefa7e9a4bb8e2ba0be60da18a658dfcb3c981fafba87ff4eb"
+  },
+  "playable/tests/locomotion.spec.js": {
+    "live": "a9dab231f8d059e5214866fde457f2f30bed1868bd90626d56136df6538f4683",
+    "local": "a9dab231f8d059e5214866fde457f2f30bed1868bd90626d56136df6538f4683"
+  },
+  "playable/tests/look-control.test.js": {
+    "live": "ab52954522e3d9c0b4a2674afda41f6ff2a5b1673aa74c425d4553bde156d3ec",
+    "local": "ab52954522e3d9c0b4a2674afda41f6ff2a5b1673aa74c425d4553bde156d3ec"
+  },
+  "playable/tests/map-r3.spec.js": {
+    "live": "2cf2cf884752fcee64c0301bfa547456c18c2bfeebc9d76bf66ceb74ea2d3a00",
+    "local": "2cf2cf884752fcee64c0301bfa547456c18c2bfeebc9d76bf66ceb74ea2d3a00"
+  },
+  "playable/tests/meteor.test.js": {
+    "live": "8479df07b037c76cc981a2a433ddd593e1f62179d92f5bd8b343f25840e19eab",
+    "local": "8479df07b037c76cc981a2a433ddd593e1f62179d92f5bd8b343f25840e19eab"
+  },
+  "playable/tests/mobility.spec.js": {
+    "live": "d112ecd84a40e2e32debae1f8ed326fd61edde2e3c79bbb2d7ee0f42a07c653f",
+    "local": "d112ecd84a40e2e32debae1f8ed326fd61edde2e3c79bbb2d7ee0f42a07c653f"
+  },
+  "playable/tests/mobility.test.js": {
+    "live": "51297fca74beb32685e3a4db53eb2d238986ecbd28dd837da193e7edfb9c5146",
+    "local": "51297fca74beb32685e3a4db53eb2d238986ecbd28dd837da193e7edfb9c5146"
+  },
+  "playable/tests/movement.test.js": {
+    "live": "68aba277c04e92a4f35f902869f6365bf1649855badbf2956846c8cfe957f6ed",
+    "local": "68aba277c04e92a4f35f902869f6365bf1649855badbf2956846c8cfe957f6ed"
+  },
+  "playable/tests/navigation.test.js": {
+    "live": "c6e5d6da68a2fb4770be2686f7647223f57a629cbff4eb18cbe09441e7096be0",
+    "local": "c6e5d6da68a2fb4770be2686f7647223f57a629cbff4eb18cbe09441e7096be0"
+  },
+  "playable/tests/performance-harness.html": {
+    "live": "84642dce533a4a21114f4e43c28784d48f7a585c3d5f1da4b37c8906b0eb9866",
+    "local": "84642dce533a4a21114f4e43c28784d48f7a585c3d5f1da4b37c8906b0eb9866"
+  },
+  "playable/tests/performance-regression.test.mjs": {
+    "live": "9a82b9aeab60c226f514dc50d538eb84fb3698d537c058f454f2f36afe7416fc",
+    "local": "9a82b9aeab60c226f514dc50d538eb84fb3698d537c058f454f2f36afe7416fc"
+  },
+  "playable/tests/phase1-geology-webgl.cjs": {
+    "live": "8fffce230bf4c603d8821d82372704dbe68d930f0ad3c83ec0e578b2136572fb",
+    "local": "8fffce230bf4c603d8821d82372704dbe68d930f0ad3c83ec0e578b2136572fb"
+  },
+  "playable/tests/phase1-outcrops.test.mjs": {
+    "live": "20aed6ff9ac0622b200192fc70f68d7fe8f6824929267cc79de90ab13637d9cd",
+    "local": "20aed6ff9ac0622b200192fc70f68d7fe8f6824929267cc79de90ab13637d9cd"
+  },
+  "playable/tests/phase1-terrain.test.mjs": {
+    "live": "0c8d503f8e4c7d3443e5a224714a56d8f9f7090a2be60955fd1559df4e5d2748",
+    "local": "0c8d503f8e4c7d3443e5a224714a56d8f9f7090a2be60955fd1559df4e5d2748"
+  },
+  "playable/tests/physical-world.test.js": {
+    "live": "862dea89684c4d5de3d9fa4ddb0758a785501735b52c6a405d490f80f7bd34f2",
+    "local": "862dea89684c4d5de3d9fa4ddb0758a785501735b52c6a405d490f80f7bd34f2"
+  },
+  "playable/tests/planet-architecture.test.mjs": {
+    "live": "6b6e6357fbdfdf101453a98453024748af7deedce802c361918456fe8ca2f84b",
+    "local": "6b6e6357fbdfdf101453a98453024748af7deedce802c361918456fe8ca2f84b"
+  },
+  "playable/tests/planet-art.test.mjs": {
+    "live": "e4b39074b211e6feda2b980ef9c707c1f4fff7c52553eb89a9972d42008a3bf8",
+    "local": "e4b39074b211e6feda2b980ef9c707c1f4fff7c52553eb89a9972d42008a3bf8"
+  },
+  "playable/tests/planet-contact-runtime.test.mjs": {
+    "live": "561af21ee9f9d8d19867c81b925d87816888497fcfe3930c6025577bc0ade1d5",
+    "local": "561af21ee9f9d8d19867c81b925d87816888497fcfe3930c6025577bc0ade1d5"
+  },
+  "playable/tests/planet-ecology.test.mjs": {
+    "live": "3ecbdef8a86d33acedcf868991a3b8a6ac05bc33f99d13b78b9e5a602bbd7a41",
+    "local": "3ecbdef8a86d33acedcf868991a3b8a6ac05bc33f99d13b78b9e5a602bbd7a41"
+  },
+  "playable/tests/planet-gameplay-r2.test.mjs": {
+    "live": "7cfcbd434628c0c27216b1aef0a84620378a0e979821e97da6731e0e44108476",
+    "local": "7cfcbd434628c0c27216b1aef0a84620378a0e979821e97da6731e0e44108476"
+  },
+  "playable/tests/planet-gameplay.test.mjs": {
+    "live": "c8be3789a85129838f5646cba9bea9a408235a2938fd4e7ddbbec1ac139abdb0",
+    "local": "c8be3789a85129838f5646cba9bea9a408235a2938fd4e7ddbbec1ac139abdb0"
+  },
+  "playable/tests/planet-global-audit.test.mjs": {
+    "live": "65b20ce69c4a4e429131612e1f6c6af5af65004046328488dba7813c87388f48",
+    "local": "65b20ce69c4a4e429131612e1f6c6af5af65004046328488dba7813c87388f48"
+  },
+  "playable/tests/planet-integrated-runtime.test.mjs": {
+    "live": "1074e13cbe208353fb3c2b558c17ffb9b2515930b8b58728a9347bfaf76b692d",
+    "local": "1074e13cbe208353fb3c2b558c17ffb9b2515930b8b58728a9347bfaf76b692d"
+  },
+  "playable/tests/planet-integration.test.mjs": {
+    "live": "5efcc533844595a9f1eb52493dbbec2cc16ffba7551ab832dc8d1dbb9ffe3905",
+    "local": "5efcc533844595a9f1eb52493dbbec2cc16ffba7551ab832dc8d1dbb9ffe3905"
+  },
+  "playable/tests/planet-legacy-chunk-cull-r3.test.mjs": {
+    "live": "534276ad6f34c8e9eeb3a745d39f874fdd4fdc89483f1adf35a4b3487ba6eda5",
+    "local": "534276ad6f34c8e9eeb3a745d39f874fdd4fdc89483f1adf35a4b3487ba6eda5"
+  },
+  "playable/tests/planet-map.test.mjs": {
+    "live": "d9b03ed069ba4a79cdafe1c3442b2f905e5110b1c7dc02dfd73555b7143c6f60",
+    "local": "d9b03ed069ba4a79cdafe1c3442b2f905e5110b1c7dc02dfd73555b7143c6f60"
+  },
+  "playable/tests/planet-parking.test.mjs": {
+    "live": "287d1af8facdbe0973bddd9daff4064e08734af8799767211415a64d09a9b728",
+    "local": "287d1af8facdbe0973bddd9daff4064e08734af8799767211415a64d09a9b728"
+  },
+  "playable/tests/planet-runtime-world.test.mjs": {
+    "live": "882d059966c99c2d31e39a1e235fbbb672be2f9c4a8475c584e37e45a51d2077",
+    "local": "882d059966c99c2d31e39a1e235fbbb672be2f9c4a8475c584e37e45a51d2077"
+  },
+  "playable/tests/planet-stream-budget-r2.test.mjs": {
+    "live": "a4363f5a3344a54276c7028d86d2b4511f853f54aec2af5762ec3b88e8153add",
+    "local": "a4363f5a3344a54276c7028d86d2b4511f853f54aec2af5762ec3b88e8153add"
+  },
+  "playable/tests/prone-redesign.test.js": {
+    "live": "63e4d901bfdf915e5a2f5f70d9d721b7ce1a58725b1da8d63933582f1d7ceaae",
+    "local": "63e4d901bfdf915e5a2f5f70d9d721b7ce1a58725b1da8d63933582f1d7ceaae"
+  },
+  "playable/tests/render-budget.test.js": {
+    "live": "b984d967602c13e2c50aae47b44c9740150d6879f29e45aeb7bb826f674981e9",
+    "local": "b984d967602c13e2c50aae47b44c9740150d6879f29e45aeb7bb826f674981e9"
+  },
+  "playable/tests/render-contact-audio.mjs": {
+    "live": "250426f487c04176acc19b7a8a078a712366f4b84cee65e80c0538b1929464ef",
+    "local": "250426f487c04176acc19b7a8a078a712366f4b84cee65e80c0538b1929464ef"
+  },
+  "playable/tests/rider-alignment.test.mjs": {
+    "live": "299a97ef03fd21a5b81215029bd3bce6706ac6b5fe16f01cbe09444936f421b7",
+    "local": "299a97ef03fd21a5b81215029bd3bce6706ac6b5fe16f01cbe09444936f421b7"
+  },
+  "playable/tests/rock-render-chunks.test.js": {
+    "live": "441b318b17803789898ed82ee512fa3c13d5ecac9d6bb379f6b6687a63e051fd",
+    "local": "441b318b17803789898ed82ee512fa3c13d5ecac9d6bb379f6b6687a63e051fd"
+  },
+  "playable/tests/rules-gate.test.js": {
+    "live": "c919de7b7d5cb4c3b079bd4c108302189aa577ab4a6c355272a508595090ab31",
+    "local": "c919de7b7d5cb4c3b079bd4c108302189aa577ab4a6c355272a508595090ab31"
+  },
+  "playable/tests/runtime-territory-independent.test.mjs": {
+    "live": "ea17089304fa7a59a07c5db928fb345e98130044a1efe9b774d4130fd2ee8016",
+    "local": "ea17089304fa7a59a07c5db928fb345e98130044a1efe9b774d4130fd2ee8016"
+  },
+  "playable/tests/scan-effect.test.js": {
+    "live": "ef5db0b93dcc47cebbdd9e781e91452c478c4b52dbe3d826d17d343b4e3d9d4c",
+    "local": "ef5db0b93dcc47cebbdd9e781e91452c478c4b52dbe3d826d17d343b4e3d9d4c"
+  },
+  "playable/tests/scan-vfx.spec.js": {
+    "live": "833b5cf1777b4167f3f26062c8accdeea3afb8c249ea91cf0e7b7ce4d92b2848",
+    "local": "833b5cf1777b4167f3f26062c8accdeea3afb8c249ea91cf0e7b7ce4d92b2848"
+  },
+  "playable/tests/slope-creature-audit.test.mjs": {
+    "live": "2d60e74cc988e1cbea3ec6d0d05b126f42d1a36d37f98366d2540d928b2c75f8",
+    "local": "2d60e74cc988e1cbea3ec6d0d05b126f42d1a36d37f98366d2540d928b2c75f8"
+  },
+  "playable/tests/stamina.test.js": {
+    "live": "d4ba7385df2e06c5bc36d3b177bf705e1b21fe699e7b9ef31b098f1388a04a72",
+    "local": "d4ba7385df2e06c5bc36d3b177bf705e1b21fe699e7b9ef31b098f1388a04a72"
+  },
+  "playable/tests/star-abyss.spec.js": {
+    "live": "a289ccbfe88dce35d25d35a3bdff5235b895c828f6cf4384f5aaf273e2d92843",
+    "local": "2c3bd516a66c9a89b53be028ddda74adea58a225cf7f120e54f66b6030a477f5"
+  },
+  "playable/tests/static-server.js": {
+    "live": "2cfb945aa6175d3ffa89b82484591bcbaa0870a9683713be8e5dfccc304639fb",
+    "local": "2cfb945aa6175d3ffa89b82484591bcbaa0870a9683713be8e5dfccc304639fb"
+  },
+  "playable/tests/story.test.js": {
+    "live": "3f19cd23ff3480495116c73835740d691917e34792d8379210ea260a6134c86e",
+    "local": "3f19cd23ff3480495116c73835740d691917e34792d8379210ea260a6134c86e"
+  },
+  "playable/tests/survey.test.js": {
+    "live": "769bb38c2dabccff64f921775d176f7a14cf6a6416fac28b88b3314c9fc32acd",
+    "local": "769bb38c2dabccff64f921775d176f7a14cf6a6416fac28b88b3314c9fc32acd"
+  },
+  "playable/tests/tactical-control.test.js": {
+    "live": "88a093f07ce32b1b85f26026c552ffff393e618fec6e45991d2b7f20a8ddb19e",
+    "local": "88a093f07ce32b1b85f26026c552ffff393e618fec6e45991d2b7f20a8ddb19e"
+  },
+  "playable/tests/terrain-contact.test.mjs": {
+    "live": "b2347e7d4a945030ff2d14e32e0dbc80d18a122ed25c708cb9fd606f6b6ffe71",
+    "local": "b2347e7d4a945030ff2d14e32e0dbc80d18a122ed25c708cb9fd606f6b6ffe71"
+  },
+  "playable/tests/terrain-render-chunks.test.mjs": {
+    "live": "1c2f9fe779d4cd0c77b22d832966a68a476bd04376c0ecbff15b9d0e34e75b07",
+    "local": "1c2f9fe779d4cd0c77b22d832966a68a476bd04376c0ecbff15b9d0e34e75b07"
+  },
+  "playable/tests/test-lab.test.mjs": {
+    "live": "cb760191b746f3abb2fa08293a6f16fa08f258d81bfdbb5084944bde8937e6d4",
+    "local": "cb760191b746f3abb2fa08293a6f16fa08f258d81bfdbb5084944bde8937e6d4"
+  },
+  "playable/tests/vehicle-camera.test.js": {
+    "live": "95453671a07c6b01650fc4fb35e20177e103239dd6d65db6dddd8bbf22d70b52",
+    "local": "95453671a07c6b01650fc4fb35e20177e103239dd6d65db6dddd8bbf22d70b52"
+  },
+  "playable/tests/vehicle-cockpit.spec.js": {
+    "live": "8b6b093ec6c0a9c7a9a3ba562bd70e489e9bc31bed6cad0a4192c63c85fd6706",
+    "local": "8b6b093ec6c0a9c7a9a3ba562bd70e489e9bc31bed6cad0a4192c63c85fd6706"
+  },
+  "playable/tests/vehicle-route-planner.mjs": {
+    "live": "0c4f72db7896640f8c8d07f15a8487e66804639916d3de102ad4b3a4fe03c039",
+    "local": "0c4f72db7896640f8c8d07f15a8487e66804639916d3de102ad4b3a4fe03c039"
+  },
+  "playable/tests/vehicle-route-planner.test.js": {
+    "live": "6833d6a31336d2ed2500c0e6a635f377130e7b0a97a26a0da211a436d4c38a48",
+    "local": "6833d6a31336d2ed2500c0e6a635f377130e7b0a97a26a0da211a436d4c38a48"
+  },
+  "playable/tests/vehicle-slope-audit.test.mjs": {
+    "live": "bad6aa7ac00e6e9a58717e66a86d30ffbe04ff01432b50f5b81a73e16eba5c05",
+    "local": "bad6aa7ac00e6e9a58717e66a86d30ffbe04ff01432b50f5b81a73e16eba5c05"
+  },
+  "playable/tests/walk-route.js": {
+    "live": "541a492d7337dd5eefcc6b0212a79083bdbf5b1063ed1d56f3e5453ee016f569",
+    "local": "541a492d7337dd5eefcc6b0212a79083bdbf5b1063ed1d56f3e5453ee016f569"
+  },
+  "playable/tests/world-director.test.js": {
+    "live": "5e1826b057fd9beedcb2a9dad0ae25358c0d3a4038eb3e64acd721ad0c5fc55e",
+    "local": "5e1826b057fd9beedcb2a9dad0ae25358c0d3a4038eb3e64acd721ad0c5fc55e"
+  }
+}

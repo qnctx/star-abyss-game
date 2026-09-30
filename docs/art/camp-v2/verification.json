@@ -1,0 +1,62 @@
+[
+  {
+    "id": "command",
+    "triangles": 7712,
+    "meshes": 8,
+    "bytes": 430996,
+    "finiteVertices": true,
+    "nondegenerateFaces": true,
+    "nativeBounds": {
+      "min": [
+        -4.380000114440918,
+        -5.047500133514404,
+        -0.017199993133544922
+      ],
+      "max": [
+        4.380000114440918,
+        2.490000009536743,
+        7.25
+      ]
+    }
+  },
+  {
+    "id": "medical",
+    "triangles": 7324,
+    "meshes": 8,
+    "bytes": 408372,
+    "finiteVertices": true,
+    "nondegenerateFaces": true,
+    "nativeBounds": {
+      "min": [
+        -4.179999828338623,
+        -4.947499752044678,
+        -0.017199993133544922
+      ],
+      "max": [
+        4.179999828338623,
+        2.3899998664855957,
+        7.25
+      ]
+    }
+  },
+  {
+    "id": "workshop",
+    "triangles": 9680,
+    "meshes": 8,
+    "bytes": 533160,
+    "finiteVertices": true,
+    "nondegenerateFaces": true,
+    "nativeBounds": {
+      "min": [
+        -4.779999732971191,
+        -5.047500133514404,
+        -0.017199993133544922
+      ],
+      "max": [
+        4.779999732971191,
+        2.490000009536743,
+        7.25
+      ]
+    }
+  }
+]

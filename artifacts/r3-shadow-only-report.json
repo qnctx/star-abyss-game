@@ -1,0 +1,305 @@
+{
+  "url": "http://127.0.0.1:4180/star-abyss.html?testLab=1&test=1&expeditionDebug=1",
+  "errors": [],
+  "scenarios": [
+    {
+      "name": "camp-still",
+      "before": {
+        "player": {
+          "x": 0,
+          "z": 190,
+          "heading": 0,
+          "yaw": 0,
+          "pitch": 0,
+          "vx": 0,
+          "vz": 0,
+          "y": 0,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 120000,
+            "y": -190,
+            "z": 0
+          },
+          "energy": 100,
+          "active": false,
+          "liftHeld": false,
+          "speed": 0,
+          "verticalSpeed": 0,
+          "turnBank": 0
+        }
+      },
+      "after": {
+        "player": {
+          "x": 0,
+          "z": 190,
+          "heading": 0,
+          "yaw": 0,
+          "pitch": 0,
+          "vx": 0,
+          "vz": 0,
+          "y": 0,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 120000,
+            "y": -190,
+            "z": 0
+          },
+          "energy": 100,
+          "active": false,
+          "liftHeld": false,
+          "speed": 0,
+          "verticalSpeed": 0,
+          "turnBank": 0
+        }
+      },
+      "duration": 16002.800000047682,
+      "frames": 880,
+      "average": 18.185000000054185,
+      "p95": 33.29999999999927,
+      "p99": 33.400000000001455,
+      "max": 66.59999999999854,
+      "over33": 24,
+      "longTasks": [
+        69
+      ],
+      "mainFrameCpu": {
+        "p50": 6.100000023841858,
+        "p95": 10,
+        "max": 69.29999995231628
+      },
+      "telemetry": [
+        {
+          "samples": 180,
+          "averageMs": 18.703333333333326,
+          "p95Ms": 33.29999999999927,
+          "p99Ms": 33.400000000001455,
+          "maxMs": 66.59999999999854,
+          "over33ms": 6,
+          "over50ms": 1,
+          "calls": 421,
+          "triangles": 841459,
+          "pixelRatio": 1.25,
+          "shadowUpdates": 194,
+          "dynamicShadowUpdates": 159,
+          "dynamicShadowPending": true
+        }
+      ]
+    },
+    {
+      "name": "camp-turn",
+      "before": {
+        "player": {
+          "x": 0,
+          "z": 190,
+          "heading": 0,
+          "yaw": 0,
+          "pitch": 0,
+          "vx": 0,
+          "vz": 0,
+          "y": 0,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 120000,
+            "y": -190,
+            "z": 0
+          },
+          "energy": 100,
+          "active": false,
+          "liftHeld": false,
+          "speed": 0,
+          "verticalSpeed": 0,
+          "turnBank": 0
+        }
+      },
+      "after": {
+        "player": {
+          "x": 0,
+          "z": 190,
+          "heading": 0.22879999999999992,
+          "yaw": 0.22879999999999992,
+          "pitch": 0.10999999999999999,
+          "vx": 0,
+          "vz": 0,
+          "y": 0,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 120000,
+            "y": -190,
+            "z": 0
+          },
+          "energy": 100,
+          "active": false,
+          "liftHeld": false,
+          "speed": 0,
+          "verticalSpeed": 0,
+          "turnBank": 0
+        }
+      },
+      "duration": 16015.599999999999,
+      "frames": 865,
+      "average": 18.51514450867052,
+      "p95": 33.30000000000291,
+      "p99": 33.400000000001455,
+      "max": 83.40000000000146,
+      "over33": 32,
+      "longTasks": [
+        74,
+        72,
+        84
+      ],
+      "mainFrameCpu": {
+        "p50": 5.700000047683716,
+        "p95": 9,
+        "max": 83.60000002384186
+      },
+      "telemetry": [
+        {
+          "samples": 180,
+          "averageMs": 18.609999999999975,
+          "p95Ms": 33.39999999999418,
+          "p99Ms": 33.400000000001455,
+          "maxMs": 33.400000000001455,
+          "over33ms": 9,
+          "over50ms": 0,
+          "calls": 297,
+          "triangles": 784313,
+          "pixelRatio": 1.25,
+          "shadowUpdates": 345,
+          "dynamicShadowUpdates": 310,
+          "dynamicShadowPending": true
+        }
+      ]
+    },
+    {
+      "name": "flight-fast-turn",
+      "before": {
+        "player": {
+          "x": 0,
+          "z": 193.16666269734543,
+          "heading": -0.21120000000000008,
+          "yaw": -0.21120000000000008,
+          "pitch": 0,
+          "vx": 0,
+          "vz": 0,
+          "y": 1999.9974930602766,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 121999.99749306028,
+            "y": -193.16666269734543,
+            "z": 0
+          },
+          "energy": 99.98400100000008,
+          "active": true,
+          "liftHeld": false,
+          "speed": 0,
+          "verticalSpeed": 0,
+          "turnBank": 0,
+          "eastSpeed": 0,
+          "northSpeed": 0
+        }
+      },
+      "after": {
+        "player": {
+          "x": 1162.558972928791,
+          "z": -5086.09045350413,
+          "heading": 0.09240000000000054,
+          "yaw": 0.09240000000000054,
+          "pitch": 0.10999999999999999,
+          "vx": 0,
+          "vz": 0,
+          "y": 1879.1700006948813,
+          "posture": "stand",
+          "spaceHoldTime": 0,
+          "eyeHeight": 1.72,
+          "lean": 0
+        },
+        "ratio": 1.25,
+        "flight": {
+          "position": {
+            "x": 121879.17000069488,
+            "y": 5086.09045350413,
+            "z": -1162.558972928791
+          },
+          "energy": 99.5035210000023,
+          "active": true,
+          "liftHeld": false,
+          "speed": 420,
+          "verticalSpeed": 0,
+          "turnBank": -0.08621366546144149,
+          "eastSpeed": -38.75280133723677,
+          "northSpeed": 418.20834567057204
+        }
+      },
+      "duration": 16006.100000095365,
+      "frames": 961,
+      "average": 16.655671175957714,
+      "p95": 16.700000000004366,
+      "p99": 16.80000000000291,
+      "max": 16.80000000000291,
+      "over33": 0,
+      "longTasks": [],
+      "mainFrameCpu": {
+        "p50": 5.600000023841858,
+        "p95": 9.899999976158142,
+        "max": 12.599999904632568
+      },
+      "telemetry": [
+        {
+          "samples": 180,
+          "averageMs": 16.666111111111118,
+          "p95Ms": 16.799999999995634,
+          "p99Ms": 16.80000000000291,
+          "maxMs": 16.80000000000291,
+          "over33ms": 0,
+          "over50ms": 0,
+          "calls": 58,
+          "triangles": 94685,
+          "pixelRatio": 1.25,
+          "shadowUpdates": 357,
+          "dynamicShadowUpdates": 321,
+          "dynamicShadowPending": false
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "bundleSHA": "b30e315a174aad97168b2af43b47e4d6f93fb1808c9c05c422fecc7baf1f0b7d",
+  "gpu": {
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "devicePixelRatio": 1.5,
+    "canvas": [
+      1800,
+      1125
+    ]
+  }
+}

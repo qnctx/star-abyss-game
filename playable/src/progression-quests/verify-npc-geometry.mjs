@@ -1,0 +1,13 @@
+// Uses the delivered GLB geometry; omits texture decoding only for this CPU collision check.
+import fs from 'node:fs';import assert from 'node:assert/strict';import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {createProgressionScene} from './scene.mjs';import {NPCS} from './data.mjs';import {NPC_ASSETS} from './assets.mjs';import {physicalPropSupport,physicalPropBlocked} from '../foundation/physical-props.mjs';
+globalThis.ProgressEvent??=class {constructor(type,init){Object.assign(this,{type},init);}};
+const report={};const scene=new THREE.Scene();
+const loadAsset=async(_,id)=>{const raw=fs.readFileSync(new URL(`../../assets/progression-quests/${id}-original.glb`,import.meta.url));const jsonLen=raw.readUInt32LE(12);const json=JSON.parse(raw.subarray(20,20+jsonLen).toString());const binary=raw.subarray(28+jsonLen);delete json.images;delete json.textures;delete json.samplers;json.materials=[{pbrMetallicRoughness:{baseColorFactor:[.5,.5,.5,1]}}];for(const m of json.meshes)for(const p of m.primitives)p.material=0;json.buffers[0].uri='data:application/octet-stream;base64,'+binary.toString('base64');return new GLTFLoader().parseAsync(JSON.stringify(json),'');};
+const view=createProgressionScene({scene,terrainHeight:()=>0,assets:NPC_ASSETS,loadAsset});await view.ready;
+try{for(const def of NPCS){assert(view.npcReady(def.id),def.id);const object=scene.getObjectByName(def.id);object.updateMatrixWorld(true);const ray=new THREE.Raycaster();ray.ray.direction.set(0,-1,0);let supported=0,gaps=0,mismatch=0,blocked=0;
+ for(let dx=-.8;dx<=.8;dx+=.08)for(let dz=-.8;dz<=.8;dz+=.08){const x=def.x+dx,z=def.z+dz;ray.ray.origin.set(x,3,z);const hits=ray.intersectObject(object,true).filter(h=>h.object.isMesh),actual=hits[0]?.point.y??-Infinity,physics=physicalPropSupport(x,z,3);if(Number.isFinite(actual)){supported++;if(Math.abs(actual-physics)>.01)mismatch++;}else{gaps++;if(Number.isFinite(physics))mismatch++;}if(physicalPropBlocked(x,z,0,.15,1.7))blocked++;}
+ assert(supported>5&&gaps>5&&blocked>0,def.id+' meaningful mesh sampling');assert.equal(mismatch,0,def.id+' support must equal visible mesh, including empty gaps');report[def.id]={supported,gaps,blocked,mismatch,vertices:view.snapshot().npcs[def.id].vertices};}
+ view.update({visible:false});for(const def of NPCS){assert.equal(physicalPropSupport(def.x,def.z,3),-Infinity);assert.equal(physicalPropBlocked(def.x,def.z,0,.42,1.85),false);}report.hiddenDisablesAll=true;
+ fs.writeFileSync(new URL('../../../docs/progression-quests/evidence/npcs/geometry.json',import.meta.url),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+}finally{view.dispose();}

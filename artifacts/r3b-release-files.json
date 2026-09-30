@@ -1,0 +1,16 @@
+[
+ "playable/game.js",
+ "playable/src/dynamic-shadow-scheduler.mjs",
+ "playable/src/dynamic-shadow-scheduler.test.mjs",
+ "playable/src/scene.mjs",
+ "playable/src/main.mjs",
+ "playable/src/progression-quests/scene.mjs",
+ "playable/src/progression-quests/scene.test.mjs",
+ "playable/src/foundation/camp-scene.mjs",
+ "playable/src/render-budget.mjs",
+ "playable/tests/render-budget.test.js",
+ "docs/development/CAMP-SHADOW-R3.md",
+ "playable/src/planet/scene-adapter.mjs",
+ "playable/tests/planet-legacy-chunk-cull-r3.test.mjs",
+ "docs/development/PLANET-LEGACY-CULL-R3.md"
+]

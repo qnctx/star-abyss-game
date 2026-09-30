@@ -35,6 +35,13 @@ Thumbs.db
 /dist/
 /build/
 /export/
+node_modules/
+test-results/
+playwright-report/
+/playable/test-artifacts/
+*.log
+/godot/reports/*.png
+/godot/reports/*.wav
 
 # Secrets
 .env

@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "bundleSHA": "cc030126f022fa9e6365dfa76958589132274b45f64d12c2334d50b9ca4a893e",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\artifacts\\r6-release-backup-1790428554714",
+  "files": [
+    "playable/game.js",
+    "playable/star-abyss.html",
+    "playable/src/innate-takeoff.mjs",
+    "playable/src/main.mjs",
+    "playable/src/planet-runtime.mjs",
+    "playable/src/planet-gameplay/flight.mjs",
+    "playable/src/avatar.mjs",
+    "playable/src/ui.mjs",
+    "playable/src/test-lab.mjs",
+    "playable/tests/innate-takeoff-r6.test.mjs",
+    "docs/development/FLIGHT-TAKEOFF-R6.md"
+  ],
+  "untouched": 414
+}

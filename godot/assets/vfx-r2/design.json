@@ -1,0 +1,10 @@
+{
+  "span_m": 1.27,
+  "direction": "-Z",
+  "charge_s": 0.18,
+  "release_s": 0.07,
+  "flight_s": 0.55,
+  "fade_s": 0.15,
+  "geometry": "4 tapered curved ribbon meshes; open center; no opaque disk",
+  "shader": "native_vfx.gd applies UV feathering, additive unlit transparency, no depth writes"
+}

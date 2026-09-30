@@ -1,0 +1,77 @@
+{
+  "label": "before",
+  "viewport": "1440x900 headless Chromium (software-rendering environment; not hardware FPS)",
+  "frameMs": {
+    "p50": 416.6999999999971,
+    "p95": 433.40000000000146,
+    "max": 466.6000000000022
+  },
+  "drawCalls": 138,
+  "triangles": 431068,
+  "hotspots": [
+    [
+      "(program) @ native",
+      26953
+    ],
+    [
+      "X0 @ game.js?v=c2-freelook-20260908",
+      76
+    ],
+    [
+      "p @ game.js?v=c2-freelook-20260908",
+      37
+    ],
+    [
+      "(anonymous) @ game.js?v=c2-freelook-20260908",
+      27
+    ],
+    [
+      "x4 @ game.js?v=c2-freelook-20260908",
+      22
+    ],
+    [
+      "f9 @ game.js?v=c2-freelook-20260908",
+      19
+    ],
+    [
+      "k @ game.js?v=c2-freelook-20260908",
+      13
+    ],
+    [
+      "m @ game.js?v=c2-freelook-20260908",
+      10
+    ],
+    [
+      "slerp @ game.js?v=c2-freelook-20260908",
+      10
+    ],
+    [
+      "Dn @ game.js?v=c2-freelook-20260908",
+      8
+    ],
+    [
+      "updateMatrixWorld @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "U4 @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "renderBufferDirect @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "t3 @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "query @ game.js?v=c2-freelook-20260908",
+      6
+    ],
+    [
+      "d @ game.js?v=c2-freelook-20260908",
+      6
+    ]
+  ]
+}

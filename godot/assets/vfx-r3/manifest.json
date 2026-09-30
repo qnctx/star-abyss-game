@@ -1,0 +1,182 @@
+{
+  "reference": "reference-r2.png",
+  "reference_sha256": "9f3b57c9f2d608a10d8b3a1e53e88826c71423f1467fa1450845cac59f81e8a9",
+  "reference_origin": "Existing generated vfx-r2/reference.png; reused without another generation",
+  "authoring": "Blender local authored tapered open ribbon surfaces; no billable service",
+  "coordinates": "Godot meters, -Z forward, +Y up",
+  "assets": {
+    "qi-charge-r3": {
+      "triangles": 192,
+      "vertices": 198,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "hand_current_0",
+        "hand_current_1",
+        "hand_current_2"
+      ],
+      "derivation": "R2 first panel: disconnected hand-sized gathering currents; open center",
+      "blender_bounds": [
+        [
+          -0.2802916467189789,
+          -0.07000000029802322,
+          -0.2790234684944153
+        ],
+        [
+          0.2724306881427765,
+          0.11999999731779099,
+          0.27621328830718994
+        ]
+      ]
+    },
+    "qi-fist-r3": {
+      "triangles": 336,
+      "vertices": 346,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "compressed_punch_0",
+        "compressed_punch_1",
+        "compressed_punch_2",
+        "needle_wake_-1",
+        "needle_wake_1"
+      ],
+      "derivation": "R2 contracted current in lower top view stretched along the fist direction; hollow spiral, no solid projectile",
+      "blender_bounds": [
+        [
+          -0.2958206236362457,
+          -0.8500055074691772,
+          -0.32227569818496704
+        ],
+        [
+          0.3449999988079071,
+          0.7500475645065308,
+          0.298915833234787
+        ]
+      ]
+    },
+    "qi-palm-r3": {
+      "triangles": 288,
+      "vertices": 296,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "palm_bow_0",
+        "palm_bow_1",
+        "palm_streamer_-1",
+        "palm_streamer_1"
+      ],
+      "derivation": "R2 middle panel crescent widened into a shallow open palm pressure wave, fine offset echo",
+      "blender_bounds": [
+        [
+          -0.8147209882736206,
+          -0.3500247299671173,
+          -0.15265017747879028
+        ],
+        [
+          0.8147209882736206,
+          0.511432409286499,
+          0.19228780269622803
+        ]
+      ]
+    },
+    "qi-sweep-r3": {
+      "triangles": 336,
+      "vertices": 342,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "sweeping_crescent_0",
+        "sweeping_crescent_1",
+        "sweeping_crescent_2"
+      ],
+      "derivation": "R2 middle panel long crescent with two fine wakes, authored wide horizontal sweep",
+      "blender_bounds": [
+        [
+          -1.2062734365463257,
+          -0.09042617678642273,
+          -0.02355574257671833
+        ],
+        [
+          1.2062748670578003,
+          0.6532343029975891,
+          0.3086104989051819
+        ]
+      ]
+    },
+    "qi-cleave-r3": {
+      "triangles": 288,
+      "vertices": 294,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "falling_crescent_0",
+        "falling_crescent_1",
+        "falling_crescent_2"
+      ],
+      "derivation": "R2 open crescent adapted into a vertical downward cut; same filament language, no new storyboard claim",
+      "blender_bounds": [
+        [
+          -0.07198940962553024,
+          -0.05706685781478882,
+          -1.0543253421783447
+        ],
+        [
+          0.46938836574554443,
+          0.537445604801178,
+          1.0562809705734253
+        ]
+      ]
+    },
+    "qi-skyfall-r3": {
+      "triangles": 480,
+      "vertices": 494,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "sky_rift_0",
+        "sky_rift_1",
+        "sky_rift_2",
+        "fork_-1_0",
+        "fork_-1_1",
+        "fork_1_0",
+        "fork_1_1"
+      ],
+      "derivation": "R2 final impact panel dispersed branching filaments stretched into a narrow vertical sky split; empty center",
+      "blender_bounds": [
+        [
+          -0.7201315760612488,
+          -0.07000000029802322,
+          -1.2000471353530884
+        ],
+        [
+          0.7201315760612488,
+          0.11999999731779099,
+          1.2000857591629028
+        ]
+      ]
+    },
+    "qi-impact-r3": {
+      "triangles": 384,
+      "vertices": 400,
+      "mesh_surfaces": 1,
+      "ribbon_parts": [
+        "impact_finger_0",
+        "impact_finger_1",
+        "impact_finger_2",
+        "impact_finger_3",
+        "impact_finger_4",
+        "impact_finger_5",
+        "impact_finger_6",
+        "impact_finger_7"
+      ],
+      "derivation": "R2 third panel white-blue branching burst, open core and eight tapered decaying fingers",
+      "blender_bounds": [
+        [
+          -0.695049524307251,
+          -0.14000000059604645,
+          -0.6095519661903381
+        ],
+        [
+          0.6101523041725159,
+          0.14451108872890472,
+          0.7817715406417847
+        ]
+      ]
+    }
+  }
+}

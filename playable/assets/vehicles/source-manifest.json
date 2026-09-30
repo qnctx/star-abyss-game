@@ -1,0 +1,8 @@
+{
+  "asset": "0970a9d51793e8ac826ed5a6e66d57774cbb891fd92296f4bbf03a34cb5e30eb",
+  "sources": {
+    "playable/src/vehicle-model.mjs": "ac871c538d30640427edf5b39989d7f97a4ac61fc8d8e21f66832bd753c8fe8d",
+    "playable/src/vehicle-cockpit.mjs": "046212e4dd12da694f0ea3a7b13b6b9dc8fafbe12e4707f299a5db018c00d35a",
+    "playable/src/vehicle-rig.mjs": "af0a2470db66b4623da7a7d586b9f71124cd91e8cfbf024a55de5ec7d5e132f6"
+  }
+}

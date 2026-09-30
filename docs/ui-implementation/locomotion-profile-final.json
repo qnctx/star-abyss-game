@@ -1,0 +1,78 @@
+{
+  "label": "final",
+  "viewport": "1440x900 headless Chromium (software-rendering environment; not hardware FPS)",
+  "renderRatio": 0.65,
+  "frameMs": {
+    "p50": 333.3000000000029,
+    "p95": 433.39999999999964,
+    "max": 466.60000000000036
+  },
+  "drawCalls": 238,
+  "triangles": 362760,
+  "hotspots": [
+    [
+      "(program) @ native",
+      24675
+    ],
+    [
+      "V0 @ game.js?v=c2-asset-perf-20260908",
+      90
+    ],
+    [
+      "p @ game.js?v=c2-asset-perf-20260908",
+      64
+    ],
+    [
+      "(anonymous) @ game.js?v=c2-asset-perf-20260908",
+      32
+    ],
+    [
+      "S4 @ game.js?v=c2-asset-perf-20260908",
+      26
+    ],
+    [
+      "f9 @ game.js?v=c2-asset-perf-20260908",
+      23
+    ],
+    [
+      "query @ game.js?v=c2-asset-perf-20260908",
+      13
+    ],
+    [
+      "m @ game.js?v=c2-asset-perf-20260908",
+      13
+    ],
+    [
+      "a @ game.js?v=c2-asset-perf-20260908",
+      10
+    ],
+    [
+      "Kn @ game.js?v=c2-asset-perf-20260908",
+      8
+    ],
+    [
+      "setSize @ game.js?v=c2-asset-perf-20260908",
+      8
+    ],
+    [
+      "updateMatrixWorld @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "o3 @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "ci @ game.js?v=c2-asset-perf-20260908",
+      6
+    ],
+    [
+      "m9 @ game.js?v=c2-asset-perf-20260908",
+      6
+    ],
+    [
+      "X @ game.js?v=c2-asset-perf-20260908",
+      6
+    ]
+  ]
+}

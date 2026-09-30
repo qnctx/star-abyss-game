@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-29T15:29:29.660Z",
+  "generationCalls": 12,
+  "tool": "built-in image_gen",
+  "verifiedModelVersion": null,
+  "files": [
+    {
+      "file": "01-planet-geography.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2643868,
+      "sha256": "485d9a4a8e29ea31bfa0ce7dee664865b1995dd3d139645cd16eca766fa8367e",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "02-basalt-basin.png",
+      "width": 1774,
+      "height": 887,
+      "bytes": 2620857,
+      "sha256": "f13cd2ecd604e9a376fd02f2f8a135c72a3492dafe66ac0b42ce724710abfb29",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "03-basin-to-plains.png",
+      "width": 1774,
+      "height": 887,
+      "bytes": 2975122,
+      "sha256": "58a9872e08cda317f55f0f52fc48ae6760adc689e57cc1a24dcbd193e415f35c",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "04-mountains-canyon-cliffs.png",
+      "width": 1774,
+      "height": 887,
+      "bytes": 3024896,
+      "sha256": "870af2d409a747354d55c8c04194aac2220c8b411ae96fbc3fb6825670175fa0",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "05-forest.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3714104,
+      "sha256": "eda67b6895c37c1d92030924282f3f1a30735d1e12350abb52a2f9cd2d938e03",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "06-river-wetland.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3441261,
+      "sha256": "a4c77fd7f387bf4cd701f38f55f238578a60acabba51ad741875b720de41fc52",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "07-estuary-coast.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3287470,
+      "sha256": "a3a036d3f758fbf10f91856a713701345057cdb5e1193a49fb4a1033fc004215",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "08-ocean-islands.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3201024,
+      "sha256": "1a78cf1ca9e53438b40c0d20d9e8f1990374a4fc9ce1641622091e989272ac6e",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "09-natural-ecotones.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3911443,
+      "sha256": "82f127e9045f374a0c2d450f3261f9e4d5ce8572e5d817c930af2e8d1209e22b",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "10-basin-1600m.png",
+      "width": 1774,
+      "height": 887,
+      "bytes": 2724822,
+      "sha256": "1718648889a413dc6041eebeffde82afa0d4000a1f314a40d8902cb990fa1aae",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "11-orbit.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2466313,
+      "sha256": "0171591933b8473f3587d315b15662ab606c390b6692d77e6297d5af613cecfe",
+      "exactSourceCopy": true
+    },
+    {
+      "file": "12-special-regions.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3518854,
+      "sha256": "28766e02d5cf97bc48b4876d7ee7fc049f8a21b6f880a5208a0d88dc03363a10",
+      "exactSourceCopy": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "loadedImages": 12,
+      "horizontalOverflow": false,
+      "clippedControls": [],
+      "articleCount": 12,
+      "originalOpens": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "loadedImages": 12,
+      "horizontalOverflow": false,
+      "clippedControls": [],
+      "articleCount": 12,
+      "originalOpens": true,
+      "pageErrors": []
+    }
+  ],
+  "status": "pass"
+}

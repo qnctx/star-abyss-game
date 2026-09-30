@@ -1,0 +1,13 @@
+[
+ "playable/game.js",
+ "playable/star-abyss.html",
+ "playable/src/innate-takeoff.mjs",
+ "playable/src/main.mjs",
+ "playable/src/planet-runtime.mjs",
+ "playable/src/planet-gameplay/flight.mjs",
+ "playable/src/avatar.mjs",
+ "playable/src/ui.mjs",
+ "playable/src/test-lab.mjs",
+ "playable/tests/innate-takeoff-r6.test.mjs",
+ "docs/development/FLIGHT-TAKEOFF-R6.md"
+]

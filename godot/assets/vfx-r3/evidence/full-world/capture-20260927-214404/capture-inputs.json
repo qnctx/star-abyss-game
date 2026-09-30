@@ -1,0 +1,35 @@
+{
+  "stable": false,
+  "before": {
+    "godot\\scripts\\native_vfx_r3.gd": "4af7a31bc75a988a73c3628ee78b56bdb6b0b89d96588359799d29c5fd80243b",
+    "godot\\scripts\\native_motion_r2.gd": "02f549b4cc919b6bde4338ed04306e22c62873da09a9304e2990e9901df92398",
+    "godot\\scripts\\native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2",
+    "godot\\scripts\\native_main.gd": "05c8dfbd15377431140c4c9f0b031420c84f9b0ef18534b447af44a8d5392baa",
+    "godot\\scripts\\native_enemy_r3.gd": "69d1431f424afb243cf9e4a3e16b804d4adf719801fea3618b96e3344cd78446",
+    "godot\\assets\\vfx-r3\\qi-charge-r3.glb": "df4f9f937e748fb16829e24b83bda78949512c5fca035f8e8adf9eedb3d64e5c",
+    "godot\\assets\\vfx-r3\\qi-cleave-r3.glb": "510000678b84fea2145c6534a9d70dcc62ad8a41bd089af205333d6ad5a8da2c",
+    "godot\\assets\\vfx-r3\\qi-fist-r3.glb": "a9d55f16549d76c392719c3cb0e12dc605a883b4668114dce66ac80e777d5d55",
+    "godot\\assets\\vfx-r3\\qi-impact-r3.glb": "76095158f75735733536b059c4db4d3dc6ddff7ad515e713476682d5dab8c3fe",
+    "godot\\assets\\vfx-r3\\qi-palm-r3.glb": "d0d95d6464eacf63a4a95728666409f42ed3ab74f75e6a146e4ed4077e72b5e8",
+    "godot\\assets\\vfx-r3\\qi-skyfall-r3.glb": "54e45c8fc43efa93b28b592e83ce84701a2e2a43229b744f7638cfc3088bbd04",
+    "godot\\assets\\vfx-r3\\qi-sweep-r3.glb": "3d85952614904adca26b88981006319656c22c5f8cb542015a99688f423f89ed",
+    "godot\\assets\\vfx-r3\\qi_ribbon.gdshader": "b5f008c3b34c969089e3e68d10ddac4aedae6bdbb40b00677ae1282401b3f7cf",
+    "godot\\assets\\motion-r2\\c2-motion-r2.glb": "e0f5cb5d91a87b99907f9f0678de6079d984898c9a886080c0ec1ab6aa84f8e9"
+  },
+  "after": {
+    "godot\\scripts\\native_vfx_r3.gd": "4af7a31bc75a988a73c3628ee78b56bdb6b0b89d96588359799d29c5fd80243b",
+    "godot\\scripts\\native_motion_r2.gd": "02f549b4cc919b6bde4338ed04306e22c62873da09a9304e2990e9901df92398",
+    "godot\\scripts\\native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2",
+    "godot\\scripts\\native_main.gd": "575f658ed5b6835455c0d0016d5080906e4b5be3b1f51cf582e59186f90e0cb2",
+    "godot\\scripts\\native_enemy_r3.gd": "69d1431f424afb243cf9e4a3e16b804d4adf719801fea3618b96e3344cd78446",
+    "godot\\assets\\vfx-r3\\qi-charge-r3.glb": "df4f9f937e748fb16829e24b83bda78949512c5fca035f8e8adf9eedb3d64e5c",
+    "godot\\assets\\vfx-r3\\qi-cleave-r3.glb": "510000678b84fea2145c6534a9d70dcc62ad8a41bd089af205333d6ad5a8da2c",
+    "godot\\assets\\vfx-r3\\qi-fist-r3.glb": "a9d55f16549d76c392719c3cb0e12dc605a883b4668114dce66ac80e777d5d55",
+    "godot\\assets\\vfx-r3\\qi-impact-r3.glb": "76095158f75735733536b059c4db4d3dc6ddff7ad515e713476682d5dab8c3fe",
+    "godot\\assets\\vfx-r3\\qi-palm-r3.glb": "d0d95d6464eacf63a4a95728666409f42ed3ab74f75e6a146e4ed4077e72b5e8",
+    "godot\\assets\\vfx-r3\\qi-skyfall-r3.glb": "54e45c8fc43efa93b28b592e83ce84701a2e2a43229b744f7638cfc3088bbd04",
+    "godot\\assets\\vfx-r3\\qi-sweep-r3.glb": "3d85952614904adca26b88981006319656c22c5f8cb542015a99688f423f89ed",
+    "godot\\assets\\vfx-r3\\qi_ribbon.gdshader": "b5f008c3b34c969089e3e68d10ddac4aedae6bdbb40b00677ae1282401b3f7cf",
+    "godot\\assets\\motion-r2\\c2-motion-r2.glb": "e0f5cb5d91a87b99907f9f0678de6079d984898c9a886080c0ec1ab6aa84f8e9"
+  }
+}

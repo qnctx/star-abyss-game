@@ -1,0 +1,42 @@
+{
+	"complete": false,
+	"cooldown": {
+		"cooldowns": {
+			"fist": 3.00000000000001
+		},
+		"selected": "fist",
+		"version": 1.0
+	},
+	"crater_depth": 0.0,
+	"crater_origin": [
+		95.0,
+		-0.364462375640869,
+		170.0
+	],
+	"deformations": {
+		"planet_id": "star-abyss",
+		"planet_seed": "star-abyss-planet-v1",
+		"records": [],
+		"version": 1.0
+	},
+	"expected_rock_state": {
+
+	},
+	"expected_state": {
+
+	},
+	"first_process_real_r_input": true,
+	"generation": "ecology-r4.2",
+	"id": "martial-tree",
+	"key": "pine-1-0",
+	"kind": "tree",
+	"main_sha256": "8962d89227ef90f28fba4397017551d22933ad637c093b87ea7388b4da0a8664",
+	"position": [
+		95.0,
+		-0.329594731330872,
+		167.800003051758
+	],
+	"producer_pid": 20752.0,
+	"run_id": "1505037",
+	"slot": "user://martial_r4_verify_cross_process.json"
+}

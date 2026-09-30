@@ -1,0 +1,70 @@
+{
+  "playable/game.js": {
+    "live": "e7685e07918aaf89394d56f5fdb31566d4f86e17b45262f2efe6705b3cfd0658",
+    "local": "e7685e07918aaf89394d56f5fdb31566d4f86e17b45262f2efe6705b3cfd0658"
+  },
+  "playable/checkpoint-worker.js": {
+    "live": "c5f1e4cbc559ca2d29796e814ddcabf046f450ef70dce06b593ce12084487026",
+    "local": "c5f1e4cbc559ca2d29796e814ddcabf046f450ef70dce06b593ce12084487026"
+  },
+  "playable/src/input.mjs": {
+    "live": "a1efb814517eeb3b558e88e40ea3392b7b213cb92af5bf34285399191aec7ab2",
+    "local": "a1efb814517eeb3b558e88e40ea3392b7b213cb92af5bf34285399191aec7ab2"
+  },
+  "playable/src/avatar.mjs": {
+    "live": "b84f100d3a38b4a088b12d4fa9c72722306ef61def4d84555f36ae94e9756d36",
+    "local": "b84f100d3a38b4a088b12d4fa9c72722306ef61def4d84555f36ae94e9756d36"
+  },
+  "playable/src/yuan-ying-flight-pose.mjs": {
+    "live": "58b2cb976967e76f004f7babe7de851f0210a556e6c3d6a1440ac40ffe6f0c61",
+    "local": "58b2cb976967e76f004f7babe7de851f0210a556e6c3d6a1440ac40ffe6f0c61"
+  },
+  "playable/src/aerial-melee-animation.mjs": {
+    "live": "7a77991aea7df76fdb72cff8639cba81697931e096382bb81cde476c188019c3",
+    "local": "7a77991aea7df76fdb72cff8639cba81697931e096382bb81cde476c188019c3"
+  },
+  "playable/src/flight-hud.mjs": {
+    "live": "7f777f4086e71371796a76f453e05cb851d588c49e00321e91a4751c0ea6538a",
+    "local": "7f777f4086e71371796a76f453e05cb851d588c49e00321e91a4751c0ea6538a"
+  },
+  "playable/src/expedition-runtime/aerial-melee.mjs": {
+    "live": "6ca0d38dd6fd05eba974a7cffdab31bfd022730d48b4822b92d26ef968da8976",
+    "local": "6ca0d38dd6fd05eba974a7cffdab31bfd022730d48b4822b92d26ef968da8976"
+  },
+  "playable/src/expedition-runtime/index.mjs": {
+    "live": "d97ecee1c54c97ae5d92eba52196491f6520acbc6c4ab5a0479f1969a121656b",
+    "local": "d97ecee1c54c97ae5d92eba52196491f6520acbc6c4ab5a0479f1969a121656b"
+  },
+  "playable/tests/input.test.js": {
+    "live": "7b7c1fed155468b25a8dced9cf5dc46dc8fc8d10e990adf888672ebab09d0c13",
+    "local": "7b7c1fed155468b25a8dced9cf5dc46dc8fc8d10e990adf888672ebab09d0c13"
+  },
+  "playable/tests/aerial-melee-r9.test.mjs": {
+    "live": "5fae629344cecad9d662c5b62975e5584342727ed01b9d64814e6d345e935237",
+    "local": "5fae629344cecad9d662c5b62975e5584342727ed01b9d64814e6d345e935237"
+  },
+  "playable/tests/aerial-animation-r9.test.mjs": {
+    "live": "d218d71fb3c4978e6db80eb144120c9f940b8ae4a7aec7613375a2640e680a68",
+    "local": "d218d71fb3c4978e6db80eb144120c9f940b8ae4a7aec7613375a2640e680a68"
+  },
+  "docs/development/AERIAL-MELEE-R9.md": {
+    "live": "ab31083e7dfe175c52f7da184dd046f03cfcfa82564d9621cda3379148ca6caf",
+    "local": "ab31083e7dfe175c52f7da184dd046f03cfcfa82564d9621cda3379148ca6caf"
+  },
+  "docs/development/AERIAL-FLIGHT-COMBAT-R10.md": {
+    "live": null,
+    "local": null
+  },
+  "playable/src/planet-gameplay/flight.mjs": {
+    "live": "f6eb90b37f9e1912bb71c287dd2bc578c49964c1a0e1ba28161bd797c144e571",
+    "local": "f6eb90b37f9e1912bb71c287dd2bc578c49964c1a0e1ba28161bd797c144e571"
+  },
+  "playable/src/planet-gameplay/index.mjs": {
+    "live": "8f73155cb15926a00e88b5fa95d1c291edc270972834ebca2d36e8c7e81dfd3f",
+    "local": "8f73155cb15926a00e88b5fa95d1c291edc270972834ebca2d36e8c7e81dfd3f"
+  },
+  "playable/tests/flight-steering-r9.test.mjs": {
+    "live": "82a142048d53b176e28ce93651f2fa4ac928caae05fca40fef3a257dc803aa14",
+    "local": "82a142048d53b176e28ce93651f2fa4ac928caae05fca40fef3a257dc803aa14"
+  }
+}

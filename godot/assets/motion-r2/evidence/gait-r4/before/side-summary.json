@@ -1,0 +1,107 @@
+{
+  "metrics": {
+    "walk": {
+      "raw": {
+        "hip_flex_deg_minmax": [
+          -15.31498252445752,
+          36.959400775365665
+        ],
+        "knee_flex_deg_max": 67.19006743732945,
+        "knee_height_max_m": 0.565622806549072,
+        "ankle_height_max_m": 0.215187251567841,
+        "ankle_z_at_highest_m": 0.00577868521213531,
+        "ankle_z_minmax_m": [
+          -0.310752123594284,
+          0.301179587841034
+        ],
+        "pelvis_bob_m": 0.049202322959899014
+      },
+      "runtime": {
+        "hip_flex_deg_minmax": [
+          -20.52393272022133,
+          36.959400775365665
+        ],
+        "knee_flex_deg_max": 67.19006743732945,
+        "knee_height_max_m": 0.565622806549072,
+        "ankle_height_max_m": 0.215187251567841,
+        "ankle_z_at_highest_m": 0.00577868521213531,
+        "ankle_z_minmax_m": [
+          -0.310752213001251,
+          0.345852792263031
+        ],
+        "pelvis_bob_m": 0.051173329353332964
+      },
+      "max_IK_pelvis_drop_m": 0.06197065114974998
+    },
+    "jog": {
+      "raw": {
+        "hip_flex_deg_minmax": [
+          -22.77509856573435,
+          63.42384978797781
+        ],
+        "knee_flex_deg_max": 110.74176848657888,
+        "knee_height_max_m": 0.684681832790375,
+        "ankle_height_max_m": 0.375920504331589,
+        "ankle_z_at_highest_m": -0.0424076914787292,
+        "ankle_z_minmax_m": [
+          -0.374076962471008,
+          0.368546307086945
+        ],
+        "pelvis_bob_m": 0.07490640878677401
+      },
+      "runtime": {
+        "hip_flex_deg_minmax": [
+          -22.77509856573435,
+          63.42384978797781
+        ],
+        "knee_flex_deg_max": 110.74176848657888,
+        "knee_height_max_m": 0.684681832790375,
+        "ankle_height_max_m": 0.375920504331589,
+        "ankle_z_at_highest_m": -0.0424076914787292,
+        "ankle_z_minmax_m": [
+          -0.374076962471008,
+          0.368546307086945
+        ],
+        "pelvis_bob_m": 0.07490640878677401
+      },
+      "max_IK_pelvis_drop_m": 0.030111432075500044
+    },
+    "sprint": {
+      "raw": {
+        "hip_flex_deg_minmax": [
+          -26.468428520131564,
+          72.14186734043277
+        ],
+        "knee_flex_deg_max": 124.48956559602966,
+        "knee_height_max_m": 0.728708982467651,
+        "ankle_height_max_m": 0.434822022914886,
+        "ankle_z_at_highest_m": -0.0468598008155823,
+        "ankle_z_minmax_m": [
+          -0.412288337945938,
+          0.41209489107132
+        ],
+        "pelvis_bob_m": 0.09099382162094105
+      },
+      "runtime": {
+        "hip_flex_deg_minmax": [
+          -26.468428520131564,
+          72.14186734043277
+        ],
+        "knee_flex_deg_max": 124.48956559602966,
+        "knee_height_max_m": 0.728708982467651,
+        "ankle_height_max_m": 0.434822022914886,
+        "ankle_z_at_highest_m": -0.0468598008155823,
+        "ankle_z_minmax_m": [
+          -0.412288337945938,
+          0.41209489107132
+        ],
+        "pelvis_bob_m": 0.09099382162094105
+      },
+      "max_IK_pelvis_drop_m": 0.0
+    }
+  },
+  "frames": 442,
+  "physics_seconds": 7.36666666666665,
+  "wall_seconds": 7.735079,
+  "time_scale": 1.0
+}

@@ -1,0 +1,171 @@
+extends Node3D
+class_name NativePlanetEcology
+
+## Image-first native adapter of playable/src/planet-art/index.mjs.
+## Stable cube-sphere cells own sites; only rendered collision-ready ground is planted.
+const LEVEL := 12
+const COUNT := 4096
+const RANGE := 170.0
+const MAX_INSTANCES := 320
+const MAX_TRIANGLES := 260000
+var planet: Node3D
+var meshes: Dictionary = {}
+var cells: Dictionary = {}
+var pending: Array[Dictionary] = []
+var last_position := Vector3(INF, INF, INF)
+var instances := 0
+var triangles := 0
+var _tick := 0
+
+func setup(source: Node3D) -> void:
+	planet = source
+	for kind in ["tree", "reed", "pebble"]:
+		for lod in [0, 1]:
+			var key := "%s-%d" % [kind, lod]
+			var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/planet-ecology/" + key + ".json"))
+			var vertices := PackedVector3Array()
+			var normals := PackedVector3Array()
+			var colors := PackedColorArray()
+			for i in range(0, data.positions.size(), 3):
+				vertices.append(Vector3(data.positions[i], data.positions[i+1], data.positions[i+2]))
+				normals.append(Vector3(data.normals[i], data.normals[i+1], data.normals[i+2]))
+				colors.append(Color(data.colors[i], data.colors[i+1], data.colors[i+2]))
+			var arrays := []
+			arrays.resize(Mesh.ARRAY_MAX)
+			arrays[Mesh.ARRAY_VERTEX] = vertices
+			arrays[Mesh.ARRAY_NORMAL] = normals
+			arrays[Mesh.ARRAY_COLOR] = colors
+			var mesh := ArrayMesh.new()
+			mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+			var material := StandardMaterial3D.new()
+			material.vertex_color_use_as_albedo = true
+			material.vertex_color_is_srgb = false
+			material.cull_mode = BaseMaterial3D.CULL_DISABLED
+			material.roughness = 0.94
+			mesh.surface_set_material(0, material)
+			meshes[key] = {"mesh": mesh, "triangles": vertices.size() / 3}
+
+func clear() -> void:
+	for cell in cells.values():
+		remove_child(cell.node)
+		cell.node.queue_free()
+	cells.clear()
+	pending.clear()
+	instances = 0
+	triangles = 0
+	last_position = Vector3(INF, INF, INF)
+
+func update_stream(scene_position: Vector3) -> void:
+	if planet == null or meshes.is_empty():
+		return
+	_tick += 1
+	var canonical: Vector3 = NativePlanet.scene_to_canonical(scene_position)
+	var sample: Dictionary = planet.field.sample(canonical)
+	var altitude: float = canonical.length() - NativePlanet.RADIUS - float(sample.height)
+	if altitude > 500.0 or float(sample.legacy_weight) > 0.0:
+		if not cells.is_empty(): clear()
+		return
+	if not last_position.is_finite() or scene_position.distance_to(last_position) > 28.0 or (_tick % 90 == 0 and pending.is_empty()):
+		last_position = scene_position
+		_select(canonical.normalized())
+	# Bounded per-frame CPU work; never instantiate the entire planet.
+	for i in range(mini(2, pending.size())):
+		var item: Dictionary = pending.pop_front()
+		_build(item, scene_position)
+
+func _select(direction: Vector3) -> void:
+	var wanted: Dictionary = {}
+	var uv: Dictionary = NativePlanet._face_uv(direction)
+	var step := 2.0 / float(COUNT)
+	for y in range(-4, 5):
+		for x in range(-4, 5):
+			var d := NativePlanet._cube_direction(uv.face, float(uv.u)*2.0-1.0+x*step, float(uv.v)*2.0-1.0+y*step)
+			var tile := NativePlanet._tile_at(d, LEVEL)
+			var center := NativePlanet._cube_direction(tile.face, (float(tile.x)+0.5)*step-1.0, (float(tile.y)+0.5)*step-1.0)
+			var distance := direction.distance_to(center)*NativePlanet.RADIUS
+			if distance > RANGE: continue
+			var key := NativePlanet._tile_key(tile)
+			tile["distance"] = distance
+			wanted[key] = tile
+	for key in cells.keys():
+		if not wanted.has(key):
+			instances -= int(cells[key].count)
+			triangles -= int(cells[key].triangles)
+			remove_child(cells[key].node)
+			cells[key].node.queue_free()
+			cells.erase(key)
+	pending.clear()
+	for key in wanted:
+		if not cells.has(key): pending.append(wanted[key])
+	pending.sort_custom(func(a: Dictionary,b: Dictionary) -> bool: return a.distance < b.distance)
+
+func _build(tile: Dictionary, player_position: Vector3) -> void:
+	var key := NativePlanet._tile_key(tile)
+	var root := Node3D.new()
+	root.name = key.replace("/", "_")
+	var count := 0
+	var tri_count := 0
+	var ready_count := 0
+	var kinds: Dictionary = {}
+	var body := StaticBody3D.new()
+	body.collision_layer = 1
+	body.collision_mask = 0
+	root.add_child(body)
+	for kind in ["tree", "reed", "pebble"]:
+		var lod := 0 if float(tile.distance) < 55.0 else 1
+		var asset: Dictionary = meshes["%s-%d" % [kind, lod]]
+		var transforms: Array[Transform3D] = []
+		var rng := RandomNumberGenerator.new()
+		rng.seed = hash(key + kind)
+		for candidate in range(16):
+			if instances + count >= MAX_INSTANCES or triangles + tri_count + int(asset.triangles) > MAX_TRIANGLES: break
+			var u := (float(tile.x) + (float(candidate % 4) + rng.randf_range(0.15,0.85))/4.0)*2.0/COUNT-1.0
+			var v := (float(tile.y) + (float(candidate / 4) + rng.randf_range(0.15,0.85))/4.0)*2.0/COUNT-1.0
+			var direction := NativePlanet._cube_direction(tile.face,u,v)
+			var sample: Dictionary = planet.field.sample(direction)
+			var density: float = float(sample.forest)*1.4 if kind == "tree" else (float(sample.wetland)*0.7 if kind == "reed" else maxf(float(sample.coast),float(sample.river))*0.65)
+			if float(sample.legacy_weight) > 0.0 or float(sample.water_depth) > (0.35 if kind == "reed" else 0.05) or rng.randf() > density: continue
+			var approximate := NativePlanet.canonical_to_scene(direction * (NativePlanet.RADIUS+float(sample.height)))
+			var support: Dictionary = planet.surface_at(approximate)
+			if not support.get("ready",false): continue
+			ready_count += 1
+			var up := NativePlanet.radial_up(approximate)
+			if (support.normal as Vector3).dot(up) < (0.94 if kind == "reed" else 0.85): continue
+			var scale_value := rng.randf_range(1.15,1.85) if kind == "tree" else rng.randf_range(0.82,1.18)
+			var basis := Basis(Quaternion(Vector3.UP, up)) * Basis(Vector3.UP,rng.randf()*TAU)
+			var transform := Transform3D(basis.scaled(Vector3.ONE*scale_value), support.point)
+			transforms.append(transform)
+			count += 1
+			tri_count += int(asset.triangles)
+			if kind == "tree":
+				var shape := CylinderShape3D.new()
+				shape.radius = 0.34 * scale_value
+				shape.height = 4.0 * scale_value
+				var collider := CollisionShape3D.new()
+				collider.shape = shape
+				collider.transform = Transform3D(basis, (support.point as Vector3)+up*shape.height*0.5)
+				body.add_child(collider)
+		if transforms.is_empty(): continue
+		kinds[kind] = transforms.size()
+		var batch := MultiMesh.new()
+		batch.transform_format = MultiMesh.TRANSFORM_3D
+		batch.mesh = asset.mesh
+		batch.instance_count = transforms.size()
+		for i in range(transforms.size()): batch.set_instance_transform(i,transforms[i])
+		var visual := MultiMeshInstance3D.new()
+		visual.multimesh = batch
+		visual.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		root.add_child(visual)
+	if ready_count == 0:
+		root.free()
+		return
+	add_child(root)
+	instances += count
+	triangles += tri_count
+	cells[key] = {"node":root,"count":count,"triangles":tri_count,"kinds":kinds}
+
+func snapshot() -> Dictionary:
+	var kinds := {"tree":0,"reed":0,"pebble":0}
+	for cell in cells.values():
+		for kind in cell.kinds: kinds[kind] += int(cell.kinds[kind])
+	return {"instances":instances,"triangles":triangles,"cells":cells.size(),"pending":pending.size(),"kinds":kinds,"max_instances":MAX_INSTANCES,"max_triangles":MAX_TRIANGLES}

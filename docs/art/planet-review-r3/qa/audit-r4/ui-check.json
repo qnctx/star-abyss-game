@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "scope": "document provenance and layout only; art acceptance failed",
+  "results": [
+    {
+      "width": 1440,
+      "images": 25,
+      "overflow": false,
+      "cards": 15,
+      "missing": 5,
+      "clippedLinks": [],
+      "pageErrors": [],
+      "actualLinkClickable": true
+    },
+    {
+      "width": 390,
+      "images": 25,
+      "overflow": false,
+      "cards": 15,
+      "missing": 5,
+      "clippedLinks": [],
+      "pageErrors": [],
+      "actualLinkClickable": true
+    }
+  ]
+}

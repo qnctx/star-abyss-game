@@ -1,0 +1,170 @@
+{
+  "bones": 51,
+  "clips": [
+    {
+      "duration": 0.649999976158142,
+      "name": "air_cast_martial_arrival",
+      "resource_name": "martial_r4/air_cast_martial_arrival",
+      "tracks": 49,
+      "loaded_key_values_sha256": "b9e57de4328469738cd83dbdf9608008169fdb785675f4fffb7ae2af3b5f5bab"
+    },
+    {
+      "duration": 0.800000011920929,
+      "name": "air_cast_martial_blink",
+      "resource_name": "martial_r4/air_cast_martial_blink",
+      "tracks": 49,
+      "loaded_key_values_sha256": "a883ab572d6b4b953da7d2dce8409bc63a96ccf75267bee94ec7922bfc0be632"
+    },
+    {
+      "duration": 1.89999997615814,
+      "name": "air_cast_martial_break",
+      "resource_name": "martial_r4/air_cast_martial_break",
+      "tracks": 49,
+      "loaded_key_values_sha256": "a01fda3f62c5f79685a626a42b6c5042292da91400cca973c56f159d72c14bae"
+    },
+    {
+      "duration": 0.300000011920929,
+      "name": "air_cast_martial_cancel",
+      "resource_name": "martial_r4/air_cast_martial_cancel",
+      "tracks": 49,
+      "loaded_key_values_sha256": "0a74f2f8403aabca760d6301af1472dea75f8f8ed7be468c6e0cc849e0158768"
+    },
+    {
+      "duration": 1.39999997615814,
+      "name": "air_cast_martial_descent",
+      "resource_name": "martial_r4/air_cast_martial_descent",
+      "tracks": 49,
+      "loaded_key_values_sha256": "125f1c99006e950ca4fec085f64da546f26fd125a897dd42604be17e1ba02763"
+    },
+    {
+      "duration": 0.649999976158142,
+      "name": "air_cast_martial_fist",
+      "resource_name": "martial_r4/air_cast_martial_fist",
+      "tracks": 49,
+      "loaded_key_values_sha256": "e63dc2b86bf740d476b356b919c3716bc374c51adbba0d9ea7f9a0832866bf3a"
+    },
+    {
+      "duration": 0.899999976158142,
+      "name": "air_cast_martial_landing",
+      "resource_name": "martial_r4/air_cast_martial_landing",
+      "tracks": 49,
+      "loaded_key_values_sha256": "a48a13213864e94dd99395034b48a9affc7612eee2344e24368b1545af4d3ad0"
+    },
+    {
+      "duration": 0.600000023841858,
+      "name": "air_cast_martial_slash",
+      "resource_name": "martial_r4/air_cast_martial_slash",
+      "tracks": 49,
+      "loaded_key_values_sha256": "53483559b5a51a1a2f66b84195578bb22397a3b3bbcabcfb7e8f67f8f09b1a87"
+    },
+    {
+      "duration": 0.649999976158142,
+      "name": "cast_martial_arrival",
+      "resource_name": "martial_r4/cast_martial_arrival",
+      "tracks": 49,
+      "loaded_key_values_sha256": "63b9581c54f1bc30ec87c51f1dc5d5f5a8c23d1c7e6541aa4cade20609c5544f"
+    },
+    {
+      "duration": 0.800000011920929,
+      "name": "cast_martial_blink",
+      "resource_name": "martial_r4/cast_martial_blink",
+      "tracks": 49,
+      "loaded_key_values_sha256": "840341833af9a2e3ed7cf48a90c8b9eab8b8a640f5d0f92dab1b25de77a5fa08"
+    },
+    {
+      "duration": 1.89999997615814,
+      "name": "cast_martial_break",
+      "resource_name": "martial_r4/cast_martial_break",
+      "tracks": 49,
+      "loaded_key_values_sha256": "e2d919f72e63fd166cd26cb528a0c8073a3211417136e2a94537e8fc5626ad45"
+    },
+    {
+      "duration": 0.300000011920929,
+      "name": "cast_martial_cancel",
+      "resource_name": "martial_r4/cast_martial_cancel",
+      "tracks": 49,
+      "loaded_key_values_sha256": "19230ef7ef6dbe0ff6cdb07dd2d0c056fe397432073c5d70d361db1eb1cd3a99"
+    },
+    {
+      "duration": 1.39999997615814,
+      "name": "cast_martial_descent",
+      "resource_name": "martial_r4/cast_martial_descent",
+      "tracks": 49,
+      "loaded_key_values_sha256": "125f1c99006e950ca4fec085f64da546f26fd125a897dd42604be17e1ba02763"
+    },
+    {
+      "duration": 0.649999976158142,
+      "name": "cast_martial_fist",
+      "resource_name": "martial_r4/cast_martial_fist",
+      "tracks": 49,
+      "loaded_key_values_sha256": "7260945dc85723fdb8e5d74b7c26b8919c77a585ed9f27917c10e9180c43a551"
+    },
+    {
+      "duration": 0.899999976158142,
+      "name": "cast_martial_landing",
+      "resource_name": "martial_r4/cast_martial_landing",
+      "tracks": 49,
+      "loaded_key_values_sha256": "abe950d00ef2962d064e9e1cadd50eeba376eb3bcb0b23da4caebddf0066e809"
+    },
+    {
+      "duration": 0.600000023841858,
+      "name": "cast_martial_slash",
+      "resource_name": "martial_r4/cast_martial_slash",
+      "tracks": 49,
+      "loaded_key_values_sha256": "b4bb5fab46d4e671942ed7a92b2e8103239ead8cc4aca20851b6158e98727873"
+    }
+  ],
+  "imports": [
+    {
+      "cached_source_md5": "8fdb5d88130e70a2e3b7a870d076a9bd",
+      "matches": true,
+      "path": "res://assets/martial-r4/c2-martial-r4.glb",
+      "source_md5": "8fdb5d88130e70a2e3b7a870d076a9bd",
+      "source_sha256": "df3c95a4712e4bfdc1f74bb0c32229ff3dca44007ae74b0318b9986f25db4a70"
+    },
+    {
+      "cached_source_md5": "b9faf3cd4487aa274e489e1a1788e98c",
+      "matches": true,
+      "path": "res://assets/martial-r4/charge.glb",
+      "source_md5": "b9faf3cd4487aa274e489e1a1788e98c",
+      "source_sha256": "edcc2dfc7bb907c9136f0a3ef8a893a66507f1908ffc96e182aa867a8e9219e1"
+    },
+    {
+      "cached_source_md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "matches": true,
+      "path": "res://assets/martial-r4/fist.glb",
+      "source_md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "source_sha256": "e9004b06a3cbf412631104032909e6ac7a6790372dc7a7fdc44347c75272a858"
+    },
+    {
+      "cached_source_md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "matches": true,
+      "path": "res://assets/martial-r4/slash.glb",
+      "source_md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "source_sha256": "cef73e847907b9206dc8bfd28ba10fd99598478cc2132278b79a549c535d46c6"
+    },
+    {
+      "cached_source_md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "matches": true,
+      "path": "res://assets/martial-r4/pressure.glb",
+      "source_md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "source_sha256": "85c4a24d743331c82e430205fda979e94384f8a8290bb63ec3550e1b9dcb00b6"
+    },
+    {
+      "cached_source_md5": "015176318d0fac91a580637012189032",
+      "matches": true,
+      "path": "res://assets/martial-r4/impact.glb",
+      "source_md5": "015176318d0fac91a580637012189032",
+      "source_sha256": "22b76b851f888df13ff2f0f8542e3c1ee9a1af1cae88446661511919201e03d8"
+    },
+    {
+      "cached_source_md5": "fb79fbd87320687f987b4872955003ca",
+      "matches": true,
+      "path": "res://assets/martial-r4/aperture.glb",
+      "source_md5": "fb79fbd87320687f987b4872955003ca",
+      "source_sha256": "9aa0adae50fa66eec9e7f90acfc56f0dfb73dda6f8ad0dfc870f38b76162fc07"
+    }
+  ],
+  "ok": true,
+  "fingerprint_scope": "Ordered track paths and key values only; key times and interpolation modes are not included. Import source MD5 separately verifies current GLB cache."
+}

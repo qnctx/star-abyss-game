@@ -1,0 +1,9 @@
+[
+  "playable/game.js",
+  "playable/src/planet-gameplay/flight.mjs",
+  "playable/src/render-budget.mjs",
+  "playable/tests/render-budget.test.js",
+  "playable/tests/flight-descent-r5.test.mjs",
+  "playable/tests/planet-gameplay-r2.test.mjs",
+  "docs/development/FLIGHT-DESCENT-R5.md"
+]

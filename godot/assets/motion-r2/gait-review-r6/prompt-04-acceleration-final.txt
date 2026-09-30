@@ -1,0 +1,24 @@
+Use case: scientific-educational.
+Create a C2 CHARACTER ACCELERATION RUN ACTION DESIGN SHEET. Use supplied original front, left and back images ONLY to preserve the adult character proportions and identity: black helmet visor, ivory mineral armor, brown fitted suit, asymmetric S-like back armor, same leg and torso lengths. The poses must be redesigned from scratch.
+
+Most important: EIGHT GENUINELY DIFFERENT SEQUENTIAL POSES, real alternating legs, real rear push-off. Do not render the same running pose eight times and merely change its labels. Work as an expert hand-drawing animator planning silhouettes. Prefer clear elegant pencil-and-color animation study drawings with subtle costume detail over repetitive photo-real cutouts. First solve the different anatomy and ground contacts; then add the costume and annotations.
+
+Large wide ivory page, generous gutters, 2 rows x 4 full-body frames. All characters face RIGHT in fixed orthographic left-side camera. Anatomical L leg BLUE, R leg ORANGE, from hip to boot using translucent color overlay, label L/R on each knee and boot. Left is always near leg and right far leg; leg identity does not change when it moves to the front. Helmet, boots and all captions completely in frame. Title: "04 加速跑 · 8 相位 / ACCELERATION RUN". Small legend "L 左腿 / R 右腿 / COG 重心 / ● 接触".
+
+UPPER ROW: 01-04. FOUR DIFFERENT SILHOUETTES.
+01 "L CONTACT | R RECOVERY": Near BLUE L thigh tilts a little FORWARD, knee softly bent, L boot touches floor just in front of hip projection. Far ORANGE R thigh angles BACK, R knee bends strongly, R heel folded upward BEHIND pelvis. Only L boot contact. Torso leans forward moderately, right arm forward and left arm back.
+02 "L SUPPORT | R FORWARD": Near BLUE L thigh is nearly VERTICAL, knee more deeply flexed to absorb weight, L boot planted UNDER body, pelvis lower than01. Far ORANGE R thigh swings from rear to nearly VERTICAL with knee bent and R ankle high behind. Knees nearly pass each other, not a long scissor stride. Different from01.
+03 "L TOE | R SWING": Near BLUE L thigh angles strongly BACKWARD from hip; its shin extends down/back; L heel lifted and ONLY THE REAR BLUE FOREFOOT touches the floor behind hip. Far ORANGE R thigh now clearly points FORWARD; R knee in front of hip; R shin folds down/back with orange foot AIRBORNE in front/under pelvis. This reverses the front/back thigh positions of01. Do not keep blue thigh forward. Left arm now goes forward, right arm back.
+04 "AIR | R NEXT": BOTH feet visibly airborne. Far ORANGE R thigh forward with knee starting to open; R boot in front of pelvis descending toward next contact. Near BLUE L thigh is behind and L knee folded sharply with L heel rising behind. No black contact dots. Body slightly higher than03.
+
+LOWER ROW:05-08. Must be opposite-leg half-cycle, not copied leg colors.
+05 "R CONTACT | L RECOVERY": Far ORANGE R thigh FORWARD, R knee soft, ORANGE R boot on ground near hip projection. Near BLUE L thigh BACKWARD and blue heel folded up BEHIND. Exact anatomical opposite of01. Right arm back, left arm forward.
+06 "R SUPPORT | L FORWARD": Far ORANGE R thigh nearly VERTICAL, support knee compresses, ORANGE boot planted UNDER pelvis. Near BLUE L knee swings forward to pass beside R knee, L foot high behind. Exact opposite of02.
+07 "R TOE | L SWING": Far ORANGE R thigh strongly BACKWARD, ONLY rear ORANGE forefoot on floor, heel raised. Near BLUE L thigh FORWARD, knee ahead, blue shin folded back and blue boot airborne under/front of pelvis. Exact opposite of03. Right arm forward and left arm back.
+08 "AIR | L NEXT": BOTH feet visibly airborne. Near BLUE L thigh ahead, knee opening, L boot descending for next contact under body. Far ORANGE R thigh behind, knee strongly bent, orange heel recovers behind. Exact opposite of04. Returns to01.
+
+ALL eight frames: small gold COG dot at pelvis, dashed vertical gold projection down to floor. Black contact dot must be on the actual touching part of boot, NOT under empty hip projection. Do not confuse COG projection with foot contact. No contact dot in04/08. Natural moderate whole-body forward lean from ankles; avoid bent waist, giant strides, duck feet, legs frozen in one scissor posture, high-knee marching. Keep fore-aft movement from hip clearly evident. Counter-swing arms genuinely alternate.
+
+BOTTOM DETAIL STRIP, readable short captions: two three-stage enlarged leg sequences, with hip/knee/ankle dots and faint trunk context. "支撑腿" shows compression -> thigh sweeps BACK -> forefoot push-off. "摆动腿" shows heel folds up BEHIND -> thigh swings FORWARD with knee bent -> lower leg opens for landing. Each strip depicts SAME BLUE LEFT LEG at different times, not 3 duplicate poses. Every hip/knee/ankle remains anatomically connected.
+Footer: "髋部带动大腿前后摆 · 小腿后收再展开 · 待用户看图审核".
+No extra panels or text. Do not add an approval checkmark.

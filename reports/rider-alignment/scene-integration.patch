@@ -1,0 +1,20 @@
+diff --git a/playable/src/scene.mjs b/playable/src/scene.mjs
+index dd93a7b..0faea87 100644
+--- a/playable/src/scene.mjs
++++ b/playable/src/scene.mjs
+@@ -4,6 +4,7 @@ import { WORLD, POINTS, WALLS, GATE, ROCK_FIELD, TERRAIN_SEGMENTS, terrainHeight
+ import { resolveCamera } from './camera.mjs';
+ import { createAvatar } from './avatar.mjs';
+ import { createSkimmer } from './vehicle-model.mjs';
++import {applyMountedVehicleView} from './vehicle-rig.mjs';
+ import { createMeteorDetails } from './meteor-scene.mjs';
+ import { createSurveyScene } from './survey-scene.mjs';
+ import { dustCoverage } from './ground-cover.mjs';
+@@ -494,6 +495,7 @@ export function createScene(canvas) {
+     sky.position.set(player.x, 0, player.z);
+     planet.position.set(player.x + 2150, 2130, player.z - 6400); ringGroup.position.copy(planet.position); stars.position.set(player.x, 0, player.z);
+     planetController?.updateScene(view,{camera,scene,avatar:avatar.root,skimmer:skimmer.root,ground,distantRidge,sky,stars,ringPlanet:planet,ringGroup,dust});
++    applyMountedVehicleView({avatar,skimmer,camera,view,cameraState});
+     try{
+       renderer.info.reset(); renderer.clear(); renderer.render(scene, camera);
+       if (view.showTool !== false&&cameraState.mode==='first'&&equipmentModel.root.visible) { renderer.clearDepth(); renderer.render(handsScene, handsCamera); }

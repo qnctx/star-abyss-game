@@ -1,0 +1,529 @@
+{
+  "utc": "2026-09-27T15:15:10",
+  "hashes": {
+    "assets/terrain/planet_surface.gdshader": "0f644ae3f2908e74f603e0a4f0baee2c4e6463aa17c59c20c9ebd1d97fe5cc9a",
+    "scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "scripts/native_main.gd": "0036afce3b65bf0a46da03b916a626316b35ef607e2058a247de0d8b050894ad",
+    "scripts/native_planet.gd": "61756f25a37d2ac16239130eca02c90e6cb9f6979380772ba1d704522a3988b6",
+    "scripts/native_planet_coordinates.gd": "9127e807d3a24c1c1545e201129acac993ece672e8c57162273fcd15c01ad3e4",
+    "scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+    "scripts/native_player.gd": "c4618aab462de675e18f3a1c2c210eac938e97f217d156a731a6840d7b239cdf",
+    "scripts/native_world.gd": "38fbf1bf783e1da4ee940e1eeb26aa2c73ceb6ce74e352455c7101f8708144f5"
+  },
+  "changed": [],
+  "rows": [
+    {
+      "name": "route-8000",
+      "field": {
+        "basin": 0.365649804125014,
+        "coast": 0.00209449672550164,
+        "forest": 0.25,
+        "height": 235.94530908273,
+        "legacy_weight": 0.0,
+        "moisture": 0.25,
+        "mountains": 0.0,
+        "ocean": 0.0,
+        "river": 3.57128290662284e-05,
+        "route_s": 8000.00072748819,
+        "temperature": 1.0,
+        "uplift": 1.0,
+        "water_depth": 0.0,
+        "water_height": 232.945594785363,
+        "wetland": 0.0909498916637143
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_546_510/PlanetTriangleCollision",
+        "field_distance": 0.0132920304313302,
+        "hit": true,
+        "normal": "(0.075381, 0.997151, 0.002675)",
+        "position": "(8009.755, -31.73201, 373.7562)"
+      },
+      "first": {
+        "frame": 10,
+        "player_physics": true,
+        "position": "(8010.289, -23.73656, 373.7811)",
+        "support": {
+          "agl": 8.01180744171143,
+          "normal": "(0.075381, 0.997151, 0.002675)",
+          "point": "(8009.754, -31.73047, 373.7562)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 150,
+        "player_physics": true,
+        "position": "(8009.753, -31.73047, 373.7562)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.075381, 0.997151, 0.002675)",
+          "point": "(8009.753, -31.73047, 373.7562)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.433155,
+      "up_dot": 1.0
+    },
+    {
+      "name": "route-17000",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.0883470684738133,
+        "forest": 0.542986801216505,
+        "height": 147.983115289879,
+        "legacy_weight": 0.0,
+        "moisture": 0.542986801216505,
+        "mountains": 0.0,
+        "ocean": 0.0,
+        "river": 3.57129040390123e-05,
+        "route_s": 16999.9998449217,
+        "temperature": 1.0,
+        "uplift": 1.0,
+        "water_depth": 0.0,
+        "water_height": 144.983400993111,
+        "wetland": 0.427865239507871
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_585_509/PlanetTriangleCollision",
+        "field_distance": 0.007698236964643,
+        "hit": true,
+        "normal": "(0.158691, 0.987323, 0.003252)",
+        "position": "(16963.95, -1056.633, 488.6932)"
+      },
+      "first": {
+        "frame": 167,
+        "player_physics": true,
+        "position": "(16965.08, -1048.721, 488.7257)",
+        "support": {
+          "agl": 7.99315214157104,
+          "normal": "(0.158691, 0.987323, 0.003252)",
+          "point": "(16963.95, -1056.634, 488.6932)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 307,
+        "player_physics": true,
+        "position": "(16963.95, -1056.634, 488.6931)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.158691, 0.987323, 0.003252)",
+          "point": "(16963.95, -1056.634, 488.6931)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.419003,
+      "up_dot": 1.0
+    },
+    {
+      "name": "route-27000",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.882743424818723,
+        "forest": 0.449282456584253,
+        "height": 33.550026107486,
+        "legacy_weight": 0.0,
+        "moisture": 0.899999999999999,
+        "mountains": 0.496169769592811,
+        "ocean": 0.00462750086912866,
+        "river": 3.5712810674475e-05,
+        "route_s": 26999.9995424739,
+        "temperature": 1.0,
+        "uplift": 0.710211164321876,
+        "water_depth": 0.0,
+        "water_height": 30.5503118099714,
+        "wetland": 0.865694070864947
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_629_511/PlanetTriangleCollision",
+        "field_distance": 0.00480901263654232,
+        "hit": true,
+        "normal": "(0.235038, 0.971986, 0.001128)",
+        "position": "(26780.23, -2992.089, 147.5564)"
+      },
+      "first": {
+        "frame": 324,
+        "player_physics": true,
+        "position": "(26782.01, -2984.295, 147.5663)",
+        "support": {
+          "agl": 7.99439001083374,
+          "normal": "(0.235038, 0.971986, 0.001128)",
+          "point": "(26780.23, -2992.088, 147.5564)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 464,
+        "player_physics": true,
+        "position": "(26780.24, -2992.092, 147.5565)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.235038, 0.971986, 0.001128)",
+          "point": "(26780.24, -2992.092, 147.5565)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.419132,
+      "up_dot": 1.0
+    },
+    {
+      "name": "route-34000",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.999143679548196,
+        "forest": 0.093254711787857,
+        "height": 2.78057600418333,
+        "legacy_weight": 0.0,
+        "moisture": 0.9,
+        "mountains": 0.458996112718919,
+        "ocean": 0.435039889979744,
+        "river": 3.57129674095993e-05,
+        "route_s": 34000.0011732855,
+        "temperature": 0.977844825316393,
+        "uplift": 0.0699784811218972,
+        "water_depth": 0.0,
+        "water_height": 0.0,
+        "wetland": 0.44471831932255
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_661_512/PlanetTriangleCollision",
+        "field_distance": 0.00634767441079021,
+        "hit": true,
+        "normal": "(0.281744, 0.959487, -0.002288)",
+        "position": "(33547.64, -4782.033, -211.7771)"
+      },
+      "first": {
+        "frame": 481,
+        "player_physics": true,
+        "position": "(33549.88, -4774.358, -211.7912)",
+        "support": {
+          "agl": 7.99438858032227,
+          "normal": "(0.281744, 0.959487, -0.002288)",
+          "point": "(33547.64, -4782.034, -211.7771)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 621,
+        "player_physics": true,
+        "position": "(33547.65, -4782.035, -211.7771)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.281744, 0.959487, -0.002288)",
+          "point": "(33547.65, -4782.035, -211.7771)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.414285,
+      "up_dot": 0.999999940395355
+    },
+    {
+      "name": "route-42000",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.0275972514230616,
+        "forest": 0.0,
+        "height": -180.000285703897,
+        "legacy_weight": 0.0,
+        "moisture": 0.9,
+        "mountains": 0.0,
+        "ocean": 1.0,
+        "river": 3.57129871541751e-05,
+        "route_s": 42000.0025423354,
+        "temperature": 0.985101642433477,
+        "uplift": 0.0,
+        "water_depth": 180.000285703897,
+        "water_height": 0.0,
+        "wetland": 0.0
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_698_514/PlanetTriangleCollision",
+        "field_distance": 0.00048828125,
+        "hit": true,
+        "normal": "(0.342621, 0.939465, -0.004129)",
+        "position": "(41085.69, -7445.258, -478.2108)"
+      },
+      "first": {
+        "frame": 637,
+        "player_physics": true,
+        "position": "(41088.43, -7437.743, -478.2427)",
+        "support": {
+          "agl": 8.00120830535889,
+          "normal": "(0.342621, 0.939465, -0.004129)",
+          "point": "(41085.69, -7445.258, -478.2108)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 180.000285703219
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 777,
+        "player_physics": true,
+        "position": "(41085.69, -7445.258, -478.2108)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.342621, 0.939465, -0.004129)",
+          "point": "(41085.69, -7445.258, -478.2108)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 180.000285702198
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.423477,
+      "up_dot": 1.00000011920929
+    },
+    {
+      "name": "north",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.0,
+        "forest": 0.0,
+        "height": -2047.00578473662,
+        "legacy_weight": 0.0,
+        "moisture": 0.389563036308963,
+        "mountains": 0.0,
+        "ocean": 1.0,
+        "river": 0.0,
+        "route_s": 0.0,
+        "temperature": 0.186246298320183,
+        "uplift": 0.0,
+        "water_depth": 2047.00578473662,
+        "water_height": 0.0,
+        "wetland": 0.0
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_py_10_511_511/PlanetTriangleCollision",
+        "field_distance": 0.0,
+        "hit": true,
+        "normal": "(0.0, 0.000543, -1.0)",
+        "position": "(0.0, -120000.0, -117953.0)"
+      },
+      "first": {
+        "frame": 793,
+        "player_physics": true,
+        "position": "(0.0, -120000.0, -117961.0)",
+        "support": {
+          "agl": 8.0,
+          "normal": "(0.0, 0.0, -1.0)",
+          "point": "(0.0, -120000.0, -117953.0)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 2047.00578473662
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 933,
+        "player_physics": true,
+        "position": "(0.0, -120000.0, -117953.0)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.0, 0.000543, -1.0)",
+          "point": "(0.0, -120000.0, -117953.0)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 2047.00578473662
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.415652,
+      "up_dot": 1.0
+    },
+    {
+      "name": "south",
+      "field": {
+        "basin": 0.0,
+        "coast": 2.506312e-26,
+        "forest": 0.106692782371302,
+        "height": 729.389683058652,
+        "legacy_weight": 0.0,
+        "moisture": 0.560755457425203,
+        "mountains": 0.00751379665914052,
+        "ocean": 0.0,
+        "river": 0.0,
+        "route_s": 0.0,
+        "temperature": 0.191706595078974,
+        "uplift": 0.0,
+        "water_depth": 0.0,
+        "water_height": null,
+        "wetland": 1.30446960464548e-07
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_ny_10_512_512/PlanetTriangleCollision",
+        "field_distance": 0.0,
+        "hit": true,
+        "normal": "(0.0, 0.0, 1.0)",
+        "position": "(0.0, -120000.0, 120729.4)"
+      },
+      "first": {
+        "frame": 949,
+        "player_physics": true,
+        "position": "(0.0, -120000.0, 120737.4)",
+        "support": {
+          "agl": 8.0,
+          "normal": "(0.0, 0.0, 1.0)",
+          "point": "(0.0, -120000.0, 120729.4)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 1089,
+        "player_physics": true,
+        "position": "(0.0, -120000.0, 120729.4)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.0, 0.0, 1.0)",
+          "point": "(0.0, -120000.0, 120729.4)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.392661,
+      "up_dot": 1.0
+    },
+    {
+      "name": "back",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.0,
+        "forest": 0.161299056070639,
+        "height": 3509.8521507472,
+        "legacy_weight": 0.0,
+        "moisture": 0.28362794195621,
+        "mountains": 0.431300544797726,
+        "ocean": 0.0,
+        "river": 0.0,
+        "route_s": -376991.118430775,
+        "temperature": 1.0,
+        "uplift": 0.0,
+        "water_depth": 0.0,
+        "water_height": null,
+        "wetland": 0.0
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_nx_10_512_511/PlanetTriangleCollision",
+        "field_distance": 0.0,
+        "hit": true,
+        "normal": "(0.0, -0.999999, -0.001036)",
+        "position": "(0.0, -243509.8, 0.0)"
+      },
+      "first": {
+        "frame": 1105,
+        "player_physics": true,
+        "position": "(0.0, -243517.8, 0.0)",
+        "support": {
+          "agl": 8.0,
+          "normal": "(0.0, -1.0, 0.0)",
+          "point": "(0.0, -243509.8, 0.0)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 1245,
+        "player_physics": true,
+        "position": "(0.0, -243509.8, 0.0)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(0.0, -0.999999, -0.001036)",
+          "point": "(0.0, -243509.8, 0.0)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 0.0
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "wall": 2.4277,
+      "up_dot": 1.0
+    },
+    {
+      "name": "cube-seam",
+      "field": {
+        "basin": 0.0,
+        "coast": 0.0,
+        "forest": 0.0,
+        "height": -961.709217104447,
+        "legacy_weight": 0.0,
+        "moisture": 0.354350087517076,
+        "mountains": 0.0,
+        "ocean": 1.0,
+        "river": 0.0,
+        "route_s": -94247.7796076938,
+        "temperature": 0.533260073093318,
+        "uplift": 0.0,
+        "water_depth": 961.709217104447,
+        "water_height": 0.0,
+        "wetland": 0.0
+      },
+      "ray": {
+        "collider": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_0_1023/PlanetTriangleCollision",
+        "field_distance": 0.0135316466912627,
+        "hit": true,
+        "normal": "(-0.639268, 0.530476, -0.556715)",
+        "position": "(-68726.79, -51273.21, -68726.79)"
+      },
+      "first": {
+        "frame": 1265,
+        "player_physics": true,
+        "position": "(-68731.41, -51268.59, -68731.41)",
+        "support": {
+          "agl": 8.01073455810547,
+          "normal": "(-0.57735, 0.57735, -0.57735)",
+          "point": "(-68726.79, -51273.21, -68726.79)",
+          "ready": false,
+          "spacing": Infinity,
+          "water_depth": 961.709217104447
+        },
+        "velocity": "(0.0, 0.0, 0.0)"
+      },
+      "last": {
+        "frame": 1405,
+        "player_physics": true,
+        "position": "(-68726.8, -51273.22, -68726.79)",
+        "support": {
+          "agl": 0.0,
+          "normal": "(-0.637308, 0.532699, -0.55684)",
+          "point": "(-68726.8, -51273.22, -68726.79)",
+          "ready": true,
+          "spacing": 14.6484375,
+          "water_depth": 961.708134044883
+        },
+        "velocity": "(-0.0, 0.0, -0.0)"
+      },
+      "wall": 2.425803,
+      "up_dot": 1.0
+    }
+  ]
+}

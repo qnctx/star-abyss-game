@@ -1,0 +1,65 @@
+{
+  "scope": "Offline C2 Cycles CPU supplemental pose study; not Godot default-camera or normal-speed acceptance; approximate UV opacity, QA ground plane only",
+  "images": [
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.3,
+      "view": "back",
+      "path": "preview-current/cast_martial_break-30-back.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.3,
+      "view": "side",
+      "path": "preview-current/cast_martial_break-30-side.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.5,
+      "view": "back",
+      "path": "preview-current/cast_martial_break-50-back.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.5,
+      "view": "side",
+      "path": "preview-current/cast_martial_break-50-side.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.5,
+      "view": "back",
+      "path": "preview-current/air_cast_martial_descent-50-back.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.5,
+      "view": "side",
+      "path": "preview-current/air_cast_martial_descent-50-side.png"
+    },
+    {
+      "clip": "air_cast_martial_descent_cancel",
+      "normalized": 0,
+      "view": "back",
+      "path": "preview-current/air_cast_martial_descent_cancel-00-back.png"
+    },
+    {
+      "clip": "air_cast_martial_descent_cancel",
+      "normalized": 0,
+      "view": "side",
+      "path": "preview-current/air_cast_martial_descent_cancel-00-side.png"
+    },
+    {
+      "clip": "cast_martial_landing",
+      "normalized": 0.18,
+      "view": "back",
+      "path": "preview-current/cast_martial_landing-18-back.png"
+    },
+    {
+      "clip": "cast_martial_landing",
+      "normalized": 0.18,
+      "view": "side",
+      "path": "preview-current/cast_martial_landing-18-side.png"
+    }
+  ]
+}

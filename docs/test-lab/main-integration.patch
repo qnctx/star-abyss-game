@@ -1,0 +1,132 @@
+diff --git a/playable/src/main.mjs b/playable/src/main.mjs
+index 33730d3..657a4a3 100644
+--- a/playable/src/main.mjs
++++ b/playable/src/main.mjs
+@@ -1,4 +1,6 @@
+ import { Vector3 } from 'three';
++import {TEST_LAB,testLabEnabled,testLabLink,openTestLabStorage} from './test-lab-storage.mjs';
++import {createTestLab,seedTestLabGame,prepareTestLabSession} from './test-lab.mjs';
+ import * as THREE from 'three';
+ import { createExpeditionRuntime } from './expedition-runtime/index.mjs';
+ import { createPulseEffects } from './expedition-runtime/effects.mjs';
+@@ -32,9 +34,11 @@ import {createEquipment,useScanner,stowEquipment,updateEquipment,equipmentView}
+ import { sampleFooting, sampleImpact } from './footing.mjs';
+ import {createPlanetRuntime} from './planet-runtime.mjs';
+ 
++const labMode=testLabEnabled(location.search);
++let testLab=null,labPanelOpen=false,labPreparing=false;
+ const testing = new URLSearchParams(location.search).has('test');
+-const persistTest=testing&&new URLSearchParams(location.search).get('persistTest')==='1';
+-const SAVE_KEY = persistTest?'star-abyss-planet-isolated-test-v1':'star-abyss-silent-echo-v1';
++const persistTest=labMode||testing&&new URLSearchParams(location.search).get('persistTest')==='1';
++const SAVE_KEY = labMode?TEST_LAB.key:persistTest?'star-abyss-planet-isolated-test-v1':'star-abyss-silent-echo-v1';
+ const canvas = document.getElementById('world');
+ const sound = createAudio();
+ let story = createStory(), player = createPlayer(), screen = 'menu', journalReturn = 'playing';
+@@ -133,7 +137,7 @@ document.addEventListener('keydown',event=>{
+   if(event.code==='KeyH'){event.preventDefault();expeditionAction({type:'interact'});}
+ });
+ function expeditionBlocked(){return expeditionLoading||!!expeditionError||expeditionVisual?.assetStatus?.status!=='ready'||!expeditionRuntime;}
+-function expeditionContext(){const legacy=planetRuntime?.legacyActive()!==false;return {player:legacy?player:planetRuntime.parkedPlayer,mounted:mobility.vehicle.mounted,airborne:mobility.flight.airborne||mobility.jump.airborne,dashing:dash.active,playing:legacy&&screen==='playing'&&!expeditionBlocked(),menu:expeditionMenu};}
++function expeditionContext(){const legacy=planetRuntime?.legacyActive()!==false;return {player:legacy?player:planetRuntime.parkedPlayer,mounted:mobility.vehicle.mounted,airborne:mobility.flight.airborne||mobility.jump.airborne,dashing:dash.active,playing:legacy&&(labPreparing||screen==='playing'&&!expeditionBlocked()),menu:expeditionMenu};}
+ async function attachExpedition(fresh=false,retry=false){
+   const epoch=++expeditionEpoch;
+   expeditionRuntime?.destroy();expeditionRuntime=null;expeditionLoading=true;expeditionError='';expeditionMenu=false;
+@@ -141,19 +145,20 @@ async function attachExpedition(fresh=false,retry=false){
+   try{
+     const data=serializeGame();
+     // Explicit test mode has its own storage link and DB world; it never imports the user's story save.
+-    expeditionLink=testing?(expeditionLink&&!fresh?expeditionLink:{version:1,worldId:'original:test-'+crypto.randomUUID(),playerId:'explorer:test-'+crypto.randomUUID(),rescueRevision:0})
++    expeditionLink=labMode?testLabLink(expeditionLink,fresh):testing?(expeditionLink&&!fresh?expeditionLink:{version:1,worldId:'original:test-'+crypto.randomUUID(),playerId:'explorer:test-'+crypto.randomUUID(),rescueRevision:0})
+        :bindLegacy(localStorage,data,()=>crypto.randomUUID(),{fresh});
+     save();
+     const visual=expeditionVisual;
+     if(!await waitForWorldAssets(visual,{retry,isCurrent:()=>epoch===expeditionEpoch&&visual===expeditionVisual}))return;
+-    const runtime=await createExpeditionRuntime({link:expeditionLink,world:expeditionDefinitions,queries:expeditionQueries,getContext:expeditionContext,
+-      isVisible(p){const v=new Vector3(p.x,p.y,p.z).project(world.camera);return v.z>-1&&v.z<1&&Math.abs(v.x)<1&&Math.abs(v.y)<1;},
++    const runtime=await createExpeditionRuntime({...(labMode?{openStorage:openTestLabStorage,checkpointStorageName:TEST_LAB.db}:{}),link:expeditionLink,world:expeditionDefinitions,queries:expeditionQueries,getContext:expeditionContext,
++      isVisible(p){if(labPreparing)return false;const v=new Vector3(p.x,p.y,p.z).project(world.camera);return v.z>-1&&v.z<1&&Math.abs(v.x)<1&&Math.abs(v.y)<1;},
+       onChange:()=>{if(epoch!==expeditionEpoch)return;if(expeditionRuntime&&!expeditionRuntime.busy)save();refresh();},onRescue(pose,revision){if(epoch!==expeditionEpoch)return;Object.assign(player,pose,{heading:pose.yaw,y:terrainHeight(pose.x,pose.z),vx:0,vz:0});
+         planetRuntime?.rescue();expeditionLink.rescueRevision=revision;lookControl=createLookControl();resetLocomotion();expeditionMenu=false;updateControlGate(false);save();}});
+     if(epoch!==expeditionEpoch||visual!==expeditionVisual||visual.assetStatus?.status!=='ready'){runtime.destroy();return;}expeditionRuntime=runtime;
++    if(labMode){labPreparing=true;try{await prepareTestLabSession(runtime,()=>epoch===expeditionEpoch);}finally{labPreparing=false;}if(epoch!==expeditionEpoch)return;}
+     save();
+   }catch(error){if(epoch!==expeditionEpoch)return;console.error('Expedition startup failed',error);expeditionError=expeditionVisual.assetStatus?.status!=='ready'?'生物模型加载失败，玩法已暂停。请重试，或返回菜单稍后继续。':'外勤存档暂时无法载入；进度已保留，请重试或返回菜单。';ui.toast(expeditionError);}
+-  finally{if(epoch===expeditionEpoch){expeditionLoading=false;refresh();}}
++  finally{if(epoch===expeditionEpoch){expeditionLoading=false;if(labMode){sceneDirty=true;testLab?.refresh();}refresh();}}
+ }
+ function expeditionAction(action){
+   if(screen!=='playing'||expeditionBlocked())return;
+@@ -164,7 +169,7 @@ function expeditionAction(action){
+   else {void expeditionRuntime?.action(action);return;}
+   updateControlGate();refresh();
+ }
+-function updateControlGate(capture=true){expeditionControlGate.update({screen,menu:expeditionMenu,loading:expeditionBlocked(),defeated:!!expeditionRuntime?.defeated,capture});}
++function updateControlGate(capture=true){expeditionControlGate.update({screen,menu:expeditionMenu,loading:labPanelOpen||expeditionBlocked(),defeated:!!expeditionRuntime?.defeated,capture});}
+ function refreshExpedition(){
+   updateControlGate();
+   if(!expeditionHUD)return;
+@@ -278,6 +283,7 @@ function newGame() {
+   mobility = createMobility(); dash = createDash(); evolution = createEvolution(); survey = createSurvey();
+   planetRuntime?.reset({player:{...player},mobility:serializeMobility(mobility)});
+   if(testing){applyPlanetFixture();applyPhysicsFixture();}
++  if(labMode)seedTestLabGame({story,mobility,evolution,planet:planetRuntime,serialize:serializeGame,discovered,points:allPoints()});
+   resetLocomotion();
+   setScreen('playing'); save();
+   void attachExpedition(true);
+@@ -486,7 +492,7 @@ function confirmCalibration() {
+ }
+ function simulate(dt, controls = input.snapshot({mounted:mobility.vehicle.mounted})) {
+   if (screen !== 'playing' || dt < 1e-8) return;
+-  if(expeditionMenu||expeditionBlocked()||expeditionRuntime?.busy||expeditionRuntime?.defeated)return;
++  if(labPanelOpen||expeditionMenu||expeditionBlocked()||expeditionRuntime?.busy||expeditionRuntime?.defeated)return;
+   const load=expeditionRuntime?.view().load;
+   if(load&&!mobility.vehicle.mounted){
+     if(!load.canSprint)controls={...controls,sprint:false};
+@@ -498,9 +504,9 @@ function simulate(dt, controls = input.snapshot({mounted:mobility.vehicle.mounte
+   const planetBoost=radialFoot&&prepareSprint(stamina,controls)?Math.min(dt,stamina.value/planetRules.sprintDrain):0;
+   let planetHandled=false;
+   if(radialFoot){
+-    if(planetBoost>0){planetHandled=planetRuntime.step({...controls,sprint:true},planetBoost);const distance=Math.hypot(...['x','y','z'].map(k=>planetRuntime.position[k]-planetBefore[k]));updateStamina(stamina,{moving:distance>1e-6,sprinting:distance>1e-6},planetBoost,planetRules);}
+-    if(planetBoost<dt){const before={...planetRuntime.position};planetHandled=planetRuntime.step({...controls,sprint:false},dt-planetBoost);updateStamina(stamina,{moving:Math.hypot(...['x','y','z'].map(k=>planetRuntime.position[k]-before[k]))>1e-6,sprinting:false},dt-planetBoost,planetRules);}
+-  }else planetHandled=planetRuntime?.step(controls,dt);
++    if(planetBoost>0){planetHandled=labPlanetStep({...controls,sprint:true},planetBoost);const distance=Math.hypot(...['x','y','z'].map(k=>planetRuntime.position[k]-planetBefore[k]));updateStamina(stamina,{moving:distance>1e-6,sprinting:distance>1e-6},planetBoost,planetRules);}
++    if(planetBoost<dt){const before={...planetRuntime.position};planetHandled=labPlanetStep({...controls,sprint:false},dt-planetBoost);updateStamina(stamina,{moving:Math.hypot(...['x','y','z'].map(k=>planetRuntime.position[k]-before[k]))>1e-6,sprinting:false},dt-planetBoost,planetRules);}
++  }else planetHandled=labPlanetStep(controls,dt);
+   if(planetHandled){
+     const mounted=mobility.vehicle.mounted,distance=Math.hypot(...['x','y','z'].map(k=>planetRuntime.position[k]-planetBefore[k]));
+     turnPlayerHeading(player,controls,dt,{mounted});
+@@ -639,7 +645,7 @@ let previous = performance.now(), hudTime = 0, testFrameFrozen = false, testCapt
+ const frameSamples=[];let lastTelemetry=0;
+ function frame(now) {
+   const interval=now-previous,dt = Math.min(interval / 1000, .25); previous = now;
+-  if (testFrameFrozen) { requestAnimationFrame(frame); return; }
++  if (testFrameFrozen || labPreparing || labPanelOpen && !sceneDirty && !expeditionLoading) { requestAnimationFrame(frame); return; }
+   // Integrate elapsed time in collision-safe steps even when GPU frames are slow.
+   for (let remaining = dt; remaining > 0; remaining -= 1/60) simulate(Math.min(remaining, 1/60));
+   if (screen === 'playing' || sceneDirty) {
+@@ -659,7 +665,24 @@ function frame(now) {
+ window.addEventListener('resize', () => { world.resize(); sceneDirty = true; refresh(); });
+ document.addEventListener('visibilitychange', () => { if (document.hidden) { if (screen === 'playing' || screen === 'calibration') setScreen('pause'); save(); } });
+ window.addEventListener('pagehide', save);
++function labPlanetStep(controls,dt){return testLab?testLab.step(controls,dt):planetRuntime?.step(controls,dt);}
++if(labMode){
++  testLab=createTestLab({planet:planetRuntime,context:()=>({player,mobility}),serialize:serializeGame,
++    runtime:()=>expeditionRuntime,link:()=>expeditionLink,queries:expeditionQueries,
++    ready:()=>screen==='playing'&&!expeditionBlocked(),
++    block(value){labPanelOpen=value;input.clear();updateControlGate(false);},
++    afterMove(){dash.active=false;dash.remaining=0;clearMobilityInput(mobility);player.spaceHoldTime=0;lookControl=createLookControl();resetLocomotion();input.clear();sceneDirty=true;save();updateMap();refresh();},
++    inventory(){expeditionAction({type:'menu',open:true});},
++    shutdown(){screen='menu';++expeditionEpoch;expeditionRuntime?.destroy();expeditionRuntime=null;},
++  });
++  document.querySelector('#start-button').firstChild.textContent='新建元婴测试档 ';
++  document.querySelector('#continue-button').firstChild.textContent='继续元婴测试档 ';
++  document.querySelector('.save-notice').textContent='独立元婴测试档 · 已完成调查 / 开放飞行 · 正式进度保持隔离';
++  document.querySelector('#game-title').textContent='元婴测试实验室';
++  window.__STAR_ABYSS_LAB__=Object.freeze({snapshot:()=>({lab:testLab.snapshot(),game:structuredClone(serializeGame()),root:expeditionRuntime?.snapshot(),planet:planetRuntime.snapshot(),loading:expeditionLoading,error:expeditionError}),show:()=>testLab.show()});
++}
+ setScreen('menu'); world.resize(); requestAnimationFrame(frame);
++if(labMode)continueGame();
+ 
+ // Read-only evidence for an explicitly requested local development preview.
+ if(new URLSearchParams(location.search).has('expeditionDebug')&&['localhost','127.0.0.1'].includes(location.hostname)){

@@ -1,0 +1,215 @@
+{
+  "date": "2026-09-29",
+  "workspace": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game",
+  "approval": "User approved proceeding from the four generated references in this chat; no new paid generation.",
+  "scope": [
+    "walk",
+    "jog",
+    "sprint",
+    "necessary gait runtime integration"
+  ],
+  "production": [
+    {
+      "file": "godot/assets/motion-r2/source/c2-motion-r2.blend",
+      "bytes": 20864895,
+      "sha256": "c9e9eecf8ba480a8f7f7d5b2346290946ec177c40aee7685b0b479915927866f"
+    },
+    {
+      "file": "godot/assets/motion-r2/c2-motion-r2.glb",
+      "bytes": 15868568,
+      "sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05"
+    },
+    {
+      "file": "godot/assets/motion-r2/c2-motion-r2.glb.import",
+      "bytes": 1060,
+      "sha256": "e79a65a0e40acd31b7ebfecf21bc5ba2ecefafdc2839df11bfac4285582a937d"
+    },
+    {
+      "file": "godot/assets/motion-r2/clips.json",
+      "bytes": 1866,
+      "sha256": "4b05ab3aa5a10367ac247fced90b7a7115a514b6a0350ef5659f4daa16dc91c7"
+    },
+    {
+      "file": "godot/assets/motion-r2/gait_r6.py",
+      "bytes": 7002,
+      "sha256": "25c3dfd4169c590d4af81e69866ec1ba6bfddb22331315d25d95501ce8e44862"
+    },
+    {
+      "file": "godot/assets/motion-r2/build_gait_r6.py",
+      "bytes": 12790,
+      "sha256": "b7e9610024d0eec82af57cc0c1b5f0c32df14c82f52aaecff721220244b55031"
+    },
+    {
+      "file": "godot/scripts/native_motion_r2.gd",
+      "bytes": 20785,
+      "sha256": "9a0dedd259116c87af95c1f2e40b5235417259d74d4819b24aaba5033989a4d0"
+    },
+    {
+      "file": "godot/assets/motion-r2/gait-r6/sole_points.gd",
+      "bytes": 32514,
+      "sha256": "932721647c6af23792ffa10a33d02f08562297bb0995e935e4124d705fdb7ff4"
+    },
+    {
+      "file": "godot/assets/motion-r2/gait-r6/preview.html",
+      "bytes": 7703,
+      "sha256": "dfe5bcdf77b782a438f39a5403c5e8887371fe65ea3fff048cc508fb1b8e0b4a"
+    },
+    {
+      "file": "godot/assets/motion-r2/gait-r6/preview.mjs",
+      "bytes": 7869,
+      "sha256": "e1ad7ba160457ce896f3e5e5e3fefccebe24c034f0ed5feff66e18cf34e87ace"
+    }
+  ],
+  "preservedControllerFiles": [
+    {
+      "file": "godot/scripts/native_player.gd",
+      "sha256": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+      "unchanged": true
+    },
+    {
+      "file": "godot/scripts/native_main.gd",
+      "sha256": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+      "unchanged": true
+    },
+    {
+      "file": "godot/project.godot",
+      "sha256": "103630ed45b0568168c7a091808b5ce8843602d932fabb8deb123dde92b13ecf",
+      "unchanged": true
+    }
+  ],
+  "evidence": {
+    "independent": "independent/FINAL_REPORT.md",
+    "views": "../evidence/gait-r6/final/",
+    "gpuSamples": 57,
+    "verticesPerGpuSample": 91207,
+    "adapterRegression": {
+      "path": "../evidence/gait-r6/regression/report.json",
+      "frames": 1537,
+      "failures": [],
+      "pending": []
+    },
+    "fullWorld": {
+      "path": "../evidence/gait-r6/world-final/",
+      "frames": 604,
+      "seconds": 10.0666666666667,
+      "wallSeconds": 10.124624,
+      "stages": [
+        {
+          "stage": "idle",
+          "n": 25,
+          "minSpeed": 0,
+          "maxSpeed": 0,
+          "clips": [
+            "idle"
+          ],
+          "last": 0,
+          "aglMax": 0
+        },
+        {
+          "stage": "walk",
+          "n": 145,
+          "minSpeed": 0.466666668653488,
+          "maxSpeed": 1.60000026226044,
+          "clips": [
+            "walk"
+          ],
+          "last": 1.60000002384186,
+          "aglMax": 0.000944218190852553
+        },
+        {
+          "stage": "jog",
+          "n": 121,
+          "minSpeed": 2.06666660308838,
+          "maxSpeed": 6.80000066757202,
+          "clips": [
+            "walk",
+            "jog"
+          ],
+          "last": 6.80000019073486,
+          "aglMax": 0.000942155660595745
+        },
+        {
+          "stage": "sprint",
+          "n": 121,
+          "minSpeed": 7.26666641235352,
+          "maxSpeed": 10.0000009536743,
+          "clips": [
+            "jog",
+            "sprint"
+          ],
+          "last": 10,
+          "aglMax": 0.000941912934649736
+        },
+        {
+          "stage": "stop",
+          "n": 36,
+          "minSpeed": 0,
+          "maxSpeed": 9.53333282470703,
+          "clips": [
+            "sprint",
+            "jog",
+            "walk",
+            "idle"
+          ],
+          "last": 0,
+          "aglMax": 0.000936669239308685
+        },
+        {
+          "stage": "backward",
+          "n": 60,
+          "minSpeed": 0.466666668653488,
+          "maxSpeed": 1.60000002384186,
+          "clips": [
+            "walk"
+          ],
+          "last": 1.60000002384186,
+          "aglMax": 0.00093999516684562
+        },
+        {
+          "stage": "strafe",
+          "n": 60,
+          "minSpeed": 1.14857256412506,
+          "maxSpeed": 1.60000002384186,
+          "clips": [
+            "walk"
+          ],
+          "last": 1.60000002384186,
+          "aglMax": 0.000931378977838904
+        },
+        {
+          "stage": "stop-final",
+          "n": 36,
+          "minSpeed": 0,
+          "maxSpeed": 1.13333332538605,
+          "clips": [
+            "walk",
+            "idle"
+          ],
+          "last": 0,
+          "aglMax": 0.000823536771349609
+        }
+      ],
+      "syntheticInput": true
+    },
+    "excluded": [
+      "candidate1 intermediate rejected",
+      "world initial duplicated physics fixture invalid"
+    ]
+  },
+  "limits": [
+    "No stable shoe material-point horizontal slip measurement",
+    "No human keyboard playtest or slope/turn gait acceptance"
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:8766/godot/assets/motion-r2/gait-r6/preview.html",
+    "proof": "preview-verified.jpg",
+    "verified": [
+      "actual production GLB loaded and rendered",
+      "walk/jog/sprint status and pose changes",
+      "front/back/side views via keyboard activation",
+      "pause/resume status",
+      "Chinese labels and visible controls at current viewport"
+    ],
+    "notes": "Pointer automation did not reliably hit expected button in IAB; keyboard activation and DOM center hit target were checked. No claim of full pointer or mobile acceptance."
+  }
+}

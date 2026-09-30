@@ -1,0 +1,1 @@
+const fs=require('fs');const s=fs.readFileSync('playable/game.js','utf8');for(const m of s.matchAll(/antialias:/g)){console.log(JSON.stringify({offset:m.index,snippet:s.slice(Math.max(0,m.index-130),m.index+150)}));}

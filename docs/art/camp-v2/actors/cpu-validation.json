@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "name": "N01",
+      "vertices": 16519,
+      "bones": 12,
+      "movedLegVertices": 4670,
+      "maxDisplacement": 0.1464518152128811,
+      "invalidWeights": 0,
+      "stopped": 1.5690047232007587e-16
+    },
+    {
+      "name": "N03",
+      "vertices": 16777,
+      "bones": 12,
+      "movedLegVertices": 6249,
+      "maxDisplacement": 0.14849102432504732,
+      "invalidWeights": 0,
+      "stopped": 1.5690047232007587e-16
+    },
+    {
+      "name": "N04",
+      "vertices": 17256,
+      "bones": 12,
+      "movedLegVertices": 5005,
+      "maxDisplacement": 0.1471524488267513,
+      "invalidWeights": 0,
+      "stopped": 1.5690047232007587e-16
+    },
+    {
+      "name": "N05",
+      "vertices": 16309,
+      "bones": 12,
+      "movedLegVertices": 5536,
+      "maxDisplacement": 0.1493427259072145,
+      "invalidWeights": 0,
+      "stopped": 1.5690047232007587e-16
+    },
+    {
+      "name": "SuHe",
+      "vertices": 17954,
+      "bones": 12,
+      "movedLegVertices": 4331,
+      "maxDisplacement": 0.1445724428360097,
+      "invalidWeights": 0,
+      "stopped": 1.5690047232007587e-16
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "terrain_r3_independent_adapters.json": "fb94df5b6bb2b16aae6c96d2caf7485529b2f82b2e07fdca858688388d309699",
+  "terrain_r3_independent_capture.py": "f777098cbb1a1e42eeab6ebdac6fdbb3e4e87eca25ee5b8998bafbd651b0be09",
+  "terrain_r3_independent_compat.gd": "4e86dfe08098062adcc84cd176a761a5b1c0110477f8c8a150e12388c0180ebb",
+  "terrain_r3_independent_compat.gd.uid": "8a12bdf45913009ef5a0aef9f358b386b22c2bcc51a970b9a41447dab925e44c",
+  "terrain_r3_independent_edge.gd": "3e040eb6504b0e5de9bb8229595d93a76c7ae1573515dc857d30905d56b736c6",
+  "terrain_r3_independent_flight.gd": "973df4cec700fd765151d4655f09faeb57753e0b233615b5414a5af48cfa4f93",
+  "terrain_r3_independent_main.gd": "b7891909044c3f5ba998e77a271fc838f177bfb0cbc9cc6aec654d3092494ca7",
+  "terrain_r3_independent_main.gd.uid": "e5147e765f5d143ed1e0bc54904f8840d285f69b4e1252253b40e1f97130d853",
+  "terrain_r3_independent_prepare.py": "0d983972e144612ba26c5a989e13cef2ca5e609f9dc48cef0f2a91a40c5fcbda",
+  "terrain_r3_independent_seams.gd": "bb4124df4c33ee239eb7fa77682864e69b4c972817d81e45943a6eeaae632b5d",
+  "terrain_r3_independent_ui.gd": "c6f5ad51d509a1072269547b7ead9d13b9b6097bcb1a59b10402e30b7f94862c",
+  "terrain_r3_independent_vehicle.gd": "43f424519b869e49eee70309cc32baca922c6a1e0c33e0513ed0498233fac881"
+}

@@ -1,0 +1,6 @@
+{
+  "scripts/native_planet_ecology.gd": "c2d4ac153d539a5ecfbb9b92e4ce91a252cbdb7c275f36ee40cb71c13fd4b081",
+  "scripts/native_environment_damage.gd": "427103b3f21e95d95bf6221bda8cd7ef9717778204e6423ebc290a0deda24c27",
+  "scripts/native_environment_damage_assets.gd": "c1217046e3d4082a93ca1d2aae2e3340b1fcbbf81549e8708d24921c8d5a4607",
+  "assets/planet-ecology-r4/manifest.json": "3a8a01b78a33ea452b7db88c0a4e3a86be86d58bbaaba872e4a8919cd7ca1221"
+}

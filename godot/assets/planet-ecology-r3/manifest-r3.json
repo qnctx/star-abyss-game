@@ -1,0 +1,176 @@
+[
+  {
+    "asset": "tree-0",
+    "triangles": 76400,
+    "reference": "05-forest.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "capsule",
+      "radius": 1.15,
+      "height": 12
+    }
+  },
+  {
+    "asset": "tree-1",
+    "triangles": 7040,
+    "reference": "05-forest.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "capsule",
+      "radius": 1.15,
+      "height": 12
+    }
+  },
+  {
+    "asset": "tree-2",
+    "triangles": 1254,
+    "reference": "05-forest.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "capsule",
+      "radius": 1.15,
+      "height": 12
+    }
+  },
+  {
+    "asset": "reed-0",
+    "triangles": 1064,
+    "reference": "06-river-wetland.png",
+    "collision": {
+      "type": "none"
+    }
+  },
+  {
+    "asset": "reed-1",
+    "triangles": 608,
+    "reference": "06-river-wetland.png",
+    "collision": {
+      "type": "none"
+    }
+  },
+  {
+    "asset": "reed-2",
+    "triangles": 304,
+    "reference": "06-river-wetland.png",
+    "collision": {
+      "type": "none"
+    }
+  },
+  {
+    "asset": "pebble-0",
+    "triangles": 190,
+    "reference": "05-forest.png;06-river-wetland.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "pebble-1",
+    "triangles": 120,
+    "reference": "05-forest.png;06-river-wetland.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "pebble-2",
+    "triangles": 80,
+    "reference": "05-forest.png;06-river-wetland.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "outcrop-0",
+    "triangles": 12800,
+    "reference": "02-basalt-basin.png;04-mountains-canyon-cliffs.png;08-ocean-islands.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "outcrop-1",
+    "triangles": 5120,
+    "reference": "02-basalt-basin.png;04-mountains-canyon-cliffs.png;08-ocean-islands.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "outcrop-2",
+    "triangles": 2560,
+    "reference": "02-basalt-basin.png;04-mountains-canyon-cliffs.png;08-ocean-islands.png",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "crystal-0",
+    "triangles": 12890,
+    "reference": "12-special-regions.png lower-left",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "crystal-1",
+    "triangles": 5210,
+    "reference": "12-special-regions.png lower-left",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "crystal-2",
+    "triangles": 2650,
+    "reference": "12-special-regions.png lower-left",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "floatrock-0",
+    "triangles": 704,
+    "reference": "12-special-regions.png lower-right",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "floatrock-1",
+    "triangles": 176,
+    "reference": "12-special-regions.png lower-right",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "floatrock-2",
+    "triangles": 44,
+    "reference": "12-special-regions.png lower-right",
+    "collision": {
+      "type": "convex_mesh"
+    }
+  },
+  {
+    "asset": "grass-0",
+    "triangles": 500,
+    "reference": "03-basin-to-plains.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "none"
+    }
+  },
+  {
+    "asset": "grass-1",
+    "triangles": 200,
+    "reference": "03-basin-to-plains.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "none"
+    }
+  },
+  {
+    "asset": "grass-2",
+    "triangles": 60,
+    "reference": "03-basin-to-plains.png;09-natural-ecotones.png",
+    "collision": {
+      "type": "none"
+    }
+  }
+]

@@ -1,0 +1,84 @@
+{
+	"clips": [
+		{
+			"flight_active": false,
+			"frames": 60,
+			"health_after_guarded_hit": 155520.0,
+			"health_after_unblocked_hit": 155520.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 40.0)",
+			"name": "combo-front",
+			"observed_actions": [
+				"left-jab",
+				"right-cross",
+				"rising-kick"
+			]
+		},
+		{
+			"flight_active": false,
+			"frames": 60,
+			"health_after_guarded_hit": 155520.0,
+			"health_after_unblocked_hit": 155520.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 40.0)",
+			"name": "combo-side",
+			"observed_actions": [
+				"left-jab",
+				"right-cross",
+				"rising-kick"
+			]
+		},
+		{
+			"flight_active": false,
+			"frames": 60,
+			"health_after_guarded_hit": 155520.0,
+			"health_after_unblocked_hit": 155520.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 40.0)",
+			"name": "combo-three-quarter",
+			"observed_actions": [
+				"left-jab",
+				"right-cross",
+				"rising-kick"
+			]
+		},
+		{
+			"flight_active": false,
+			"frames": 42,
+			"health_after_guarded_hit": 155520.0,
+			"health_after_unblocked_hit": 155520.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 36.1035)",
+			"name": "moving-jab-three-quarter",
+			"observed_actions": [
+				"left-jab"
+			]
+		},
+		{
+			"flight_active": false,
+			"frames": 48,
+			"health_after_guarded_hit": 155270.0,
+			"health_after_unblocked_hit": 154270.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 35.2569)",
+			"name": "guard-and-hit-side",
+			"observed_actions": []
+		},
+		{
+			"flight_active": true,
+			"frames": 48,
+			"health_after_guarded_hit": 155520.0,
+			"health_after_unblocked_hit": 155520.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 4.0, 40.0)",
+			"name": "air-melee-three-quarter",
+			"observed_actions": [
+				"left-jab",
+				"right-cross"
+			]
+		}
+	],
+	"fps": 30,
+	"isolated_slot": "user://star_abyss_combat_verify.json",
+	"main_scene": "res://scenes/main.tscn"
+}

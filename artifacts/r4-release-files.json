@@ -1,0 +1,14 @@
+[
+ "playable/game.js",
+ "playable/star-abyss.html",
+ "playable/src/flight-hud.mjs",
+ "playable/src/input.mjs",
+ "playable/src/main.mjs",
+ "playable/src/planet-gameplay/index.mjs",
+ "playable/src/planet-runtime.mjs",
+ "playable/src/test-lab.mjs",
+ "playable/src/ui.mjs",
+ "playable/tests/flight-hud-r2.test.mjs",
+ "playable/tests/input.test.js",
+ "docs/development/FLIGHT-CONTROLS-R4.md"
+]

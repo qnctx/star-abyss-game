@@ -1,0 +1,6289 @@
+{
+  "version": 1,
+  "coordinate_contract": {
+    "units": "metres",
+    "axes": "glTF right-handed, Y up, character forward -Z",
+    "local_definition": "Each term.local is the original glTF inverseBindMatrix[joint] multiplied by the original mesh-local POSITION, with homogeneous w=1. Do not multiply by mesh or ankle rest again.",
+    "evaluation": "For each probe: p_skeleton = sum(weight * (Skeleton3D.get_bone_global_pose(find_bone(bone)) * Vector3(local))). Then p_world = skeleton.global_transform * p_skeleton. Compare world.y to the actual floor plane.",
+    "godot_mapping_status": "Algebraic joint-local mapping; not yet cross-validated in Godot for this payload. Validate several probes against GPU-baked vertices using provenance before enabling a runtime correction. Import basis/scale and skeleton wrapper must match; metadata includes GLB transforms.",
+    "normalization": "All nonzero original weights are retained; no renormalization or animated-X side reclassification.",
+    "scope": "Conservative finite sample set for floor-depth correction, not a foot orientation or exact continuous collision system."
+  },
+  "sources": [
+    {
+      "file": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\assets\\motion-r2\\source\\gait-r6-before\\c2-motion-r2.glb",
+      "sha256": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430"
+    },
+    {
+      "file": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\assets\\motion-r2\\c2-motion-r2.glb",
+      "sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05"
+    }
+  ],
+  "skin_frames": [
+    {
+      "mesh_node": "C2_AmberSpineChannel",
+      "mesh_bind_global": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_skeleton": null,
+      "joint_roots": [
+        {
+          "name": "pelvis",
+          "global": [
+            0.9999999999999994,
+            -8.786949861316075e-16,
+            -3.4228545331416165e-8,
+            0,
+            2.9289832837920164e-16,
+            0.9999999999999999,
+            -1.7114272665708096e-8,
+            0,
+            3.422854533141618e-8,
+            1.7114272665708076e-8,
+            0.9999999999999992,
+            0,
+            0,
+            0.9300000071525574,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "mesh_node": "C2_ArticulatedGloveL",
+      "mesh_bind_global": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_skeleton": null,
+      "joint_roots": [
+        {
+          "name": "pelvis",
+          "global": [
+            0.9999999999999994,
+            -8.786949861316075e-16,
+            -3.4228545331416165e-8,
+            0,
+            2.9289832837920164e-16,
+            0.9999999999999999,
+            -1.7114272665708096e-8,
+            0,
+            3.422854533141618e-8,
+            1.7114272665708076e-8,
+            0.9999999999999992,
+            0,
+            0,
+            0.9300000071525574,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "mesh_node": "C2_ArticulatedGloveR",
+      "mesh_bind_global": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_skeleton": null,
+      "joint_roots": [
+        {
+          "name": "pelvis",
+          "global": [
+            0.9999999999999994,
+            -8.786949861316075e-16,
+            -3.4228545331416165e-8,
+            0,
+            2.9289832837920164e-16,
+            0.9999999999999999,
+            -1.7114272665708096e-8,
+            0,
+            3.422854533141618e-8,
+            1.7114272665708076e-8,
+            0.9999999999999992,
+            0,
+            0,
+            0.9300000071525574,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "mesh_node": "C2_AsymmetricRearShell",
+      "mesh_bind_global": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_skeleton": null,
+      "joint_roots": [
+        {
+          "name": "pelvis",
+          "global": [
+            0.9999999999999994,
+            -8.786949861316075e-16,
+            -3.4228545331416165e-8,
+            0,
+            2.9289832837920164e-16,
+            0.9999999999999999,
+            -1.7114272665708096e-8,
+            0,
+            3.422854533141618e-8,
+            1.7114272665708076e-8,
+            0.9999999999999992,
+            0,
+            0,
+            0.9300000071525574,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "mesh_node": "C2_OriginalProportions",
+      "mesh_bind_global": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "skin_skeleton": null,
+      "joint_roots": [
+        {
+          "name": "pelvis",
+          "global": [
+            0.9999999999999994,
+            -8.786949861316075e-16,
+            -3.4228545331416165e-8,
+            0,
+            2.9289832837920164e-16,
+            0.9999999999999999,
+            -1.7114272665708096e-8,
+            0,
+            3.422854533141618e-8,
+            1.7114272665708076e-8,
+            0.9999999999999992,
+            0,
+            0,
+            0.9300000071525574,
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "sampling": {
+    "full_cycle_phases_per_gait": 120,
+    "transition_gait_phases": 30,
+    "transition_idle_phases": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "transition_gait_weights": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "both_transition_directions": "Same local-transform interpolation family, traversed in reverse.",
+    "sampled_poses": 7200,
+    "includes_current_candidate_only": true
+  },
+  "counts": {
+    "L": {
+      "unique_below_cuff_vertices": 1138,
+      "mandatory_lowest_vertices": 10,
+      "selected": 96
+    },
+    "R": {
+      "unique_below_cuff_vertices": 1209,
+      "mandatory_lowest_vertices": 11,
+      "selected": 96
+    }
+  },
+  "sampled_pose_coverage": {
+    "L": {
+      "max_probe_overestimate": 0,
+      "worst": null
+    },
+    "R": {
+      "max_probe_overestimate": 0,
+      "worst": null
+    }
+  },
+  "points": {
+    "L": [
+      {
+        "id": "55:0:45389",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45389
+        },
+        "rest_global": [
+          -0.11780183762311935,
+          0.0022488762624561787,
+          0.14755183458328247
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5107263922691345,
+            "local": [
+              0.03719728467914507,
+              -0.02365951347146783,
+              -0.17630528921546534
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4892736077308655,
+            "local": [
+              0.03782191391183462,
+              0.5378630130322105,
+              -0.09027632695646776
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45365",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45365
+        },
+        "rest_global": [
+          -0.12222913652658463,
+          0.0005995001411065459,
+          0.050422608852386475
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6054694652557373,
+            "local": [
+              0.03277042599046397,
+              0.059925094299563754,
+              -0.12680460725442363
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3945305049419403,
+            "local": [
+              0.034683307593191284,
+              0.5244025817442393,
+              0.005979937217336792
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45419",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45419
+        },
+        "rest_global": [
+          -0.10894784331321716,
+          0.0009264757391065359,
+          -0.08460215479135513
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.046052268711371525,
+              0.17474743328326572,
+              -0.055759850718643714
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39234",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39234
+        },
+        "rest_global": [
+          -0.11134964227676392,
+          0.004338053986430168,
+          -0.11868235468864441
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.04365062708774019,
+              0.20198385070698482,
+              -0.03499293899814049
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45416",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45416
+        },
+        "rest_global": [
+          -0.12080955505371094,
+          0.01278322096914053,
+          -0.14804387092590332
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.03419087385928968,
+              0.22256356450174553,
+              -0.012412155434197852
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39240",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39240
+        },
+        "rest_global": [
+          -0.13062091171741486,
+          0.02086341194808483,
+          -0.1711808145046234
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.024379650559519295,
+              0.23803340890922708,
+              0.006595502943330417
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45427",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45427
+        },
+        "rest_global": [
+          -0.14884643256664276,
+          0.035579048097133636,
+          -0.19675804674625397
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.0061543011078357135,
+              0.2521039679685096,
+              0.03253328383553544
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55939",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55939
+        },
+        "rest_global": [
+          -0.16195401549339294,
+          0.04726820066571236,
+          -0.20448346436023712
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.006953205308557114,
+              0.25255715653512983,
+              0.04653738705191751
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45367",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45367
+        },
+        "rest_global": [
+          -0.09347305446863174,
+          0.0011322901118546724,
+          0.047898031771183014
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6281282305717468,
+            "local": [
+              0.061526426585781446,
+              0.06179559299374575,
+              -0.12502791707165153
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3718717694282532,
+            "local": [
+              0.06345825614910007,
+              0.523109005541217,
+              0.007952740755431988
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45425",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45425
+        },
+        "rest_global": [
+          -0.1958579570055008,
+          0.0483967624604702,
+          -0.20324920117855072
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.040857043067271975,
+              0.2509148932073542,
+              0.0468518830388015
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45369",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45369
+        },
+        "rest_global": [
+          -0.0848097875714302,
+          0.0024955044500529766,
+          0.08063347637653351
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5752686858177185,
+            "local": [
+              0.0701895220662473,
+              0.0332018872672496,
+              -0.1410236074244828
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4247313141822815,
+            "local": [
+              0.07167345889581256,
+              0.5267550129790147,
+              -0.024723375130398628
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:43620",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 43620
+        },
+        "rest_global": [
+          -0.08947370201349258,
+          0.003303322708234191,
+          0.11478391289710999
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5339779853820801,
+            "local": [
+              0.06552547287583886,
+              0.0036943367185441195,
+              -0.15823381096300507
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4660220444202423,
+            "local": [
+              0.0665542428919614,
+              0.5313434080971234,
+              -0.05850769702885575
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:43622",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 43622
+        },
+        "rest_global": [
+          -0.10206958651542664,
+          0.006360383704304695,
+          0.13572369515895844
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5172107815742493,
+            "local": [
+              0.05292953718413247,
+              -0.01574110303353289,
+              -0.16660468797634748
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4827892482280731,
+            "local": [
+              0.05364220897433164,
+              0.5317531752921973,
+              -0.07947378918617987
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55282",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55282
+        },
+        "rest_global": [
+          -0.14418929815292358,
+          0.005985449068248272,
+          0.15805178880691528
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5066865086555481,
+            "local": [
+              0.010809863166197503,
+              -0.034559851990697055,
+              -0.17862585829024424
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4933135211467743,
+            "local": [
+              0.011246497952675516,
+              0.5361527844885439,
+              -0.10082719552495564
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55284",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55284
+        },
+        "rest_global": [
+          -0.17263059318065643,
+          0.00732596917077899,
+          0.15581461787223816
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5093074440956116,
+            "local": [
+              -0.017631330456236743,
+              -0.03335681688955394,
+              -0.17631150742060503
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4906926155090332,
+            "local": [
+              -0.017180311065775916,
+              0.5348494592585801,
+              -0.09839349982626189
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45384",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45384
+        },
+        "rest_global": [
+          -0.21126805245876312,
+          0.0037156834732741117,
+          0.13221600651741028
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5279400944709778,
+            "local": [
+              -0.05626856200087968,
+              -0.011366466334289532,
+              -0.1670179545234684
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.472059965133667,
+            "local": [
+              -0.055448216914047416,
+              0.5352371788478626,
+              -0.07393540470505708
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:60773",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 60773
+        },
+        "rest_global": [
+          -0.22487108409404755,
+          0.009381518699228764,
+          0.10871550440788269
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.559026837348938,
+            "local": [
+              -0.06987144656368444,
+              0.005678414289661732,
+              -0.1498759292295165
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.440973162651062,
+            "local": [
+              -0.06882912770167793,
+              0.5261530684736551,
+              -0.0513999726858001
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62233",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62233
+        },
+        "rest_global": [
+          -0.25563663244247437,
+          0.01100415550172329,
+          -0.0711875930428505
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9875165820121765,
+            "local": [
+              -0.10063610674024592,
+              0.15804282480120835,
+              -0.05420672118762186
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.012483447790145874,
+            "local": [
+              -0.0972742962201999,
+              0.49689482956714637,
+              0.12650114387281491
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62211",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62211
+        },
+        "rest_global": [
+          -0.24094997346401215,
+          0.023898174986243248,
+          -0.1491517871618271
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.08594915258633926,
+              0.21768309178076808,
+              -0.002364583554551422
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45422",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45422
+        },
+        "rest_global": [
+          -0.21928595006465912,
+          0.042988426983356476,
+          -0.19160401821136475
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.06428501199976933,
+              0.24383205407859598,
+              0.03614276994298743
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45432",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45432
+        },
+        "rest_global": [
+          -0.14343616366386414,
+          0.0402664914727211,
+          -0.19400626420974731
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.011564540702084347,
+              0.2473036521613725,
+              0.035083127139125314
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62222",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62222
+        },
+        "rest_global": [
+          -0.20968878269195557,
+          0.11164065450429916,
+          0.006498248782008886
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8389767408370972,
+            "local": [
+              -0.0546887418657184,
+              0.03913734339623626,
+              -0.00921449803086391
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.1610233187675476,
+            "local": [
+              -0.0538761249557588,
+              0.4090160228323003,
+              0.0333996451533988
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55946",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55946
+        },
+        "rest_global": [
+          -0.17656631767749786,
+          0.09851440787315369,
+          -0.0877985805273056
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.021565970348070895,
+              0.1263243741056349,
+              0.029027137163843197
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53172",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53172
+        },
+        "rest_global": [
+          -0.12842410802841187,
+          0.09963243454694748,
+          -0.015233220532536507
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9309288859367371,
+            "local": [
+              0.02657576610493742,
+              0.06393757852609114,
+              -0.008052460468430542
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.06907114386558533,
+            "local": [
+              0.027837139007965805,
+              0.41643140759523656,
+              0.05549663175436903
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:54228",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 54228
+        },
+        "rest_global": [
+          -0.17238277196884155,
+          0.10525940358638763,
+          0.09925961494445801
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.537573516368866,
+            "local": [
+              -0.017686591289471698,
+              0.4292997698245278,
+              -0.0577922697070109
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.4624265134334564,
+            "local": [
+              -0.017383258324162904,
+              -0.03651887420246824,
+              -0.06326553497062364
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45363",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45363
+        },
+        "rest_global": [
+          -0.23098024725914001,
+          0.008501274511218071,
+          0.04151627793908119
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6850359439849854,
+            "local": [
+              -0.0759802953503563,
+              0.06337004967631418,
+              -0.11540649023528324
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.31496408581733704,
+            "local": [
+              -0.07405005138833959,
+              0.5166223292762684,
+              0.015201022762395211
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45407",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45407
+        },
+        "rest_global": [
+          -0.17361919581890106,
+          0.017356673255562782,
+          -0.02954600565135479
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9201605319976807,
+            "local": [
+              -0.018619116512500672,
+              0.1192484770167005,
+              -0.07062143707344086
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.07983951270580292,
+            "local": [
+              -0.015911505989274044,
+              0.49604874149914185,
+              0.08313512416807375
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39308",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39308
+        },
+        "rest_global": [
+          -0.10022223740816116,
+          0.11704253405332565,
+          0.07156664878129959
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.500222384929657,
+            "local": [
+              0.054640089073708695,
+              0.41240553540104063,
+              -0.03337414640868443
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.499777615070343,
+            "local": [
+              0.05477716588338841,
+              -0.019110527217732737,
+              -0.03871698802335195
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55273",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55273
+        },
+        "rest_global": [
+          -0.1339612901210785,
+          0.11308936029672623,
+          0.14595772325992584
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.5612501502037048,
+            "local": [
+              0.020000911651686798,
+              0.42834947029402437,
+              -0.10571904945736404
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.4387498199939728,
+            "local": [
+              0.02103789532428285,
+              -0.08039345058364411,
+              -0.08107180930836998
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56166",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56166
+        },
+        "rest_global": [
+          -0.1784956306219101,
+          0.02960219234228134,
+          -0.13713455200195312
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.023495063259718507,
+              0.20445842615415827,
+              -0.0038053673545905
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45345",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45345
+        },
+        "rest_global": [
+          -0.1769898235797882,
+          0.006819271948188543,
+          0.07521959394216537
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5470284819602966,
+            "local": [
+              -0.02199019333901578,
+              0.03554755465529166,
+              -0.13450321967803786
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.45297151803970337,
+            "local": [
+              -0.020483189207955166,
+              0.5228380021824841,
+              -0.018646639362468284
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45398",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45398
+        },
+        "rest_global": [
+          -0.24131862819194794,
+          0.019561080262064934,
+          -0.015282666310667992
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9135398268699646,
+            "local": [
+              -0.0863183934639902,
+              0.10594652415352418,
+              -0.07621899459678647
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.0864601656794548,
+            "local": [
+              -0.08381611256420496,
+              0.49697548937294694,
+              0.06973466777662338
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56008",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56008
+        },
+        "rest_global": [
+          -0.17924630641937256,
+          0.11643905192613602,
+          -0.03619649261236191
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9684427380561829,
+            "local": [
+              -0.02424617613073579,
+              0.07298313416356951,
+              0.017248160817995586
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.031557295471429825,
+            "local": [
+              -0.022957768513049093,
+              0.3972230614698984,
+              0.07435744300630409
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56976",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56976
+        },
+        "rest_global": [
+          -0.1968233585357666,
+          0.01290069054812193,
+          -0.07518762350082397
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.999636709690094,
+            "local": [
+              -0.041823004517241996,
+              0.16045481591774707,
+              -0.050495507022646074
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.00036331656156107783,
+            "local": [
+              -0.03844982942253938,
+              0.49363366090918886,
+              0.12926133650037366
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53060",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53060
+        },
+        "rest_global": [
+          -0.13246789574623108,
+          0.041226163506507874,
+          0.0967571809887886
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5010343790054321,
+            "local": [
+              0.022531498011172046,
+              -0.000828159269706516,
+              -0.11648853423849279
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.49896565079689026,
+            "local": [
+              0.023226454735482627,
+              0.4916352219760173,
+              -0.04595517404592525
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39229",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39229
+        },
+        "rest_global": [
+          -0.11176552623510361,
+          0.018973946571350098,
+          -0.03257550299167633
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9394189715385437,
+            "local": [
+              0.043234367334256965,
+              0.12098024121011379,
+              -0.06765673365688461
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.06058107689023018,
+            "local": [
+              0.04594436732933063,
+              0.4931752395888638,
+              0.08493396543317251
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55953",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55953
+        },
+        "rest_global": [
+          -0.22479717433452606,
+          0.08268030732870102,
+          -0.06679253280162811
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9995694160461426,
+            "local": [
+              -0.06979676449449249,
+              0.11673379702440662,
+              0.004533008453933854
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.00043059291783720255,
+            "local": [
+              -0.06758823694893171,
+              0.4263864109037829,
+              0.11052748810340521
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56966",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56966
+        },
+        "rest_global": [
+          -0.15508416295051575,
+          0.02824125811457634,
+          -0.08999907970428467
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.0000838777372439703,
+              0.16502850264559576,
+              -0.029668235614776745
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62285",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62285
+        },
+        "rest_global": [
+          -0.21553412079811096,
+          0.030757581815123558,
+          -0.11383390426635742
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.06053353637968334,
+              0.18400929837407476,
+              -0.015032977650851972
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62216",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62216
+        },
+        "rest_global": [
+          -0.22027061879634857,
+          0.08392442017793655,
+          0.05059928447008133
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.7228946089744568,
+            "local": [
+              -0.06527073838111866,
+              0.016104949027895277,
+              -0.05593242747406173
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.2771053910255432,
+            "local": [
+              -0.06460765116288564,
+              0.44340571382387645,
+              -0.005679999184401624
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:50976",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 50976
+        },
+        "rest_global": [
+          -0.11310181766748428,
+          0.026302136480808258,
+          0.010690562427043915
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8055440187454224,
+            "local": [
+              0.04189789070377416,
+              0.08029198585050837,
+              -0.08409134364813164
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.1944560408592224,
+            "local": [
+              0.04393443532682258,
+              0.4927019115709137,
+              0.04108019632163244
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:51178",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 51178
+        },
+        "rest_global": [
+          -0.141669362783432,
+          0.10184413939714432,
+          -0.05499428138136864
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.013330728463610081,
+              0.09664107930235215,
+              0.014669979892935392
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:60765",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 60765
+        },
+        "rest_global": [
+          -0.17729882895946503,
+          0.1038690060377121,
+          0.1408107876777649
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.5353503823280334,
+            "local": [
+              -0.02312068187217109,
+              0.4372166976200002,
+              -0.09853990058092629
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.46464964747428894,
+            "local": [
+              -0.022299481794642417,
+              -0.07117717004448809,
+              -0.0862265793943867
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:50980",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 50980
+        },
+        "rest_global": [
+          -0.18120086193084717,
+          0.023453393951058388,
+          0.03503212705254555
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6934517025947571,
+            "local": [
+              -0.026201041245462242,
+              0.061055282535038204,
+              -0.0992744308289446
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3065483272075653,
+            "local": [
+              -0.024423878077744043,
+              0.5001964154293329,
+              0.018518838585728614
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39238",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39238
+        },
+        "rest_global": [
+          -0.12272363901138306,
+          0.06828703731298447,
+          -0.10397962480783463
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.03227660486140771,
+              0.15594659257954008,
+              0.011763946085857152
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55959",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55959
+        },
+        "rest_global": [
+          -0.21898628771305084,
+          0.08283507078886032,
+          -0.1446552723646164
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.06398555505031361,
+              0.182964431632103,
+              0.04547257666732257
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62307",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62307
+        },
+        "rest_global": [
+          -0.21256209909915924,
+          0.07104753702878952,
+          0.08829120546579361
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5894423127174377,
+            "local": [
+              -0.05756240929947856,
+              -0.009246663160620006,
+              -0.08665345316760151
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.41055765748023987,
+            "local": [
+              -0.057194886490833485,
+              0.46190173284335617,
+              -0.04101910508078446
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:51169",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 51169
+        },
+        "rest_global": [
+          -0.17055471241474152,
+          0.08131898939609528,
+          -0.17172682285308838
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.0155540169522079,
+              0.2068139613340231,
+              0.05836925281992389
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53082",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53082
+        },
+        "rest_global": [
+          -0.16973666846752167,
+          0.04337576776742935,
+          0.11585348844528198
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5106685161590576,
+            "local": [
+              -0.014737238434552685,
+              -0.018217727747323872,
+              -0.12466592307296781
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.48933151364326477,
+            "local": [
+              -0.014315681193933782,
+              0.4929743754011641,
+              -0.06458365299891086
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:52983",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 52983
+        },
+        "rest_global": [
+          -0.14223268628120422,
+          0.048572294414043427,
+          0.0334797203540802
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.7914402484893799,
+            "local": [
+              0.012767016726447755,
+              0.049212083244491826,
+              -0.07706842830167884
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.20855973660945892,
+            "local": [
+              0.014174564132411194,
+              0.47463854557688656,
+              0.015546797611110275
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53292",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53292
+        },
+        "rest_global": [
+          -0.12274418771266937,
+          0.10548202693462372,
+          0.043374113738536835
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6853304505348206,
+            "local": [
+              0.03225541129502729,
+              0.010958787567609582,
+              -0.03378672015594911
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.31466954946517944,
+            "local": [
+              0.03266503504171199,
+              0.41971971888271903,
+              -0.0033858074056598297
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62230",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62230
+        },
+        "rest_global": [
+          -0.25098806619644165,
+          0.01269568782299757,
+          -0.10751233249902725
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.0959873960662388,
+              0.18809220571010904,
+              -0.033728381573944616
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:57036",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 57036
+        },
+        "rest_global": [
+          -0.20797933638095856,
+          0.03045135736465454,
+          -0.03967154026031494
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9225546717643738,
+            "local": [
+              -0.05297910157979874,
+              0.12100932076202023,
+              -0.05416226378484797
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.0774453729391098,
+            "local": [
+              -0.05033215170120253,
+              0.4819828059969902,
+              0.09161935398524876
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53303",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53303
+        },
+        "rest_global": [
+          -0.14083677530288696,
+          0.036460231989622116,
+          -0.05431672930717468
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9915875196456909,
+            "local": [
+              0.014163307850681622,
+              0.1303318831318324,
+              -0.041369689555036476
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.008412504568696022,
+            "local": [
+              0.016895760888934075,
+              0.4728916524840816,
+              0.10412623045245706
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:58020",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 58020
+        },
+        "rest_global": [
+          -0.19464826583862305,
+          0.0496351420879364,
+          0.005245016887784004
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8205379247665405,
+            "local": [
+              -0.039648270241285144,
+              0.07270171660024498,
+              -0.06136511162771738
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.17946213483810425,
+            "local": [
+              -0.03787945246783617,
+              0.469866750225172,
+              0.04406571666947634
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:52964",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 52964
+        },
+        "rest_global": [
+          -0.1442977786064148,
+          0.04022830352187157,
+          -0.01698833331465721
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8888054490089417,
+            "local": [
+              0.010702152098500811,
+              0.09656633429572165,
+              -0.057724351491673966
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.11119452863931656,
+            "local": [
+              0.012892879945579944,
+              0.4750362279354572,
+              0.06672376035956429
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39195",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39195
+        },
+        "rest_global": [
+          -0.10636088997125626,
+          0.11553474515676498,
+          0.009080139920115471
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.783818244934082,
+            "local": [
+              0.04863880709935732,
+              0.03489641955711015,
+              -0.007251932359610774
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.21618172526359558,
+            "local": [
+              0.04933795836206638,
+              0.40422992698855775,
+              0.028670408636281716
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:54105",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 54105
+        },
+        "rest_global": [
+          -0.13929282128810883,
+          0.10966483503580093,
+          0.11262720823287964
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.574203610420227,
+            "local": [
+              0.015155849310710012,
+              0.426603286941942,
+              -0.07218486375387176
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.42579638957977295,
+            "local": [
+              0.015706527383400587,
+              -0.05021265267323141,
+              -0.0665197919001379
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62223",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62223
+        },
+        "rest_global": [
+          -0.2250133752822876,
+          0.08944808691740036,
+          -0.03331416845321655
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9522839188575745,
+            "local": [
+              -0.07001311133582791,
+              0.08467493821842301,
+              -0.007249158910675832
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.04771610349416733,
+            "local": [
+              -0.06834254109205617,
+              0.42492567178634744,
+              0.07641100958574398
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39211",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39211
+        },
+        "rest_global": [
+          -0.0904402807354927,
+          0.05756092071533203,
+          0.09412959218025208
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5721504092216492,
+            "local": [
+              0.06455898988480606,
+              -0.0071519248685913694,
+              -0.10120011328666562
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4278496205806732,
+            "local": [
+              0.06503127275273818,
+              0.474545848730784,
+              -0.04654374229282644
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62220",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62220
+        },
+        "rest_global": [
+          -0.20407697558403015,
+          0.09829915314912796,
+          0.11656387895345688
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.502692699432373,
+            "local": [
+              -0.04907743608636114,
+              -0.04760781595737987,
+              -0.07826220963278036
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.49730736017227173,
+            "local": [
+              -0.04949346093045237,
+              0.4392846450853284,
+              -0.07331680286693193
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55944",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55944
+        },
+        "rest_global": [
+          -0.20745745301246643,
+          0.08832743018865585,
+          -0.09745389968156815
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.052456964285713725,
+              0.13988669046760496,
+              0.0254118941712905
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39206",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39206
+        },
+        "rest_global": [
+          -0.0934867188334465,
+          0.08080954104661942,
+          0.04682138189673424
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.7441611289978027,
+            "local": [
+              0.06151276996292107,
+              0.020953498758724876,
+              -0.05660608270990865
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.25583887100219727,
+            "local": [
+              0.06224693166196496,
+              0.44424566360798357,
+              -0.0033932100078843813
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53068",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53068
+        },
+        "rest_global": [
+          -0.11296448111534119,
+          0.041340891271829605,
+          0.07124002277851105
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6553459167480469,
+            "local": [
+              0.04203496179456251,
+              0.020843184576198742,
+              -0.10301743307695754
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3446540832519531,
+            "local": [
+              0.04305588674613528,
+              0.4872891597270962,
+              -0.021067260124972453
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:50988",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 50988
+        },
+        "rest_global": [
+          -0.2264440953731537,
+          0.031072290614247322,
+          0.011807598173618317
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8327820301055908,
+            "local": [
+              -0.07144402691405832,
+              0.07684188020486232,
+              -0.08061349605932962
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.16721796989440918,
+            "local": [
+              -0.06947184033004616,
+              0.4896374682932412,
+              0.04095908591038544
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45442",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45442
+        },
+        "rest_global": [
+          -0.11370506882667542,
+          0.0877053439617157,
+          -0.044920630753040314
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.987542450428009,
+            "local": [
+              0.041294887700183816,
+              0.09547171506712063,
+              -0.0026511813685335534
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.01245757844299078,
+            "local": [
+              0.0431205048055608,
+              0.42339063594327586,
+              0.08645169759487564
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53086",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53086
+        },
+        "rest_global": [
+          -0.14404883980751038,
+          0.048411402851343155,
+          0.13799667358398438
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5018603801727295,
+            "local": [
+              0.010950410609328609,
+              -0.039715448478685245,
+              -0.13198269512520852
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4981395900249481,
+            "local": [
+              0.011002474716707511,
+              0.4911201620213864,
+              -0.08762915998505022
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:51064",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 51064
+        },
+        "rest_global": [
+          -0.2117442786693573,
+          0.03539339452981949,
+          0.0648866593837738
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6820626258850098,
+            "local": [
+              -0.05674449017688246,
+              0.029372227069167894,
+              -0.10475219787002105
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3179374039173126,
+            "local": [
+              -0.055530770267204155,
+              0.49345611668409173,
+              -0.01236244929749003
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:43592",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 43592
+        },
+        "rest_global": [
+          -0.10196839272975922,
+          0.05764572322368622,
+          0.12410584837198257
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5218348503112793,
+            "local": [
+              0.05303078351736133,
+              -0.03272552340138052,
+              -0.11683834653350117
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4781651496887207,
+            "local": [
+              0.053114516577323675,
+              0.47928659276330227,
+              -0.07598825290392638
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56948",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56948
+        },
+        "rest_global": [
+          -0.23170574009418488,
+          0.030686739832162857,
+          -0.08647395670413971
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.07670522363331397,
+              0.1607455048977941,
+              -0.029432529997743623
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:57040",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 57040
+        },
+        "rest_global": [
+          -0.24071218073368073,
+          0.016822658479213715,
+          -0.04437156021595001
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9556567072868347,
+            "local": [
+              -0.08571182047075357,
+              0.13215529024007383,
+              -0.06330572349396975
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.044343311339616776,
+            "local": [
+              -0.08278998060630446,
+              0.495135966883783,
+              0.09888227895602461
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:60767",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 60767
+        },
+        "rest_global": [
+          -0.2015463262796402,
+          0.053610652685165405,
+          0.13311035931110382
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5231069922447205,
+            "local": [
+              -0.046546869172037264,
+              -0.03827831429428544,
+              -0.1249934279682751
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.47689300775527954,
+            "local": [
+              -0.046498853502919185,
+              0.4859700704813033,
+              -0.08273772037269292
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45436",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45436
+        },
+        "rest_global": [
+          -0.14900259673595428,
+          0.08694502711296082,
+          -0.10864950716495514
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.005997752899371739,
+              0.1501452983367848,
+              0.030101781680230255
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:54091",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 54091
+        },
+        "rest_global": [
+          -0.12644104659557343,
+          0.015791447833180428,
+          0.12084599584341049
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5020051598548889,
+            "local": [
+              0.028558221155709385,
+              -0.008013077917114003,
+              -0.15077511740637828
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.49799486994743347,
+            "local": [
+              0.029325703754593035,
+              0.5204348469984095,
+              -0.06587740091524022
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45396",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45396
+        },
+        "rest_global": [
+          -0.16756552457809448,
+          0.022484345361590385,
+          -0.0019116370240226388
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8437623381614685,
+            "local": [
+              -0.01256558577421965,
+              0.09302617176923135,
+              -0.08073761911379683
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.1562376320362091,
+            "local": [
+              -0.010296298808019522,
+              0.4952150805133981,
+              0.05495062101946955
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:51099",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 51099
+        },
+        "rest_global": [
+          -0.11960631608963013,
+          0.056103527545928955,
+          -0.06967408955097198
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9984204769134521,
+            "local": [
+              0.035393766824268896,
+              0.13311564898014128,
+              -0.016591731560067907
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.0015795164508745074,
+            "local": [
+              0.03802283276090404,
+              0.450819565868142,
+              0.11591176505009615
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53108",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53108
+        },
+        "rest_global": [
+          -0.11039917171001434,
+          0.04130219295620918,
+          0.037983525544404984
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.736702024936676,
+            "local": [
+              0.044600408810655134,
+              0.04918633760945801,
+              -0.0856207032342525
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.26329800486564636,
+            "local": [
+              0.04605360719503526,
+              0.48210779627285033,
+              0.011746294055875711
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56015",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56015
+        },
+        "rest_global": [
+          -0.19831590354442596,
+          0.08170713484287262,
+          -0.16743940114974976
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.043315137519227775,
+              0.20295946040406232,
+              0.05645297012051925
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45408",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45408
+        },
+        "rest_global": [
+          -0.22960165143013,
+          0.004799780435860157,
+          0.08122487366199493
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6047049164772034,
+            "local": [
+              -0.07460187826592307,
+              0.031492165237034866,
+              -0.13937014142719437
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.39529508352279663,
+            "local": [
+              -0.07313167092196507,
+              0.5264527449626959,
+              -0.023462601501057806
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53039",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53039
+        },
+        "rest_global": [
+          -0.18976984918117523,
+          0.04254330322146416,
+          0.09044115245342255
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.586352527141571,
+            "local": [
+              -0.03477024323635347,
+              0.003861211548286919,
+              -0.11205617638112797
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.41364750266075134,
+            "local": [
+              -0.034001757891266166,
+              0.4900939121610088,
+              -0.03904998995816941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56026",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56026
+        },
+        "rest_global": [
+          -0.19882166385650635,
+          0.09327977150678635,
+          -0.059151791036129
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9997503161430359,
+            "local": [
+              -0.043821370740411175,
+              0.10467106557114897,
+              0.009555419119358519
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.00024970219237729907,
+            "local": [
+              -0.041878531278245035,
+              0.41677156432998475,
+              0.10093473334334346
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:62215",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 62215
+        },
+        "rest_global": [
+          -0.2285747230052948,
+          0.07324421405792236,
+          -0.002462716307491064
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.8953805565834045,
+            "local": [
+              -0.07357458352132398,
+              0.06689282071380903,
+              -0.03721847365071479
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.10461947321891785,
+            "local": [
+              -0.07205782850322814,
+              0.4457873789508965,
+              0.0485177562841487
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:60768",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 60768
+        },
+        "rest_global": [
+          -0.16941988468170166,
+          0.05610748752951622,
+          0.15186931192874908
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5037173628807068,
+            "local": [
+              -0.014420613164828983,
+              -0.055563334113068935,
+              -0.13269875238563608
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.4962826669216156,
+            "local": [
+              -0.014660791016841673,
+              0.4860119561901268,
+              -0.1021432947714308
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:52780",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 52780
+        },
+        "rest_global": [
+          -0.15662677586078644,
+          0.01917494833469391,
+          0.09549111127853394
+        ],
+        "terms": [
+          {
+            "bone": "kneeL",
+            "weight": 0.5002743601799011,
+            "local": [
+              -0.0005757150247399645,
+              0.5135312391033202,
+              -0.040902583220943006
+            ]
+          },
+          {
+            "bone": "ankleL",
+            "weight": 0.49972569942474365,
+            "local": [
+              -0.0016272996146869667,
+              0.011807449689653929,
+              -0.13460486360993484
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45438",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45438
+        },
+        "rest_global": [
+          -0.13940279185771942,
+          0.09548375010490417,
+          -0.08164023607969284
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.015597408730494228,
+              0.12266757855522743,
+              0.023218229067490978
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:55966",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 55966
+        },
+        "rest_global": [
+          -0.17885996401309967,
+          0.035111695528030396,
+          -0.17070095241069794
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.023859248044152737,
+              0.23015771632022317,
+              0.018478957983966024
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:58790",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 58790
+        },
+        "rest_global": [
+          -0.19145293533802032,
+          0.013097244314849377,
+          0.11547724157571793
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.5097108483314514,
+            "local": [
+              -0.036453434888452374,
+              -0.002028013345385646,
+              -0.15025545595526238
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.49028918147087097,
+            "local": [
+              -0.03556218925089072,
+              0.5231033660084166,
+              -0.05916571084007327
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:45414",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 45414
+        },
+        "rest_global": [
+          -0.16547732055187225,
+          0.007518360391259193,
+          -0.11781679838895798
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.010476880646989262,
+              0.19958049870084182,
+              -0.03273768942725194
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56996",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56996
+        },
+        "rest_global": [
+          -0.1863977462053299,
+          0.024356257170438766,
+          -0.05262076109647751
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9607971906661987,
+            "local": [
+              -0.0313975242977598,
+              0.13523174059508072,
+              -0.052566656484544644
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.03920280933380127,
+            "local": [
+              -0.028493920583561705,
+              0.4857029951615675,
+              0.10502978044511255
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:58125",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 58125
+        },
+        "rest_global": [
+          -0.2017253339290619,
+          0.07059767842292786,
+          -0.028757162392139435
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.9352954626083374,
+            "local": [
+              -0.04672516563051207,
+              0.0906732440511467,
+              -0.025691690560059835
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.06470456719398499,
+            "local": [
+              -0.04483182110270384,
+              0.44395189340845,
+              0.07449162965428463
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56930",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56930
+        },
+        "rest_global": [
+          -0.13467589020729065,
+          0.027596604079008102,
+          -0.10436397045850754
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              0.0203243923018262,
+              0.1776000001587259,
+              -0.02268876692523618
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:52961",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 52961
+        },
+        "rest_global": [
+          -0.23562796413898468,
+          0.04357904940843582,
+          -0.12672258913516998
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.08062725803455062,
+              0.18826641335731426,
+              0.0026415788868978107
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:52978",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 52978
+        },
+        "rest_global": [
+          -0.13511349260807037,
+          0.049711063504219055,
+          0.061396997421979904
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.732513964176178,
+            "local": [
+              0.019886065077655668,
+              0.024839419975586613,
+              -0.09073006044737932
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.2674860656261444,
+            "local": [
+              0.02091205866168533,
+              0.47777491749376916,
+              -0.01231208237998474
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:53011",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 53011
+        },
+        "rest_global": [
+          -0.22229453921318054,
+          0.05216953530907631,
+          -0.1623532623052597
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.06729371942095533,
+              0.21410883877568648,
+              0.028631632081856706
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:39209",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 39209
+        },
+        "rest_global": [
+          -0.08949321508407593,
+          0.04554840177297592,
+          0.06468354165554047
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 0.6578187942504883,
+            "local": [
+              0.0655061811950688,
+              0.024221584716114047,
+              -0.09599799409613788
+            ]
+          },
+          {
+            "bone": "kneeL",
+            "weight": 0.3421812057495117,
+            "local": [
+              0.06654362883037249,
+              0.4818060421561168,
+              -0.01560414313269709
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:56074",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 56074
+        },
+        "rest_global": [
+          -0.1743801385164261,
+          0.10224296897649765,
+          -0.05885772034525871
+        ],
+        "terms": [
+          {
+            "bone": "ankleL",
+            "weight": 1,
+            "local": [
+              -0.019379925024178346,
+              0.0997227155495734,
+              0.017034689279393708
+            ]
+          }
+        ]
+      }
+    ],
+    "R": [
+      {
+        "id": "55:0:5770",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5770
+        },
+        "rest_global": [
+          0.1518525779247284,
+          0.03846883773803711,
+          -0.20031285285949707
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.003148184682589622,
+              0.2536168994191304,
+              0.036857505081341335
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5774",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5774
+        },
+        "rest_global": [
+          0.13270874321460724,
+          0.023989666253328323,
+          -0.17708134651184082
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.02229185303226941,
+              0.24142013765053894,
+              0.012350495512180953
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5777",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5777
+        },
+        "rest_global": [
+          0.12765416502952576,
+          0.0169235672801733,
+          -0.16105331480503082
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.027346343759055897,
+              0.23147316533642168,
+              -0.00206770001442258
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5793",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5793
+        },
+        "rest_global": [
+          0.1183464527130127,
+          0.009740306995809078,
+          -0.14197124540805817
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.03665394101466446,
+              0.21898657846066044,
+              -0.01818632417590038
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5787",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5787
+        },
+        "rest_global": [
+          0.11257866024971008,
+          0.0033582590986043215,
+          -0.11858672648668289
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.042421611380738355,
+              0.2024159326550666,
+              -0.035877478415451386
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5780",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5780
+        },
+        "rest_global": [
+          0.12358003109693527,
+          -0.00030635311850346625,
+          -0.07406152039766312
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9998579025268555,
+            "local": [
+              -0.031420081733797,
+              0.16641679319669883,
+              -0.06233402026747531
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.0001421143242623657,
+            "local": [
+              -0.034964788322301654,
+              0.5059018968123292,
+              0.12909129751684556
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5806",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5806
+        },
+        "rest_global": [
+          0.11971792578697205,
+          0.002198264002799988,
+          0.0387142077088356
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.643589198589325,
+            "local": [
+              -0.03528167934583022,
+              0.06905861884909546,
+              -0.11930665453836485
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.35641080141067505,
+            "local": [
+              -0.03732189923951901,
+              0.5209649900612141,
+              0.01725679971009572
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24956",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24956
+        },
+        "rest_global": [
+          0.08461525291204453,
+          0.0017758550820872188,
+          0.07730992883443832
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5804317593574524,
+            "local": [
+              -0.07038406566770056,
+              0.03640956252842774,
+              -0.1398946273423119
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.41956827044487,
+            "local": [
+              -0.07192209394059398,
+              0.5269449665775426,
+              -0.02133166532927426
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5820",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5820
+        },
+        "rest_global": [
+          0.10813494771718979,
+          0.0012479204451665282,
+          0.1400735080242157
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5126806497573853,
+            "local": [
+              -0.046864173922795155,
+              -0.01676608793298165,
+              -0.17323843499303032
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.48731932044029236,
+            "local": [
+              -0.04759926843947199,
+              0.5375597978055697,
+              -0.08288140418626286
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5822",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5822
+        },
+        "rest_global": [
+          0.17827442288398743,
+          0.003353048814460635,
+          0.15435199439525604
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5041812062263489,
+            "local": [
+              0.02327512971207052,
+              -0.03002887776786145,
+              -0.17892846421247804
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4958188235759735,
+            "local": [
+              0.02274356759532037,
+              0.5386186664322631,
+              -0.09624421526916385
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14525",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14525
+        },
+        "rest_global": [
+          0.18381255865097046,
+          0.04691227525472641,
+          -0.20517748594284058
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.02881166771854471,
+              0.25333499807163395,
+              0.04659816996584534
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5782",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5782
+        },
+        "rest_global": [
+          0.25261250138282776,
+          0.006193733308464289,
+          -0.059546053409576416
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9797253012657166,
+            "local": [
+              0.09761202132757757,
+              0.15064943168607808,
+              -0.06440486521195316
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.020274724811315536,
+            "local": [
+              0.09432897053892647,
+              0.5034221507165467,
+              0.115706291897032
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:21975",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 21975
+        },
+        "rest_global": [
+          0.22055703401565552,
+          0.005736739840358496,
+          0.11798009276390076
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5329444408416748,
+            "local": [
+              0.06555744001428152,
+              -0.0003015693458180285,
+              -0.15783560883348996
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4670555293560028,
+            "local": [
+              0.06458097484139566,
+              0.5311416632735412,
+              -0.06004834251044627
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24183",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24183
+        },
+        "rest_global": [
+          0.19377627968788147,
+          0.005546160973608494,
+          0.1467551290988922
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5089188814163208,
+            "local": [
+              0.03877690135766096,
+              -0.02470824822541548,
+              -0.17307907245867227
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4910811483860016,
+            "local": [
+              0.03817685819999922,
+              0.5354692924684066,
+              -0.08884661975219099
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24181",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24181
+        },
+        "rest_global": [
+          0.14890561997890472,
+          0.005151153542101383,
+          0.15801338851451874
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.502704918384552,
+            "local": [
+              -0.006093559160503609,
+              -0.03408982437472213,
+              -0.1793162299972974
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4972951114177704,
+            "local": [
+              -0.006544314057122913,
+              0.5370320872141277,
+              -0.10058753061881426
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24188",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24188
+        },
+        "rest_global": [
+          0.12274269014596939,
+          0.004639379680156708,
+          0.15067175030708313
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5065919756889343,
+            "local": [
+              -0.03225643386451442,
+              -0.027569389287249335,
+              -0.17590451343194086
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4934079945087433,
+            "local": [
+              -0.03280514465330804,
+              0.5360526950663542,
+              -0.09365488731926772
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:29701",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 29701
+        },
+        "rest_global": [
+          0.08845560997724533,
+          0.0017361551290377975,
+          0.11498110741376877
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5360920429229736,
+            "local": [
+              -0.06654355610659463,
+              0.004347750958503413,
+              -0.15967185017495464
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.46390795707702637,
+            "local": [
+              -0.06759338500521786,
+              0.5329087853234423,
+              -0.05847386534074099
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5671",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5671
+        },
+        "rest_global": [
+          0.20951862633228302,
+          0.0462503582239151,
+          -0.19884201884269714
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.05451767742212482,
+              0.24828659760627517,
+              0.042714203679043605
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5676",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5676
+        },
+        "rest_global": [
+          0.2223915457725525,
+          0.0372038409113884,
+          -0.18865135312080383
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.0673905989352723,
+              0.24434916115167113,
+              0.029668853982074084
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5710",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5710
+        },
+        "rest_global": [
+          0.24178697168827057,
+          0.026005113497376442,
+          -0.1495146006345749
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.08678613225362722,
+              0.21688783952901503,
+              -0.0003800168193003328
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5981",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5981
+        },
+        "rest_global": [
+          0.2111680656671524,
+          0.0918528214097023,
+          0.026628481224179268
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7782638669013977,
+            "local": [
+              0.05616809906922968,
+              0.032364296865939945,
+              -0.036617129217199326
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.22173616290092468,
+            "local": [
+              0.055315893069673605,
+              0.4317185329386172,
+              0.016621973081688016
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14582",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14582
+        },
+        "rest_global": [
+          0.18474425375461578,
+          0.10345165431499481,
+          -0.06801360845565796
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.02974395962461654,
+              0.10688696718968332,
+              0.022862754197589527
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:18093",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 18093
+        },
+        "rest_global": [
+          0.1746947020292282,
+          0.11024536937475204,
+          0.09188330918550491
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5257595181465149,
+            "local": [
+              0.019977984310089347,
+              0.4232549520643646,
+              -0.05124823851162992
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.4742405116558075,
+            "local": [
+              0.019695142880507166,
+              -0.03284996636514598,
+              -0.055153270129862236
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:27145",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 27145
+        },
+        "rest_global": [
+          0.12666292488574982,
+          0.10362754017114639,
+          -0.008371200412511826
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8970507979393005,
+            "local": [
+              -0.02833691365335056,
+              0.05599967339427889,
+              -0.008246385717522856
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.10294923186302185,
+            "local": [
+              -0.029447994420243373,
+              0.4135327462666023,
+              0.048070162681194864
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5786",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5786
+        },
+        "rest_global": [
+          0.18706005811691284,
+          0.007357695139944553,
+          -0.10748162865638733
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.032059586468748597,
+              0.1908629970934912,
+              -0.03829101037042808
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24927",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24927
+        },
+        "rest_global": [
+          0.0923868864774704,
+          0.11714881658554077,
+          0.08033473044633865
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5176159739494324,
+            "local": [
+              -0.062358231313438095,
+              0.4135661030076533,
+              -0.04216995518098228
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.4823840260505676,
+            "local": [
+              -0.06261244886306574,
+              -0.026633653888895964,
+              -0.043221863086538526
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5824",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5824
+        },
+        "rest_global": [
+          0.20032349228858948,
+          0.01630496419966221,
+          -0.024813899770379066
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9110918045043945,
+            "local": [
+              0.04532333882364281,
+              0.11576988558731886,
+              -0.07399702905972026
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.08890821784734726,
+            "local": [
+              0.04265589635162015,
+              0.4981724362931002,
+              0.07903160100020118
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24174",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24174
+        },
+        "rest_global": [
+          0.1386544406414032,
+          0.11434464156627655,
+          0.14758272469043732
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5621095299720764,
+            "local": [
+              -0.015268492959986002,
+              0.4274240420748556,
+              -0.10744808493768956
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.43789049983024597,
+            "local": [
+              -0.01634475392873927,
+              -0.08243521886812516,
+              -0.0808543690784501
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:22063",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 22063
+        },
+        "rest_global": [
+          0.15217041969299316,
+          0.011640865355730057,
+          0.09887641668319702
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5147513747215271,
+            "local": [
+              -0.0039502886584752706,
+              0.5214425179501518,
+              -0.04314056098897384
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.4852486848831177,
+            "local": [
+              -0.002829030085919365,
+              0.012872945099421482,
+              -0.14279556482126435
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:20773",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 20773
+        },
+        "rest_global": [
+          0.21981748938560486,
+          0.013165351003408432,
+          0.05996878817677498
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5978517532348633,
+            "local": [
+              0.06481764301713622,
+              0.04521040137078812,
+              -0.12110531324875252
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4021482765674591,
+            "local": [
+              0.06320038294327884,
+              0.51474827499337,
+              -0.003920343502216345
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14548",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14548
+        },
+        "rest_global": [
+          0.13368584215641022,
+          0.09153133630752563,
+          -0.08496646583080292
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.02131435551927824,
+              0.12757176238385265,
+              0.02159538810453654
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6111",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6111
+        },
+        "rest_global": [
+          0.2253713458776474,
+          0.06852932274341583,
+          -0.09570915251970291
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.07037079584247496,
+              0.14877720776255612,
+              0.007636449127251491
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14814",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14814
+        },
+        "rest_global": [
+          0.18205882608890533,
+          0.03774688392877579,
+          -0.15526604652404785
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.027058160362638,
+              0.21563150047467544,
+              0.012633852966822484
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5681",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5681
+        },
+        "rest_global": [
+          0.22904402017593384,
+          0.08270512521266937,
+          -0.04545352980494499
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9689673781394958,
+            "local": [
+              0.0740436779164673,
+              0.09854747462185243,
+              -0.006629563335629876
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.031032627448439598,
+            "local": [
+              0.07211200999003872,
+              0.42974483083705917,
+              0.08951229282279966
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:25221",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 25221
+        },
+        "rest_global": [
+          0.10131440311670303,
+          0.0866924449801445,
+          0.03403152897953987
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7544901967048645,
+            "local": [
+              -0.053685164135028496,
+              0.028762824001141524,
+              -0.04489266212199322
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.2455098032951355,
+            "local": [
+              -0.05449764114403083,
+              0.4365424055606935,
+              0.008441887469361344
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5814",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5814
+        },
+        "rest_global": [
+          0.14237824082374573,
+          0.020816734060645103,
+          -0.02062029391527176
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8933933973312378,
+            "local": [
+              -0.012621700985284007,
+              0.10983312233306877,
+              -0.0723528110526809
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.1066066175699234,
+            "local": [
+              -0.01515443124302146,
+              0.4936173062942658,
+              0.07330504518535685
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6281",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6281
+        },
+        "rest_global": [
+          0.16464973986148834,
+          0.024642493575811386,
+          0.032013773918151855
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.6969236731529236,
+            "local": [
+              0.009649954552526624,
+              0.06300247583132959,
+              -0.09667991014054592
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.3030763864517212,
+            "local": [
+              0.00785497273436786,
+              0.4983361956795319,
+              0.021062883659216783
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14878",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14878
+        },
+        "rest_global": [
+          0.170549213886261,
+          0.017765887081623077,
+          -0.06415341794490814
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9913380146026611,
+            "local": [
+              0.015548987117576352,
+              0.14850738170637182,
+              -0.0521352126986253
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.008662004955112934,
+            "local": [
+              0.012398468652403238,
+              0.49020775290036633,
+              0.11720550215281683
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5812",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5812
+        },
+        "rest_global": [
+          0.23458874225616455,
+          0.022855112329125404,
+          0.0047974856570363045
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8491559028625488,
+            "local": [
+              0.07958860413032237,
+              0.08711878414951932,
+              -0.08393763569445134
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.15084411203861237,
+            "local": [
+              0.0773987377801465,
+              0.496766027306619,
+              0.049286570322700035
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:21971",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 21971
+        },
+        "rest_global": [
+          0.18693724274635315,
+          0.10094352811574936,
+          0.13441601395606995
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5304872393608093,
+            "local": [
+              0.032629517756378984,
+              0.4392341178574146,
+              -0.09162160054348753
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.4695127308368683,
+            "local": [
+              0.031937829710803944,
+              -0.06419769349941518,
+              -0.085366511801559
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6097",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6097
+        },
+        "rest_global": [
+          0.19087105989456177,
+          0.1152481734752655,
+          -0.025415096431970596
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9245046973228455,
+            "local": [
+              0.03587093183131884,
+              0.06442542812578814,
+              0.010583514972347441
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.07549529522657394,
+            "local": [
+              0.03470221104136095,
+              0.4002316400582776,
+              0.06407135314807749
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14690",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14690
+        },
+        "rest_global": [
+          0.14715611934661865,
+          0.10827107727527618,
+          -0.04539928212761879
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.007843950251629817,
+              0.08510118283394105,
+              0.015114836914269153
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14580",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14580
+        },
+        "rest_global": [
+          0.16935846209526062,
+          0.09133478999137878,
+          -0.10682910680770874
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.014358049416133778,
+              0.14629449224085808,
+              0.032886432722614156
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5789",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5789
+        },
+        "rest_global": [
+          0.2517298758029938,
+          0.012294151820242405,
+          -0.10432875156402588
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.09672920195668105,
+              0.1855913661307923,
+              -0.035738836307828356
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6371",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6371
+        },
+        "rest_global": [
+          0.18161477148532867,
+          0.03259209915995598,
+          0.0687168687582016
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5746653079986572,
+            "local": [
+              0.02661509033218956,
+              0.027578066832111142,
+              -0.10914553737809113
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4253346920013428,
+            "local": [
+              0.025414593435234945,
+              0.4964287068678389,
+              -0.01616771894166151
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6175",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6175
+        },
+        "rest_global": [
+          0.12149511277675629,
+          0.05206028372049332,
+          0.11390021443367004
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5197766423225403,
+            "local": [
+              -0.033504170117350296,
+              -0.021106326053841412,
+              -0.11624631583907369
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4802233576774597,
+            "local": [
+              -0.033809375536352146,
+              0.48346539996578886,
+              -0.0647412856736589
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6251",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6251
+        },
+        "rest_global": [
+          0.2105228304862976,
+          0.02457064390182495,
+          -0.06707322597503662
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9872351288795471,
+            "local": [
+              0.05552245723676624,
+              0.14742809611932822,
+              -0.044809366692726615
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.012764870189130306,
+            "local": [
+              0.052429470779755016,
+              0.4835509030720382,
+              0.1196379059847949
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14590",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14590
+        },
+        "rest_global": [
+          0.21090979874134064,
+          0.0851781964302063,
+          -0.16277968883514404
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.05590900205924171,
+              0.19717195932549966,
+              0.056967076001146894
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6154",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6154
+        },
+        "rest_global": [
+          0.2130577713251114,
+          0.0539143942296505,
+          0.09121673554182053
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5909603238105774,
+            "local": [
+              0.058058083199572647,
+              -0.0027586567310035337,
+              -0.10277824204419236
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4090397357940674,
+            "local": [
+              0.057467948644765565,
+              0.4792864536909217,
+              -0.04123257086034675
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6141",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6141
+        },
+        "rest_global": [
+          0.13441333174705505,
+          0.04972609132528305,
+          0.06221289187669754
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7111166715621948,
+            "local": [
+              -0.020586221003784683,
+              0.024136685651621706,
+              -0.09114486756400485
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.2888833284378052,
+            "local": [
+              -0.02160123397542618,
+              0.47787820804416636,
+              -0.013130909504286442
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14554",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14554
+        },
+        "rest_global": [
+          0.15964311361312866,
+          0.08638890832662582,
+          -0.16991472244262695
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.004642456698302516,
+              0.20261339940310102,
+              0.06173730687444534
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6413",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6413
+        },
+        "rest_global": [
+          0.1150042787194252,
+          0.03356551751494408,
+          0.006276385392993689
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8312482237815857,
+            "local": [
+              -0.039995454140379444,
+              0.08024459050215743,
+              -0.07559195498047835
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.1687517762184143,
+            "local": [
+              -0.04197928403900214,
+              0.48486435528840255,
+              0.044337668752791916
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:18088",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 18088
+        },
+        "rest_global": [
+          0.19147014617919922,
+          0.04376805201172829,
+          0.009915845468640327
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8004794716835022,
+            "local": [
+              0.036470173696098285,
+              0.07179873004341841,
+              -0.06880983570678209
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.19952058792114258,
+            "local": [
+              0.03467348385385735,
+              0.4763486579510386,
+              0.04031788296976152
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:25223",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 25223
+        },
+        "rest_global": [
+          0.11778125166893005,
+          0.060669105499982834,
+          -0.0581635907292366
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9906753897666931,
+            "local": [
+              -0.037218774204818214,
+              0.12091987911725365,
+              -0.01873607285346439
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.00932463351637125,
+            "local": [
+              -0.039628449674470795,
+              0.44808154858897153,
+              0.10380429041964814
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5904",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5904
+        },
+        "rest_global": [
+          0.21798628568649292,
+          0.025357501581311226,
+          -0.12344245612621307
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.06298564013102342,
+              0.19502264410858405,
+              -0.014596111404318823
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:29718",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 29718
+        },
+        "rest_global": [
+          0.16351640224456787,
+          0.05318634584546089,
+          0.13213403522968292
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5018718838691711,
+            "local": [
+              0.008457530103535948,
+              0.48574273462921336,
+              -0.08228615681225687
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.49812808632850647,
+            "local": [
+              0.00851705906510239,
+              -0.0372248611386847,
+              -0.1248433490650408
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5957",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5957
+        },
+        "rest_global": [
+          0.15060803294181824,
+          0.01860051229596138,
+          -0.12987037003040314
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.004392415682424267,
+              0.2040375752678671,
+              -0.016982325666547657
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5882",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5882
+        },
+        "rest_global": [
+          0.15252827107906342,
+          0.011735762469470501,
+          -0.09370779246091843
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.0024720250182213577,
+              0.17683756644232437,
+              -0.041781495425692025
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:28321",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 28321
+        },
+        "rest_global": [
+          0.14517393708229065,
+          0.11228179186582565,
+          0.11375648528337479
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5863130688667297,
+            "local": [
+              -0.009221445377147752,
+              0.42427108938603775,
+              -0.07361828335681705
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.41368696093559265,
+            "local": [
+              -0.009825427616079047,
+              -0.05254588275756569,
+              -0.06488285433152081
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5784",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5784
+        },
+        "rest_global": [
+          0.245427668094635,
+          0.009015455842018127,
+          -0.026135871186852455
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9358820915222168,
+            "local": [
+              0.09042735853569436,
+              0.1207166962657275,
+              -0.0795120309909491
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.06411796063184738,
+            "local": [
+              0.08762285291368671,
+              0.5057520518751024,
+              0.08215909984752995
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:29690",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 29690
+        },
+        "rest_global": [
+          0.10917878150939941,
+          0.10739944875240326,
+          0.1320749819278717
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5412489175796509,
+            "local": [
+              -0.045045374118092785,
+              0.431482284239296,
+              -0.09149842576964229
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.4587511122226715,
+            "local": [
+              -0.04582038248155973,
+              -0.06558838801845154,
+              -0.07864188131633061
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24935",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24935
+        },
+        "rest_global": [
+          0.0922846794128418,
+          0.052802469581365585,
+          0.06101264804601669
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.6853846311569214,
+            "local": [
+              -0.06271473809466403,
+              0.023546064155494956,
+              -0.08789608951651326
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.3146153390407562,
+            "local": [
+              -0.06369013180295316,
+              0.47410514766837375,
+              -0.013065809368302539
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:28296",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 28296
+        },
+        "rest_global": [
+          0.11944549530744553,
+          0.016198918223381042,
+          0.08751609921455383
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5155361294746399,
+            "local": [
+              -0.035553895254661225,
+              0.02015870733629775,
+              -0.13295995997461738
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4844639003276825,
+            "local": [
+              -0.0367469248848436,
+              0.5147437939903439,
+              -0.03312826239478878
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14574",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14574
+        },
+        "rest_global": [
+          0.11165455728769302,
+          0.027898389846086502,
+          -0.030919400975108147
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9284101724624634,
+            "local": [
+              -0.04334532741701416,
+              0.11489250108340505,
+              -0.06092413226712641
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.0715898722410202,
+            "local": [
+              -0.04589806123008004,
+              0.48461756665384925,
+              0.081906628551049
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5980",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5980
+        },
+        "rest_global": [
+          0.224434033036232,
+          0.06820951402187347,
+          -0.014667429961264133
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.914246678352356,
+            "local": [
+              0.06943384177779077,
+              0.07992562191297062,
+              -0.03510983328736722
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.08575335144996643,
+            "local": [
+              0.06768275415838773,
+              0.44880295353626865,
+              0.06129316079049131
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24186",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24186
+        },
+        "rest_global": [
+          0.12433069944381714,
+          0.05984356626868248,
+          0.14539389312267303
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5011779069900513,
+            "local": [
+              -0.03066845498702342,
+              -0.05200712363478138,
+              -0.12612343663911066
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.49882206320762634,
+            "local": [
+              -0.030446577101687577,
+              0.48072619784209514,
+              -0.09701583462533458
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5596",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5596
+        },
+        "rest_global": [
+          0.19634893536567688,
+          0.08015875518321991,
+          0.0621456503868103
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.6810799241065979,
+            "local": [
+              0.041349174507491315,
+              0.008244818137383411,
+              -0.06519106688730528
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.3189200460910797,
+            "local": [
+              0.040783680911462644,
+              0.44861476704916536,
+              -0.016861632037390856
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24936",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24936
+        },
+        "rest_global": [
+          0.08976640552282333,
+          0.055883847177028656,
+          0.09144063293933868
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5863047242164612,
+            "local": [
+              -0.06523287016073624,
+              -0.003982916213287724,
+              -0.10121911978857695
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4136953055858612,
+            "local": [
+              -0.06576546082149567,
+              0.47577416410038903,
+              -0.04363697758156068
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:24939",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 24939
+        },
+        "rest_global": [
+          0.11323657631874084,
+          0.051718637347221375,
+          -0.09067849069833755
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.04176357675360014,
+              0.15330210532311356,
+              -0.009317782141425146
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:18142",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 18142
+        },
+        "rest_global": [
+          0.155552476644516,
+          0.11885756999254227,
+          -0.011414922773838043
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.918825089931488,
+            "local": [
+              0.0005525277788846761,
+              0.050610090456694304,
+              0.006319758659722313
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.08117493987083435,
+            "local": [
+              -0.0003722879724518957,
+              0.3983910760677092,
+              0.04914403479103388
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:22061",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 22061
+        },
+        "rest_global": [
+          0.18163123726844788,
+          0.011495326645672321,
+          0.10560806840658188
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5087069272994995,
+            "local": [
+              0.025589832562684045,
+              0.5230188508644142,
+              -0.049318166962038126
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.49129313230514526,
+            "local": [
+              0.02663171869923328,
+              0.007216541028522802,
+              -0.14644736955719845
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6139",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6139
+        },
+        "rest_global": [
+          0.14316090941429138,
+          0.046170126646757126,
+          0.01403322909027338
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7822558879852295,
+            "local": [
+              -0.011838883836187503,
+              0.06703268556743695,
+              -0.06892233830526416
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.21774409711360931,
+            "local": [
+              -0.013535863699445594,
+              0.47399055281341806,
+              0.03514185281298901
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:29573",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 29573
+        },
+        "rest_global": [
+          0.1429818719625473,
+          0.013466397300362587,
+          0.12902075052261353
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5044304132461548,
+            "local": [
+              -0.012717319102195701,
+              0.5242210015160287,
+              -0.0733375031524216
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.49556964635849,
+            "local": [
+              -0.012017414928165632,
+              -0.013756347070284433,
+              -0.1570395263638128
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5700",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5700
+        },
+        "rest_global": [
+          0.22475075721740723,
+          0.04756605252623558,
+          0.03621450066566467
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7705127000808716,
+            "local": [
+              0.06975078892034622,
+              0.04741131127561711,
+              -0.07935813083863422
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.22948729991912842,
+            "local": [
+              0.06834696805975901,
+              0.4771310853540107,
+              0.014258402836886341
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:21970",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 21970
+        },
+        "rest_global": [
+          0.20065990090370178,
+          0.05414441227912903,
+          0.13415765762329102
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.520376980304718,
+            "local": [
+              0.04566044259073379,
+              -0.039449987566408384,
+              -0.12508773603365386
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.47962307929992676,
+            "local": [
+              0.045634345350312466,
+              0.48559468268078265,
+              -0.08386871687207517
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5702",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5702
+        },
+        "rest_global": [
+          0.2445499449968338,
+          0.05516564100980759,
+          -0.07533419132232666
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9974212646484375,
+            "local": [
+              0.08954942083217154,
+              0.13842902184551792,
+              -0.014423176718919739
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.002578733954578638,
+            "local": [
+              0.08680752493031396,
+              0.45248670633149224,
+              0.12354985090247246
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5685",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5685
+        },
+        "rest_global": [
+          0.2066671997308731,
+          0.09497357159852982,
+          0.11355999112129211
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5082616806030273,
+            "local": [
+              0.05166762952849027,
+              -0.04330657141528724,
+              -0.07952009828841315
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.49173834919929504,
+            "local": [
+              0.05199353808862553,
+              0.4421344557571153,
+              -0.06979255192714438
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14629",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14629
+        },
+        "rest_global": [
+          0.19785448908805847,
+          0.08270377665758133,
+          -0.0958409532904625
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.042854029818947426,
+              0.14146028386420642,
+              0.01977709144784387
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5696",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5696
+        },
+        "rest_global": [
+          0.20800742506980896,
+          0.11278245598077774,
+          0.0008226131903938949
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.8584797382354736,
+            "local": [
+              0.05300735503465667,
+              0.04337256146277636,
+              -0.0052674765366211435
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.14152029156684875,
+            "local": [
+              0.05213869027621082,
+              0.40698133732845765,
+              0.03880190599633218
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6003",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6003
+        },
+        "rest_global": [
+          0.2258133888244629,
+          0.06656663864850998,
+          -0.14151926338672638
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.07081263635417237,
+              0.188820043542803,
+              0.029973968140836277
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5779",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5779
+        },
+        "rest_global": [
+          0.1478707641363144,
+          0.002770759863778949,
+          -0.05050525814294815
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9751692414283752,
+            "local": [
+              -0.007129326510331879,
+              0.14474265152795435,
+              -0.07205903739615085
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.02483081817626953,
+            "local": [
+              -0.01032596681195963,
+              0.5068518502016925,
+              0.10571585477529476
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:27090",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 27090
+        },
+        "rest_global": [
+          0.12401442229747772,
+          0.09206473082304001,
+          0.049416251480579376
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.6761828064918518,
+            "local": [
+              -0.030985153401336882,
+              0.012845051502916816,
+              -0.04838029533975255
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.3238171935081482,
+            "local": [
+              -0.03152053940492505,
+              0.43393046641221067,
+              -0.007244418638801278
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5874",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5874
+        },
+        "rest_global": [
+          0.2130049616098404,
+          0.01516070868819952,
+          -0.09382399171590805
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.058004463018371144,
+              0.17514218359109138,
+              -0.038803315031056336
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14587",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14587
+        },
+        "rest_global": [
+          0.158590167760849,
+          0.10486991703510284,
+          -0.0722191259264946
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.003589942424060133,
+              0.10972498841026718,
+              0.026274558292741806
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14595",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14595
+        },
+        "rest_global": [
+          0.16955234110355377,
+          0.040259912610054016,
+          -0.17841742932796478
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.01455161543740488,
+              0.23403115273525435,
+              0.026907626723646993
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:14550",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 14550
+        },
+        "rest_global": [
+          0.13704729080200195,
+          0.06217142194509506,
+          -0.16340433061122894
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              -0.017953261262120157,
+              0.20976101004405126,
+              0.03770010965988502
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:21949",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 21949
+        },
+        "rest_global": [
+          0.2034953236579895,
+          0.011697383597493172,
+          0.08860201388597488
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5212187767028809,
+            "local": [
+              0.048495657474386195,
+              0.02159409502694956,
+              -0.13736227861766287
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4787812829017639,
+            "local": [
+              0.04723145710560753,
+              0.5204513364682385,
+              -0.03222042508034087
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:20917",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 20917
+        },
+        "rest_global": [
+          0.10670766979455948,
+          0.04142707586288452,
+          0.03740754723548889
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.7601765394210815,
+            "local": [
+              -0.04829189903788397,
+              0.049611381063266624,
+              -0.0852124917613964
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.23982349038124084,
+            "local": [
+              -0.04974993772609035,
+              0.4818466593997088,
+              0.012239541551736656
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5598",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5598
+        },
+        "rest_global": [
+          0.2001267671585083,
+          0.07777544856071472,
+          -0.03616594150662422
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.967965304851532,
+            "local": [
+              0.04512656235259527,
+              0.09322102996967589,
+              -0.015695761963612914
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.032034702599048615,
+            "local": [
+              0.04324641861388359,
+              0.4356864014774334,
+              0.08066684149389725
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:28303",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 28303
+        },
+        "rest_global": [
+          0.14625729620456696,
+          0.05436602979898453,
+          0.11134865134954453
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5006600618362427,
+            "local": [
+              -0.008742080621129633,
+              -0.020141456294368656,
+              -0.11294517587345264
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.4993399679660797,
+            "local": [
+              -0.009050339878837937,
+              0.48111190581435637,
+              -0.06220340026830827
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5811",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5811
+        },
+        "rest_global": [
+          0.16040679812431335,
+          0.0028860701713711023,
+          0.05336461216211319
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5672564506530762,
+            "local": [
+              0.005407121443958829,
+              0.0562215765059773,
+              -0.12639887381852202
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.43274354934692383,
+            "local": [
+              0.0035596103317853955,
+              0.5230990452065312,
+              0.00329915237715063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5897",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5897
+        },
+        "rest_global": [
+          0.1881437450647354,
+          0.031359825283288956,
+          -0.13153614103794098
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 1,
+            "local": [
+              0.03314316338884765,
+              0.1987694652319681,
+              -0.005242505902756919
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:29699",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 29699
+        },
+        "rest_global": [
+          0.09275082498788834,
+          0.049201805144548416,
+          0.11570420861244202
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.5412431955337524,
+            "local": [
+              -0.062248353943876775,
+              -0.02114488500591659,
+              -0.11962641986232075
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.45875683426856995,
+            "local": [
+              -0.06256782908715258,
+              0.48619649331576603,
+              -0.06651533896447195
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:6283",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 6283
+        },
+        "rest_global": [
+          0.18444393575191498,
+          0.011892935261130333,
+          -0.04349643364548683
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9462442994117737,
+            "local": [
+              0.02944375346238548,
+              0.1339930429927439,
+              -0.0679631614044294
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.05375571548938751,
+            "local": [
+              0.02646959907435345,
+              0.4994102885656936,
+              0.09792932066909317
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:5704",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 5704
+        },
+        "rest_global": [
+          0.24107129871845245,
+          0.039651986211538315,
+          -0.04363097995519638
+        ],
+        "terms": [
+          {
+            "bone": "ankleR",
+            "weight": 0.9553934335708618,
+            "local": [
+              0.0860709258392588,
+              0.1195596827055601,
+              -0.044251118926086214
+            ]
+          },
+          {
+            "bone": "kneeR",
+            "weight": 0.044606540352106094,
+            "local": [
+              0.08350582093108946,
+              0.47270805138362826,
+              0.09460068905730125
+            ]
+          }
+        ]
+      },
+      {
+        "id": "55:0:22089",
+        "source": {
+          "mesh": "geometry_0",
+          "mesh_node": "C2_OriginalProportions",
+          "primitive": 0,
+          "vertex": 22089
+        },
+        "rest_global": [
+          0.1732773780822754,
+          0.01244821585714817,
+          0.12945570051670074
+        ],
+        "terms": [
+          {
+            "bone": "kneeR",
+            "weight": 0.5035834908485413,
+            "local": [
+              0.017562191277609773,
+              0.5256881201038858,
+              -0.07314740585425913
+            ]
+          },
+          {
+            "bone": "ankleR",
+            "weight": 0.49641647934913635,
+            "local": [
+              0.01827799201422925,
+              -0.013592801343126487,
+              -0.15813441949893703
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

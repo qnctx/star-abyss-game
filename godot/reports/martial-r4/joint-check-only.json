@@ -1,0 +1,27 @@
+[
+  {
+    "path": "res://scripts/native_main.gd",
+    "status": 0,
+    "output": "Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org\r\n\r\n"
+  },
+  {
+    "path": "res://tests/native_martial_environment_runtime.gd",
+    "status": 0,
+    "output": "Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org\r\n\r\n"
+  },
+  {
+    "path": "res://tests/native_martial_environment_reload.gd",
+    "status": 0,
+    "output": "Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org\r\n\r\n"
+  },
+  {
+    "path": "res://tests/native_surface_blink_runtime_verify.gd",
+    "status": 0,
+    "output": "Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org\r\n\r\n"
+  },
+  {
+    "path": "res://tests/native_environment_generation_guard.gd",
+    "status": 0,
+    "output": "Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org\r\n\r\n"
+  }
+]

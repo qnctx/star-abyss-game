@@ -1,0 +1,4 @@
+const fs=require('fs');const p=JSON.parse(fs.readFileSync('artifacts/r3-headed-profile/cdp-profile.cpuprofile'));const nodes=new Map(p.nodes.map(n=>[n.id,n]));const parents=new Map();for(const n of p.nodes)for(const id of n.children||[])parents.set(id,n.id);
+const self=new Map(),inclusive=new Map();for(let i=0;i<p.samples.length;i++){const id=p.samples[i],dt=p.timeDeltas?.[i]||0;self.set(id,(self.get(id)||0)+dt);let a=id;const seen=new Set();while(a&&!seen.has(a)){seen.add(a);inclusive.set(a,(inclusive.get(a)||0)+dt);a=parents.get(a);}}
+function top(map){return [...map].sort((a,b)=>b[1]-a[1]).slice(0,25).map(([id,us])=>{const n=nodes.get(id);return {ms:Math.round(us/1000),function:n?.callFrame?.functionName||'',url:n?.callFrame?.url||'',line:n?.callFrame?.lineNumber};});}
+console.log(JSON.stringify({durationMs:Math.round((p.endTime-p.startTime)/1000),samples:p.samples.length,topSelf:top(self),topInclusive:top(inclusive)},null,2));

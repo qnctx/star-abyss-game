@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-12T17:30:14.781Z",
+  "url": "http://127.0.0.1:4173/",
+  "servedSHA256": "84a45490a8e799f1491fe9b80a9538bb9637764f10514eff070a3154e110bd49",
+  "installedFiles": 14,
+  "checks": [
+    "Exact independently tested strict bundle installed; all product hashes verified",
+    "Native start at original X0 Z190, HP120; V third person original avatar/planet/moon confirmed",
+    "Native I inventory shows camp, close returns CANVAS"
+  ],
+  "scope": "Smoke check only; independent report defines business coverage"
+}

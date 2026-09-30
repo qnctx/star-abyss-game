@@ -1,0 +1,53 @@
+{
+  "test": "TEST-A-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/8266/star-abyss-game/artifacts/tests/TEST-A-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-A-R1",
+  "archivedAt": "2026-09-12T08:48:43.426Z",
+  "files": [
+    {
+      "path": "developer-tests.tap",
+      "sha256": "8d9b0e47911e26c9a9110118d6040757033679485190d2c730c367fe117d09e4",
+      "bytes": 3809
+    },
+    {
+      "path": "hash-verification.json",
+      "sha256": "afc7ac92fd4f83243a2a104a92ef6ac4adb0224155862fb5b0b92b033d850759",
+      "bytes": 1227
+    },
+    {
+      "path": "independent-observations.json",
+      "sha256": "5ab29fd8c4049303c91b93c72c0b8da8174adabf9da2ebbbfcf773274094df75",
+      "bytes": 117528
+    },
+    {
+      "path": "independent-tests.tap",
+      "sha256": "dee2ab8ca44ce75fdf54f2c0ca3634b10e96e625a007bc525f0e8d4abcfbddb4",
+      "bytes": 8195
+    },
+    {
+      "path": "independent.test.mjs",
+      "sha256": "5d17533d6cfc58aa530f9765b7aacd94bf90ee79a6df9683d6f6685c37b3d959",
+      "bytes": 15586
+    },
+    {
+      "path": "minimal-repro.json.log",
+      "sha256": "81e6555934c2db778ff6f9ea50f655df5694f5809b7a9f887441c44b06e2979d",
+      "bytes": 1400
+    },
+    {
+      "path": "minimal-repro.mjs",
+      "sha256": "065692d1b77225375d654a827c0780d9ef60abd5ce5f3162466438f1dab5aa85",
+      "bytes": 2051
+    },
+    {
+      "path": "post-test-hashes.json",
+      "sha256": "afc7ac92fd4f83243a2a104a92ef6ac4adb0224155862fb5b0b92b033d850759",
+      "bytes": 1227
+    },
+    {
+      "path": "verify-and-run.cjs",
+      "sha256": "1b7d376238f6bbc313e8d3ee3451f6f561a64981296176552b6c554c5da35973",
+      "bytes": 1450
+    }
+  ]
+}

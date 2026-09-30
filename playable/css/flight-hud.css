@@ -1,0 +1,116 @@
+body.flight-active #hud .objective {
+  top: var(--flight-actions-bottom,148px);
+  left: max(12px, env(safe-area-inset-left));
+  width: min(232px, calc(100vw - 24px));
+  padding: 8px 9px 8px 12px;
+  border: 1px solid #78c7cd54;
+  background: #081a25d9;
+  pointer-events: none;
+}
+body.flight-active #hud .objective h2 {
+  max-width: 158px;
+  overflow: visible;
+  white-space: normal;
+  margin: 3px 0 0;
+  font-size: 12px;
+}
+body.flight-active #hud .objective #objective-detail,
+body.flight-active #hud .objective #target-range { display: none; }
+body.flight-active.flight-objective-expanded #hud .objective {
+  max-height: min(42vh, 250px);
+  overflow-y: auto;
+  pointer-events: auto;
+}
+body.flight-active.flight-objective-expanded #hud .objective h2 {
+  white-space: normal;
+  max-width: none;
+}
+body.flight-active.flight-objective-expanded #hud .objective #objective-detail,
+body.flight-active.flight-objective-expanded #hud .objective #target-range { display: block; }
+#hud .flight-objective-toggle {
+  position: absolute;
+  top: 7px;
+  right: 6px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  pointer-events: auto;
+  font-size: 10px;
+  white-space: nowrap;
+}
+body.flight-active #hud .suit-status {
+  left: max(12px, env(safe-area-inset-left));
+  bottom: max(12px, env(safe-area-inset-bottom)) !important;
+  width: 188px;
+  padding: 9px 11px;
+}
+body.flight-active #hud #foot-status,
+body.flight-active #hud #surface-status,
+body.flight-active #hud .scanner-status,
+body.flight-active #hud #track-transport-button,
+body.flight-active #hud #mobility-detail,
+body.flight-active #hud #mobility-hint,
+body.flight-active #hud #flight-duration,
+body.flight-active #hud #dash-hint { display: none !important; }
+body.flight-active #hud #mobility-number,
+body.flight-active #hud .mobility-track { display: none; }
+body.flight-active #hud #mobility-status { margin: 0; padding: 0; border: 0; }
+body.flight-active #hud .flight-readout { margin-top: 8px; border-top: 1px solid #86cad73b; padding-top: 6px; }
+body.flight-active #hud .flight-readout p { font-size: 10px; line-height: 1.55; color: #d3e9e9; white-space: normal; }
+body.flight-active #hud .flight-readout p:last-child { margin-top: 4px; font-size: 9px; color: #acd0d5; }
+body.flight-active #hud .hud-controls {
+  left: auto;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  max-width: calc(100vw - 226px);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+body.flight-active #hud .hud-controls > span { display: none; }
+body.flight-active #hud .hud-controls button { min-height: 34px; padding: 6px 7px; }
+body.flight-active #toast {
+  top: auto;
+  bottom: 150px;
+  left: auto;
+  right: 12px;
+  max-width: min(440px, calc(100vw - 24px));
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  transform: none;
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  body.flight-active #hud .objective {
+    top: calc(var(--flight-actions-bottom,128px) + 46px);
+    left: 8px;
+    width: min(180px, calc(50vw - 10px));
+    padding-left: 8px;
+  }
+  body.flight-active #hud .objective h2 { max-width: calc(100% - 64px); font-size: 11px; }
+  body.flight-active.flight-objective-expanded #hud .objective { width: min(220px, calc(100vw - 16px)); }
+  body.flight-active.flight-objective-expanded #hud .objective h2 { max-width: none; }
+  body.flight-active #hud .location { top: calc(var(--flight-actions-bottom,128px) + 46px); right: 8px; max-width: calc(50vw - 10px); }
+  body.flight-active #hud #body-heading { display: none; }
+  body.flight-active #hud .suit-status { left: 8px; bottom: 8px !important; width: 140px !important; padding: 8px; }
+  body.flight-active #hud .flight-readout p { font-size: 9px; }
+  body.flight-active #hud .flight-readout p:last-child { font-size: 8px; }
+  body.flight-active #hud .hud-controls {
+    left: 154px;
+    right: 8px;
+    bottom: 8px;
+    max-width: none;
+    justify-content: flex-end;
+    gap: 3px;
+  }
+  body.flight-active #hud .hud-controls button { flex: 1 1 62px; max-width: 80px; min-height: 30px; font-size: 9px; padding: 4px 3px; }
+}
+@media (min-width:561px) and (max-width:1000px) {
+  body.flight-active #hud .objective,
+  body.flight-active #hud .location { top: calc(var(--flight-actions-bottom,120px) + 46px); }
+}
+@media (max-width:1000px) {
+  body.flight-active #hud .compass { top: var(--flight-actions-bottom,120px); }
+  body.flight-active #hud .navigation-hud { top: auto; bottom: 140px; }
+}

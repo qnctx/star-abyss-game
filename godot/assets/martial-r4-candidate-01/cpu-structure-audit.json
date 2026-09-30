@@ -1,0 +1,53 @@
+{
+  "scope": "CPU candidate structure only; no Godot import/game or animation acceptance",
+  "production_animation_sha256": "df3c95a4712e4bfdc1f74bb0c32229ff3dca44007ae74b0318b9986f25db4a70",
+  "candidate_animation_sha256": "0ade4261acc734cc24e61886dfc9bbf1ceb7f46bc6a5cecc7c10998da7c15a71",
+  "nodes": 52,
+  "meshes": 0,
+  "clips": [
+    {
+      "name": "air_cast_martial_break",
+      "channels": 153
+    },
+    {
+      "name": "air_cast_martial_cancel",
+      "channels": 153
+    },
+    {
+      "name": "air_cast_martial_descent",
+      "channels": 153
+    },
+    {
+      "name": "air_cast_martial_descent_cancel",
+      "channels": 153
+    },
+    {
+      "name": "air_cast_martial_landing",
+      "channels": 153
+    },
+    {
+      "name": "cast_martial_break",
+      "channels": 153
+    },
+    {
+      "name": "cast_martial_cancel",
+      "channels": 153
+    },
+    {
+      "name": "cast_martial_descent",
+      "channels": 153
+    },
+    {
+      "name": "cast_martial_descent_cancel",
+      "channels": 153
+    },
+    {
+      "name": "cast_martial_landing",
+      "channels": 153
+    }
+  ],
+  "default_node_transform_differences": [],
+  "reference_sha256": "c042b7981e0ca5f7e6bcfc24d5a66b55be08545ebab0e0da2723c8a74854578f",
+  "impact_reference_sha256": "2f6b2c3ccf25c858bd522dfbeb2da6f92d6f67d2c4e37b4541b160a6f087748f",
+  "build_source_sha256": "009afaabbfc969ef5689d40a3cd30319a37cef5912bf18af4a8803399749192b"
+}

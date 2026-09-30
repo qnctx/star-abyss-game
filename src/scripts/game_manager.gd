@@ -40,7 +40,13 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	phase_time_remaining = maxf(0.0, phase_time_remaining - delta)
+	if phase_time_remaining > 0.0:
+		phase_time_remaining = maxf(0.0, phase_time_remaining - delta)
+		if phase_time_remaining <= 0.0:
+			if is_night:
+				start_day()
+			else:
+				start_night()
 
 	# HEAT zone structure drain. Lives in GameManager (not BuildManager) so it
 	# runs every frame regardless of build mode, and only damages structures
@@ -100,7 +106,6 @@ func _get_biome_at_pos(world_pos: Vector3) -> int:
 
 func start_day():
 	_cycle_token += 1
-	var token := _cycle_token
 	is_night = false
 	wave_number = 0
 	day_number += 1
@@ -119,17 +124,12 @@ func start_day():
 	if WorldGenerator and WorldGenerator.has_method("spawn_daily_buried"):
 		WorldGenerator.spawn_daily_buried(day_number)
 	day_started.emit()
-	await get_tree().create_timer(DAY_DURATION).timeout
-	if token != _cycle_token or is_night:
-		return
-	start_night()
 
 
 func start_night():
 	if is_night:
 		return
 	_cycle_token += 1
-	var token := _cycle_token
 	is_night = true
 	phase_time_remaining = NIGHT_DURATION
 	wave_number += 1
@@ -137,9 +137,6 @@ func start_night():
 	# Darken environment for night: reduce ambient light and thicken fog
 	_apply_night_darkening(true)
 	spawn_wave()
-	await get_tree().create_timer(NIGHT_DURATION).timeout
-	if token == _cycle_token and is_night:
-		start_day()
 
 
 func spawn_wave() -> void:

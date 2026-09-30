@@ -1,0 +1,84 @@
+{
+  "version": "PLANET-ART-V1",
+  "root": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game",
+  "files": [
+    {
+      "relative": "docs/art/planet-v1/PROMPTS.json",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/PROMPTS.json",
+      "bytes": 4568,
+      "sha256": "e1de7a08f9f1e300585ce7e17222f7a192e3c05d5266c3e00521b8daed3f8772"
+    },
+    {
+      "relative": "docs/art/planet-v1/README.md",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/README.md",
+      "bytes": 6713,
+      "sha256": "d94cbfed56fda1b769aa3de9068512d188286076bc0a94ca99e18a04ec3cdda3"
+    },
+    {
+      "relative": "docs/art/planet-v1/REPORT.md",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/REPORT.md",
+      "bytes": 3434,
+      "sha256": "392e90829c8c7d58afcd46dac50d4d233675eba745b8412ec46cf669489aba30"
+    },
+    {
+      "relative": "docs/art/planet-v1/asset-preview.png",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/asset-preview.png",
+      "bytes": 215361,
+      "sha256": "3b35f6f631be4a58e6230e7cbb9c62b4a22dd97581acfda0b3b2a5b3d024491e"
+    },
+    {
+      "relative": "docs/art/planet-v1/make-manifest.cjs",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/make-manifest.cjs",
+      "bytes": 774,
+      "sha256": "cf7a56bc36507f1377e169b72a4497fff32da5a5e6f10afdce876e1a0c99c406"
+    },
+    {
+      "relative": "docs/art/planet-v1/planet-ecology-concept.png",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/planet-ecology-concept.png",
+      "bytes": 2807329,
+      "sha256": "4f8ca9f680a2a9d8efba4863f15fb673841f7f3a1883136f92bf6d996afbf62b"
+    },
+    {
+      "relative": "docs/art/planet-v1/preview-validation.json",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/preview-validation.json",
+      "bytes": 343,
+      "sha256": "10722a0e96baeb5cc9111cb91fef11fe54c457ed3545bd3f491e1275f9ff19d8"
+    },
+    {
+      "relative": "docs/art/planet-v1/preview.html",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/preview.html",
+      "bytes": 2660,
+      "sha256": "4f9e84aa38f673d95a3d2040d723a4d024d92a28ca9c9727335fb1fc74213f6a"
+    },
+    {
+      "relative": "docs/art/planet-v1/run-tests.cjs",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/run-tests.cjs",
+      "bytes": 367,
+      "sha256": "87205b6a8c6f9484d697a47974a001781afaed57f8895ea1163ac4946d7fd335"
+    },
+    {
+      "relative": "docs/art/planet-v1/surface-transition-concept.png",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/surface-transition-concept.png",
+      "bytes": 3354689,
+      "sha256": "cf152196d583b53ea7eb2ce42ad643d17bc5004228053e432eceffabc196f49d"
+    },
+    {
+      "relative": "docs/art/planet-v1/verify-preview.cjs",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/docs/art/planet-v1/verify-preview.cjs",
+      "bytes": 2036,
+      "sha256": "d8f1c46e281a09decc56215d7910540dec81012253a85a1347b6e7f713f628c2"
+    },
+    {
+      "relative": "playable/src/planet-art/index.mjs",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/playable/src/planet-art/index.mjs",
+      "bytes": 9756,
+      "sha256": "3bda72e0a29568160bc4e12c00770013790327fb7e097eecdb6d24baf3bfdf23"
+    },
+    {
+      "relative": "playable/tests/planet-art.test.mjs",
+      "absolute": "C:/Users/HUAWEI/.codex/worktrees/d343/star-abyss-game/playable/tests/planet-art.test.mjs",
+      "bytes": 2933,
+      "sha256": "e4b39074b211e6feda2b980ef9c707c1f4fff7c52553eb89a9972d42008a3bf8"
+    }
+  ]
+}

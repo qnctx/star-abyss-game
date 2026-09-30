@@ -1,0 +1,189 @@
+{
+  "walk": {
+    "thigh_forward_deg": {
+      "min": -18.070324683874375,
+      "max": 36.946130294847386,
+      "range": 55.01645497872176
+    },
+    "ankle_height": {
+      "min": 0.110537,
+      "max": 0.214798,
+      "range": 0.10426099999999999
+    },
+    "knee_height": {
+      "min": 0.451931,
+      "max": 0.565447,
+      "range": 0.113516
+    },
+    "pelvis_height": {
+      "min": 0.842278,
+      "max": 0.892369,
+      "range": 0.050091
+    },
+    "speed": {
+      "min": 1.6,
+      "max": 1.6,
+      "range": 0.0
+    }
+  },
+  "jog": {
+    "thigh_forward_deg": {
+      "min": -22.892748946858124,
+      "max": 63.36389940034182,
+      "range": 86.25664834719994
+    },
+    "ankle_height": {
+      "min": 0.142837,
+      "max": 0.375264,
+      "range": 0.232427
+    },
+    "knee_height": {
+      "min": 0.438171,
+      "max": 0.684391,
+      "range": 0.24622
+    },
+    "pelvis_height": {
+      "min": 0.818897,
+      "max": 0.894539,
+      "range": 0.07564199999999999
+    },
+    "speed": {
+      "min": 6.8,
+      "max": 6.8,
+      "range": 0.0
+    }
+  },
+  "sprint": {
+    "thigh_forward_deg": {
+      "min": -26.330575589140125,
+      "max": 72.17239484160527,
+      "range": 98.50297043074539
+    },
+    "ankle_height": {
+      "min": 0.132935,
+      "max": 0.434213,
+      "range": 0.30127800000000005
+    },
+    "knee_height": {
+      "min": 0.413907,
+      "max": 0.723688,
+      "range": 0.309781
+    },
+    "pelvis_height": {
+      "min": 0.796278,
+      "max": 0.888125,
+      "range": 0.09184700000000001
+    },
+    "speed": {
+      "min": 10.0,
+      "max": 10.0,
+      "range": 0.0
+    }
+  },
+  "input_mismatch_rows": [
+    {
+      "frame": 62,
+      "phase": "walk_start",
+      "requested": [
+        4194326,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 63,
+      "phase": "walk_start",
+      "requested": [
+        4194326,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 64,
+      "phase": "walk_start",
+      "requested": [
+        4194326,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 65,
+      "phase": "walk_start",
+      "requested": [
+        4194326,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 302,
+      "phase": "jog_start",
+      "requested": [
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 303,
+      "phase": "jog_start",
+      "requested": [
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 304,
+      "phase": "jog_start",
+      "requested": [
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 305,
+      "phase": "jog_start",
+      "requested": [
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 542,
+      "phase": "sprint_start",
+      "requested": [
+        4194325,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 543,
+      "phase": "sprint_start",
+      "requested": [
+        4194325,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 544,
+      "phase": "sprint_start",
+      "requested": [
+        4194325,
+        87
+      ],
+      "observed": []
+    },
+    {
+      "frame": 545,
+      "phase": "sprint_start",
+      "requested": [
+        4194325,
+        87
+      ],
+      "observed": []
+    }
+  ]
+}

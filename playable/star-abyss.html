@@ -3,33 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>星渊迷航 · 可玩规格原型</title>
-  <link rel="stylesheet" href="css/game.css">
-  <script defer src="js/config.js"></script><script defer src="js/state.js"></script><script defer src="js/rules.js"></script><script defer src="js/input.js"></script><script defer src="js/world.js"></script><script defer src="js/buildings.js"></script><script defer src="js/combat.js"></script><script defer src="js/progression.js"></script><script defer src="js/save.js"></script><script defer src="js/renderer.js"></script><script defer src="js/guide.js"></script><script defer src="js/main.js"></script>
+  <meta name="theme-color" content="#080d15">
+  <title>星渊 · 静默回声</title>
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/calibration.css">
+  <script defer src="./game.js?v=flight-r12-20260927"></script>
 </head>
 <body>
   <main id="app">
-    <canvas id="game" tabindex="0" aria-label="星渊迷航游戏世界" hidden></canvas>
-    <section id="title" class="screen title-screen" aria-labelledby="game-title">
-      <div><p class="eyebrow">PLAYABLE SPECIFICATION · V3</p><h1 id="game-title">星渊迷航</h1><p>在高压区域采集、建立防线、持续发送救援信号并守住撤离窗口。</p><div class="title-actions"><button id="new-btn">新游戏</button><button id="continue-btn">继续</button><button id="slots-btn" class="quiet">存档管理</button><button id="delete-btn" class="quiet">删除全部存档</button></div></div>
+    <canvas id="world" tabindex="0" aria-label="三维探索世界，WASD 移动，鼠标观察，F 交互"></canvas>
+    <div class="lens-edge" aria-hidden="true"></div>
+    <section id="menu-screen" class="screen menu-screen" aria-labelledby="game-title">
+      <div class="menu-copy">
+        <p class="eyebrow"><span class="signal-dot"></span> UNKNOWN TRANSMISSION / 017</p>
+        <p class="series-title">星 渊</p><h1 id="game-title">静默回声</h1>
+        <p class="english-title">E C H O E S &nbsp; O F &nbsp; S I L E N C E</p>
+        <div class="title-divider" aria-hidden="true"></div>
+        <p class="menu-premise">求救信号，比你的着陆早了十七分钟。</p>
+        <p class="menu-description">越过裂环星的荒原，进入失事远征舰。<br>找到仍在发送信号的人——或者，别的什么。</p>
+        <div class="menu-actions"><button id="continue-button" class="primary-button" hidden>继续调查 <span aria-hidden="true">↗</span></button><button id="start-button" class="primary-button">开始调查 <span aria-hidden="true">↗</span></button></div>
+        <p class="save-notice">自动保存调查进度 · 可离线游玩<br><span id="motion-version">裂环盆地 · 岩谷与追猎</span></p>
+      </div>
+      <aside class="menu-briefing" aria-label="操作说明">
+        <p class="eyebrow">FIELD GUIDE / 外勤指引</p><h2>走向那艘飞船。</h2>
+        <p>远处的残骸可以走近，也可以进入。<br>观察环境、读取记录，让线索带你前进。</p>
+        <dl class="brief-controls">
+          <div><dt><kbd>W A S D</kbd></dt><dd>前后 / 左右侧移 · <kbd>← →</kbd> 转身</dd></div>
+          <div><dt><kbd>Shift / Ctrl</kbd></dt><dd>按住疾跑 / 慢走</dd></div>
+          <div><dt><kbd>C / Z</kbd></dt><dd>蹲伏 / 趴下 · 再按起身</dd></div>
+          <div><dt><kbd>飞行 C</kbd></dt><dd>飞行中按住下降 · 松开悬停</dd></div>
+          <div><dt><kbd>Q / E</kbd></dt><dd>扫描 / 闪避 · = 自动前进</dd></div>
+          <div><dt>鼠标</dt><dd>转向 · 按住 Alt 独立环视</dd></div>
+          <div><dt><kbd>F</kbd></dt><dd>调查 / 修复 / 上下车</dd></div>
+          <div><dt><kbd>Space</kbd></dt><dd>地面跳跃；车上刹车</dd></div>
+          <div><dt><kbd>L</kbd> / <kbd>Q</kbd></dt><dd>照明 / 扫描</dd></div>
+          <div><dt><kbd>V</kbd></dt><dd>步行 / 驾驶均可切换第一、第三人称</dd></div>
+          <div><dt><kbd>U</kbd></dt><dd>身体适应 / 装备进化</dd></div>
+          <div><dt><kbd>M</kbd> / <kbd>Esc</kbd></dt><dd>地图 / 暂停 · J 调查记录</dd></div>
+        <div><dt><kbd>Shift</kbd></dt><dd>飞行加速 · 近地安全限速</dd></div><div><dt><kbd>Y</kbd></dt><dd>炼虚起短距瞬移 · Shift + Y 长距预览</dd></div><div><dt><kbd>空中 R</kbd></dt><dd>盆地气刃 · 星劫起破虚</dd></div></dl><p class="fallback-note">W/S 前进后退，A/D 侧移；W+Shift 疾跑，鼠标转向。<br>按住 Alt 独立环视，松开平滑回正；驾驶用 A/D 转向。<br>无法锁定鼠标时，按住画面拖动转向；Alt+拖动环视。</p>
+      </aside>
+      <footer class="menu-footer"><span>裂环星 · 失事调查</span><span>6 × 6 km 开放地表 / 双视角探索</span></footer>
     </section>
-    <section id="hud" hidden aria-label="游戏状态">
-      <header class="topbar"><div class="brand">星渊迷航 <small>V3</small></div><div id="zone"></div><div id="cycle"></div><button id="save-btn" title="管理多个存档">存档</button><button id="manual-btn" title="打开生存手册">说明</button><button id="pause-btn" title="暂停">暂停</button></header>
-      <aside class="status"><label>氧气 <span id="o2-value"></span></label><div class="meter"><i id="o2-fill"></i></div><p>生命 <span id="hp-value"></span></p><p>基地 <span id="base-value"></span></p><p id="weight"></p><p id="signal"></p><p id="scan"></p><p id="upgrade"></p><p id="context" class="action-hint"></p></aside>
-      <aside id="inventory" class="inventory" aria-label="资源"></aside>
-      <div id="objective" class="objective" aria-live="polite"></div><ul id="notices" class="notices" aria-live="polite"></ul>
-      <aside class="radio-log" aria-label="无线电日志"><h2>无线电日志</h2><ul id="radio-log" aria-live="polite"></ul></aside>
-      <nav class="toolbar" aria-label="工具栏"><button data-tool="weapon"><kbd>1</kbd> 武器</button><button data-tool="harvester"><kbd>2</kbd> 采集器</button><button data-tool="scanner"><kbd>3</kbd> 扫描器（左键扫描；再次关闭会话）</button><button data-tool="build"><kbd>4</kbd> 建造</button><button data-tool="repair"><kbd>5</kbd> 维修</button><button id="kit-btn"><kbd>Q</kbd> O2 Kit</button><button id="craft-kit-btn">制作 Kit</button><button id="serum-btn" type="button">血清</button><button id="build-btn" type="button">建筑</button></nav>
-      <p class="keyline">WASD 移动 · Shift 冲刺 · 左键执行当前工具 · <strong>3 选择扫描器后左键启动或替换扫描会话；会话会跨工具持续，再次按 3 关闭</strong> · <strong>G 仅选择下一次扫描类别，不影响当前锁定</strong> · F 使用植株 · X 回收（105m 内） · <strong>U 升级（靠近炮塔时显示成本）</strong> · Y 解锁 · Esc 暂停</p>
+    <section id="hud" class="hud" hidden aria-label="探索状态">
+      <header class="compass" aria-label="方位"><span class="compass-line" aria-hidden="true"></span><span id="heading-name">N</span><strong id="heading-degrees">000°</strong><span class="compass-line" aria-hidden="true"></span></header>
+      <aside class="objective"><p class="eyebrow"><span class="tiny-diamond" aria-hidden="true"></span> 当前调查</p><h2 id="objective-title"></h2><p id="objective-detail"></p><p id="target-range" class="target-range"></p></aside>
+      <aside class="location"><span class="location-mark" aria-hidden="true">⌖</span><div><span id="location-name"></span><small id="coordinates"></small><small id="body-heading"></small></div></aside>
+      <div id="navigation-hud" class="navigation-hud" hidden><span id="navigation-arrow" aria-hidden="true">↑</span><div><strong id="navigation-name"></strong><span id="navigation-detail"></span></div></div>
+      <div id="reticle" class="reticle" aria-hidden="true"><span></span></div>
+      <div id="interaction" class="interaction" hidden><kbd>F</kbd><div><strong id="interaction-name"></strong><span id="interaction-hint"></span></div></div>
+      <p id="capture-hint" class="capture-hint">点击画面控制视角 <span>· 也可按住左键拖动观察</span></p>
+      <aside class="suit-status" aria-label="体力、助推与载具状态">
+        <div id="foot-status"><div class="status-heading"><span id="body-level-label">体力 · L0</span><strong id="stamina-number">100<small>%</small></strong></div><div class="charge-track"><span id="stamina-fill"></span></div><p id="stamina-status" class="stamina-status">体力充沛</p><p id="sprint-duration" class="growth-duration">满值冲刺 30.0 秒</p></div>
+        <div id="mobility-status" class="mobility-status"><div class="status-heading"><span id="mobility-label">玄壳 · L0</span><strong id="mobility-number">100<small>%</small></strong></div><div class="mobility-track"><span id="mobility-fill"></span></div><p id="mobility-detail"></p><p id="mobility-hint"></p><p id="flight-duration" class="growth-duration">满能助推 30.0 秒</p><p id="dash-hint"></p></div>
+        <p id="surface-status" class="surface-status">碎石地面</p><p class="scanner-status"><span><kbd>Q</kbd> 脉冲扫描</span><b id="scanner-status">就绪</b></p>
+        <button id="track-transport-button" class="transport-tracker" hidden>追踪勘探车</button>
+      </aside>
+      <footer class="hud-controls"><span id="movement-help"><kbd>WASD</kbd> 移动</span><span id="speed-help"><kbd>W+Shift</kbd> 冲刺</span><span id="lift-help"><kbd>Space</kbd> 跳跃</span><button id="walk-button" aria-pressed="false"><kbd>C</kbd> 蹲伏</button><button id="camera-button"><kbd>V</kbd> 第一人称</button><button id="evolution-button"><kbd>U</kbd> 进化</button><button id="records-button"><kbd>J</kbd> 记录</button><button id="journal-button"><kbd>M</kbd> 地图</button><button id="pause-button"><kbd>Esc</kbd> 暂停</button></footer>
     </section>
-    <section id="pause" class="modal" hidden><div class="dialog"><h2>暂停</h2><button id="resume-btn">继续</button><button data-close>关闭面板</button></div></section>
-    <section id="build-panel" class="modal" hidden><div class="dialog wide"><header><h2>建筑目录</h2><button data-close aria-label="关闭">×</button></header><p class="dialog-intro">每张建筑卡都标明用途与成本；选择后会自动切换至建造工具。</p><div id="build-list" class="choice-list"></div><p class="dialog-hint">靠近炮塔按 <kbd>U</kbd> 升级（HUD 显示当前成本与缺少资源），按 <kbd>X</kbd> 回收；选择锁定建筑后按 <kbd>Y</kbd> 解锁。</p></div></section>
-    <section id="build-confirm-panel" class="modal" hidden aria-labelledby="build-confirm-title"><div class="dialog" role="dialog" aria-modal="true"><header><h2 id="build-confirm-title">确认建造</h2><button data-close aria-label="取消建造">×</button></header><p id="build-confirm-copy"></p><p id="build-confirm-cost" class="dialog-intro"></p><p id="build-confirm-range" class="dialog-intro"></p><p id="build-confirm-warning" class="dialog-warning" hidden></p><div class="dialog-actions"><button id="build-confirm-btn">确认建造</button><button data-close>取消（Esc）</button></div></div></section>
-    <section id="serum-panel" class="modal" hidden><div class="dialog wide"><header><h2>区域适应血清</h2><button data-close aria-label="关闭">×</button></header><div id="serum-list" class="choice-list"></div></div></section>
-    <section id="save-panel" class="modal" hidden aria-labelledby="save-title"><div class="dialog wide" role="dialog" aria-modal="true"><header><h2 id="save-title">存档管理</h2><button data-close aria-label="关闭">×</button></header><p class="dialog-intro">自动存档用于“继续”；手动档位只有按“保存当前进度”后才会写入，空档位不会自动复制自动存档。手动档位可分别改名，每个已保存档位显示保存时的建筑数量，方便核对建筑是否已写入。</p><div id="save-slot-list" class="save-slot-list"></div></div></section>
-    <section id="save-rename-panel" class="modal" hidden aria-labelledby="save-rename-title"><div class="dialog" role="dialog" aria-modal="true"><header><h2 id="save-rename-title">重命名手动档位</h2><button id="save-rename-close" aria-label="取消重命名">×</button></header><p class="dialog-intro">名称最多 24 个字符；留空后恢复默认名称。</p><label class="dialog-field" for="save-rename-input">档位名称</label><input id="save-rename-input" maxlength="24" autocomplete="off"><div class="dialog-actions"><button id="save-rename-confirm">保存名称</button><button id="save-rename-cancel">取消（Esc）</button></div></div></section>
-    <section id="manual-panel" class="modal" hidden aria-labelledby="manual-title"><div class="dialog wide guide-dialog" role="dialog" aria-modal="true"><header><h2 id="manual-title">生存手册</h2><button data-close aria-label="关闭">×</button></header><div id="manual-content" class="manual-content" aria-live="polite"></div><footer class="guide-pager"><button id="guide-prev" type="button">← 上一页</button><span id="guide-page" aria-live="polite"></span><button id="guide-next" type="button">下一页 →</button></footer></div></section>
-    <section id="end-screen" class="modal" hidden><div class="dialog"><h2 id="end-title"></h2><p id="end-copy"></p><button id="restart-btn">重新开始</button><button id="title-btn">返回标题</button></div></section>
+    <section id="journal-screen" class="screen overlay" hidden aria-labelledby="journal-title">
+      <div class="journal-shell">
+        <header class="overlay-header"><div><h2 id="journal-title">探索地图</h2></div><button id="close-journal-button" class="quiet-button"><kbd>M</kbd> 返回探索</button></header>
+        <div class="journal-layout">
+
+
+          <section class="map-section" aria-labelledby="map-title">
+            <header class="map-header"><h3 id="map-title">地表测绘</h3><div class="map-zoom"><button id="map-zoom-out" aria-label="缩小地图">−</button><span id="map-zoom-level">1.5 km</span><button id="map-zoom-in" aria-label="放大地图">+</button></div></header>
+            <div class="map-modes" aria-label="地图范围"><button id="map-planet" aria-pressed="false">行星</button><button id="map-nearby" aria-pressed="true">盆地附近</button><button id="map-world" aria-pressed="false">盆地全图</button><button id="map-interior" aria-pressed="false" disabled>舰内细图</button><button id="map-center">回到我</button></div>
+            <div id="planet-map-panel" hidden><div id="planet-map-image"></div><p id="planet-map-status"></p><p>选择地点设置导航 · 距离沿球面计算 · 地图不代表可通行路线</p><button id="planet-map-clear" class="quiet-button">清除行星标点 · 恢复调查目标</button><div id="planet-map-places"></div></div>
+            <div class="map-content"><div class="map-canvas-wrap"><svg id="survey-map" class="survey-map" viewBox="0 0 600 600" role="group" aria-label="探索地图：点击空白标点，拖拽平移，滚轮缩放" tabindex="0">
+              <defs><clipPath id="map-clip"><rect x="25" y="25" width="550" height="550"/></clipPath></defs>
+              <rect x="0" y="0" width="600" height="600" fill="#e7dbbd"/><rect x="25" y="25" width="550" height="550" fill="#d5c6a6" stroke="#8b7959"/>
+              <text x="300" y="17" text-anchor="middle" class="map-cardinal">N</text><text x="589" y="305" text-anchor="middle" class="map-cardinal">E</text><text x="300" y="594" text-anchor="middle" class="map-cardinal">S</text><text x="11" y="305" text-anchor="middle" class="map-cardinal">W</text>
+              <g clip-path="url(#map-clip)"><g id="map-terrain" pointer-events="none"></g><g id="map-structure"></g><g id="map-route"></g><g id="map-points"></g><g id="map-player"></g></g><text id="map-scale" x="40" y="556" class="map-scale">1.5 km × 1.5 km</text>
+            </svg>
+            <p class="map-caption"><span class="player-key">▲ 行进朝向</span><span class="waypoint-key">短线：视线</span><span>◇ 已知</span><span class="waypoint-key">◆ 标点</span><span id="map-coordinates"></span></p>
+            <p class="map-help">点击空白标点 · 点击地点追踪 · 拖拽平移 · 滚轮缩放<br>虚线仅指示方向，不代表可通行路线。<br><span id="map-feedback" role="status"></span></p></div>
+            <aside class="map-sidebar"><div class="map-tracking"><p class="eyebrow">当前导航</p><h4 id="map-tracking-name">跟随调查目标</h4><p id="map-tracking-detail">仅显示已知地点；未知区域等待探索。</p><button id="map-clear-waypoint" class="quiet-button">清除标点 · 恢复任务追踪</button></div><details class="map-places"><summary>已知地点 · 点击展开</summary><ol id="map-point-list" class="map-point-list"></ol></details></aside></div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section id="records-screen" class="screen overlay" hidden aria-labelledby="records-screen-title"><div class="journal-shell"><header class="overlay-header"><h2 id="records-screen-title">调查记录 · <span id="entry-count">0</span></h2><button id="close-records-button" class="quiet-button"><kbd>J</kbd> 返回探索</button></header><div class="journal-layout">          <section id="journal-records" class="journal-records"><h3><span class="tiny-diamond" aria-hidden="true"></span> 已发现的记录</h3><div id="journal-entries" class="journal-entries"></div></section></div></div></section>
+    <section id="evolution-screen" class="screen overlay" hidden aria-labelledby="evolution-screen-title"><div class="journal-shell"><header class="overlay-header"><h2 id="evolution-screen-title">共生进化 <span id="evolution-ready-count"></span></h2><button id="close-evolution-button" class="quiet-button"><kbd>U</kbd> 返回探索</button></header><div class="journal-layout">          <section id="evolution-section" class="evolution-section" aria-labelledby="evolution-title">
+            <header class="evolution-header"><div><p class="eyebrow">SYMBIOSIS / FIELD ADAPTATION</p><h3 id="evolution-title">身体学会适应，玄壳学会回应。</h3><p>延长持续时间，不提高航高；升级不补满当前资源。</p></div><div class="evolution-telemetry"><span>有效徒步</span><strong id="evolution-distance">0 m</strong><small id="evolution-location">野外 · 设备校准需靠近工作点</small></div></header>
+            <div class="evolution-columns">
+              <article id="body-evolution" class="evolution-branch"><header><span class="branch-symbol" aria-hidden="true">◌</span><div><p class="eyebrow">BODY / 身体进化</p><h4>低重力适应</h4></div><span id="body-evolution-level" class="evolution-level">L0</span></header><div class="evolution-current"><span>满体力连续冲刺</span><strong id="body-evolution-duration">30.0 <small>秒</small></strong></div><div class="evolution-activation"><button id="evolve-body-button" class="primary-button" disabled>稳定适应</button><p id="body-evolution-reason"></p></div><ol id="body-evolution-roadmap" class="evolution-roadmap"></ol></article>
+              <article id="equipment-evolution" class="evolution-branch equipment"><header><span class="branch-symbol" aria-hidden="true">◇</span><div><p class="eyebrow">SHELL / 装备进化</p><h4>玄壳动力回路</h4></div><span id="equipment-evolution-level" class="evolution-level">L0</span></header><div class="evolution-current"><span>满能量连续助推</span><strong id="equipment-evolution-duration">30.0 <small>秒</small></strong></div><div class="evolution-activation"><button id="evolve-equipment-button" class="primary-button" disabled>校准回路</button><p id="equipment-evolution-reason"></p><button id="track-calibration-button" class="quiet-button">追踪最近校准工作点</button></div><ol id="equipment-evolution-roadmap" class="evolution-roadmap"></ol></article>
+            </div><section class="dash-skill-card" aria-labelledby="dash-title"><h3 id="dash-title">矢量闪避 · 入门</h3><p id="dash-skill-status"></p><p>E + 方向键：沿指定方向闪避，未按方向默认向前。最多 4 m，持续 0.35 s，冷却 6 s；不穿墙，不提供无敌。仅限地面、离开车辆后使用。</p><p>本轮为入门动作样板：尚不开放熟练度突破与高级境界，闪避不计入徒步升级里程。</p></section><p class="evolution-note">徒步才计入身体适应：驾驶、飞行、原地顶墙和暂停不增加里程。身体适应需先在地面站定 3 秒；装备校准需在返回信标或已供电的配电箱旁进行。档案打开时不会累计休息或资源。</p>
+          </section></div></div></section>
+    <section id="pause-screen" class="screen overlay centered-overlay" hidden aria-labelledby="pause-title"><div class="compact-panel"><p class="eyebrow">SIGNAL ON HOLD</p><h2 id="pause-title">暂时静默</h2><p>调查已暂停。深呼吸，再继续。</p><div class="stack-actions"><button id="resume-button" class="primary-button">返回探索 <span aria-hidden="true">↗</span></button><button id="pause-journal-button" class="quiet-button">探索地图</button><button id="pause-records-button" class="quiet-button">调查记录 · J</button><button id="pause-evolution-button" class="quiet-button">共生进化 · U</button><button id="sound-button" class="quiet-button" aria-pressed="false">环境音：开启</button></div><p class="save-notice">进度自动保存于此浏览器。</p></div></section>
+    <section id="complete-screen" class="screen overlay centered-overlay" hidden aria-labelledby="complete-title"><div class="compact-panel complete-panel"><p class="eyebrow">ECHO SOURCE / DISCONNECTED</p><div class="complete-mark" aria-hidden="true">◇</div><h2 id="complete-title">静默之后</h2><p class="completion-copy">回声源已经断联，原始证据完成封存。<br>这一次，信标只收到了你的声音。<br>但黑匣子最早的那十七分钟，仍然没有解释。</p><div class="stack-actions"><button id="complete-journal-button" class="primary-button">回看调查档案 <span aria-hidden="true">↗</span></button><button id="explore-button" class="quiet-button">继续探索荒原</button></div><p id="completion-time" class="save-notice"></p></div></section>
+    <section id="new-confirm" class="confirm-layer" hidden role="dialog" aria-modal="true" aria-labelledby="confirm-title"><div class="compact-panel"><p class="eyebrow">NEW INVESTIGATION</p><h2 id="confirm-title">开启新的调查？</h2><p>当前的自动存档会被新调查替换。已有进度无法恢复。</p><div class="confirm-actions"><button id="cancel-new-button" class="quiet-button">保留进度</button><button id="confirm-new-button" class="primary-button">确认重新开始</button></div></div></section>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   </main>
 </body>
 </html>

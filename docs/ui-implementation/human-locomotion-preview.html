@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>玄壳共生服 · 四向连续动作检视</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#20251f;color:#e6e0ce;font:14px/1.5 system-ui,"Microsoft YaHei",sans-serif}header{padding:18px 22px 12px}h1{margin:0 0 8px;font-size:23px;font-weight:500}p{margin:5px 0;color:#bfc5b5}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}button,select{font:inherit;color:#e6e0ce;background:#344033;border:1px solid #65765c;border-radius:5px;padding:7px 11px;min-height:36px}button{cursor:pointer}label{display:flex;gap:7px;align-items:center}#stage{position:relative;width:100%;height:min(76vw,940px);min-height:600px}#stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}#labels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);pointer-events:none}.pane-label{padding:12px;border:1px solid #7c826f38;display:flex;justify-content:space-between;align-items:flex-start}.pane-label span{padding:4px 8px;background:#18221ccf;border-radius:4px;font-size:13px}.pane-label small{margin-top:auto;color:#e1dfc8;background:#18221ccf;padding:3px 7px}footer{padding:12px 22px 20px;color:#c4c7b8;font-size:13px}a{color:#aad2bf}@media(max-width:760px){header{padding:12px}h1{font-size:19px}#stage{height:850px;min-height:850px}#labels{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,1fr)}.pane-label{padding:6px}.pane-label span{font-size:11px}.controls{gap:7px}label{font-size:12px}button,select{padding:5px}}
+</style></head><body><header><h1>C / 玄壳共生服 · 四向连续动作检视</h1>
+<p>C2-FREELOOK-20260908 · 实际游戏角色 / 19 骨骼蒙皮。上排谨慎慢走，下排常速／冲刺；使用游戏真实移动控制器。W / S 前进／后退，A / D 横移，身体朝向不随观察镜头改变。只有 W／前斜向可冲刺。</p>
+<div class="controls"><button id="pause-preview">暂停</button>
+<label>前进速度<select id="run-speed"><option value="4.7">默认常速 4.7 m/s</option><option value="8.6" selected>Shift 冲刺 8.6 m/s</option></select></label>
+<label>侧／后<select id="lateral-mode"><option value="gameplay">真实玩法限速</option><option value="stress">超速压力测试（非玩法）</option></select></label>
+<label>观察角度<select id="camera-angle"><option value="rear">后侧 45°</option><option value="back">正背面</option><option value="side">侧面</option><option value="front">正面</option></select></label>
+<label>播放<select id="time-scale"><option value="1">正常速度</option><option value="0.5">半速观察</option><option value="0.25">四分之一速</option></select></label>
+<button id="restart-preview">重新起步</button><span id="preview-status">准备模型…</span></div></header>
+<main id="stage"><div id="labels"></div></main>
+<footer>前进保留 Quaternius UAL1 Standard（CC0）全身片段；倒走／侧步由解析双骨 IK 重定向，非新增动捕。膝盖前弯、脚步不交叉，观察角度不改变身体朝向。谨慎前／侧／后速度为 1.65 / 1.3 / 1.2 m/s；常速为 4.7 / 2.4 / 2.2 m/s；仅前进可冲刺至 8.6 m/s。超速模式仅检验骨骼安全，不代表玩法。此页不修改存档；可连续播放、暂停、逐角度比较。</footer>
+<script src="./human-locomotion-preview.js"></script></body></html>

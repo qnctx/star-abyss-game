@@ -1,0 +1,1358 @@
+{
+  "test": "TEST-ORIGINAL-CORE-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/9d51/star-abyss-game/artifacts/tests/TEST-ORIGINAL-CORE-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-ORIGINAL-CORE-R1",
+  "archivedAt": "2026-09-12T16:33:04.478Z",
+  "files": [
+    {
+      "path": "01-start-root.json",
+      "sha256": "5dffc585fd66374f10cd9167f307140b9c8c3a4c2cbefe939ca8293a0d614344",
+      "bytes": 44353
+    },
+    {
+      "path": "01-start.png",
+      "sha256": "2576c4a4fbd4943693d7230258754adda7af3a6f770460c817449ec6d2559a51",
+      "bytes": 90981
+    },
+    {
+      "path": "02-repaired-mounted.json",
+      "sha256": "ec4f8b571e13ed728c0f6fa7c841698a61c7c4e47f9f46ae0c24179b00f0a5c2",
+      "bytes": 135714
+    },
+    {
+      "path": "02-repaired-mounted.png",
+      "sha256": "76d34ed8873c69cb6255b1d05577b96632702bdaf5cfa50c6e3251eccd070294",
+      "bytes": 98570
+    },
+    {
+      "path": "03-before-reload.json",
+      "sha256": "5f655f75a89e6278fc65ae333b2e92e00bd17a1c668576136418412f2c19f1e1",
+      "bytes": 137621
+    },
+    {
+      "path": "04-reload.json",
+      "sha256": "8d6223a7830870a5f6f5f77de0ebf8e5cf9a8ca6180120453a64d9015d518362",
+      "bytes": 137548
+    },
+    {
+      "path": "05-harvest-before-repeat.json",
+      "sha256": "c3f9fc5983bc029e5cead5b3d4ae3b18db20ceb79b4a12b1b38b96c6cbce0f81",
+      "bytes": 172971
+    },
+    {
+      "path": "05-harvest.png",
+      "sha256": "799e567fadbed3839b7888a4ed466ac0e134c91973bff65fdeddb04e3b68a615",
+      "bytes": 90581
+    },
+    {
+      "path": "06-harvest-repeat.json",
+      "sha256": "40a422882bc20aab9c497e1ed7157e972c4bba893b18ccafaf46055d7c4e01ce",
+      "bytes": 173012
+    },
+    {
+      "path": "07-harvest-reloaded.json",
+      "sha256": "ec6ccd1471dd68dd1a3d457845cd148dd9bb3120fc6625ae65a58838aa26b082",
+      "bytes": 175987
+    },
+    {
+      "path": "08-camp-before.json",
+      "sha256": "fb38a9aa1048926e2ef298ba7f6d40b368633e77a99e721deee22ee84931124d",
+      "bytes": 200011
+    },
+    {
+      "path": "09-camp-last-store.json",
+      "sha256": "fa123abdb0523677a63eb8cd0c7a706a10d329fc3f86cc37983647a2a3d4cbbe",
+      "bytes": 406996
+    },
+    {
+      "path": "10-camp-last-take.json",
+      "sha256": "92804451a01b9f336d39b1f4d07a8838dadb5ca38b5bf39e11dc2c2808a0c6e0",
+      "bytes": 414096
+    },
+    {
+      "path": "11-pause-before.json",
+      "sha256": "f11e5e4cd2ad755c5ac6f0970be085ccbcf25ac5f881649b7de6b70019d73b8f",
+      "bytes": 418598
+    },
+    {
+      "path": "12-pause-after.json",
+      "sha256": "f11e5e4cd2ad755c5ac6f0970be085ccbcf25ac5f881649b7de6b70019d73b8f",
+      "bytes": 418598
+    },
+    {
+      "path": "13-real-windup.png",
+      "sha256": "ef07da9feb89a3b08d89cb7d8e718a0949f73f9528829f039547e4c5c7a3901f",
+      "bytes": 87029
+    },
+    {
+      "path": "14-death.png",
+      "sha256": "9664f6ca169258d45caa8a025e2c26094c5cf3c2dbed7b1b09f5c8781b37da3f",
+      "bytes": 91453
+    },
+    {
+      "path": "14-real-enemy-injury.json",
+      "sha256": "0407ae169650b4aa608901f46ffd555f53f5ce611db362a47ff7b61b9844c4bf",
+      "bytes": 200011
+    },
+    {
+      "path": "15-rescued.json",
+      "sha256": "8dc721807627136f9d69873bfc520ca2a8d99f157317eb6669b89e96463dc90f",
+      "bytes": 200011
+    },
+    {
+      "path": "16-rescue-reloaded.json",
+      "sha256": "8dc721807627136f9d69873bfc520ca2a8d99f157317eb6669b89e96463dc90f",
+      "bytes": 200011
+    },
+    {
+      "path": "17-post-rescue-full.json",
+      "sha256": "864d6ada24308b11998ae5dfb7b063cec383847dd2aec77a8c5a4011b8b35403",
+      "bytes": 556524
+    },
+    {
+      "path": "18-before-second-death-full.json",
+      "sha256": "a6909cdea8c44b94f20679a373c99e7223703d21cf09996803968faf55227888",
+      "bytes": 592374
+    },
+    {
+      "path": "19-death-full.json",
+      "sha256": "5c9cae21e04049daecc7bd0ae16867604ecab343fbf4f26189b371eb522e2ad6",
+      "bytes": 634055
+    },
+    {
+      "path": "19-death.png",
+      "sha256": "6f1eed9e4ad100d00b89e052a92597182f89dabda77af135df08b1f70a8b1317",
+      "bytes": 86605
+    },
+    {
+      "path": "20-rescue-full.json",
+      "sha256": "8bcb9b8a64c700ed7107c74e39cf108308b2d214a1acc4d5b69aad84cb31d04d",
+      "bytes": 634035
+    },
+    {
+      "path": "21-rescue-paused-full.json",
+      "sha256": "7300bd39ccce16a4343f5d517493e67279b33191e9e90b81a8f7a1b6e1167d3f",
+      "bytes": 638757
+    },
+    {
+      "path": "22-rescue-reload-full.json",
+      "sha256": "59d011c61d1bbf9aaef078b4030b0e8f98136ced6938f656f2b3ec8f21709dcc",
+      "bytes": 642013
+    },
+    {
+      "path": "23-ai-windup-full.json",
+      "sha256": "259ce25a7568da223c3ce941bcce44e320167e3f2a174b349a367a28513d697e",
+      "bytes": 805655
+    },
+    {
+      "path": "23-paused-ai-windup.png",
+      "sha256": "a4314a8411ef103409b87cd9a2265433fbb2eff733859840afdd27a62b3fdf73",
+      "bytes": 87137
+    },
+    {
+      "path": "24-real-corpse.png",
+      "sha256": "ca0814acd2accb57d9b57c990ccd164376d7f73bfeb9f0e63e57ae85e2f5b3c7",
+      "bytes": 86850
+    },
+    {
+      "path": "24-real-kill-full.json",
+      "sha256": "aa69765377aefde5e392d04f2f163ea2a417438037f0447a3ff9c0d3e593bf1a",
+      "bytes": 847818
+    },
+    {
+      "path": "25-loot-full.json",
+      "sha256": "64fb80854e4ccf3213c6f927a875173e5921e9987707571eec80e9afa23f1491",
+      "bytes": 864656
+    },
+    {
+      "path": "25-loot.png",
+      "sha256": "0b11ec9ec95d6e850fc5f5a1bae84f842bf040a7306d6c728ddd10ca7ed7c89d",
+      "bytes": 86200
+    },
+    {
+      "path": "26-loot-repeat-full.json",
+      "sha256": "a530d41b2236e7d319f8cf9e797d99efeea5170d0388d63406bb48d758009204",
+      "bytes": 874596
+    },
+    {
+      "path": "27-loot-reloaded-full.json",
+      "sha256": "6bc3803209341c1fe18d3fe126f7b73806c9570e034cf51f4ff76f7a5eb9267b",
+      "bytes": 891307
+    },
+    {
+      "path": "28-original-records.png",
+      "sha256": "b47e3eb23a6a8fa631ceeda8df4361a161d584cefa7753c5e7011e5f8a32b3fe",
+      "bytes": 55757
+    },
+    {
+      "path": "29-stable-corpse.png",
+      "sha256": "6d4d59c69873df26ff5bd8331c0af982def2631ae89aad8a23a07d24a6c84d8a",
+      "bytes": 81351
+    },
+    {
+      "path": "30-original-map.png",
+      "sha256": "90cbe3a911f69308953d3a1f77bba765a4412ac0c24e065dc61dec683a76ca46",
+      "bytes": 37323
+    },
+    {
+      "path": "31-world-map-6km.png",
+      "sha256": "de82cbca92eb9a5397466cd1033aabeb94d8dff7ccf64a36adaad2a3d4d93fa3",
+      "bytes": 36051
+    },
+    {
+      "path": "audit-live.cjs",
+      "sha256": "e9db25ea333a5c5dc7148a0959a0ce15675b7fca225548dc5d20ad1766ba03e7",
+      "bytes": 3152
+    },
+    {
+      "path": "bootstrap.cjs",
+      "sha256": "b22a4391b1b0beb7798dcdf7ceb053b8141a3677a8ae99a852249b7f21e0f97e",
+      "bytes": 2356
+    },
+    {
+      "path": "browser-logs.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "check-evidence.cjs",
+      "sha256": "f142ddd1b9b6378424bed1f4e9ce0e308cef067ec4041956f588ea1d625aea3f",
+      "bytes": 250
+    },
+    {
+      "path": "core-regression.tap",
+      "sha256": "b8c707b4bcf8ee690e76a314162ae66c955ee042a4a268ee4489a22557204bd7",
+      "bytes": 1509
+    },
+    {
+      "path": "delivery-sha.json",
+      "sha256": "08bb4fccbf13582aabcd748165b9c7b2d859fc99dc3900e056bbad135484340d",
+      "bytes": 473
+    },
+    {
+      "path": "dynamic-adapter-result.json",
+      "sha256": "129d8b0f5b1a8614eec7d57b557d31a81ec7c49ad28b86daf5fee0e6d6e5921b",
+      "bytes": 333
+    },
+    {
+      "path": "dynamic-adapter.tap",
+      "sha256": "10296ffcc49807e35d440e6abae89c2acec613b689ecaec9f095b6987c9d5267",
+      "bytes": 1007
+    },
+    {
+      "path": "dynamic-adapter.test.cjs",
+      "sha256": "2176a42b4d8dff1862d26f83c7c27e9609127bc600fcf792145b3302d7fbdb42",
+      "bytes": 1310
+    },
+    {
+      "path": "evidence-manifest.json",
+      "sha256": "d63d1d892765ec19a5bc17c2c2331b9040b675a720f7efbdf0715c40af32d9dc",
+      "bytes": 18989
+    },
+    {
+      "path": "final-integrity.json",
+      "sha256": "fa6152ded9ec49a9c2f30266d1d00fda14acdfc83eea8e2667101bacf0c0103f",
+      "bytes": 982
+    },
+    {
+      "path": "final-notes.cjs",
+      "sha256": "6d4a9b303c383c0eb620a277e7b3d55240743f59864f0e1f887f29fad0586351",
+      "bytes": 1055
+    },
+    {
+      "path": "finalize.cjs",
+      "sha256": "a99bbf4c53d624563be70bd822bc5f35d397bd161283976af6fbf604fcdc1250",
+      "bytes": 3241
+    },
+    {
+      "path": "fixture-capacity-roots.json",
+      "sha256": "c17cd80ea3b11a2615e4dda1bc882b914203124f14d153bce04e981595158a34",
+      "bytes": 145886
+    },
+    {
+      "path": "fixture-rescue-roots.json",
+      "sha256": "dce2690ff5893f7664d5bf5e3efe76082172cab859d2d5adb180310c236e5adc",
+      "bytes": 123729
+    },
+    {
+      "path": "independent-boundaries.test.cjs",
+      "sha256": "0e50ab536b73e3ab7c6c318043d8e76f5c097fa29599d5b8a271915cca67e024",
+      "bytes": 5809
+    },
+    {
+      "path": "independent.tap",
+      "sha256": "f4acce7ac6d5a3c2abeb80f2bf8d9b4c836a073bd52cd4ae900e19bfa26e3ccc",
+      "bytes": 1209
+    },
+    {
+      "path": "initial-integrity.json",
+      "sha256": "2ac943a7bc6fe54490e3b3a6401240cf8d66d01b335af22c6d6193f7adbb8234",
+      "bytes": 31521
+    },
+    {
+      "path": "input-session-regression.tap",
+      "sha256": "7615a3e8bd8f9ad5ccd985920e8db8e110880a2fc8e22da25f79e196b3072304",
+      "bytes": 8826
+    },
+    {
+      "path": "live-audit.json",
+      "sha256": "0be3dd0eecdd51179dc7ffc189b5ac98b6e31387302c2c2e04dccf209742ad37",
+      "bytes": 615
+    },
+    {
+      "path": "port-preload.cjs",
+      "sha256": "50395633d376fc596881bba2a16b41c517e0bce18592f993d59ff2795783e6db",
+      "bytes": 179
+    },
+    {
+      "path": "regression-generated-scene-node-r2.json",
+      "sha256": "55d5459f457901815dbd9b6cb9ab0bb8eb11b5d113a4b4efa9cd802b236f1a85",
+      "bytes": 4549542
+    },
+    {
+      "path": "restore-regression-output.cjs",
+      "sha256": "4dd9bd721e9770bcc8f7708d72e91156088cf2cfee18c80031b56a89b2022f55",
+      "bytes": 471
+    },
+    {
+      "path": "run-regressions.cjs",
+      "sha256": "d9b6f7ae8b5e5edd583e75da5766514402d13ea2104534e666205943475530bf",
+      "bytes": 980
+    },
+    {
+      "path": "served-bundle.json",
+      "sha256": "9fb49a86126276ded5d9752347896927951f93d7fa3f8c5719b94a2867e88e55",
+      "bytes": 300
+    },
+    {
+      "path": "static-los-result.json",
+      "sha256": "67ce4a6b2898d73461915830e001bf318d7709c60a0041f521d32c9cc4ec6554",
+      "bytes": 1413
+    },
+    {
+      "path": "static-los.tap",
+      "sha256": "27745f59d66baf0d46b42e2c638605dff86ed1f9a04dd1bbd991a8eefeca0172",
+      "bytes": 294
+    },
+    {
+      "path": "static-los.test.cjs",
+      "sha256": "ade9518d74af2f521f3ede52510ba7c2cbb6511c2ce11ffc2770466e583ea545",
+      "bytes": 1115
+    },
+    {
+      "path": "strict-adapter-result.json",
+      "sha256": "ba71b03ac4bc27ba92ae99b8a2e472e36092fbacea95f4c7b2aec1b38c1bdff0",
+      "bytes": 119
+    },
+    {
+      "path": "strict-adapter.cjs",
+      "sha256": "ebc00b8804fbe88e3f828dd544aef72e668f4d067a21e9d99d4eeadfdb27f97b",
+      "bytes": 450
+    },
+    {
+      "path": "tree/artifacts/original-core/preview/game.js",
+      "sha256": "b4c1472dcefa59530f8e5adfb910f506737ad1b6d0d0d38a9ed85ee95e389255",
+      "bytes": 22985363
+    },
+    {
+      "path": "tree/artifacts/original-core/preview.cjs",
+      "sha256": "97141360f8f0325606e8666521c98a3f4c7342ad582d79ee3201c697ae882eb8",
+      "bytes": 2231
+    },
+    {
+      "path": "tree/package-lock.json",
+      "sha256": "4874792373864bae3c565e46ff710afcd947368a56a7f838bdd4e61c3f611275",
+      "bytes": 16796
+    },
+    {
+      "path": "tree/package.json",
+      "sha256": "97a1277122176ef0986cb94fd1525990c44c12b54244752ac47739343c074c75",
+      "bytes": 772
+    },
+    {
+      "path": "tree/playable/css/calibration.css",
+      "sha256": "e726e0c32ea74a4d70695e72a284f7940ad8bbd499b3ec4949c6b5eaa3a21ed9",
+      "bytes": 8992
+    },
+    {
+      "path": "tree/playable/css/game.css",
+      "sha256": "4125a8d07d4c7d358bacb0e8059b5634d78bc248a030b788d2b49afd792732f1",
+      "bytes": 31934
+    },
+    {
+      "path": "tree/playable/game.js",
+      "sha256": "9703737f30428f905906ae38e8934a46ef8f01e9ffc0e4e2bb9e5d2d5d9049d9",
+      "bytes": 21332838
+    },
+    {
+      "path": "tree/playable/src/audio.mjs",
+      "sha256": "f9b463121d0662c643d1a4e3c70f86164c0a56a90d0528611b9d34ed444db9d7",
+      "bytes": 4824
+    },
+    {
+      "path": "tree/playable/src/authored-motion-data.mjs",
+      "sha256": "522924b1ad7584b712b648456718ce23914cf5bdbd270f5eb744379fb25653d0",
+      "bytes": 609334
+    },
+    {
+      "path": "tree/playable/src/authored-motion.mjs",
+      "sha256": "3e734c6e6e1bd571ef690b64f08a3fb46824894966b7cc91b4782fa3a4aedb2c",
+      "bytes": 8853
+    },
+    {
+      "path": "tree/playable/src/avatar-materials.mjs",
+      "sha256": "09973ca96f945cba50219fff94227fd4a2bdac4b8e1aa2e8f20b02fce07ebc4c",
+      "bytes": 4144
+    },
+    {
+      "path": "tree/playable/src/avatar-shapes.mjs",
+      "sha256": "207efe4b330f98a15af3681b649f0f5e27348d4022046f9c81e11cc1627c9256",
+      "bytes": 8320
+    },
+    {
+      "path": "tree/playable/src/avatar.mjs",
+      "sha256": "d4d2dcdc0f7f16621b8561403a196bbee2ec3a0af5a2a9b7e371a3dc7f5c60c1",
+      "bytes": 25614
+    },
+    {
+      "path": "tree/playable/src/calibration-ui.mjs",
+      "sha256": "d93f8fcabcf224ad4dd1c6ed6b4556fb8a74f4b1372d9eb900a1a837a076b865",
+      "bytes": 8324
+    },
+    {
+      "path": "tree/playable/src/calibration.mjs",
+      "sha256": "2c82c16583029a5c19b673a21fd17fd12548528800400ea827498c301ad0e642",
+      "bytes": 3799
+    },
+    {
+      "path": "tree/playable/src/camera.mjs",
+      "sha256": "725d0da063e46caecf4e6eb79876bb70b1406a73d70f347e9339fa6651801343",
+      "bytes": 4221
+    },
+    {
+      "path": "tree/playable/src/character-asset.mjs",
+      "sha256": "117bf624a6b52d8413b3ad6e873b9e0691b5de7be84530478d61eba67c1fb17c",
+      "bytes": 5700
+    },
+    {
+      "path": "tree/playable/src/character-retarget.mjs",
+      "sha256": "151684a00b748ed1af2c9a83dc5c91cd9e97939f3f91ce400975da6ed4a29f3b",
+      "bytes": 6750
+    },
+    {
+      "path": "tree/playable/src/d3-combat/fixed.mjs",
+      "sha256": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59",
+      "bytes": 4008
+    },
+    {
+      "path": "tree/playable/src/d3-combat/index.mjs",
+      "sha256": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4",
+      "bytes": 20323
+    },
+    {
+      "path": "tree/playable/src/d3-inventory/index.mjs",
+      "sha256": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566",
+      "bytes": 16259
+    },
+    {
+      "path": "tree/playable/src/d3-session/browser-evidence.json",
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2",
+      "bytes": 429937
+    },
+    {
+      "path": "tree/playable/src/d3-session/browser-verifier.mjs",
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c",
+      "bytes": 9329
+    },
+    {
+      "path": "tree/playable/src/d3-session/demo-fixture.mjs",
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830",
+      "bytes": 3871
+    },
+    {
+      "path": "tree/playable/src/d3-session/finalize-r2.cjs",
+      "sha256": "c4cce9e7c314968f7030ae7a3ae32f56e3453fc05c9b467ed3a02f894b7ce357",
+      "bytes": 2584
+    },
+    {
+      "path": "tree/playable/src/d3-session/finalize.cjs",
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be",
+      "bytes": 1862
+    },
+    {
+      "path": "tree/playable/src/d3-session/index.mjs",
+      "sha256": "2f2511939da9432ef91050683746fb009bf8624f94c1fcc857077bea7b290138",
+      "bytes": 15324
+    },
+    {
+      "path": "tree/playable/src/d3-session/indexeddb.mjs",
+      "sha256": "90889958782525218e52d9f23f7f68fda910dd658a3eebb3506ae9e6fc28615d",
+      "bytes": 3958
+    },
+    {
+      "path": "tree/playable/src/d3-session/node-tests-r2.tap",
+      "sha256": "637b3ada7f60b622777c2c1523bc2f4733cad318ab52da1fb26c1b3278895122",
+      "bytes": 3119
+    },
+    {
+      "path": "tree/playable/src/d3-session/node-tests.tap",
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481",
+      "bytes": 2912
+    },
+    {
+      "path": "tree/playable/src/d3-session/r1-browser-regression-r2.json",
+      "sha256": "785b2e4460b408fce61eecd5d15ac467697072a1c9d8570d01bdeec930c81389",
+      "bytes": 4613027
+    },
+    {
+      "path": "tree/playable/src/d3-session/r1-independent-r2.mjs",
+      "sha256": "178dec8a95d05058979ed16846929e7c9aae0ab2d4888086679dda4b24ef2ae9",
+      "bytes": 14471
+    },
+    {
+      "path": "tree/playable/src/d3-session/r1-regression-r2.json",
+      "sha256": "517c506c0b685c1b18c1af6f68f3b1030f4410dd7bfcb66705f4346e8e9dd1ce",
+      "bytes": 4894622
+    },
+    {
+      "path": "tree/playable/src/d3-session/replay-r1-r2.cjs",
+      "sha256": "c47317e2c7f462afcaa203a2498ec6f6b1b91b55bb16de1cfbc789a96043933b",
+      "bytes": 2192
+    },
+    {
+      "path": "tree/playable/src/d3-session/scene-browser-r2.json",
+      "sha256": "e99dce722d52a4fbd961fb58e4ace7ef4cafa6da5cd55d1302e80c630de5ccd4",
+      "bytes": 4578925
+    },
+    {
+      "path": "tree/playable/src/d3-session/scene-cases-r2.mjs",
+      "sha256": "5ba2bb4072d4ab4cf805658e2e2980da35d90030619c29d11055e2a4b381a540",
+      "bytes": 10648
+    },
+    {
+      "path": "tree/playable/src/d3-session/scene-node-r2.json",
+      "sha256": "5a2fa461bc268b2945ac3a48d7eb7f6646d7e6753a9a7402bd383d3ac416631b",
+      "bytes": 4549428
+    },
+    {
+      "path": "tree/playable/src/d3-session/scene.mjs",
+      "sha256": "ac1c5d63f3aa853b5434e3936b5ba36382cc2b75bd9845d27f064dee796c360e",
+      "bytes": 5539
+    },
+    {
+      "path": "tree/playable/src/d3-session/serve-r2.cjs",
+      "sha256": "6bfceaeb406383327558c188613dca126d08e01c1119ed66f883440cfd8e0f96",
+      "bytes": 1411
+    },
+    {
+      "path": "tree/playable/src/d3-session/serve.cjs",
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51",
+      "bytes": 1318
+    },
+    {
+      "path": "tree/playable/src/d3-session/verify-dependencies.cjs",
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f",
+      "bytes": 1153
+    },
+    {
+      "path": "tree/playable/src/d3-session/verify-r2.html",
+      "sha256": "ced0264fed90118845b9363c8e544275d52e96c231c7c4f578c55d11efb78f9e",
+      "bytes": 2518
+    },
+    {
+      "path": "tree/playable/src/d3-session/verify.html",
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b",
+      "bytes": 1594
+    },
+    {
+      "path": "tree/playable/src/d3-session/version-r2.json",
+      "sha256": "b4c6f9336ff7e6c787b0eb85fec0b1e8f44e25316c4c913bf3dd806a0acc3df7",
+      "bytes": 9914
+    },
+    {
+      "path": "tree/playable/src/d3-session/version.json",
+      "sha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8",
+      "bytes": 3647
+    },
+    {
+      "path": "tree/playable/src/dash-effect.mjs",
+      "sha256": "eb4972c9d9c1abfa0b2c12605789d7fc3e3571cf5149d1e2954e81f2b9605373",
+      "bytes": 7296
+    },
+    {
+      "path": "tree/playable/src/dash.mjs",
+      "sha256": "1835d4387121fa8cdc56cd1f0a374cd20467d564174ce444f81e029a236774e0",
+      "bytes": 5174
+    },
+    {
+      "path": "tree/playable/src/endurance.mjs",
+      "sha256": "d8ecb450dc47fb288783972e8e79a87e3076e712dc7eb608b93466201bdd683f",
+      "bytes": 666
+    },
+    {
+      "path": "tree/playable/src/equipment-control.mjs",
+      "sha256": "01161efcdfcd76687458c6824f9766b3b366233a9f3b3034e89f0cd403af3bb6",
+      "bytes": 1774
+    },
+    {
+      "path": "tree/playable/src/equipment-viewmodel.mjs",
+      "sha256": "a70d2854eee434d54be99f407bf11cf02e08df1eec3a7fba9a175225571f9f67",
+      "bytes": 2396
+    },
+    {
+      "path": "tree/playable/src/evolution.mjs",
+      "sha256": "047059cc174749a6cebc8175002912fd0f3b9ae826b91926d45272938c0b248e",
+      "bytes": 7323
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/control-gate.mjs",
+      "sha256": "b9f468c4f577e4daaa2c2e605b6ee7b3086e3bffa86c731e2d90f1ad34c3cf98",
+      "bytes": 477
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/effects.mjs",
+      "sha256": "cff2182991fae02f5a87848d1c001711adc298abc948fc216dbe0e3b98bae400",
+      "bytes": 1471
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/index.mjs",
+      "sha256": "7a63ce004ce54dba6dadaf518f731ddc7e214e0864ed7b0c37917a76bd1326ca",
+      "bytes": 17507
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/legacy.mjs",
+      "sha256": "789c19b578a9fcb6c74f8f58752ab64b0c7842f2700122cf4ab651b06de6f001",
+      "bytes": 977
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/path.mjs",
+      "sha256": "e7287016d0f7b06a2a35f5cdae946e28f5c12441292759c0142190da3023aac9",
+      "bytes": 1193
+    },
+    {
+      "path": "tree/playable/src/expedition-runtime/rules.mjs",
+      "sha256": "46d7bad40c78e609719352bd421c0141bbeeca13d3a293e5326a75a98f6b27ae",
+      "bytes": 3268
+    },
+    {
+      "path": "tree/playable/src/expedition-ui/index.mjs",
+      "sha256": "404b50c71f30dca855f5763b4c008b8e37a42392643153ac695bd7796338ff2c",
+      "bytes": 13590
+    },
+    {
+      "path": "tree/playable/src/expedition-world/definitions.mjs",
+      "sha256": "22113b8ab0ea745b1a9945f8dbfae71fe4e3e3bb28b99abdc96ad317d91894e7",
+      "bytes": 1258
+    },
+    {
+      "path": "tree/playable/src/expedition-world/index.mjs",
+      "sha256": "1478c6864b7b5c1b840e96cbe4ee21aabb093ab338e5b55216cd18b56626d3bd",
+      "bytes": 8065
+    },
+    {
+      "path": "tree/playable/src/expedition-world/queries.mjs",
+      "sha256": "015bffc9abc81e153acc4f65b87ce2eb62e75344d535bad6442f837ea17c8100",
+      "bytes": 2023
+    },
+    {
+      "path": "tree/playable/src/footing.mjs",
+      "sha256": "3b2774873ff296ab81c18b7d2245468a4e4e4568c2070e7d328e728e286e235c",
+      "bytes": 2185
+    },
+    {
+      "path": "tree/playable/src/footstep-audio.mjs",
+      "sha256": "d1aa30b3c215746ba2076f450a94e2360d18d6805f0ae9662559541c9fc49da7",
+      "bytes": 5459
+    },
+    {
+      "path": "tree/playable/src/gait.mjs",
+      "sha256": "e60112871c70027f5b044a03a38a08e71d1ee38fe524c88b79ba675d9ad77496",
+      "bytes": 10233
+    },
+    {
+      "path": "tree/playable/src/ground-cover.mjs",
+      "sha256": "9a797991e100c5099bf2b519cf27674b1ee4fb7df9b58c60e1a3d81588869730",
+      "bytes": 415
+    },
+    {
+      "path": "tree/playable/src/humanoid-rig.mjs",
+      "sha256": "934b7852f28673632346310ded16c64631b6bc40d0561d621210caa8da87cf12",
+      "bytes": 912
+    },
+    {
+      "path": "tree/playable/src/input.mjs",
+      "sha256": "c375a58b0589f78690a9e53271793718e82288bcb8e1bdc08f3f2ff73b1bc49c",
+      "bytes": 8442
+    },
+    {
+      "path": "tree/playable/src/layout.mjs",
+      "sha256": "fcf5ec767e3d8fd09f6392567fb492d5dab8fdd83bb1eaf34a9580fb25084ca2",
+      "bytes": 6731
+    },
+    {
+      "path": "tree/playable/src/look-control.mjs",
+      "sha256": "2ea5fc72d8d40c89560f37652d7f126accd48db34578b79f80de5287b6a4f99e",
+      "bytes": 1823
+    },
+    {
+      "path": "tree/playable/src/main.mjs",
+      "sha256": "788838cb734f31d928611a3204bebea2f0fd4c7701aac3a867e9cfba4d0dfd3d",
+      "bytes": 43836
+    },
+    {
+      "path": "tree/playable/src/meteor-scene.mjs",
+      "sha256": "e7e3dea2e5cd2502b5b1f921f9d346f129de156fa0086d7bcfcd29b70b44740f",
+      "bytes": 4881
+    },
+    {
+      "path": "tree/playable/src/mobility.mjs",
+      "sha256": "8a2efee7e80a118a16d31c50a3e58461260f10dda1d89d1908d0431cb6709441",
+      "bytes": 14508
+    },
+    {
+      "path": "tree/playable/src/movement.mjs",
+      "sha256": "9802921f3613ef9649a43bd36c4ee4d530bcb68823e5176dff692260f299ee96",
+      "bytes": 5043
+    },
+    {
+      "path": "tree/playable/src/navigation.mjs",
+      "sha256": "f8cdc65ac2d7018d4964b8eb8a963cabcc8d62c833f93b9c8f3f57f130839dc6",
+      "bytes": 3655
+    },
+    {
+      "path": "tree/playable/src/prone-hands.mjs",
+      "sha256": "96997889b289d9ba21f3abb60a399c2e81618e427189a224248de2dc569d11bd",
+      "bytes": 2010
+    },
+    {
+      "path": "tree/playable/src/render-budget.mjs",
+      "sha256": "9d978f395fe132c371a7a929e2890753cb87402d1337478de7eed22a5aa7409c",
+      "bytes": 1124
+    },
+    {
+      "path": "tree/playable/src/rock-render-chunks.mjs",
+      "sha256": "18d6add5de33c4e0a64e2e55e2dbd01b4b0452acc9b8ab3389e0c04176bbaaad",
+      "bytes": 2926
+    },
+    {
+      "path": "tree/playable/src/rocks.mjs",
+      "sha256": "50190e2ca50d2005a2c99585bb67f7bee75c8101f96dd3a7e72f9529ed27cae6",
+      "bytes": 5546
+    },
+    {
+      "path": "tree/playable/src/scan-effect.mjs",
+      "sha256": "31b3a785c3862649a7eb88e3674af75f5716ac8d5be0bd4d2ac6db36c283e0fd",
+      "bytes": 2636
+    },
+    {
+      "path": "tree/playable/src/scene.mjs",
+      "sha256": "8549aa08ca746c87a5154f7798d1ee80362e33162a6d2d8e73180b1d997abe5d",
+      "bytes": 34856
+    },
+    {
+      "path": "tree/playable/src/stamina.mjs",
+      "sha256": "39ed0f04a770d153c6831bdc283bf5ba32803f49fb4b3e0e227d3b7655ad6dc0",
+      "bytes": 3833
+    },
+    {
+      "path": "tree/playable/src/story.mjs",
+      "sha256": "e95ae4240810e92f25a86533a2042dbc339d5f74c8f0a50afd365de34a41157c",
+      "bytes": 17409
+    },
+    {
+      "path": "tree/playable/src/survey-scene.mjs",
+      "sha256": "d91d7575c7647f9b7334214ffe9103a14a32f6169664607b5cbb0587f8000727",
+      "bytes": 5825
+    },
+    {
+      "path": "tree/playable/src/survey-sites.mjs",
+      "sha256": "73976fdc9eec1c2dd3363daf42881ee5fb5a8f9c50760a629aa51bf8ab0da5b7",
+      "bytes": 2146
+    },
+    {
+      "path": "tree/playable/src/survey.mjs",
+      "sha256": "cd7978455f7fa5b7a6df081110bb7beeb0d1663aaee4d65cdfad216a334ecb82",
+      "bytes": 7482
+    },
+    {
+      "path": "tree/playable/src/tactical-control.mjs",
+      "sha256": "6b22a4f32882cd13349c91f93bcee2d3fbb71d34007ed7fdbeb3f805109818ec",
+      "bytes": 2226
+    },
+    {
+      "path": "tree/playable/src/tactical-pose.mjs",
+      "sha256": "0e04bb2f5be3d190cf653a43ce20b9b19a3098fd2a4bef337dfef208a73a832d",
+      "bytes": 3157
+    },
+    {
+      "path": "tree/playable/src/ui.mjs",
+      "sha256": "3f66a851993a13c2736a4ceecbd05b51bac981337d660c0170cd3f9148bbbf37",
+      "bytes": 30584
+    },
+    {
+      "path": "tree/playable/src/vehicle-cockpit.mjs",
+      "sha256": "cc4d56c2bf905feddfc7d021f7e341958ee6958be95b32a69678539f0593857b",
+      "bytes": 7875
+    },
+    {
+      "path": "tree/playable/src/vehicle-model.mjs",
+      "sha256": "555ccc47c9fbc63f19819817d9079366d45e665aa6469f9cc023043c8471df00",
+      "bytes": 7017
+    },
+    {
+      "path": "tree/playable/src/world-director/definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef",
+      "bytes": 1114
+    },
+    {
+      "path": "tree/playable/src/world-director/director.mjs",
+      "sha256": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358",
+      "bytes": 21223
+    },
+    {
+      "path": "tree/playable/src/world-director/rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02",
+      "bytes": 747
+    },
+    {
+      "path": "tree/playable/src/world-director/verification/replay-r1.cjs",
+      "sha256": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a",
+      "bytes": 2851
+    },
+    {
+      "path": "tree/playable/star-abyss.html",
+      "sha256": "4e38cb21ea65ff6b5954507691e09d0f75afa736bd5c665ab17cffd74064a625",
+      "bytes": 15908
+    },
+    {
+      "path": "tree/playable/tests/audio.test.js",
+      "sha256": "365515c7e5e896010e4a7b620b29ccef7fd6cd7ba087fd674ce99869fd49bc16",
+      "bytes": 12724
+    },
+    {
+      "path": "tree/playable/tests/authored-motion.test.js",
+      "sha256": "bb3c41de952ce266b50cd5575718d3ea5503855e4e6122d5dd9b3520520e0d87",
+      "bytes": 5330
+    },
+    {
+      "path": "tree/playable/tests/avatar-shapes.test.js",
+      "sha256": "518b6055dd6a1ef8a9e5f60a44a1de2d6f243f14c75dbeaec150007337b4fe0a",
+      "bytes": 2210
+    },
+    {
+      "path": "tree/playable/tests/avatar-visual.spec.js",
+      "sha256": "e227862ccb8fbc7cf80534ff53eface90c2670889069d1b0b2a07a112ebc836d",
+      "bytes": 6612
+    },
+    {
+      "path": "tree/playable/tests/c2-directional.spec.js",
+      "sha256": "14e96766c946b5dc10dd65f2349a69d3f7edf99e672e5fd054ab1d479192ae11",
+      "bytes": 7371
+    },
+    {
+      "path": "tree/playable/tests/c2-preview.mjs",
+      "sha256": "1d6df1bf4adc73415f94318dbf7d609153baa802bef70c2940b1fabf7432bc3c",
+      "bytes": 3588
+    },
+    {
+      "path": "tree/playable/tests/calibration-controls.js",
+      "sha256": "5d45ba05fb7ab2611b172e87257bea8924cf8e3ff0a082c661519deb3437a44b",
+      "bytes": 1202
+    },
+    {
+      "path": "tree/playable/tests/calibration-ui.spec.js",
+      "sha256": "e1a5de204aabcb143ac3d98dce0e3003501ade8f71018d37b28588543f548724",
+      "bytes": 5347
+    },
+    {
+      "path": "tree/playable/tests/calibration.test.js",
+      "sha256": "8e4aac38941367550eb3cd7b37696ddad0d6dccc3ccf1ea171115c25fd68e66c",
+      "bytes": 7226
+    },
+    {
+      "path": "tree/playable/tests/character-retarget.test.js",
+      "sha256": "70cea8d9c54a38f2bdb286d7e12e9fea8535c6ad091f76d469cf80f79e483d92",
+      "bytes": 2363
+    },
+    {
+      "path": "tree/playable/tests/d3-combat.test.js",
+      "sha256": "c38647421bbe7bf952a1a99818718eebdad9b8218387d32fa14c105d7b22b74b",
+      "bytes": 26151
+    },
+    {
+      "path": "tree/playable/tests/d3-inventory.test.js",
+      "sha256": "c842c7b1923370ee3d6307fefd457a9c2843642f7afe65ac4feab5b8b956ede5",
+      "bytes": 16816
+    },
+    {
+      "path": "tree/playable/tests/d3-session.test.js",
+      "sha256": "3a574f1cb1f48e95fc2475a160986ad1629028de5208277950e141d3ed0ecb9a",
+      "bytes": 12411
+    },
+    {
+      "path": "tree/playable/tests/dash-effect.test.js",
+      "sha256": "36d0df2ffcec3c5f79a2f4252b5daecc4f7809ea809e42f43319e4bf11b2aba4",
+      "bytes": 3898
+    },
+    {
+      "path": "tree/playable/tests/dash-integration.spec.js",
+      "sha256": "6492dd12f5875ce4667ee32a82c17dcd5cffcda9e464399d22b220c1592a7138",
+      "bytes": 3331
+    },
+    {
+      "path": "tree/playable/tests/dash.test.js",
+      "sha256": "d4cf3050a2c3a12fda04de1b8f2539e74de1e47f4a60a49b215fb54448b18f0e",
+      "bytes": 6317
+    },
+    {
+      "path": "tree/playable/tests/desktop-controls.spec.js",
+      "sha256": "85d194a0a9caaeb75720ed6a48dc93c454773ac5ec26b801b6b4cbd7670b4e8d",
+      "bytes": 7516
+    },
+    {
+      "path": "tree/playable/tests/desktop-posture.spec.js",
+      "sha256": "fe9368236402bc52232c89091eea42086beca249251ee48fa5410781f5736a78",
+      "bytes": 3235
+    },
+    {
+      "path": "tree/playable/tests/driving-direction.test.js",
+      "sha256": "b9c4911e16751f25c503f21587a16f5142d3688bf530adabcb2348c076f8bead",
+      "bytes": 1507
+    },
+    {
+      "path": "tree/playable/tests/equipment-control.test.js",
+      "sha256": "03c89b615dc852dfff4f3e26d4223ef4c8b6978b517d1a4b3f4fa362c18b6d5c",
+      "bytes": 2430
+    },
+    {
+      "path": "tree/playable/tests/evolution.spec.js",
+      "sha256": "a6e0046adf08495e5130ed681974639e3910fa4ade0505f97dfc51340ced8798",
+      "bytes": 13306
+    },
+    {
+      "path": "tree/playable/tests/evolution.test.js",
+      "sha256": "9c68abd254907b2040809f12980f9d3822122eb8f5b394f5e286c03198496e2d",
+      "bytes": 11126
+    },
+    {
+      "path": "tree/playable/tests/expedition-runtime.test.js",
+      "sha256": "5b5ba12f8c0dd9552387842dfe31ec9501dac6e55685d23130a78f7ca125dae3",
+      "bytes": 7976
+    },
+    {
+      "path": "tree/playable/tests/exploration-r2.spec.js",
+      "sha256": "7687783d26222b0de8565bd23c44136d20b3cae25c01db081fa4b58a5cbffdc1",
+      "bytes": 5347
+    },
+    {
+      "path": "tree/playable/tests/exploration.spec.js",
+      "sha256": "b9029c1a666f0bca929e9e4582f1479d765ede2b68877cf8f4b7c1cc9c0676a1",
+      "bytes": 10427
+    },
+    {
+      "path": "tree/playable/tests/feature-runner.test.js",
+      "sha256": "646a7108ef241f135c39cc25fed75d05daea8fa04bcdd2f8262d1d7dd2a8cd24",
+      "bytes": 2823
+    },
+    {
+      "path": "tree/playable/tests/footing.test.js",
+      "sha256": "7bc6b3faa93694db3a3fe8f543898672c45450f15556a0def5723976bc1f6baa",
+      "bytes": 3557
+    },
+    {
+      "path": "tree/playable/tests/gait-benchmark.mjs",
+      "sha256": "8479ce2bb624340c8f21293d8ba77bc44228b4b8fa667cc68e6fcad766bae36b",
+      "bytes": 2956
+    },
+    {
+      "path": "tree/playable/tests/gait-performance.test.js",
+      "sha256": "fea8a5fc0d013aa4c6b24270f12cd91059b65df47df294fe9c11286257c86751",
+      "bytes": 2119
+    },
+    {
+      "path": "tree/playable/tests/gait-preview.mjs",
+      "sha256": "602b983ed0ddcb7578be02e5b6ffca9a3c06ecfbcb1a6eb0f267b894ce5592a4",
+      "bytes": 6882
+    },
+    {
+      "path": "tree/playable/tests/gait-visual.spec.js",
+      "sha256": "2f6cdc424da8c2f449962abeaf11cd7f157ff8e418cb8073b3fe049f36205c01",
+      "bytes": 15474
+    },
+    {
+      "path": "tree/playable/tests/gait.test.js",
+      "sha256": "83efd84cef70577e0038141bd6ed244405ef837f6ae0622aeb64783b70248ee7",
+      "bytes": 12058
+    },
+    {
+      "path": "tree/playable/tests/growth-movement.test.js",
+      "sha256": "52e6659f20cd5c223b94da3b78682fff24d5768864d1807712ffd8a77619b2de",
+      "bytes": 11159
+    },
+    {
+      "path": "tree/playable/tests/idle-stability.test.js",
+      "sha256": "dd780db9beee0ea55fd754013efbc103cdff14ae17932c1f9b1f4680643fcfc5",
+      "bytes": 1414
+    },
+    {
+      "path": "tree/playable/tests/input.test.js",
+      "sha256": "c84fe10d6ce5f28d734b0851f0dec3b411d6ab89fe79cb0e20c00e61cdae82b5",
+      "bytes": 18547
+    },
+    {
+      "path": "tree/playable/tests/investigation-visual.spec.js",
+      "sha256": "457e8471cae42e51628f90123a5f27cb00e31669ed5e0d1124e6318ac137616e",
+      "bytes": 5424
+    },
+    {
+      "path": "tree/playable/tests/investigation.spec.js",
+      "sha256": "9051c9b866880bf018bbe38da666d2f673da96b964142c675835ebdfb3bc1a41",
+      "bytes": 20812
+    },
+    {
+      "path": "tree/playable/tests/locomotion.spec.js",
+      "sha256": "a9dab231f8d059e5214866fde457f2f30bed1868bd90626d56136df6538f4683",
+      "bytes": 22950
+    },
+    {
+      "path": "tree/playable/tests/look-control.test.js",
+      "sha256": "ab52954522e3d9c0b4a2674afda41f6ff2a5b1673aa74c425d4553bde156d3ec",
+      "bytes": 2866
+    },
+    {
+      "path": "tree/playable/tests/map-r3.spec.js",
+      "sha256": "2cf2cf884752fcee64c0301bfa547456c18c2bfeebc9d76bf66ceb74ea2d3a00",
+      "bytes": 2775
+    },
+    {
+      "path": "tree/playable/tests/meteor.test.js",
+      "sha256": "8479df07b037c76cc981a2a433ddd593e1f62179d92f5bd8b343f25840e19eab",
+      "bytes": 3501
+    },
+    {
+      "path": "tree/playable/tests/mobility.spec.js",
+      "sha256": "d112ecd84a40e2e32debae1f8ed326fd61edde2e3c79bbb2d7ee0f42a07c653f",
+      "bytes": 10514
+    },
+    {
+      "path": "tree/playable/tests/mobility.test.js",
+      "sha256": "abf63ca78f3df311d5f20339c500269943d4af6853df9c02b9120324671e27cb",
+      "bytes": 12331
+    },
+    {
+      "path": "tree/playable/tests/movement.test.js",
+      "sha256": "68aba277c04e92a4f35f902869f6365bf1649855badbf2956846c8cfe957f6ed",
+      "bytes": 7561
+    },
+    {
+      "path": "tree/playable/tests/navigation.test.js",
+      "sha256": "c6e5d6da68a2fb4770be2686f7647223f57a629cbff4eb18cbe09441e7096be0",
+      "bytes": 5396
+    },
+    {
+      "path": "tree/playable/tests/physical-world.test.js",
+      "sha256": "862dea89684c4d5de3d9fa4ddb0758a785501735b52c6a405d490f80f7bd34f2",
+      "bytes": 5072
+    },
+    {
+      "path": "tree/playable/tests/prone-redesign.test.js",
+      "sha256": "63e4d901bfdf915e5a2f5f70d9d721b7ce1a58725b1da8d63933582f1d7ceaae",
+      "bytes": 2413
+    },
+    {
+      "path": "tree/playable/tests/render-budget.test.js",
+      "sha256": "a7ba0c242ad7e866f574f610e0277e253ee9f96cc860a8e60d342dca3adfa640",
+      "bytes": 959
+    },
+    {
+      "path": "tree/playable/tests/render-contact-audio.mjs",
+      "sha256": "250426f487c04176acc19b7a8a078a712366f4b84cee65e80c0538b1929464ef",
+      "bytes": 2042
+    },
+    {
+      "path": "tree/playable/tests/rock-render-chunks.test.js",
+      "sha256": "1ed47c903a96e2576fcca54270212b891ac0732bbb6229781cb635925077b281",
+      "bytes": 5322
+    },
+    {
+      "path": "tree/playable/tests/rules-gate.test.js",
+      "sha256": "c919de7b7d5cb4c3b079bd4c108302189aa577ab4a6c355272a508595090ab31",
+      "bytes": 130
+    },
+    {
+      "path": "tree/playable/tests/scan-effect.test.js",
+      "sha256": "ef5db0b93dcc47cebbdd9e781e91452c478c4b52dbe3d826d17d343b4e3d9d4c",
+      "bytes": 1561
+    },
+    {
+      "path": "tree/playable/tests/scan-vfx.spec.js",
+      "sha256": "833b5cf1777b4167f3f26062c8accdeea3afb8c249ea91cf0e7b7ce4d92b2848",
+      "bytes": 2148
+    },
+    {
+      "path": "tree/playable/tests/stamina.test.js",
+      "sha256": "d4ba7385df2e06c5bc36d3b177bf705e1b21fe699e7b9ef31b098f1388a04a72",
+      "bytes": 10837
+    },
+    {
+      "path": "tree/playable/tests/star-abyss.spec.js",
+      "sha256": "a289ccbfe88dce35d25d35a3bdff5235b895c828f6cf4384f5aaf273e2d92843",
+      "bytes": 15127
+    },
+    {
+      "path": "tree/playable/tests/static-server.js",
+      "sha256": "2cfb945aa6175d3ffa89b82484591bcbaa0870a9683713be8e5dfccc304639fb",
+      "bytes": 908
+    },
+    {
+      "path": "tree/playable/tests/story.test.js",
+      "sha256": "3f19cd23ff3480495116c73835740d691917e34792d8379210ea260a6134c86e",
+      "bytes": 16970
+    },
+    {
+      "path": "tree/playable/tests/survey.test.js",
+      "sha256": "769bb38c2dabccff64f921775d176f7a14cf6a6416fac28b88b3314c9fc32acd",
+      "bytes": 9604
+    },
+    {
+      "path": "tree/playable/tests/tactical-control.test.js",
+      "sha256": "88a093f07ce32b1b85f26026c552ffff393e618fec6e45991d2b7f20a8ddb19e",
+      "bytes": 4224
+    },
+    {
+      "path": "tree/playable/tests/vehicle-camera.test.js",
+      "sha256": "fb0dbeaab9f2522b8764d726608b55a3ef82053f2ee6fc8cfa9689a1e2addd01",
+      "bytes": 2316
+    },
+    {
+      "path": "tree/playable/tests/vehicle-cockpit.spec.js",
+      "sha256": "0f4499c97cd9a3d7ef894fcd0d56c286e8ecf9abab6efe92810ea1c3ad540684",
+      "bytes": 2772
+    },
+    {
+      "path": "tree/playable/tests/vehicle-route-planner.mjs",
+      "sha256": "0c4f72db7896640f8c8d07f15a8487e66804639916d3de102ad4b3a4fe03c039",
+      "bytes": 2852
+    },
+    {
+      "path": "tree/playable/tests/vehicle-route-planner.test.js",
+      "sha256": "6833d6a31336d2ed2500c0e6a635f377130e7b0a97a26a0da211a436d4c38a48",
+      "bytes": 2223
+    },
+    {
+      "path": "tree/playable/tests/walk-route.js",
+      "sha256": "541a492d7337dd5eefcc6b0212a79083bdbf5b1063ed1d56f3e5453ee016f569",
+      "bytes": 5036
+    },
+    {
+      "path": "tree/playable/tests/world-director.test.js",
+      "sha256": "5e1826b057fd9beedcb2a9dad0ae25358c0d3a4038eb3e64acd721ad0c5fc55e",
+      "bytes": 24730
+    },
+    {
+      "path": "tree/tools/audit-character-glb.py",
+      "sha256": "db0b46bbb6fae265487b6ed46d5a97141d02515cbe072d3cd1ef6302f91c681b",
+      "bytes": 1990
+    },
+    {
+      "path": "tree/tools/blender_check.py",
+      "sha256": "55c068fa8d6b56c65068f9e88df306083505b1197241dd8f057304c60e3bdbc8",
+      "bytes": 308
+    },
+    {
+      "path": "tree/tools/build-cultivation-guide.cjs",
+      "sha256": "65086f8fc68ce384a95ae1936ad8de22f13571767670f3ed804cfd2e9c80d402",
+      "bytes": 19884
+    },
+    {
+      "path": "tree/tools/build-scanner-equipment.py",
+      "sha256": "c35edc652b7a2af91ea74b83e62c2f1d1a438a6c0d9e496a5d71a9f2ce30f20f",
+      "bytes": 8957
+    },
+    {
+      "path": "tree/tools/c2-anatomy-slices.py",
+      "sha256": "bc9acf3118a392ee050ade3b18373fbf530e102cbdbc01de9682d288941ada23",
+      "bytes": 1003
+    },
+    {
+      "path": "tree/tools/c2-asset-preview.mjs",
+      "sha256": "5d78956923091842b5dbfb38172069292ffa8f12d0225d89328006ef2aaa8bea",
+      "bytes": 2584
+    },
+    {
+      "path": "tree/tools/c2-back-detail.py",
+      "sha256": "34ba8e299caa38d52ffe071cd7722aac9fc4d50c59ddb1b73f3675f3bf8e4f21",
+      "bytes": 3509
+    },
+    {
+      "path": "tree/tools/capture-c2-asset.cjs",
+      "sha256": "b62d87c9d7fa49103a15de786af7237a2696529dd999a4419d98c592c53a3ea0",
+      "bytes": 2149
+    },
+    {
+      "path": "tree/tools/export-c2-runtime.py",
+      "sha256": "a1625f174b68d40207d7a1f801b3316af6a1ed80a381e1f0c14b0e8c0ebf62ca",
+      "bytes": 2138
+    },
+    {
+      "path": "tree/tools/export-prone-motion.cjs",
+      "sha256": "6caf544944278c366e62c37ca93f8c7126c6baee26d50df40384cc06ccda44e4",
+      "bytes": 1290
+    },
+    {
+      "path": "tree/tools/export-prone-motion.mjs",
+      "sha256": "ff9a4dfd274bc46b2c17eaf1a72853dfa0abeb9a5ffe6240c8379077969a17f8",
+      "bytes": 2563
+    },
+    {
+      "path": "tree/tools/export-skimmer-source.cjs",
+      "sha256": "b272967d2b3df5a946ff2cf57f0b3b0427966c286324ddd21f9a4673ce69f990",
+      "bytes": 1174
+    },
+    {
+      "path": "tree/tools/export-skimmer-source.mjs",
+      "sha256": "6c79d2989dacfad010b979864eb00678c9130d3cd757ab338e90bbe48072ae0e",
+      "bytes": 824
+    },
+    {
+      "path": "tree/tools/feature-test-plan.cjs",
+      "sha256": "89186faa6df1eaa33727a7cf8ff3885eeef7caa5691313489c8a1c7d4619dcb8",
+      "bytes": 5306
+    },
+    {
+      "path": "tree/tools/fetch-animation-library.mjs",
+      "sha256": "d7c7654282ab23ba0ccb41627c6b41dc96054629d1a5d33e88077b2bab5b2f36",
+      "bytes": 2636
+    },
+    {
+      "path": "tree/tools/import-authored-motion.mjs",
+      "sha256": "a8ac5915883b8804d4c118f81f3ff672e3108986fa53cb0f72c8bcde150c4a1c",
+      "bytes": 4512
+    },
+    {
+      "path": "tree/tools/inspect-prone.mjs",
+      "sha256": "95568efa4b7a1fc481abf5a29381f9bf16a40fd115cb23184c713543058c8ae0",
+      "bytes": 555
+    },
+    {
+      "path": "tree/tools/inventory-design-assets.cjs",
+      "sha256": "4c6c44c179d4c48fe08ff1cd3ce7cfac4d3bc4a2ece57ad057345cf8d6e75d38",
+      "bytes": 2425
+    },
+    {
+      "path": "tree/tools/pack-c2-character.cjs",
+      "sha256": "a4e1fa142070a24eb64193aa338247a60199a9447024c4f0a607c99cc4a04abd",
+      "bytes": 582
+    },
+    {
+      "path": "tree/tools/pack-scanner.cjs",
+      "sha256": "bcab1eebe9241aa9490bd2d271dbe1646f75db3173944e2d440f6a2018a63eec",
+      "bytes": 528
+    },
+    {
+      "path": "tree/tools/package-c2-delivery.py",
+      "sha256": "cbe5db9986ad84a3d240d7b41aac2b37681812eb7b768ac1c9be89d36eaa4302",
+      "bytes": 3045
+    },
+    {
+      "path": "tree/tools/package-c2-r2.py",
+      "sha256": "2f8329facd48b39383ffb78aff93cc4bf1bc4c5aa55626be760ccf51d681b874",
+      "bytes": 3128
+    },
+    {
+      "path": "tree/tools/playwright.feature.config.cjs",
+      "sha256": "08ac9aa9a10baf17131574ec0a5bc0d521150b8f0200021ad63a4375bd4de000",
+      "bytes": 865
+    },
+    {
+      "path": "tree/tools/prepare-c2-character.py",
+      "sha256": "1a84ff7503e8e3100ecfe1de8d5764ce9bd6577fdcd5cc7defa700fbfdf7b734",
+      "bytes": 10555
+    },
+    {
+      "path": "tree/tools/prepare-c2-reference-crops.py",
+      "sha256": "7ab47e0db19a99c0f3cafc5c2ab2d73485bd236be77608442ae215c2b2afd489",
+      "bytes": 1645
+    },
+    {
+      "path": "tree/tools/profile-locomotion.cjs",
+      "sha256": "56c8355d37db812949fedd89ea913510a003d9964b1316ab1ade1acebe5fc63b",
+      "bytes": 2309
+    },
+    {
+      "path": "tree/tools/read-lines.cjs",
+      "sha256": "59b6ffa68ebb4e19029aa07df2bd32b282c9f6c64f2752213db0b923045554ec",
+      "bytes": 192
+    },
+    {
+      "path": "tree/tools/rig-c2-native.py",
+      "sha256": "b2c2c09b6745dd7360e2bfa53ccf4deefa5d97e577d9ced559588165cd06f961",
+      "bytes": 6044
+    },
+    {
+      "path": "tree/tools/rules-test-gate.cjs",
+      "sha256": "11d0713b672d6ad031418ef94844d89aa910329ccbe9ef51597bea0d3e653932",
+      "bytes": 1468
+    },
+    {
+      "path": "tree/tools/rules-test-gate.test.cjs",
+      "sha256": "071e2fdaf1dc033aa26bc77e0090b2b9a7f8ec02687cc849a87f4c86f86cdc6c",
+      "bytes": 2869
+    },
+    {
+      "path": "tree/tools/save-prone-blender.py",
+      "sha256": "86fdd2c0aa66e06ca18ae0251af8e302a0ca030112223c626c256afae24d50d7",
+      "bytes": 982
+    },
+    {
+      "path": "tree/tools/save-skimmer-blender.py",
+      "sha256": "c44e4568bc792efc8949f701de1454e586561aefcf735bed2b7c76d7eb416efe",
+      "bytes": 1235
+    },
+    {
+      "path": "tree/tools/test-feature.cjs",
+      "sha256": "b8c13234bb2a8bfd51315261829020b97a35c65b99b6ef60fdec0f5cb34273e0",
+      "bytes": 5319
+    },
+    {
+      "path": "tree/tools/verify-c2-delivery.cjs",
+      "sha256": "8f26aa59ec4f6ad5dbdd7b8c2474778812e9b62a984a1ca48c23f5ec2be77090",
+      "bytes": 1482
+    },
+    {
+      "path": "tree/tools/verify-c2-integration.cjs",
+      "sha256": "95fa56c8130fa1d50c394ecfe0fc1dcd5e5ffb892e4713ca4860aee8d4870c63",
+      "bytes": 3818
+    },
+    {
+      "path": "tree/tools/verify-first-person.cjs",
+      "sha256": "a6c59297edb5dd30a38a0120dd48601496a6a0a974de160c18f3227680cd4923",
+      "bytes": 7676
+    },
+    {
+      "path": "tree/tools/verify-look-control.cjs",
+      "sha256": "b163261612b942bfce752d853cf1a1e6b6ebc6355e20365d8850716b381a6108",
+      "bytes": 5215
+    },
+    {
+      "path": "tree/tools/verify-prone-redesign.cjs",
+      "sha256": "dcd5f4c6ee056fc2750a7768407a9a551617e3c2f20bdb84f6603a2e5bd9d60a",
+      "bytes": 4091
+    },
+    {
+      "path": "tree/tools/verify-tactical-control.cjs",
+      "sha256": "c2ccb35792bbde5d110f9a450c71cc662711702ef59e46d83ef5bf3109cdb33f",
+      "bytes": 4259
+    },
+    {
+      "path": "tree/tools/verify-vehicle-cockpit.cjs",
+      "sha256": "ee8d328194482cb0c438ca262a5902914300c76a74c1482adbc5cddb592f4ebf",
+      "bytes": 4865
+    },
+    {
+      "path": "verify-http.cjs",
+      "sha256": "8bf97cadaec7747beb24d8262c026271b672fd331e151d906a29b4f9fb619a20",
+      "bytes": 639
+    }
+  ]
+}

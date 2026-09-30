@@ -1,0 +1,32 @@
+[
+  {
+    "file": "star_abyss_native_v1.json",
+    "sha256": "dcf4498f7eb7047c81f5958dba53f7f707aab63b167321143bc09b9148e78a16",
+    "keys": [
+      "ascension",
+      "combat",
+      "enemy_r3",
+      "fragments",
+      "investigated",
+      "planet",
+      "player",
+      "riftwing",
+      "skimmer",
+      "version"
+    ],
+    "environment_generation": null,
+    "has_environment_state": false
+  },
+  {
+    "file": "star_abyss_native_v1.json.bak",
+    "status": "absent"
+  },
+  {
+    "file": "star_abyss_native_v1.json.environment-r4.json",
+    "status": "absent"
+  },
+  {
+    "file": "star_abyss_native_v1.json.environment-r4.json.bak",
+    "status": "absent"
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "utc": "2026-09-29T12:31:04",
+  "hashes": {
+    "assets/terrain/basin_near_surface.gdshader": "185804210f1bec37878bd0399239c1f1ab8fc025e79cb1e820d17330809aa8ef",
+    "assets/terrain/far_basin.gdshader": "7ae9cf61e90e6203755f4242d18eb7096a96e76bbcd381caeff62bbb017aebfd",
+    "assets/terrain/planet_surface.gdshader": "2ec0a7e15c1f1f2b92e6f509f5599ed8df60ee1df18037cf1bcd947cdbf56788",
+    "scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+    "scripts/native_planet.gd": "92d8e5aac5ed9f1fe0d225cf823bb99bb5eb88639af8f4db82ed8de93cb8d7bb",
+    "scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+    "scripts/native_player.gd": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+    "scripts/native_world.gd": "eb2d135c5ca71f674994ef71c67b5bf467956422dc6020f08d53cbaff3e5cace"
+  },
+  "changed": [],
+  "physics": 300,
+  "wall": 5.120903,
+  "roi_count": 267,
+  "stages": {
+    "warmup": {
+      "agl_min": 0.0,
+      "agl_max": 0.0,
+      "first_position": "(0.0, 0.0, 190.0)",
+      "last_position": "(0.0, 0.0, 190.0)",
+      "unready": 0,
+      "p95_ms": 78.905,
+      "max_ms": 97.16799999999998,
+      "image": "",
+      "roi_count": 0
+    },
+    "ground-edge200": {
+      "agl_min": 0.0,
+      "agl_max": 0.000942179758567363,
+      "first_position": "(0.0, 0.0, 205.0)",
+      "last_position": "(-0.000004, 0.000937, 181.7824)",
+      "unready": 0,
+      "p95_ms": 17.167000000000154,
+      "max_ms": 31.756000000000007,
+      "image": "0018-ground-edge200.png",
+      "roi_count": 237,
+      "dark_pixels_min_max": [
+        694,
+        1639
+      ],
+      "frame_diff_mean_max": 31.791156462585036
+    },
+    "settle": {
+      "agl_min": 0.0,
+      "agl_max": 0.000937248405534774,
+      "first_position": "(-0.000004, 0.000937, 181.6756)",
+      "last_position": "(-0.000004, 0.0, 180.9986)",
+      "unready": 0,
+      "p95_ms": 17.0300000000001,
+      "max_ms": 17.551999999999346,
+      "image": "0039-settle.png",
+      "roi_count": 30,
+      "dark_pixels_min_max": [
+        1204,
+        1331
+      ],
+      "frame_diff_mean_max": 28.094965986394556
+    }
+  }
+}

@@ -1,0 +1,398 @@
+[
+  {
+    "run": "capture-20260927-214156",
+    "tier": 4,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 5,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 6,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 8,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 9,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 4,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 5,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 6,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 8,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 9,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 4,
+    "view": 2,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 5,
+    "view": 2,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 6,
+    "view": 2,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 8,
+    "view": 2,
+    "released": false,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": null,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214156",
+    "tier": 9,
+    "view": 2,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214517",
+    "tier": 8,
+    "view": 0,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214517",
+    "tier": 8,
+    "view": 1,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "capture-20260927-214517",
+    "tier": 8,
+    "view": 2,
+    "released": true,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Historical observer used Ascension handle, which is cleared at impact; false does not imply missing impact. Main events retain authoritative impact."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 4,
+    "view": 0,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 5,
+    "view": 0,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 6,
+    "view": 0,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 8,
+    "view": 0,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 9,
+    "view": 0,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 4,
+    "view": 1,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 5,
+    "view": 1,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 6,
+    "view": 1,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 8,
+    "view": 1,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 9,
+    "view": 1,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 4,
+    "view": 2,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 5,
+    "view": 2,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 6,
+    "view": 2,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 8,
+    "view": 2,
+    "released": false,
+    "impacted": false,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": null,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  },
+  {
+    "run": "baseline/capture-20260927-215413",
+    "tier": 9,
+    "view": 2,
+    "released": true,
+    "impacted": true,
+    "versions": [
+      "r3-existing-reference"
+    ],
+    "release_source_error_m": 0.0,
+    "impact_snapshot_note": "Observer retained visual through its real auto-free."
+  }
+]

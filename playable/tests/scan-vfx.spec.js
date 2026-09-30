@@ -1,0 +1,22 @@
+const {test,expect}=require('@playwright/test');const path=require('node:path');
+test('real Q scan anchors in 3D, expires without leaking and preserves pause',async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width:1440,height:900});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('file:///'+path.resolve(__dirname,'..','star-abyss.html').replace(/\\/g,'/')+'?test=1');
+ await page.locator('#start-button').click();await page.keyboard.press('KeyV');await page.keyboard.press('KeyQ');
+ await page.waitForFunction(()=>__STAR_ABYSS_TEST__.snapshot().scanEffect.active);
+ const first=await page.evaluate(()=>__STAR_ABYSS_TEST__.snapshot());
+ await page.keyboard.down('KeyW');await page.waitForTimeout(450);await page.keyboard.up('KeyW');
+ const moved=await page.evaluate(()=>__STAR_ABYSS_TEST__.snapshot());
+ expect(moved.scanEffect.origin).toEqual(first.scanEffect.origin);expect(moved.player.z).toBeLessThan(first.player.z);
+ await page.screenshot({path:'docs/ui-implementation/scan-vfx-world.png'});
+ await page.keyboard.press('Tab');const paused=await page.evaluate(()=>__STAR_ABYSS_TEST__.snapshot());
+ await page.evaluate(()=>__STAR_ABYSS_TEST__.advance(20));
+ expect((await page.evaluate(()=>__STAR_ABYSS_TEST__.snapshot())).scanEffect).toEqual(paused.scanEffect);
+ await page.keyboard.press('Tab');await page.evaluate(()=>__STAR_ABYSS_TEST__.advance(10));
+ await page.waitForFunction(()=>!__STAR_ABYSS_TEST__.snapshot().scanEffect.active);
+ const end=await page.evaluate(()=>__STAR_ABYSS_TEST__.snapshot());expect(end.graphicsMemory.geometries).toBe(first.graphicsMemory.geometries);
+ const device=await page.evaluate(()=>{const gl=document.querySelector('#world').getContext('webgl2'),e=gl.getExtension('WEBGL_debug_renderer_info');return {browser:navigator.userAgent,cores:navigator.hardwareConcurrency,gpu:e?gl.getParameter(e.UNMASKED_RENDERER_WEBGL):'unavailable'};});
+ await test.info().attach('graphics-baseline',{body:JSON.stringify({device,calls:end.calls,triangles:end.triangles,memory:end.graphicsMemory},null,2),contentType:'application/json'});
+ expect(errors).toEqual([]);
+});

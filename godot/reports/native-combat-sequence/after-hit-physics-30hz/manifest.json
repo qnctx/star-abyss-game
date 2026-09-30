@@ -1,0 +1,17 @@
+{
+	"clips": [
+		{
+			"flight_active": false,
+			"frames": 48,
+			"health_after_guarded_hit": 155270.0,
+			"health_after_unblocked_hit": 154270.0,
+			"health_before": 155520.0,
+			"last_position": "(40.0, 0.0, 39.18444)",
+			"name": "guard-and-hit-side",
+			"observed_actions": []
+		}
+	],
+	"fps": 30,
+	"isolated_slot": "user://star_abyss_combat_verify.json",
+	"main_scene": "res://scenes/main.tscn"
+}

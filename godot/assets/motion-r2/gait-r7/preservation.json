@@ -1,0 +1,40 @@
+{
+  "unchanged_non_gait_actions": {
+    "air_cast": "7a31a57c41cab2a371d8aa03a44cf77015899e6dcc0b7ba3d2ce330bebf78e7e",
+    "air_cast_cleave": "7edc5231caa4bbed4343545402564e572428cb402f897894911a080470e05a2f",
+    "air_cast_fist": "12e39f6e0dbc867096b0914be4dbafa5573fe5936f083ac6477b4d5c57560d38",
+    "air_cast_palm": "03fd5964528a7c665826105e16f945e98f4096058a81342a2b97806a43b926ef",
+    "air_cast_skyfall": "3578ad2c66c805b3497978133e0016fe831b05b39f468d293aa4f63c4866dec4",
+    "air_cast_sweep": "2b10eb4fb47366e760448de75fae53145da2c5c617be5afb2a34a5ed91206eb2",
+    "air_cross": "211eae3dab8149a80522dda36643d0726a58a200fe1b2bb43f45f5be53591e12",
+    "air_guard": "930eac40e81ca782c879f160b7a1607d50fd7fcdc0722266180eca5fbfc1c4ce",
+    "air_hit": "461b071f037df3085de9a4eb0ef362894a471f660232cea38f350c68e10aea36",
+    "air_jab": "c08495f778ad66e1e15cb67aabbc5a1bc8837faded67c9f19521b90e95c44b69",
+    "air_kick": "af187b75fa9280f1e244bfe101f337dacb25046f4ed122e31bf2aa8b3a599c8c",
+    "boost": "b7e058a234747851b58066142d7c3863462959c4ceac7ed28f03f65750e9437f",
+    "cast": "e03653ad7bf52f806edb18e0e321080e524d007add9ec166c0f9af58214ab375",
+    "cast_cleave": "1dabb32cdadc3a4fdda6494e4ca4960fad8998557490d3dfc1ba2a9f8f6c806c",
+    "cast_fist": "7f16a3f4665cdd8a2bdb9759a36630baa879c2f8b9dd1215a8d262dda9f5088f",
+    "cast_palm": "33b1ccf27c4f772ce241b9717a667052db5c4d51b3c3c07c07b5253580b314cb",
+    "cast_skyfall": "54f647b8d7065aae4ff7d65ac93b9103e8f4f149acb9ea5bff31d0ad75134b63",
+    "cast_sweep": "6055f2aa4d66571dec8a305b7027adeae7b29c59ee355da56593970e0b5cb6b3",
+    "combat_ready": "d5c253a4da1f75b94cf75182e11106b3f42486ca5cf485bda141792986e593db",
+    "cross": "c87ce541bc885a00471f4561076c1e1a213b240effb47616c52b775325531c98",
+    "cruise": "7808aeedd7cb760ae302b4496be31633217fb38e1db3ffa7ae2fb315680efb23",
+    "guard": "e1bc5c38f56f4abdf3f95440404a91238f500196ee7d96d46454506bba0311a5",
+    "hit": "2ff06c3ff3c2d6dc3b3a39a42467454f38ab5d8afc1b8c2c473e156ff1f6b95c",
+    "idle": "88d66850a87e959855305eae87d6bc0c51bd03b40c5acd9782a412050b6f3eaf",
+    "jab": "e49196994567976dd879b1c500cb9fc12fde1d10d189402a10c5e71146e85e34",
+    "kick": "2177f6473108b44070f0968376c28b6e34c5f52c1b6978a5b41b14f978373bb2"
+  },
+  "unchanged_mesh_topology_material_weights": {
+    "C2_AmberSpineChannel": "7dbf4f1cc5ff7d6e302b00b8c50bf6273a6ed5aa7d55020a940407c7ac1fff8e",
+    "C2_AsymmetricRearShell": "43e93f57f8f255f864608096b7c45ee3693ed2cc2082579aa57dbaac57e4e132",
+    "C2_OriginalProportions": "1ee498c373a3b5bb45439f2eed4c4ef521aac3c66785207af70f80595256281e",
+    "C2_ArticulatedGloveL": "921364358aa7ef836c13f1201c8d44547f00338c0d5b65b500a66e5b8b59d410",
+    "C2_ArticulatedGloveR": "a6e2273a6a4e964ef0c2fa6d74e2d70f1fb3913554b8a814d64c2ff2557d34e1"
+  },
+  "bone_rest_count": 51,
+  "action_count": 29,
+  "glb_sha256": "18a8bc45545f43c310cd545191e41e9cc1ee77ecb56629a1596a400cf015a976"
+}

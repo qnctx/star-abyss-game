@@ -1,0 +1,75 @@
+{
+  "driver_sha256": "6679ef4df0605ea4182ac66c9cfd92f7c9428220512f20af45ddf1d7150b6c82",
+  "events": [
+    {
+      "target_center_distance": 2.3,
+      "view": 2
+    },
+    {
+      "attack": "left-jab",
+      "frame": 6,
+      "serial": 2,
+      "view": 2
+    },
+    {
+      "attack": "right-cross",
+      "frame": 14,
+      "serial": 3,
+      "view": 2
+    },
+    {
+      "attack": "rising-kick",
+      "frame": 24,
+      "serial": 4,
+      "view": 2
+    },
+    {
+      "target_center_distance": 2.0,
+      "view": 3
+    },
+    {
+      "attack": "left-jab",
+      "frame": 6,
+      "serial": 5,
+      "view": 3
+    },
+    {
+      "damage": 16500.0,
+      "frame": 10,
+      "hp": 294540.0,
+      "view": 3,
+      "visual_elapsed": 0.166666666666667,
+      "windup": 0.15
+    },
+    {
+      "attack": "right-cross",
+      "frame": 15,
+      "serial": 6,
+      "view": 3
+    },
+    {
+      "damage": 16500.0,
+      "frame": 21,
+      "hp": 278040.0,
+      "view": 3,
+      "visual_elapsed": 0.2,
+      "windup": 0.19
+    },
+    {
+      "attack": "rising-kick",
+      "frame": 27,
+      "serial": 7,
+      "view": 3
+    },
+    {
+      "damage": 24000.0,
+      "frame": 36,
+      "hp": 254040.0,
+      "view": 3,
+      "visual_elapsed": 0.3,
+      "windup": 0.27
+    }
+  ],
+  "main_sha256": "2cb62d2b7cab341a97ac2bc68f857b020a5d4ddc5f5eaef85af29e8b3535a7f0",
+  "scope": "Real Main attack entry, buffer and timers with frozen world physics; stationary whiff views and/or real Riftwing hit view. Creature AI/physics frozen; no claim of human input or movement acceptance."
+}

@@ -1,0 +1,943 @@
+{
+  "scope": "CPU GLB nearest-key samples only; no Blender/Godot invocation or visual acceptance.",
+  "glb_sha256": "0ade4261acc734cc24e61886dfc9bbf1ceb7f46bc6a5cecc7c10998da7c15a71",
+  "samples": [
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.3,
+      "positions": {
+        "pelvis": [
+          0.008,
+          0.73,
+          0.0144
+        ],
+        "chest": [
+          0.025175,
+          1.157415,
+          -0.013604
+        ],
+        "head": [
+          0.08037,
+          1.374391,
+          -0.103604
+        ],
+        "shoulderL": [
+          -0.167585,
+          1.241987,
+          -0.16793
+        ],
+        "elbowL": [
+          -0.373105,
+          1.099652,
+          -0.166402
+        ],
+        "wristL": [
+          -0.154826,
+          1.087415,
+          -0.253604
+        ],
+        "shoulderR": [
+          0.250119,
+          1.241988,
+          0.08824
+        ],
+        "elbowR": [
+          0.356766,
+          1.084061,
+          -0.07358
+        ],
+        "wristR": [
+          0.205175,
+          1.087415,
+          -0.253604
+        ],
+        "hipL": [
+          -0.102819,
+          0.73,
+          -0.053564
+        ],
+        "kneeL": [
+          -0.171068,
+          0.479028,
+          -0.372123
+        ],
+        "ankleL": [
+          -0.26,
+          0.151999,
+          -0.189999
+        ],
+        "hipR": [
+          0.118819,
+          0.73,
+          0.082364
+        ],
+        "kneeR": [
+          0.20531,
+          0.375905,
+          -0.108059
+        ],
+        "ankleR": [
+          0.26,
+          0.152001,
+          0.199999
+        ]
+      },
+      "knee_L_interior_degrees": 100.97664920801469,
+      "knee_R_interior_degrees": 99.22023180385212
+    },
+    {
+      "clip": "cast_martial_cancel",
+      "normalized": 0,
+      "positions": {
+        "pelvis": [
+          0.008,
+          0.73,
+          0.0144
+        ],
+        "chest": [
+          0.025175,
+          1.157414,
+          -0.013604
+        ],
+        "head": [
+          0.08037,
+          1.37439,
+          -0.103604
+        ],
+        "shoulderL": [
+          -0.167585,
+          1.241986,
+          -0.16793
+        ],
+        "elbowL": [
+          -0.373105,
+          1.099652,
+          -0.166402
+        ],
+        "wristL": [
+          -0.154826,
+          1.087414,
+          -0.253604
+        ],
+        "shoulderR": [
+          0.25012,
+          1.241987,
+          0.088241
+        ],
+        "elbowR": [
+          0.356766,
+          1.084061,
+          -0.07358
+        ],
+        "wristR": [
+          0.205175,
+          1.087415,
+          -0.253604
+        ],
+        "hipL": [
+          -0.10282,
+          0.73,
+          -0.053564
+        ],
+        "kneeL": [
+          -0.171068,
+          0.479028,
+          -0.372123
+        ],
+        "ankleL": [
+          -0.26,
+          0.151998,
+          -0.189999
+        ],
+        "hipR": [
+          0.118819,
+          0.73,
+          0.082364
+        ],
+        "kneeR": [
+          0.20531,
+          0.375905,
+          -0.108059
+        ],
+        "ankleR": [
+          0.26,
+          0.152001,
+          0.2
+        ]
+      },
+      "knee_L_interior_degrees": 100.97666946648157,
+      "knee_R_interior_degrees": 99.22021629434224
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.5,
+      "positions": {
+        "pelvis": [
+          0.0,
+          0.96,
+          -0.12
+        ],
+        "chest": [
+          -0.032713,
+          1.343648,
+          -0.305525
+        ],
+        "head": [
+          -0.069342,
+          1.460828,
+          -0.513256
+        ],
+        "shoulderL": [
+          -0.286793,
+          1.39527,
+          -0.335585
+        ],
+        "elbowL": [
+          -0.429895,
+          1.212393,
+          -0.242969
+        ],
+        "wristL": [
+          -0.386793,
+          1.25527,
+          -0.015585
+        ],
+        "shoulderR": [
+          0.195763,
+          1.39527,
+          -0.420672
+        ],
+        "elbowR": [
+          0.21845,
+          1.230346,
+          -0.60718
+        ],
+        "wristR": [
+          0.125763,
+          1.19527,
+          -0.820672
+        ],
+        "hipL": [
+          -0.128025,
+          0.96,
+          -0.097426
+        ],
+        "kneeL": [
+          -0.268397,
+          0.574571,
+          -0.068016
+        ],
+        "ankleL": [
+          -0.23,
+          0.680001,
+          0.3
+        ],
+        "hipR": [
+          0.128025,
+          0.96,
+          -0.142574
+        ],
+        "kneeR": [
+          0.314331,
+          0.667684,
+          0.078708
+        ],
+        "ankleR": [
+          0.23,
+          0.8,
+          0.43
+        ]
+      },
+      "knee_L_interior_degrees": 77.1450934233157,
+      "knee_R_interior_degrees": 98.48460029139314
+    },
+    {
+      "clip": "air_cast_martial_descent_cancel",
+      "normalized": 0,
+      "positions": {
+        "pelvis": [
+          0.0,
+          0.96,
+          -0.12
+        ],
+        "chest": [
+          -0.032713,
+          1.343648,
+          -0.305525
+        ],
+        "head": [
+          -0.069342,
+          1.460827,
+          -0.513256
+        ],
+        "shoulderL": [
+          -0.286793,
+          1.39527,
+          -0.335584
+        ],
+        "elbowL": [
+          -0.429895,
+          1.212392,
+          -0.242969
+        ],
+        "wristL": [
+          -0.386793,
+          1.25527,
+          -0.015584
+        ],
+        "shoulderR": [
+          0.195763,
+          1.39527,
+          -0.420672
+        ],
+        "elbowR": [
+          0.21845,
+          1.230345,
+          -0.60718
+        ],
+        "wristR": [
+          0.125763,
+          1.195269,
+          -0.820672
+        ],
+        "hipL": [
+          -0.128025,
+          0.96,
+          -0.097426
+        ],
+        "kneeL": [
+          -0.268397,
+          0.574571,
+          -0.068015
+        ],
+        "ankleL": [
+          -0.23,
+          0.680001,
+          0.3
+        ],
+        "hipR": [
+          0.128025,
+          0.96,
+          -0.142574
+        ],
+        "kneeR": [
+          0.314331,
+          0.667684,
+          0.078708
+        ],
+        "ankleR": [
+          0.229999,
+          0.800002,
+          0.43
+        ]
+      },
+      "knee_L_interior_degrees": 77.1451059360058,
+      "knee_R_interior_degrees": 98.48462872109995
+    },
+    {
+      "clip": "air_cast_martial_descent_cancel",
+      "normalized": 1,
+      "positions": {
+        "pelvis": [
+          0.0,
+          1.04,
+          -0.0
+        ],
+        "chest": [
+          -0.0,
+          1.470001,
+          -0.0
+        ],
+        "head": [
+          -0.0,
+          1.710001,
+          -0.025
+        ],
+        "shoulderL": [
+          -0.245,
+          1.560001,
+          0.0
+        ],
+        "elbowL": [
+          -0.347929,
+          1.34799,
+          -0.083407
+        ],
+        "wristL": [
+          -0.19,
+          1.400001,
+          -0.25
+        ],
+        "shoulderR": [
+          0.245,
+          1.560001,
+          0.0
+        ],
+        "elbowR": [
+          0.347929,
+          1.34799,
+          -0.083407
+        ],
+        "wristR": [
+          0.19,
+          1.400001,
+          -0.25
+        ],
+        "hipL": [
+          -0.13,
+          1.04,
+          0.0
+        ],
+        "kneeL": [
+          -0.178211,
+          0.632884,
+          0.032516
+        ],
+        "ankleL": [
+          -0.22,
+          0.28,
+          0.18
+        ],
+        "hipR": [
+          0.13,
+          1.04,
+          0.0
+        ],
+        "kneeR": [
+          0.190559,
+          0.636271,
+          -0.0496
+        ],
+        "ankleR": [
+          0.22,
+          0.44,
+          0.28
+        ]
+      },
+      "knee_L_interior_degrees": 161.99453507548077,
+      "knee_R_interior_degrees": 114.12674640627559
+    },
+    {
+      "clip": "cast_martial_landing",
+      "normalized": 0.18,
+      "positions": {
+        "pelvis": [
+          0.008,
+          0.305218,
+          0.299881
+        ],
+        "chest": [
+          0.057648,
+          0.545148,
+          -0.053386
+        ],
+        "head": [
+          0.088309,
+          0.643589,
+          -0.271547
+        ],
+        "shoulderL": [
+          -0.174122,
+          0.59018,
+          -0.164649
+        ],
+        "elbowL": [
+          -0.345577,
+          0.456359,
+          -0.04138
+        ],
+        "wristL": [
+          -0.324069,
+          0.610493,
+          0.135199
+        ],
+        "shoulderR": [
+          0.311109,
+          0.59018,
+          -0.096454
+        ],
+        "elbowR": [
+          0.329764,
+          0.343643,
+          -0.133486
+        ],
+        "wristR": [
+          0.276075,
+          0.120687,
+          -0.186479
+        ],
+        "hipL": [
+          -0.120735,
+          0.305218,
+          0.281789
+        ],
+        "kneeL": [
+          -0.010918,
+          0.426037,
+          -0.095659
+        ],
+        "ankleL": [
+          -0.26,
+          0.151998,
+          -0.199999
+        ],
+        "hipR": [
+          0.136735,
+          0.305218,
+          0.317974
+        ],
+        "kneeR": [
+          0.08513,
+          0.369363,
+          -0.084948
+        ],
+        "ankleR": [
+          0.26,
+          0.152,
+          0.180001
+        ]
+      },
+      "knee_L_interior_degrees": 82.343945575001,
+      "knee_R_interior_degrees": 34.929107908385724
+    }
+  ],
+  "pose_start_comparisons": [
+    {
+      "source": "descent",
+      "target": "descent_cancel",
+      "max_position_delta_m": 1.8029005705050896e-06,
+      "max_matrix_delta": 2.3441972595295013e-06,
+      "mismatches": []
+    },
+    {
+      "source": "break",
+      "target": "cancel",
+      "max_position_delta_m": 1.3133183652301586e-06,
+      "max_matrix_delta": 1.5909548458648004e-06,
+      "mismatches": []
+    },
+    {
+      "source": "air_descent",
+      "target": "air_descent_cancel",
+      "max_position_delta_m": 1.8029005705050896e-06,
+      "max_matrix_delta": 2.3441972595295013e-06,
+      "mismatches": []
+    },
+    {
+      "source": "air_break",
+      "target": "air_cancel",
+      "max_position_delta_m": 1.7476342819239113e-06,
+      "max_matrix_delta": 1.7354553927262373e-06,
+      "mismatches": []
+    }
+  ],
+  "skinned_geometry": {
+    "method": "CPU linear blend skinning of original motion-r2 mesh vertices and inverse-bind matrices with candidate GLB node matrices. Authored coordinates only; no runtime Motion foot-lock, sole shift or collider adaptation.",
+    "rest_control": [
+      {
+        "mesh": "C2_AmberSpineChannel",
+        "min": [
+          -0.013448703102767384,
+          1.2175487310276814,
+          0.11087472512126419
+        ],
+        "max": [
+          0.06690650433301942,
+          1.7064205434153905,
+          0.2224371668467234
+        ],
+        "minimum_y_vertex": [
+          -0.002490732120349921,
+          1.2175487310276814,
+          0.17754094794772768
+        ],
+        "dominant_joint_at_minimum_y": "chest",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveL",
+        "min": [
+          -0.3959999408041165,
+          0.8050002763348278,
+          -0.07966424244623685
+        ],
+        "max": [
+          -0.32363992704270084,
+          1.003000391007182,
+          0.05299986428317751
+        ],
+        "minimum_y_vertex": [
+          -0.36562495806486395,
+          0.8050002763348278,
+          -0.008917617507486505
+        ],
+        "dominant_joint_at_minimum_y": "middle3L",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveR",
+        "min": [
+          0.3236401022124039,
+          0.8049996807939102,
+          -0.07966420970993014
+        ],
+        "max": [
+          0.39600006790145337,
+          1.0029999082894328,
+          0.052999855654163486
+        ],
+        "minimum_y_vertex": [
+          0.36608264352454334,
+          0.8049996807939102,
+          -0.010625156112309386
+        ],
+        "dominant_joint_at_minimum_y": "middle3R",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_AsymmetricRearShell",
+        "min": [
+          -0.09216329455375671,
+          0.9903420821942774,
+          -0.11718824682079246
+        ],
+        "max": [
+          0.1770911514759065,
+          1.4416739973043298,
+          0.20428050242471876
+        ],
+        "minimum_y_vertex": [
+          0.17231021821498885,
+          0.9903420821942774,
+          0.09355746312892295
+        ],
+        "dominant_joint_at_minimum_y": "lumbar",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_OriginalProportions",
+        "min": [
+          -0.43228725978540716,
+          -0.0003061982895810328,
+          -0.2051771206387125
+        ],
+        "max": [
+          0.43227579433943036,
+          1.8503110406160572,
+          0.19655787612572687
+        ],
+        "minimum_y_vertex": [
+          0.12358011368977423,
+          -0.0003061982895810328,
+          -0.07406094009630708
+        ],
+        "dominant_joint_at_minimum_y": "ankleR",
+        "vertices_below_y0": 1
+      }
+    ],
+    "landing_peak": [
+      {
+        "mesh": "C2_AmberSpineChannel",
+        "min": [
+          0.017182972440179377,
+          0.612033761484409,
+          -0.25989355231463995
+        ],
+        "max": [
+          0.13538269231743671,
+          0.85472797962464,
+          0.1581538705145646
+        ],
+        "minimum_y_vertex": [
+          0.026315856441567077,
+          0.612033761484409,
+          0.14536077655641888
+        ],
+        "dominant_joint_at_minimum_y": "chest",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveL",
+        "min": [
+          -0.3600332359123713,
+          0.5682720364024938,
+          0.09367661615542112
+        ],
+        "max": [
+          -0.22611833858456815,
+          0.708498736634118,
+          0.2670488124972745
+        ],
+        "minimum_y_vertex": [
+          -0.3293818168295613,
+          0.5682720364024938,
+          0.13949186242977776
+        ],
+        "dominant_joint_at_minimum_y": "wristL",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveR",
+        "min": [
+          0.17687071329613133,
+          0.023968466432328837,
+          -0.25478371834858204
+        ],
+        "max": [
+          0.31304732981926736,
+          0.1558063097191137,
+          -0.14566634296792097
+        ],
+        "minimum_y_vertex": [
+          0.2208011491321093,
+          0.023968466432328837,
+          -0.16451341697471042
+        ],
+        "dominant_joint_at_minimum_y": "little1R",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_AsymmetricRearShell",
+        "min": [
+          -0.06975180819758288,
+          0.3906607954808565,
+          -0.02122597395409053
+        ],
+        "max": [
+          0.21791831589830785,
+          0.7500801205802342,
+          0.33777448712937364
+        ],
+        "minimum_y_vertex": [
+          0.11432264830787706,
+          0.3906607954808565,
+          -0.01247345456539423
+        ],
+        "dominant_joint_at_minimum_y": "chest",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_OriginalProportions",
+        "min": [
+          -0.4157061441538331,
+          0.0033406481635565987,
+          -0.4909703578964243
+        ],
+        "max": [
+          0.42170079430033125,
+          0.8803687820460762,
+          0.36873826154665645
+        ],
+        "minimum_y_vertex": [
+          -0.24418190652253902,
+          0.0033406481635565987,
+          -0.15676898564005298
+        ],
+        "dominant_joint_at_minimum_y": "ankleL",
+        "vertices_below_y0": 0
+      }
+    ],
+    "descent_held": [
+      {
+        "mesh": "C2_AmberSpineChannel",
+        "min": [
+          -0.08991797794450183,
+          1.3646309774140395,
+          -0.4686749690501156
+        ],
+        "max": [
+          0.05351113491811982,
+          1.6674550082490578,
+          -0.08623396958878991
+        ],
+        "minimum_y_vertex": [
+          0.00012843379709454072,
+          1.3646309774140395,
+          -0.10043007566969336
+        ],
+        "dominant_joint_at_minimum_y": "chest",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveL",
+        "min": [
+          -0.42334152987407714,
+          1.2008761333954985,
+          -0.04954089217317681
+        ],
+        "max": [
+          -0.2901287897695554,
+          1.3203019542910903,
+          0.08397372737908887
+        ],
+        "minimum_y_vertex": [
+          -0.333427888490226,
+          1.2008761333954985,
+          0.02190875232390432
+        ],
+        "dominant_joint_at_minimum_y": "thumb2L",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_ArticulatedGloveR",
+        "min": [
+          0.030508962905268555,
+          1.1365347840484914,
+          -0.9128266557308964
+        ],
+        "max": [
+          0.16345444225128164,
+          1.2580208911149837,
+          -0.7838608180954241
+        ],
+        "minimum_y_vertex": [
+          0.071371276780819,
+          1.1365347840484914,
+          -0.8735947559614327
+        ],
+        "dominant_joint_at_minimum_y": "palmR",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_AsymmetricRearShell",
+        "min": [
+          -0.08446426067320259,
+          1.0825650680713892,
+          -0.3136506311303391
+        ],
+        "max": [
+          0.19031118828853055,
+          1.545700519361561,
+          0.0013023881788674363
+        ],
+        "minimum_y_vertex": [
+          0.18532589619506545,
+          1.0825650680713892,
+          -0.061856955340527146
+        ],
+        "dominant_joint_at_minimum_y": "lumbar",
+        "vertices_below_y0": 0
+      },
+      {
+        "mesh": "C2_OriginalProportions",
+        "min": [
+          -0.5055715410105269,
+          0.5528533200577863,
+          -0.858050308675125
+        ],
+        "max": [
+          0.3941890313149201,
+          1.7109525842810123,
+          0.5138308609501074
+        ],
+        "minimum_y_vertex": [
+          -0.24041221579624342,
+          0.5528533200577863,
+          -0.06648625060860353
+        ],
+        "dominant_joint_at_minimum_y": "kneeL",
+        "vertices_below_y0": 0
+      }
+    ]
+  },
+  "rest_comparison": {
+    "baseline": "godot/assets/motion-r2/c2-motion-r2.glb",
+    "baseline_sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "common_named_nodes": 52,
+    "common_inverse_bind_matrices": 51,
+    "max_world_matrix_delta": 4.6309860526547175e-06,
+    "world_matrix_mismatches_above_1e_5": {},
+    "max_inverse_bind_matrix_delta": 4.738569259643555e-06,
+    "inverse_bind_mismatches_above_1e_5": {}
+  },
+  "landing_left_arm": {
+    "wrist_minus_shoulder_m": [
+      -0.1499467053854214,
+      0.020313190270137893,
+      0.29984726832439457
+    ],
+    "wrist_minus_head_m": [
+      -0.4123781435189111,
+      -0.03309538395278233,
+      0.4067458795832266
+    ],
+    "coordinate_note": "In these authored glTF samples, negative Z is forward; positive Z relative to shoulder is backward."
+  },
+  "landing_all_baked_keys": {
+    "sample_count": 55,
+    "duration_seconds": 0.8999999761581421,
+    "scope": "Every authored landing key; not interpolation between keys and not runtime ground adaptation.",
+    "mesh_minima": {
+      "C2_AmberSpineChannel": {
+        "minimum_y": 0.612033761484409,
+        "normalized_key": 0.18518519560986613,
+        "seconds": 0.1666666716337204,
+        "vertex": [
+          0.026315856441567077,
+          0.612033761484409,
+          0.14536077655641888
+        ],
+        "dominant_joint": "chest",
+        "vertices_below_y0_at_key": 0
+      },
+      "C2_ArticulatedGloveL": {
+        "minimum_y": 0.5682720364024938,
+        "normalized_key": 0.18518519560986613,
+        "seconds": 0.1666666716337204,
+        "vertex": [
+          -0.3293818168295613,
+          0.5682720364024938,
+          0.13949186242977776
+        ],
+        "dominant_joint": "wristL",
+        "vertices_below_y0_at_key": 0
+      },
+      "C2_ArticulatedGloveR": {
+        "minimum_y": 0.023968466432328837,
+        "normalized_key": 0.18518519560986613,
+        "seconds": 0.1666666716337204,
+        "vertex": [
+          0.2208011491321093,
+          0.023968466432328837,
+          -0.16451341697471042
+        ],
+        "dominant_joint": "little1R",
+        "vertices_below_y0_at_key": 0
+      },
+      "C2_AsymmetricRearShell": {
+        "minimum_y": 0.3906607954808565,
+        "normalized_key": 0.18518519560986613,
+        "seconds": 0.1666666716337204,
+        "vertex": [
+          0.11432264830787706,
+          0.3906607954808565,
+          -0.01247345456539423
+        ],
+        "dominant_joint": "chest",
+        "vertices_below_y0_at_key": 0
+      },
+      "C2_OriginalProportions": {
+        "minimum_y": 0.00192325203322136,
+        "normalized_key": 0.2777777851363761,
+        "seconds": 0.25,
+        "vertex": [
+          -0.23355078263619128,
+          0.00192325203322136,
+          -0.14744963963661462
+        ],
+        "dominant_joint": "ankleL",
+        "vertices_below_y0_at_key": 0
+      }
+    },
+    "knee_minima": {
+      "kneeL": {
+        "min_y": 0.4260366459967492,
+        "normalized_key": 0.18518519560986613
+      },
+      "kneeR": {
+        "min_y": 0.3271542081130936,
+        "normalized_key": 0.4814814986515442
+      }
+    }
+  }
+}

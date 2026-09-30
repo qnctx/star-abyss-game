@@ -1,0 +1,5043 @@
+{
+  "method": "Events independently located from measured hip/knee/ankle and full shoe geometry at 240 phase intervals. Contact bands use 4/8 mm thresholds, not a declaration of exact physical impact. A measured maximum can differ from an authored phase target. Negative samples are raw GLB geometry without runtime floor lift. R6/R7 motion naturalness and material-point world sliding require actual runtime evidence.",
+  "before": {
+    "sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "sample_intervals": 240,
+    "gaits": {
+      "walk": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.029167,
+              "global_phase": 0.029166666666666667,
+              "thigh_deg": 26.84455549311205,
+              "knee_flex_deg": 23.892824117487077,
+              "sole_min_mm": 1.995530580161134,
+              "ankle_height_mm": 161.02259251089296,
+              "ankle_behind_hip_mm": -205.49711884626072,
+              "heel_minus_toe_mm": -73.38168109319041,
+              "shoe_yaw_deg": -0.7823583622130726,
+              "lowest_vertex": {
+                "position": [
+                  -0.10460201931469609,
+                  0.001995530580161134,
+                  -0.12759280051411018
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.6125,
+              "global_phase": 0.6125,
+              "thigh_deg": -20.835539600898162,
+              "knee_flex_deg": 19.832425487642606,
+              "sole_min_mm": 3.5670939332189677,
+              "ankle_height_mm": 242.01278560579303,
+              "ankle_behind_hip_mm": 396.9990887343745,
+              "heel_minus_toe_mm": 181.2744656655232,
+              "shoe_yaw_deg": -0.9735096063050147,
+              "lowest_vertex": {
+                "position": [
+                  -0.1140278152094644,
+                  0.0035670939332189677,
+                  0.31486342865404826
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.6166666666666667,
+              "thigh_deg": -20.832322045634644,
+              "knee_flex_deg": 19.7458064697875,
+              "sole_min_mm": 4.4879526806647085,
+              "ankle_height_mm": 242.0566363560266,
+              "ankle_behind_hip_mm": 396.5198334062827,
+              "heel_minus_toe_mm": 179.80362795368916,
+              "shoe_yaw_deg": -0.9669220573389814,
+              "lowest_vertex": {
+                "position": [
+                  -0.11403195734510341,
+                  0.0044879526806647085,
+                  0.3118975206413694
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.479167,
+              "global_phase": 0.4791666666666667,
+              "thigh_deg": 0.08811855560611467,
+              "knee_flex_deg": 43.79078881313714,
+              "sole_min_mm": 2.0038413841239473,
+              "ankle_height_mm": 222.71014207922184,
+              "ankle_behind_hip_mm": 265.1907110511093,
+              "heel_minus_toe_mm": 159.7598413611202,
+              "shoe_yaw_deg": -0.8674231683749094,
+              "lowest_vertex": {
+                "position": [
+                  -0.1141671993880162,
+                  0.002003841384123947,
+                  0.1447977375829151
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 19.065387322131688,
+              "knee_flex_deg": 39.59961410305309,
+              "sole_min_mm": 47.41232044951207,
+              "ankle_height_mm": 184.6187935867088,
+              "ankle_behind_hip_mm": 0.6212759080173994,
+              "heel_minus_toe_mm": -6.9420409424306575,
+              "shoe_yaw_deg": -0.712827410093142,
+              "lowest_vertex": {
+                "position": [
+                  -0.10556050311074633,
+                  0.047412320449512074,
+                  0.024989068696824483
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45365
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.866667,
+              "global_phase": 0.8666666666666667,
+              "thigh_deg": 33.57066695639241,
+              "knee_flex_deg": 34.11806440929821,
+              "sole_min_mm": 35.10704182170754,
+              "ankle_height_mm": 193.58426291693982,
+              "ankle_behind_hip_mm": -223.7290296212849,
+              "heel_minus_toe_mm": -84.84127607163249,
+              "shoe_yaw_deg": -0.7968610874646017,
+              "lowest_vertex": {
+                "position": [
+                  -0.10441786774904493,
+                  0.03510704182170754,
+                  -0.14473033936073998
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.616667,
+              "global_phase": 0.6166666666666667,
+              "thigh_deg": -20.832322045634644,
+              "knee_flex_deg": 19.7458064697875,
+              "sole_min_mm": 4.4879526806647085,
+              "ankle_height_mm": 242.0566363560266,
+              "ankle_behind_hip_mm": 396.5198334062827,
+              "heel_minus_toe_mm": 179.80362795368916,
+              "shoe_yaw_deg": -0.9669220573389814,
+              "lowest_vertex": {
+                "position": [
+                  -0.11403195734510341,
+                  0.0044879526806647085,
+                  0.3118975206413694
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.975,
+              "global_phase": 0.975,
+              "thigh_deg": 27.893464947942675,
+              "knee_flex_deg": 18.443575240052095,
+              "sole_min_mm": 3.8913122116682595,
+              "ankle_height_mm": 169.71289172921632,
+              "ankle_behind_hip_mm": -255.55092314507732,
+              "heel_minus_toe_mm": -94.83168101543448,
+              "shoe_yaw_deg": -0.8064775802451432,
+              "lowest_vertex": {
+                "position": [
+                  -0.10456643249271111,
+                  0.0038913122116682594,
+                  -0.19274617772243502
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.629167,
+              "global_phase": 0.6291666666666667,
+              "thigh_deg": -20.101127790499653,
+              "knee_flex_deg": 20.456474278363928,
+              "sole_min_mm": 8.620519806938217,
+              "ankle_height_mm": 241.74563279494248,
+              "ankle_behind_hip_mm": 391.49876005756,
+              "heel_minus_toe_mm": 173.1161500634191,
+              "shoe_yaw_deg": -0.9381649418279857,
+              "lowest_vertex": {
+                "position": [
+                  -0.11405809032055567,
+                  0.008620519806938218,
+                  0.2954199533687173
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.954167,
+              "global_phase": 0.9541666666666667,
+              "thigh_deg": 28.651984218380594,
+              "knee_flex_deg": 19.310409357681596,
+              "sole_min_mm": 7.310845461240926,
+              "ankle_height_mm": 173.2199259184675,
+              "ankle_behind_hip_mm": -259.6314721828286,
+              "heel_minus_toe_mm": -95.95725909560954,
+              "shoe_yaw_deg": -0.8091306048022752,
+              "lowest_vertex": {
+                "position": [
+                  -0.10454283411860907,
+                  0.007310845461240926,
+                  -0.19697590286555872
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 27.824617507990094,
+              "knee_flex_deg": 21.47235611914168,
+              "sole_min_mm": 1.9995216477438518,
+              "ankle_height_mm": 165.9570916253639,
+              "ankle_behind_hip_mm": -234.50845421472295,
+              "heel_minus_toe_mm": -92.52982668162173,
+              "shoe_yaw_deg": -0.7960743518665814,
+              "lowest_vertex": {
+                "position": [
+                  -0.10458336877875932,
+                  0.001999521647743852,
+                  -0.16718379769569058
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.1,
+              "global_phase": 0.1,
+              "thigh_deg": 21.034727387711197,
+              "knee_flex_deg": 21.972875759242815,
+              "sole_min_mm": 1.8925581459226137,
+              "ankle_height_mm": 146.5203930006208,
+              "ankle_behind_hip_mm": -141.27648705415544,
+              "heel_minus_toe_mm": -15.339831951047778,
+              "shoe_yaw_deg": -0.7741647009602384,
+              "lowest_vertex": {
+                "position": [
+                  -0.10467390849248767,
+                  0.0018925581459226137,
+                  -0.040095105116887186
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.3,
+              "thigh_deg": 2.292634471570352,
+              "knee_flex_deg": 22.53008603243044,
+              "sole_min_mm": 1.9559129879698836,
+              "ankle_height_mm": 155.05316830609468,
+              "ankle_behind_hip_mm": 116.64133701253805,
+              "heel_minus_toe_mm": 29.49923331638179,
+              "shoe_yaw_deg": -0.7465438130789391,
+              "lowest_vertex": {
+                "position": [
+                  -0.0826767989158732,
+                  0.0019559129879698836,
+                  -0.014529032285200152
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39234
+              }
+            },
+            {
+              "leg_phase": 0.5,
+              "global_phase": 0.5,
+              "thigh_deg": -1.5647626714244849,
+              "knee_flex_deg": 43.391147043639165,
+              "sole_min_mm": 2.0203403533226307,
+              "ankle_height_mm": 228.69141497409316,
+              "ankle_behind_hip_mm": 283.0714619599408,
+              "heel_minus_toe_mm": 169.41886087218492,
+              "shoe_yaw_deg": -0.891168268299846,
+              "lowest_vertex": {
+                "position": [
+                  -0.11413012889953447,
+                  0.0020203403533226305,
+                  0.17400700428216237
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.6,
+              "global_phase": 0.6,
+              "thigh_deg": -19.20270871923731,
+              "knee_flex_deg": 22.564102433340654,
+              "sole_min_mm": 2.033579612755798,
+              "ankle_height_mm": 241.76270597630827,
+              "ankle_behind_hip_mm": 391.53764823425024,
+              "heel_minus_toe_mm": 184.6329722420797,
+              "shoe_yaw_deg": -1.0298113564165614,
+              "lowest_vertex": {
+                "position": [
+                  -0.11407979287473405,
+                  0.002033579612755798,
+                  0.3132249223004917
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.679167,
+              "global_phase": 0.6791666666666667,
+              "thigh_deg": -5.578761512889472,
+              "knee_flex_deg": 34.997272417812525,
+              "sole_min_mm": 27.721953974030143,
+              "ankle_height_mm": 226.91305753957124,
+              "ankle_behind_hip_mm": 290.2357840414664,
+              "heel_minus_toe_mm": 127.686605953483,
+              "shoe_yaw_deg": -0.826884877529867,
+              "lowest_vertex": {
+                "position": [
+                  -0.09801350587208488,
+                  0.027721953974030142,
+                  0.16531360202356016
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39240
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 19.065387322131688,
+              "knee_flex_deg": 39.59961410305309,
+              "sole_min_mm": 47.41232044951207,
+              "ankle_height_mm": 184.6187935867088,
+              "ankle_behind_hip_mm": 0.6212759080173994,
+              "heel_minus_toe_mm": -6.9420409424306575,
+              "shoe_yaw_deg": -0.712827410093142,
+              "lowest_vertex": {
+                "position": [
+                  -0.10556050311074633,
+                  0.047412320449512074,
+                  0.024989068696824483
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45365
+              }
+            },
+            {
+              "leg_phase": 0.9,
+              "global_phase": 0.9,
+              "thigh_deg": 32.13695599791286,
+              "knee_flex_deg": 27.64485415662368,
+              "sole_min_mm": 22.876178550588072,
+              "ankle_height_mm": 186.12211953504539,
+              "ankle_behind_hip_mm": -248.89214504137854,
+              "heel_minus_toe_mm": -95.58734484611261,
+              "shoe_yaw_deg": -0.8054595198629726,
+              "lowest_vertex": {
+                "position": [
+                  -0.10446714172538121,
+                  0.022876178550588072,
+                  -0.17974197222300248
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.025,
+              "global_phase": 0.525,
+              "thigh_deg": 26.982124609634297,
+              "knee_flex_deg": 23.58868318902294,
+              "sole_min_mm": 1.9948416765466943,
+              "ankle_height_mm": 161.76947253740937,
+              "ankle_behind_hip_mm": -209.24909534386558,
+              "heel_minus_toe_mm": -77.67579254388023,
+              "shoe_yaw_deg": -0.10569319538306692,
+              "lowest_vertex": {
+                "position": [
+                  0.17704529547453304,
+                  0.0019948416765466943,
+                  -0.1283942772889212
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.11666666666666667,
+              "thigh_deg": -19.246657164203544,
+              "knee_flex_deg": 22.382672776927055,
+              "sole_min_mm": 4.47545396308266,
+              "ankle_height_mm": 242.91348717218554,
+              "ankle_behind_hip_mm": 391.10282288446126,
+              "heel_minus_toe_mm": 188.018958867947,
+              "shoe_yaw_deg": -0.18040461619799003,
+              "lowest_vertex": {
+                "position": [
+                  0.13182255598535944,
+                  0.0044754539630826595,
+                  0.30156996979396794
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.6125,
+              "global_phase": 0.1125,
+              "thigh_deg": -19.239025065165947,
+              "knee_flex_deg": 22.494829373882293,
+              "sole_min_mm": 3.5547524370601327,
+              "ankle_height_mm": 242.9199331598571,
+              "ankle_behind_hip_mm": 391.5741390910656,
+              "heel_minus_toe_mm": 189.55475820614308,
+              "shoe_yaw_deg": -0.1841357734989434,
+              "lowest_vertex": {
+                "position": [
+                  0.1318202971066183,
+                  0.0035547524370601324,
+                  0.30453694814779775
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.483333,
+              "global_phase": 0.9833333333333333,
+              "thigh_deg": 0.3056671588021468,
+              "knee_flex_deg": 44.25714431408004,
+              "sole_min_mm": 1.9873690395132149,
+              "ankle_height_mm": 224.08062067892436,
+              "ankle_behind_hip_mm": 264.8361387469814,
+              "heel_minus_toe_mm": 167.9258372806095,
+              "shoe_yaw_deg": -0.1406545611242447,
+              "lowest_vertex": {
+                "position": [
+                  0.1319095501824387,
+                  0.001987369039513215,
+                  0.14177272593488494
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 18.989092068990374,
+              "knee_flex_deg": 39.44197550529524,
+              "sole_min_mm": 47.53414681842023,
+              "ankle_height_mm": 184.32885225534062,
+              "ankle_behind_hip_mm": 0.6518878466410403,
+              "heel_minus_toe_mm": -5.4078579641140685,
+              "shoe_yaw_deg": -0.06123757461625731,
+              "lowest_vertex": {
+                "position": [
+                  0.11166189445523093,
+                  0.047534146818420234,
+                  -0.11136511729563703
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.866667,
+              "global_phase": 0.36666666666666664,
+              "thigh_deg": 33.52375134527975,
+              "knee_flex_deg": 34.0396164499401,
+              "sole_min_mm": 35.1222228806382,
+              "ankle_height_mm": 193.4920648642835,
+              "ankle_behind_hip_mm": -223.60865109784513,
+              "heel_minus_toe_mm": -85.28652397952618,
+              "shoe_yaw_deg": -0.08553029509915044,
+              "lowest_vertex": {
+                "position": [
+                  0.17685482251655588,
+                  0.035122222880638196,
+                  -0.13970011126710805
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.616667,
+              "global_phase": 0.11666666666666667,
+              "thigh_deg": -19.246657164203544,
+              "knee_flex_deg": 22.382672776927055,
+              "sole_min_mm": 4.47545396308266,
+              "ankle_height_mm": 242.91348717218554,
+              "ankle_behind_hip_mm": 391.10282288446126,
+              "heel_minus_toe_mm": 188.018958867947,
+              "shoe_yaw_deg": -0.18040461619799003,
+              "lowest_vertex": {
+                "position": [
+                  0.13182255598535944,
+                  0.0044754539630826595,
+                  0.30156996979396794
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.975,
+              "global_phase": 0.475,
+              "thigh_deg": 27.953267755766298,
+              "knee_flex_deg": 18.478606098472767,
+              "sole_min_mm": 3.9021684460817863,
+              "ankle_height_mm": 170.1003562706574,
+              "ankle_behind_hip_mm": -256.0174061489468,
+              "heel_minus_toe_mm": -95.54362161605975,
+              "shoe_yaw_deg": -0.10808573022957511,
+              "lowest_vertex": {
+                "position": [
+                  0.1770084175515671,
+                  0.0039021684460817862,
+                  -0.18853195719506866
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.629167,
+              "global_phase": 0.12916666666666668,
+              "thigh_deg": -18.673414250908497,
+              "knee_flex_deg": 22.77472226662613,
+              "sole_min_mm": 8.61940301421049,
+              "ankle_height_mm": 242.37693738908777,
+              "ankle_behind_hip_mm": 386.30523160362566,
+              "heel_minus_toe_mm": 180.90712508460348,
+              "shoe_yaw_deg": -0.1637583720712411,
+              "lowest_vertex": {
+                "position": [
+                  0.13183794048502764,
+                  0.008619403014210492,
+                  0.28528133786686816
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.954167,
+              "global_phase": 0.45416666666666666,
+              "thigh_deg": 28.728476827038573,
+              "knee_flex_deg": 19.378407424722752,
+              "sole_min_mm": 7.322349437444822,
+              "ankle_height_mm": 173.63712552653908,
+              "ankle_behind_hip_mm": -260.09793385118303,
+              "heel_minus_toe_mm": -96.69113402029583,
+              "shoe_yaw_deg": -0.10580326434670634,
+              "lowest_vertex": {
+                "position": [
+                  0.17698315743527138,
+                  0.007322349437444821,
+                  -0.19273912000813662
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 27.80774042785905,
+              "knee_flex_deg": 21.356869669345823,
+              "sole_min_mm": 2.021558779352309,
+              "ankle_height_mm": 166.1529219795959,
+              "ankle_behind_hip_mm": -234.97459995854646,
+              "heel_minus_toe_mm": -93.22410475509356,
+              "shoe_yaw_deg": -0.10720689056010174,
+              "lowest_vertex": {
+                "position": [
+                  0.17702775689666386,
+                  0.002021558779352309,
+                  -0.16296345890054642
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            },
+            {
+              "leg_phase": 0.1,
+              "global_phase": 0.6,
+              "thigh_deg": 21.283738997641773,
+              "knee_flex_deg": 22.31908339283262,
+              "sole_min_mm": 2.0674851601527227,
+              "ankle_height_mm": 147.43417509947315,
+              "ankle_behind_hip_mm": -142.19741728650018,
+              "heel_minus_toe_mm": -13.598849667599062,
+              "shoe_yaw_deg": -0.09202481049585665,
+              "lowest_vertex": {
+                "position": [
+                  0.10655447982189267,
+                  0.0020674851601527227,
+                  -0.04824427679912683
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.8,
+              "thigh_deg": 2.677461563850187,
+              "knee_flex_deg": 23.172520586341466,
+              "sole_min_mm": 1.949904394473812,
+              "ankle_height_mm": 156.10699203730272,
+              "ankle_behind_hip_mm": 115.51995869665113,
+              "heel_minus_toe_mm": 32.481638649218546,
+              "shoe_yaw_deg": -0.12167382674587812,
+              "lowest_vertex": {
+                "position": [
+                  0.097649604134949,
+                  0.0019499043944738118,
+                  -0.0162355479081861
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5787
+              }
+            },
+            {
+              "leg_phase": 0.5,
+              "global_phase": 0,
+              "thigh_deg": -0.9553167202767002,
+              "knee_flex_deg": 44.035376056922466,
+              "sole_min_mm": 2.00906154079819,
+              "ankle_height_mm": 228.9997560841765,
+              "ankle_behind_hip_mm": 278.85990101163304,
+              "heel_minus_toe_mm": 175.83446487529832,
+              "shoe_yaw_deg": -0.14956065319092499,
+              "lowest_vertex": {
+                "position": [
+                  0.13188716579858978,
+                  0.0020090615407981904,
+                  0.1648315459850238
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "leg_phase": 0.6,
+              "global_phase": 0.1,
+              "thigh_deg": -17.73209247180683,
+              "knee_flex_deg": 24.963597414298484,
+              "sole_min_mm": 2.030267981314088,
+              "ankle_height_mm": 242.74105761794362,
+              "ankle_behind_hip_mm": 386.0993885234511,
+              "heel_minus_toe_mm": 192.82012149566933,
+              "shoe_yaw_deg": -0.19124273684945256,
+              "lowest_vertex": {
+                "position": [
+                  0.13181444603532488,
+                  0.002030267981314088,
+                  0.3029119051219198
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "leg_phase": 0.679167,
+              "global_phase": 0.17916666666666667,
+              "thigh_deg": -5.436232092384399,
+              "knee_flex_deg": 35.17941079422305,
+              "sole_min_mm": 27.667564153498095,
+              "ankle_height_mm": 227.08545768675575,
+              "ankle_behind_hip_mm": 289.4098537167409,
+              "heel_minus_toe_mm": 132.93109733554888,
+              "shoe_yaw_deg": -0.09584278482741868,
+              "lowest_vertex": {
+                "position": [
+                  0.11430387026099999,
+                  0.027667564153498095,
+                  0.15722189151800336
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 18.989092068990374,
+              "knee_flex_deg": 39.44197550529524,
+              "sole_min_mm": 47.53414681842023,
+              "ankle_height_mm": 184.32885225534062,
+              "ankle_behind_hip_mm": 0.6518878466410403,
+              "heel_minus_toe_mm": -5.4078579641140685,
+              "shoe_yaw_deg": -0.06123757461625731,
+              "lowest_vertex": {
+                "position": [
+                  0.11166189445523093,
+                  0.047534146818420234,
+                  -0.11136511729563703
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.9,
+              "global_phase": 0.4,
+              "thigh_deg": 32.162692939368334,
+              "knee_flex_deg": 27.651895857991782,
+              "sole_min_mm": 22.89225046914145,
+              "ankle_height_mm": 186.3414945165709,
+              "ankle_behind_hip_mm": -249.11442165019992,
+              "heel_minus_toe_mm": -96.31850924068014,
+              "shoe_yaw_deg": -0.09486759693662428,
+              "lowest_vertex": {
+                "position": [
+                  0.17690652141830826,
+                  0.02289225046914145,
+                  -0.17512908301061855
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ]
+        }
+      },
+      "jog": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.07083333333333333,
+              "thigh_deg": 22.00154054640455,
+              "knee_flex_deg": 54.16652154226792,
+              "sole_min_mm": 1.9109070793367342,
+              "ankle_height_mm": 142.73265432595716,
+              "ankle_behind_hip_mm": 50.78642757676865,
+              "heel_minus_toe_mm": 17.1761292343146,
+              "shoe_yaw_deg": -0.7331952171706927,
+              "lowest_vertex": {
+                "position": [
+                  -0.08289941195281257,
+                  0.0019109070793367341,
+                  -0.06624143035000923
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.229167,
+              "global_phase": 0.22916666666666666,
+              "thigh_deg": -24.12892948526813,
+              "knee_flex_deg": 27.897047375514354,
+              "sole_min_mm": 19.549323829952474,
+              "ankle_height_mm": 271.3249641404789,
+              "ankle_behind_hip_mm": 471.3159496805541,
+              "heel_minus_toe_mm": 217.19676486252348,
+              "shoe_yaw_deg": -1.1955334255602197,
+              "lowest_vertex": {
+                "position": [
+                  -0.1604535498824633,
+                  0.019549323829952475,
+                  0.4168279215396987
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.358333,
+              "global_phase": 0.35833333333333334,
+              "thigh_deg": -4.916468090444967,
+              "knee_flex_deg": 97.93859259894022,
+              "sole_min_mm": 329.7392328682705,
+              "ankle_height_mm": 584.7464227082064,
+              "ankle_behind_hip_mm": 410.3083929686458,
+              "heel_minus_toe_mm": 282.8285581974196,
+              "shoe_yaw_deg": -1.4430928538485763,
+              "lowest_vertex": {
+                "position": [
+                  -0.1601046850264163,
+                  0.3297392328682705,
+                  0.37585403428003605
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.470833,
+              "global_phase": 0.4708333333333333,
+              "thigh_deg": 15.330189238387938,
+              "knee_flex_deg": 106.99759210470721,
+              "sole_min_mm": 262.59145021046925,
+              "ankle_height_mm": 500.45572278904547,
+              "ankle_behind_hip_mm": 275.88597848964315,
+              "heel_minus_toe_mm": 243.5276524017758,
+              "shoe_yaw_deg": -1.0546261140599376,
+              "lowest_vertex": {
+                "position": [
+                  -0.11398567865306977,
+                  0.26259145021046926,
+                  0.19303178513005664
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.6166666666666667,
+              "thigh_deg": 44.93453930667795,
+              "knee_flex_deg": 93.17694192770952,
+              "sole_min_mm": 150.75535630349563,
+              "ankle_height_mm": 308.7354636673462,
+              "ankle_behind_hip_mm": -3.4555778307272766,
+              "heel_minus_toe_mm": 70.9088799420036,
+              "shoe_yaw_deg": -0.7489426123975625,
+              "lowest_vertex": {
+                "position": [
+                  -0.0829063781669662,
+                  0.15075535630349562,
+                  -0.12691148402264674
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39234
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.675,
+              "global_phase": 0.675,
+              "thigh_deg": 51.9856465345039,
+              "knee_flex_deg": 78.19163150824059,
+              "sole_min_mm": 135.8731799331213,
+              "ankle_height_mm": 274.1078021821885,
+              "ankle_behind_hip_mm": -154.10140556194716,
+              "heel_minus_toe_mm": 5.052144587840424,
+              "shoe_yaw_deg": -0.7085646961231031,
+              "lowest_vertex": {
+                "position": [
+                  -0.08310359650774264,
+                  0.13587317993312129,
+                  -0.2691368680018512
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 32.60971523377934,
+              "knee_flex_deg": 33.148115329476944,
+              "sole_min_mm": 1.991493362006329,
+              "ankle_height_mm": 151.8929400295644,
+              "ankle_behind_hip_mm": -217.99339027770367,
+              "heel_minus_toe_mm": -37.47244803693785,
+              "shoe_yaw_deg": -0.7810083058173809,
+              "lowest_vertex": {
+                "position": [
+                  -0.10456136515279633,
+                  0.001991493362006329,
+                  -0.12463051513214811
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.216667,
+              "global_phase": 0.21666666666666667,
+              "thigh_deg": -18.02675335324911,
+              "knee_flex_deg": 34.51927061147267,
+              "sole_min_mm": 4.180896593858174,
+              "ankle_height_mm": 255.64114206354404,
+              "ankle_behind_hip_mm": 432.62281776644545,
+              "heel_minus_toe_mm": 217.33234524873447,
+              "shoe_yaw_deg": -1.1841757723250421,
+              "lowest_vertex": {
+                "position": [
+                  -0.16048306279548682,
+                  0.004180896593858174,
+                  0.3763879957215765
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.220833,
+              "global_phase": 0.22083333333333333,
+              "thigh_deg": -20.207154352481048,
+              "knee_flex_deg": 32.041189287678655,
+              "sole_min_mm": 8.512033865127389,
+              "ankle_height_mm": 260.07936218001186,
+              "ankle_behind_hip_mm": 446.18169463436305,
+              "heel_minus_toe_mm": 217.131186100661,
+              "shoe_yaw_deg": -1.1909406933835045,
+              "lowest_vertex": {
+                "position": [
+                  -0.16051373397038132,
+                  0.008512033865127389,
+                  0.3905380755647441
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.9958333333333333,
+              "thigh_deg": 33.541136852251974,
+              "knee_flex_deg": 32.811656661256194,
+              "sole_min_mm": 4.916119146905097,
+              "ankle_height_mm": 155.83013041400574,
+              "ankle_behind_hip_mm": -232.10958437799135,
+              "heel_minus_toe_mm": -38.555781687323986,
+              "shoe_yaw_deg": -0.78455255726519,
+              "lowest_vertex": {
+                "position": [
+                  -0.10457259713826081,
+                  0.0049161191469050975,
+                  -0.14047033402682071
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 32.60971523377934,
+              "knee_flex_deg": 33.148115329476944,
+              "sole_min_mm": 1.991493362006329,
+              "ankle_height_mm": 151.8929400295644,
+              "ankle_behind_hip_mm": -217.99339027770367,
+              "heel_minus_toe_mm": -37.47244803693785,
+              "shoe_yaw_deg": -0.7810083058173809,
+              "lowest_vertex": {
+                "position": [
+                  -0.10456136515279633,
+                  0.001991493362006329,
+                  -0.12463051513214811
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.07916666666666666,
+              "thigh_deg": 18.93543151067138,
+              "knee_flex_deg": 53.235718669831904,
+              "sole_min_mm": 1.4267677744400509,
+              "ankle_height_mm": 142.71046867992598,
+              "ankle_behind_hip_mm": 83.3932115606517,
+              "heel_minus_toe_mm": 20.64182171282465,
+              "shoe_yaw_deg": -0.7319631607339863,
+              "lowest_vertex": {
+                "position": [
+                  -0.08293489612547533,
+                  0.001426767774440051,
+                  -0.032971640537075166
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.220833,
+              "global_phase": 0.22083333333333333,
+              "thigh_deg": -20.207154352481048,
+              "knee_flex_deg": 32.041189287678655,
+              "sole_min_mm": 8.512033865127389,
+              "ankle_height_mm": 260.07936218001186,
+              "ankle_behind_hip_mm": 446.18169463436305,
+              "heel_minus_toe_mm": 217.131186100661,
+              "shoe_yaw_deg": -1.1909406933835045,
+              "lowest_vertex": {
+                "position": [
+                  -0.16051373397038132,
+                  0.008512033865127389,
+                  0.3905380755647441
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.320833,
+              "global_phase": 0.32083333333333336,
+              "thigh_deg": -8.843356113778123,
+              "knee_flex_deg": 88.02705198686655,
+              "sole_min_mm": 290.27473911135974,
+              "ankle_height_mm": 544.7645800698947,
+              "ankle_behind_hip_mm": 445.13868170029576,
+              "heel_minus_toe_mm": 276.0545418414857,
+              "shoe_yaw_deg": -1.3651090308098277,
+              "lowest_vertex": {
+                "position": [
+                  -0.16012620283437554,
+                  0.29027473911135976,
+                  0.406621543017947
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.429167,
+              "global_phase": 0.42916666666666664,
+              "thigh_deg": 6.577347339293863,
+              "knee_flex_deg": 104.54159154021006,
+              "sole_min_mm": 292.66257790680584,
+              "ankle_height_mm": 540.9801832873566,
+              "ankle_behind_hip_mm": 333.94892916944946,
+              "heel_minus_toe_mm": 266.8115159029363,
+              "shoe_yaw_deg": -1.1975966659701178,
+              "lowest_vertex": {
+                "position": [
+                  -0.16017212586221202,
+                  0.29266257790680583,
+                  0.26863710630370397
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.55,
+              "global_phase": 0.55,
+              "thigh_deg": 31.883425958700485,
+              "knee_flex_deg": 101.85949698361456,
+              "sole_min_mm": 179.28106064655768,
+              "ankle_height_mm": 378.5117307226626,
+              "ankle_behind_hip_mm": 144.2798129272215,
+              "heel_minus_toe_mm": 165.28479266929872,
+              "shoe_yaw_deg": -0.8123895767059518,
+              "lowest_vertex": {
+                "position": [
+                  -0.09800117604364118,
+                  0.1792810606465577,
+                  0.02132007583944165
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39240
+              }
+            },
+            {
+              "leg_phase": 0.670833,
+              "global_phase": 0.6708333333333333,
+              "thigh_deg": 51.96897490754957,
+              "knee_flex_deg": 79.74346979165561,
+              "sole_min_mm": 138.1428512498756,
+              "ankle_height_mm": 277.5228168301506,
+              "ankle_behind_hip_mm": -144.64258075943434,
+              "heel_minus_toe_mm": 9.141146208151735,
+              "shoe_yaw_deg": -0.7077528625168564,
+              "lowest_vertex": {
+                "position": [
+                  -0.08310216900359449,
+                  0.1381428512498756,
+                  -0.2582233841433091
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 47.07476714421328,
+              "knee_flex_deg": 51.28321425067599,
+              "sole_min_mm": 82.91910220320257,
+              "ankle_height_mm": 235.4901868143221,
+              "ankle_behind_hip_mm": -272.8980735873939,
+              "heel_minus_toe_mm": -64.77441909189307,
+              "shoe_yaw_deg": -0.7364080171341968,
+              "lowest_vertex": {
+                "position": [
+                  -0.10455283886988331,
+                  0.08291910220320257,
+                  -0.18151984180579742
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.9083333333333333,
+              "thigh_deg": 43.41490097395215,
+              "knee_flex_deg": 38.91543350798717,
+              "sole_min_mm": 63.490752066596826,
+              "ankle_height_mm": 221.21220233071782,
+              "ankle_behind_hip_mm": -312.819682167587,
+              "heel_minus_toe_mm": -61.97812051956674,
+              "shoe_yaw_deg": -0.8023002916031854,
+              "lowest_vertex": {
+                "position": [
+                  -0.10446984021549907,
+                  0.06349075206659682,
+                  -0.232354579295592
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.5708333333333333,
+              "thigh_deg": 22.212966558270328,
+              "knee_flex_deg": 54.44343844981229,
+              "sole_min_mm": 1.9101342892520963,
+              "ankle_height_mm": 143.83338981545123,
+              "ankle_behind_hip_mm": 49.853714937341685,
+              "heel_minus_toe_mm": 19.245319356237562,
+              "shoe_yaw_deg": -0.0767058362364233,
+              "lowest_vertex": {
+                "position": [
+                  0.11143501586085584,
+                  0.0019101342892520962,
+                  -0.058249109345245915
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.229167,
+              "global_phase": 0.7291666666666666,
+              "thigh_deg": -22.0993126732553,
+              "knee_flex_deg": 31.49155750581477,
+              "sole_min_mm": 21.013354570733917,
+              "ankle_height_mm": 274.31043895867424,
+              "ankle_behind_hip_mm": 464.11984551484386,
+              "heel_minus_toe_mm": 226.8709388778633,
+              "shoe_yaw_deg": -0.2753157533379184,
+              "lowest_vertex": {
+                "position": [
+                  0.16343177563992708,
+                  0.021013354570733916,
+                  0.4104149155856951
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.358333,
+              "global_phase": 0.8583333333333333,
+              "thigh_deg": -4.289256041648081,
+              "knee_flex_deg": 97.19454741303774,
+              "sole_min_mm": 319.69138591048306,
+              "ankle_height_mm": 576.1243567683105,
+              "ankle_behind_hip_mm": 407.7061004705536,
+              "heel_minus_toe_mm": 288.8277623177467,
+              "shoe_yaw_deg": -0.35236948954010056,
+              "lowest_vertex": {
+                "position": [
+                  0.16306182954035237,
+                  0.3196913859104831,
+                  0.3741582351563354
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.475,
+              "global_phase": 0.975,
+              "thigh_deg": 16.14525011280621,
+              "knee_flex_deg": 105.90818097132885,
+              "sole_min_mm": 251.81180460670194,
+              "ankle_height_mm": 489.22180843106895,
+              "ankle_behind_hip_mm": 270.54802161235705,
+              "heel_minus_toe_mm": 245.9967317629675,
+              "shoe_yaw_deg": -0.18358797849288266,
+              "lowest_vertex": {
+                "position": [
+                  0.13166587134223054,
+                  0.25181180460670194,
+                  0.17948404751691685
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.11666666666666667,
+              "thigh_deg": 44.91967642947639,
+              "knee_flex_deg": 93.14950183055875,
+              "sole_min_mm": 149.70301982861727,
+              "ankle_height_mm": 308.76903206900755,
+              "ankle_behind_hip_mm": -3.3500397728972042,
+              "heel_minus_toe_mm": 73.96158199873584,
+              "shoe_yaw_deg": -0.05848593930998275,
+              "lowest_vertex": {
+                "position": [
+                  0.09795254897850107,
+                  0.14970301982861728,
+                  -0.12737605832344828
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5787
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.670833,
+              "global_phase": 0.17083333333333334,
+              "thigh_deg": 51.96495303074299,
+              "knee_flex_deg": 79.76503220910311,
+              "sole_min_mm": 137.09014485703352,
+              "ankle_height_mm": 277.6835624569752,
+              "ankle_behind_hip_mm": -144.41590164795736,
+              "heel_minus_toe_mm": 11.082857841488131,
+              "shoe_yaw_deg": -0.06227710786963351,
+              "lowest_vertex": {
+                "position": [
+                  0.11161250917916107,
+                  0.13709014485703352,
+                  -0.24922247559702695
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 32.68912142234919,
+              "knee_flex_deg": 33.18330976937312,
+              "sole_min_mm": 1.9932645345600748,
+              "ankle_height_mm": 152.3796259700283,
+              "ankle_behind_hip_mm": -218.67445514633673,
+              "heel_minus_toe_mm": -36.4980604680017,
+              "shoe_yaw_deg": -0.10013977795228741,
+              "lowest_vertex": {
+                "position": [
+                  0.10652333941299819,
+                  0.001993264534560075,
+                  -0.132766573362899
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.216667,
+              "global_phase": 0.7166666666666667,
+              "thigh_deg": -16.46611853786178,
+              "knee_flex_deg": 36.980074748693866,
+              "sole_min_mm": 4.521757102516038,
+              "ankle_height_mm": 257.50559455759196,
+              "ankle_behind_hip_mm": 425.4498953755617,
+              "heel_minus_toe_mm": 226.13738409773558,
+              "shoe_yaw_deg": -0.26999921584085,
+              "lowest_vertex": {
+                "position": [
+                  0.1634627620043975,
+                  0.004521757102516039,
+                  0.3699907557365185
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.220833,
+              "global_phase": 0.7208333333333333,
+              "thigh_deg": -18.47631499091361,
+              "knee_flex_deg": 34.91073217067177,
+              "sole_min_mm": 9.31622627767098,
+              "ankle_height_mm": 262.40671818173377,
+              "ankle_behind_hip_mm": 438.9543939258989,
+              "heel_minus_toe_mm": 226.2482946241488,
+              "shoe_yaw_deg": -0.26894545981050444,
+              "lowest_vertex": {
+                "position": [
+                  0.1634937974585101,
+                  0.00931622627767098,
+                  0.38408879449541966
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.49583333333333335,
+              "thigh_deg": 33.623318487076155,
+              "knee_flex_deg": 32.851262951675615,
+              "sole_min_mm": 5.028128588203502,
+              "ankle_height_mm": 156.33685096534427,
+              "ankle_behind_hip_mm": -232.79124526666683,
+              "heel_minus_toe_mm": -37.6012359939641,
+              "shoe_yaw_deg": -0.09012212086203317,
+              "lowest_vertex": {
+                "position": [
+                  0.10649969472602289,
+                  0.005028128588203501,
+                  -0.1486049086606513
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 32.68912142234919,
+              "knee_flex_deg": 33.18330976937312,
+              "sole_min_mm": 1.9932645345600748,
+              "ankle_height_mm": 152.3796259700283,
+              "ankle_behind_hip_mm": -218.67445514633673,
+              "heel_minus_toe_mm": -36.4980604680017,
+              "shoe_yaw_deg": -0.10013977795228741,
+              "lowest_vertex": {
+                "position": [
+                  0.10652333941299819,
+                  0.001993264534560075,
+                  -0.132766573362899
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.5791666666666667,
+              "thigh_deg": 19.144858041698686,
+              "knee_flex_deg": 53.51562608350284,
+              "sole_min_mm": 1.4263440261066647,
+              "ankle_height_mm": 143.77502255577718,
+              "ankle_behind_hip_mm": 82.45523842660249,
+              "heel_minus_toe_mm": 22.750508295742087,
+              "shoe_yaw_deg": -0.07443456226043962,
+              "lowest_vertex": {
+                "position": [
+                  0.111485009155597,
+                  0.0014263440261066648,
+                  -0.024976487049359324
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.220833,
+              "global_phase": 0.7208333333333333,
+              "thigh_deg": -18.47631499091361,
+              "knee_flex_deg": 34.91073217067177,
+              "sole_min_mm": 9.31622627767098,
+              "ankle_height_mm": 262.40671818173377,
+              "ankle_behind_hip_mm": 438.9543939258989,
+              "heel_minus_toe_mm": 226.2482946241488,
+              "shoe_yaw_deg": -0.26894545981050444,
+              "lowest_vertex": {
+                "position": [
+                  0.1634937974585101,
+                  0.00931622627767098,
+                  0.38408879449541966
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.320833,
+              "global_phase": 0.8208333333333333,
+              "thigh_deg": -8.029945065920952,
+              "knee_flex_deg": 87.94602904562578,
+              "sole_min_mm": 282.65512169184217,
+              "ankle_height_mm": 538.5870035393106,
+              "ankle_behind_hip_mm": 439.9346528062771,
+              "heel_minus_toe_mm": 282.47553510530634,
+              "shoe_yaw_deg": -0.33211419578693596,
+              "lowest_vertex": {
+                "position": [
+                  0.1630894879985845,
+                  0.28265512169184215,
+                  0.40230341051561747
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.429167,
+              "global_phase": 0.9291666666666667,
+              "thigh_deg": 6.597191247012017,
+              "knee_flex_deg": 103.38445493026913,
+              "sole_min_mm": 284.0036053324984,
+              "ankle_height_mm": 533.8617205686237,
+              "ankle_behind_hip_mm": 334.89471022592693,
+              "heel_minus_toe_mm": 272.5961551768574,
+              "shoe_yaw_deg": -0.26719866519764623,
+              "lowest_vertex": {
+                "position": [
+                  0.16310617652424617,
+                  0.2840036053324984,
+                  0.2702939096750508
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.55,
+              "global_phase": 0.05,
+              "thigh_deg": 31.752912464891182,
+              "knee_flex_deg": 101.34271138113945,
+              "sole_min_mm": 176.4634311745138,
+              "ankle_height_mm": 375.9077771287307,
+              "ankle_behind_hip_mm": 144.3075694704846,
+              "heel_minus_toe_mm": 169.83378875201856,
+              "shoe_yaw_deg": -0.0894124210983244,
+              "lowest_vertex": {
+                "position": [
+                  0.11430233419282125,
+                  0.1764634311745138,
+                  0.014113113969623392
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            {
+              "leg_phase": 0.670833,
+              "global_phase": 0.17083333333333334,
+              "thigh_deg": 51.96495303074299,
+              "knee_flex_deg": 79.76503220910311,
+              "sole_min_mm": 137.09014485703352,
+              "ankle_height_mm": 277.6835624569752,
+              "ankle_behind_hip_mm": -144.41590164795736,
+              "heel_minus_toe_mm": 11.082857841488131,
+              "shoe_yaw_deg": -0.06227710786963351,
+              "lowest_vertex": {
+                "position": [
+                  0.11161250917916107,
+                  0.13709014485703352,
+                  -0.24922247559702695
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 47.17536012032853,
+              "knee_flex_deg": 51.40245130908944,
+              "sole_min_mm": 83.3024068362827,
+              "ankle_height_mm": 236.09622698494744,
+              "ankle_behind_hip_mm": -273.2219955912117,
+              "heel_minus_toe_mm": -64.60250587267862,
+              "shoe_yaw_deg": -0.02794888583652888,
+              "lowest_vertex": {
+                "position": [
+                  0.10615899858661372,
+                  0.0833024068362827,
+                  -0.18929058389058911
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.4083333333333333,
+              "thigh_deg": 43.45444074292122,
+              "knee_flex_deg": 38.87324071334512,
+              "sole_min_mm": 63.75379622355716,
+              "ankle_height_mm": 221.56166430158203,
+              "ankle_behind_hip_mm": -313.5010270724491,
+              "heel_minus_toe_mm": -61.72600795059237,
+              "shoe_yaw_deg": -0.05360331726228415,
+              "lowest_vertex": {
+                "position": [
+                  0.17678576278015096,
+                  0.06375379622355716,
+                  -0.2284407070247888
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ]
+        }
+      },
+      "sprint": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.07083333333333333,
+              "thigh_deg": 21.587439730821256,
+              "knee_flex_deg": 58.22383249626474,
+              "sole_min_mm": 1.8489104389834727,
+              "ankle_height_mm": 142.65523917873597,
+              "ankle_behind_hip_mm": 78.314816091429,
+              "heel_minus_toe_mm": 22.427721524469707,
+              "shoe_yaw_deg": -0.7299901646908556,
+              "lowest_vertex": {
+                "position": [
+                  -0.08292368625777924,
+                  0.0018489104389834727,
+                  -0.038720436333800755
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.2125,
+              "global_phase": 0.2125,
+              "thigh_deg": -24.04252616593046,
+              "knee_flex_deg": 33.12013533624128,
+              "sole_min_mm": 27.17539976584832,
+              "ankle_height_mm": 281.48302912207424,
+              "ankle_behind_hip_mm": 490.72342422323464,
+              "heel_minus_toe_mm": 228.3426634449986,
+              "shoe_yaw_deg": -1.2566949293440446,
+              "lowest_vertex": {
+                "position": [
+                  -0.16041242444286227,
+                  0.027175399765848318,
+                  0.44931397737674483
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.358333,
+              "global_phase": 0.35833333333333334,
+              "thigh_deg": -10.848120537817847,
+              "knee_flex_deg": 102.43464600103056,
+              "sole_min_mm": 392.7801382163778,
+              "ankle_height_mm": 650.0305372364293,
+              "ankle_behind_hip_mm": 430.7120277314112,
+              "heel_minus_toe_mm": 297.1226505680299,
+              "shoe_yaw_deg": -1.8932157607498092,
+              "lowest_vertex": {
+                "position": [
+                  -0.16005913793428744,
+                  0.3927801382163778,
+                  0.4185358297450101
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.483333,
+              "global_phase": 0.48333333333333334,
+              "thigh_deg": 14.09220749894256,
+              "knee_flex_deg": 115.78455746999958,
+              "sole_min_mm": 316.1300479839346,
+              "ankle_height_mm": 550.4622045523245,
+              "ankle_behind_hip_mm": 276.6597999824148,
+              "heel_minus_toe_mm": 248.31720507188422,
+              "shoe_yaw_deg": -1.055817468644524,
+              "lowest_vertex": {
+                "position": [
+                  -0.11395770888542794,
+                  0.3161300479839346,
+                  0.18473175120393337
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.6166666666666667,
+              "thigh_deg": 46.3282356052059,
+              "knee_flex_deg": 95.95040729428234,
+              "sole_min_mm": 149.9384332818682,
+              "ankle_height_mm": 307.6877620516021,
+              "ankle_behind_hip_mm": -4.363306850618386,
+              "heel_minus_toe_mm": 72.25711771294938,
+              "shoe_yaw_deg": -0.7285959285030895,
+              "lowest_vertex": {
+                "position": [
+                  -0.08290667643666211,
+                  0.1499384332818682,
+                  -0.12808178087188796
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39234
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.679167,
+              "global_phase": 0.6791666666666667,
+              "thigh_deg": 53.46905441463253,
+              "knee_flex_deg": 79.62984207901003,
+              "sole_min_mm": 132.70681978922067,
+              "ankle_height_mm": 269.7783905452031,
+              "ankle_behind_hip_mm": -160.82130748319761,
+              "heel_minus_toe_mm": 2.634113256841708,
+              "shoe_yaw_deg": -0.7087891016659527,
+              "lowest_vertex": {
+                "position": [
+                  -0.08310432999924725,
+                  0.13270681978922066,
+                  -0.27730429229988934
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 35.72312456860456,
+              "knee_flex_deg": 36.78086746174302,
+              "sole_min_mm": 1.9930990787352625,
+              "ankle_height_mm": 151.49003407419255,
+              "ankle_behind_hip_mm": -232.99280606858673,
+              "heel_minus_toe_mm": -37.110234216740274,
+              "shoe_yaw_deg": -0.7801917635804335,
+              "lowest_vertex": {
+                "position": [
+                  -0.10456077821330181,
+                  0.0019930990787352626,
+                  -0.13895693417664082
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.2,
+              "global_phase": 0.2,
+              "thigh_deg": -18.98493414210476,
+              "knee_flex_deg": 37.51730755277766,
+              "sole_min_mm": 7.13535381319147,
+              "ankle_height_mm": 261.27131008407036,
+              "ankle_behind_hip_mm": 454.5546992597604,
+              "heel_minus_toe_mm": 227.15765378050224,
+              "shoe_yaw_deg": -1.2492656133616553,
+              "lowest_vertex": {
+                "position": [
+                  -0.16043432950167805,
+                  0.0071353538131914696,
+                  0.4118049735989161
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.204167,
+              "global_phase": 0.20416666666666666,
+              "thigh_deg": -20.670784546248658,
+              "knee_flex_deg": 36.05158571635384,
+              "sole_min_mm": 13.481160146648048,
+              "ankle_height_mm": 267.67422491438805,
+              "ankle_behind_hip_mm": 466.7441687335272,
+              "heel_minus_toe_mm": 227.5528887787041,
+              "shoe_yaw_deg": -1.2541984999314046,
+              "lowest_vertex": {
+                "position": [
+                  -0.16045902674620277,
+                  0.013481160146648047,
+                  0.4244410967647346
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.9958333333333333,
+              "thigh_deg": 36.67349796467924,
+              "knee_flex_deg": 36.25048946818465,
+              "sole_min_mm": 5.155180698307862,
+              "ankle_height_mm": 155.85267638375143,
+              "ankle_behind_hip_mm": -248.44094925465,
+              "heel_minus_toe_mm": -38.401235132599645,
+              "shoe_yaw_deg": -0.7843009338047714,
+              "lowest_vertex": {
+                "position": [
+                  -0.10457951052570261,
+                  0.005155180698307862,
+                  -0.1564141802246885
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 35.72312456860456,
+              "knee_flex_deg": 36.78086746174302,
+              "sole_min_mm": 1.9930990787352625,
+              "ankle_height_mm": 151.49003407419255,
+              "ankle_behind_hip_mm": -232.99280606858673,
+              "heel_minus_toe_mm": -37.110234216740274,
+              "shoe_yaw_deg": -0.7801917635804335,
+              "lowest_vertex": {
+                "position": [
+                  -0.10456077821330181,
+                  0.0019930990787352626,
+                  -0.13895693417664082
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.07916666666666666,
+              "thigh_deg": 17.72891802556971,
+              "knee_flex_deg": 56.5057837018527,
+              "sole_min_mm": 0.740002097839973,
+              "ankle_height_mm": 142.04302192003138,
+              "ankle_behind_hip_mm": 115.75879758960244,
+              "heel_minus_toe_mm": 26.052134274630962,
+              "shoe_yaw_deg": -0.7302610305479609,
+              "lowest_vertex": {
+                "position": [
+                  -0.08299595463170388,
+                  0.0007400020978399729,
+                  -0.0005702329044278975
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.2,
+              "global_phase": 0.2,
+              "thigh_deg": -18.98493414210476,
+              "knee_flex_deg": 37.51730755277766,
+              "sole_min_mm": 7.13535381319147,
+              "ankle_height_mm": 261.27131008407036,
+              "ankle_behind_hip_mm": 454.5546992597604,
+              "heel_minus_toe_mm": 227.15765378050224,
+              "shoe_yaw_deg": -1.2492656133616553,
+              "lowest_vertex": {
+                "position": [
+                  -0.16043432950167805,
+                  0.0071353538131914696,
+                  0.4118049735989161
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.3,
+              "thigh_deg": -12.65944016090898,
+              "knee_flex_deg": 87.34266772558419,
+              "sole_min_mm": 301.5440312110747,
+              "ankle_height_mm": 558.1694194562517,
+              "ankle_behind_hip_mm": 468.9204292003608,
+              "heel_minus_toe_mm": 283.90407774383533,
+              "shoe_yaw_deg": -1.5605820026002248,
+              "lowest_vertex": {
+                "position": [
+                  -0.160122061237916,
+                  0.3015440312110747,
+                  0.4472343266291926
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.4,
+              "global_phase": 0.4,
+              "thigh_deg": -5.759696370360559,
+              "knee_flex_deg": 106.75415364514951,
+              "sole_min_mm": 377.94378700271847,
+              "ankle_height_mm": 633.7216356105607,
+              "ankle_behind_hip_mm": 396.64916129382107,
+              "heel_minus_toe_mm": 292.52487533935806,
+              "shoe_yaw_deg": -1.629796006750378,
+              "lowest_vertex": {
+                "position": [
+                  -0.16009744935465503,
+                  0.37794378700271847,
+                  0.36856021315025833
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.520833,
+              "global_phase": 0.5208333333333334,
+              "thigh_deg": 26.023640685807838,
+              "knee_flex_deg": 112.46952967952416,
+              "sole_min_mm": 252.92871039505704,
+              "ankle_height_mm": 469.8406345621678,
+              "ankle_behind_hip_mm": 203.59700992583038,
+              "heel_minus_toe_mm": 208.36819681886297,
+              "shoe_yaw_deg": -0.8707095765633989,
+              "lowest_vertex": {
+                "position": [
+                  -0.11405744456201383,
+                  0.25292871039505704,
+                  0.07680496356978919
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.65,
+              "global_phase": 0.65,
+              "thigh_deg": 51.4732912025979,
+              "knee_flex_deg": 88.4396192328516,
+              "sole_min_mm": 141.99598902604953,
+              "ankle_height_mm": 287.0183773121624,
+              "ankle_behind_hip_mm": -90.36202593304601,
+              "heel_minus_toe_mm": 31.787941752573683,
+              "shoe_yaw_deg": -0.7019274917972227,
+              "lowest_vertex": {
+                "position": [
+                  -0.0831207957604665,
+                  0.14199598902604954,
+                  -0.19636435337447605
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 48.79589947341607,
+              "knee_flex_deg": 53.20772089140731,
+              "sole_min_mm": 82.92135504465831,
+              "ankle_height_mm": 235.30748287066228,
+              "ankle_behind_hip_mm": -279.8122425374296,
+              "heel_minus_toe_mm": -64.56544906091254,
+              "shoe_yaw_deg": -0.7363060374318191,
+              "lowest_vertex": {
+                "position": [
+                  -0.10454994065604323,
+                  0.08292135504465831,
+                  -0.18816262897922373
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.9083333333333333,
+              "thigh_deg": 45.14625162935603,
+              "knee_flex_deg": 38.734870552804715,
+              "sole_min_mm": 63.51044565528522,
+              "ankle_height_mm": 222.45401383864626,
+              "ankle_behind_hip_mm": -334.49565253230276,
+              "heel_minus_toe_mm": -63.073057604220345,
+              "shoe_yaw_deg": -0.8067339399302578,
+              "lowest_vertex": {
+                "position": [
+                  -0.10447727193290798,
+                  0.06351044565528521,
+                  -0.25665595686677833
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.5708333333333333,
+              "thigh_deg": 21.792855605952273,
+              "knee_flex_deg": 58.491422568876956,
+              "sole_min_mm": 1.8483792015375795,
+              "ankle_height_mm": 143.75772116689012,
+              "ankle_behind_hip_mm": 77.38226255301441,
+              "heel_minus_toe_mm": 24.501292507538317,
+              "shoe_yaw_deg": -0.07237249153754899,
+              "lowest_vertex": {
+                "position": [
+                  0.1114781000171917,
+                  0.0018483792015375794,
+                  -0.03072445370497507
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.2125,
+              "global_phase": 0.7125,
+              "thigh_deg": -22.175381814234008,
+              "knee_flex_deg": 36.309438967898316,
+              "sole_min_mm": 28.298436876738887,
+              "ankle_height_mm": 284.07579961959686,
+              "ankle_behind_hip_mm": 482.9670703905791,
+              "heel_minus_toe_mm": 237.8465900894269,
+              "shoe_yaw_deg": -0.29755668424819565,
+              "lowest_vertex": {
+                "position": [
+                  0.16342397082503604,
+                  0.028298436876738886,
+                  0.44242492738994216
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.358333,
+              "global_phase": 0.8583333333333333,
+              "thigh_deg": -9.951474181215008,
+              "knee_flex_deg": 101.85190757296024,
+              "sole_min_mm": 381.8728687492835,
+              "ankle_height_mm": 640.4586735783856,
+              "ankle_behind_hip_mm": 428.02264706594116,
+              "heel_minus_toe_mm": 303.2821947118202,
+              "shoe_yaw_deg": -0.44408498958866555,
+              "lowest_vertex": {
+                "position": [
+                  0.1630269959944954,
+                  0.3818728687492835,
+                  0.41687610234615663
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.483333,
+              "global_phase": 0.9833333333333333,
+              "thigh_deg": 14.141314077397944,
+              "knee_flex_deg": 114.82340198715853,
+              "sole_min_mm": 309.6235594598703,
+              "ankle_height_mm": 544.6157225643491,
+              "ankle_behind_hip_mm": 277.7770880364762,
+              "heel_minus_toe_mm": 253.5028942146017,
+              "shoe_yaw_deg": -0.1853010967345984,
+              "lowest_vertex": {
+                "position": [
+                  0.13160804125422598,
+                  0.3096235594598703,
+                  0.18095169376038628
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.616667,
+              "global_phase": 0.11666666666666667,
+              "thigh_deg": 46.31506774692539,
+              "knee_flex_deg": 95.92360533233996,
+              "sole_min_mm": 148.88813758166924,
+              "ankle_height_mm": 307.72674666548437,
+              "ankle_behind_hip_mm": -4.268388000631954,
+              "heel_minus_toe_mm": 75.29046031051372,
+              "shoe_yaw_deg": -0.057606510859106,
+              "lowest_vertex": {
+                "position": [
+                  0.0979830831236719,
+                  0.14888813758166924,
+                  -0.12858054473910063
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5787
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.679167,
+              "global_phase": 0.17916666666666667,
+              "thigh_deg": 53.51533950003247,
+              "knee_flex_deg": 79.73501050994811,
+              "sole_min_mm": 131.8589315924851,
+              "ankle_height_mm": 270.31649914180406,
+              "ankle_behind_hip_mm": -160.61104191825558,
+              "heel_minus_toe_mm": 4.460159223238169,
+              "shoe_yaw_deg": -0.012239191213551423,
+              "lowest_vertex": {
+                "position": [
+                  0.1116054811565291,
+                  0.1318589315924851,
+                  -0.2683904051344457
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 35.80885563592537,
+              "knee_flex_deg": 36.824551758999185,
+              "sole_min_mm": 2.006105050452735,
+              "ankle_height_mm": 152.0236356664793,
+              "ankle_behind_hip_mm": -233.67381790510652,
+              "heel_minus_toe_mm": -36.128268724944974,
+              "shoe_yaw_deg": -0.06333595007955897,
+              "lowest_vertex": {
+                "position": [
+                  0.10640030370014134,
+                  0.002006105050452735,
+                  -0.14710685831452808
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.2,
+              "global_phase": 0.7,
+              "thigh_deg": -17.391947078398882,
+              "knee_flex_deg": 39.99746968901111,
+              "sole_min_mm": 7.446329506987648,
+              "ankle_height_mm": 263.054325237996,
+              "ankle_behind_hip_mm": 446.8186090204372,
+              "heel_minus_toe_mm": 236.09920371538433,
+              "shoe_yaw_deg": -0.2938239422085874,
+              "lowest_vertex": {
+                "position": [
+                  0.16344819573912267,
+                  0.007446329506987648,
+                  0.4049307695422471
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.204167,
+              "global_phase": 0.7041666666666667,
+              "thigh_deg": -18.986402423251164,
+              "knee_flex_deg": 38.76812435208741,
+              "sole_min_mm": 14.089845663066313,
+              "ankle_height_mm": 269.7544065393228,
+              "ankle_behind_hip_mm": 458.98699252881806,
+              "heel_minus_toe_mm": 236.68205808263428,
+              "shoe_yaw_deg": -0.29256885017777684,
+              "lowest_vertex": {
+                "position": [
+                  0.16347453734981843,
+                  0.014089845663066314,
+                  0.41754750227187576
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.49583333333333335,
+              "thigh_deg": 36.74714755367968,
+              "knee_flex_deg": 36.271212420023105,
+              "sole_min_mm": 5.223155209044874,
+              "ankle_height_mm": 156.34574347923845,
+              "ankle_behind_hip_mm": -249.1196464388441,
+              "heel_minus_toe_mm": -37.45152098543809,
+              "shoe_yaw_deg": -0.06432056047411877,
+              "lowest_vertex": {
+                "position": [
+                  0.10642395930045134,
+                  0.0052231552090448745,
+                  -0.16457162812365916
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 35.80885563592537,
+              "knee_flex_deg": 36.824551758999185,
+              "sole_min_mm": 2.006105050452735,
+              "ankle_height_mm": 152.0236356664793,
+              "ankle_behind_hip_mm": -233.67381790510652,
+              "heel_minus_toe_mm": -36.128268724944974,
+              "shoe_yaw_deg": -0.06333595007955897,
+              "lowest_vertex": {
+                "position": [
+                  0.10640030370014134,
+                  0.002006105050452735,
+                  -0.14710685831452808
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.5791666666666667,
+              "thigh_deg": 17.933160752443225,
+              "knee_flex_deg": 56.78007164864737,
+              "sole_min_mm": 0.74082454118659,
+              "ankle_height_mm": 143.10722334397613,
+              "ankle_behind_hip_mm": 114.81968603823137,
+              "heel_minus_toe_mm": 28.167226433458836,
+              "shoe_yaw_deg": -0.06925875431328843,
+              "lowest_vertex": {
+                "position": [
+                  0.11157116322850455,
+                  0.0007408245411865901,
+                  0.007427859257736866
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.2,
+              "global_phase": 0.7,
+              "thigh_deg": -17.391947078398882,
+              "knee_flex_deg": 39.99746968901111,
+              "sole_min_mm": 7.446329506987648,
+              "ankle_height_mm": 263.054325237996,
+              "ankle_behind_hip_mm": 446.8186090204372,
+              "heel_minus_toe_mm": 236.09920371538433,
+              "shoe_yaw_deg": -0.2938239422085874,
+              "lowest_vertex": {
+                "position": [
+                  0.16344819573912267,
+                  0.007446329506987648,
+                  0.4049307695422471
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.8,
+              "thigh_deg": -11.680988538997136,
+              "knee_flex_deg": 87.67533784793885,
+              "sole_min_mm": 295.0450724430703,
+              "ankle_height_mm": 553.0456537963389,
+              "ankle_behind_hip_mm": 462.6230345197218,
+              "heel_minus_toe_mm": 290.72079612652016,
+              "shoe_yaw_deg": -0.38639637562682916,
+              "lowest_vertex": {
+                "position": [
+                  0.16307442827578778,
+                  0.2950450724430703,
+                  0.4419215626326077
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.4,
+              "global_phase": 0.9,
+              "thigh_deg": -5.244209135571354,
+              "knee_flex_deg": 105.77498681915877,
+              "sole_min_mm": 367.67373821424945,
+              "ankle_height_mm": 624.8530979530694,
+              "ankle_behind_hip_mm": 396.60764493070616,
+              "heel_minus_toe_mm": 298.5214000907998,
+              "shoe_yaw_deg": -0.3857477388836736,
+              "lowest_vertex": {
+                "position": [
+                  0.16303960123270692,
+                  0.3676737382142495,
+                  0.36945914103693245
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.520833,
+              "global_phase": 0.020833333333333332,
+              "thigh_deg": 25.934104804724715,
+              "knee_flex_deg": 111.67294376514891,
+              "sole_min_mm": 248.4913077219685,
+              "ankle_height_mm": 465.3162976619631,
+              "ankle_behind_hip_mm": 204.013305064959,
+              "heel_minus_toe_mm": 213.1527450545544,
+              "shoe_yaw_deg": -0.11938100686566368,
+              "lowest_vertex": {
+                "position": [
+                  0.13178248143346424,
+                  0.2484913077219685,
+                  0.07226237018009427
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "leg_phase": 0.65,
+              "global_phase": 0.15,
+              "thigh_deg": 51.4531941830202,
+              "knee_flex_deg": 88.42269864667587,
+              "sole_min_mm": 141.25416419512058,
+              "ankle_height_mm": 287.04583035810384,
+              "ankle_behind_hip_mm": -90.18754515176074,
+              "heel_minus_toe_mm": 34.093920999235415,
+              "shoe_yaw_deg": -0.05893973614642575,
+              "lowest_vertex": {
+                "position": [
+                  0.11167415324016894,
+                  0.14125416419512057,
+                  -0.18735025001705838
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 48.89637207500098,
+              "knee_flex_deg": 53.32650438120865,
+              "sole_min_mm": 83.29969163772779,
+              "ankle_height_mm": 235.92793592617656,
+              "ankle_behind_hip_mm": -280.1215255862935,
+              "heel_minus_toe_mm": -64.38962920098523,
+              "shoe_yaw_deg": -0.028161723105601714,
+              "lowest_vertex": {
+                "position": [
+                  0.10616161079041919,
+                  0.0832996916377278,
+                  -0.19591918255482646
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.4083333333333333,
+              "thigh_deg": 45.20509199685011,
+              "knee_flex_deg": 38.72535857631817,
+              "sole_min_mm": 63.77480024725425,
+              "ankle_height_mm": 222.91424135343635,
+              "ankle_behind_hip_mm": -335.17665739605474,
+              "heel_minus_toe_mm": -62.83662132999425,
+              "shoe_yaw_deg": -0.05673161247841146,
+              "lowest_vertex": {
+                "position": [
+                  0.17680091278596172,
+                  0.06377480024725425,
+                  -0.2527825569433278
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "candidate": {
+    "sha256": "49e8dc0f3b119d8fb248067117283fdf1215add7af1f0c1704ae2beaf52f4244",
+    "sample_intervals": 240,
+    "gaits": {
+      "walk": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.116667,
+              "global_phase": 0.11666666666666667,
+              "thigh_deg": 17.97644913741179,
+              "knee_flex_deg": 20.52140354878324,
+              "sole_min_mm": 1.921252448139931,
+              "ankle_height_mm": 144.57213647254392,
+              "ankle_behind_hip_mm": -109.83571408113951,
+              "heel_minus_toe_mm": -13.079792142852112,
+              "shoe_yaw_deg": -0.8002766993969466,
+              "lowest_vertex": {
+                "position": [
+                  -0.10435887351793754,
+                  0.001921252448139931,
+                  -0.010015659547652236
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.625,
+              "global_phase": 0.625,
+              "thigh_deg": -20.556956334562056,
+              "knee_flex_deg": 19.339320146346758,
+              "sole_min_mm": 2.5342672648591136,
+              "ankle_height_mm": 235.8532222575832,
+              "ankle_behind_hip_mm": 391.0773400448005,
+              "heel_minus_toe_mm": 172.51285148775634,
+              "shoe_yaw_deg": -0.9658854220701617,
+              "lowest_vertex": {
+                "position": [
+                  -0.11428584357613022,
+                  0.0025342672648591136,
+                  0.2990994775509166
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.6625,
+              "global_phase": 0.6625,
+              "thigh_deg": -9.958374590684429,
+              "knee_flex_deg": 36.17214485242868,
+              "sole_min_mm": 40.72819363466121,
+              "ankle_height_mm": 249.7340794485688,
+              "ankle_behind_hip_mm": 348.4180905749808,
+              "heel_minus_toe_mm": 147.6986196702739,
+              "shoe_yaw_deg": -0.78948946949313,
+              "lowest_vertex": {
+                "position": [
+                  -0.1142570874637219,
+                  0.04072819363466121,
+                  0.2102330917742732
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.683333,
+              "global_phase": 0.6833333333333333,
+              "thigh_deg": -5.4094780619504546,
+              "knee_flex_deg": 38.915578050255334,
+              "sole_min_mm": 46.166355137694254,
+              "ankle_height_mm": 240.50791481964285,
+              "ankle_behind_hip_mm": 307.5589355229457,
+              "heel_minus_toe_mm": 125.10805375264533,
+              "shoe_yaw_deg": -0.7502826536334638,
+              "lowest_vertex": {
+                "position": [
+                  -0.09799535315389288,
+                  0.04616635513769425,
+                  0.17718569135088552
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39240
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.8125,
+              "global_phase": 0.8125,
+              "thigh_deg": 16.96775014041577,
+              "knee_flex_deg": 34.79510739670363,
+              "sole_min_mm": 28.348682465730136,
+              "ankle_height_mm": 167.0422016563361,
+              "ankle_behind_hip_mm": -2.124756560046199,
+              "heel_minus_toe_mm": -31.336443148071776,
+              "shoe_yaw_deg": -0.6742280852793416,
+              "lowest_vertex": {
+                "position": [
+                  -0.10582847485778574,
+                  0.028348682465730135,
+                  0.009231992373494487
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45365
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.9625,
+              "global_phase": 0.9625,
+              "thigh_deg": 32.46414888130084,
+              "knee_flex_deg": 25.330277015428145,
+              "sole_min_mm": 27.758527577053187,
+              "ankle_height_mm": 190.8335163565887,
+              "ankle_behind_hip_mm": -268.482717551458,
+              "heel_minus_toe_mm": -83.44915954919578,
+              "shoe_yaw_deg": -0.7704685941552701,
+              "lowest_vertex": {
+                "position": [
+                  -0.10473299157420954,
+                  0.027758527577053188,
+                  -0.204159503259793
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 25.110872384234604,
+              "knee_flex_deg": 16.394031698307046,
+              "sole_min_mm": 1.9857847432682147,
+              "ankle_height_mm": 165.36048110213574,
+              "ankle_behind_hip_mm": -232.8136877978254,
+              "heel_minus_toe_mm": -81.11461775853363,
+              "shoe_yaw_deg": -0.7986782077854514,
+              "lowest_vertex": {
+                "position": [
+                  -0.10459422743081516,
+                  0.0019857847432682148,
+                  -0.1698592696111912
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.629167,
+              "global_phase": 0.6291666666666667,
+              "thigh_deg": -19.448118330938748,
+              "knee_flex_deg": 21.34007581494603,
+              "sole_min_mm": 6.062359813868462,
+              "ankle_height_mm": 237.45757590950817,
+              "ankle_behind_hip_mm": 388.1647114092821,
+              "heel_minus_toe_mm": 170.82549617209997,
+              "shoe_yaw_deg": -0.9499888896953933,
+              "lowest_vertex": {
+                "position": [
+                  -0.1143125987678967,
+                  0.006062359813868462,
+                  0.2915707081566153
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.633333,
+              "global_phase": 0.6333333333333333,
+              "thigh_deg": -18.339138714249824,
+              "knee_flex_deg": 23.34084197636383,
+              "sole_min_mm": 9.890300736625987,
+              "ankle_height_mm": 239.2766607694487,
+              "ankle_behind_hip_mm": 385.13896500337074,
+              "heel_minus_toe_mm": 169.072580801954,
+              "shoe_yaw_deg": -0.9355706354090613,
+              "lowest_vertex": {
+                "position": [
+                  -0.11430922732708648,
+                  0.009890300736625987,
+                  0.28396558564753077
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.895833,
+              "global_phase": 0.8958333333333334,
+              "thigh_deg": 24.99014144723256,
+              "knee_flex_deg": 22.506650206474507,
+              "sole_min_mm": 7.629473210056901,
+              "ankle_height_mm": 168.4407849307563,
+              "ankle_behind_hip_mm": -190.32529106575973,
+              "heel_minus_toe_mm": -84.83472968215824,
+              "shoe_yaw_deg": -0.766022185096007,
+              "lowest_vertex": {
+                "position": [
+                  -0.10478147238019603,
+                  0.007629473210056901,
+                  -0.11946959852228321
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.9125,
+              "global_phase": 0.9125,
+              "thigh_deg": 25.599721434259823,
+              "knee_flex_deg": 20.777518265337296,
+              "sole_min_mm": 8.673567095728751,
+              "ankle_height_mm": 171.211824339981,
+              "ankle_behind_hip_mm": -209.96383854226332,
+              "heel_minus_toe_mm": -87.32914352208942,
+              "shoe_yaw_deg": -0.7821568819309405,
+              "lowest_vertex": {
+                "position": [
+                  -0.10473497481923476,
+                  0.008673567095728751,
+                  -0.14318134202103242
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.9958333333333333,
+              "thigh_deg": 26.435352492656662,
+              "knee_flex_deg": 18.128566902384247,
+              "sole_min_mm": 5.898493730621292,
+              "ankle_height_mm": 169.07190971349357,
+              "ankle_behind_hip_mm": -238.64866175961092,
+              "heel_minus_toe_mm": -81.01877331179652,
+              "shoe_yaw_deg": -0.7949655000050405,
+              "lowest_vertex": {
+                "position": [
+                  -0.10460625292172615,
+                  0.005898493730621292,
+                  -0.17515110149465782
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 25.110872384234604,
+              "knee_flex_deg": 16.394031698307046,
+              "sole_min_mm": 1.9857847432682147,
+              "ankle_height_mm": 165.36048110213574,
+              "ankle_behind_hip_mm": -232.8136877978254,
+              "heel_minus_toe_mm": -81.11461775853363,
+              "shoe_yaw_deg": -0.7986782077854514,
+              "lowest_vertex": {
+                "position": [
+                  -0.10459422743081516,
+                  0.0019857847432682148,
+                  -0.1698592696111912
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.1,
+              "global_phase": 0.1,
+              "thigh_deg": 19.324798078744912,
+              "knee_flex_deg": 19.953010253063766,
+              "sole_min_mm": 1.8554952733249894,
+              "ankle_height_mm": 146.373774285813,
+              "ankle_behind_hip_mm": -131.87200244062646,
+              "heel_minus_toe_mm": -15.62768879660337,
+              "shoe_yaw_deg": -0.8085554035158601,
+              "lowest_vertex": {
+                "position": [
+                  -0.10436611910366957,
+                  0.0018554952733249894,
+                  -0.035461145947647016
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.3,
+              "thigh_deg": -4.090871648151801,
+              "knee_flex_deg": 10.600167822519515,
+              "sole_min_mm": 1.9884496815506802,
+              "ankle_height_mm": 149.75867554832735,
+              "ankle_behind_hip_mm": 126.90735751746521,
+              "heel_minus_toe_mm": 13.70473140981527,
+              "shoe_yaw_deg": -0.7407398368148459,
+              "lowest_vertex": {
+                "position": [
+                  -0.08328219105850067,
+                  0.0019884496815506802,
+                  0.025521993514998217
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.5,
+              "global_phase": 0.5,
+              "thigh_deg": -13.896393776557813,
+              "knee_flex_deg": 21.487264812726462,
+              "sole_min_mm": 2.0171597538151396,
+              "ankle_height_mm": 205.15537137978262,
+              "ankle_behind_hip_mm": 321.5402230898867,
+              "heel_minus_toe_mm": 127.1432754532571,
+              "shoe_yaw_deg": -0.8278423921516426,
+              "lowest_vertex": {
+                "position": [
+                  -0.11423311853223275,
+                  0.00201715975381514,
+                  0.1795234447699715
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.6,
+              "global_phase": 0.6,
+              "thigh_deg": -19.701420346355842,
+              "knee_flex_deg": 21.93262106284294,
+              "sole_min_mm": 2.069518529850156,
+              "ankle_height_mm": 240.3772140530272,
+              "ankle_behind_hip_mm": 394.1706507744869,
+              "heel_minus_toe_mm": 182.1614415053657,
+              "shoe_yaw_deg": -1.030589914799512,
+              "lowest_vertex": {
+                "position": [
+                  -0.11425986348826905,
+                  0.002069518529850156,
+                  0.31592705950489053
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.679167,
+              "global_phase": 0.6791666666666667,
+              "thigh_deg": -6.211579709917496,
+              "knee_flex_deg": 38.780951396702,
+              "sole_min_mm": 46.47034428971228,
+              "ankle_height_mm": 243.48925025518147,
+              "ankle_behind_hip_mm": 316.46921334070146,
+              "heel_minus_toe_mm": 129.89908749775765,
+              "shoe_yaw_deg": -0.757061013280585,
+              "lowest_vertex": {
+                "position": [
+                  -0.0980027058315279,
+                  0.04647034428971228,
+                  0.19028447693605458
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39240
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 12.859538713676411,
+              "knee_flex_deg": 37.91393359258097,
+              "sole_min_mm": 41.99205022646333,
+              "ankle_height_mm": 178.21519263957364,
+              "ankle_behind_hip_mm": 71.4899746617774,
+              "heel_minus_toe_mm": -2.1488181843826726,
+              "shoe_yaw_deg": -0.6706893772365566,
+              "lowest_vertex": {
+                "position": [
+                  -0.07705796122540723,
+                  0.04199205022646333,
+                  0.0967766877797886
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45367
+              }
+            },
+            {
+              "leg_phase": 0.9,
+              "global_phase": 0.9,
+              "thigh_deg": 24.981147909417775,
+              "knee_flex_deg": 21.922018810432196,
+              "sole_min_mm": 7.197055076934338,
+              "ankle_height_mm": 168.47817300105217,
+              "ankle_behind_hip_mm": -194.1308811000959,
+              "heel_minus_toe_mm": -85.67124808892457,
+              "shoe_yaw_deg": -0.7694987229647419,
+              "lowest_vertex": {
+                "position": [
+                  -0.10477140841193139,
+                  0.007197055076934338,
+                  -0.12435327921917749
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.116667,
+              "global_phase": 0.6166666666666667,
+              "thigh_deg": 18.333573457955666,
+              "knee_flex_deg": 21.102214971512264,
+              "sole_min_mm": 2.1296844685916185,
+              "ankle_height_mm": 145.4713137345166,
+              "ankle_behind_hip_mm": -110.76130039601611,
+              "heel_minus_toe_mm": -11.144699609638462,
+              "shoe_yaw_deg": -0.019894208632083896,
+              "lowest_vertex": {
+                "position": [
+                  0.10606280758508858,
+                  0.0021296844685916184,
+                  -0.018019061083333572
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.608333,
+              "global_phase": 0.10833333333333334,
+              "thigh_deg": -19.092381820483563,
+              "knee_flex_deg": 22.89932161413873,
+              "sole_min_mm": 2.3534504824565676,
+              "ankle_height_mm": 240.92683513506913,
+              "ankle_behind_hip_mm": 391.697801402739,
+              "heel_minus_toe_mm": 188.61728409310336,
+              "shoe_yaw_deg": -0.19294493349124042,
+              "lowest_vertex": {
+                "position": [
+                  0.1319535289786724,
+                  0.0023534504824565677,
+                  0.30670393833872667
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.6625,
+              "global_phase": 0.1625,
+              "thigh_deg": -9.860784671800268,
+              "knee_flex_deg": 36.3488441679137,
+              "sole_min_mm": 41.83538848199064,
+              "ankle_height_mm": 250.46057103889225,
+              "ankle_behind_hip_mm": 348.0109046082089,
+              "heel_minus_toe_mm": 153.36812526366492,
+              "shoe_yaw_deg": -0.1630428957806706,
+              "lowest_vertex": {
+                "position": [
+                  0.13196234060086542,
+                  0.04183538848199064,
+                  0.20488627697870448
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.683333,
+              "global_phase": 0.18333333333333332,
+              "thigh_deg": -5.495474251516783,
+              "knee_flex_deg": 38.71212556114356,
+              "sole_min_mm": 46.22925986050891,
+              "ankle_height_mm": 240.5081328359389,
+              "ankle_behind_hip_mm": 307.5589308757492,
+              "heel_minus_toe_mm": 129.87347826586247,
+              "shoe_yaw_deg": -0.15346771925930716,
+              "lowest_vertex": {
+                "position": [
+                  0.11426309472416776,
+                  0.04622925986050891,
+                  0.1699482967668035
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.8125,
+              "global_phase": 0.3125,
+              "thigh_deg": 16.872232837125242,
+              "knee_flex_deg": 34.57755082666081,
+              "sole_min_mm": 27.52484381833903,
+              "ankle_height_mm": 165.9377928886443,
+              "ankle_behind_hip_mm": -2.124752835458439,
+              "heel_minus_toe_mm": -30.590053889893248,
+              "shoe_yaw_deg": -0.14777555717696544,
+              "lowest_vertex": {
+                "position": [
+                  0.08148454197110418,
+                  0.02752484381833903,
+                  0.037751527185418444
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 24956
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.9625,
+              "global_phase": 0.4625,
+              "thigh_deg": 32.60291945150568,
+              "knee_flex_deg": 25.522852473434526,
+              "sole_min_mm": 28.579299808060576,
+              "ankle_height_mm": 191.5534176251819,
+              "ankle_behind_hip_mm": -268.83891321543484,
+              "heel_minus_toe_mm": -83.79368674917978,
+              "shoe_yaw_deg": -0.12280085647855889,
+              "lowest_vertex": {
+                "position": [
+                  0.17716079609273067,
+                  0.028579299808060576,
+                  -0.1996452750161883
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 25.112502459575794,
+              "knee_flex_deg": 16.306588731286627,
+              "sole_min_mm": 2.006276898286794,
+              "ankle_height_mm": 165.63927003747708,
+              "ankle_behind_hip_mm": -233.3357014917228,
+              "heel_minus_toe_mm": -81.44986775104398,
+              "shoe_yaw_deg": -0.10924756710844827,
+              "lowest_vertex": {
+                "position": [
+                  0.17703678600181558,
+                  0.002006276898286794,
+                  -0.165822098650071
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.620833,
+              "global_phase": 0.12083333333333333,
+              "thigh_deg": -18.417450485119247,
+              "knee_flex_deg": 23.89490295284733,
+              "sole_min_mm": 6.081298794497064,
+              "ankle_height_mm": 241.47479056700493,
+              "ankle_behind_hip_mm": 388.69918634210893,
+              "heel_minus_toe_mm": 184.29944554419623,
+              "shoe_yaw_deg": -0.1946055182419541,
+              "lowest_vertex": {
+                "position": [
+                  0.13195970912582047,
+                  0.006081298794497064,
+                  0.29538089008535084
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.625,
+              "global_phase": 0.125,
+              "thigh_deg": -17.91441643203006,
+              "knee_flex_deg": 24.78402366406891,
+              "sole_min_mm": 8.497104742616681,
+              "ankle_height_mm": 242.41679175364504,
+              "ankle_behind_hip_mm": 387.1802729353497,
+              "heel_minus_toe_mm": 182.6457287635168,
+              "shoe_yaw_deg": -0.19754341689657642,
+              "lowest_vertex": {
+                "position": [
+                  0.13194434780085415,
+                  0.008497104742616682,
+                  0.29029848423502524
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.895833,
+              "global_phase": 0.3958333333333333,
+              "thigh_deg": 25.313870303183467,
+              "knee_flex_deg": 23.12266486812518,
+              "sole_min_mm": 7.906108514586977,
+              "ankle_height_mm": 168.13829076428576,
+              "ankle_behind_hip_mm": -190.3254794391981,
+              "heel_minus_toe_mm": -85.10292820670153,
+              "shoe_yaw_deg": -0.1505262545909546,
+              "lowest_vertex": {
+                "position": [
+                  0.10684571359535816,
+                  0.007906108514586977,
+                  -0.12648226964679332
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.916667,
+              "global_phase": 0.4166666666666667,
+              "thigh_deg": 26.262576327448528,
+              "knee_flex_deg": 21.005323898857668,
+              "sole_min_mm": 9.677974296850534,
+              "ankle_height_mm": 172.15087873866668,
+              "ankle_behind_hip_mm": -217.01988603772622,
+              "heel_minus_toe_mm": -87.97070948122443,
+              "shoe_yaw_deg": -0.14557930862965618,
+              "lowest_vertex": {
+                "position": [
+                  0.17731446353453104,
+                  0.009677974296850534,
+                  -0.14599904536422054
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.49583333333333335,
+              "thigh_deg": 26.56380978691996,
+              "knee_flex_deg": 18.288360649718424,
+              "sole_min_mm": 6.330711145108836,
+              "ankle_height_mm": 169.64068023056944,
+              "ankle_behind_hip_mm": -239.17944054489726,
+              "heel_minus_toe_mm": -81.28973157798197,
+              "shoe_yaw_deg": -0.11159708177716014,
+              "lowest_vertex": {
+                "position": [
+                  0.17705256648139917,
+                  0.006330711145108836,
+                  -0.17093133468500601
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 25.112502459575794,
+              "knee_flex_deg": 16.306588731286627,
+              "sole_min_mm": 2.006276898286794,
+              "ankle_height_mm": 165.63927003747708,
+              "ankle_behind_hip_mm": -233.3357014917228,
+              "heel_minus_toe_mm": -81.44986775104398,
+              "shoe_yaw_deg": -0.10924756710844827,
+              "lowest_vertex": {
+                "position": [
+                  0.17703678600181558,
+                  0.002006276898286794,
+                  -0.165822098650071
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            },
+            {
+              "leg_phase": 0.1,
+              "global_phase": 0.6,
+              "thigh_deg": 19.67533132176851,
+              "knee_flex_deg": 20.51716188389743,
+              "sole_min_mm": 2.1945921803244857,
+              "ankle_height_mm": 147.28201781932748,
+              "ankle_behind_hip_mm": -132.79255666824608,
+              "heel_minus_toe_mm": -13.770677729816754,
+              "shoe_yaw_deg": -0.027137135590736428,
+              "lowest_vertex": {
+                "position": [
+                  0.10610723347185937,
+                  0.002194592180324486,
+                  -0.04346259583061611
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.8,
+              "thigh_deg": -4.301196200771033,
+              "knee_flex_deg": 10.000010625212107,
+              "sole_min_mm": 2.0410811323793956,
+              "ankle_height_mm": 150.351071122357,
+              "ankle_behind_hip_mm": 125.88121093745569,
+              "heel_minus_toe_mm": 15.752373916919183,
+              "shoe_yaw_deg": -0.0563255649787645,
+              "lowest_vertex": {
+                "position": [
+                  0.11185226560848764,
+                  0.002041081132379396,
+                  0.03328659641075885
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.5,
+              "global_phase": 0,
+              "thigh_deg": -13.263533855770367,
+              "knee_flex_deg": 22.41184244263469,
+              "sole_min_mm": 2.014155205023682,
+              "ankle_height_mm": 205.43553093473443,
+              "ankle_behind_hip_mm": 318.66783084702627,
+              "heel_minus_toe_mm": 132.85840713953718,
+              "shoe_yaw_deg": -0.1183056309517284,
+              "lowest_vertex": {
+                "position": [
+                  0.11428993275633276,
+                  0.002014155205023682,
+                  0.20004524364165005
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            {
+              "leg_phase": 0.6,
+              "global_phase": 0.1,
+              "thigh_deg": -18.360687109689508,
+              "knee_flex_deg": 24.074874461261725,
+              "sole_min_mm": 2.021305792064748,
+              "ankle_height_mm": 241.19952100744467,
+              "ankle_behind_hip_mm": 388.9480511961465,
+              "heel_minus_toe_mm": 190.08812044489883,
+              "shoe_yaw_deg": -0.1936669511638072,
+              "lowest_vertex": {
+                "position": [
+                  0.13193846691757088,
+                  0.002021305792064748,
+                  0.30583596519166645
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "leg_phase": 0.679167,
+              "global_phase": 0.17916666666666667,
+              "thigh_deg": -6.295846411385907,
+              "knee_flex_deg": 38.581346509575546,
+              "sole_min_mm": 46.3929763342514,
+              "ankle_height_mm": 243.49627775528504,
+              "ankle_behind_hip_mm": 316.46549700222977,
+              "heel_minus_toe_mm": 134.79352588766173,
+              "shoe_yaw_deg": -0.15476151338434338,
+              "lowest_vertex": {
+                "position": [
+                  0.11427382073067663,
+                  0.0463929763342514,
+                  0.18304301230058734
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 12.769317617153114,
+              "knee_flex_deg": 37.70319480834486,
+              "sole_min_mm": 38.99146926590088,
+              "ankle_height_mm": 175.7387198847492,
+              "ankle_behind_hip_mm": 71.48987095937177,
+              "heel_minus_toe_mm": -0.6999618922778339,
+              "shoe_yaw_deg": -0.14440657517710925,
+              "lowest_vertex": {
+                "position": [
+                  0.11106441398950376,
+                  0.038991469265900885,
+                  -0.04175692963151892
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.9,
+              "global_phase": 0.4,
+              "thigh_deg": 25.31708410359069,
+              "knee_flex_deg": 22.562378906943724,
+              "sole_min_mm": 7.514172159848776,
+              "ankle_height_mm": 168.165896517961,
+              "ankle_behind_hip_mm": -194.13200333478903,
+              "heel_minus_toe_mm": -85.95599689062028,
+              "shoe_yaw_deg": -0.14998609692412468,
+              "lowest_vertex": {
+                "position": [
+                  0.10683693384022047,
+                  0.007514172159848776,
+                  -0.13134400448024622
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            }
+          ]
+        }
+      },
+      "jog": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.07083333333333333,
+              "thigh_deg": 20.497162099472092,
+              "knee_flex_deg": 51.01168434060381,
+              "sole_min_mm": 1.9145542663629227,
+              "ankle_height_mm": 144.54027405608534,
+              "ankle_behind_hip_mm": 51.354932214703396,
+              "heel_minus_toe_mm": 19.047338418154183,
+              "shoe_yaw_deg": -0.7523345133737812,
+              "lowest_vertex": {
+                "position": [
+                  -0.08305043329219627,
+                  0.0019145542663629228,
+                  -0.06616778337368254
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.241667,
+              "global_phase": 0.24166666666666667,
+              "thigh_deg": -29.190953432605035,
+              "knee_flex_deg": 14.347019424614837,
+              "sole_min_mm": 24.179659843946904,
+              "ankle_height_mm": 277.5069578759909,
+              "ankle_behind_hip_mm": 465.59601277356046,
+              "heel_minus_toe_mm": 208.97607796983047,
+              "shoe_yaw_deg": -1.247510047066606,
+              "lowest_vertex": {
+                "position": [
+                  -0.16024741856302974,
+                  0.024179659843946905,
+                  0.4186225299712495
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.370833,
+              "global_phase": 0.37083333333333335,
+              "thigh_deg": -6.239589355869082,
+              "knee_flex_deg": 103.35791223764369,
+              "sole_min_mm": 404.99779309426197,
+              "ankle_height_mm": 658.8416523233847,
+              "ankle_behind_hip_mm": 407.14920800798103,
+              "heel_minus_toe_mm": 286.4346773568071,
+              "shoe_yaw_deg": -1.4468501672267398,
+              "lowest_vertex": {
+                "position": [
+                  -0.16007514508726084,
+                  0.404997793094262,
+                  0.36783744787988776
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.429167,
+              "global_phase": 0.42916666666666664,
+              "thigh_deg": 5.85602702675093,
+              "knee_flex_deg": 111.99378479089779,
+              "sole_min_mm": 375.5905723575993,
+              "ankle_height_mm": 616.8592675194207,
+              "ankle_behind_hip_mm": 327.62416459600695,
+              "heel_minus_toe_mm": 263.11101959787595,
+              "shoe_yaw_deg": -1.1260107726070088,
+              "lowest_vertex": {
+                "position": [
+                  -0.11387119525712755,
+                  0.3755905723575993,
+                  0.2574694950404484
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.625,
+              "global_phase": 0.625,
+              "thigh_deg": 41.27505129003009,
+              "knee_flex_deg": 86.45250792495507,
+              "sole_min_mm": 136.24611002153395,
+              "ankle_height_mm": 284.0534040510142,
+              "ankle_behind_hip_mm": 1.6990298149615335,
+              "heel_minus_toe_mm": 48.109967512112526,
+              "shoe_yaw_deg": -0.7042248009077713,
+              "lowest_vertex": {
+                "position": [
+                  -0.08287926758545747,
+                  0.13624611002153394,
+                  -0.09799520223245659
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.675,
+              "global_phase": 0.675,
+              "thigh_deg": 44.9884107919469,
+              "knee_flex_deg": 78.91822338383197,
+              "sole_min_mm": 140.69738143010335,
+              "ankle_height_mm": 274.4314101828592,
+              "ankle_behind_hip_mm": -75.87471606623946,
+              "heel_minus_toe_mm": 4.331085118107259,
+              "shoe_yaw_deg": -0.7417874730184588,
+              "lowest_vertex": {
+                "position": [
+                  -0.12571955059578713,
+                  0.14069738143010335,
+                  -0.15690362771235425
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45404
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 28.50006545664615,
+              "knee_flex_deg": 25.728174034730607,
+              "sole_min_mm": 1.9822985876282742,
+              "ankle_height_mm": 154.33497051441813,
+              "ankle_behind_hip_mm": -214.81967906856715,
+              "heel_minus_toe_mm": -39.65527078124552,
+              "shoe_yaw_deg": -0.7873252678750492,
+              "lowest_vertex": {
+                "position": [
+                  -0.10457454005762135,
+                  0.001982298587628274,
+                  -0.12900602886617246
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.229167,
+              "global_phase": 0.22916666666666666,
+              "thigh_deg": -28.57294777833965,
+              "knee_flex_deg": 12.107885488737773,
+              "sole_min_mm": 5.601676870911704,
+              "ankle_height_mm": 258.43546124988967,
+              "ankle_behind_hip_mm": 447.48041134372806,
+              "heel_minus_toe_mm": 204.54990515676485,
+              "shoe_yaw_deg": -1.2394160967291112,
+              "lowest_vertex": {
+                "position": [
+                  -0.16025381191015683,
+                  0.005601676870911704,
+                  0.3973767183902456
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.233333,
+              "global_phase": 0.23333333333333334,
+              "thigh_deg": -28.77894903639554,
+              "knee_flex_deg": 12.854248123192775,
+              "sole_min_mm": 11.707733137177101,
+              "ankle_height_mm": 264.7088420980275,
+              "ankle_behind_hip_mm": 453.5924879969659,
+              "heel_minus_toe_mm": 206.02220151142393,
+              "shoe_yaw_deg": -1.2423750296234137,
+              "lowest_vertex": {
+                "position": [
+                  -0.16025790280493984,
+                  0.011707733137177101,
+                  0.4045316164507141
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.991667,
+              "global_phase": 0.9916666666666667,
+              "thigh_deg": 30.172848533922902,
+              "knee_flex_deg": 24.017333207456872,
+              "sole_min_mm": 7.596084017820487,
+              "ankle_height_mm": 162.36450466960977,
+              "ankle_behind_hip_mm": -247.93183052285104,
+              "heel_minus_toe_mm": -42.40337019543085,
+              "shoe_yaw_deg": -0.7921708960738788,
+              "lowest_vertex": {
+                "position": [
+                  -0.10461238994822031,
+                  0.007596084017820487,
+                  -0.1669464859619907
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 28.50006545664615,
+              "knee_flex_deg": 25.728174034730607,
+              "sole_min_mm": 1.9822985876282742,
+              "ankle_height_mm": 154.33497051441813,
+              "ankle_behind_hip_mm": -214.81967906856715,
+              "heel_minus_toe_mm": -39.65527078124552,
+              "shoe_yaw_deg": -0.7873252678750492,
+              "lowest_vertex": {
+                "position": [
+                  -0.10457454005762135,
+                  0.001982298587628274,
+                  -0.12900602886617246
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.07916666666666666,
+              "thigh_deg": 17.762508242911068,
+              "knee_flex_deg": 50.54618758788253,
+              "sole_min_mm": 1.481835697574622,
+              "ankle_height_mm": 145.33904916669675,
+              "ankle_behind_hip_mm": 82.86696481968106,
+              "heel_minus_toe_mm": 24.299616071817873,
+              "shoe_yaw_deg": -0.7510923834188677,
+              "lowest_vertex": {
+                "position": [
+                  -0.08309599041747583,
+                  0.0014818356975746221,
+                  -0.03288555088034431
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.220833,
+              "global_phase": 0.22083333333333333,
+              "thigh_deg": -24.23884331268508,
+              "knee_flex_deg": 19.24228485349246,
+              "sole_min_mm": 2.0274701488119664,
+              "ankle_height_mm": 254.63793924939094,
+              "ankle_behind_hip_mm": 433.579368251131,
+              "heel_minus_toe_mm": 207.63695432309487,
+              "shoe_yaw_deg": -1.2311370809794546,
+              "lowest_vertex": {
+                "position": [
+                  -0.160343132769128,
+                  0.002027470148811966,
+                  0.3819998480359277
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.320833,
+              "global_phase": 0.32083333333333336,
+              "thigh_deg": -14.845356480201698,
+              "knee_flex_deg": 88.10241678059077,
+              "sole_min_mm": 370.52236762973996,
+              "ankle_height_mm": 627.0589338087078,
+              "ankle_behind_hip_mm": 480.3243019863908,
+              "heel_minus_toe_mm": 286.5034398898641,
+              "shoe_yaw_deg": -1.551552463917303,
+              "lowest_vertex": {
+                "position": [
+                  -0.16014225680633518,
+                  0.37052236762973995,
+                  0.4595685268453484
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.429167,
+              "global_phase": 0.42916666666666664,
+              "thigh_deg": 5.85602702675093,
+              "knee_flex_deg": 111.99378479089779,
+              "sole_min_mm": 375.5905723575993,
+              "ankle_height_mm": 616.8592675194207,
+              "ankle_behind_hip_mm": 327.62416459600695,
+              "heel_minus_toe_mm": 263.11101959787595,
+              "shoe_yaw_deg": -1.1260107726070088,
+              "lowest_vertex": {
+                "position": [
+                  -0.11387119525712755,
+                  0.3755905723575993,
+                  0.2574694950404484
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45427
+              }
+            },
+            {
+              "leg_phase": 0.55,
+              "global_phase": 0.55,
+              "thigh_deg": 28.024304108195327,
+              "knee_flex_deg": 95.0490577069081,
+              "sole_min_mm": 180.14394199381854,
+              "ankle_height_mm": 357.35871347990206,
+              "ankle_behind_hip_mm": 161.04987024117895,
+              "heel_minus_toe_mm": 129.8421879928303,
+              "shoe_yaw_deg": -0.7597796088693057,
+              "lowest_vertex": {
+                "position": [
+                  -0.09003598853909299,
+                  0.18014394199381856,
+                  0.03660025250128324
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45416
+              }
+            },
+            {
+              "leg_phase": 0.670833,
+              "global_phase": 0.6708333333333333,
+              "thigh_deg": 44.9876226451749,
+              "knee_flex_deg": 79.82665492230744,
+              "sole_min_mm": 141.52007401221306,
+              "ankle_height_mm": 276.0738605109659,
+              "ankle_behind_hip_mm": -70.83277284196774,
+              "heel_minus_toe_mm": 7.6179138578088,
+              "shoe_yaw_deg": -0.7406204261142348,
+              "lowest_vertex": {
+                "position": [
+                  -0.08278038340300091,
+                  0.14152007401221306,
+                  -0.18879461983185877
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 43.01009171908579,
+              "knee_flex_deg": 46.267182535479954,
+              "sole_min_mm": 82.92134095834972,
+              "ankle_height_mm": 236.08455926897742,
+              "ankle_behind_hip_mm": -258.560269307541,
+              "heel_minus_toe_mm": -61.760464779968814,
+              "shoe_yaw_deg": -0.7561091264908157,
+              "lowest_vertex": {
+                "position": [
+                  -0.10475297667213086,
+                  0.08292134095834972,
+                  -0.16779050319221142
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.9083333333333333,
+              "thigh_deg": 33.35769951625474,
+              "knee_flex_deg": 21.310476415861395,
+              "sole_min_mm": 39.68939307486859,
+              "ankle_height_mm": 203.52545777556136,
+              "ankle_behind_hip_mm": -306.38065444565257,
+              "heel_minus_toe_mm": -74.52575719036292,
+              "shoe_yaw_deg": -0.8191115942513714,
+              "lowest_vertex": {
+                "position": [
+                  -0.1046336950699526,
+                  0.03968939307486859,
+                  -0.24209346884073854
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.5708333333333333,
+              "thigh_deg": 20.711009439901364,
+              "knee_flex_deg": 51.300325726970684,
+              "sole_min_mm": 1.912720541082036,
+              "ankle_height_mm": 145.49730666870946,
+              "ankle_behind_hip_mm": 50.402976773014586,
+              "heel_minus_toe_mm": 21.254086669215134,
+              "shoe_yaw_deg": -0.06395097834167372,
+              "lowest_vertex": {
+                "position": [
+                  0.1116040542305735,
+                  0.001912720541082036,
+                  -0.058212753304567474
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.229167,
+              "global_phase": 0.7291666666666666,
+              "thigh_deg": -26.35642254600986,
+              "knee_flex_deg": 15.753235870015414,
+              "sole_min_mm": 3.2037331909960667,
+              "ankle_height_mm": 257.5008309118163,
+              "ankle_behind_hip_mm": 440.5307051498993,
+              "heel_minus_toe_mm": 214.11031390129978,
+              "shoe_yaw_deg": -0.25543976885220393,
+              "lowest_vertex": {
+                "position": [
+                  0.1633139561744148,
+                  0.0032037331909960665,
+                  0.39126569059491323
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.370833,
+              "global_phase": 0.8708333333333333,
+              "thigh_deg": -6.2304998524186805,
+              "knee_flex_deg": 103.32139087001302,
+              "sole_min_mm": 403.5372558844725,
+              "ankle_height_mm": 658.8415254187913,
+              "ankle_behind_hip_mm": 407.14920299176805,
+              "heel_minus_toe_mm": 293.4277006241404,
+              "shoe_yaw_deg": -0.3499202379354261,
+              "lowest_vertex": {
+                "position": [
+                  0.16305572127970644,
+                  0.4035372558844725,
+                  0.3686975065285053
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.429167,
+              "global_phase": 0.9291666666666667,
+              "thigh_deg": 5.882804104841613,
+              "knee_flex_deg": 111.9419041215285,
+              "sole_min_mm": 374.52544784603714,
+              "ankle_height_mm": 616.8594989164619,
+              "ankle_behind_hip_mm": 327.62420329109506,
+              "heel_minus_toe_mm": 269.42986497619387,
+              "shoe_yaw_deg": -0.18743246485071333,
+              "lowest_vertex": {
+                "position": [
+                  0.13157570947779634,
+                  0.37452544784603714,
+                  0.2526294491559786
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.625,
+              "global_phase": 0.125,
+              "thigh_deg": 41.25446598765262,
+              "knee_flex_deg": 86.364696731418,
+              "sole_min_mm": 135.7174096208026,
+              "ankle_height_mm": 284.0537087048755,
+              "ankle_behind_hip_mm": 1.6986683315449325,
+              "heel_minus_toe_mm": 50.49849345513377,
+              "shoe_yaw_deg": -0.09172763583780112,
+              "lowest_vertex": {
+                "position": [
+                  0.11144083268668972,
+                  0.13571740962080261,
+                  -0.08901562912879103
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.675,
+              "global_phase": 0.175,
+              "thigh_deg": 44.958363003484244,
+              "knee_flex_deg": 78.82265478135302,
+              "sole_min_mm": 139.33971162524824,
+              "ankle_height_mm": 274.4315153870451,
+              "ankle_behind_hip_mm": -75.87495630294762,
+              "heel_minus_toe_mm": 5.787819480731871,
+              "shoe_yaw_deg": -0.1036939457131952,
+              "lowest_vertex": {
+                "position": [
+                  0.1112489627045769,
+                  0.13933971162524825,
+                  -0.18633303314988697
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 28.52285418269614,
+              "knee_flex_deg": 25.65782464028969,
+              "sole_min_mm": 1.9873124446877812,
+              "ankle_height_mm": 154.6263260202997,
+              "ankle_behind_hip_mm": -215.50088622725028,
+              "heel_minus_toe_mm": -38.75255183646078,
+              "shoe_yaw_deg": -0.10349568264630506,
+              "lowest_vertex": {
+                "position": [
+                  0.10652382172776831,
+                  0.001987312444687781,
+                  -0.13719125083889688
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.233333,
+              "global_phase": 0.7333333333333333,
+              "thigh_deg": -25.988632012733873,
+              "knee_flex_deg": 17.98928889543222,
+              "sole_min_mm": 11.791663357956978,
+              "ankle_height_mm": 266.2544097257838,
+              "ankle_behind_hip_mm": 447.329557399884,
+              "heel_minus_toe_mm": 216.74306286527369,
+              "shoe_yaw_deg": -0.25800120658983416,
+              "lowest_vertex": {
+                "position": [
+                  0.1633039584413838,
+                  0.011791663357956977,
+                  0.39911169111136346
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.233333,
+              "global_phase": 0.7333333333333333,
+              "thigh_deg": -25.988632012733873,
+              "knee_flex_deg": 17.98928889543222,
+              "sole_min_mm": 11.791663357956978,
+              "ankle_height_mm": 266.2544097257838,
+              "ankle_behind_hip_mm": 447.329557399884,
+              "heel_minus_toe_mm": 216.74306286527369,
+              "shoe_yaw_deg": -0.25800120658983416,
+              "lowest_vertex": {
+                "position": [
+                  0.1633039584413838,
+                  0.011791663357956977,
+                  0.39911169111136346
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.49583333333333335,
+              "thigh_deg": 29.41581972073015,
+              "knee_flex_deg": 24.911881348796744,
+              "sole_min_mm": 4.897948347977878,
+              "ankle_height_mm": 158.62890399064705,
+              "ankle_behind_hip_mm": -232.08511805424783,
+              "heel_minus_toe_mm": -40.15453142756019,
+              "shoe_yaw_deg": -0.10657666158680713,
+              "lowest_vertex": {
+                "position": [
+                  0.1065480884454077,
+                  0.004897948347977878,
+                  -0.15608945967268448
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            }
+          ],
+          "negative_sole_samples": [],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 28.52285418269614,
+              "knee_flex_deg": 25.65782464028969,
+              "sole_min_mm": 1.9873124446877812,
+              "ankle_height_mm": 154.6263260202997,
+              "ankle_behind_hip_mm": -215.50088622725028,
+              "heel_minus_toe_mm": -38.75255183646078,
+              "shoe_yaw_deg": -0.10349568264630506,
+              "lowest_vertex": {
+                "position": [
+                  0.10652382172776831,
+                  0.001987312444687781,
+                  -0.13719125083889688
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.5791666666666667,
+              "thigh_deg": 17.96747791165397,
+              "knee_flex_deg": 50.81955496991803,
+              "sole_min_mm": 1.4799373422003541,
+              "ankle_height_mm": 146.19658377014005,
+              "ankle_behind_hip_mm": 81.89728050315595,
+              "heel_minus_toe_mm": 26.587802969408013,
+              "shoe_yaw_deg": -0.06245986364492027,
+              "lowest_vertex": {
+                "position": [
+                  0.111665252297814,
+                  0.0014799373422003542,
+                  -0.024937410165613173
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.220833,
+              "global_phase": 0.7208333333333333,
+              "thigh_deg": -22.215033071751105,
+              "knee_flex_deg": 22.537207983268466,
+              "sole_min_mm": 0.8351270924814858,
+              "ankle_height_mm": 254.91520661095106,
+              "ankle_behind_hip_mm": 426.32976009058626,
+              "heel_minus_toe_mm": 217.00313345703194,
+              "shoe_yaw_deg": -0.246360572676448,
+              "lowest_vertex": {
+                "position": [
+                  0.1634007347594186,
+                  0.0008351270924814858,
+                  0.3755810479296984
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.320833,
+              "global_phase": 0.8208333333333333,
+              "thigh_deg": -14.848686148665642,
+              "knee_flex_deg": 88.07525885358835,
+              "sole_min_mm": 369.13768561813623,
+              "ankle_height_mm": 627.0574785890675,
+              "ankle_behind_hip_mm": 480.323446921079,
+              "heel_minus_toe_mm": 293.85932978429037,
+              "shoe_yaw_deg": -0.3994189548007629,
+              "lowest_vertex": {
+                "position": [
+                  0.16308157900436462,
+                  0.36913768561813626,
+                  0.4605428663415421
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.429167,
+              "global_phase": 0.9291666666666667,
+              "thigh_deg": 5.882804104841613,
+              "knee_flex_deg": 111.9419041215285,
+              "sole_min_mm": 374.52544784603714,
+              "ankle_height_mm": 616.8594989164619,
+              "ankle_behind_hip_mm": 327.62420329109506,
+              "heel_minus_toe_mm": 269.42986497619387,
+              "shoe_yaw_deg": -0.18743246485071333,
+              "lowest_vertex": {
+                "position": [
+                  0.13157570947779634,
+                  0.37452544784603714,
+                  0.2526294491559786
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5770
+              }
+            },
+            {
+              "leg_phase": 0.55,
+              "global_phase": 0.05,
+              "thigh_deg": 28.020971598658104,
+              "knee_flex_deg": 94.97372630061457,
+              "sole_min_mm": 179.01376271099153,
+              "ankle_height_mm": 357.35911162315205,
+              "ankle_behind_hip_mm": 161.04964822823712,
+              "heel_minus_toe_mm": 133.7941102054295,
+              "shoe_yaw_deg": -0.07620785870734487,
+              "lowest_vertex": {
+                "position": [
+                  0.10224148306833242,
+                  0.17901376271099154,
+                  0.0428818431730785
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5793
+              }
+            },
+            {
+              "leg_phase": 0.670833,
+              "global_phase": 0.17083333333333334,
+              "thigh_deg": 44.95829070600736,
+              "knee_flex_deg": 79.73166580524507,
+              "sole_min_mm": 139.94138209994097,
+              "ankle_height_mm": 276.0740191397804,
+              "ankle_behind_hip_mm": -70.83291110880619,
+              "heel_minus_toe_mm": 9.144736504120704,
+              "shoe_yaw_deg": -0.1071354009478812,
+              "lowest_vertex": {
+                "position": [
+                  0.11125810767512603,
+                  0.13994138209994098,
+                  -0.17987366214672632
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 42.95284493393476,
+              "knee_flex_deg": 46.13688368376321,
+              "sole_min_mm": 82.56130347728023,
+              "ankle_height_mm": 236.08437794376326,
+              "ankle_behind_hip_mm": -258.5605480630337,
+              "heel_minus_toe_mm": -61.61161239215208,
+              "shoe_yaw_deg": -0.13903629602722614,
+              "lowest_vertex": {
+                "position": [
+                  0.10683912092164985,
+                  0.08256130347728023,
+                  -0.17530770691249836
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.4083333333333333,
+              "thigh_deg": 33.2678221966576,
+              "knee_flex_deg": 21.114635877033287,
+              "sole_min_mm": 39.50142676687811,
+              "ankle_height_mm": 203.55688675058147,
+              "ankle_behind_hip_mm": -306.4025387941657,
+              "heel_minus_toe_mm": -74.68053160623991,
+              "shoe_yaw_deg": -0.12219765430632716,
+              "lowest_vertex": {
+                "position": [
+                  0.1771720188960838,
+                  0.03950142676687811,
+                  -0.23766712159054798
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ]
+        }
+      },
+      "sprint": {
+        "L": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.07083333333333333,
+              "thigh_deg": 19.67255944195826,
+              "knee_flex_deg": 54.07561891884354,
+              "sole_min_mm": 1.8576755233325593,
+              "ankle_height_mm": 144.42260335826558,
+              "ankle_behind_hip_mm": 78.9418217541144,
+              "heel_minus_toe_mm": 23.442746575518424,
+              "shoe_yaw_deg": -0.7485801986916476,
+              "lowest_vertex": {
+                "position": [
+                  -0.08306423215845625,
+                  0.0018576755233325592,
+                  -0.03865361684128412
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.216667,
+              "global_phase": 0.21666666666666667,
+              "thigh_deg": -29.989651718428615,
+              "knee_flex_deg": 14.770657808400898,
+              "sole_min_mm": 16.881406782305458,
+              "ankle_height_mm": 272.7072638277178,
+              "ankle_behind_hip_mm": 476.470837178803,
+              "heel_minus_toe_mm": 215.50943793635125,
+              "shoe_yaw_deg": -1.3315394357433965,
+              "lowest_vertex": {
+                "position": [
+                  -0.1601872833689518,
+                  0.016881406782305458,
+                  0.4449651872747021
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.3375,
+              "global_phase": 0.3375,
+              "thigh_deg": -10.615589363085626,
+              "knee_flex_deg": 109.96656502577696,
+              "sole_min_mm": 479.21693152401764,
+              "ankle_height_mm": 736.8639693453978,
+              "ankle_behind_hip_mm": 406.982360313309,
+              "heel_minus_toe_mm": 304.72232432331225,
+              "shoe_yaw_deg": -2.320572108124185,
+              "lowest_vertex": {
+                "position": [
+                  -0.15999150423761815,
+                  0.4792169315240176,
+                  0.4098390431422187
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.408333,
+              "global_phase": 0.4083333333333333,
+              "thigh_deg": 5.804319560926321,
+              "knee_flex_deg": 118.90109792643118,
+              "sole_min_mm": 418.70097987681663,
+              "ankle_height_mm": 667.2154227695992,
+              "ankle_behind_hip_mm": 312.3130231830013,
+              "heel_minus_toe_mm": 280.31753494345134,
+              "shoe_yaw_deg": -1.3564514039067974,
+              "lowest_vertex": {
+                "position": [
+                  -0.16010339359923959,
+                  0.41870097987681665,
+                  0.25014315872486564
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.608333,
+              "global_phase": 0.6083333333333333,
+              "thigh_deg": 45.73926980299703,
+              "knee_flex_deg": 95.1866130274485,
+              "sole_min_mm": 157.98166314321023,
+              "ankle_height_mm": 311.46130066206644,
+              "ankle_behind_hip_mm": -2.1000306248306857,
+              "heel_minus_toe_mm": 64.46990858489937,
+              "shoe_yaw_deg": -0.7112224196718804,
+              "lowest_vertex": {
+                "position": [
+                  -0.08276550480488737,
+                  0.15798166314321022,
+                  -0.12854381052958508
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39234
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.658333,
+              "global_phase": 0.6583333333333333,
+              "thigh_deg": 48.95256072853393,
+              "knee_flex_deg": 83.9538839908681,
+              "sole_min_mm": 146.65523420155603,
+              "ankle_height_mm": 284.76649934378315,
+              "ankle_behind_hip_mm": -89.35691698664425,
+              "heel_minus_toe_mm": 14.955715054185776,
+              "shoe_yaw_deg": -0.7376246364963907,
+              "lowest_vertex": {
+                "position": [
+                  -0.08277806124266958,
+                  0.14665523420155602,
+                  -0.20278740050710092
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.208333,
+              "global_phase": 0.20833333333333334,
+              "thigh_deg": -27.303676606005094,
+              "knee_flex_deg": 17.371644519012133,
+              "sole_min_mm": 4.0590147996739105,
+              "ankle_height_mm": 259.7141066437526,
+              "ankle_behind_hip_mm": 459.1480956911722,
+              "heel_minus_toe_mm": 215.0210795868225,
+              "shoe_yaw_deg": -1.3308849132075529,
+              "lowest_vertex": {
+                "position": [
+                  -0.16032491684253658,
+                  0.00405901479967391,
+                  0.4259079765766275
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.995833,
+              "global_phase": 0.9958333333333333,
+              "thigh_deg": 33.07544618798655,
+              "knee_flex_deg": 29.54243502404755,
+              "sole_min_mm": 3.868612575728122,
+              "ankle_height_mm": 156.85819576764487,
+              "ankle_behind_hip_mm": -248.12410513670653,
+              "heel_minus_toe_mm": -40.57995503820454,
+              "shoe_yaw_deg": -0.7880646809340767,
+              "lowest_vertex": {
+                "position": [
+                  -0.10460154070683193,
+                  0.003868612575728122,
+                  -0.16346915354464114
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.216667,
+              "global_phase": 0.21666666666666667,
+              "thigh_deg": -29.989651718428615,
+              "knee_flex_deg": 14.770657808400898,
+              "sole_min_mm": 16.881406782305458,
+              "ankle_height_mm": 272.7072638277178,
+              "ankle_behind_hip_mm": 476.470837178803,
+              "heel_minus_toe_mm": 215.50943793635125,
+              "shoe_yaw_deg": -1.3315394357433965,
+              "lowest_vertex": {
+                "position": [
+                  -0.1601872833689518,
+                  0.016881406782305458,
+                  0.4449651872747021
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.991667,
+              "global_phase": 0.9916666666666667,
+              "thigh_deg": 33.708631502461074,
+              "knee_flex_deg": 28.016358878235305,
+              "sole_min_mm": 6.444763005935457,
+              "ankle_height_mm": 160.9623019003863,
+              "ankle_behind_hip_mm": -266.3686526807445,
+              "heel_minus_toe_mm": -42.30885435088383,
+              "shoe_yaw_deg": -0.7915747687967439,
+              "lowest_vertex": {
+                "position": [
+                  -0.10462320340714273,
+                  0.006444763005935456,
+                  -0.184793323941408
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ],
+          "negative_sole_samples": [
+            {
+              "leg_phase": 0.1875,
+              "global_phase": 0.1875,
+              "thigh_deg": -15.180994133881034,
+              "knee_flex_deg": 36.187587043857455,
+              "sole_min_mm": -0.5059944197797206,
+              "ankle_height_mm": 253.04533713101353,
+              "ankle_behind_hip_mm": 408.24367595024455,
+              "heel_minus_toe_mm": 219.32287074657975,
+              "shoe_yaw_deg": -1.2425582594352824,
+              "lowest_vertex": {
+                "position": [
+                  -0.16041554562081067,
+                  -0.0005059944197797206,
+                  0.36027091075378614
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            }
+          ],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0,
+              "thigh_deg": 32.442315150634094,
+              "knee_flex_deg": 31.06851094361366,
+              "sole_min_mm": 1.990282557053007,
+              "ankle_height_mm": 153.3416034006999,
+              "ankle_behind_hip_mm": -229.81913114999404,
+              "heel_minus_toe_mm": -38.75878914999868,
+              "shoe_yaw_deg": -0.7846045237034251,
+              "lowest_vertex": {
+                "position": [
+                  -0.10457107983655681,
+                  0.001990282557053007,
+                  -0.14214067760533927
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.07916666666666666,
+              "thigh_deg": 16.11834385989116,
+              "knee_flex_deg": 52.72315837486106,
+              "sole_min_mm": 0.8590897603778912,
+              "ankle_height_mm": 144.74096107110935,
+              "ankle_behind_hip_mm": 115.24854085409656,
+              "heel_minus_toe_mm": 28.87563396966577,
+              "shoe_yaw_deg": -0.7467434084250425,
+              "lowest_vertex": {
+                "position": [
+                  -0.08314692558776862,
+                  0.0008590897603778912,
+                  -0.0004646507181294973
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.2,
+              "global_phase": 0.2,
+              "thigh_deg": -22.810149911650015,
+              "knee_flex_deg": 24.890455171922923,
+              "sole_min_mm": 1.9419480368114694,
+              "ankle_height_mm": 257.46827798847676,
+              "ankle_behind_hip_mm": 444.0004315620908,
+              "heel_minus_toe_mm": 218.5579802870993,
+              "shoe_yaw_deg": -1.3172622245867598,
+              "lowest_vertex": {
+                "position": [
+                  -0.16029663143448808,
+                  0.0019419480368114694,
+                  0.4093911364854572
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.3,
+              "thigh_deg": -17.988819362830434,
+              "knee_flex_deg": 98.40907452960126,
+              "sole_min_mm": 459.3914741642993,
+              "ankle_height_mm": 717.033882950007,
+              "ankle_behind_hip_mm": 471.6286214775962,
+              "heel_minus_toe_mm": 302.29450606155973,
+              "shoe_yaw_deg": -2.2085152601515996,
+              "lowest_vertex": {
+                "position": [
+                  -0.1599874236365047,
+                  0.4593914741642993,
+                  0.4745503237824851
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.4,
+              "global_phase": 0.4,
+              "thigh_deg": 3.995628423136767,
+              "knee_flex_deg": 118.88678964635292,
+              "sole_min_mm": 430.64800032132456,
+              "ankle_height_mm": 681.6120238560023,
+              "ankle_behind_hip_mm": 320.3466030569849,
+              "heel_minus_toe_mm": 285.45844543527033,
+              "shoe_yaw_deg": -1.4140820152513003,
+              "lowest_vertex": {
+                "position": [
+                  -0.1600748383230193,
+                  0.43064800032132455,
+                  0.2676320688233339
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45425
+              }
+            },
+            {
+              "leg_phase": 0.520833,
+              "global_phase": 0.5208333333333334,
+              "thigh_deg": 29.18922997392931,
+              "knee_flex_deg": 109.87838169220764,
+              "sole_min_mm": 261.7971944927679,
+              "ankle_height_mm": 456.5277229730278,
+              "ankle_behind_hip_mm": 179.1577108674002,
+              "heel_minus_toe_mm": 171.8074912829739,
+              "shoe_yaw_deg": -0.8044263297426607,
+              "lowest_vertex": {
+                "position": [
+                  -0.09798256751949261,
+                  0.2617971944927679,
+                  0.05269103022869692
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 39240
+              }
+            },
+            {
+              "leg_phase": 0.65,
+              "global_phase": 0.65,
+              "thigh_deg": 48.92111519038012,
+              "knee_flex_deg": 85.91787625189161,
+              "sole_min_mm": 147.81597947826543,
+              "ankle_height_mm": 288.36218418621166,
+              "ankle_behind_hip_mm": -78.36999385068522,
+              "heel_minus_toe_mm": 22.35669808879087,
+              "shoe_yaw_deg": -0.7147952088202849,
+              "lowest_vertex": {
+                "position": [
+                  -0.08279172272222937,
+                  0.14781597947826544,
+                  -0.188536541099871
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45419
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.7791666666666667,
+              "thigh_deg": 45.023428325817875,
+              "knee_flex_deg": 48.25819766627696,
+              "sole_min_mm": 94.50250429958149,
+              "ankle_height_mm": 247.68737958497928,
+              "ankle_behind_hip_mm": -269.0998290804949,
+              "heel_minus_toe_mm": -61.76199418242573,
+              "shoe_yaw_deg": -0.7550473547393549,
+              "lowest_vertex": {
+                "position": [
+                  -0.10475688215580523,
+                  0.09450250429958149,
+                  -0.17835324969139255
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.9083333333333333,
+              "thigh_deg": 34.29056940048578,
+              "knee_flex_deg": 23.999612683415602,
+              "sole_min_mm": 40.26053352780032,
+              "ankle_height_mm": 203.22554381165776,
+              "ankle_behind_hip_mm": -300.3726469723873,
+              "heel_minus_toe_mm": -73.74828399829735,
+              "shoe_yaw_deg": -0.8148063528364142,
+              "lowest_vertex": {
+                "position": [
+                  -0.10462738722287798,
+                  0.04026053352780032,
+                  -0.23357953128391448
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 45389
+              }
+            }
+          ]
+        },
+        "R": {
+          "events": {
+            "loading_knee_peak": {
+              "leg_phase": 0.070833,
+              "global_phase": 0.5708333333333333,
+              "thigh_deg": 19.88254080960283,
+              "knee_flex_deg": 54.36057415236151,
+              "sole_min_mm": 1.8556802731588662,
+              "ankle_height_mm": 145.38463888945506,
+              "ankle_behind_hip_mm": 77.99051386696684,
+              "heel_minus_toe_mm": 25.655860630538616,
+              "shoe_yaw_deg": -0.060692800865303875,
+              "lowest_vertex": {
+                "position": [
+                  0.11163276877279506,
+                  0.0018556802731588661,
+                  -0.030693495816384312
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            "rear_thigh_peak": {
+              "leg_phase": 0.216667,
+              "global_phase": 0.7166666666666667,
+              "thigh_deg": -27.334949437774466,
+              "knee_flex_deg": 19.529465777908985,
+              "sole_min_mm": 16.541831335169064,
+              "ankle_height_mm": 273.760169137048,
+              "ankle_behind_hip_mm": 469.5644835066894,
+              "heel_minus_toe_mm": 226.16515756718124,
+              "shoe_yaw_deg": -0.3153397896673037,
+              "lowest_vertex": {
+                "position": [
+                  0.16329295422372747,
+                  0.016541831335169066,
+                  0.439005781124498
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "rear_recovery_ankle_peak": {
+              "leg_phase": 0.3375,
+              "global_phase": 0.8375,
+              "thigh_deg": -10.605481691852548,
+              "knee_flex_deg": 109.93510845883608,
+              "sole_min_mm": 477.9374361419999,
+              "ankle_height_mm": 736.863512823955,
+              "ankle_behind_hip_mm": 406.9822779405084,
+              "heel_minus_toe_mm": 311.90884565375774,
+              "shoe_yaw_deg": -0.6414248769619811,
+              "lowest_vertex": {
+                "position": [
+                  0.16294010478875728,
+                  0.4779374361419999,
+                  0.4109382712885896
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "swing_knee_peak": {
+              "leg_phase": 0.408333,
+              "global_phase": 0.9083333333333333,
+              "thigh_deg": 5.844065230158355,
+              "knee_flex_deg": 118.85095900221222,
+              "sole_min_mm": 417.15578976036437,
+              "ankle_height_mm": 667.2159714250176,
+              "ankle_behind_hip_mm": 312.3130665031155,
+              "heel_minus_toe_mm": 286.90415559443755,
+              "shoe_yaw_deg": -0.28001662841668773,
+              "lowest_vertex": {
+                "position": [
+                  0.16305681544789852,
+                  0.4171557897603644,
+                  0.250853892096806
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            "ankle_pass_nearest_hip_plane": {
+              "leg_phase": 0.608333,
+              "global_phase": 0.10833333333333334,
+              "thigh_deg": 45.72285701819095,
+              "knee_flex_deg": 95.10136810107231,
+              "sole_min_mm": 156.91891789911725,
+              "ankle_height_mm": 311.4613415631614,
+              "ankle_behind_hip_mm": -2.1001461957365093,
+              "heel_minus_toe_mm": 67.19168302816969,
+              "shoe_yaw_deg": -0.08919316956013985,
+              "lowest_vertex": {
+                "position": [
+                  0.09779775001909716,
+                  0.15691891789911724,
+                  -0.12913395485717533
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5787
+              }
+            },
+            "forward_thigh_peak": {
+              "leg_phase": 0.658333,
+              "global_phase": 0.15833333333333333,
+              "thigh_deg": 48.923923913991295,
+              "knee_flex_deg": 83.86176520014153,
+              "sole_min_mm": 145.34371241931805,
+              "ankle_height_mm": 284.7666264948406,
+              "ankle_behind_hip_mm": -89.35702154474933,
+              "heel_minus_toe_mm": 16.709388303596363,
+              "shoe_yaw_deg": -0.10890885765638925,
+              "lowest_vertex": {
+                "position": [
+                  0.11124946312912441,
+                  0.14534371241931804,
+                  -0.19383298752764372
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            }
+          },
+          "near_floor_transitions_4mm": [
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 32.48989958715489,
+              "knee_flex_deg": 31.0432815039428,
+              "sole_min_mm": 1.9920265319656965,
+              "ankle_height_mm": 153.71823024839853,
+              "ankle_behind_hip_mm": -230.50016919301038,
+              "heel_minus_toe_mm": -37.82634918338202,
+              "shoe_yaw_deg": -0.10257077817830627,
+              "lowest_vertex": {
+                "position": [
+                  0.10652962324364432,
+                  0.0019920265319656964,
+                  -0.15030653695316834
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.2125,
+              "global_phase": 0.7125,
+              "thigh_deg": -26.83335339810211,
+              "knee_flex_deg": 18.36245261937164,
+              "sole_min_mm": 5.217311895482357,
+              "ankle_height_mm": 262.33222233315877,
+              "ankle_behind_hip_mm": 458.58083232572216,
+              "heel_minus_toe_mm": 223.81431727367863,
+              "shoe_yaw_deg": -0.3065893927844343,
+              "lowest_vertex": {
+                "position": [
+                  0.1633397734462746,
+                  0.005217311895482357,
+                  0.42696911843058644
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            }
+          ],
+          "near_floor_transitions_8mm": [
+            {
+              "kind": "leaves_near_floor",
+              "leg_phase": 0.216667,
+              "global_phase": 0.7166666666666667,
+              "thigh_deg": -27.334949437774466,
+              "knee_flex_deg": 19.529465777908985,
+              "sole_min_mm": 16.541831335169064,
+              "ankle_height_mm": 273.760169137048,
+              "ankle_behind_hip_mm": 469.5644835066894,
+              "heel_minus_toe_mm": 226.16515756718124,
+              "shoe_yaw_deg": -0.3153397896673037,
+              "lowest_vertex": {
+                "position": [
+                  0.16329295422372747,
+                  0.016541831335169066,
+                  0.439005781124498
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "kind": "enters_near_floor",
+              "leg_phase": 0.991667,
+              "global_phase": 0.49166666666666664,
+              "thigh_deg": 33.82021118624317,
+              "knee_flex_deg": 28.113841639076423,
+              "sole_min_mm": 7.04279062375724,
+              "ankle_height_mm": 161.6002034618749,
+              "ankle_behind_hip_mm": -267.0262912560336,
+              "heel_minus_toe_mm": -41.42333713458941,
+              "shoe_yaw_deg": -0.10899684522717674,
+              "lowest_vertex": {
+                "position": [
+                  0.10658503983934775,
+                  0.00704279062375724,
+                  -0.1928258362790335
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            }
+          ],
+          "negative_sole_samples": [
+            {
+              "leg_phase": 0.1875,
+              "global_phase": 0.6875,
+              "thigh_deg": -13.552461751268929,
+              "knee_flex_deg": 38.68270324924929,
+              "sole_min_mm": -0.20416147196233858,
+              "ankle_height_mm": 254.80356188281044,
+              "ankle_behind_hip_mm": 400.4961552979282,
+              "heel_minus_toe_mm": 228.24071928640382,
+              "shoe_yaw_deg": -0.25346293823556054,
+              "lowest_vertex": {
+                "position": [
+                  0.16345627922496314,
+                  -0.00020416147196233858,
+                  0.3533811691199871
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            }
+          ],
+          "authored_phase_observations": [
+            {
+              "leg_phase": 0,
+              "global_phase": 0.5,
+              "thigh_deg": 32.48989958715489,
+              "knee_flex_deg": 31.0432815039428,
+              "sole_min_mm": 1.9920265319656965,
+              "ankle_height_mm": 153.71823024839853,
+              "ankle_behind_hip_mm": -230.50016919301038,
+              "heel_minus_toe_mm": -37.82634918338202,
+              "shoe_yaw_deg": -0.10257077817830627,
+              "lowest_vertex": {
+                "position": [
+                  0.10652962324364432,
+                  0.0019920265319656964,
+                  -0.15030653695316834
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.079167,
+              "global_phase": 0.5791666666666667,
+              "thigh_deg": 16.32132749289352,
+              "knee_flex_deg": 52.99745126281428,
+              "sole_min_mm": 0.8575430416102352,
+              "ankle_height_mm": 145.59673203890483,
+              "ankle_behind_hip_mm": 114.27594970242414,
+              "heel_minus_toe_mm": 31.17537024379148,
+              "shoe_yaw_deg": -0.06050620612859685,
+              "lowest_vertex": {
+                "position": [
+                  0.11173669705333916,
+                  0.0008575430416102352,
+                  0.007485582378270673
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.2,
+              "global_phase": 0.7,
+              "thigh_deg": -20.670218131631138,
+              "knee_flex_deg": 28.422543447969176,
+              "sole_min_mm": 1.9099687425380707,
+              "ankle_height_mm": 258.8413858759726,
+              "ankle_behind_hip_mm": 435.91013572186466,
+              "heel_minus_toe_mm": 228.29742546625909,
+              "shoe_yaw_deg": -0.2963282162617162,
+              "lowest_vertex": {
+                "position": [
+                  0.16336403093266774,
+                  0.0019099687425380707,
+                  0.40223406026004827
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.3,
+              "global_phase": 0.8,
+              "thigh_deg": -17.992916891396426,
+              "knee_flex_deg": 98.38356915422352,
+              "sole_min_mm": 458.10747297893465,
+              "ankle_height_mm": 717.0283506345909,
+              "ankle_behind_hip_mm": 471.6274203373073,
+              "heel_minus_toe_mm": 309.5852416418764,
+              "shoe_yaw_deg": -0.6283694211962251,
+              "lowest_vertex": {
+                "position": [
+                  0.1628761347617497,
+                  0.45810747297893467,
+                  0.47565427754062894
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.4,
+              "global_phase": 0.9,
+              "thigh_deg": 4.03432478080587,
+              "knee_flex_deg": 118.83882845025238,
+              "sole_min_mm": 429.1400280948324,
+              "ankle_height_mm": 681.6130968220926,
+              "ankle_behind_hip_mm": 320.346888751942,
+              "heel_minus_toe_mm": 292.14718574503627,
+              "shoe_yaw_deg": -0.3142240348119605,
+              "lowest_vertex": {
+                "position": [
+                  0.1630646907313741,
+                  0.4291400280948324,
+                  0.2684083765532115
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 14525
+              }
+            },
+            {
+              "leg_phase": 0.520833,
+              "global_phase": 0.020833333333333332,
+              "thigh_deg": 29.204718588135574,
+              "knee_flex_deg": 109.80437501804214,
+              "sole_min_mm": 261.8414303702316,
+              "ankle_height_mm": 456.5279636541657,
+              "ankle_behind_hip_mm": 179.15748751455797,
+              "heel_minus_toe_mm": 176.39725694961066,
+              "shoe_yaw_deg": -0.08445116861055804,
+              "lowest_vertex": {
+                "position": [
+                  0.11428994371228954,
+                  0.2618414303702316,
+                  0.04546937541451587
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5774
+              }
+            },
+            {
+              "leg_phase": 0.65,
+              "global_phase": 0.15,
+              "thigh_deg": 48.89416002579622,
+              "knee_flex_deg": 85.8272342149687,
+              "sole_min_mm": 146.69268923471094,
+              "ankle_height_mm": 288.3621066210491,
+              "ankle_behind_hip_mm": -78.37025362427562,
+              "heel_minus_toe_mm": 24.26836217446321,
+              "shoe_yaw_deg": -0.10609782334264774,
+              "lowest_vertex": {
+                "position": [
+                  0.11128313195195533,
+                  0.14669268923471093,
+                  -0.17958699730677946
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5780
+              }
+            },
+            {
+              "leg_phase": 0.779167,
+              "global_phase": 0.2791666666666667,
+              "thigh_deg": 44.9680153657172,
+              "knee_flex_deg": 48.132168605070305,
+              "sole_min_mm": 94.14003048866692,
+              "ankle_height_mm": 247.6868555213589,
+              "ankle_behind_hip_mm": -269.10006879509876,
+              "heel_minus_toe_mm": -61.6108410450993,
+              "shoe_yaw_deg": -0.1422067918408649,
+              "lowest_vertex": {
+                "position": [
+                  0.10685541175186655,
+                  0.09414003048866693,
+                  -0.1858666916775942
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5820
+              }
+            },
+            {
+              "leg_phase": 0.908333,
+              "global_phase": 0.4083333333333333,
+              "thigh_deg": 34.210064577335295,
+              "knee_flex_deg": 23.823293241205832,
+              "sole_min_mm": 40.1813905902885,
+              "ankle_height_mm": 203.2523703522407,
+              "ankle_behind_hip_mm": -300.3915310958677,
+              "heel_minus_toe_mm": -73.87577160114539,
+              "shoe_yaw_deg": -0.10580818527863693,
+              "lowest_vertex": {
+                "position": [
+                  0.177113643491393,
+                  0.0401813905902885,
+                  -0.22906926583938098
+                ],
+                "node": 55,
+                "primitive": 0,
+                "vertex": 5822
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

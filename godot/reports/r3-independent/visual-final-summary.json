@@ -1,0 +1,153 @@
+{
+  "utc": "2026-09-27T13:41:01",
+  "changed_during_run": [],
+  "gaits": {
+    "final-walk": {
+      "samples": 100,
+      "speed_mean": 1.5995151515151238,
+      "unchanged_support_samples": 99,
+      "support_ankle_speed_mean": 0.0,
+      "support_ankle_speed_max": 0.0,
+      "ankle_terrain_gap_range": [
+        0.110536694526672,
+        0.214797914028168
+      ]
+    },
+    "final-jog": {
+      "samples": 100,
+      "speed_mean": 6.7999393939420685,
+      "unchanged_support_samples": 39,
+      "support_ankle_speed_mean": 0.0,
+      "support_ankle_speed_max": 0.0,
+      "ankle_terrain_gap_range": [
+        0.142317771911621,
+        0.375493377447128
+      ]
+    },
+    "final-sprint": {
+      "samples": 100,
+      "speed_mean": 9.999393939483005,
+      "unchanged_support_samples": 33,
+      "support_ankle_speed_mean": 0.0,
+      "support_ankle_speed_max": 0.0,
+      "ankle_terrain_gap_range": [
+        0.114259392023087,
+        0.434995174407959
+      ]
+    }
+  },
+  "casts": {
+    "final-r4": {
+      "events": [
+        [
+          "start",
+          "cast_fist",
+          481
+        ],
+        [
+          "release",
+          "cast_fist",
+          512
+        ],
+        [
+          "impact",
+          "cast_fist",
+          523
+        ]
+      ],
+      "versions": [
+        "r3-existing-reference"
+      ]
+    },
+    "final-r5": {
+      "events": [
+        [
+          "start",
+          "cast_palm",
+          841
+        ],
+        [
+          "release",
+          "cast_palm",
+          867
+        ],
+        [
+          "impact",
+          "cast_palm",
+          878
+        ]
+      ],
+      "versions": [
+        "r3-existing-reference"
+      ]
+    },
+    "final-r6": {
+      "events": [
+        [
+          "start",
+          "cast_sweep",
+          1201
+        ],
+        [
+          "release",
+          "cast_sweep",
+          1240
+        ],
+        [
+          "impact",
+          "cast_sweep",
+          1248
+        ]
+      ],
+      "versions": [
+        "r3-existing-reference"
+      ]
+    },
+    "final-r8": {
+      "events": [
+        [
+          "start",
+          "cast_cleave",
+          1561
+        ],
+        [
+          "release",
+          "cast_cleave",
+          1670
+        ],
+        [
+          "impact",
+          "cast_cleave",
+          1678
+        ]
+      ],
+      "versions": [
+        "r3-existing-reference"
+      ]
+    },
+    "final-r9": {
+      "events": [
+        [
+          "start",
+          "cast_skyfall",
+          1921
+        ],
+        [
+          "release",
+          "cast_skyfall",
+          2054
+        ],
+        [
+          "impact",
+          "cast_skyfall",
+          2062
+        ]
+      ],
+      "versions": [
+        "r3-existing-reference"
+      ]
+    }
+  },
+  "physics_seconds": 35.666666666665925,
+  "wall_seconds": 37.09687100000002
+}

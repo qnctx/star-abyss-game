@@ -1,0 +1,14 @@
+{
+  "tests/native_martial_support_persistence_runtime.gd": {
+    "sha256": "ee9cfea75a8f92ac33074bdcd6a87662922acd8d3d21ec464701d42d5e0d0674",
+    "bytes": 41568
+  },
+  "tests/native_martial_support_persistence_reload.gd": {
+    "sha256": "12bc973f716ac563f36a0fdedfb54da94f1ca87f47ad7b0ef909fa51acff6d4a",
+    "bytes": 8528
+  },
+  "docs/martial-support-r43-scope.json": {
+    "sha256": "836cc509e130eafaadeeb628438f96894745a2042ec56d9ccbd8d3a4e8111d5d",
+    "bytes": 5402
+  }
+}

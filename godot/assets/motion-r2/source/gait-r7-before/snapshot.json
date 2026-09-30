@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-30",
+  "files": [
+    {
+      "file": "godot/assets/motion-r2/source/c2-motion-r2.blend",
+      "backup": "c2-motion-r2.blend",
+      "sha256": "c9e9eecf8ba480a8f7f7d5b2346290946ec177c40aee7685b0b479915927866f"
+    },
+    {
+      "file": "godot/assets/motion-r2/c2-motion-r2.glb",
+      "backup": "c2-motion-r2.glb",
+      "sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05"
+    },
+    {
+      "file": "godot/assets/motion-r2/clips.json",
+      "backup": "clips.json",
+      "sha256": "4b05ab3aa5a10367ac247fced90b7a7115a514b6a0350ef5659f4daa16dc91c7"
+    },
+    {
+      "file": "godot/assets/motion-r2/c2-motion-r2.glb.import",
+      "backup": "c2-motion-r2.glb.import",
+      "sha256": "e79a65a0e40acd31b7ebfecf21bc5ba2ecefafdc2839df11bfac4285582a937d"
+    },
+    {
+      "file": "godot/scripts/native_motion_r2.gd",
+      "backup": "native_motion_r2.gd",
+      "sha256": "8519239c3221b0c6c7a8a11961a3ab35fe62b623f1a0b5888309853b18555968"
+    },
+    {
+      "file": "godot/scripts/native_player.gd",
+      "backup": "native_player.gd",
+      "sha256": "a7c5dc6275aa9d2ec3e9a0730b39efa390ce6d52b3935a70bc8ed24fda4fa9c8"
+    },
+    {
+      "file": "godot/scripts/native_main.gd",
+      "backup": "native_main.gd",
+      "sha256": "c9a1b3edca8fdc5bf3d9914da76beb2c02262725b7683a992ae19e1af57f8e5f"
+    },
+    {
+      "file": "godot/project.godot",
+      "backup": "project.godot",
+      "sha256": "103630ed45b0568168c7a091808b5ce8843602d932fabb8deb123dde92b13ecf"
+    }
+  ]
+}

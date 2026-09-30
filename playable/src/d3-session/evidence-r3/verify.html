@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>I-R3 原世界坐标存储验证</title>
+<style>body{background:#111a27;color:#e7edf5;font:16px/1.65 system-ui;max-width:1100px;margin:30px auto;padding:0 20px}button{font:inherit;padding:12px;margin:5px;color:inherit;background:#254766;border:1px solid #6693ae;border-radius:5px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1b293c;padding:18px}</style>
+<h1>I-R3 原世界坐标存储验证</h1><p>仅验证真实 IndexedDB 与原世界米制边界。不是原游戏试玩入口，不替代 CORE 大地图实机联调。</p>
+<button id="run">运行 R3 及 R2 回归</button><button id="reload">刷新后重载最后世界</button><p id="status">等待执行</p><pre id="log"></pre><details><summary>当前根快照</summary><pre id="state"></pre></details>
+<script type="module">
+import {openIndexedDB} from '../indexeddb.mjs';
+import {copy,canonical,createSession} from '../index.mjs';
+import {runBoundsCases,worldConfig,config} from './cases.mjs';
+import {runSceneCases} from '../scene-cases-r2.mjs';
+import {fixture} from '../demo-fixture.mjs';
+const $=id=>document.getElementById(id),check=(v,m)=>{if(!v)throw Error(m);};
+const reject=async fn=>{let e;try{await fn();}catch(x){e=x.message;}check(e,'Expected rejection');return e;};
+const save=async(name,value)=>{const r=await fetch('./'+name,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(value,null,2)});check(r.ok,'Evidence save failed');};
+async function adapters(){
+ const name='I-R3-adapter-'+crypto.randomUUID(),c=copy(worldConfig),s=await openIndexedDB({name,sceneConfig:c});
+ c.poseBounds.zMax=10;c.safePoint.z=1;
+ const root=fixture(name);root.scene={version:1,time:0,player:{x:2999.58,z:190,yaw:0,pitch:1.35},enemies:{},pending:{},cooldowns:{},hurt:{},logs:[]};
+ check(await s.initialize(root),'initialize failed after config caller mutation');
+ const before=await s.load(name),noConfig=await openIndexedDB({name});const error=await reject(()=>noConfig.load(name));noConfig.close();
+ const bad=copy(before);bad.revision++;bad.scene.player.x=3000;await reject(()=>s.compareAndSwap({worldId:name,expectedRevision:0,nextState:bad}));check(canonical(await s.load(name))===canonical(before),'invalid CAS wrote root');
+ const badConfig=copy(worldConfig);badConfig.poseBounds.pitchMax=Infinity;await reject(()=>openIndexedDB({name,sceneConfig:badConfig}));
+ s.close();return {pass:true,oldReaderError:error,before,after:before,adapterConfigurationCopied:true,invalidWriteRejected:true};
+}
+$('run').onclick=async()=>{document.querySelectorAll('button').forEach(b=>b.disabled=true);$('status').textContent='正在运行真实 IDB…';try{
+ const r3=await runBoundsCases((name,fault,sceneConfig)=>openIndexedDB({name,fault,sceneConfig}),'browser');check(r3.pass,JSON.stringify(r3.cases.filter(c=>!c.pass)));await save('browser.json',r3);
+ const adapter=await adapters();await save('adapter.json',adapter);
+ const r2=await runSceneCases((name,fault)=>openIndexedDB({name,fault}),'R3-browser-regression');check(r2.pass,'R2 regression failed');await save('r2-browser-regression.json',r2);
+ sessionStorage.setItem('I-R3-reload',JSON.stringify(r3.reload));$('state').textContent=JSON.stringify(r3.reload.expected,null,2);
+ $('log').textContent=r3.cases.map(c=>'PASS '+c.name).join('\n')+'\nPASS adapter copy / old reader / invalid CAS\nPASS R2 regression 7/7';$('status').textContent='通过：R3 5/5，适配器1/1，R2 7/7。请真正刷新页面后点重载。';
+ }catch(e){$('status').textContent='失败：'+e.message;}finally{document.querySelectorAll('button').forEach(b=>b.disabled=false);}};
+$('reload').onclick=async()=>{try{const descriptor=JSON.parse(sessionStorage.getItem('I-R3-reload'));check(descriptor,'先运行测试');const s=await openIndexedDB({name:descriptor.name,sceneConfig:descriptor.sceneConfig});const root=await s.load(descriptor.worldId);s.close();const same=canonical(root)===canonical(descriptor.expected);check(same,'Reload mismatch');$('state').textContent=JSON.stringify(root,null,2);$('status').textContent='刷新重载通过：完整根快照完全一致';await save('refresh.json',{pass:same,worldId:root.worldId,revision:root.revision,root,at:new Date().toISOString()});}catch(e){$('status').textContent='失败：'+e.message;}};
+</script></html>

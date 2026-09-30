@@ -1,0 +1,111 @@
+{
+  "utc": "2026-09-29T12:18:28",
+  "hashes": {
+    "assets/terrain/basin_near_surface.gdshader": "185804210f1bec37878bd0399239c1f1ab8fc025e79cb1e820d17330809aa8ef",
+    "assets/terrain/far_basin.gdshader": "7ae9cf61e90e6203755f4242d18eb7096a96e76bbcd381caeff62bbb017aebfd",
+    "assets/terrain/planet_surface.gdshader": "2ec0a7e15c1f1f2b92e6f509f5599ed8df60ee1df18037cf1bcd947cdbf56788",
+    "scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+    "scripts/native_planet.gd": "92d8e5aac5ed9f1fe0d225cf823bb99bb5eb88639af8f4db82ed8de93cb8d7bb",
+    "scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+    "scripts/native_player.gd": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+    "scripts/native_world.gd": "eb2d135c5ca71f674994ef71c67b5bf467956422dc6020f08d53cbaff3e5cace"
+  },
+  "changed": [],
+  "physics": 780,
+  "wall": 13.039433,
+  "roi_count": 733,
+  "stages": {
+    "warmup": {
+      "agl_min": 0.0,
+      "agl_max": 0.0,
+      "first_position": "(0.0, 0.0, 190.0)",
+      "last_position": "(0.0, 0.0, 190.0)",
+      "unready": 0,
+      "p95_ms": 47.93000000000003,
+      "max_ms": 73.98299999999999,
+      "image": "",
+      "roi_count": 0
+    },
+    "arenaPI": {
+      "agl_min": 1600.02326289647,
+      "agl_max": 1600.02326289647,
+      "first_position": "(1370.0, 1597.922, -1022.0)",
+      "last_position": "(1370.0, 1597.922, -1022.0)",
+      "unready": 0,
+      "p95_ms": 27.874999999999982,
+      "max_ms": 36.38799999999998,
+      "image": "0009-arenaPI.png",
+      "roi_count": 107,
+      "dark_pixels_min_max": [
+        606,
+        625
+      ],
+      "frame_diff_mean_max": 30.07471088435374
+    },
+    "arena-pan": {
+      "agl_min": 1600.02326289647,
+      "agl_max": 1600.02326289647,
+      "first_position": "(1370.0, 1597.922, -1022.0)",
+      "last_position": "(1370.0, 1597.922, -1022.0)",
+      "unready": 0,
+      "p95_ms": 17.09800000000028,
+      "max_ms": 17.37499999999992,
+      "image": "0027-arena-pan.png",
+      "roi_count": 120,
+      "dark_pixels_min_max": [
+        527,
+        697
+      ],
+      "frame_diff_mean_max": 30.727619047619047
+    },
+    "skirt350": {
+      "agl_min": 320.0,
+      "agl_max": 470.0,
+      "first_position": "(0.0, 320.0, 190.0)",
+      "last_position": "(0.0, 470.0, 190.2369)",
+      "unready": 0,
+      "p95_ms": 17.31800000000039,
+      "max_ms": 23.086000000000162,
+      "image": "0050-skirt350.png",
+      "roi_count": 180,
+      "dark_pixels_min_max": [
+        0,
+        137
+      ],
+      "frame_diff_mean_max": 22.47355442176871
+    },
+    "near-tile-cross": {
+      "agl_min": 84.0440450612844,
+      "agl_max": 100.008652533952,
+      "first_position": "(1595.962, 94.46094, -1022.0)",
+      "last_position": "(1944.475, 89.59375, -1021.987)",
+      "unready": 0,
+      "p95_ms": 17.03600000000094,
+      "max_ms": 24.727000000000388,
+      "image": "0080-near-tile-cross.png",
+      "roi_count": 209,
+      "dark_pixels_min_max": [
+        94,
+        150
+      ],
+      "frame_diff_mean_max": 28.380425170068026
+    },
+    "near-ground": {
+      "agl_min": 0.000932371825911105,
+      "agl_max": 0.000941965728998184,
+      "first_position": "(0.000002, 0.000936, 189.8365)",
+      "last_position": "(0.000183, 0.000938, 177.1028)",
+      "unready": 0,
+      "p95_ms": 17.220999999999265,
+      "max_ms": 32.593000000000316,
+      "image": "0105-near-ground.png",
+      "roi_count": 117,
+      "dark_pixels_min_max": [
+        800,
+        4340
+      ],
+      "frame_diff_mean_max": 32.554710884353746
+    }
+  }
+}

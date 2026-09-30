@@ -1,0 +1,112 @@
+{
+	"actual_damage_applied": true,
+	"actual_target": "ecology-r4.2:px/12/2481/1938:tree:27",
+	"ages": {
+		"0.0": 62,
+		"1.0": 113,
+		"2.0": 35
+	},
+	"budget_profile": "conservative-320-260k",
+	"failures": [
+		"damage survives stream unload reload"
+	],
+	"field_sample": {
+		"basin": 0.0,
+		"coast": 0.00205403393035521,
+		"cold": 0.0,
+		"crystal": 0.0,
+		"forest": 0.77229451869518,
+		"height": 236.318102517092,
+		"legacy_weight": 0.0,
+		"moisture": 0.817310263995505,
+		"mountains": 0.0221918936576464,
+		"ocean": 0.0,
+		"river": 0.0,
+		"route_s": 24999.9985888431,
+		"storm": 0.0,
+		"temperature": 0.966367612221788,
+		"uplift": 0.996124988033245,
+		"volcanic": 0.0,
+		"water_depth": 0.0,
+		"water_height": null,
+		"wetland": 0.296027269561468
+	},
+	"habitat": "forest",
+	"performance": {
+		"damage_query_us": 232202,
+		"draw_calls": 82.0,
+		"ecology_stream_us": {
+			"max": 153518.0,
+			"p50": 212.0,
+			"p95": 10681.0,
+			"samples": 650
+		},
+		"frame_interval_ms": {
+			"max": 23.96,
+			"p50": 15.614,
+			"p95": 22.02,
+			"samples": 529
+		},
+		"gpu": "Intel(R) UHD Graphics",
+		"rendered_primitives": 462107.0,
+		"sampling": "rendered-frame interval after physics synchronization; isolated scene, not Main",
+		"static_memory_bytes": 66172289.0
+	},
+	"physical_shapes": 2548,
+	"scope": "actual streamed planet ecology, not Main gameplay performance acceptance",
+	"snapshot": {
+		"asset_revision": "r4",
+		"band_triangles": [
+			0,
+			69878,
+			89946
+		],
+		"cells": 22,
+		"detail_budgets": [
+			100000,
+			70000,
+			90000
+		],
+		"environment_damage": {
+			"dirty": true,
+			"dynamic_fragments": 0,
+			"generation": "ecology-r4.2",
+			"max_dynamic_fragments": 24,
+			"max_persistent_entities": 2048,
+			"modified": 1,
+			"moving_trees": 0,
+			"registered": 216,
+			"save_bound": true,
+			"state_error": ""
+		},
+		"instances": 238,
+		"kinds": {
+			"crystal": 0,
+			"floatrock": 0,
+			"grass": 17,
+			"outcrop": 1,
+			"pebble": 0,
+			"reed": 5,
+			"tree": 215
+		},
+		"max_instances": 320,
+		"max_triangles": 260000,
+		"pending": 497,
+		"range": 900.0,
+		"rejected": {
+			"clearance": 49,
+			"footprint": 0,
+			"legacy": 0,
+			"not_ready": 79,
+			"slope": 0,
+			"water": 0
+		},
+		"triangles": 159824
+	},
+	"species": {
+		"alder": 95,
+		"oak": 14,
+		"pine": 101
+	},
+	"supported_cells": 22
+}

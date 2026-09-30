@@ -1,0 +1,70 @@
+{
+  "current_asset_sha256": "b838cc6716d32569195123b4758d6912a0c650a447b4d6ae8cc5c3da908b9fa0",
+  "current_driver_sha256": "6679ef4df0605ea4182ac66c9cfd92f7c9428220512f20af45ddf1d7150b6c82",
+  "note": "Current-source hashes are not capture-time assertions for earlier clips. See hit-regression/provenance.json for capture-start hashes.",
+  "gifs": {
+    "evidence\\combat-sequence\\front-normal-speed.gif": {
+      "sha256": "09661b9819e7e07a1b6d8932b544924844c493ad48a402afd43202a4ad6253d4",
+      "encoded_frames": 155,
+      "playback_ms": 5170,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\combat-sequence\\side-normal-speed.gif": {
+      "sha256": "0e94180e6b47d14663b8a9582cf3466f4c69fbbf5c7580e52a7cf951998fb7d9",
+      "encoded_frames": 155,
+      "playback_ms": 5170,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\combat-sequence\\three-quarter-normal-speed.gif": {
+      "sha256": "b5d5ba29e7a172de5b69e3d3d3eb4350dadb5eb1e1ec559a91f85d3d38febde0",
+      "encoded_frames": 155,
+      "playback_ms": 5170,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\main-combat\\main-contact-2p0m-normal-speed.gif": {
+      "sha256": "cdc37a46f126fa625e872518e50a7e0dd6feb043442edf9ae8ebe8521d2c873b",
+      "encoded_frames": 101,
+      "playback_ms": 3500,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\main-combat\\main-contact-2p3m-normal-speed.gif": {
+      "sha256": "6d7c4f667e1965fdc544bd4fac3bbe1eec59266bddd6b6b1c7772a758ceffc85",
+      "encoded_frames": 105,
+      "playback_ms": 3500,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\main-combat\\main-hit-side-normal-speed.gif": {
+      "sha256": "cc43d0714cc6aeb3d378d25df361dec124410ec2345b4623eaa3ee68c4055aff",
+      "encoded_frames": 101,
+      "playback_ms": 3500,
+      "capture_fps": 30,
+      "status": "superseded_before_contact_fix"
+    },
+    "evidence\\main-combat\\main-side-normal-speed.gif": {
+      "sha256": "95a29d34fc36889568466a6f2b74aec589e54508727dc04bb7c0e935d336d0b5",
+      "encoded_frames": 105,
+      "playback_ms": 3500,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\main-combat\\main-three-quarter-normal-speed.gif": {
+      "sha256": "922b99fe8021b23df9c1c7827e2197ba8334b1beb40dc84d92b3bcb0c3993742",
+      "encoded_frames": 105,
+      "playback_ms": 3500,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    },
+    "evidence\\hit-regression\\guard-impact-launch-normal-speed.gif": {
+      "sha256": "e6b13a775d70bcd2521434e03168911a23c2e7d127aef58e8eb269d013c58a4b",
+      "encoded_frames": 108,
+      "playback_ms": 3600,
+      "capture_fps": 30,
+      "status": "see_documented_scope"
+    }
+  }
+}

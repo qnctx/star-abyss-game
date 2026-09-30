@@ -1,0 +1,68 @@
+{
+  "test": "TEST-A-R2",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/7ab1/star-abyss-game/artifacts/tests/TEST-A-R2",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-A-R2",
+  "archivedAt": "2026-09-12T08:59:52.274Z",
+  "files": [
+    {
+      "path": "boundaries.tap",
+      "sha256": "beec989a7758d853d4f30184a83962bdf1aa14a6ecc7c2d428dc1a25c1452a22",
+      "bytes": 2131
+    },
+    {
+      "path": "boundaries.test.mjs",
+      "sha256": "a4a83226bb9552c16b57732481cce24bf9d16e28621c02f64f5ad120eca71a0b",
+      "bytes": 8083
+    },
+    {
+      "path": "boundary-observations.json",
+      "sha256": "1d5517aa48d1958458ddcf535fa26754856687411679b9b41cfce6bf9f2d4095",
+      "bytes": 196185
+    },
+    {
+      "path": "developer-tests.tap",
+      "sha256": "7ed0b8c90824a0ce5dc29dac9dfcd5d61fcad8d0587921830fae370d00eda3e0",
+      "bytes": 5076
+    },
+    {
+      "path": "execution-summary.json",
+      "sha256": "d7ce99b76e19d23b6aa3771335b3e42f87e7faa8353e974aa83982f6b05fcb58",
+      "bytes": 1341
+    },
+    {
+      "path": "finalize.cjs",
+      "sha256": "98d0c858ba5dbfe8374917383dfd5fe8bd5da24c8f951653edffbac2641174ff",
+      "bytes": 2074
+    },
+    {
+      "path": "hash-verification.json",
+      "sha256": "a033795eb00bc1e136201b493348b7e048355ef695d0df0289e6e14e230c8c3e",
+      "bytes": 1089
+    },
+    {
+      "path": "independent-observations.json",
+      "sha256": "981fb3198698a4dae6756ebb419fc7ec8db3e1310dc6c8d09bd41c8302762163",
+      "bytes": 130397
+    },
+    {
+      "path": "post-test-hashes.json",
+      "sha256": "a033795eb00bc1e136201b493348b7e048355ef695d0df0289e6e14e230c8c3e",
+      "bytes": 1089
+    },
+    {
+      "path": "r1-independent.tap",
+      "sha256": "17df614b78eda7a59cc9acf5e1507e71d20b11270ecb2c986f18e4f0dc5b73b0",
+      "bytes": 3529
+    },
+    {
+      "path": "r1-independent.test.mjs",
+      "sha256": "3016be5bce2e0c79cdaef2b61d2fca96607fb1bd8e957a1e3fc2b82cea58e041",
+      "bytes": 15586
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "a2a787819e903e9b76f387aedec2c22accb2010247a88ae0000281a3e1e27060",
+      "bytes": 1486
+    }
+  ]
+}

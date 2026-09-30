@@ -1,0 +1,584 @@
+[
+	{
+		"anchors": [
+			{
+				"kind": "cold",
+				"lod": 0,
+				"max_lift": 0.415,
+				"position": "(-36207.83, -9431.742, -34375.55)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "cold",
+				"lod": 0,
+				"max_lift": 0.415,
+				"position": "(-36153.77, -9654.023, -34442.27)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "cold",
+				"lod": 0,
+				"max_lift": 0.415,
+				"position": "(-36124.1, -9519.969, -34444.15)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36263.37, -9263.758, -34351.28)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36180.86, -9215.297, -34438.14)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 0,
+				"max_lift": 0.415,
+				"position": "(-36295.55, -9643.906, -34318.1)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36243.81, -9100.781, -34394.99)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 0,
+				"max_lift": 0.415,
+				"position": "(-36337.66, -9418.633, -34256.91)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36162.97, -9017.313, -34475.86)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36370.05, -9101.914, -34275.44)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36075.05, -9156.391, -34547.98)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36401.86, -9210.461, -34230.79)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36018.2, -9660.0, -34560.1)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35993.88, -9466.516, -34570.63)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36087.71, -8950.992, -34532.49)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36463.79, -9470.766, -34138.99)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36489.66, -9101.852, -34165.94)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36498.12, -9637.93, -34149.42)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35918.78, -9682.844, -34660.54)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35939.16, -9259.531, -34657.33)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36514.89, -9303.531, -34114.61)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35869.29, -9606.555, -34677.09)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36561.99, -9463.5, -34055.12)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35833.21, -9682.969, -34731.98)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-35862.21, -9177.852, -34740.68)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "cold",
+				"lod": 1,
+				"max_lift": 0.415,
+				"position": "(-36603.1, -9596.133, -34034.12)",
+				"surface_vertices": 45
+			}
+		],
+		"clearance_max": 0.435293972492218,
+		"clearance_min": 0.0429256930947304,
+		"colliders": 0,
+		"kinds": {
+			"cold": 26,
+			"volcanic": 0
+		},
+		"max_build_usec": 12562,
+		"max_patches": 42,
+		"max_triangles": 44000,
+		"patches": 26,
+		"pending": 6,
+		"range": 620.0,
+		"reference": "12-special-regions.png",
+		"region": "cold",
+		"rejected": {
+			"budget": 0,
+			"region": 0,
+			"slope": 58,
+			"unloaded": 33
+		},
+		"triangles": 12544
+	},
+	{
+		"after_unload": {
+			"anchors": [],
+			"colliders": 0,
+			"kinds": {
+				"cold": 0,
+				"volcanic": 0
+			},
+			"max_build_usec": 12562,
+			"max_patches": 42,
+			"max_triangles": 44000,
+			"patches": 0,
+			"pending": 0,
+			"range": 620.0,
+			"reference": "12-special-regions.png",
+			"rejected": {
+				"budget": 0,
+				"region": 0,
+				"slope": 58,
+				"unloaded": 33
+			},
+			"triangles": 0
+		}
+	},
+	{
+		"anchors": [
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54222.73, -12500.92, 16234.81)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54095.15, -12436.58, 16284.05)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54094.79, -12434.98, 16346.59)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54216.34, -12494.42, 16396.93)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54214.08, -12490.87, 16164.55)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54290.87, -12529.32, 16267.97)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54113.52, -12435.13, 16137.54)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54024.64, -12390.33, 16270.96)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54215.64, -12472.51, 16469.71)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54311.77, -12527.8, 16152.25)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 0,
+				"max_lift": 0.215,
+				"position": "(-54004.39, -12373.55, 16368.94)",
+				"surface_vertices": 135
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54005.62, -12367.73, 16166.19)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54122.45, -12424.88, 16061.82)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54045.14, -12387.74, 16480.13)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54221.48, -12472.6, 16048.33)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54032.53, -12370.73, 16078.71)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54427.55, -12569.34, 16245.48)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54426.59, -12563.2, 16378.65)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53954.2, -12326.69, 16162.66)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53919.66, -12306.99, 16258.49)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53920.59, -12307.32, 16365.88)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54334.18, -12509.68, 16020.85)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53945.89, -12316.8, 16472.66)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54451.14, -12567.05, 16154.67)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54213.36, -12439.23, 15949.53)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54404.4, -12531.7, 16024.71)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54149.94, -12397.34, 15926.1)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54063.07, -12352.52, 15951.32)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54312.16, -12473.86, 15929.21)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53853.58, -12246.19, 16266.97)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53871.19, -12253.41, 16171.62)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53952.14, -12291.63, 16021.86)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53844.56, -12235.38, 16401.49)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54308.83, -12267.77, 16752.31)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53849.27, -12232.1, 16472.3)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54543.71, -12378.68, 16662.86)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54471.12, -12529.77, 15957.37)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54243.52, -12226.94, 16783.32)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54414.54, -12301.81, 16767.19)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-53983.51, -12269.92, 15918.85)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54598.19, -12397.02, 16647.38)",
+				"surface_vertices": 45
+			},
+			{
+				"kind": "volcanic",
+				"lod": 1,
+				"max_lift": 0.215,
+				"position": "(-54264.89, -12408.18, 15829.3)",
+				"surface_vertices": 45
+			}
+		],
+		"clearance_max": 0.231901451945305,
+		"clearance_min": 0.0339670442044735,
+		"colliders": 11,
+		"kinds": {
+			"cold": 0,
+			"volcanic": 42
+		},
+		"max_build_usec": 12654,
+		"max_patches": 42,
+		"max_triangles": 44000,
+		"patches": 42,
+		"pending": 42,
+		"range": 620.0,
+		"reference": "12-special-regions.png",
+		"region": "volcanic",
+		"rejected": {
+			"budget": 0,
+			"region": 0,
+			"slope": 67,
+			"unloaded": 38
+		},
+		"triangles": 14836
+	},
+	{
+		"after_unload": {
+			"anchors": [],
+			"colliders": 0,
+			"kinds": {
+				"cold": 0,
+				"volcanic": 0
+			},
+			"max_build_usec": 12654,
+			"max_patches": 42,
+			"max_triangles": 44000,
+			"patches": 0,
+			"pending": 0,
+			"range": 620.0,
+			"reference": "12-special-regions.png",
+			"rejected": {
+				"budget": 0,
+				"region": 0,
+				"slope": 67,
+				"unloaded": 38
+			},
+			"triangles": 0
+		}
+	},
+	{
+		"checks": 6934,
+		"failures": [],
+		"field_r3_sha256": "27d1b8776bf245edc3a44ac6cd90e318be4a7442961775c02505df110e04cabc",
+		"field_sha256": "3e2b934bb509f021e0f392a585c58e02953323e14060234bf39bc210a4e42af7"
+	}
+]

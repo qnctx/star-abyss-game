@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-29T13:49:41.981027+00:00",
+  "root": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game",
+  "argv": [
+    "godot/tests/terrain_r3_independent_capture.py",
+    "--snapshot-only"
+  ],
+  "phase": "pre-freeze preparation; NOT final acceptance",
+  "production_files": 6595
+}

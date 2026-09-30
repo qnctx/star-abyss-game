@@ -1,0 +1,78 @@
+{
+  "label": "tuned",
+  "viewport": "1440x900 headless Chromium (software-rendering environment; not hardware FPS)",
+  "renderRatio": 0.65,
+  "frameMs": {
+    "p50": 383.3000000000011,
+    "p95": 483.2999999999993,
+    "max": 483.40000000000146
+  },
+  "drawCalls": 161,
+  "triangles": 379840,
+  "hotspots": [
+    [
+      "(program) @ native",
+      24766
+    ],
+    [
+      "V0 @ game.js?v=c2-asset-perf-20260908",
+      112
+    ],
+    [
+      "p @ game.js?v=c2-asset-perf-20260908",
+      44
+    ],
+    [
+      "S4 @ game.js?v=c2-asset-perf-20260908",
+      36
+    ],
+    [
+      "(anonymous) @ game.js?v=c2-asset-perf-20260908",
+      32
+    ],
+    [
+      "f9 @ game.js?v=c2-asset-perf-20260908",
+      21
+    ],
+    [
+      "X @ game.js?v=c2-asset-perf-20260908",
+      14
+    ],
+    [
+      "query @ game.js?v=c2-asset-perf-20260908",
+      12
+    ],
+    [
+      "a @ game.js?v=c2-asset-perf-20260908",
+      11
+    ],
+    [
+      "fd @ game.js?v=c2-asset-perf-20260908",
+      9
+    ],
+    [
+      "setSize @ game.js?v=c2-asset-perf-20260908",
+      9
+    ],
+    [
+      "m @ game.js?v=c2-asset-perf-20260908",
+      8
+    ],
+    [
+      "Kn @ game.js?v=c2-asset-perf-20260908",
+      8
+    ],
+    [
+      "multiplyMatrices @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "i0 @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "ci @ game.js?v=c2-asset-perf-20260908",
+      7
+    ]
+  ]
+}

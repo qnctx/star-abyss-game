@@ -1,0 +1,1 @@
+const fs=require('fs');let [file,start,end]=process.argv.slice(2);console.log(fs.readFileSync(file,'utf8').split(/\r?\n/).slice(Number(start)-1,Number(end)).map((s,i)=>`${Number(start)+i}: ${s}`).join('\n'));

@@ -1,0 +1,5 @@
+const r=require('./r11-candidate/report.json');
+console.log('hash',r.bundleSHA,r.assetSHA,'clips',r.visualClips,'ground',r.groundAttackKinds,'air',r.airAttackKinds);
+for(const s of r.samples){if(/^(spawn|ground-punch|G-ascent|air-pursuit|air-before|air-punch|C-descend|enemy-landing|both-ground|dead-or|H-pickup|reload)/.test(s.label))console.log(s.label,'t',s.combat?.time?.toFixed(2),'agl',s.flight?.agl,'flight',s.flight?.active,'mode',s.enemy?.mode,'phase',s.enemy?.phase,'y',s.enemy?.y?.toFixed(2),'playerY',s.player?.y?.toFixed(2),'d',s.enemy&&s.player?Math.hypot(s.enemy.x-s.player.x,s.enemy.y-s.player.y,s.enemy.z-s.player.z).toFixed(2):'-','hp',s.enemy?.hp,'clip',s.riftwing?.[0]?.clip,'visible',s.riftwing?.[0]?.visible);}
+console.log('takeoff',r.takeoff,'landingLast',r.landing?.at(-1),'finishing',r.finishing?.length,r.finishing?.at(-1),'loot',r.loot,'reload',r.reload);
+for(const l of ['spawn-ground','air-contact','both-ground','dead-or-timeout'])console.log('UI',l,r.samples.find(x=>x.label===l)?.ui);

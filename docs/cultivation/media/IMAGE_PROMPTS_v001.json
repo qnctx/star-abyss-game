@@ -1,0 +1,8 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Asset type: illustrated design book spread for Chinese science-fantasy cultivation game Star Abyss. Create a polished wide landscape triptych, three equal panels separated by subtle margins, no text or lettering. Left panel: exactly three full-body incarnations of the SAME explorer cultivator, original at center with worn ivory asymmetrical armor, dark brown textile suit, sleek opaque black helmet visor, two translucent cyan and warm gold spiritual doubles flanking him, thin energy cords indicating shared origin, convincing human anatomy and textured garments. Middle panel: the same single cultivator after fusion, luminous interlocking gold/cyan rings close to torso, two subtle streams merging into chest, standing in shattered ancient space observatory, powerful but readable silhouette. Right panel: an impossibly rare relic discovery inside an abandoned meteor temple: a broken black sword floating over a stone altar beside a tiny white-and-midnight nine-tail fox spirit with a small crescent marking, distant nebula visible through ruin ceiling. Style: premium grounded 3D game concept painting, realistic cloth, ceramic armor, worn metal, restrained volumetric light, dark teal and warm parchment-gold palette. Three panels must clearly communicate summon / fuse / discover, no UI, no logos, no watermark, no fake screenshots, no text. Keep all subjects uncropped and detailed.",
+  "output": "mythic-triptych-v001.png",
+  "source": "C:/Users/HUAWEI/.codex/generated_images/01a090fe-cd9e-74b1-98e8-ded5dfef303c/exec-b9d50e15-dd1c-44db-b224-d59317ab3849.png",
+  "kind": "concept",
+  "note": "Not a generated 3D asset or game screenshot."
+}

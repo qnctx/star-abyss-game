@@ -1,0 +1,3288 @@
+
+> test
+> node tools/test-cpu.cjs
+
+CPU test files: 89
+TAP version 13
+# Subtest: authored stairs support real walking to each NPC entrance and a return to ground
+ok 1 - authored stairs support real walking to each NPC entrance and a return to ground
+  ---
+  duration_ms: 2054.085
+  ...
+# Subtest: a transient contact frame does not erase a raised stair step or allow climbing a side wall
+ok 2 - a transient contact frame does not erase a raised stair step or allow climbing a side wall
+  ---
+  duration_ms: 1444.9747
+  ...
+# Subtest: N02 menus and nearby player freeze the rendered activity point
+ok 3 - N02 menus and nearby player freeze the rendered activity point
+  ---
+  duration_ms: 1.3998
+  ...
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:95e413ba-910c-4564-9e2b-0dc90b36fade
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:965eb4ba-bed0-4c55-a861-7e6306358e9b
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:e94a42a1-14d0-4260-9f4e-f8fcf2d8cf7b
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:43b9e1e6-b453-4603-a60d-462600f9c539
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:71526403-6286-411a-960a-cea45b12f158
+# THREE.GLTFLoader: Couldn't load texture blob:nodedata:e85d1273-2f56-4c30-a084-515d8a64cd4f
+# Subtest: delivered physician GLB uses the same legged rig and keeps a stable position during dialogue
+ok 4 - delivered physician GLB uses the same legged rig and keeps a stable position during dialogue
+  ---
+  duration_ms: 833.0762
+  ...
+# Subtest: N02 near view and CAS authorization follow the live position while the menu is open
+ok 5 - N02 near view and CAS authorization follow the live position while the menu is open
+  ---
+  duration_ms: 20.1856
+  ...
+# Subtest: first animated change refreshes immediately, subsequent frame changes coalesce to 10 Hz
+ok 6 - first animated change refreshes immediately, subsequent frame changes coalesce to 10 Hz
+  ---
+  duration_ms: 1.8105
+  ...
+# Subtest: a pending change survives a missing timestamp and a restarted simulation clock
+ok 7 - a pending change survives a missing timestamp and a restarted simulation clock
+  ---
+  duration_ms: 1.0311
+  ...
+# Subtest: NPC and physician dialogs keep a fixed close control and connected actions
+ok 8 - NPC and physician dialogs keep a fixed close control and connected actions
+  ---
+  duration_ms: 7.2439
+  ...
+# Subtest: 3D labels stay compact, appear only nearby and hide during either dialog
+ok 9 - 3D labels stay compact, appear only nearby and hide during either dialog
+  ---
+  duration_ms: 23.4376
+  ...
+# Subtest: 真实采集、玩家击杀、血样调查构成首次远征；重复交付不发奖
+ok 10 - 真实采集、玩家击杀、血样调查构成首次远征；重复交付不发奖
+  ---
+  duration_ms: 182.48
+  ...
+# Subtest: 精炼使用真实铁陨；消耗后仍可追溯采集，写入失败可重试
+ok 11 - 精炼使用真实铁陨；消耗后仍可追溯采集，写入失败可重试
+  ---
+  duration_ms: 61.5173
+  ...
+# Subtest: 背包满时奖励和扣料全量回滚
+ok 12 - 背包满时奖励和扣料全量回滚
+  ---
+  duration_ms: 32.2547
+  ...
+# Subtest: 旧存档不追溯离线；72小时结算与时间回拨不能重复收益
+ok 13 - 旧存档不追溯离线；72小时结算与时间回拨不能重复收益
+  ---
+  duration_ms: 123.5989
+  ...
+# Subtest: 三节点真实计时、校准、满槽后突破同一角色；不跨境囤积
+ok 14 - 三节点真实计时、校准、满槽后突破同一角色；不跨境囤积
+  ---
+  duration_ms: 37.7566
+  ...
+# Subtest: 同一事务重试返回旧receipt；并发不同事务只可成功一次
+ok 15 - 同一事务重试返回旧receipt；并发不同事务只可成功一次
+  ---
+  duration_ms: 28.8953
+  ...
+# Subtest: N04精炼材料出售、有限库存购买、1:100兑换可逆且不会额外发币
+ok 16 - N04精炼材料出售、有限库存购买、1:100兑换可逆且不会额外发币
+  ---
+  duration_ms: 83.0201
+  ...
+# Subtest: runtime重新检查距离/视线/朝向/落地，走开取消真实站定计时
+ok 17 - runtime重新检查距离/视线/朝向/落地，走开取消真实站定计时
+  ---
+  duration_ms: 2.1735
+  ...
+# Subtest: 快速验收夹具拒绝正式档，不注入任务/物资/试炼完成证据
+ok 18 - 快速验收夹具拒绝正式档，不注入任务/物资/试炼完成证据
+  ---
+  duration_ms: 2.5268
+  ...
+# Subtest: 远程菜单不能冒用营地停放坐标进行任何成长事务
+ok 19 - 远程菜单不能冒用营地停放坐标进行任何成长事务
+  ---
+  duration_ms: 3.4754
+  ...
+# Subtest: missing NPC manifests cause zero fetch and no NPC interaction/collision; existing relay clones are ready
+ok 20 - missing NPC manifests cause zero fetch and no NPC interaction/collision; existing relay clones are ready
+  ---
+  duration_ms: 15.5615
+  ...
+# Subtest: delivered model heads/chest animate but root does not swivel; load failure remains fail closed
+ok 21 - delivered model heads/chest animate but root does not swivel; load failure remains fail closed
+  ---
+  duration_ms: 33.9619
+  ...
+# Subtest: skeletal weights finite and normalized, no root movement
+ok 22 - skeletal weights finite and normalized, no root movement
+  ---
+  duration_ms: 6.9139
+  ...
+# Subtest: real shared world collision blocks nodes, front-side LOS can still authorize tuning
+ok 23 - real shared world collision blocks nodes, front-side LOS can still authorize tuning
+  ---
+  duration_ms: 8.5234
+  ...
+# Subtest: all camp placements have supported, unobstructed original ground and a reachable front approach
+ok 24 - all camp placements have supported, unobstructed original ground and a reachable front approach
+  ---
+  duration_ms: 2.6434
+  ...
+# Subtest: moving NPC capsule has no fake foot platform and visibility disables collision with one invalidation
+ok 25 - moving NPC capsule has no fake foot platform and visibility disables collision with one invalidation
+  ---
+  duration_ms: 7.2305
+  ...
+# Subtest: skeletal animation requests a dynamic shadow refresh; visibility changes remain immediate
+ok 26 - skeletal animation requests a dynamic shadow refresh; visibility changes remain immediate
+  ---
+  duration_ms: 5.5694
+  ...
+# Subtest: cruise remains upright while boost rotates whole pelvis axis forward almost horizontally
+ok 27 - cruise remains upright while boost rotates whole pelvis axis forward almost horizontally
+  ---
+  duration_ms: 3.3686
+  ...
+# Subtest: fast alternating bank requests keep animation quaternion transitions bounded and preserve boost lean
+ok 28 - fast alternating bank requests keep animation quaternion transitions bounded and preserve boost lean
+  ---
+  duration_ms: 25.3999
+  ...
+# Subtest: contact frame maps to authored .45 peak and reaction overrides offense
+ok 29 - contact frame maps to authored .45 peak and reaction overrides offense
+  ---
+  duration_ms: 2.1155
+  ...
+# Subtest: combo recovery keeps a ready arm pose across the cast gap and releases on guard or idle
+ok 30 - combo recovery keeps a ready arm pose across the cast gap and releases on guard or idle
+  ---
+  duration_ms: 1.565
+  ...
+# Subtest: 3D aim is finite, altitude matters, and occlusion rejects even a geometrically aligned target
+ok 31 - 3D aim is finite, altitude matters, and occlusion rejects even a geometrically aligned target
+  ---
+  duration_ms: 4.2679
+  ...
+# Subtest: flight R commits a real 3D hit and defeat materializes durable ground loot
+ok 32 - flight R commits a real 3D hit and defeat materializes durable ground loot
+  ---
+  duration_ms: 198.0569
+  ...
+# Subtest: telegraphed scavenger bolt can be dodged during windup and can damage a hovering player
+ok 33 - telegraphed scavenger bolt can be dodged during windup and can damage a hovering player
+  ---
+  duration_ms: 46.1201
+  ...
+# Subtest: airborne slot 2 remains learning-gated and its real H2 projectile follows vertical aim
+ok 34 - airborne slot 2 remains learning-gated and its real H2 projectile follows vertical aim
+  ---
+  duration_ms: 133.46
+  ...
+# Subtest: off-zone flight cannot cast; R8 local blast damages two actors in one root revision
+ok 35 - off-zone flight cannot cast; R8 local blast damages two actors in one root revision
+  ---
+  duration_ms: 100.4167
+  ...
+# Subtest: leaving the combat chart during windup cancels the committed attack without delayed damage
+ok 36 - leaving the combat chart during windup cancels the committed attack without delayed damage
+  ---
+  duration_ms: 20.0204
+  ...
+# Subtest: R8 cannot leave its local aim behind and damage actors hundreds of metres away
+ok 37 - R8 cannot leave its local aim behind and damage actors hundreds of metres away
+  ---
+  duration_ms: 44.0317
+  ...
+# Subtest: close aerial W has controllable sub-metre 0.2s travel; Shift deliberately exits footwork
+ok 38 - close aerial W has controllable sub-metre 0.2s travel; Shift deliberately exits footwork
+  ---
+  duration_ms: 8.5788
+  ...
+# Subtest: footwork ignores distant, vertical-separated and dead targets, with Ctrl precise flight anywhere
+ok 39 - footwork ignores distant, vertical-separated and dead targets, with Ctrl precise flight anywhere
+  ---
+  duration_ms: 0.4215
+  ...
+# Subtest: punch and kick need body-distance, facing, height and visible contact; guard has a real parry and break window
+ok 40 - punch and kick need body-distance, facing, height and visible contact; guard has a real parry and break window
+  ---
+  duration_ms: 3.5395
+  ...
+# Subtest: arena sparring uses a real spawned actor, isolated world ID and validated CAS scene
+ok 41 - arena sparring uses a real spawned actor, isolated world ID and validated CAS scene
+  ---
+  duration_ms: 24.0664
+  ...
+# Subtest: flying melee commits a costed punch and hit, then eases the real opponent position
+ok 42 - flying melee commits a costed punch and hit, then eases the real opponent position
+  ---
+  duration_ms: 62.2723
+  ...
+# Subtest: hold guard clears on key release and cannot remain active after leaving flight
+ok 43 - hold guard clears on key release and cannot remain active after leaving flight
+  ---
+  duration_ms: 24.5001
+  ...
+# Subtest: a timed airborne guard parries an actual lunge without a damage receipt, then opens an uppercut counter
+ok 44 - a timed airborne guard parries an actual lunge without a damage receipt, then opens an uppercut counter
+  ---
+  duration_ms: 41.0968
+  ...
+# Subtest: a confirmed jab interrupts a pending lunge in the same saved hit transaction
+ok 45 - a confirmed jab interrupts a pending lunge in the same saved hit transaction
+  ---
+  duration_ms: 35.9748
+  ...
+# Subtest: three separate N presses commit punch, punch, kick casts against the same real actor
+ok 46 - three separate N presses commit punch, punch, kick casts against the same real actor
+  ---
+  duration_ms: 69.4509
+  ...
+# Subtest: hitstun gates R and learned-skill input while the player is still airborne
+ok 47 - hitstun gates R and learned-skill input while the player is still airborne
+  ---
+  duration_ms: 27.7425
+  ...
+# Subtest: one N pressed during a checkpoint is consumed once; repeats, expiry and menus cannot chain it
+ok 48 - one N pressed during a checkpoint is consumed once; repeats, expiry and menus cannot chain it
+  ---
+  duration_ms: 28.6267
+  ...
+# Subtest: one N in the final 0.2 seconds of melee recovery advances only one combo step
+ok 49 - one N in the final 0.2 seconds of melee recovery advances only one combo step
+  ---
+  duration_ms: 28.001
+  ...
+# Subtest: an early click during windup is held through recovery, one click per next cast
+ok 50 - an early click during windup is held through recovery, one click per next cast
+  ---
+  duration_ms: 41.1894
+  ...
+# Subtest: a second click during the first cast CAS is queued, but not if that cast fails
+ok 51 - a second click during the first cast CAS is queued, but not if that cast fails
+  ---
+  duration_ms: 28.5662
+  ...
+# Subtest: a click during the authoritative hit CAS remains the one buffered follow-up
+ok 52 - a click during the authoritative hit CAS remains the one buffered follow-up
+  ---
+  duration_ms: 46.9755
+  ...
+# Subtest: an old R8 scene without melee state survives a rejected CAS and can retry
+ok 53 - an old R8 scene without melee state survives a rejected CAS and can retry
+  ---
+  duration_ms: 7.0722
+  ...
+# Subtest: committed aerial impact moves the player by the metre displacement over 0.55 simulation seconds
+ok 54 - committed aerial impact moves the player by the metre displacement over 0.55 simulation seconds
+  ---
+  duration_ms: 7338.7823
+  ...
+# Subtest: reset and rescue discard any pending recoil; no replay after restore or landing
+ok 55 - reset and rescue discard any pending recoil; no replay after restore or landing
+  ---
+  duration_ms: 7974.7646
+  ...
+# Subtest: the runtime obeys authoritative swept collision and never applies a blocked recoil
+ok 56 - the runtime obeys authoritative swept collision and never applies a blocked recoil
+  ---
+  duration_ms: 7528.2005
+  ...
+# Subtest: real six GLBs load; combat VFX uses authoritative aim/time and cancels with the cast
+ok 57 - real six GLBs load; combat VFX uses authoritative aim/time and cancels with the cast
+  ---
+  duration_ms: 41.3899
+  ...
+# Subtest: R4 stays 48→420; R4–R9 boost and cruise caps taper smoothly near ground
+ok 58 - R4 stays 48→420; R4–R9 boost and cruise caps taper smoothly near ground
+  ---
+  duration_ms: 2.7669
+  ...
+# Subtest: boost uses separate flight energy; low energy falls back to realm cruise
+ok 59 - boost uses separate flight energy; low energy falls back to realm cruise
+  ---
+  duration_ms: 3.5162
+  ...
+# Subtest: boost visual state clears on collision and landing and is never saved
+ok 60 - boost visual state clears on collision and landing and is never saved
+  ---
+  duration_ms: 2.5354
+  ...
+# Subtest: spherical R6 short and R9 long advance through real adapter and commit once
+ok 61 - spherical R6 short and R9 long advance through real adapter and commit once
+  ---
+  duration_ms: 107.9587
+  ...
+# Subtest: wall, pending chunk, unsafe surface, energy and cooldown reject without mutation
+ok 62 - wall, pending chunk, unsafe surface, energy and cooldown reject without mutation
+  ---
+  duration_ms: 1.673
+  ...
+# Subtest: confirm revalidates changed streaming and preserves state on failure
+ok 63 - confirm revalidates changed streaming and preserves state on failure
+  ---
+  duration_ms: 2.2706
+  ...
+# Subtest: ability time and cooldown survive save/restore, old v1 saves migrate to zero
+ok 64 - ability time and cooldown survive save/restore, old v1 saves migrate to zero
+  ---
+  duration_ms: 1.4107
+  ...
+# Subtest: simulation cooldown clock runs on ground ticks without double-counting flight or paused frames
+ok 65 - simulation cooldown clock runs on ground ticks without double-counting flight or paused frames
+  ---
+  duration_ms: 0.303
+  ...
+# Subtest: four contact materials synthesize finite bounded transients at supported sample rates
+ok 66 - four contact materials synthesize finite bounded transients at supported sample rates
+  ---
+  duration_ms: 229.9881
+  ...
+# Subtest: dust, gravel, stone and metal differ in waveform, energy and texture
+ok 67 - dust, gravel, stone and metal differ in waveform, energy and texture
+  ---
+  duration_ms: 11.7987
+  ...
+# Subtest: outdoor transmission attenuates high frequencies and level; cabin reflection remains short
+ok 68 - outdoor transmission attenuates high frequencies and level; cabin reflection remains short
+  ---
+  duration_ms: 16.2922
+  ...
+# Subtest: same contact is deterministic; feet and successive contacts have bounded variation
+ok 69 - same contact is deterministic; feet and successive contacts have bounded variation
+  ---
+  duration_ms: 24.9597
+  ...
+# Subtest: running load is stronger, landing longer; zero load is silent and force is bounded
+ok 70 - running load is stronger, landing longer; zero load is silent and force is bounded
+  ---
+  duration_ms: 41.7799
+  ...
+# Subtest: invalid or legacy pace calls cannot produce a footstep
+ok 71 - invalid or legacy pace calls cannot produce a footstep
+  ---
+  duration_ms: 2.9828
+  ...
+# Subtest: playback requires wake and does not replay contacts missed before wake
+ok 72 - playback requires wake and does not replay contacts missed before wake
+  ---
+  duration_ms: 2.3135
+  ...
+# Subtest: one contact produces one noise buffer, slight left/right pan, immutable diagnostics
+ok 73 - one contact produces one noise buffer, slight left/right pan, immutable diagnostics
+  ---
+  duration_ms: 8.5022
+  ...
+# Subtest: pause quickly fades pending audio and never queues or catches up old contacts
+ok 74 - pause quickly fades pending audio and never queues or catches up old contacts
+  ---
+  duration_ms: 15.2409
+  ...
+# Subtest: muting stops tails, silent contacts are consumed and reset permits a fresh game
+ok 75 - muting stops tails, silent contacts are consumed and reset permits a fresh game
+  ---
+  duration_ms: 4.0634
+  ...
+# Subtest: rock collisions are throttled contact noise while intentional device feedback stays electronic
+ok 76 - rock collisions are throttled contact noise while intentional device feedback stays electronic
+  ---
+  duration_ms: 8.8979
+  ...
+# Subtest: stalled-frame contact burst is bounded and dropped contacts are never queued
+ok 77 - stalled-frame contact burst is bounded and dropped contacts are never queued
+  ---
+  duration_ms: 18.4696
+  ...
+# Subtest: monotonic numeric contacts cannot replay after a long muted interval
+ok 78 - monotonic numeric contacts cannot replay after a long muted interval
+  ---
+  duration_ms: 2.1123
+  ...
+# Subtest: collision material and enclosed environment choose metal structure instead of outdoor rock
+ok 79 - collision material and enclosed environment choose metal structure instead of outdoor rock
+  ---
+  duration_ms: 4.6963
+  ...
+# Subtest: forward adaptation is exact; back and side poses bend knees and preserve non-crossing feet throughout the cycle
+ok 80 - forward adaptation is exact; back and side poses bend knees and preserve non-crossing feet throughout the cycle
+  ---
+  duration_ms: 221.7214
+  ...
+# Subtest: idle: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 81 - idle: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 11.8456
+  ...
+# Subtest: walk: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 82 - walk: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 10.0464
+  ...
+# Subtest: jog: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 83 - jog: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 9.5138
+  ...
+# Subtest: sprint: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 84 - sprint: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 7.5773
+  ...
+# Subtest: flight: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 85 - flight: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 7.9674
+  ...
+# Subtest: seated: licensed whole-body frames, normalized quaternions and fixed bone lengths
+ok 86 - seated: licensed whole-body frames, normalized quaternions and fixed bone lengths
+  ---
+  duration_ms: 6.2571
+  ...
+# Subtest: loop seams are continuous and jog/sprint are different full-body clips
+ok 87 - loop seams are continuous and jog/sprint are different full-body clips
+  ---
+  duration_ms: 1.1272
+  ...
+# Subtest: 1.65 m/s forward: directional pose preserves body heading and physics
+ok 88 - 1.65 m/s forward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 37.9744
+  ...
+# Subtest: 1.65 m/s backward: directional pose preserves body heading and physics
+ok 89 - 1.65 m/s backward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 35.2239
+  ...
+# Subtest: 1.65 m/s left: directional pose preserves body heading and physics
+ok 90 - 1.65 m/s left: directional pose preserves body heading and physics
+  ---
+  duration_ms: 27.0122
+  ...
+# Subtest: 1.65 m/s right: directional pose preserves body heading and physics
+ok 91 - 1.65 m/s right: directional pose preserves body heading and physics
+  ---
+  duration_ms: 29.0752
+  ...
+# Subtest: 4.7 m/s forward: directional pose preserves body heading and physics
+ok 92 - 4.7 m/s forward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 21.0612
+  ...
+# Subtest: 4.7 m/s backward: directional pose preserves body heading and physics
+ok 93 - 4.7 m/s backward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 25.3715
+  ...
+# Subtest: 4.7 m/s left: directional pose preserves body heading and physics
+ok 94 - 4.7 m/s left: directional pose preserves body heading and physics
+  ---
+  duration_ms: 37.6631
+  ...
+# Subtest: 4.7 m/s right: directional pose preserves body heading and physics
+ok 95 - 4.7 m/s right: directional pose preserves body heading and physics
+  ---
+  duration_ms: 16.182
+  ...
+# Subtest: 8.6 m/s forward: directional pose preserves body heading and physics
+ok 96 - 8.6 m/s forward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 18.1855
+  ...
+# Subtest: 8.6 m/s backward: directional pose preserves body heading and physics
+ok 97 - 8.6 m/s backward: directional pose preserves body heading and physics
+  ---
+  duration_ms: 20.2608
+  ...
+# Subtest: 8.6 m/s left: directional pose preserves body heading and physics
+ok 98 - 8.6 m/s left: directional pose preserves body heading and physics
+  ---
+  duration_ms: 23.8547
+  ...
+# Subtest: 8.6 m/s right: directional pose preserves body heading and physics
+ok 99 - 8.6 m/s right: directional pose preserves body heading and physics
+  ---
+  duration_ms: 21.9157
+  ...
+# Subtest: start, stop and turn blend whole-body poses, idle breathes without footstep loops
+ok 100 - start, stop and turn blend whole-body poses, idle breathes without footstep loops
+  ---
+  duration_ms: 16.71
+  ...
+# Subtest: C2 mineral panels are closed on front, back and curved edges
+ok 101 - C2 mineral panels are closed on front, back and curved edges
+  ---
+  duration_ms: 116.0169
+  ...
+# Subtest: tailored limbs and rounded boot uppers have finite geometry and closed soles
+ok 102 - tailored limbs and rounded boot uppers have finite geometry and closed soles
+  ---
+  duration_ms: 20.1364
+  ...
+# Subtest: each location exposes three deterministic, understandable phase clues with an independent session
+ok 103 - each location exposes three deterministic, understandable phase clues with an independent session
+  ---
+  duration_ms: 10.4059
+  ...
+# Subtest: manual compensation of visible clues aligns all three channels, including reverse isolation at 180 degrees
+ok 104 - manual compensation of visible clues aligns all three channels, including reverse isolation at 180 degrees
+  ---
+  duration_ms: 1.2819
+  ...
+# Subtest: residual follows shortest circular distance, so a wrap-around near zero is not nearly a full-turn error
+ok 105 - residual follows shortest circular distance, so a wrap-around near zero is not nearly a full-turn error
+  ---
+  duration_ms: 0.2795
+  ...
+# Subtest: input rejects coercions, fractional steps, invalid ranges and unknown channels without mutating the session
+ok 106 - input rejects coercions, fractional steps, invalid ranges and unknown channels without mutating the session
+  ---
+  duration_ms: 0.6631
+  ...
+# Subtest: unknown profiles and malformed session/value shapes cannot create a ready measurement
+ok 107 - unknown profiles and malformed session/value shapes cannot create a ready measurement
+  ---
+  duration_ms: 0.5043
+  ...
+# Subtest: read views are independent copies and cannot alter the source clue or session by mutation
+ok 108 - read views are independent copies and cannot alter the source clue or session by mutation
+  ---
+  duration_ms: 0.3721
+  ...
+# Subtest: the original clock gates field tuning and two fresh samples gate reverse isolation; completed locations permit retesting
+ok 109 - the original clock gates field tuning and two fresh samples gate reverse isolation; completed locations permit retesting
+  ---
+  duration_ms: 0.5777
+  ...
+# (node:22808) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/star-abyss-backups/review-20260930-source/playable/tests/character-retarget.test.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to E:\\star-abyss-backups\\review-20260930-source\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: native bind preserves geometry when avatar loads away from world origin
+ok 110 - native bind preserves geometry when avatar loads away from world origin
+  ---
+  duration_ms: 7.5408
+  ...
+# Subtest: motion transfer keeps authored bone lengths throughout walk and sprint
+ok 111 - motion transfer keeps authored bone lengths throughout walk and sprint
+  ---
+  duration_ms: 34.171
+  ...
+# Subtest: in-flight checkpoint does not block or rewind player; queued pause persists newest pose
+ok 112 - in-flight checkpoint does not block or rewind player; queued pause persists newest pose
+  ---
+  duration_ms: 23.303
+  ...
+# Subtest: checkpoint failure is visible and keeps previous durable record; next explicit checkpoint recovers
+ok 113 - checkpoint failure is visible and keeps previous durable record; next explicit checkpoint recovers
+  ---
+  duration_ms: 14.1167
+  ...
+# Subtest: worker unavailable or constructor denied returns reliable pre-write fallback
+ok 114 - worker unavailable or constructor denied returns reliable pre-write fallback
+  ---
+  duration_ms: 0.8268
+  ...
+# Subtest: worker boot failure closes worker before fallback
+ok 115 - worker boot failure closes worker before fallback
+  ---
+  duration_ms: 0.7693
+  ...
+# Subtest: unobstructed tracking follows lateral target changes without cached goal delay
+ok 116 - unobstructed tracking follows lateral target changes without cached goal delay
+  ---
+  duration_ms: 1.5878
+  ...
+# Subtest: vision blocked beyond hearing distance does not acquire through rock
+ok 117 - vision blocked beyond hearing distance does not acquire through rock
+  ---
+  duration_ms: 0.3829
+  ...
+# Subtest: losing sight pursues last seen position, then forgets after three seconds
+ok 118 - losing sight pursues last seen position, then forgets after three seconds
+  ---
+  duration_ms: 0.9748
+  ...
+# Subtest: nearby sound or damage alerts but protected camp and territory stay safe
+ok 119 - nearby sound or damage alerts but protected camp and territory stay safe
+  ---
+  duration_ms: 0.9581
+  ...
+# Subtest: turn speed is bounded and shortest across angle wrap
+ok 120 - turn speed is bounded and shortest across angle wrap
+  ---
+  duration_ms: 0.2365
+  ...
+# Subtest: attack requires facing, distance and sight, allowing sidestep during fixed windup
+ok 121 - attack requires facing, distance and sight, allowing sidestep during fixed windup
+  ---
+  duration_ms: 0.5409
+  ...
+# Subtest: blocked movement never tunnels and replans when movable obstruction clears
+ok 122 - blocked movement never tunnels and replans when movable obstruction clears
+  ---
+  duration_ms: 1.2809
+  ...
+# Subtest: local path goes around solid rock with each motion segment checked
+ok 123 - local path goes around solid rock with each motion segment checked
+  ---
+  duration_ms: 5.1445
+  ...
+# Subtest: arrival stops movement indication instead of animating chase forever away from home
+ok 124 - arrival stops movement indication instead of animating chase forever away from home
+  ---
+  duration_ms: 0.9791
+  ...
+# Subtest: unobserved creatures patrol repeatedly and pause briefly to watch instead of waiting at home
+ok 125 - unobserved creatures patrol repeatedly and pause briefly to watch instead of waiting at home
+  ---
+  duration_ms: 12.2004
+  ...
+# Subtest: patrol is reproducible and different homes produce different routes
+ok 126 - patrol is reproducible and different homes produce different routes
+  ---
+  duration_ms: 7.0058
+  ...
+# Subtest: intruder interrupts a patrol immediately and pursuit returns home after territory exit
+ok 127 - intruder interrupts a patrol immediately and pursuit returns home after territory exit
+  ---
+  duration_ms: 1.2582
+  ...
+# Subtest: camp refuge ends pursuit and blocks reacquisition while returning
+ok 128 - camp refuge ends pursuit and blocks reacquisition while returning
+  ---
+  duration_ms: 0.7008
+  ...
+# Subtest: disabled combat does not stop autonomous life
+ok 129 - disabled combat does not stop autonomous life
+  ---
+  duration_ms: 2.1017
+  ...
+# Subtest: every patrol step respects terrain and protected areas, retries after obstruction clears
+ok 130 - every patrol step respects terrain and protected areas, retries after obstruction clears
+  ---
+  duration_ms: 3.5913
+  ...
+# Subtest: same real time at 30/60/120 Hz produces comparable patrol displacement
+ok 131 - same real time at 30/60/120 Hz produces comparable patrol displacement
+  ---
+  duration_ms: 3.4836
+  ...
+# Subtest: a creature restored beyond its territory walks back instead of pursuing or teleporting
+ok 132 - a creature restored beyond its territory walks back instead of pursuing or teleporting
+  ---
+  duration_ms: 0.3909
+  ...
+# Subtest: 19 reference: 597.24 -> geometry 100 -> defense 120 -> personal 50 -> HP 241
+ok 133 - 19 reference: 597.24 -> geometry 100 -> defense 120 -> personal 50 -> HP 241
+  ---
+  duration_ms: 22.8655
+  ...
+# Subtest: all five damage/support/control vectors and basic/heavy attacks exclude active mastery
+ok 134 - all five damage/support/control vectors and basic/heavy attacks exclude active mastery
+  ---
+  duration_ms: 2.2136
+  ...
+# Subtest: attributes add then multiply, cap same buckets, Q affects only passive increment, single core max with pill
+ok 135 - attributes add then multiply, cap same buckets, Q affects only passive increment, single core max with pill
+  ---
+  duration_ms: 1.8017
+  ...
+# Subtest: defense order, same-ID strongest refresh, caps and overpenetration
+ok 136 - defense order, same-ID strongest refresh, caps and overpenetration
+  ---
+  duration_ms: 0.4967
+  ...
+# Subtest: direct retains geometry, universal reduction and typed personal shields; element penetration stays local
+ok 137 - direct retains geometry, universal reduction and typed personal shields; element penetration stays local
+  ---
+  duration_ms: 1.4382
+  ...
+# Subtest: damage bonus, vulnerability, independent reduction and total defense caps
+ok 138 - damage bonus, vulnerability, independent reduction and total defense caps
+  ---
+  duration_ms: 1.021
+  ...
+# Subtest: shields same name keep strongest, different names cap at 60%, geometry only when intersected
+ok 139 - shields same name keep strongest, different names cap at 60%, geometry only when intersected
+  ---
+  duration_ms: 0.7202
+  ...
+# Subtest: cast snapshot survives equipment changes; current target armor and shields are read on hit
+ok 140 - cast snapshot survives equipment changes; current target armor and shields are read on hit
+  ---
+  duration_ms: 1.9548
+  ...
+# Subtest: multi-hit fixed-point remainder allocation conserves total and fractional HP; no minimum-one inflation
+ok 141 - multi-hit fixed-point remainder allocation conserves total and fractional HP; no minimum-one inflation
+  ---
+  duration_ms: 12.3535
+  ...
+# Subtest: mixed components split the total once and target count is explicit
+ok 142 - mixed components split the total once and target count is explicit
+  ---
+  duration_ms: 1.228
+  ...
+# Subtest: cast and hit retries after JSON reload are idempotent, including new hit ID for same segment
+ok 143 - cast and hit retries after JSON reload are idempotent, including new hit ID for same segment
+  ---
+  duration_ms: 1.5002
+  ...
+# Subtest: only committed defeat emits world event once; overkill logs actual HP and no player defeat event
+ok 144 - only committed defeat emits world event once; overkill logs actual HP and no player defeat event
+  ---
+  duration_ms: 1.6444
+  ...
+# Subtest: failed cast/hit rolls back; interrupted cast never refunds; absent/cross-world target rejected
+ok 145 - failed cast/hit rolls back; interrupted cast never refunds; absent/cross-world target rejected
+  ---
+  duration_ms: 1.7544
+  ...
+# Subtest: practice same-event ordinary -> precise -> trial awards only delta, ineffective events award zero
+ok 146 - practice same-event ordinary -> precise -> trial awards only delta, ineffective events award zero
+  ---
+  duration_ms: 1.0151
+  ...
+# Subtest: R9 exact arithmetic above Number.MAX_SAFE_INTEGER, learned tier is never inferred from target
+ok 147 - R9 exact arithmetic above Number.MAX_SAFE_INTEGER, learned tier is never inferred from target
+  ---
+  duration_ms: 1.0582
+  ...
+# Subtest: invalid scalars, tier, weights, channel, resource and state IDs are rejected
+ok 148 - invalid scalars, tier, weights, channel, resource and state IDs are rejected
+  ---
+  duration_ms: 1.618
+  ...
+# Subtest: R2 F1: thirds across same and mixed components kill exactly one HP, without epsilon
+ok 149 - R2 F1: thirds across same and mixed components kill exactly one HP, without epsilon
+  ---
+  duration_ms: 1.7136
+  ...
+# Subtest: R2 F1: changed defense after JSON reload preserves exact thirds across segments
+ok 150 - R2 F1: changed defense after JSON reload preserves exact thirds across segments
+  ---
+  duration_ms: 1.2106
+  ...
+# Subtest: R2 F1: exact shield remainders survive reload and flow into exact life carry
+ok 151 - R2 F1: exact shield remainders survive reload and flow into exact life carry
+  ---
+  duration_ms: 0.9274
+  ...
+# Subtest: R2 F2: alias IDs bind immutable signatures including after death and JSON reload
+ok 152 - R2 F2: alias IDs bind immutable signatures including after death and JSON reload
+  ---
+  duration_ms: 1.4941
+  ...
+# Subtest: R2 precision metadata rejects malformed/stale fractions without state mutation
+ok 153 - R2 precision metadata rejects malformed/stale fractions without state mutation
+  ---
+  duration_ms: 1.2257
+  ...
+# Subtest: R2 reads R1 finite precision saves and upgrades returned state on mutation
+ok 154 - R2 reads R1 finite precision saves and upgrades returned state on mutation
+  ---
+  duration_ms: 1.2681
+  ...
+# Subtest: harvest partial -> final stock -> one committed depletion, pack -> cargo, save round trip and replay
+ok 155 - harvest partial -> final stock -> one committed depletion, pack -> cargo, save round trip and replay
+  ---
+  duration_ms: 22.5142
+  ...
+# Subtest: cancelled preview and rejected/throwing storage leave resource, inventory and outbox unchanged
+ok 156 - cancelled preview and rejected/throwing storage leave resource, inventory and outbox unchanged
+  ---
+  duration_ms: 5.1433
+  ...
+# Subtest: slots capacity failure rolls back the entire multi-operation harvest
+ok 157 - slots capacity failure rolls back the entire multi-operation harvest
+  ---
+  duration_ms: 0.9239
+  ...
+# Subtest: volume capacity failure rolls back the entire multi-operation harvest
+ok 158 - volume capacity failure rolls back the entire multi-operation harvest
+  ---
+  duration_ms: 0.7424
+  ...
+# Subtest: mass capacity failure rolls back the entire multi-operation harvest
+ok 159 - mass capacity failure rolls back the entire multi-operation harvest
+  ---
+  duration_ms: 1.0078
+  ...
+# Subtest: stack matching includes quality, tier, state and canonical attributes; merging does not reduce volume/mass
+ok 160 - stack matching includes quality, tier, state and canonical attributes; merging does not reduce volume/mass
+  ---
+  duration_ms: 13.466
+  ...
+# Subtest: explicit split costs a slot, persists split/root identity and conserves quantity
+ok 161 - explicit split costs a slot, persists split/root identity and conserves quantity
+  ---
+  duration_ms: 2.6248
+  ...
+# Subtest: unique item moves original instance/root between owners and cannot be consumed or duplicated
+ok 162 - unique item moves original instance/root between owners and cannot be consumed or duplicated
+  ---
+  duration_ms: 5.2797
+  ...
+# Subtest: consumption is a real receipt and never a resource vacancy; locked/inaccessible inventory is rejected
+ok 163 - consumption is a real receipt and never a resource vacancy; locked/inaccessible inventory is rejected
+  ---
+  duration_ms: 5.1119
+  ...
+# Subtest: holder sums owned containers once, including shell and transmitted mass, and can unload passive overload
+ok 164 - holder sums owned containers once, including shell and transmitted mass, and can unload passive overload
+  ---
+  duration_ms: 5.2877
+  ...
+# Subtest: two concurrent last-stock commits: CAS permits exactly one owner and one outbox event
+ok 165 - two concurrent last-stock commits: CAS permits exactly one owner and one outbox event
+  ---
+  duration_ms: 3.4343
+  ...
+# Subtest: changed retry payload, stale plan, spoofed preview and denied authorization cannot duplicate or bypass checks
+ok 166 - changed retry payload, stale plan, spoofed preview and denied authorization cannot duplicate or bypass checks
+  ---
+  duration_ms: 3.4097
+  ...
+# Subtest: ambiguous response after persisted commit is resolved by reload + original transaction replay
+ok 167 - ambiguous response after persisted commit is resolved by reload + original transaction replay
+  ---
+  duration_ms: 2.4327
+  ...
+# Subtest: big integer volume/mass round trips without precision loss and rejects unsafe quantities
+ok 168 - big integer volume/mass round trips without precision loss and rejects unsafe quantities
+  ---
+  duration_ms: 0.6256
+  ...
+# Subtest: later invalid operation rolls back earlier changes; finite movement sequence conserves all stock and provenance
+ok 169 - later invalid operation rolls back earlier changes; finite movement sequence conserves all stock and provenance
+  ---
+  duration_ms: 105.6131
+  ...
+# Subtest: unique rewards cannot be configured as renewable harvesting stock
+ok 170 - unique rewards cannot be configured as renewable harvesting stock
+  ---
+  duration_ms: 0.5588
+  ...
+# Subtest: async authorization holds a stable version snapshot despite caller mutation
+ok 171 - async authorization holds a stable version snapshot despite caller mutation
+  ---
+  duration_ms: 1.6547
+  ...
+# Subtest: finite harvest, partial mirror, final token, JSON reload and original retry
+ok 172 - finite harvest, partial mirror, final token, JSON reload and original retry
+  ---
+  duration_ms: 87.1812
+  ...
+# Subtest: full container, cancelled request and denied authorization never write or consume
+ok 173 - full container, cancelled request and denied authorization never write or consume
+  ---
+  duration_ms: 14.7904
+  ...
+# Subtest: false and exception root writes leave all children unchanged; original request can recover
+ok 174 - false and exception root writes leave all children unchanged; original request can recover
+  ---
+  duration_ms: 39.9601
+  ...
+# Subtest: lost response reloads latest root, old receipt cannot overwrite later progress
+ok 175 - lost response reloads latest root, old receipt cannot overwrite later progress
+  ---
+  duration_ms: 24.4466
+  ...
+# Subtest: concurrent harvest contenders: one root CAS wins and quantities conserved
+ok 176 - concurrent harvest contenders: one root CAS wins and quantities conserved
+  ---
+  duration_ms: 19.4576
+  ...
+# Subtest: real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+ok 177 - real A exact thirds, death once, alias state persisted and corpse loot retained on full pickup
+  ---
+  duration_ms: 57.8601
+  ...
+# Subtest: death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+ok 178 - death root rejection keeps living actor and uncreated manifest; retry creates exactly once
+  ---
+  duration_ms: 37.8903
+  ...
+# Subtest: unique B original identity + C owner move together; failed write cannot split ownership
+ok 179 - unique B original identity + C owner move together; failed write cannot split ownership
+  ---
+  duration_ms: 8.6854
+  ...
+# Subtest: next generation uses C actual IDs and preserves prior saved history
+ok 180 - next generation uses C actual IDs and preserves prior saved history
+  ---
+  duration_ms: 24.4913
+  ...
+# Subtest: configuration missing, forged event operation and backwards clock are rejected
+ok 181 - configuration missing, forged event operation and backwards clock are rejected
+  ---
+  duration_ms: 6.1231
+  ...
+# Subtest: cancellation during async authorization and mutable caller request cannot leak partial state
+ok 182 - cancellation during async authorization and mutable caller request cannot leak partial state
+  ---
+  duration_ms: 7.9029
+  ...
+# Subtest: last actual member death creates one vacancy while all unpicked manifests survive
+ok 183 - last actual member death creates one vacancy while all unpicked manifests survive
+  ---
+  duration_ms: 58.4112
+  ...
+# Subtest: bad or async materializers reject before any root write
+ok 184 - bad or async materializers reject before any root write
+  ---
+  duration_ms: 12
+  ...
+# Subtest: R2 checkpoint/rescue: seven scenario groups, explicit memory CAS only
+ok 185 - R2 checkpoint/rescue: seven scenario groups, explicit memory CAS only
+  ---
+  duration_ms: 903.3334
+  ...
+# Subtest: R3 configured original-world bounds: five groups, memory CAS only
+ok 186 - R3 configured original-world bounds: five groups, memory CAS only
+  ---
+  duration_ms: 282.5157
+  ...
+# Subtest: dash effect follows actual world displacement, ignores view yaw and freezes completely at dt zero
+ok 187 - dash effect follows actual world displacement, ignores view yaw and freezes completely at dt zero
+  ---
+  duration_ms: 140.5151
+  ...
+# Subtest: dash effect never connects teleports or different casts and dissipates within 400 ms
+ok 188 - dash effect never connects teleports or different casts and dissipates within 400 ms
+  ---
+  duration_ms: 2.4454
+  ...
+# Subtest: metal floors and airborne movement do not emit ground dust
+ok 189 - metal floors and airborne movement do not emit ground dust
+  ---
+  duration_ms: 1.3846
+  ...
+# Subtest: 200 dash cycles reuse fixed geometry and materials, keep depth occlusion and dispose ownership once
+ok 190 - 200 dash cycles reuse fixed geometry and materials, keep depth occlusion and dispose ownership once
+  ---
+  duration_ms: 71.2915
+  ...
+# Subtest: dash covers exactly four metres, charges once and has no residual velocity
+ok 191 - dash covers exactly four metres, charges once and has no residual velocity
+  ---
+  duration_ms: 96.9778
+  ...
+# Subtest: body-relative directions normalize diagonal and freeze direction after launch
+ok 192 - body-relative directions normalize diagonal and freeze direction after launch
+  ---
+  duration_ms: 10.0702
+  ...
+# Subtest: air, vehicle, insufficient stamina and immediately blocked starts are free rejections
+ok 193 - air, vehicle, insufficient stamina and immediately blocked starts are free rejections
+  ---
+  duration_ms: 4.5315
+  ...
+# Subtest: closed bulkheads interrupt paid displacement; open gates are traversable
+ok 194 - closed bulkheads interrupt paid displacement; open gates are traversable
+  ---
+  duration_ms: 4.3884
+  ...
+# Subtest: parked vehicle, fixed boulder and world edge cannot be tunneled through
+ok 195 - parked vehicle, fixed boulder and world edge cannot be tunneled through
+  ---
+  duration_ms: 3.4186
+  ...
+# Subtest: mouse orbit cannot redirect a forward dash
+ok 196 - mouse orbit cannot redirect a forward dash
+  ---
+  duration_ms: 6.4051
+  ...
+# Subtest: ground dash refuses elevated origins rather than snapping off a ledge
+ok 197 - ground dash refuses elevated origins rather than snapping off a ledge
+  ---
+  duration_ms: 0.5274
+  ...
+# Subtest: evolution scales cost without unlocking Shift or recovering during dash
+ok 198 - evolution scales cost without unlocking Shift or recovering during dash
+  ---
+  duration_ms: 2.1327
+  ...
+# Subtest: pause and invalid delta freeze state; reload retains only bounded cooldown
+ok 199 - pause and invalid delta freeze state; reload retains only bounded cooldown
+  ---
+  duration_ms: 2.316
+  ...
+# Subtest: 30/60/144 Hz produce the same travel and cooldown uses one simulation clock
+ok 200 - 30/60/144 Hz produce the same travel and cooldown uses one simulation clock
+  ---
+  duration_ms: 7.7402
+  ...
+# Subtest: losing grounded state aborts immediately without a refund or extra travel
+ok 201 - losing grounded state aborts immediately without a refund or extra travel
+  ---
+  duration_ms: 0.7494
+  ...
+# Subtest: invalid endurance duration falls back safely and stopping does not refill sprint eligibility
+ok 202 - invalid endurance duration falls back safely and stopping does not refill sprint eligibility
+  ---
+  duration_ms: 2.4167
+  ...
+# Subtest: camera rotation has no effect on forward driving or vehicle heading
+ok 203 - camera rotation has no effect on forward driving or vehicle heading
+  ---
+  duration_ms: 99.0034
+  ...
+# Subtest: steering requires motion; left/right make mirrored arcs without strafing
+ok 204 - steering requires motion; left/right make mirrored arcs without strafing
+  ---
+  duration_ms: 5.1563
+  ...
+# Subtest: reverse reverses steering yaw, brake stops without rotating the camera
+ok 205 - reverse reverses steering yaw, brake stops without rotating the camera
+  ---
+  duration_ms: 6.5191
+  ...
+# Subtest: scanner starts empty, emits only after draw, folds and fully stows
+ok 206 - scanner starts empty, emits only after draw, folds and fully stows
+  ---
+  duration_ms: 7.7006
+  ...
+# Subtest: interrupting a draw retracts from current exposure and never emits a scan
+ok 207 - interrupting a draw retracts from current exposure and never emits a scan
+  ---
+  duration_ms: 0.5672
+  ...
+# Subtest: lifecycle has identical outcome across frame partitions and zero time freezes it
+ok 208 - lifecycle has identical outcome across frame partitions and zero time freezes it
+  ---
+  duration_ms: 0.9107
+  ...
+# Subtest: delivered GLB starts in visible neutral pose with real articulated groups
+ok 209 - delivered GLB starts in visible neutral pose with real articulated groups
+  ---
+  duration_ms: 3.3771
+  ...
+# Subtest: new expedition starts at base endurance and no free adaptation
+ok 210 - new expedition starts at base endurance and no free adaptation
+  ---
+  duration_ms: 14.8195
+  ...
+# Subtest: only real grounded foot distance advances training, never vehicle, air, blocked or teleport feedback
+ok 211 - only real grounded foot distance advances training, never vehicle, air, blocked or teleport feedback
+  ---
+  duration_ms: 0.7071
+  ...
+# Subtest: body requires story milestone plus movement then three real stationary seconds
+ok 212 - body requires story milestone plus movement then three real stationary seconds
+  ---
+  duration_ms: 1.4672
+  ...
+# Subtest: movement or leaving foot mode restarts adaptation rest; invalid time is ignored
+ok 213 - movement or leaving foot mode restarts adaptation rest; invalid time is ignored
+  ---
+  duration_ms: 0.3693
+  ...
+# Subtest: paused UI reads and repeated upgrade attempts do not advance rest or progress
+ok 214 - paused UI reads and repeated upgrade attempts do not advance rest or progress
+  ---
+  duration_ms: 4.4806
+  ...
+# Subtest: ground safety is rechecked on click and cannot be bypassed with an old ready view
+ok 215 - ground safety is rechecked on click and cannot be bypassed with an old ready view
+  ---
+  duration_ms: 0.5084
+  ...
+# Subtest: equipment requires powered calibration location and progresses independent of walking or rest
+ok 216 - equipment requires powered calibration location and progresses independent of walking or rest
+  ---
+  duration_ms: 0.4717
+  ...
+# Subtest: both complete branches advance one explicit tier per action, stay capped and never touch resource pools
+ok 217 - both complete branches advance one explicit tier per action, stay capped and never touch resource pools
+  ---
+  duration_ms: 0.541
+  ...
+# Subtest: later milestones cannot skip the prerequisite tier
+ok 218 - later milestones cannot skip the prerequisite tier
+  ---
+  duration_ms: 0.6714
+  ...
+# Subtest: save whitelist preserves earned levels and exact distance but never restores rest intent
+ok 219 - save whitelist preserves earned levels and exact distance but never restores rest intent
+  ---
+  duration_ms: 1.2133
+  ...
+# Subtest: existing version-one progression keeps earned levels under the new thirty-second-per-level schedule
+ok 220 - existing version-one progression keeps earned levels under the new thirty-second-per-level schedule
+  ---
+  duration_ms: 0.6583
+  ...
+# Subtest: legacy saves unlock story blueprints but grant no historical distance or free levels
+ok 221 - legacy saves unlock story blueprints but grant no historical distance or free levels
+  ---
+  duration_ms: 0.4323
+  ...
+# Subtest: malformed saves clamp values and never accept a level above earned ordered requirements
+ok 222 - malformed saves clamp values and never accept a level above earned ordered requirements
+  ---
+  duration_ms: 0.4361
+  ...
+# Subtest: unknown actions are inert, and visible roadmap describes conditions without final plot spoilers
+ok 223 - unknown actions are inert, and visible roadmap describes conditions without final plot spoilers
+  ---
+  duration_ms: 0.5574
+  ...
+# Subtest: every named gameplay suite resolves real rule and browser files
+ok 224 - every named gameplay suite resolves real rule and browser files
+  ---
+  duration_ms: 10.9608
+  ...
+# Subtest: all automatically includes every current browser and rule test
+ok 225 - all automatically includes every current browser and rule test
+  ---
+  duration_ms: 9.9113
+  ...
+# Subtest: unknown suite or flag fails instead of silently running a default
+ok 226 - unknown suite or flag fails instead of silently running a default
+  ---
+  duration_ms: 1.1245
+  ...
+# Subtest: browser gate rejects empty, skipped, expected failure, flaky, duplicate attempts and global errors
+ok 227 - browser gate rejects empty, skipped, expected failure, flaky, duplicate attempts and global errors
+  ---
+  duration_ms: 1.0567
+  ...
+# Subtest: partial, failed or changed runs cannot certify release; all green still requires manual review
+ok 228 - partial, failed or changed runs cannot certify release; all green still requires manual review
+  ---
+  duration_ms: 0.424
+  ...
+# Subtest: basin centre preserves existing camera aim
+ok 229 - basin centre preserves existing camera aim
+  ---
+  duration_ms: 1.3566
+  ...
+# Subtest: outer basin projection and inverse keep a 40 m authority ray on the visual target
+ok 230 - outer basin projection and inverse keep a 40 m authority ray on the visual target
+  ---
+  duration_ms: 2.8114
+  ...
+# Subtest: edge of chart needs true tangent conversion and rejects a zero-distance aim
+ok 231 - edge of chart needs true tangent conversion and rejects a zero-distance aim
+  ---
+  duration_ms: 0.4967
+  ...
+# Subtest: braking-distance envelope reaches ground in practical time at 30 and 200 metres across frame rates
+ok 232 - braking-distance envelope reaches ground in practical time at 30 and 200 metres across frame rates
+  ---
+  duration_ms: 18.2631
+  ...
+# 30 m at 30 FPS: 3.07 s
+# 200 m at 30 FPS: 8.20 s
+# 30 m at 60 FPS: 3.08 s
+# 200 m at 60 FPS: 8.23 s
+# 30 m at 120 FPS: 3.09 s
+# 200 m at 120 FPS: 8.25 s
+# Subtest: overspeed near ground uses vertical braking and cannot bounce or penetrate
+ok 233 - overspeed near ground uses vertical braking and cannot bounce or penetrate
+  ---
+  duration_ms: 3.5491
+  ...
+# Subtest: steep rising terrain blocks horizontal descent and retains a safe landing path
+ok 234 - steep rising terrain blocks horizontal descent and retains a safe landing path
+  ---
+  duration_ms: 6.018
+  ...
+# Subtest: flight HUD uses live planet fields, expands task details, and restores ground UI
+ok 235 - flight HUD uses live planet fields, expands task details, and restores ground UI
+  ---
+  duration_ms: 29.8294
+  ...
+# Subtest: HUD visibility gates flight mode and unavailable data is not invented
+ok 236 - HUD visibility gates flight mode and unavailable data is not invented
+  ---
+  duration_ms: 0.5643
+  ...
+# Subtest: real metre-space travel accelerates at low and high altitude, with bounded turns and braking
+ok 237 - real metre-space travel accelerates at low and high altitude, with bounded turns and braking
+  ---
+  duration_ms: 6.8343
+  ...
+# Subtest: release settles into hover; descent and 2000m AGL ceiling remain bounded
+ok 238 - release settles into hover; descent and 2000m AGL ceiling remain bounded
+  ---
+  duration_ms: 2.6109
+  ...
+# Subtest: W remains effective at exactly 2000m AGL across a gently falling surface
+ok 239 - W remains effective at exactly 2000m AGL across a gently falling surface
+  ---
+  duration_ms: 2.5669
+  ...
+# Subtest: the real spherical adapter keeps moving at the ceiling over the planet field
+ok 240 - the real spherical adapter keeps moving at the ceiling over the planet field
+  ---
+  duration_ms: 1447.0028
+  ...
+# Subtest: camera follows smoothly, snaps after relocation, and hides the body in both first-person modes
+ok 241 - camera follows smoothly, snaps after relocation, and hides the body in both first-person modes
+  ---
+  duration_ms: 0.9068
+  ...
+# Subtest: flight-altitude terrain retains six-face coverage and its distant material composes with Three
+ok 242 - flight-altitude terrain retains six-face coverage and its distant material composes with Three
+  ---
+  duration_ms: 23.9228
+  ...
+# Subtest: held Shift+A/D preserves bank after steering settles, blends reversal and freezes on zero dt
+ok 243 - held Shift+A/D preserves bank after steering settles, blends reversal and freezes on zero dt
+  ---
+  duration_ms: 14.4083
+  ...
+# Subtest: R9 full-speed A/D steering keeps speed and camera continuous at 30/60/120 FPS
+ok 244 - R9 full-speed A/D steering keeps speed and camera continuous at 30/60/120 FPS
+  ---
+  duration_ms: 4.3992
+  ...
+# Subtest: rapid opposite A/D requests rotate through bounded angles without speed collapse
+ok 245 - rapid opposite A/D requests rotate through bounded angles without speed collapse
+  ---
+  duration_ms: 1.809
+  ...
+# Subtest: canonical aerial knockback sweeps a real sphere and rejects wall/unloaded segments without mutation
+ok 246 - canonical aerial knockback sweeps a real sphere and rejects wall/unloaded segments without mutation
+  ---
+  duration_ms: 2.0543
+  ...
+# Subtest: visible ordinary rock edge does not become radius-inflated invisible support
+ok 247 - visible ordinary rock edge does not become radius-inflated invisible support
+  ---
+  duration_ms: 6.0876
+  ...
+# Subtest: standing at an empty edge enters gravity and falls instead of hanging from nearby rock
+ok 248 - standing at an empty edge enters gravity and falls instead of hanging from nearby rock
+  ---
+  duration_ms: 26.8879
+  ...
+# Subtest: falling below a nearby rock top is never snapped upward to that top
+ok 249 - falling below a nearby rock top is never snapped upward to that top
+  ---
+  duration_ms: 0.6248
+  ...
+# Subtest: descending from above still lands exactly on the visible rock top
+ok 250 - descending from above still lands exactly on the visible rock top
+  ---
+  duration_ms: 29.2553
+  ...
+# Subtest: ordinary forward walking can leave the actual rock top without capsule-side pinning
+ok 251 - ordinary forward walking can leave the actual rock top without capsule-side pinning
+  ---
+  duration_ms: 10.1721
+  ...
+# Subtest: real cliff triangle edge is unsupported despite adjacent capsule contact
+ok 252 - real cliff triangle edge is unsupported despite adjacent capsule contact
+  ---
+  duration_ms: 8.2844
+  ...
+# Subtest: a capsule beside a real mesh cannot use its lateral intersection as a foot platform
+ok 253 - a capsule beside a real mesh cannot use its lateral intersection as a foot platform
+  ---
+  duration_ms: 2.1098
+  ...
+# Subtest: an old hovering position beside a rock falls under gravity and lands without thrust energy
+ok 254 - an old hovering position beside a rock falls under gravity and lands without thrust energy
+  ---
+  duration_ms: 26.1954
+  ...
+# Subtest: actual rock top remains a valid landing and jump surface
+ok 255 - actual rock top remains a valid landing and jump surface
+  ---
+  duration_ms: 30.1329
+  ...
+# Subtest: prop side clearance is solid but does not extend its visible top platform
+ok 256 - prop side clearance is solid but does not extend its visible top platform
+  ---
+  duration_ms: 0.4453
+  ...
+# Subtest: a surface above the previous feet height is never a landing target
+ok 257 - a surface above the previous feet height is never a landing target
+  ---
+  duration_ms: 0.3736
+  ...
+# Subtest: vehicle side clearance contains no invisible circular roof
+ok 258 - vehicle side clearance contains no invisible circular roof
+  ---
+  duration_ms: 8.752
+  ...
+# Subtest: foot samples identify the material actually under the sole, not a nearby boulder
+ok 259 - foot samples identify the material actually under the sole, not a nearby boulder
+  ---
+  duration_ms: 71.3365
+  ...
+# Subtest: dust deposits and gravel use the same stable world-space coverage as terrain tint
+ok 260 - dust deposits and gravel use the same stable world-space coverage as terrain tint
+  ---
+  duration_ms: 4.6091
+  ...
+# Subtest: metal deck, stone monuments and high obstacles have distinct support and reachability
+ok 261 - metal deck, stone monuments and high obstacles have distinct support and reachability
+  ---
+  duration_ms: 0.6497
+  ...
+# Subtest: a parked vehicle supports a landed boot as metal but is not an indoor echo chamber
+ok 262 - a parked vehicle supports a landed boot as metal but is not an indoor echo chamber
+  ---
+  duration_ms: 0.5004
+  ...
+# Subtest: collision timbre follows the contacted hull, vehicle or rock instead of the ground beside it
+ok 263 - collision timbre follows the contacted hull, vehicle or rock instead of the ground beside it
+  ---
+  duration_ms: 0.9619
+  ...
+# Subtest: directional poses retain optimization baseline; idle fix has a deterministic contact trajectory
+ok 264 - directional poses retain optimization baseline; idle fix has a deterministic contact trajectory
+  ---
+  duration_ms: 313.3935
+  ...
+# Subtest: leg-only FK exactly matches full-rig FK across every source clip
+ok 265 - leg-only FK exactly matches full-rig FK across every source clip
+  ---
+  duration_ms: 21.4263
+  ...
+# Subtest: cached normalized source frames never share mutable output pose or FK transforms
+ok 266 - cached normalized source frames never share mutable output pose or FK transforms
+  ---
+  duration_ms: 0.6629
+  ...
+# Subtest: cadence follows translated distance; ordinary 4.7 m/s travel is a jog, sprint is a run
+ok 267 - cadence follows translated distance; ordinary 4.7 m/s travel is a jog, sprint is a run
+  ---
+  duration_ms: 333.6484
+  ...
+# Subtest: clip support has bounded world-anchor correction; swing feet clear the floor
+ok 268 - clip support has bounded world-anchor correction; swing feet clear the floor
+  ---
+  duration_ms: 33.1311
+  ...
+# Subtest: blocked movement cannot advance the gait from held sprint or nonzero requested velocity
+ok 269 - blocked movement cannot advance the gait from held sprint or nonzero requested velocity
+  ---
+  duration_ms: 14.7636
+  ...
+# Subtest: stopping settles a current swing, then produces neither drift nor repeated footfalls
+ok 270 - stopping settles a current swing, then produces neither drift nor repeated footfalls
+  ---
+  duration_ms: 19.2468
+  ...
+# Subtest: backwards and sideward travel preserve body heading and use distinct directional steps
+ok 271 - backwards and sideward travel preserve body heading and use distinct directional steps
+  ---
+  duration_ms: 64.436
+  ...
+# Subtest: mouse orbit cannot rotate a walking or resting body when heading is explicit
+ok 272 - mouse orbit cannot rotate a walking or resting body when heading is explicit
+  ---
+  duration_ms: 11.9355
+  ...
+# Subtest: braking lateral and backward steps retain direction below a millimetre per substep
+ok 273 - braking lateral and backward steps retain direction below a millimetre per substep
+  ---
+  duration_ms: 45.6495
+  ...
+# Subtest: turning is finite, continuous and keeps the current support contacts planted
+ok 274 - turning is finite, continuous and keeps the current support contacts planted
+  ---
+  duration_ms: 20.0115
+  ...
+# Subtest: abrupt sprint reversals recover the feet without squatting through the ground
+ok 275 - abrupt sprint reversals recover the feet without squatting through the ground
+  ---
+  duration_ms: 47.4269
+  ...
+# Subtest: reversing immediately before touchdown finishes that plant instead of teleporting the boot
+ok 276 - reversing immediately before touchdown finishes that plant instead of teleporting the boot
+  ---
+  duration_ms: 7.4671
+  ...
+# Subtest: a stale reverse landing anchor is never submitted as an unreachable support
+ok 277 - a stale reverse landing anchor is never submitted as an unreachable support
+  ---
+  duration_ms: 11.8371
+  ...
+# Subtest: turning in place repositions the feet with actual small steps, then becomes quiet
+ok 278 - turning in place repositions the feet with actual small steps, then becomes quiet
+  ---
+  duration_ms: 11.6506
+  ...
+# Subtest: each contact samples its own ground height, material and enclosure
+ok 279 - each contact samples its own ground height, material and enclosure
+  ---
+  duration_ms: 11.9257
+  ...
+# Subtest: air and mounted travel are silent; a real landing emits one impact and no duplicate pair
+ok 280 - air and mounted travel are silent; a real landing emits one impact and no duplicate pair
+  ---
+  duration_ms: 20.0495
+  ...
+# Subtest: impact intensity grows with descent speed but is finite and capped
+ok 281 - impact intensity grows with descent speed but is finite and capped
+  ---
+  duration_ms: 3.2294
+  ...
+# Subtest: braking a fall before touchdown reduces the eventual impact rather than storing peak speed
+ok 282 - braking a fall before touchdown reduces the eventual impact rather than storing peak speed
+  ---
+  duration_ms: 2.0343
+  ...
+# Subtest: delta partitioning gives the same contact order and nearly identical timing
+ok 283 - delta partitioning gives the same contact order and nearly identical timing
+  ---
+  duration_ms: 62.7129
+  ...
+# Subtest: pause-sized deltas and teleports rebase without replaying contacts; views cannot mutate state
+ok 284 - pause-sized deltas and teleports rebase without replaying contacts; views cannot mutate state
+  ---
+  duration_ms: 2.8843
+  ...
+# Subtest: raised blocked surfaces shorten the next footfall instead of planting feet on wall tops
+ok 285 - raised blocked surfaces shorten the next footfall instead of planting feet on wall tops
+  ---
+  duration_ms: 2.6545
+  ...
+# Subtest: a raised fragment under a swinging boot is cleared rather than intersected
+ok 286 - a raised fragment under a swinging boot is cleared rather than intersected
+  ---
+  duration_ms: 2.0755
+  ...
+# Subtest: body evolution extends continuous sprint from thirty to one hundred twenty seconds without changing capacity
+ok 287 - body evolution extends continuous sprint from thirty to one hundred twenty seconds without changing capacity
+  ---
+  duration_ms: 96.4546
+  ...
+# Subtest: evolved sprint keeps the release requirement, recovery delay and twenty-five percent restart gate
+ok 288 - evolved sprint keeps the release requirement, recovery delay and twenty-five percent restart gate
+  ---
+  duration_ms: 0.9976
+  ...
+# Subtest: equipment evolution grants one hundred twenty powered seconds but keeps the same low ceiling and forced landing
+ok 289 - equipment evolution grants one hundred twenty powered seconds but keeps the same low ceiling and forced landing
+  ---
+  duration_ms: 249.9526
+  ...
+# Subtest: duration evolution cannot enable cabin flight or pass a closed story bulkhead
+ok 290 - duration evolution cannot enable cabin flight or pass a closed story bulkhead
+  ---
+  duration_ms: 6.0046
+  ...
+# Subtest: applying improved efficiency does not fill stamina, flight energy or erase their recovery debt
+ok 291 - applying improved efficiency does not fill stamina, flight energy or erase their recovery debt
+  ---
+  duration_ms: 8.4254
+  ...
+# Subtest: evolution preserves baseline recovery rates and launch thresholds
+ok 292 - evolution preserves baseline recovery rates and launch thresholds
+  ---
+  duration_ms: 6.4827
+  ...
+# Subtest: resource save round-trips retain current percentages and take duration solely from external progression
+ok 293 - resource save round-trips retain current percentages and take duration solely from external progression
+  ---
+  duration_ms: 15.6345
+  ...
+# Subtest: pre-rebalance resource percentages are preserved while earned levels gain the new endurance
+ok 294 - pre-rebalance resource percentages are preserved while earned levels gain the new endurance
+  ---
+  duration_ms: 7.0215
+  ...
+# Subtest: malformed duration rules fail safe and finite values cannot exceed the supported duration caps
+ok 295 - malformed duration rules fail safe and finite values cannot exceed the supported duration caps
+  ---
+  duration_ms: 8.4273
+  ...
+# Subtest: suit and body efficiency never changes vehicle speed or battery consumption
+ok 296 - suit and body efficiency never changes vehicle speed or battery consumption
+  ---
+  duration_ms: 21.0444
+  ...
+# Subtest: each branch delivers exactly 30, 60, 90 and 120 seconds, agrees with HUD and cannot restart while held
+ok 297 - each branch delivers exactly 30, 60, 90 and 120 seconds, agrees with HUD and cannot restart while held
+  ---
+  duration_ms: 415.4463
+  ...
+# Subtest: stationary idle keeps pelvis, legs and sole anchors fixed across repeated breathing loops
+ok 298 - stationary idle keeps pelvis, legs and sole anchors fixed across repeated breathing loops
+  ---
+  duration_ms: 226.6416
+  ...
+# Subtest: real basin runtime keeps Space as ground jump and launches G with legacy thrust cleared
+ok 299 - real basin runtime keeps Space as ground jump and launches G with legacy thrust cleared
+  ---
+  duration_ms: 7804.638
+  ...
+# Subtest: Space held during real innate flight neither climbs nor starts legacy thrust
+ok 300 - Space held during real innate flight neither climbs nor starts legacy thrust
+  ---
+  duration_ms: 6964.0121
+  ...
+# Subtest: realm gate, takeoff restriction and mounted brake leave legacy controls intact
+ok 301 - realm gate, takeoff restriction and mounted brake leave legacy controls intact
+  ---
+  duration_ms: 6753.6233
+  ...
+# Subtest: holding C with G through touchdown does not relaunch until G is released
+ok 302 - holding C with G through touchdown does not relaunch until G is released
+  ---
+  duration_ms: 1.4321
+  ...
+# Subtest: first innate animation frame blends from neutral idle, not the old airborne clip
+ok 303 - first innate animation frame blends from neutral idle, not the old airborne clip
+  ---
+  duration_ms: 4.008
+  ...
+# Subtest: Space is held jump input, clears on pause, and preserves modified shortcuts
+ok 304 - Space is held jump input, clears on pause, and preserves modified shortcuts
+  ---
+  duration_ms: 28.0171
+  ...
+# Subtest: unlocked drag uses client coordinates when embedded browser omits relative mouse deltas
+ok 305 - unlocked drag uses client coordinates when embedded browser omits relative mouse deltas
+  ---
+  duration_ms: 1.9308
+  ...
+# Subtest: Ctrl slow-walk permits Z posture and Q/E actions only during gameplay
+ok 306 - Ctrl slow-walk permits Z posture and Q/E actions only during gameplay
+  ---
+  duration_ms: 0.5269
+  ...
+# Subtest: desktop mapping separates jump, thruster, scanner, dash, interaction and automatic movement
+ok 307 - desktop mapping separates jump, thruster, scanner, dash, interaction and automatic movement
+  ---
+  duration_ms: 1.4806
+  ...
+# Subtest: only G enters unlocked innate flight while Space remains jump or vehicle brake
+ok 308 - only G enters unlocked innate flight while Space remains jump or vehicle brake
+  ---
+  duration_ms: 0.9413
+  ...
+# Subtest: explicit gameplay capture locks and enables mouse look (Promise API)
+ok 309 - explicit gameplay capture locks and enables mouse look (Promise API)
+  ---
+  duration_ms: 1.479
+  ...
+# Subtest: return after programmatic unlock captures without another click (Promise API)
+ok 310 - return after programmatic unlock captures without another click (Promise API)
+  ---
+  duration_ms: 1.2389
+  ...
+# Subtest: rapid return waits for pending unlock without false pause (Promise API)
+ok 311 - rapid return waits for pending unlock without false pause (Promise API)
+  ---
+  duration_ms: 0.7905
+  ...
+# Subtest: capture arriving after panel opens is released (Promise API)
+ok 312 - capture arriving after panel opens is released (Promise API)
+  ---
+  duration_ms: 1.0402
+  ...
+# Subtest: request rejection is handled and retried only by a fresh gameplay key (Promise API)
+ok 313 - request rejection is handled and retried only by a fresh gameplay key (Promise API)
+  ---
+  duration_ms: 1.023
+  ...
+# Subtest: explicit gameplay capture locks and enables mouse look (legacy events)
+ok 314 - explicit gameplay capture locks and enables mouse look (legacy events)
+  ---
+  duration_ms: 0.4228
+  ...
+# Subtest: return after programmatic unlock captures without another click (legacy events)
+ok 315 - return after programmatic unlock captures without another click (legacy events)
+  ---
+  duration_ms: 0.281
+  ...
+# Subtest: rapid return waits for pending unlock without false pause (legacy events)
+ok 316 - rapid return waits for pending unlock without false pause (legacy events)
+  ---
+  duration_ms: 0.1802
+  ...
+# Subtest: capture arriving after panel opens is released (legacy events)
+ok 317 - capture arriving after panel opens is released (legacy events)
+  ---
+  duration_ms: 0.1325
+  ...
+# Subtest: request rejection is handled and retried only by a fresh gameplay key (legacy events)
+ok 318 - request rejection is handled and retried only by a fresh gameplay key (legacy events)
+  ---
+  duration_ms: 0.2715
+  ...
+# Subtest: external unlock pauses once and never recaptures from focus or held keys
+ok 319 - external unlock pauses once and never recaptures from focus or held keys
+  ---
+  duration_ms: 0.346
+  ...
+# Subtest: queued lock events observing only null do not strand the old capture request (Promise first)
+ok 320 - queued lock events observing only null do not strand the old capture request (Promise first)
+  ---
+  duration_ms: 0.5283
+  ...
+# Subtest: queued lock events observing only null do not strand the old capture request (events first)
+ok 321 - queued lock events observing only null do not strand the old capture request (events first)
+  ---
+  duration_ms: 0.2128
+  ...
+# Subtest: panel transitions clear movement and one-shot actions ignore key repeat
+ok 322 - panel transitions clear movement and one-shot actions ignore key repeat
+  ---
+  duration_ms: 0.3507
+  ...
+# Subtest: camera switch is a single gameplay action, never repeats or fires through menus
+ok 323 - camera switch is a single gameplay action, never repeats or fires through menus
+  ---
+  duration_ms: 0.2109
+  ...
+# Subtest: blink is one-shot, keeps held Shift mode and never fires through disabled controls or Ctrl+Y
+ok 324 - blink is one-shot, keeps held Shift mode and never fires through disabled controls or Ctrl+Y
+  ---
+  duration_ms: 0.4094
+  ...
+# Subtest: air melee is one-shot and held guard releases on keyup, blur and modal entry without stealing shortcuts
+ok 325 - air melee is one-shot and held guard releases on keyup, blur and modal entry without stealing shortcuts
+  ---
+  duration_ms: 0.3448
+  ...
+# Subtest: mouse aerial combat isolates capture, menus, drag look and guard ownership
+ok 326 - mouse aerial combat isolates capture, menus, drag look and guard ownership
+  ---
+  duration_ms: 0.6266
+  ...
+# Subtest: ground melee uses the same mouse controls without changing ground C or Space
+ok 327 - ground melee uses the same mouse controls without changing ground C or Space
+  ---
+  duration_ms: 0.438
+  ...
+# Subtest: A/D are lateral movement while arrows turn only on foot and remain vehicle steering
+ok 328 - A/D are lateral movement while arrows turn only on foot and remain vehicle steering
+  ---
+  duration_ms: 0.309
+  ...
+# Subtest: C crouch toggle fires once in gameplay, preserves movement and never steals copy or panel text
+ok 329 - C crouch toggle fires once in gameplay, preserves movement and never steals copy or panel text
+  ---
+  duration_ms: 0.3594
+  ...
+# Subtest: C is held descent only during active flight while Ctrl remains ground slow walk
+ok 330 - C is held descent only during active flight while Ctrl remains ground slow walk
+  ---
+  duration_ms: 0.6031
+  ...
+# Subtest: evolution shortcut toggles from gameplay and panel buttons without stealing text input
+ok 331 - evolution shortcut toggles from gameplay and panel buttons without stealing text input
+  ---
+  duration_ms: 0.774
+  ...
+# Subtest: browser and operating-system modifier shortcuts remain untouched
+ok 332 - browser and operating-system modifier shortcuts remain untouched
+  ---
+  duration_ms: 0.4787
+  ...
+# Subtest: Alt free look permits movement and sprint, preserves Alt+Tab and clears on pause or blur
+ok 333 - Alt free look permits movement and sprint, preserves Alt+Tab and clears on pause or blur
+  ---
+  duration_ms: 0.6769
+  ...
+# Subtest: Ctrl slow walk can also hold Alt free look without capturing OS switching shortcuts
+ok 334 - Ctrl slow walk can also hold Alt free look without capturing OS switching shortcuts
+  ---
+  duration_ms: 0.3997
+  ...
+# Subtest: unavailable pointer lock retains drag fallback and detects a missed mouse release
+ok 335 - unavailable pointer lock retains drag fallback and detects a missed mouse release
+  ---
+  duration_ms: 0.6273
+  ...
+# Subtest: disposing pending Promise capture releases its late success and removes input handlers
+ok 336 - disposing pending Promise capture releases its late success and removes input handlers
+  ---
+  duration_ms: 0.3037
+  ...
+# Subtest: cached outer grid exactly retains old heights at signed boundaries and repeated positions
+ok 337 - cached outer grid exactly retains old heights at signed boundaries and repeated positions
+  ---
+  duration_ms: 3.9608
+  ...
+# Subtest: dismount clears stale Alt return and immediately steers the body without Alt
+ok 338 - dismount clears stale Alt return and immediately steers the body without Alt
+  ---
+  duration_ms: 75.78
+  ...
+# Subtest: ordinary mouse steers a continuous sprint while Alt look preserves the route
+ok 339 - ordinary mouse steers a continuous sprint while Alt look preserves the route
+  ---
+  duration_ms: 4.2514
+  ...
+# Subtest: release returns camera by shortest arc without rotating body; frame partitions agree
+ok 340 - release returns camera by shortest arc without rotating body; frame partitions agree
+  ---
+  duration_ms: 0.8967
+  ...
+# Subtest: mouse during recenter only applies requested turn; vehicle mouse never steers
+ok 341 - mouse during recenter only applies requested turn; vehicle mouse never steers
+  ---
+  duration_ms: 0.2401
+  ...
+# Subtest: meteor fields are deterministic, clustered, and include readable physical fragments
+ok 342 - meteor fields are deterministic, clustered, and include readable physical fragments
+  ---
+  duration_ms: 258.9263
+  ...
+# Subtest: every meteor fragment uses the same local solid footprint as the rendered rock
+ok 343 - every meteor fragment uses the same local solid footprint as the rendered rock
+  ---
+  duration_ms: 19.3945
+  ...
+# Subtest: recovery sites and the first expedition route stay clear without mobility upgrades
+ok 344 - recovery sites and the first expedition route stay clear without mobility upgrades
+  ---
+  duration_ms: 15.0701
+  ...
+# Subtest: meteor details are three static batches with terrain-conforming scars and no lights
+ok 345 - meteor details are three static batches with terrain-conforming scars and no lights
+  ---
+  duration_ms: 86.886
+  ...
+# Subtest: new mobility retains ordinary walking and exact grounded eye height
+ok 346 - new mobility retains ordinary walking and exact grounded eye height
+  ---
+  duration_ms: 158.1416
+  ...
+# Subtest: suit rises to a capped real altitude and camera follows the player
+ok 347 - suit rises to a capped real altitude and camera follows the player
+  ---
+  duration_ms: 31.2703
+  ...
+# Subtest: held Space exhausts once, forces landing and cannot recharge or bounce
+ok 348 - held Space exhausts once, forces landing and cannot recharge or bounce
+  ---
+  duration_ms: 99.5354
+  ...
+# Subtest: low flight clears a real boulder and lands on its actual visible surface
+ok 349 - low flight clears a real boulder and lands on its actual visible surface
+  ---
+  duration_ms: 59.7934
+  ...
+# Subtest: flight cannot start inside the wreck or bypass a sealed bulkhead
+ok 350 - flight cannot start inside the wreck or bypass a sealed bulkhead
+  ---
+  duration_ms: 3.0385
+  ...
+# Subtest: transport has a connected salvage, repair, mount, brake and dismount loop
+ok 351 - transport has a connected salvage, repair, mount, brake and dismount loop
+  ---
+  duration_ms: 6.9844
+  ...
+# Subtest: vehicle battery spends distance, does not refill aboard, charges only parked
+ok 352 - vehicle battery spends distance, does not refill aboard, charges only parked
+  ---
+  duration_ms: 28.3968
+  ...
+# Subtest: vehicle refuses ship entry and camera uses collision-safe wider chase
+ok 353 - vehicle refuses ship entry and camera uses collision-safe wider chase
+  ---
+  duration_ms: 8.7254
+  ...
+# Subtest: mobility persistence validates old/corrupt data and restores in-air descent
+ok 354 - mobility persistence validates old/corrupt data and restores in-air descent
+  ---
+  duration_ms: 16.8694
+  ...
+# Subtest: saving above a boulder restores same world position instead of spawn teleport
+ok 355 - saving above a boulder restores same world position instead of spawn teleport
+  ---
+  duration_ms: 22.8684
+  ...
+# Subtest: zero simulation delta freezes both suit and vehicle energy
+ok 356 - zero simulation delta freezes both suit and vehicle energy
+  ---
+  duration_ms: 0.6817
+  ...
+# Subtest: flight ceiling is relative to sloped terrain without falling through it
+ok 357 - flight ceiling is relative to sloped terrain without falling through it
+  ---
+  duration_ms: 7.7645
+  ...
+# Subtest: malformed resource data stays finite and cannot lose a recovered repair part
+ok 358 - malformed resource data stays finite and cannot lose a recovered repair part
+  ---
+  duration_ms: 1.2291
+  ...
+# Subtest: no collection from the air or a mounted vehicle and no remote repair
+ok 359 - no collection from the air or a mounted vehicle and no remote repair
+  ---
+  duration_ms: 0.3949
+  ...
+# Subtest: descending onto a parked vehicle lands on its hull and can walk off safely
+ok 360 - descending onto a parked vehicle lands on its hull and can walk off safely
+  ---
+  duration_ms: 37.9035
+  ...
+# Subtest: legacy saves inside the new parked vehicle move to nearby clear ground, not spawn
+ok 361 - legacy saves inside the new parked vehicle move to nearby clear ground, not spawn
+  ---
+  duration_ms: 2.8208
+  ...
+# Subtest: save reload on a parked vehicle roof preserves position and still permits stepping off
+ok 362 - save reload on a parked vehicle roof preserves position and still permits stepping off
+  ---
+  duration_ms: 10.106
+  ...
+# Subtest: map ground queries use the same parked vehicle collider as walking and restore
+ok 363 - map ground queries use the same parked vehicle collider as walking and restore
+  ---
+  duration_ms: 0.469
+  ...
+# Subtest: W/S and A/D change real player coordinates in body-relative directions
+ok 364 - W/S and A/D change real player coordinates in body-relative directions
+  ---
+  duration_ms: 97.1679
+  ...
+# Subtest: independent free-look yaw and pitch cannot steer movement, including diagonals
+ok 365 - independent free-look yaw and pitch cannot steer movement, including diagonals
+  ---
+  duration_ms: 6.7416
+  ...
+# Subtest: keyboard turn changes physical forward, preserves look offset and never turns a mounted vehicle
+ok 366 - keyboard turn changes physical forward, preserves look offset and never turns a mounted vehicle
+  ---
+  duration_ms: 4.1161
+  ...
+# Subtest: heading restoration retains independent look and migrates old saves
+ok 367 - heading restoration retains independent look and migrates old saves
+  ---
+  duration_ms: 2.6774
+  ...
+# Subtest: diagonal input is normalized with a blended walking cap and forward run remains faster
+ok 368 - diagonal input is normalized with a blended walking cap and forward run remains faster
+  ---
+  duration_ms: 5.3078
+  ...
+# Subtest: flat-route eye height never oscillates with footsteps or stop
+ok 369 - flat-route eye height never oscillates with footsteps or stop
+  ---
+  duration_ms: 8.4807
+  ...
+# Subtest: held slow walking preserves default pace, diagonal normalization and overrides sprint
+ok 370 - held slow walking preserves default pace, diagonal normalization and overrides sprint
+  ---
+  duration_ms: 9.8498
+  ...
+# Subtest: explicit flight or vehicle speeds override a retained walking preference
+ok 371 - explicit flight or vehicle speeds override a retained walking preference
+  ---
+  duration_ms: 3.6826
+  ...
+# Subtest: lateral and backward sprint requests cannot bypass their pace caps or report sprint credit
+ok 372 - lateral and backward sprint requests cannot bypass their pace caps or report sprint credit
+  ---
+  duration_ms: 4.827
+  ...
+# Subtest: directional pace blend is continuous and explicit movement speeds bypass all walking caps
+ok 373 - directional pace blend is continuous and explicit movement speeds bypass all walking caps
+  ---
+  duration_ms: 12.5416
+  ...
+# Subtest: large real map and continuous spawn → breach → cargo → relay → seal path
+ok 374 - large real map and continuous spawn → breach → cargo → relay → seal path
+  ---
+  duration_ms: 154.6069
+  ...
+# Subtest: walls, map limits and sealed-room save positions are enforced
+ok 375 - walls, map limits and sealed-room save positions are enforced
+  ---
+  duration_ms: 1.2484
+  ...
+# Subtest: navigation defaults to the current objective and can track a known location
+ok 376 - navigation defaults to the current objective and can track a known location
+  ---
+  duration_ms: 88.7517
+  ...
+# Subtest: unknown targets cannot be selected or restored to disclose hidden locations
+ok 377 - unknown targets cannot be selected or restored to disclose hidden locations
+  ---
+  duration_ms: 1.4973
+  ...
+# Subtest: custom waypoint replaces a previous marker and saves only its safe coordinates
+ok 378 - custom waypoint replaces a previous marker and saves only its safe coordinates
+  ---
+  duration_ms: 0.9077
+  ...
+# Subtest: malformed waypoints are rejected, and custom coordinates stay within the walkable world boundary
+ok 379 - malformed waypoints are rejected, and custom coordinates stay within the walkable world boundary
+  ---
+  duration_ms: 0.9785
+  ...
+# Subtest: navigation reports world bearing and player-relative arrows in all directions
+ok 380 - navigation reports world bearing and player-relative arrows in all directions
+  ---
+  duration_ms: 0.6552
+  ...
+# Subtest: arrival is an eight-metre proximity indication and does not erase a waypoint
+ok 381 - arrival is an eight-metre proximity indication and does not erase a waypoint
+  ---
+  duration_ms: 0.6302
+  ...
+# Subtest: map defaults to a useful 1.5 km local view with reversible coordinate projection
+ok 382 - map defaults to a useful 1.5 km local view with reversible coordinate projection
+  ---
+  duration_ms: 1.3415
+  ...
+# Subtest: zoom preserves the cursor world point and clamps zoom range and panning to the world
+ok 383 - zoom preserves the cursor world point and clamps zoom range and panning to the world
+  ---
+  duration_ms: 1.3826
+  ...
+# Subtest: panning maps screen displacement to metres without moving the player
+ok 384 - panning maps screen displacement to metres without moving the player
+  ---
+  duration_ms: 1.6401
+  ...
+# Subtest: cooperative cache keeps old complete coverage, atomically publishes, cancels and disposes staging
+ok 385 - cooperative cache keeps old complete coverage, atomically publishes, cancels and disposes staging
+  ---
+  duration_ms: 4.5263
+  ...
+# Subtest: cooperative exception preserves published data and closes the failed generator
+ok 386 - cooperative exception preserves published data and closes the failed generator
+  ---
+  duration_ms: 1.0004
+  ...
+# Subtest: force teleport supersedes staged destination and preserves all six faces
+ok 387 - force teleport supersedes staged destination and preserves all six faces
+  ---
+  duration_ms: 423.0267
+  ...
+# Subtest: optimized authored creature collision matches exhaustive deformed-vertex clearance
+ok 388 - optimized authored creature collision matches exhaustive deformed-vertex clearance
+  ---
+  duration_ms: 481.6327
+  ...
+# Subtest: outcrops are deterministic, convex-footprint-contained, finite and off routes
+ok 389 - outcrops are deterministic, convex-footprint-contained, finite and off routes
+  ---
+  duration_ms: 64.3808
+  ...
+# Subtest: main walking corridor and ship remain level and accessible
+ok 390 - main walking corridor and ship remain level and accessible
+  ---
+  duration_ms: 19.8068
+  ...
+# Subtest: concept landmarks provide distinct physical relief without replacing world size
+ok 391 - concept landmarks provide distinct physical relief without replacing world size
+  ---
+  duration_ms: 0.9317
+  ...
+# Subtest: collision height interpolates the exact rendered triangles across new relief
+ok 392 - collision height interpolates the exact rendered triangles across new relief
+  ---
+  duration_ms: 59.8037
+  ...
+# Subtest: rock field is deterministic and collision queries are local
+ok 393 - rock field is deterministic and collision queries are local
+  ---
+  duration_ms: 277.9187
+  ...
+# Subtest: boulders have visible convex-footprint collision while small gravel stays walkable
+ok 394 - boulders have visible convex-footprint collision while small gravel stays walkable
+  ---
+  duration_ms: 4.0894
+  ...
+# Subtest: walking into a boulder stops and reports contact without shaking eye height
+ok 395 - walking into a boulder stops and reports contact without shaking eye height
+  ---
+  duration_ms: 17.2792
+  ...
+# Subtest: first-person camera keeps exact eye position; third-person never changes player coordinates
+ok 396 - first-person camera keeps exact eye position; third-person never changes player coordinates
+  ---
+  duration_ms: 9.8677
+  ...
+# Subtest: full-circle free look keeps body heading fixed and every camera angle remains physically valid
+ok 397 - full-circle free look keeps body heading fixed and every camera angle remains physically valid
+  ---
+  duration_ms: 57.9656
+  ...
+# Subtest: third-person boom shortens indoors and cannot penetrate walls, sealed doors, rocks or terrain
+ok 398 - third-person boom shortens indoors and cannot penetrate walls, sealed doors, rocks or terrain
+  ---
+  duration_ms: 3.474
+  ...
+# Subtest: camera smoothing stays collision-safe through turns and new games
+ok 399 - camera smoothing stays collision-safe through turns and new games
+  ---
+  duration_ms: 8.9708
+  ...
+# Subtest: R3 mathematical surface bound rejects unknown arbitrary legacy maxima
+ok 400 - R3 mathematical surface bound rejects unknown arbitrary legacy maxima
+  ---
+  duration_ms: 26.7351
+  ...
+# Subtest: geodetic roundtrips including poles, seam and high orbit
+ok 401 - geodetic roundtrips including poles, seam and high orbit
+  ---
+  duration_ms: 1.4047
+  ...
+# Subtest: legacy flat basin is preserved geometrically on the sphere
+ok 402 - legacy flat basin is preserved geometrically on the sphere
+  ---
+  duration_ms: 42.8528
+  ...
+# Subtest: seed and direction scale deterministic; fields continuous and normalized
+ok 403 - seed and direction scale deterministic; fields continuous and normalized
+  ---
+  duration_ms: 136.8013
+  ...
+# Subtest: cube faces share identical edges and mesh normals face outward
+ok 404 - cube faces share identical edges and mesh normals face outward
+  ---
+  duration_ms: 5.8335
+  ...
+# Subtest: LOD retains full sphere area and budget from ground to orbit
+ok 405 - LOD retains full sphere area and budget from ground to orbit
+  ---
+  duration_ms: 35.3049
+  ...
+# Subtest: R3 globally distributed elevated land gets reserved ground precision in 192 chunks
+ok 406 - R3 globally distributed elevated land gets reserved ground precision in 192 chunks
+  ---
+  duration_ms: 585.0861
+  ...
+# Subtest: floating origin changes render coordinates only and save envelope preserves story
+ok 407 - floating origin changes render coordinates only and save envelope preserves story
+  ---
+  duration_ms: 2.3669
+  ...
+# Subtest: cache rollback, bounded eviction and destroy
+ok 408 - cache rollback, bounded eviction and destroy
+  ---
+  duration_ms: 2.9899
+  ...
+# Subtest: all geometry attributes finite; correct bounds, deterministic output and reduced LOD
+ok 409 - all geometry attributes finite; correct bounds, deterministic output and reduced LOD
+  ---
+  duration_ms: 79.608
+  ...
+# Subtest: global placement preserves legacy area, rejects wet trees, applies origin and exports colliders
+ok 410 - global placement preserves legacy area, rejects wet trees, applies origin and exports colliders
+  ---
+  duration_ms: 1.3107
+  ...
+# Subtest: bad input rejected and biome material weighting finite
+ok 411 - bad input rejected and biome material weighting finite
+  ---
+  duration_ms: 1.6862
+  ...
+# Subtest: real radial controller follows slopes, falls off a cliff, preserves falling saves and lands
+ok 412 - real radial controller follows slopes, falls off a cliff, preserves falling saves and lands
+  ---
+  duration_ms: 7117.8509
+  ...
+# Subtest: support-based restore accepts a raised crest plane, rejects penetration, migrates only valid old center saves
+ok 413 - support-based restore accepts a raised crest plane, rejects penetration, migrates only valid old center saves
+  ---
+  duration_ms: 0.4156
+  ...
+# Subtest: global candidate cells and reloaded batches are deterministic
+ok 414 - global candidate cells and reloaded batches are deterministic
+  ---
+  duration_ms: 102.6731
+  ...
+# Subtest: budget, rendered support and real trunk collision are enforced
+ok 415 - budget, rendered support and real trunk collision are enforced
+  ---
+  duration_ms: 27.6261
+  ...
+# Subtest: movement unloads old cells, altitude unloads all, disposal releases geometry
+ok 416 - movement unloads old cells, altitude unloads all, disposal releases geometry
+  ---
+  duration_ms: 37.9364
+  ...
+# Subtest: authoritative water, slopes, legacy ownership and missing triangles exclude art
+ok 417 - authoritative water, slopes, legacy ownership and missing triangles exclude art
+  ---
+  duration_ms: 72.6949
+  ...
+# Subtest: reeds and shoreline stones are visible but never blocking
+ok 418 - reeds and shoreline stones are visible but never blocking
+  ---
+  duration_ms: 12.4946
+  ...
+# Subtest: distant tree batches use reduced geometry LOD
+ok 419 - distant tree batches use reduced geometry LOD
+  ---
+  duration_ms: 90.299
+  ...
+# Subtest: far-slice grid selection inverts radial projection instead of drifting behind player
+ok 420 - far-slice grid selection inverts radial projection instead of drifting behind player
+  ---
+  duration_ms: 15.0223
+  ...
+# Subtest: backside and both poles generate radial colliders and unload independently
+ok 421 - backside and both poles generate radial colliders and unload independently
+  ---
+  duration_ms: 193.1048
+  ...
+# Subtest: cube edges have unique stable IDs and strictly face-owned directions
+ok 422 - cube edges have unique stable IDs and strictly face-owned directions
+  ---
+  duration_ms: 4.2537
+  ...
+# Subtest: face seam neighborhood loads both owners without duplicated colliders
+ok 423 - face seam neighborhood loads both owners without duplicated colliders
+  ---
+  duration_ms: 315.6095
+  ...
+# Subtest: AGL envelope rises continuously from launch speed to 2000m ceiling
+ok 424 - AGL envelope rises continuously from launch speed to 2000m ceiling
+  ---
+  duration_ms: 1.8628
+  ...
+# Subtest: ground to 2000m, hover and controlled descent finish with bounded acceleration
+ok 425 - ground to 2000m, hover and controlled descent finish with bounded acceleration
+  ---
+  duration_ms: 11.9775
+  ...
+# {"upSeconds":26,"downSeconds":36.3,"totalSeconds":62.3,"maxNearDescent":65}
+# Subtest: fast path requires finite declared bound and checks interior chord and strict shell clearance
+ok 426 - fast path requires finite declared bound and checks interior chord and strict shell clearance
+  ---
+  duration_ms: 0.7484
+  ...
+# Subtest: proven high-air sweep skips every terrain ray but still obeys blocking or pending solids
+ok 427 - proven high-air sweep skips every terrain ray but still obeys blocking or pending solids
+  ---
+  duration_ms: 5.9371
+  ...
+# Subtest: legacy field without proved bound cannot skip missing terrain
+ok 428 - legacy field without proved bound cannot skip missing terrain
+  ---
+  duration_ms: 1.6903
+  ...
+# Subtest: declared bound does not bypass low-altitude obstacle or missing path data
+ok 429 - declared bound does not bypass low-altitude obstacle or missing path data
+  ---
+  duration_ms: 16.1788
+  ...
+# Subtest: segment clearance agrees with dense reference chords around the protected shell
+ok 430 - segment clearance agrees with dense reference chords around the protected shell
+  ---
+  duration_ms: 21.0858
+  ...
+# Subtest: 2000m descent lands safely across frame rates and power states
+ok 431 - 2000m descent lands safely across frame rates and power states
+  ---
+  duration_ms: 57.7855
+  ...
+# Subtest: spherical adapter fast path stays collision safe for out-of-range restored altitude
+ok 432 - spherical adapter fast path stays collision safe for out-of-range restored altitude
+  ---
+  duration_ms: 2.5274
+  ...
+# Subtest: new players and old complete-only snapshots do not gain high flight
+ok 433 - new players and old complete-only snapshots do not gain high flight
+  ---
+  duration_ms: 4.3149
+  ...
+# Subtest: route enforces ordered ground samples, vehicle repair and return to service
+ok 434 - route enforces ordered ground samples, vehicle repair and return to service
+  ---
+  duration_ms: 0.8184
+  ...
+# Subtest: sampling refuses airborne, mounted, submerged and unloaded samples
+ok 435 - sampling refuses airborne, mounted, submerged and unloaded samples
+  ---
+  duration_ms: 0.4817
+  ...
+# Subtest: malformed progression cannot turn coast-only into completed route
+ok 436 - malformed progression cannot turn coast-only into completed route
+  ---
+  duration_ms: 0.5751
+  ...
+# Subtest: AGL, not mountain elevation, determines safe speed; camera is continuous
+ok 437 - AGL, not mountain elevation, determines safe speed; camera is continuous
+  ---
+  duration_ms: 14.2997
+  ...
+# Subtest: launch gate, bounded dt, held input and real energy consumption
+ok 438 - launch gate, bounded dt, held input and real energy consumption
+  ---
+  duration_ms: 1.5685
+  ...
+# Subtest: terrain streaming and collision failures stop all movement
+ok 439 - terrain streaming and collision failures stop all movement
+  ---
+  duration_ms: 0.6507
+  ...
+# Subtest: sweep receives complete high-speed motion; no endpoint-only collision test
+ok 440 - sweep receives complete high-speed motion; no endpoint-only collision test
+  ---
+  duration_ms: 0.4618
+  ...
+# Subtest: exhaustion descends, safely lands, and never regains charge in air
+ok 441 - exhaustion descends, safely lands, and never regains charge in air
+  ---
+  duration_ms: 1.6642
+  ...
+# Subtest: ceiling and unsafe ocean endpoint are enforced
+ok 442 - ceiling and unsafe ocean endpoint are enforced
+  ---
+  duration_ms: 2.798
+  ...
+# Subtest: save preserves every legacy field and round-trips canonical coordinates without held input
+ok 443 - save preserves every legacy field and round-trips canonical coordinates without held input
+  ---
+  duration_ms: 1.8169
+  ...
+# Subtest: unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+ok 444 - unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+  ---
+  duration_ms: 1.1622
+  ...
+# Subtest: opposite-meridian camp projection is not an actual service point
+ok 445 - opposite-meridian camp projection is not an actual service point
+  ---
+  duration_ms: 12453.1841
+  ...
+# Subtest: backside landed walk takeoff save retains canonical hemisphere and parking
+ok 446 - backside landed walk takeoff save retains canonical hemisphere and parking
+  ---
+  duration_ms: 14032.5255
+  ...
+# Subtest: polar seabed saves reject and nearby dry polar ground never becomes legacy basin
+ok 447 - polar seabed saves reject and nearby dry polar ground never becomes legacy basin
+  ---
+  duration_ms: 12361.9803
+  ...
+# {"pole":1,"support":{"height":-2047.0058130220277,"waterDepth":2047.0058130220277,"spacing":1.8310546875},"sample":{"ready":true,"altitude":-2047.0058130220277,"agl":-2047.0058130220277,"waterDepth":2047.0058130220277,"grounded":false,"biome":"ocean","biomes":{"ocean":0.9900990099009901,"coast":2.271670861864194e-202,"wetland":0,"forest":0,"mountains":0,"plains":0.009900990099009901,"river":0,"cliff":0,"basin":0},"slope":0.00000213102924107083,"waterHeight":0,"atService":false}}
+# {"pole":-1,"support":{"height":729.3896892917692,"waterDepth":0,"spacing":1.8310546875},"sample":{"ready":true,"altitude":729.3896892917692,"agl":0,"waterDepth":0,"grounded":true,"biome":"plains","biomes":{"ocean":0,"coast":4.474345204527465e-26,"wetland":2.3287812487368458e-7,"forest":0.19047145387641806,"mountains":0.013413873160543913,"plains":0.79611368277597,"river":1.1297913096799238e-35,"cliff":7.57308943124293e-7,"basin":0},"slope":0.000001691042701644228,"waterHeight":null,"atService":false}}
+# Subtest: backside wreck projection permits takeoff and canonical parking roundtrips
+ok 448 - backside wreck projection permits takeoff and canonical parking roundtrips
+  ---
+  duration_ms: 5447.5482
+  ...
+# Subtest: same-frame parent rebase and save followed by undo has no accumulated drift
+ok 449 - same-frame parent rebase and save followed by undo has no accumulated drift
+  ---
+  duration_ms: 5644.5992
+  ...
+# Subtest: uncommissioned east-route local driving parking and save at four real landmarks
+ok 450 - uncommissioned east-route local driving parking and save at four real landmarks
+  ---
+  duration_ms: 11333.7402
+  ...
+# {"distance":8000,"motion":{"distance":0.02250000000003638,"moving":true,"blocked":false,"sprinting":false,"surface":"vehicle"},"from":{"x":8009.754729753691,"y":-31.726364703878062,"z":373.7561674178961,"yaw":0,"heading":0,"pitch":0,"vx":0,"vz":0,"posture":"stand"},"to":{"x":8009.777229753691,"y":-31.728028643483412,"z":373.7561674178961,"yaw":0,"heading":0,"pitch":0,"vx":0.45,"vz":-2.7554552980815448e-17,"posture":"stand"},"sample":{"ready":true,"altitude":235.9451442717691,"agl":-1.4551915228366852e-11,"waterDepth":0,"grounded":true,"biome":"plains","biomes":{"ocean":1.0120158294842824e-22,"coast":0,"wetland":9.929060679984478e-14,"forest":0.006325305556227186,"mountains":0.0038600196657473675,"plains":0.6241383766211587,"river":0.000045305393427387756,"cliff":9.029493997843681e-92,"basin":0.36563099276334016},"slope":0.0071674561811324936,"waterHeight":232.9454385984621,"atService":false}}
+# {"distance":17000,"motion":{"distance":0.022499999999126885,"moving":true,"blocked":false,"sprinting":false,"surface":"vehicle"},"from":{"x":16963.947500805312,"y":-1056.6373900884355,"z":488.6931824035653,"yaw":0,"heading":0,"pitch":0,"vx":0,"vz":0,"posture":"stand"},"to":{"x":16963.97000080531,"y":-1056.6409776557703,"z":488.6931824035653,"yaw":0,"heading":0,"pitch":0,"vx":0.45,"vz":-2.7554552980815448e-17,"posture":"stand"},"sample":{"ready":true,"altitude":147.98273268273624,"agl":-4.511093720793724e-9,"waterDepth":0,"grounded":true,"biome":"forest","biomes":{"ocean":1.6420853566750354e-12,"coast":0,"wetland":0.0002825668078195654,"forest":0.9916675196362055,"mountains":0.0014529890375535035,"plains":0.0026714741454454912,"river":0.003925450371333947,"cliff":4.4554634496859444e-35,"basin":0},"slope":0.016478453251516097,"waterHeight":144.9830234740954,"atService":false}}
+# {"distance":27000,"motion":{"distance":0.022499999999126885,"moving":true,"blocked":false,"sprinting":false,"surface":"vehicle"},"from":{"x":26780.22844335455,"y":-2992.0912021018157,"z":147.5564322712922,"yaw":0,"heading":0,"pitch":0,"vx":0,"vz":0,"posture":"stand"},"to":{"x":26780.25094335455,"y":-2992.096631448716,"z":147.5564322712922,"yaw":0,"heading":0,"pitch":0,"vx":0.45,"vz":-2.7554552980815448e-17,"posture":"stand"},"sample":{"ready":true,"altitude":33.54974420268263,"agl":-1.760781742632389e-9,"waterDepth":0,"grounded":true,"biome":"wetland","biomes":{"ocean":0.000057151590395530427,"coast":0.00039203609690974196,"wetland":0.9958003762365384,"forest":0.003436956489750499,"mountains":0,"plains":3.5153394921291406e-12,"river":0.00015968070641077692,"cliff":0.00015379887647959213,"basin":0},"slope":0.011781038027906844,"waterHeight":30.550033840644076,"atService":false}}
+# {"distance":34000,"motion":{"distance":0.022499999999126885,"moving":true,"blocked":false,"sprinting":false,"surface":"vehicle"},"from":{"x":33547.640144294906,"y":-4782.039868990498,"z":-211.77712286498902,"yaw":0,"heading":0,"pitch":0,"vx":0,"vz":0,"posture":"stand"},"to":{"x":33547.662644294905,"y":-4782.046471997972,"z":-211.77712286498902,"yaw":0,"heading":0,"pitch":0,"vx":0.45,"vz":-2.7554552980815448e-17,"posture":"stand"},"sample":{"ready":true,"altitude":2.780524561283528,"agl":3.6961864680051804e-9,"waterDepth":0,"grounded":true,"biome":"coast","biomes":{"ocean":0.057415054294396875,"coast":0.9234050999197673,"wetland":0.016912301135702204,"forest":7.083218170877225e-8,"mountains":0,"plains":0,"river":0.00007142570752883594,"cliff":0.0021960481104232677,"basin":0},"slope":0.0021227857455113105,"waterHeight":0,"atService":false}}
+# Subtest: global parked vehicle retains passive solar recharge while explorer stands nearby
+ok 451 - global parked vehicle retains passive solar recharge while explorer stands nearby
+  ---
+  duration_ms: 5802.1091
+  ...
+# Subtest: global vehicle accelerates brakes reverses and consumes battery by actual distance
+ok 452 - global vehicle accelerates brakes reverses and consumes battery by actual distance
+  ---
+  duration_ms: 5573.8947
+  ...
+# Subtest: global moving vehicle refuses dismount until safe stopped speed
+ok 453 - global moving vehicle refuses dismount until safe stopped speed
+  ---
+  duration_ms: 6818.1114
+  ...
+# Subtest: uncommissioned global low-flight input never delegates to legacy tangent physics
+ok 454 - uncommissioned global low-flight input never delegates to legacy tangent physics
+  ---
+  duration_ms: 6865.0122
+  ...
+# Subtest: integrated terrain/gameplay save roundtrip preserves chapter pose and canonical high orbit
+ok 455 - integrated terrain/gameplay save roundtrip preserves chapter pose and canonical high orbit
+  ---
+  duration_ms: 13302.3826
+  ...
+# route max slope degrees 5.507974747631937
+# R2 mainland samples 2462 minimum metres 79.43889935605398 eastern sea samples 169
+# R3 actual ground [{"name":"backside","height":3509.852055542207,"spacing":1.8310546875,"active":192},{"name":"north","height":-2047.0058130223317,"spacing":1.8310546875,"active":192},{"name":"south","height":729.3896892914537,"spacing":1.8310546875,"active":192},{"name":"polar-north","height":-1984.135745482653,"spacing":1.8310546875,"active":192},{"name":"polar-south","height":773.2403497899297,"spacing":1.8310546875,"active":192},{"name":"cube-corner","height":-1279.1223069729886,"spacing":14.6484375,"active":192}]
+# Subtest: actual R4 legacy mesh heights preserved across 3721 basin samples
+ok 456 - actual R4 legacy mesh heights preserved across 3721 basin samples
+  ---
+  duration_ms: 204.8109
+  ...
+# Subtest: route is continuously walkable through coast, landmark biomes dominate
+ok 457 - route is continuously walkable through coast, landmark biomes dominate
+  ---
+  duration_ms: 144.19
+  ...
+# Subtest: river water surface drains monotonically from uplands to ocean
+ok 458 - river water surface drains monotonically from uplands to ocean
+  ---
+  duration_ms: 21.8064
+  ...
+# Subtest: R2 basin connects to broad dry mainland north, south and west
+ok 459 - R2 basin connects to broad dry mainland north, south and west
+  ---
+  duration_ms: 33.0063
+  ...
+# Subtest: real Three adapter anchor transform, masking, raycast and disposal
+ok 460 - real Three adapter anchor transform, masking, raycast and disposal
+  ---
+  duration_ms: 242.6978
+  ...
+# Subtest: R3 actual backside mountain and polar meshes ready without increasing budget
+ok 461 - R3 actual backside mountain and polar meshes ready without increasing budget
+  ---
+  duration_ms: 22487.6742
+  ...
+# Subtest: only strictly internal front-side Float32 chunks are fully covered
+ok 462 - only strictly internal front-side Float32 chunks are fully covered
+  ---
+  duration_ms: 1.6436
+  ...
+# Subtest: fully masked dry chunks skip drawing but keep geometry and exact sampling through transitions
+ok 463 - fully masked dry chunks skip drawing but keep geometry and exact sampling through transitions
+  ---
+  duration_ms: 217.5795
+  ...
+# Subtest: a fully internal chunk with water retains its parent draw during the legacy mask
+ok 464 - a fully internal chunk with water retains its parent draw during the legacy mask
+  ---
+  duration_ms: 102.6426
+  ...
+# Subtest: global projection roundtrips both hemispheres, dateline and poles
+ok 465 - global projection roundtrips both hemispheres, dateline and poles
+  ---
+  duration_ms: 7.9315
+  ...
+# Subtest: great circle distances and initial north/east bearings use spherical coordinates
+ok 466 - great circle distances and initial north/east bearings use spherical coordinates
+  ---
+  duration_ms: 1.0012
+  ...
+# Subtest: base map samples the same field once; four real surveys, camp and parked vehicle
+ok 467 - base map samples the same field once; four real surveys, camp and parked vehicle
+  ---
+  duration_ms: 39.2737
+  ...
+# Subtest: selection returns exact canonical target without changing state, no teleport
+ok 468 - selection returns exact canonical target without changing state, no teleport
+  ---
+  duration_ms: 6.4402
+  ...
+# Subtest: backside parked marker and dateline picking cannot alias the original basin XZ
+ok 469 - backside parked marker and dateline picking cannot alias the original basin XZ
+  ---
+  duration_ms: 4.5466
+  ...
+# Subtest: invalid inputs cannot create silent fake survey or oldXZ parking locations
+ok 470 - invalid inputs cannot create silent fake survey or oldXZ parking locations
+  ---
+  duration_ms: 5.4064
+  ...
+# Subtest: planet excursion preserves a restorable legacy pose and current story/link without aliasing
+ok 471 - planet excursion preserves a restorable legacy pose and current story/link without aliasing
+  ---
+  duration_ms: 5.7222
+  ...
+# Subtest: only validated basin poses advance parking and rescue replaces the old checkpoint
+ok 472 - only validated basin poses advance parking and rescue replaces the old checkpoint
+  ---
+  duration_ms: 1.0821
+  ...
+# Subtest: runtime adapter requires real stream and solid readiness callbacks
+ok 473 - runtime adapter requires real stream and solid readiness callbacks
+  ---
+  duration_ms: 8.8208
+  ...
+# Subtest: actual field preserves old basin contact and dry ground sample
+ok 474 - actual field preserves old basin contact and dry ground sample
+  ---
+  duration_ms: 6.5784
+  ...
+# Subtest: local tangent east and north remain continuous across longitude seam and near pole
+ok 475 - local tangent east and north remain continuous across longitude seam and near pole
+  ---
+  duration_ms: 94.8505
+  ...
+# Subtest: radial movement does not accumulate tangent-plane altitude error
+ok 476 - radial movement does not accumulate tangent-plane altitude error
+  ---
+  duration_ms: 14.7609
+  ...
+# Subtest: sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+ok 477 - sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+  ---
+  duration_ms: 40.8082
+  ...
+# Subtest: actual spherical field supports takeoff, descent and contact without changing legacy body
+ok 478 - actual spherical field supports takeoff, descent and contact without changing legacy body
+  ---
+  duration_ms: 282.0339
+  ...
+# Subtest: unready destination halts actual flight before crossing chunk boundary
+ok 479 - unready destination halts actual flight before crossing chunk boundary
+  ---
+  duration_ms: 2.4946
+  ...
+# Subtest: spherical canonical save reload survives far origin and architecture envelope
+ok 480 - spherical canonical save reload survives far origin and architecture envelope
+  ---
+  duration_ms: 1.7575
+  ...
+# Subtest: negative legacy basin is dry and supports launch and landing below sea level
+ok 481 - negative legacy basin is dry and supports launch and landing below sea level
+  ---
+  duration_ms: 106.1799
+  ...
+# Subtest: surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+ok 482 - surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+  ---
+  duration_ms: 2.7123
+  ...
+# Subtest: legacy yaw converts forward/strafe to the actual tangent axes
+ok 483 - legacy yaw converts forward/strafe to the actual tangent axes
+  ---
+  duration_ms: 0.669
+  ...
+# Subtest: terrain geometry advances one expensive surface vertex per cooperative step
+ok 484 - terrain geometry advances one expensive surface vertex per cooperative step
+  ---
+  duration_ms: 9.8779
+  ...
+# Subtest: cancel and publish retain old six-face coverage; cached mesh and attributes survive reuse
+ok 485 - cancel and publish retain old six-face coverage; cached mesh and attributes survive reuse
+  ---
+  duration_ms: 89.8023
+  ...
+# Subtest: cooperative and synchronous publication have identical terrain geometry, normals and colors
+ok 486 - cooperative and synchronous publication have identical terrain geometry, normals and colors
+  ---
+  duration_ms: 75.0312
+  ...
+# Subtest: prone cycle keeps a low torso, bent supporting arms and intact limb lengths
+ok 487 - prone cycle keeps a low torso, bent supporting arms and intact limb lengths
+  ---
+  duration_ms: 201.2956
+  ...
+# Subtest: down transition starts at standing and ends at the same prone pose without abrupt position jumps
+ok 488 - down transition starts at standing and ends at the same prone pose without abrupt position jumps
+  ---
+  duration_ms: 13.9678
+  ...
+# Subtest: delivered animated 3D matches the runtime sources and includes four native-rig clips
+ok 489 - delivered animated 3D matches the runtime sources and includes four native-rig clips
+  ---
+  duration_ms: 50.3585
+  ...
+# Subtest: persistent missed refreshes lower scale even when median remains 60 Hz
+ok 490 - persistent missed refreshes lower scale even when median remains 60 Hz
+  ---
+  duration_ms: 12.3072
+  ...
+# Subtest: render scale responds to sustained slow frames, stays bounded and recovers slowly
+ok 491 - render scale responds to sustained slow frames, stays bounded and recovers slowly
+  ---
+  duration_ms: 4.6627
+  ...
+# Subtest: CPU saturation and periodic 200 ms spikes cannot ratchet resolution down
+ok 492 - CPU saturation and periodic 200 ms spikes cannot ratchet resolution down
+  ---
+  duration_ms: 6.3209
+  ...
+# Subtest: hysteresis separates changes by 4 seconds and bounds ratio at 0.9
+ok 493 - hysteresis separates changes by 4 seconds and bounds ratio at 0.9
+  ---
+  duration_ms: 4.217
+  ...
+# Subtest: device DPR above one is capped at one CSS pixel per device pixel
+ok 494 - device DPR above one is capped at one CSS pixel per device pixel
+  ---
+  duration_ms: 0.599
+  ...
+# Subtest: pause, invalid time and isolated stalls do not degrade the renderer
+ok 495 - pause, invalid time and isolated stalls do not degrade the renderer
+  ---
+  duration_ms: 0.5918
+  ...
+# Subtest: rider wrists track both physical grips for straight and both steering locks
+ok 496 - rider wrists track both physical grips for straight and both steering locks
+  ---
+  duration_ms: 9.0686
+  ...
+# Subtest: same rider transform and eye survive slope and remote spherical support, independent of look
+ok 497 - same rider transform and eye survive slope and remote spherical support, independent of look
+  ---
+  duration_ms: 4.2329
+  ...
+# Subtest: original GLB native rig reaches mounted wrist targets without replacing artwork
+ok 498 - original GLB native rig reaches mounted wrist targets without replacing artwork
+  ---
+  duration_ms: 46.8273
+  ...
+# Subtest: riftwing volume sweeps reject buildings, underground, ceilings and invalid segments
+ok 499 - riftwing volume sweeps reject buildings, underground, ceilings and invalid segments
+  ---
+  duration_ms: 17.0571
+  ...
+# Subtest: ground hit applies total recoil once through the same traversable path and stops at an obstacle
+ok 500 - ground hit applies total recoil once through the same traversable path and stops at an obstacle
+  ---
+  duration_ms: 1.4315
+  ...
+# Subtest: new creature load failure holds admission and retry releases only a complete animated asset
+ok 501 - new creature load failure holds admission and retry releases only a complete animated asset
+  ---
+  duration_ms: 10.9761
+  ...
+# Subtest: the real north-ridge site supports a grounded spawn and swept takeoff
+ok 502 - the real north-ridge site supports a grounded spawn and swept takeoff
+  ---
+  duration_ms: 18.9446
+  ...
+# Subtest: winged movement follows one bounded ground-takeoff-air-landing path and refuses blocked/ceiling sweeps
+ok 503 - winged movement follows one bounded ground-takeoff-air-landing path and refuses blocked/ceiling sweeps
+  ---
+  duration_ms: 5.2461
+  ...
+# Subtest: ground feet follow the sampled slope and a blocked expanded wing never lifts by assignment
+ok 504 - ground feet follow the sampled slope and a blocked expanded wing never lifts by assignment
+  ---
+  duration_ms: 1.2786
+  ...
+# Subtest: isolated encounter uses one actor through ground chase, real ground punch, flight pursuit, landing and reload
+ok 505 - isolated encounter uses one actor through ground chase, real ground punch, flight pursuit, landing and reload
+  ---
+  duration_ms: 163.6872
+  ...
+# Subtest: aerial death creates one CAS drop, falling corpse settles before pickup and never respawns on reload
+ok 506 - aerial death creates one CAS drop, falling corpse settles before pickup and never respawns on reload
+  ---
+  duration_ms: 84.1693
+  ...
+# Subtest: a wall blocks sight, chase, swept travel and a facing ground punch across it
+ok 507 - a wall blocks sight, chase, swept travel and a facing ground punch across it
+  ---
+  duration_ms: 33.5287
+  ...
+# Subtest: a normal R4 character can guard on foot and must land several real combos to beat the R4 hunter
+ok 508 - a normal R4 character can guard on foot and must land several real combos to beat the R4 hunter
+  ---
+  duration_ms: 2549.0391
+  ...
+# Subtest: one creature actor commits a claw hit on foot and a telegraphed dive plus sweep in the air
+ok 509 - one creature actor commits a claw hit on foot and a telegraphed dive plus sweep in the air
+  ---
+  duration_ms: 57.3023
+  ...
+# Subtest: rejected hit CAS cannot create damage or loot, and an R10 scene without wing state can retry
+ok 510 - rejected hit CAS cannot create damage or loot, and an R10 scene without wing state can retry
+  ---
+  duration_ms: 50.3748
+  ...
+# Subtest: rock chunks preserve every original world vertex, colour, normal and triangle within a bounded batch count
+ok 511 - rock chunks preserve every original world vertex, colour, normal and triangle within a bounded batch count
+  ---
+  duration_ms: 876.1724
+  ...
+# Subtest: rock chunks permit true frustum rejection without distance-based disappearance
+ok 512 - rock chunks permit true frustum rejection without distance-based disappearance
+  ---
+  duration_ms: 11.2169
+  ...
+# Subtest: new cliff renderer and physical support agree on actual visible triangles
+ok 513 - new cliff renderer and physical support agree on actual visible triangles
+  ---
+  duration_ms: 72.5747
+  ...
+# Subtest: camera sweep stops above slope-planted cliff tops rather than the old centre-height proxy
+ok 514 - camera sweep stops above slope-planted cliff tops rather than the old centre-height proxy
+  ---
+  duration_ms: 12.5799
+  ...
+# Subtest: actual Node passing and failing rules are assessed from TAP totals
+ok 515 - actual Node passing and failing rules are assessed from TAP totals
+  ---
+  duration_ms: 709.6271
+  ...
+# Subtest: actual Node skip cannot green the gate despite exit code zero
+ok 516 - actual Node skip cannot green the gate despite exit code zero
+  ---
+  duration_ms: 347.9606
+  ...
+# Subtest: actual Node todo cannot green the gate despite exit code zero
+ok 517 - actual Node todo cannot green the gate despite exit code zero
+  ---
+  duration_ms: 365.4075
+  ...
+# Subtest: actual Node empty file cannot green the gate despite exit code zero
+ok 518 - actual Node empty file cannot green the gate despite exit code zero
+  ---
+  duration_ms: 350.2735
+  ...
+# Subtest: truncated, empty, invalid, overflow and contradictory summaries fail closed
+ok 519 - truncated, empty, invalid, overflow and contradictory summaries fail closed
+  ---
+  duration_ms: 0.8885
+  ...
+# Subtest: real runtime distant creature patrols through checkpoints (flat control)
+ok 520 - real runtime distant creature patrols through checkpoints (flat control)
+  ---
+  duration_ms: 134.9729
+  ...
+# Subtest: real runtime distant creature patrols through checkpoints (real terrain)
+ok 521 - real runtime distant creature patrols through checkpoints (real terrain)
+  ---
+  duration_ms: 315.7992
+  ...
+# Subtest: real runtime mounted player does not freeze autonomous patrol
+ok 522 - real runtime mounted player does not freeze autonomous patrol
+  ---
+  duration_ms: 46.6459
+  ...
+# Subtest: real runtime territorial chase disengages then returns home before patrol resumes
+ok 523 - real runtime territorial chase disengages then returns home before patrol resumes
+  ---
+  duration_ms: 68.7674
+  ...
+# Subtest: real runtime never attacks protected camp and suspends simulation in menu
+ok 524 - real runtime never attacks protected camp and suspends simulation in menu
+  ---
+  duration_ms: 65.663
+  ...
+# Subtest: returning creature passes a nearby unmounted player without beginning an attack
+ok 525 - returning creature passes a nearby unmounted player without beginning an attack
+  ---
+  duration_ms: 19.8277
+  ...
+# Subtest: a creature killed through committed real combat stops moving and leaves loot
+ok 526 - a creature killed through committed real combat stops moving and leaves loot
+  ---
+  duration_ms: 172.6111
+  ...
+# Subtest: scan keeps its emission position while the observer moves, expands once and freezes with simulation
+ok 527 - scan keeps its emission position while the observer moves, expands once and freezes with simulation
+  ---
+  duration_ms: 99.593
+  ...
+# Subtest: 200 scan cycles reuse geometry and material; resources dispose once
+ok 528 - 200 scan cycles reuse geometry and material; resources dispose once
+  ---
+  duration_ms: 14.9541
+  ...
+# Subtest: combat preserves player platform height, with terrain fallback for legacy enemies
+ok 529 - combat preserves player platform height, with terrain fallback for legacy enemies
+  ---
+  duration_ms: 1.6084
+  ...
+# Subtest: diagonal vertical separation consumes attack reach rather than planar reach alone
+ok 530 - diagonal vertical separation consumes attack reach rather than planar reach alone
+  ---
+  duration_ms: 0.5232
+  ...
+# Subtest: legacy callers without y retain attacks and opaque terrain still blocks sight
+ok 531 - legacy callers without y retain attacks and opaque terrain still blocks sight
+  ---
+  duration_ms: 0.3426
+  ...
+# Subtest: creature traversal rejects steep ascent and descent at both tiny and long steps
+ok 532 - creature traversal rejects steep ascent and descent at both tiny and long steps
+  ---
+  duration_ms: 10.003
+  ...
+# Subtest: walkable 26.6 degree slope remains traversable and support matches the shared surface
+ok 533 - walkable 26.6 degree slope remains traversable and support matches the shared surface
+  ---
+  duration_ms: 9.6651
+  ...
+# Subtest: missing terrain cannot provide creature support
+ok 534 - missing terrain cannot provide creature support
+  ---
+  duration_ms: 0.712
+  ...
+# Subtest: full stamina grants thirty seconds of continuous running and reaches exactly zero
+ok 535 - full stamina grants thirty seconds of continuous running and reaches exactly zero
+  ---
+  duration_ms: 21.0816
+  ...
+# Subtest: holding Shift for ninety seconds never regenerates or automatically restarts after exhaustion
+ok 536 - holding Shift for ninety seconds never regenerates or automatically restarts after exhaustion
+  ---
+  duration_ms: 6.0346
+  ...
+# Subtest: release waits 1.5 seconds, then resting restores fourteen points per second
+ok 537 - release waits 1.5 seconds, then resting restores fourteen points per second
+  ---
+  duration_ms: 1.0688
+  ...
+# Subtest: walking recovery is eight per second and never also consumes stamina
+ok 538 - walking recovery is eight per second and never also consumes stamina
+  ---
+  duration_ms: 0.7834
+  ...
+# Subtest: recovery crossing its delay is invariant to time-step subdivision
+ok 539 - recovery crossing its delay is invariant to time-step subdivision
+  ---
+  duration_ms: 1.1573
+  ...
+# Subtest: a premature Shift press stays denied until released and freshly pressed at the restart threshold
+ok 540 - a premature Shift press stays denied until released and freshly pressed at the restart threshold
+  ---
+  duration_ms: 0.6928
+  ...
+# Subtest: releasing a low but not empty sprint requires recovery before starting another session
+ok 541 - releasing a low but not empty sprint requires recovery before starting another session
+  ---
+  duration_ms: 1.8396
+  ...
+# Subtest: stationary Shift and pushing a wall neither drain nor recover stamina
+ok 542 - stationary Shift and pushing a wall neither drain nor recover stamina
+  ---
+  duration_ms: 1.2117
+  ...
+# Subtest: forward intent is required; backward, strafe, and opposing directions cannot sprint or regenerate with Shift held
+ok 543 - forward intent is required; backward, strafe, and opposing directions cannot sprint or regenerate with Shift held
+  ---
+  duration_ms: 1.9778
+  ...
+# Subtest: forward diagonal sprint uses the same drain as straight running
+ok 544 - forward diagonal sprint uses the same drain as straight running
+  ---
+  duration_ms: 2.6059
+  ...
+# Subtest: holding Shift during a non-sprint resets the recovery delay until release
+ok 545 - holding Shift during a non-sprint resets the recovery delay until release
+  ---
+  duration_ms: 0.77
+  ...
+# Subtest: menu input clearing preserves stamina and delay, including exhaustion
+ok 546 - menu input clearing preserves stamina and delay, including exhaustion
+  ---
+  duration_ms: 3.5695
+  ...
+# Subtest: save round-trip persists recovery debt but does not restore held inputs or active sprint
+ok 547 - save round-trip persists recovery debt but does not restore held inputs or active sprint
+  ---
+  duration_ms: 0.7649
+  ...
+# Subtest: legacy charge and malformed saves are normalized without granting a free refill
+ok 548 - legacy charge and malformed saves are normalized without granting a free refill
+  ---
+  duration_ms: 0.3872
+  ...
+# Subtest: recovery is capped at full stamina and invalid deltas cannot change resource values
+ok 549 - recovery is capped at full stamina and invalid deltas cannot change resource values
+  ---
+  duration_ms: 0.3723
+  ...
+# Subtest: HUD describes running, held input, exhaustion, delay, recovery, and readiness
+ok 550 - HUD describes running, held input, exhaustion, delay, recovery, and readiness
+  ---
+  duration_ms: 0.7991
+  ...
+# Subtest: mystery loop connects the wreck, first return, field calibration and final offline return
+ok 551 - mystery loop connects the wreck, first return, field calibration and final offline return
+  ---
+  duration_ms: 95.2443
+  ...
+# Subtest: reaching a landmark out of order cannot bypass power, records or the sealed gate
+ok 552 - reaching a landmark out of order cannot bypass power, records or the sealed gate
+  ---
+  duration_ms: 1.7508
+  ...
+# Subtest: the clue explicitly maps named symbols to real terminals
+ok 553 - the clue explicitly maps named symbols to real terminals
+  ---
+  duration_ms: 0.8424
+  ...
+# Subtest: a wrong relay clears the partial sequence and can be retried to completion
+ok 554 - a wrong relay clears the partial sequence and can be retried to completion
+  ---
+  duration_ms: 0.5079
+  ...
+# Subtest: pickups, calibrations, the opened gate and each return are idempotent
+ok 555 - pickups, calibrations, the opened gate and each return are idempotent
+  ---
+  duration_ms: 0.9734
+  ...
+# Subtest: optional anomalies enrich the journal without gating the main route
+ok 556 - optional anomalies enrich the journal without gating the main route
+  ---
+  duration_ms: 0.3539
+  ...
+# Subtest: save round-trip preserves partial relay progress and optional discoveries
+ok 557 - save round-trip preserves partial relay progress and optional discoveries
+  ---
+  duration_ms: 1.3189
+  ...
+# Subtest: contradictory save flags are clipped to their prerequisites
+ok 558 - contradictory save flags are clipped to their prerequisites
+  ---
+  duration_ms: 0.7186
+  ...
+# Subtest: untrusted saves cannot inject text, flags or an invalid relay order
+ok 559 - untrusted saves cannot inject text, flags or an invalid relay order
+  ---
+  duration_ms: 1.499
+  ...
+# Subtest: restored completed relay normalizes its sequence and journals return immutable copies
+ok 560 - restored completed relay normalizes its sequence and journals return immutable copies
+  ---
+  duration_ms: 0.6567
+  ...
+# Subtest: first return starts a new investigation and old optional logs do not count as calibrated samples
+ok 561 - first return starts a new investigation and old optional logs do not count as calibrated samples
+  ---
+  duration_ms: 0.4544
+  ...
+# Subtest: field calibration works in either order and reveals the source only when both samples exist
+ok 562 - field calibration works in either order and reveals the source only when both samples exist
+  ---
+  duration_ms: 0.731
+  ...
+# Subtest: chapter two records explain the field procedure without revealing the source in advance
+ok 563 - chapter two records explain the field procedure without revealing the source in advance
+  ---
+  duration_ms: 1.2765
+  ...
+# Subtest: legacy completed saves migrate to the first return and must perform new field calibration
+ok 564 - legacy completed saves migrate to the first return and must perform new field calibration
+  ---
+  duration_ms: 1.02
+  ...
+# Subtest: legacy unfinished progress is preserved without granting the first return
+ok 565 - legacy unfinished progress is preserved without granting the first return
+  ---
+  duration_ms: 0.4473
+  ...
+# Subtest: chapter two saves preserve each calibration and remaining objective across reloads
+ok 566 - chapter two saves preserve each calibration and remaining objective across reloads
+  ---
+  duration_ms: 1.0994
+  ...
+# Subtest: chapter two save sanitization enforces all prerequisites and ignores forged log completion
+ok 567 - chapter two save sanitization enforces all prerequisites and ignores forged log completion
+  ---
+  duration_ms: 0.5443
+  ...
+# Subtest: fresh field visits reject missing, malformed, wrong and mismatched-site phase data without mutating the story
+ok 568 - fresh field visits reject missing, malformed, wrong and mismatched-site phase data without mutating the story
+  ---
+  duration_ms: 0.7112
+  ...
+# Subtest: a solved phase cannot bypass original-clock acquisition or the pair of independent samples
+ok 569 - a solved phase cannot bypass original-clock acquisition or the pair of independent samples
+  ---
+  duration_ms: 0.3799
+  ...
+# Subtest: far-field investigation is unavailable until both chapters have been sealed
+ok 570 - far-field investigation is unavailable until both chapters have been sealed
+  ---
+  duration_ms: 161.2444
+  ...
+# Subtest: old completed chapter-two saves start the first far-field site without replaying the story
+ok 571 - old completed chapter-two saves start the first far-field site without replaying the story
+  ---
+  duration_ms: 0.9001
+  ...
+# Subtest: three sites form measured sample, return, archive and next-index loops
+ok 572 - three sites form measured sample, return, archive and next-index loops
+  ---
+  duration_ms: 1.319
+  ...
+# Subtest: out-of-order visits, wrong channels and duplicate interactions never grant samples
+ok 573 - out-of-order visits, wrong channels and duplicate interactions never grant samples
+  ---
+  duration_ms: 0.7866
+  ...
+# Subtest: restoration keeps only a sequential archive prefix and the current pending site
+ok 574 - restoration keeps only a sequential archive prefix and the current pending site
+  ---
+  duration_ms: 0.7375
+  ...
+# Subtest: serialized evidence and journal prose are isolated copies without injected data
+ok 575 - serialized evidence and journal prose are isolated copies without injected data
+  ---
+  duration_ms: 0.4222
+  ...
+# Subtest: all terminals have open ground approaches, shared solids and rock-free exploration clearings
+ok 576 - all terminals have open ground approaches, shared solids and rock-free exploration clearings
+  ---
+  duration_ms: 8.0071
+  ...
+# Subtest: the scene batches actual structures and changes terminal state without spawning geometry
+ok 577 - the scene batches actual structures and changes terminal state without spawning geometry
+  ---
+  duration_ms: 25.1389
+  ...
+# Subtest: tactical pace, diagonal cap, Ctrl priority and short stopping distance
+ok 578 - tactical pace, diagonal cap, Ctrl priority and short stopping distance
+  ---
+  duration_ms: 216.6185
+  ...
+# Subtest: stance changes reject airborne, vehicle and solid wall; lean cancels during sprint
+ok 579 - stance changes reject airborne, vehicle and solid wall; lean cancels during sprint
+  ---
+  duration_ms: 5.8731
+  ...
+# Subtest: long-held Space through tactical control and real mobility jumps once, lands, and never jets
+ok 580 - long-held Space through tactical control and real mobility jumps once, lands, and never jets
+  ---
+  duration_ms: 24.205
+  ...
+# Subtest: Space hold never becomes lift; G remains lift and mounted Space remains the input brake
+ok 581 - Space hold never becomes lift; G remains lift and mounted Space remains the input brake
+  ---
+  duration_ms: 1.4719
+  ...
+# Subtest: prone accepts gentle terrain slopes while preserving solid collisions
+ok 582 - prone accepts gentle terrain slopes while preserving solid collisions
+  ---
+  duration_ms: 33.8794
+  ...
+# Subtest: low postures drive full body poses and lower the camera without clipping its lean through walls
+ok 583 - low postures drive full body poses and lower the camera without clipping its lean through walls
+  ---
+  duration_ms: 11.2144
+  ...
+# Subtest: support plane matches slope 0.4, -0.7 independently of heading
+ok 584 - support plane matches slope 0.4, -0.7 independently of heading
+  ---
+  duration_ms: 3.5885
+  ...
+# Subtest: support plane matches slope -0.65, 0.25 independently of heading
+ok 585 - support plane matches slope -0.65, 0.25 independently of heading
+  ---
+  duration_ms: 0.3961
+  ...
+# Subtest: convex ridge support covers center, edges and corners instead of sinking into the crest
+ok 586 - convex ridge support covers center, edges and corners instead of sinking into the crest
+  ---
+  duration_ms: 0.3114
+  ...
+# Subtest: one missing corner, a throwing sampler and invalid dimensions fail closed
+ok 587 - one missing corner, a throwing sampler and invalid dimensions fail closed
+  ---
+  duration_ms: 0.4758
+  ...
+# Subtest: continuous downhill and uphill support stays grounded without oscillation
+ok 588 - continuous downhill and uphill support stays grounded without oscillation
+  ---
+  duration_ms: 0.973
+  ...
+# Subtest: driving off a cliff falls continuously then lands, at different frame rates
+ok 589 - driving off a cliff falls continuously then lands, at different frame rates
+  ---
+  duration_ms: 4.071
+  ...
+# Subtest: large grounded steps are not automatically teleported upward
+ok 590 - large grounded steps are not automatically teleported upward
+  ---
+  duration_ms: 0.3101
+  ...
+# Subtest: free fall is partition independent before impact and large dt cannot tunnel through terrain
+ok 591 - free fall is partition independent before impact and large dt cannot tunnel through terrain
+  ---
+  duration_ms: 0.3382
+  ...
+# Subtest: unloaded ground and invalid time preserve last physical state
+ok 592 - unloaded ground and invalid time preserve last physical state
+  ---
+  duration_ms: 0.8696
+  ...
+# Subtest: chunks preserve every original triangle and all attributes, including normalized color and seam normals
+ok 593 - chunks preserve every original triangle and all attributes, including normalized color and seam normals
+  ---
+  duration_ms: 11.5305
+  ...
+# Subtest: full 6km terrain retains 720000 triangles but ground camera frustum submits fewer chunks
+ok 594 - full 6km terrain retains 720000 triangles but ground camera frustum submits fewer chunks
+  ---
+  duration_ms: 625.1431
+  ...
+# 20/144 chunks intersect the fixture camera frustum; 100000/720000 triangles
+# Subtest: invalid or non-grid sources are rejected rather than silently changing the terrain
+ok 595 - invalid or non-grid sources are rejected rather than silently changing the terrain
+  ---
+  duration_ms: 1.3552
+  ...
+# Subtest: realm profiles require explicit test entry and isolate every high realm database and save
+ok 596 - realm profiles require explicit test entry and isolate every high realm database and save
+  ---
+  duration_ms: 3.2955
+  ...
+# Subtest: explicit entry and namespace reject production links
+ok 597 - explicit entry and namespace reject production links
+  ---
+  duration_ms: 0.4752
+  ...
+# Subtest: aerial sparring profile is isolated from ordinary realm and formal saves
+ok 598 - aerial sparring profile is isolated from ordinary realm and formal saves
+  ---
+  duration_ms: 4.8607
+  ...
+# Subtest: R4 seed validates in real root and derives stats from combat rules
+ok 599 - R4 seed validates in real root and derives stats from combat rules
+  ---
+  duration_ms: 8.5027
+  ...
+# Subtest: storage override scopes database, preserves compare-and-swap, rejects formal IDs
+ok 600 - storage override scopes database, preserves compare-and-swap, rejects formal IDs
+  ---
+  duration_ms: 3.0395
+  ...
+# Subtest: actual expedition runtime uses R4 combat, harvest transfer and checkpoint persistence
+ok 601 - actual expedition runtime uses R4 combat, harvest transfer and checkpoint persistence
+  ---
+  duration_ms: 679.7355
+  ...
+# Subtest: reset deletes only test names after database deletion succeeds
+ok 602 - reset deletes only test names after database deletion succeeds
+  ---
+  duration_ms: 1.5517
+  ...
+# Subtest: preparation awaits delayed commits and retries the same root without duplicate objects
+ok 603 - preparation awaits delayed commits and retries the same root without duplicate objects
+  ---
+  duration_ms: 806.9237
+  ...
+# Subtest: editable vehicle GLB comes from the current in-game geometry, with shared dashboard and grip groups
+ok 604 - editable vehicle GLB comes from the current in-game geometry, with shared dashboard and grip groups
+  ---
+  duration_ms: 15.9188
+  ...
+# Subtest: cockpit eye is seated in chassis coordinates and does not orbit on mouse look
+ok 605 - cockpit eye is seated in chassis coordinates and does not orbit on mouse look
+  ---
+  duration_ms: 190.5063
+  ...
+# Subtest: Alt return inside cockpit targets vehicle heading without steering the vehicle
+ok 606 - Alt return inside cockpit targets vehicle heading without steering the vehicle
+  ---
+  duration_ms: 12.8506
+  ...
+# Subtest: walking test routes around the actual parked vehicle after dismount
+ok 607 - walking test routes around the actual parked vehicle after dismount
+  ---
+  duration_ms: 137.1396
+  ...
+# Subtest: test driver reaches southwest using controls, not camera or position mutation
+ok 608 - test driver reaches southwest using controls, not camera or position mutation
+  ---
+  duration_ms: 291.466
+  ...
+# Subtest: test driver reaches nearby parking using controls, not camera or position mutation
+ok 609 - test driver reaches nearby parking using controls, not camera or position mutation
+  ---
+  duration_ms: 142.2903
+  ...
+# Subtest: test driver reaches sharp corner using controls, not camera or position mutation
+ok 610 - test driver reaches sharp corner using controls, not camera or position mutation
+  ---
+  duration_ms: 6022.117
+  ...
+# Subtest: test driver reaches diagonal using controls, not camera or position mutation
+ok 611 - test driver reaches diagonal using controls, not camera or position mutation
+  ---
+  duration_ms: 814.3068
+  ...
+# Subtest: test driver reaches old remote route first waypoint using controls, not camera or position mutation
+ok 612 - test driver reaches old remote route first waypoint using controls, not camera or position mutation
+  ---
+  duration_ms: 76.1005
+  ...
+# Subtest: real terrain support plane and every visible hull vertex stay above the mountain at rest
+ok 613 - real terrain support plane and every visible hull vertex stay above the mountain at rest
+  ---
+  duration_ms: 212.5356
+  ...
+# Subtest: actual .69 slope uphill and downhill drive remain grounded without floating
+ok 614 - actual .69 slope uphill and downhill drive remain grounded without floating
+  ---
+  duration_ms: 9.0883
+  ...
+# Subtest: actual 1.15 grade releases downhill without throttle rather than remaining suspended
+ok 615 - actual 1.15 grade releases downhill without throttle rather than remaining suspended
+  ---
+  duration_ms: 4.3683
+  ...
+# Subtest: gravity-driven sliding speed is bounded and consistent across frame rates
+ok 616 - gravity-driven sliding speed is bounded and consistent across frame rates
+  ---
+  duration_ms: 7.9447
+  ...
+# Subtest: a supported craft driving off a 4m ledge falls over time and lands without a height teleport
+ok 617 - a supported craft driving off a 4m ledge falls over time and lands without a height teleport
+  ---
+  duration_ms: 9.0582
+  ...
+# Subtest: vertical solver cannot manufacture upward motion across an unapproved step
+ok 618 - vertical solver cannot manufacture upward motion across an unapproved step
+  ---
+  duration_ms: 1.4672
+  ...
+# Subtest: drive consumption matches real distance and held brake stops the craft on original terrain
+ok 619 - drive consumption matches real distance and held brake stops the craft on original terrain
+  ---
+  duration_ms: 5.3177
+  ...
+# Subtest: legacy save with no contact state preserves parked position repair and charge
+ok 620 - legacy save with no contact state preserves parked position repair and charge
+  ---
+  duration_ms: 1.0042
+  ...
+# Subtest: dismounting and reboarding does not restore an old drive velocity without throttle
+ok 621 - dismounting and reboarding does not restore an old drive velocity without throttle
+  ---
+  duration_ms: 8.5566
+  ...
+# Subtest: saving during a real ledge fall resumes at the saved altitude instead of teleporting to its bottom
+ok 622 - saving during a real ledge fall resumes at the saved altitude instead of teleporting to its bottom
+  ---
+  duration_ms: 2.9669
+  ...
+# Subtest: warm 1000 real terrain steps produce a measured CPU cost, not an inferred FPS
+ok 623 - warm 1000 real terrain steps produce a measured CPU cost, not an inferred FPS
+  ---
+  duration_ms: 23.9791
+  ...
+# 1000 warm stationary steps 18.82ms (0.0188ms/step); excludes rendering
+# Subtest: fixed RNG vectors and fingerprints exclude ID/quality but include actual composition
+ok 624 - fixed RNG vectors and fingerprints exclude ID/quality but include actual composition
+  ---
+  duration_ms: 19.2163
+  ...
+# Subtest: initial placement is once; waiting, pause, reload and offline do not replace unconsumed content
+ok 625 - initial placement is once; waiting, pause, reload and offline do not replace unconsumed content
+  ---
+  duration_ms: 9.8793
+  ...
+# Subtest: partial collection preserves generation; failed/uncommitted collection creates no token
+ok 626 - partial collection preserves generation; failed/uncommitted collection creates no token
+  ---
+  duration_ms: 4.4446
+  ...
+# Subtest: committed depletion -> one token -> cooldown -> safe reservation -> distinct generation; event retry survives reload
+ok 627 - committed depletion -> one token -> cooldown -> safe reservation -> distinct generation; event retry survives reload
+  ---
+  duration_ms: 7.0506
+  ...
+# Subtest: last monster starts group cooldown; member double-report cannot create a vacancy; loot cap is local
+ok 628 - last monster starts group cooldown; member double-report cannot create a vacancy; loot cap is local
+  ---
+  duration_ms: 6.7835
+  ...
+# Subtest: no distinct combination waits without quality rerolls, including cosmetic ID-only alternatives
+ok 629 - no distinct combination waits without quality rerolls, including cosmetic ID-only alternatives
+  ---
+  duration_ms: 3.5683
+  ...
+# Subtest: 96h offline grants at most 1800s on one consumed generation, never spawns or repeats overlapping time
+ok 630 - 96h offline grants at most 1800s on one consumed generation, never spawns or repeats overlapping time
+  ---
+  duration_ms: 8.0614
+  ...
+# Subtest: reserved generation survives reload, commit rechecks safety and failed persistence rolls everything back
+ok 631 - reserved generation survives reload, commit rechecks safety and failed persistence rolls everything back
+  ---
+  duration_ms: 3.6366
+  ...
+# Subtest: tampered plans, stale revisions, reused transaction payloads and backwards clocks are rejected
+ok 632 - tampered plans, stale revisions, reused transaction payloads and backwards clocks are rejected
+  ---
+  duration_ms: 2.3751
+  ...
+# Subtest: all required safety checks fail closed
+ok 633 - all required safety checks fail closed
+  ---
+  duration_ms: 2.4313
+  ...
+# Subtest: world unique batch locks both MYF and MYW, rejects other source, and remains occupied after transfers/retirement
+ok 634 - world unique batch locks both MYF and MYW, rejects other source, and remains occupied after transfers/retirement
+  ---
+  duration_ms: 6.9858
+  ...
+# Subtest: fragments reforge the original identity exactly once; stale concurrent ownership changes fail
+ok 635 - fragments reforge the original identity exactly once; stale concurrent ownership changes fail
+  ---
+  duration_ms: 3.7166
+  ...
+# Subtest: unique batch failure and storage exceptions leave no partial claims
+ok 636 - unique batch failure and storage exceptions leave no partial claims
+  ---
+  duration_ms: 1.2023
+  ...
+# Subtest: old instances preserve rule snapshots and RNG streams are independent of other anchor ordering
+ok 637 - old instances preserve rule snapshots and RNG streams are independent of other anchor ordering
+  ---
+  duration_ms: 3.496
+  ...
+# Subtest: corrupt saves and duplicate unique identities are rejected without replacing the saved world
+ok 638 - corrupt saves and duplicate unique identities are rejected without replacing the saved world
+  ---
+  duration_ms: 1.8768
+  ...
+# Subtest: failed depletion save retains current resources; retry after recovery creates exactly one token
+ok 639 - failed depletion save retains current resources; retry after recovery creates exactly one token
+  ---
+  duration_ms: 2.024
+  ...
+# Subtest: reserved placement cannot move and a failed new-generation save cannot burn the vacancy
+ok 640 - reserved placement cannot move and a failed new-generation save cannot burn the vacancy
+  ---
+  duration_ms: 3.8642
+  ...
+# Subtest: 100 consumed generations remain distinct, use 100 tokens, and roundtrip member loot identities
+ok 641 - 100 consumed generations remain distinct, use 100 tokens, and roundtrip member loot identities
+  ---
+  duration_ms: 3209.3419
+  ...
+# Subtest: offline-disabled definitions receive zero credit; one interval cannot be banked for a future depletion
+ok 642 - offline-disabled definitions receive zero credit; one interval cannot be banked for a future depletion
+  ---
+  duration_ms: 2.0324
+  ...
+# Subtest: F01: current and consumed historical fragments cannot be reserved as another original or root
+ok 643 - F01: current and consumed historical fragments cannot be reserved as another original or root
+  ---
+  duration_ms: 8.7786
+  ...
+# Subtest: F01: import rejects cross-ledger current/history identity reuse without changing the input save
+ok 644 - F01: import rejects cross-ledger current/history identity reuse without changing the input save
+  ---
+  duration_ms: 2.2214
+  ...
+# Subtest: actual Node passing and failing rules are assessed from TAP totals
+ok 645 - actual Node passing and failing rules are assessed from TAP totals
+  ---
+  duration_ms: 588.4164
+  ...
+# Subtest: actual Node skip cannot green the gate despite exit code zero
+ok 646 - actual Node skip cannot green the gate despite exit code zero
+  ---
+  duration_ms: 293.9519
+  ...
+# Subtest: actual Node todo cannot green the gate despite exit code zero
+ok 647 - actual Node todo cannot green the gate despite exit code zero
+  ---
+  duration_ms: 253.1642
+  ...
+# Subtest: actual Node empty file cannot green the gate despite exit code zero
+ok 648 - actual Node empty file cannot green the gate despite exit code zero
+  ---
+  duration_ms: 230.9607
+  ...
+# Subtest: truncated, empty, invalid, overflow and contradictory summaries fail closed
+ok 649 - truncated, empty, invalid, overflow and contradictory summaries fail closed
+  ---
+  duration_ms: 0.8717
+  ...
+1..649
+# tests 649
+# suites 0
+# pass 649
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 98216.1903

@@ -1,0 +1,45 @@
+const {test,expect}=require('@playwright/test');
+const path=require('node:path');
+const url='file:///'+path.resolve(__dirname,'..','star-abyss.html').replace(/\\/g,'/')+'?test=1';
+test('Tab is a standalone map; records/evolution have separate clickable screens and clean returns',async({page})=>{
+ test.setTimeout(90000);
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.setViewportSize({width:1440,height:900});
+ await page.goto(url);await page.locator('#start-button').click();
+ await page.keyboard.press('Tab');
+ await expect(page.locator('#journal-screen')).toBeVisible();
+ await expect(page.locator('#journal-screen #journal-records,#journal-screen #evolution-section,.archive-tabs')).toHaveCount(0);
+ await expect(page.locator('.map-places')).not.toHaveAttribute('open','');
+ await expect(page.locator('#records-screen')).toBeHidden();
+ await page.locator('.map-places summary').click();
+ await page.locator('#map-point-list button[data-point-id="signal"]').click();
+ await expect(page.locator('#map-tracking-name')).toContainText('失真的求救信号');
+ await page.locator('.map-places summary').click();
+ await page.screenshot({path:'docs/ui-implementation/map-r3.png'});
+ await page.keyboard.press('KeyJ');
+ await expect(page.locator('#records-screen')).toBeVisible();
+ await expect(page.locator('#journal-screen')).toBeHidden();
+ await expect(page.locator('#close-records-button')).toBeFocused();
+ await page.locator('#close-records-button').click();
+ await expect(page.locator('#records-screen')).toBeHidden();
+ await page.waitForFunction(()=>document.pointerLockElement?.id==='world');
+ await page.keyboard.press('Escape');
+ await page.locator('#pause-evolution-button').click();
+ await expect(page.locator('#evolution-screen')).toBeVisible();
+ await expect(page.locator('#evolution-section')).toBeVisible();
+ await page.locator('#close-evolution-button').click();
+ await expect(page.locator('#pause-screen')).toBeVisible();
+ await page.locator('#pause-records-button').click();
+ await expect(page.locator('#records-screen')).toBeVisible();
+ await page.keyboard.press('KeyJ');
+ await expect(page.locator('#pause-screen')).toBeVisible();
+ await page.locator('#pause-journal-button').click();
+ for(const width of [1440,768,640]){
+  await page.setViewportSize({width,height:900});
+  await expect(page.locator('#close-journal-button')).toBeVisible();
+  expect(await page.locator('#journal-screen button').evaluateAll(es=>es.filter(e=>e.getClientRects().length&&e.scrollWidth>e.clientWidth+1).map(e=>e.textContent))).toEqual([]);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ }
+ await page.screenshot({path:'docs/ui-implementation/map-r3-narrow.png'});
+ expect(errors).toEqual([]);
+});

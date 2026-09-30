@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/native_main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/native_world.gd" id="2_world"]
+[ext_resource type="Script" path="res://scripts/native_player.gd" id="3_player"]
+[ext_resource type="Script" path="res://scripts/native_riftwing.gd" id="4_riftwing"]
+[ext_resource type="Script" path="res://scripts/native_ascension.gd" id="5_ascension"]
+[ext_resource type="Script" path="res://scripts/native_camp.gd" id="6_camp"]
+
+[sub_resource type="CapsuleShape3D" id="Capsule_player"]
+radius = 0.42
+height = 1.72
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="World" type="Node3D" parent="."]
+script = ExtResource("2_world")
+
+[node name="Camp" type="Node3D" parent="."]
+script = ExtResource("6_camp")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("3_player")
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("Capsule_player")
+position = Vector3(0, 0.86, 0)
+
+[node name="Model" type="Node3D" parent="Player"]
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+position = Vector3(0, 1.52, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
+position = Vector3(0, 1.25, 5)
+current = true
+fov = 70.0
+
+[node name="Riftwing" type="Node3D" parent="."]
+script = ExtResource("4_riftwing")
+
+[node name="Model" type="Node3D" parent="Riftwing"]
+
+[node name="Ascension" type="Node3D" parent="."]
+script = ExtResource("5_ascension")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="TopLeft" type="PanelContainer" parent="Hud"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 486.0
+offset_bottom = 224.0
+mouse_filter = 2
+
+[node name="Status" type="Label" parent="Hud/TopLeft"]
+layout_mode = 2
+text = "星渊 · 原生迁移"
+autowrap_mode = 2
+
+[node name="Hint" type="Label" parent="Hud"]
+anchor_right = 1.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -66.0
+offset_right = -16.0
+offset_bottom = -8.0
+mouse_filter = 2
+text = "WASD 移动 · G 升空 · C 下降 · Shift 加速 · 左键攻击 · 右键格挡 · H 拾取 · V 视角"
+autowrap_mode = 2

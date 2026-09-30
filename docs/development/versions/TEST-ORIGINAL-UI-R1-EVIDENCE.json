@@ -1,0 +1,298 @@
+{
+  "test": "TEST-ORIGINAL-UI-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/1325/star-abyss-game/artifacts/tests/TEST-ORIGINAL-UI-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-ORIGINAL-UI-R1",
+  "archivedAt": "2026-09-12T14:32:53.831Z",
+  "files": [
+    {
+      "path": "1440-inventory.png",
+      "sha256": "7a3204ddcb0c981a86007893540f53cfd5ce8cb9ed2a6b7c2296943f22b6bf2d",
+      "bytes": 125707
+    },
+    {
+      "path": "1440-long.png",
+      "sha256": "116493b275d0fca5f8b390a0dbb06c8d8377c4929f64904ec5da314debdb1878",
+      "bytes": 148712
+    },
+    {
+      "path": "1440-world.png",
+      "sha256": "9f6635bf6bb3debc0c3bb413df40914f64e579368cf08fbcb865de9ee91222f3",
+      "bytes": 120111
+    },
+    {
+      "path": "390-evolution.png",
+      "sha256": "3a29999406ff02434a8db71075659ba013f5e4fd0b90debd0229309c3d1ceb19",
+      "bytes": 34277
+    },
+    {
+      "path": "390-inventory.png",
+      "sha256": "857bd6091de09c76a70e0307f0d4b4c9252c57c5f4fbceed1edd9fceb99f0d52",
+      "bytes": 47833
+    },
+    {
+      "path": "390-label-focus-lost.png",
+      "sha256": "39797da5815ac1cdee2ca01adbf9a886db580145bbafe75d7d23abb01540ef9f",
+      "bytes": 46441
+    },
+    {
+      "path": "390-long-blocked-track.json",
+      "sha256": "bc39047b7ddf6d1403402139e73cdb7564320cdc2d397d5a06224cc4f18cd141",
+      "bytes": 414
+    },
+    {
+      "path": "390-long-bottom.png",
+      "sha256": "fda26600294386bc0b2f64070a2189255cd414a595bb566eb7e33cfd589f1a4f",
+      "bytes": 70008
+    },
+    {
+      "path": "390-long-scroll.json",
+      "sha256": "1f3aee7549c695085681ec2c199570467bf56b3a486e45ed1f942624b7e4d1a9",
+      "bytes": 612
+    },
+    {
+      "path": "390-long-top.png",
+      "sha256": "33d8cab825c38938068d9829074581db92a7c61322806a11d8a975ec26597ef7",
+      "bytes": 74924
+    },
+    {
+      "path": "390-map.png",
+      "sha256": "c7677cec3b8bb118adddb16f6de036b696cf7b83acb648a4997d18c7a6420dbd",
+      "bytes": 24615
+    },
+    {
+      "path": "390-missing.png",
+      "sha256": "535f2e8821082e77b867d2a77a850a5aa364727d91808bd29081b8c3d699e757",
+      "bytes": 45730
+    },
+    {
+      "path": "390-mounted.png",
+      "sha256": "d1b925bd1493af990e6cdd456e36e7e3d19a3d9877d24663614bfc32cc84aa28",
+      "bytes": 45765
+    },
+    {
+      "path": "390-null.png",
+      "sha256": "d09230b29b760b17db206fcfa1fe89718da8dd5130070c69fc049feff1d997a9",
+      "bytes": 45785
+    },
+    {
+      "path": "390-records.png",
+      "sha256": "044b615f28764ef70de9967fe9689c10c67a31bea244474a0b89b2e4934e5bc4",
+      "bytes": 45182
+    },
+    {
+      "path": "390-storage-disabled.png",
+      "sha256": "acc095c45235e07d71fb31769260907b7fe8303c232e2c5840d22ad79b06eaed",
+      "bytes": 46357
+    },
+    {
+      "path": "390-track-third-person.png",
+      "sha256": "1ae8722bb24598d22d4897ba02e2b5b670b5bdff97f2cf458160f7b11de81117",
+      "bytes": 48944
+    },
+    {
+      "path": "390-world.png",
+      "sha256": "e238c12cc1b0da3893babd1d9d2580f9c211b34294462c14046d8fb73ec4e8a2",
+      "bytes": 47680
+    },
+    {
+      "path": "640-error.png",
+      "sha256": "d99cbee057febf4f3c4636303520a84885aae33ef4b0193c66d91cc47f035ad1",
+      "bytes": 64183
+    },
+    {
+      "path": "640-inventory.png",
+      "sha256": "72f4459561c644bf280e625e459d53bc8f19dfcd5b6e406d52af01c9e2b3237b",
+      "bytes": 63753
+    },
+    {
+      "path": "640-long.png",
+      "sha256": "7272fc715a5c8ff8cdcabf68396c4ba1c51b3da9e51b8188b89ec23fbe2cbc3b",
+      "bytes": 82750
+    },
+    {
+      "path": "640-rescue.png",
+      "sha256": "092021e4c2c01c1d62a57cc9cd12ec3b083cbc92da3c0799575422f5648ef189",
+      "bytes": 63401
+    },
+    {
+      "path": "768-inventory.png",
+      "sha256": "933c6bd5f617b6f5c27300fd23a49cea27758f686ffdf116eea7951371fa5c4d",
+      "bytes": 74824
+    },
+    {
+      "path": "768-long.png",
+      "sha256": "1b70592c68b69f21607b5eada9e0d0e3239286a0f7830594933cf7674563ca83",
+      "bytes": 99348
+    },
+    {
+      "path": "768-pending.png",
+      "sha256": "48dff96b726220a99dbcb022e8838a1574b9867f9cbec31bed7e41f4824caba1",
+      "bytes": 74640
+    },
+    {
+      "path": "browser-console.json",
+      "sha256": "b1f2e2f09a29890b91a673cd18947c1ca251d7294d878bb7a3bfe41d93b77f22",
+      "bytes": 23290
+    },
+    {
+      "path": "build-harness.cjs",
+      "sha256": "c5a15ddcc210d08505ac900bd73c624f6c1d35593e974634291a5f38f48b2329",
+      "bytes": 973
+    },
+    {
+      "path": "cleanup.json",
+      "sha256": "3b9b582f7dfe1b97604f234ed384d97ea48722b0e949a6c4de7849835011eed1",
+      "bytes": 161
+    },
+    {
+      "path": "developer-node.tap",
+      "sha256": "8b775b1c60a6216b4a2b4f398a0efdf504061775afd54a4cca628a1fc2f147fb",
+      "bytes": 623
+    },
+    {
+      "path": "evidence-manifest.json",
+      "sha256": "754c17cfe85520c940e38e44e41913fc8d83fdb1e0ff2db60549b2b49f18f133",
+      "bytes": 11079
+    },
+    {
+      "path": "final-audit.cjs",
+      "sha256": "d18d69e1c5064dad0362af144e962f18954416f88a3f74480654ab8eac633c5c",
+      "bytes": 1938
+    },
+    {
+      "path": "final-git-status.txt",
+      "sha256": "d9ad15cee64ed22442f49d697c82c2603c0088f54bb7c26c36b76494c845fe76",
+      "bytes": 2713
+    },
+    {
+      "path": "final-hashes.json",
+      "sha256": "97253ae2a63679bff945cd66d1d7d28b5613f1ed564ede13bab42ddbb0c4e6a0",
+      "bytes": 108732
+    },
+    {
+      "path": "head-backup/package.json",
+      "sha256": "06afe94a62cba3628a50b78e16e2f40066b9f60c43b16aa0bcba68e60a9d2ea2",
+      "bytes": 274
+    },
+    {
+      "path": "head-backup/playable/css/game.css",
+      "sha256": "1b330a8c5e43ec089b80e9b40c812839b73373a448da569c144527d96535c4b4",
+      "bytes": 10098
+    },
+    {
+      "path": "head-backup/playable/star-abyss.html",
+      "sha256": "fe73cba6a9efbf44cd2650cc46fb5b2a9bb05d5de3287ce8081d7970eee5b0bd",
+      "bytes": 7102
+    },
+    {
+      "path": "head-backup/playable/tests/star-abyss.spec.js",
+      "sha256": "7ffaf5b5af66383c620ed228de784d448d3478ead418f5c4627c40a51785c971",
+      "bytes": 2341
+    },
+    {
+      "path": "http-hashes.json",
+      "sha256": "f652cbceb3c172cfc4ccf73c5c706ec9983146a650318555d549b94f7b28da20",
+      "bytes": 841
+    },
+    {
+      "path": "independent-before-reload.json",
+      "sha256": "d455ac4a846179af7217fbca20dac947748c8dac99c62690a0cf895a3c4e3be1",
+      "bytes": 9040
+    },
+    {
+      "path": "independent-dom-final.json",
+      "sha256": "d003d8372c064b9deb7fa41531afe069f840043c72a13a88b6f32f0f5f28b759",
+      "bytes": 2719
+    },
+    {
+      "path": "independent-dom.json",
+      "sha256": "1cbbcba91755fe6841ee831ea358ea8cebad87fa766d61f76727c163c880912e",
+      "bytes": 13821
+    },
+    {
+      "path": "independent-final-actions.json",
+      "sha256": "2bfa60e28403eb2579453a1198687857a69e41b7d726baa0c5e1742d8ae04686",
+      "bytes": 2320
+    },
+    {
+      "path": "independent-fixture.mjs",
+      "sha256": "e30c1c6bbac99bbee15a08162ff2dbf0687d16fea2b742e42e8bcae74e390b0e",
+      "bytes": 7944
+    },
+    {
+      "path": "independent-node.tap",
+      "sha256": "158496ee2a2d60f8283c6be01a2357a55d4ae62526d0df83e371f4adf523ca8b",
+      "bytes": 2980
+    },
+    {
+      "path": "independent.html",
+      "sha256": "e85097bd1b85e1030c5a78bc60d57c76b8d2e9658616454b97ddf1b3eb69812a",
+      "bytes": 16030
+    },
+    {
+      "path": "layout.json",
+      "sha256": "6a73147d749e84c385ce44d56768c18ba5860725205b7e8fda6cb75d5955b2a8",
+      "bytes": 42632
+    },
+    {
+      "path": "loaded-dom.json",
+      "sha256": "cf9ec6d963f33a2c22bb4df9d8084fa56ffb9c49455f821ea13a2e245f225617",
+      "bytes": 440
+    },
+    {
+      "path": "long-widths.json",
+      "sha256": "1538f2779bff031be425cf1a979dc8fc649d23a51b1c3449b98e008ed4950c5d",
+      "bytes": 1451
+    },
+    {
+      "path": "native-actions.json",
+      "sha256": "03d0f77d1d17f2f8c0d42f360aeec37b8f404e53efbac644cec39c9eb542b0b2",
+      "bytes": 8068
+    },
+    {
+      "path": "native-destroy.json",
+      "sha256": "6f46b3411db03e9130b2068025a253d5dabcf5731fc9f5d86754392a56435805",
+      "bytes": 76
+    },
+    {
+      "path": "native-label-focus.json",
+      "sha256": "413f215a5de7f608e3de65e3c0512c05fea34f79d5838114f448f9c0461d8d9f",
+      "bytes": 518
+    },
+    {
+      "path": "native-observations.json",
+      "sha256": "23e3ed9371498a0cd3ca19a813d1a405ad162691e81050811c34f230b34319be",
+      "bytes": 7226
+    },
+    {
+      "path": "preload.cjs",
+      "sha256": "ef87560e33560907290d80ee10e65a43f2acf1b8e93377834d3e80cdebdc59d3",
+      "bytes": 437
+    },
+    {
+      "path": "projection.test.mjs",
+      "sha256": "19ad35632b4f4510c2b1941a064edaaa67f59415ebd6588ac8fc63744cf73932",
+      "bytes": 1290
+    },
+    {
+      "path": "seal.cjs",
+      "sha256": "838d8d9c34fb22b3cbbd3bc4a33fd84c78d400c4bc530caa4cae5bc7da2a00f6",
+      "bytes": 1272
+    },
+    {
+      "path": "server.log",
+      "sha256": "02e8691a1b7ed7be59f6ba0077272072135938c829a511c711433adb70831c8f",
+      "bytes": 89
+    },
+    {
+      "path": "setup-audit.json",
+      "sha256": "9fef39ae2ca3b3cdde34eb3dd69800d7af6f9f17384810129387bd8049d56aa9",
+      "bytes": 39241
+    },
+    {
+      "path": "setup.cjs",
+      "sha256": "e40f2543954e354847a8b2fec711c043f396aa90fac0fa80e9c7c47d1abd906b",
+      "bytes": 2516
+    }
+  ]
+}

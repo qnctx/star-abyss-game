@@ -1,0 +1,39 @@
+{
+  "images": {
+    "05-forest.png": {
+      "path": "docs/art/planet-review-r3/05-forest.png",
+      "sha256": "eda67b6895c37c1d92030924282f3f1a30735d1e12350abb52a2f9cd2d938e03"
+    },
+    "09-natural-ecotones.png": {
+      "path": "docs/art/planet-review-r3/09-natural-ecotones.png",
+      "sha256": "82f127e9045f374a0c2d450f3261f9e4d5ce8572e5d817c930af2e8d1209e22b"
+    },
+    "06-river-wetland.png": {
+      "path": "docs/art/planet-review-r3/06-river-wetland.png",
+      "sha256": "a4c77fd7f387bf4cd701f38f55f238578a60acabba51ad741875b720de41fc52"
+    },
+    "02-basalt-basin.png": {
+      "path": "docs/art/planet-review-r3/02-basalt-basin.png",
+      "sha256": "f13cd2ecd604e9a376fd02f2f8a135c72a3492dafe66ac0b42ce724710abfb29"
+    },
+    "04-mountains-canyon-cliffs.png": {
+      "path": "docs/art/planet-review-r3/04-mountains-canyon-cliffs.png",
+      "sha256": "870af2d409a747354d55c8c04194aac2220c8b411ae96fbc3fb6825670175fa0"
+    },
+    "08-ocean-islands.png": {
+      "path": "docs/art/planet-review-r3/08-ocean-islands.png",
+      "sha256": "1a78cf1ca9e53438b40c0d20d9e8f1990374a4fc9ce1641622091e989272ac6e"
+    },
+    "12-special-regions.png": {
+      "path": "docs/art/planet-review-r3/12-special-regions.png",
+      "sha256": "28766e02d5cf97bc48b4876d7ee7fc049f8a21b6f880a5208a0d88dc03363a10"
+    },
+    "03-basin-to-plains.png": {
+      "path": "docs/art/planet-review-r3/03-basin-to-plains.png",
+      "sha256": "58a9872e08cda317f55f0f52fc48ae6760adc689e57cc1a24dcbd193e415f35c"
+    }
+  },
+  "baseline_sha256": "08ccd5845b827e221b4f946e5bdd68de097df367748af4e594dc2e3fcef2dae0",
+  "mesh_source": "build_assets_r3.py",
+  "godot_exporter": "godot/tests/native_ecology_r3_preview.gd"
+}

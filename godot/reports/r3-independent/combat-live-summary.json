@@ -1,0 +1,158 @@
+{
+  "utc": "2026-09-27T13:27:16",
+  "changed_during_run": [],
+  "phases": {
+    "warmup": {
+      "player_hp": [
+        155520.0,
+        155520.0
+      ],
+      "ordinary_hp": [
+        86400.0,
+        86400.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 0
+    },
+    "ground_r4": {
+      "player_hp": [
+        155520.0,
+        155520.0
+      ],
+      "ordinary_hp": [
+        86400.0,
+        58400.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 0
+    },
+    "ordinary_r9": {
+      "player_hp": [
+        155520.0,
+        155520.0
+      ],
+      "ordinary_hp": [
+        58400.0,
+        0.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 0
+    },
+    "pickup": {
+      "player_hp": [
+        155520.0,
+        155520.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    },
+    "melee_2m": {
+      "player_hp": [
+        155520.0,
+        151320.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    },
+    "guard_beast": {
+      "player_hp": [
+        151320.0,
+        150270.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": true,
+      "fragments": 1
+    },
+    "interrupt_cast": {
+      "player_hp": [
+        150270.0,
+        146070.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "ground"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    },
+    "air_pursuit": {
+      "player_hp": [
+        146070.0,
+        141270.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "air",
+        "ground",
+        "takeoff"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    },
+    "landing": {
+      "player_hp": [
+        141270.0,
+        141270.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "air"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    },
+    "save_after_combat": {
+      "player_hp": [
+        141270.0,
+        141270.0
+      ],
+      "ordinary_hp": [
+        0.0,
+        0.0
+      ],
+      "beast_modes": [
+        "air"
+      ],
+      "guard_seen": false,
+      "fragments": 1
+    }
+  }
+}

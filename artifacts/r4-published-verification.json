@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "httpStatus": 200,
+  "httpHash": "6b6a96b6553c6ea060acecc15af5449219bd10c88a87e0b809ce492532866fe0",
+  "evidence": [
+    "artifacts/r4-published.json",
+    "artifacts/r4-candidate/200m-C-released-hover.png",
+    "artifacts/r4-candidate/200m-Ctrl-alone.png",
+    "artifacts/r4-candidate/200m-W-C-descending.png",
+    "artifacts/r4-candidate/30m-C-landed.png",
+    "artifacts/r4-candidate/f2-C-guide.png",
+    "artifacts/r4-candidate/ground-C-crouched.png",
+    "artifacts/r4-candidate/ground-C-standing.png",
+    "artifacts/r4-candidate/report.json"
+  ],
+  "docs": [
+    {
+      "file": "README.md",
+      "before": "27463f2c36efba8ad781b55a7973c52c99ef9fc4b7c843da67f8560d0aa6e306",
+      "after": "44ea5b499f255577a09b0f123cf07b5fd05a3faffe79add4f9c228c60ae2a017",
+      "operation": "append-control-note"
+    },
+    {
+      "file": "docs/GAMEPLAY_TESTING.md",
+      "before": "17667ec67f50d78af71ea48b726a5a231f9666ad8ba5211c60198c0cf2d994f9",
+      "after": "9ffd3d61e3c4ca811afbeec6b4581fedbe711e4c6cdbcd2f45aed3d09e89c31f",
+      "operation": "append-control-note"
+    }
+  ]
+}

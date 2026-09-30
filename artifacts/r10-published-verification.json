@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "bundleSHA": "f70fd9b64fc315cb0f400312a55b51fa8147b2c6fe8f3e83929117256378e4d9",
+  "servedFiles": [
+    "playable/game.js",
+    "playable/src/input.mjs",
+    "playable/src/aerial-melee-animation.mjs",
+    "playable/src/flight-hud.mjs",
+    "playable/src/expedition-runtime/aerial-melee.mjs",
+    "playable/src/expedition-runtime/index.mjs",
+    "playable/tests/input.test.js",
+    "playable/tests/aerial-melee-r9.test.mjs",
+    "playable/tests/aerial-animation-r9.test.mjs",
+    "playable/src/planet-gameplay/flight.mjs",
+    "playable/src/planet-gameplay/index.mjs",
+    "playable/tests/flight-steering-r9.test.mjs"
+  ],
+  "evidence": [
+    "artifacts/r10-candidate/report.json",
+    "artifacts/r10-candidate/third-person-combo-end.png",
+    "artifacts/r10-candidate/third-person-guard-released.png",
+    "artifacts/r10-candidate/third-person-mouse-kick.png",
+    "artifacts/r10-candidate/third-person-shift-WA.png",
+    "artifacts/r10-candidate/third-person-shift-WD.png"
+  ],
+  "at": "2026-09-26T16:09:50.545Z"
+}

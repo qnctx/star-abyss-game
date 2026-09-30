@@ -1,0 +1,20 @@
+{
+  "animation_count": 29,
+  "changed_animation_names": [
+    "jog",
+    "sprint",
+    "walk"
+  ],
+  "protected_26_exported_clips_identical": true,
+  "mesh_attributes_indices_material_assignment_identical": true,
+  "inverse_bind_accessors_identical": true,
+  "material_json_identical": true,
+  "embedded_texture_bytes_identical": true,
+  "joint_count": 51,
+  "glb_sha256": "49e8dc0f3b119d8fb248067117283fdf1215add7af1f0c1704ae2beaf52f4244",
+  "gait_max_input_key_counts": {
+    "jog": 71,
+    "sprint": 57,
+    "walk": 105
+  }
+}

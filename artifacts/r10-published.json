@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "bundleSHA": "f70fd9b64fc315cb0f400312a55b51fa8147b2c6fe8f3e83929117256378e4d9",
+  "files": [
+    "playable/game.js",
+    "playable/src/input.mjs",
+    "playable/src/aerial-melee-animation.mjs",
+    "playable/src/flight-hud.mjs",
+    "playable/src/expedition-runtime/aerial-melee.mjs",
+    "playable/src/expedition-runtime/index.mjs",
+    "playable/tests/input.test.js",
+    "playable/tests/aerial-melee-r9.test.mjs",
+    "playable/tests/aerial-animation-r9.test.mjs",
+    "docs/development/AERIAL-MELEE-R9.md",
+    "docs/development/AERIAL-FLIGHT-COMBAT-R10.md",
+    "playable/src/planet-gameplay/flight.mjs",
+    "playable/src/planet-gameplay/index.mjs",
+    "playable/tests/flight-steering-r9.test.mjs"
+  ],
+  "backup": "artifacts/r10-backup-1790438989621"
+}

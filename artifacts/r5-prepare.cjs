@@ -1,0 +1,1 @@
+const fs=require('fs');const dst='artifacts/r5-release.cjs';if(fs.existsSync(dst))throw Error('Already prepared');fs.writeFileSync(dst,fs.readFileSync('artifacts/r4-release.cjs','utf8').replaceAll('r4-','r5-'));

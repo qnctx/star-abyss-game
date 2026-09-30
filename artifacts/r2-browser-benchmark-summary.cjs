@@ -1,0 +1,3 @@
+const path=require('path'),r=require(path.resolve(process.argv[2]||'artifacts/r2-candidate-performance-attempt2/report.json'));
+console.log('bundleSHA',r.bundleSHA,'complete',r.complete,'errors',r.errors,'failure',r.failure);
+for(const s of r.scenarios){const b=s.before,a=s.after;console.log(s.name,JSON.stringify({delta:s.delta,modeBefore:b.cameraMode,modeAfter:a.cameraMode,rigBefore:b.cameraRig,rigAfter:a.cameraRig,playerBefore:{x:b.player.x,y:b.player.y,z:b.player.z},playerAfter:{x:a.player.x,y:a.player.y,z:a.player.z},mobilityBefore:b.mobilityStatus,mobilityAfter:a.mobilityStatus,planetBefore:b.planet?.session?.flight,planetAfter:a.planet?.session?.flight,timing:s.timing}));}

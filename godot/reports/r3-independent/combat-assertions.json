@@ -1,0 +1,226 @@
+{
+  "utc": "2026-09-27T13:49:47",
+  "checks": [
+    {
+      "name": "source and assets stable",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "all samples actual physics",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "normal time scale",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 exactly one start",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 exactly one release",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 exactly one impact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 windup respected",
+      "pass": true,
+      "detail": 0.5166666666666699
+    },
+    {
+      "name": "ground_r4 release uses current hand bone",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 vfx shares authority source",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ground_r4 hit observed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 exactly one start",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 exactly one release",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 exactly one impact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 windup respected",
+      "pass": true,
+      "detail": 2.21666666666666
+    },
+    {
+      "name": "ordinary_r9 release uses current hand bone",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 vfx shares authority source",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_r9 hit observed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "real enemy cancels cast",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "interrupted cast never releases or impacts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "actual drop collected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "combat_field_present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "enemy_field_present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fragments_restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary_stays_dead",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "remaining_loot_restored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "dynamic jab agrees with actual bone contact",
+      "pass": true,
+      "detail": [
+        [
+          false,
+          0.345051556825638
+        ]
+      ]
+    },
+    {
+      "name": "beast takes off and flies",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "beast lands again",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "five metre approach eventually damages",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "passed": 29,
+  "total": 29,
+  "render_frame_intervals_ms": {
+    "warmup": {
+      "samples": 46,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 50.0,
+      "max_ms": 150.0
+    },
+    "ground_r4": {
+      "samples": 117,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 41.3116666666668,
+      "max_ms": 148.942666666667
+    },
+    "ordinary_r9": {
+      "samples": 164,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 17.0123333333333,
+      "max_ms": 146.333
+    },
+    "pickup": {
+      "samples": 20,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 16.6666666666667
+    },
+    "melee_2m": {
+      "samples": 60,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 16.8353333333333
+    },
+    "guard_beast": {
+      "samples": 233,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 146.470333333333
+    },
+    "interrupt_cast": {
+      "samples": 300,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 16.6666666666667
+    },
+    "air_pursuit": {
+      "samples": 284,
+      "median_ms": 16.6666666666667,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 146.67
+    },
+    "landing": {
+      "samples": 480,
+      "median_ms": 16.666,
+      "p95_ms": 16.6666666666667,
+      "max_ms": 16.6666666666667
+    },
+    "ground_5m": {
+      "samples": 280,
+      "median_ms": 16.666,
+      "p95_ms": 16.666,
+      "max_ms": 16.666
+    },
+    "save_after_combat": {
+      "samples": 21,
+      "median_ms": 16.666,
+      "p95_ms": 16.666,
+      "max_ms": 16.666
+    }
+  },
+  "performance_scope": "hidden Intel UHD OpenGL 1280x720; scene setups and PNG captures included; no claim about foreground human feel"
+}

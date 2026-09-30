@@ -1,0 +1,356 @@
+{
+	"checks": [
+		{
+			"detail": "",
+			"name": "normal product scene and player physics",
+			"pass": true
+		},
+		{
+			"detail": "903.0",
+			"name": "G reaches safe low flight altitude",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 979, \"sim_s\": 16.316666666667, \"wall_s\": 18.885, \"agl\": 923.4375, \"energy\": 99.5139999999977, \"tangent_speed\": 0.0, \"radial_speed\": 0.0, \"flight_active\": true, \"boosting\": false, \"mode\": \"hover\", \"weight\": 0.00000057104136, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, 0.0, 0.0)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/hover-low.png\", \"image_ok\": true }",
+			"name": "stationary hover may stand",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 1221, \"sim_s\": 20.3500000000001, \"wall_s\": 22.917, \"agl\": 889.315498900193, \"energy\": 99.3929999999971, \"tangent_speed\": 420.005706787109, \"radial_speed\": 0.1969096660614, \"flight_active\": true, \"boosting\": false, \"mode\": \"cruise\", \"weight\": 0.5499999998981, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(-0.0, -0.007165, -0.999974)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-low.png\", \"image_ok\": true }",
+			"name": "ordinary W cruise keeps forward travel pose",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 1228, \"sim_s\": 20.4666666666668, \"wall_s\": 23.065, \"agl\": 921.449316575551, \"energy\": 96.3894999999971, \"tangent_speed\": 419.998352050781, \"radial_speed\": 0.196857213974, \"flight_active\": true, \"boosting\": false, \"mode\": \"cruise\", \"weight\": 0.5499999999494, \"clip\": \"air_cast_fist\", \"cast\": true, \"pitch\": 0.0, \"input\": \"(-0.0, -0.007165, -0.999974)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-low.png\", \"image_ok\": true }",
+			"name": "R cast interrupts flight pose",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 1351, \"sim_s\": 22.5166666666667, \"wall_s\": 25.084, \"agl\": 909.446371681379, \"energy\": 96.3279999999968, \"tangent_speed\": 420.000793457031, \"radial_speed\": 0.44761848449707, \"flight_active\": true, \"boosting\": false, \"mode\": \"cruise\", \"weight\": 0.55, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, -0.014458, -0.999896)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-return-low.png\", \"image_ok\": true }",
+			"name": "cast end restores moving flight pose",
+			"pass": true
+		},
+		{
+			"detail": "1919.31841036569",
+			"name": "long boost route starts above terrain relief",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 2399, \"sim_s\": 39.9833333333323, \"wall_s\": 43.284, \"agl\": 1862.76953125, \"energy\": 91.2789999999958, \"tangent_speed\": 600.002685546875, \"radial_speed\": 0.51497650146484, \"flight_active\": true, \"boosting\": true, \"mode\": \"accelerate\", \"weight\": 0.99999999370643, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(-0.0, -0.028983, -0.99958)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/boost-low.png\", \"image_ok\": true }",
+			"name": "Shift accelerates into authored boost",
+			"pass": true
+		},
+		{
+			"detail": "9.47750000000015",
+			"name": "energy crossed boost threshold in normal time",
+			"pass": false
+		},
+		{
+			"detail": "{  }",
+			"name": "movement stays pitched after boost energy limit",
+			"pass": false
+		},
+		{
+			"detail": "110.033333333328",
+			"name": "70 second hold used normal physics time",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 9113, \"sim_s\": 151.883333333346, \"wall_s\": 205.077, \"agl\": 10042.4765625, \"energy\": 98.750999999994, \"tangent_speed\": 0.00020980577392, \"radial_speed\": 2152.03393554688, \"flight_active\": true, \"boosting\": false, \"mode\": \"ascend\", \"weight\": 0.42, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, 0.999999, 0.001583)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/ascent-high.png\", \"image_ok\": true }",
+			"name": "G reaches high altitude with radial ascent pose",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 9806, \"sim_s\": 163.433333333356, \"wall_s\": 217.394, \"agl\": 14308.5908203125, \"energy\": 98.4094999999924, \"tangent_speed\": 3359.99536132813, \"radial_speed\": -0.75921630859375, \"flight_active\": true, \"boosting\": false, \"mode\": \"cruise\", \"weight\": 0.54999999997933, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(-0.0, -0.070087, -0.997541)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-high.png\", \"image_ok\": true }",
+			"name": "high altitude W remains in cruise",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 9933, \"sim_s\": 165.550000000024, \"wall_s\": 219.513, \"agl\": 12999.265625, \"energy\": 98.3474999999921, \"tangent_speed\": 2675.82397460938, \"radial_speed\": -977.5322265625, \"flight_active\": true, \"boosting\": false, \"mode\": \"dive\", \"weight\": 0.81999830792946, \"clip\": \"boost\", \"cast\": false, \"pitch\": -0.65, \"input\": \"(-0.0, -0.690058, -0.723754)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/mouse-dive-high.png\", \"image_ok\": true }",
+			"name": "viewport pitch produces radial dive pose",
+			"pass": true
+		},
+		{
+			"detail": "{ \"frame\": 10235, \"sim_s\": 170.583333333361, \"wall_s\": 224.543, \"agl\": 12283.958984375, \"energy\": 98.1964999999914, \"tangent_speed\": 0.0, \"radial_speed\": 0.0, \"flight_active\": true, \"boosting\": false, \"mode\": \"hover\", \"weight\": 0.00000000013765, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, 0.0, 0.0)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/dive-release-high.png\", \"image_ok\": true }",
+			"name": "release and level return toward hover",
+			"pass": true
+		},
+		{
+			"detail": "",
+			"name": "sources frozen during product run",
+			"pass": true
+		},
+		{
+			"detail": "0.01666666666667..0.01666666666667",
+			"name": "normal physics delta",
+			"pass": true
+		}
+	],
+	"failures": [
+		"energy crossed boost threshold in normal time: 9.47750000000015",
+		"movement stays pitched after boost energy limit: {  }"
+	],
+	"frames": 10241,
+	"max_delta": 0.0166666666666667,
+	"min_delta": 0.0166666666666667,
+	"sim_s": 170.683333333361,
+	"snapshots": {
+		"ascent-high": {
+			"agl": 10042.4765625,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 98.750999999994,
+			"flight_active": true,
+			"frame": 9113,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/ascent-high.png",
+			"image_ok": true,
+			"input": "(0.0, 0.999999, 0.001583)",
+			"mode": "ascend",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 2152.03393554688,
+			"sim_s": 151.883333333346,
+			"tangent_speed": 0.00020980577392038,
+			"wall_s": 205.077,
+			"weight": 0.42
+		},
+		"ascent-low": {
+			"agl": 903.0,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 99.589999999998,
+			"flight_active": true,
+			"frame": 827,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/ascent-low.png",
+			"image_ok": true,
+			"input": "(0.0, 0.999999, 0.001583)",
+			"mode": "ascend",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 90.4688568115234,
+			"sim_s": 13.7833333333336,
+			"tangent_speed": 0.000419914722442627,
+			"wall_s": 16.369,
+			"weight": 0.42
+		},
+		"boost-held-70s": {
+			"agl": 1682.02648925781,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 9.47800000000015,
+			"flight_active": true,
+			"frame": 6601,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/boost-held-70s.png",
+			"image_ok": true,
+			"input": "(-0.000007, -0.34208, -0.939671)",
+			"mode": "cruise",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.310714721679688,
+			"sim_s": 110.016666666662,
+			"tangent_speed": 420.163635253906,
+			"wall_s": 160.93,
+			"weight": 0.550000000000001
+		},
+		"boost-low": {
+			"agl": 1862.76953125,
+			"boosting": true,
+			"cast": false,
+			"clip": "boost",
+			"energy": 91.2789999999958,
+			"flight_active": true,
+			"frame": 2399,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/boost-low.png",
+			"image_ok": true,
+			"input": "(-0.0, -0.028983, -0.99958)",
+			"mode": "accelerate",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.514976501464844,
+			"sim_s": 39.9833333333323,
+			"tangent_speed": 600.002685546875,
+			"wall_s": 43.284,
+			"weight": 0.999999993706429
+		},
+		"cast-low": {
+			"agl": 921.449316575551,
+			"boosting": false,
+			"cast": true,
+			"clip": "air_cast_fist",
+			"energy": 96.3894999999971,
+			"flight_active": true,
+			"frame": 1228,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-low.png",
+			"image_ok": true,
+			"input": "(-0.0, -0.007165, -0.999974)",
+			"mode": "cruise",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.196857213973999,
+			"sim_s": 20.4666666666668,
+			"tangent_speed": 419.998352050781,
+			"wall_s": 23.065,
+			"weight": 0.5499999999494
+		},
+		"cast-return-low": {
+			"agl": 909.446371681379,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 96.3279999999968,
+			"flight_active": true,
+			"frame": 1351,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-return-low.png",
+			"image_ok": true,
+			"input": "(0.0, -0.014458, -0.999896)",
+			"mode": "cruise",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.44761848449707,
+			"sim_s": 22.5166666666667,
+			"tangent_speed": 420.000793457031,
+			"wall_s": 25.084,
+			"weight": 0.549999999999999
+		},
+		"cruise-high": {
+			"agl": 14308.5908203125,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 98.4094999999924,
+			"flight_active": true,
+			"frame": 9806,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-high.png",
+			"image_ok": true,
+			"input": "(-0.0, -0.070087, -0.997541)",
+			"mode": "cruise",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": -0.75921630859375,
+			"sim_s": 163.433333333356,
+			"tangent_speed": 3359.99536132813,
+			"wall_s": 217.394,
+			"weight": 0.549999999979333
+		},
+		"cruise-low": {
+			"agl": 889.315498900193,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 99.3929999999971,
+			"flight_active": true,
+			"frame": 1221,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-low.png",
+			"image_ok": true,
+			"input": "(-0.0, -0.007165, -0.999974)",
+			"mode": "cruise",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.196909666061401,
+			"sim_s": 20.3500000000001,
+			"tangent_speed": 420.005706787109,
+			"wall_s": 22.917,
+			"weight": 0.549999999898104
+		},
+		"dive-release-high": {
+			"agl": 12283.958984375,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 98.1964999999914,
+			"flight_active": true,
+			"frame": 10235,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/dive-release-high.png",
+			"image_ok": true,
+			"input": "(0.0, 0.0, 0.0)",
+			"mode": "hover",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.0,
+			"sim_s": 170.583333333361,
+			"tangent_speed": 0.0,
+			"wall_s": 224.543,
+			"weight": 0.000000000137645949794278
+		},
+		"energy-before-threshold": {
+			"agl": 1540.64697265625,
+			"boosting": true,
+			"cast": false,
+			"clip": "boost",
+			"energy": 10.9795000000007,
+			"flight_active": true,
+			"frame": 5548,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/energy-before-threshold.png",
+			"image_ok": true,
+			"input": "(-0.000006, -0.284139, -0.958783)",
+			"mode": "accelerate",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": -0.234603881835938,
+			"sim_s": 92.4666666666627,
+			"tangent_speed": 599.706604003906,
+			"wall_s": 143.396,
+			"weight": 0.999999999999999
+		},
+		"hover-low": {
+			"agl": 923.4375,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 99.5139999999977,
+			"flight_active": true,
+			"frame": 979,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/hover-low.png",
+			"image_ok": true,
+			"input": "(0.0, 0.0, 0.0)",
+			"mode": "hover",
+			"mouse_mode": 2,
+			"pitch": 0.0,
+			"radial_speed": 0.0,
+			"sim_s": 16.316666666667,
+			"tangent_speed": 0.0,
+			"wall_s": 18.885,
+			"weight": 0.000000571041361261859
+		},
+		"mouse-dive-high": {
+			"agl": 12999.265625,
+			"boosting": false,
+			"cast": false,
+			"clip": "boost",
+			"energy": 98.3474999999921,
+			"flight_active": true,
+			"frame": 9933,
+			"image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/mouse-dive-high.png",
+			"image_ok": true,
+			"input": "(-0.0, -0.690058, -0.723754)",
+			"mode": "dive",
+			"mouse_mode": 2,
+			"pitch": -0.65,
+			"radial_speed": -977.5322265625,
+			"sim_s": 165.550000000024,
+			"tangent_speed": 2675.82397460938,
+			"wall_s": 219.513,
+			"weight": 0.819998307929458
+		}
+	},
+	"source_sha256_end": {
+		"res://assets/motion-r2/c2-motion-r2.glb": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+		"res://scripts/native_motion_r2.gd": "1f48ad151f9b4682ade1dc050939bc624e3ff9f8f4909bffedb4e417aa1d7a6f",
+		"res://scripts/native_player.gd": "dae90166feb7c4ad6dee5db4804c737788e64b8a5802aa8ffd991e623a14fd2f",
+		"res://scripts/native_world.gd": "0da447b3a76b208eed40d816e5c8100cc6307c3651b8fc2e08b340f94a738ccf"
+	},
+	"source_sha256_start": {
+		"res://assets/motion-r2/c2-motion-r2.glb": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+		"res://scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+		"res://scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+		"res://scripts/native_motion_r2.gd": "1f48ad151f9b4682ade1dc050939bc624e3ff9f8f4909bffedb4e417aa1d7a6f",
+		"res://scripts/native_player.gd": "dae90166feb7c4ad6dee5db4804c737788e64b8a5802aa8ffd991e623a14fd2f",
+		"res://scripts/native_world.gd": "0da447b3a76b208eed40d816e5c8100cc6307c3651b8fc2e08b340f94a738ccf"
+	},
+	"wall_s": 224.729
+}

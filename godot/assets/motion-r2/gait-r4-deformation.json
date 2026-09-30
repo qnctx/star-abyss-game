@@ -1,0 +1,48 @@
+{
+  "clips": {
+    "jog": {
+      "frames": 36,
+      "bounds_min": [
+        -0.4610070586204529,
+        -0.7604618668556213,
+        -0.01085653156042099
+      ],
+      "bounds_max": [
+        0.4607371687889099,
+        0.5321433544158936,
+        1.7921406030654907
+      ],
+      "largest_edge_m": 0.30480825901031494
+    },
+    "sprint": {
+      "frames": 29,
+      "bounds_min": [
+        -0.46101975440979004,
+        -0.7861072421073914,
+        -0.014278041198849678
+      ],
+      "bounds_max": [
+        0.460800439119339,
+        0.5528566241264343,
+        1.7887953519821167
+      ],
+      "largest_edge_m": 0.3048084080219269
+    },
+    "walk": {
+      "frames": 53,
+      "bounds_min": [
+        -0.4646111726760864,
+        -0.5748045444488525,
+        -0.04024980589747429
+      ],
+      "bounds_max": [
+        0.46419814229011536,
+        0.47191691398620605,
+        1.8160934448242188
+      ],
+      "largest_edge_m": 0.30452045798301697
+    }
+  },
+  "failures": [],
+  "method": "Every authored frame; evaluated original skinned geometry, finite coordinates, extent <=3m, edge <=0.65m. This is deformation evidence, not subjective input acceptance."
+}

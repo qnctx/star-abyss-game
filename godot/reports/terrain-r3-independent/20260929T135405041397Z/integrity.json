@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "production_changed_during_run": [],
+  "foreground_before": 2755244,
+  "foreground_after": 2755244,
+  "final_acceptance": false,
+  "reason": "Await explicit integration freeze and visual review"
+}

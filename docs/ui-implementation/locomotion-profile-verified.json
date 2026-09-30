@@ -1,0 +1,79 @@
+{
+  "label": "verified",
+  "viewport": "1440x900 headless Chromium; not the user browser FPS",
+  "graphics": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "renderRatio": 0.65,
+  "frameMs": {
+    "p50": 349.90000000000146,
+    "p95": 433.2999999999993,
+    "max": 450
+  },
+  "drawCalls": 161,
+  "triangles": 379840,
+  "hotspots": [
+    [
+      "(program) @ native",
+      23635
+    ],
+    [
+      "V0 @ game.js?v=c2-asset-perf-20260908",
+      104
+    ],
+    [
+      "p @ game.js?v=c2-asset-perf-20260908",
+      46
+    ],
+    [
+      "S4 @ game.js?v=c2-asset-perf-20260908",
+      27
+    ],
+    [
+      "(anonymous) @ game.js?v=c2-asset-perf-20260908",
+      25
+    ],
+    [
+      "f9 @ game.js?v=c2-asset-perf-20260908",
+      16
+    ],
+    [
+      "m @ game.js?v=c2-asset-perf-20260908",
+      15
+    ],
+    [
+      "X @ game.js?v=c2-asset-perf-20260908",
+      12
+    ],
+    [
+      "o3 @ game.js?v=c2-asset-perf-20260908",
+      10
+    ],
+    [
+      "a @ game.js?v=c2-asset-perf-20260908",
+      9
+    ],
+    [
+      "setSize @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "setValue @ game.js?v=c2-asset-perf-20260908",
+      7
+    ],
+    [
+      "m9 @ game.js?v=c2-asset-perf-20260908",
+      6
+    ],
+    [
+      "Kn @ game.js?v=c2-asset-perf-20260908",
+      5
+    ],
+    [
+      "u @ game.js?v=c2-asset-perf-20260908",
+      5
+    ],
+    [
+      "fd @ game.js?v=c2-asset-perf-20260908",
+      5
+    ]
+  ]
+}

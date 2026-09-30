@@ -1,0 +1,20 @@
+[
+  {
+    "file": "godot/assets/motion-r2/source/c2-motion-r2.blend",
+    "baseline_sha256": "c9e9eecf8ba480a8f7f7d5b2346290946ec177c40aee7685b0b479915927866f",
+    "current_sha256": "c9e9eecf8ba480a8f7f7d5b2346290946ec177c40aee7685b0b479915927866f",
+    "unchanged": true
+  },
+  {
+    "file": "godot/assets/motion-r2/c2-motion-r2.glb",
+    "baseline_sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "current_sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "unchanged": true
+  },
+  {
+    "file": "godot/assets/motion-r2/clips.json",
+    "baseline_sha256": "4b05ab3aa5a10367ac247fced90b7a7115a514b6a0350ef5659f4daa16dc91c7",
+    "current_sha256": "4b05ab3aa5a10367ac247fced90b7a7115a514b6a0350ef5659f4daa16dc91c7",
+    "unchanged": true
+  }
+]

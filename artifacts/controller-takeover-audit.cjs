@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const roots = [process.cwd(), 'C:/Users/HUAWEI/.codex/worktrees/cb21/star-abyss-game', 'E:/myProject/star-abyss-game'];
+const hash = f => fs.existsSync(f) ? crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex') : null;
+const walk = (root, dir) => fs.existsSync(path.join(root, dir)) ? fs.readdirSync(path.join(root, dir), {withFileTypes:true}).flatMap(e => e.isDirectory() ? walk(root, dir+'/'+e.name) : [dir+'/'+e.name]) : [];
+const files = [...new Set(roots.flatMap(r => ['playable/src','docs/development'].flatMap(d => walk(r,d))).concat(['playable/game.js','package.json','artifacts/npc-loop-browser-qa.cjs']))];
+const rows = files.map(file => ({file, hashes: roots.map(r => hash(path.join(r,file)))}));
+const manifest = JSON.parse(fs.readFileSync(path.join(roots[1], 'artifacts/npc-r1-published.json')));
+const published = manifest.files.map(f => ({file:f.path, matches:roots.map(r => hash(path.join(r,f.path)) === f.sha256)}));
+const report = {time:new Date().toISOString(), roots, compared:rows.length, differences:rows.filter(r=>new Set(r.hashes).size>1), published};
+report.textChecks = ['package.json','playable/star-abyss.html'].map(file => ({file, normalizedEqual: new Set(roots.map(r=>fs.readFileSync(path.join(r,file),'utf8').replace(/\r\n/g,'\n'))).size===1}));
+fs.writeFileSync('artifacts/controller-takeover-audit.json', JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));

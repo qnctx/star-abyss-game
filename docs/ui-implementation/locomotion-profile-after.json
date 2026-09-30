@@ -1,0 +1,78 @@
+{
+  "label": "after",
+  "viewport": "1440x900 headless Chromium (software-rendering environment; not hardware FPS)",
+  "renderRatio": 0.65,
+  "frameMs": {
+    "p50": 299.90000000000146,
+    "p95": 366.7000000000007,
+    "max": 400
+  },
+  "drawCalls": 138,
+  "triangles": 403360,
+  "hotspots": [
+    [
+      "(program) @ native",
+      21778
+    ],
+    [
+      "W0 @ game.js?v=c2-freelook-20260908",
+      86
+    ],
+    [
+      "p @ game.js?v=c2-freelook-20260908",
+      37
+    ],
+    [
+      "b4 @ game.js?v=c2-freelook-20260908",
+      29
+    ],
+    [
+      "(anonymous) @ game.js?v=c2-freelook-20260908",
+      17
+    ],
+    [
+      "m @ game.js?v=c2-freelook-20260908",
+      16
+    ],
+    [
+      "f9 @ game.js?v=c2-freelook-20260908",
+      15
+    ],
+    [
+      "slerp @ game.js?v=c2-freelook-20260908",
+      13
+    ],
+    [
+      "(garbage collector) @ native",
+      12
+    ],
+    [
+      "a @ game.js?v=c2-freelook-20260908",
+      11
+    ],
+    [
+      "q @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "setSize @ game.js?v=c2-freelook-20260908",
+      7
+    ],
+    [
+      "setValue @ game.js?v=c2-freelook-20260908",
+      6
+    ],
+    [
+      "query @ game.js?v=c2-freelook-20260908",
+      6
+    ],
+    [
+      "m9 @ game.js?v=c2-freelook-20260908",
+      5
+    ],
+    [
+      "o3 @ game.js?v=c2-freelook-20260908",
+      5
+    ]
+  ]
+}

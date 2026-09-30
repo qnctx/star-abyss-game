@@ -1,0 +1,9 @@
+# Phase 1 basalt outcrops
+
+Reference inspected before modelling: `docs/art/environments/phase1-v1/map-concept.png`. These cliff studies supplement the heightfield with sharp fractured basalt rather than trying to represent every near cliff through smooth terrain tessellation.
+
+`createPhase1Outcrops()` in `playable/src/phase1-outcrops.mjs` returns seven deterministic records. Each has the requested eight-point counterclockwise convex footprint, position, radius, height, solid flag, `basalt-outcrop` kind and indexed local triangle mesh. Nine elevation rings and 32 perimeter samples produce broken column joints, a talus shoulder, stepped ledges and a fractured mesa cap. Face vertices are independent so `computeVertexNormals()` preserves hard facets. There are 576 triangles per record, 4,032 total. Optional `meshColors` provides linear RGB layer variation for a white vertex-coloured material.
+
+Integration contract: sample `terrainHeight(record.x + localX, record.z + localZ)` at every vertex and add localY. Collision triangle heights must use precisely the same transformation. This follows sloping ground and embeds the bottom ring 0.25 m. The footprint conservatively contains every mesh vertex and must be inserted into the existing shared spatial hash. It deliberately over-approximates upper notches; do not make this geometry visual-only. No global randomness, allocations per frame, billable model generation or texture dependency.
+
+Validation command: `node --test playable/tests/phase1-outcrops.test.mjs`. PASS: deterministic output; finite coordinates; all triangles inside convex footprints; all seven records clear the central 40 m route and the 65 m ship corridor; geometry/count/colour attribute consistency. Full native scene appearance and collision remain the controller's integration validation.

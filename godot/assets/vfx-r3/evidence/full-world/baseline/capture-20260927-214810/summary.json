@@ -1,0 +1,227 @@
+[
+  {
+    "tier": 4,
+    "view": 0,
+    "samples": 94,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.5666666666666673,
+    "wall_elapsed": 1.448017,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 146.0,
+    "primitives_scene_max": 709280.0,
+    "render_fps_observed": 57.319769035860766
+  },
+  {
+    "tier": 5,
+    "view": 0,
+    "samples": 92,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.533333333333334,
+    "wall_elapsed": 1.563161,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 154.0,
+    "primitives_scene_max": 758278.0,
+    "render_fps_observed": 53.097537617686214
+  },
+  {
+    "tier": 6,
+    "view": 0,
+    "samples": 110,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.833333333333333,
+    "wall_elapsed": 1.813153,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 146.0,
+    "primitives_scene_max": 709280.0,
+    "render_fps_observed": 60.116272592550104
+  },
+  {
+    "tier": 8,
+    "view": 0,
+    "samples": 188,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.1333333333333284,
+    "wall_elapsed": 3.261495,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 155.0,
+    "primitives_scene_max": 758472.0,
+    "render_fps_observed": 52.42994393675293
+  },
+  {
+    "tier": 9,
+    "view": 0,
+    "samples": 218,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.6333333333333266,
+    "wall_elapsed": 3.663665,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 156.0,
+    "primitives_scene_max": 794439.0,
+    "render_fps_observed": 56.773749783345366
+  },
+  {
+    "tier": 4,
+    "view": 1,
+    "samples": 94,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.5666666666666673,
+    "wall_elapsed": 1.547105,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 141.0,
+    "primitives_scene_max": 628142.0,
+    "render_fps_observed": 60.11227421538939
+  },
+  {
+    "tier": 5,
+    "view": 1,
+    "samples": 92,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.533333333333334,
+    "wall_elapsed": 1.512083,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 117.0,
+    "primitives_scene_max": 628094.0,
+    "render_fps_observed": 60.181881550153
+  },
+  {
+    "tier": 6,
+    "view": 1,
+    "samples": 110,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.833333333333333,
+    "wall_elapsed": 1.80936,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 113.0,
+    "primitives_scene_max": 484276.0,
+    "render_fps_observed": 60.24229561834019
+  },
+  {
+    "tier": 8,
+    "view": 1,
+    "samples": 188,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.1333333333333284,
+    "wall_elapsed": 3.163188,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 124.0,
+    "primitives_scene_max": 667392.0,
+    "render_fps_observed": 56.5884797236206
+  },
+  {
+    "tier": 9,
+    "view": 1,
+    "samples": 218,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.6333333333333266,
+    "wall_elapsed": 3.663327,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 120.0,
+    "primitives_scene_max": 627420.0,
+    "render_fps_observed": 57.05196396608875
+  },
+  {
+    "tier": 4,
+    "view": 2,
+    "samples": 94,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.5666666666666673,
+    "wall_elapsed": 1.547106,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 148.0,
+    "primitives_scene_max": 780872.0,
+    "render_fps_observed": 60.11223536073158
+  },
+  {
+    "tier": 5,
+    "view": 2,
+    "samples": 92,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.533333333333334,
+    "wall_elapsed": 1.513059,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 148.0,
+    "primitives_scene_max": 781160.0,
+    "render_fps_observed": 60.143061176067825
+  },
+  {
+    "tier": 6,
+    "view": 2,
+    "samples": 110,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 1.833333333333333,
+    "wall_elapsed": 1.81274,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 148.0,
+    "primitives_scene_max": 780870.0,
+    "render_fps_observed": 60.12996899720864
+  },
+  {
+    "tier": 8,
+    "view": 2,
+    "samples": 188,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.1333333333333284,
+    "wall_elapsed": 3.163469,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 157.0,
+    "primitives_scene_max": 830400.0,
+    "render_fps_observed": 56.58345316486427
+  },
+  {
+    "tier": 9,
+    "view": 2,
+    "samples": 218,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "physics_elapsed": 3.6333333333333266,
+    "wall_elapsed": 3.686457,
+    "resource_versions": [
+      "r3-existing-reference"
+    ],
+    "draw_calls_scene_max": 284.0,
+    "primitives_scene_max": 825180.0,
+    "render_fps_observed": 56.69400185598259
+  }
+]

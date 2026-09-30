@@ -24,6 +24,8 @@ func _run() -> void:
         print("========================================")
 
         _cleanup_test_scene()
+        await process_frame
+        await process_frame
         quit(0 if _failed == 0 else 1)
 
 

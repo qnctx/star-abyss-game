@@ -1,0 +1,4 @@
+const fs=require('fs'),crypto=require('crypto');const hash=p=>fs.existsSync(p)?crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'):null;
+const baseline='artifacts/r8-release-baseline.json',b=JSON.parse(fs.readFileSync(baseline));if(!b['package.json'])b['package.json']={local:hash('package.json'),live:hash('E:/myProject/star-abyss-game/package.json')};fs.writeFileSync(baseline,JSON.stringify(b,null,2));
+const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));pkg.scripts['build:ascension']='esbuild playable/src/ascension-gallery.mjs --bundle --format=iife --target=chrome105 --minify --outfile=playable/ascension-gallery.js';if(!pkg.scripts.build.includes('build:ascension'))pkg.scripts.build+=' && npm run build:ascension';fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
+for(const p of ['docs/cultivation/REALM-SYSTEM.md','docs/cultivation/REALM_DESIGN.md'])if(fs.existsSync(p)){console.log('Realm source',p);}

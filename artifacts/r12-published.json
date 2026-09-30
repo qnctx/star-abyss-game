@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "bundleSHA": "db3974ea65bd60cd91d42e66a0919595df80c7cd7d964a4dec2d507e5ffb55f9",
+  "cpuTests": 22,
+  "browserAssertions": 7,
+  "files": [
+    "playable/src/flight-hud.mjs",
+    "playable/src/test-lab.mjs",
+    "docs/development/FLIGHT-ENTRY-R12.md",
+    "playable/game.js",
+    "playable/star-abyss.html"
+  ],
+  "checked": [
+    "playable/src/flight-hud.mjs",
+    "playable/src/test-lab.mjs",
+    "playable/game.js",
+    "playable/star-abyss.html"
+  ],
+  "backup": "artifacts/r12-backup-1790470725676"
+}

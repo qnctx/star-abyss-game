@@ -1,0 +1,16 @@
+{
+  "scope": "After contact-order fix and passing 243/GPU, before real habitat sampling",
+  "files": {
+    "godot/scripts/native_environment_damage.gd": "3ef55e9c707f3b4861e24e2f436162040cc00c3ff75f778a2aa81c717ed4243b",
+    "godot/scripts/native_environment_damage_assets.gd": "c1217046e3d4082a93ca1d2aae2e3340b1fcbbf81549e8708d24921c8d5a4607",
+    "godot/scripts/native_planet_ecology.gd": "777778201b76afa241197d9a9d5c68b711a51f0c618f8f366e50ecd0fa127119",
+    "godot/scripts/native_planet.gd": "fff50a0ac5dd744895e579531657e319348d4f1bb32f7a520fdfaa9d624fcda7",
+    "godot/scripts/native_planet_field.gd": "5455ad25b6fd56cb6aa2ed0307a9c2d61dc631cba723ec7af339b6d192436c2b",
+    "godot/scripts/native_main.gd": "c9a1b3edca8fdc5bf3d9914da76beb2c02262725b7683a992ae19e1af57f8e5f",
+    "godot/assets/planet-ecology-r4/manifest.json": "a733532e9e40634a24e7f7a676b412ea627cb8749f080dd4a304cd1ca4fe5d6d",
+    "godot/assets/planet-ecology-r4/ecology_r4.gdshader": "405d09b60f9183cdcdb2626e89c6f49273f4fef0140bc2ef996e8f4524d52373",
+    "godot/assets/planet-ecology-r4/build_ecology_r4.py": "a07e4c225d229f42d17bcfcd569900c5dadfe04c7d70f68711a57147af04d3b7",
+    "godot/scripts/native_martial_skills.gd": "4f2be0fc4cb952614de9b4be77b44ea95fc213b5798ce4b6a1fbf8498e3dd7ed",
+    "godot/scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38"
+  }
+}

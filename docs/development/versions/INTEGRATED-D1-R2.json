@@ -1,0 +1,493 @@
+{
+  "version": "DEV-D1-R2",
+  "testThreadId": "01a0954e-85dc-7523-a9fa-bb8bfbcb15ee",
+  "integratedAt": "2026-09-12T11:42:59.545Z",
+  "files": [
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\docs\\development\\reports\\DEV-D1.md",
+      "target": "E:\\myProject\\star-abyss-game\\docs\\development\\reports\\DEV-D1.md",
+      "sha256": "c88a09df731cdab1a007e68b0b865cacb3d2cccf68fd5b41a3663f73e5a63160"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\tests\\d3-scene.test.js",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\tests\\d3-scene.test.js",
+      "sha256": "fd2a6c3b5930a6678f1cb7ade971cf2a9f6328825734355a88031c3bbdc2e779"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\app.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\app.mjs",
+      "sha256": "17a5b2e7dae8cca1f6b1458b2bb7423dff158705e5edcbe9bceef53a99012c5d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\check-evidence.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\check-evidence.cjs",
+      "sha256": "a42aff17246795bb5db212c8e1626d30b3c68f12573fbdf9e70980256231c5e9"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\check-r2.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\check-r2.cjs",
+      "sha256": "ffd9714a878fa50576fb328f714fca137b3533b02eb2c8972ad16ad1f5b1bd1f"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\dependencies.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\dependencies.cjs",
+      "sha256": "bc7e55ec0bace58402d25e00e931eafe4493de992af300426209561826b9b0ef"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\dependencies.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\dependencies.json",
+      "sha256": "5a521277d5032b37b80170ccb72b4cd3e05cc470e4e0613bf83a445690406363"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\baseline-independent-r1.tap",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\baseline-independent-r1.tap",
+      "sha256": "4b4608458f667a65f9a968ac43a0483d17efd7e8bc3c6b8fdae70e4ddf4cdfee"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-checks.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-checks.json",
+      "sha256": "86c1559054766f4f96cac07d101737b100fca42806ba2fc30c3aebafa0f964b0"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-away.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-away.json",
+      "sha256": "91a8b59869f4b6282d07c4a1b4da9f369f3c0265e58f14639a195b96c101fe3a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-away.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-away.png",
+      "sha256": "2f90fa733dd21e158b1a7bf8e782e51bf7708492b2e9a7425e93c352afb1f6d2"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-before.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-before.json",
+      "sha256": "7e970c2b19113c278a88ee3c516fcd6047cee683df2792d834561468ccb7258f"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-before.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-before.png",
+      "sha256": "955f87df11366e313851aa4df99fa4a4ec44775359d05b114cba973d3ab5609d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-empty.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-empty.json",
+      "sha256": "5924a60335ce3ab044a6c578e5fa837a7635f5bd4b18442352f23fce7f0c54a0"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-empty.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-empty.png",
+      "sha256": "c7f845ed0d86fffeccce9f218f468b3e582fc69a44280d0cd05367c1020962e6"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-reload.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-reload.json",
+      "sha256": "5924a60335ce3ab044a6c578e5fa837a7635f5bd4b18442352f23fce7f0c54a0"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-reload.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-reload.png",
+      "sha256": "bee12e7dc18c30af02118d3e0266f8cfa844ab599db85b98ca72c392c6f87629"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-revisit-repeat.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-revisit-repeat.json",
+      "sha256": "de8868e64f71ddc6c3500dc1d10c4e145ac78c3a8ecfe05a46c80631ba55e37c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-revisit-repeat.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-corpse-revisit-repeat.png",
+      "sha256": "d794f4cc8c44bd970dd6c401978a060f0416019bc0f5b8e81c08e81f123e3e67"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-away.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-away.json",
+      "sha256": "b0e399a5d861314d22473ec52b8b19c1fbbf9a08c331dd96163825f018c76126"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-away.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-away.png",
+      "sha256": "cb081335eadb22fc33c841c10d665d37437bada44d0c3575f52e197023ac098c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-before.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-before.json",
+      "sha256": "9a656826e9bd0280b614c3f0ff067140e7001c826899c16837f4287511b98bfd"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-before.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-before.png",
+      "sha256": "3d55f5f9cc327a9ee2cb67a510a4b6bacc781f8a23bee1c9b305538500d0e875"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-empty.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-empty.json",
+      "sha256": "2d62c3fda02cdb8d31d5aeb71251c6ec22e3be73b4b6f7b2f2c4037cdbb55ecf"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-empty.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-empty.png",
+      "sha256": "44176aa40984b3511ddc449528681d3a1da8e25cd8f9e106f70645bf4047bd29"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-reload.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-reload.json",
+      "sha256": "2d62c3fda02cdb8d31d5aeb71251c6ec22e3be73b4b6f7b2f2c4037cdbb55ecf"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-reload.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-reload.png",
+      "sha256": "0864a6e639ce20367127cf7cbfa3cf679b8430253c82fce7e2c2aff2995b0275"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-revisit-repeat.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-revisit-repeat.json",
+      "sha256": "79a659636917c93f72281d380397777bda6523ad159e149f18f728fa53473286"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-revisit-repeat.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-herb-revisit-repeat.png",
+      "sha256": "3d9f1531b41c32936ebc416d361a5ac33ba5b02377e8000b710e1b70074358a6"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-after.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-after.json",
+      "sha256": "1d4ac918289080b476f167fbe8b15626e00a39fd924cc7676033347c1ed13ee1"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-after.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-after.png",
+      "sha256": "b7fcfdadc72318f9421279bc13d315f86bebbf7fdfbbc19ad85ce3ca4dcec236"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-before.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-before.json",
+      "sha256": "c78dbdd78f24856cf41afbed59b196d45e64a8285c3e02166c9a4eebe8e9d32a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-before.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-original-station-before.png",
+      "sha256": "5daaad5557128782248ea6b475e50bebfd08e3c3462e10d9ded192018baa9ecf"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-center.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-center.json",
+      "sha256": "1ca379040249af54304628674373200e95afe675b12872bf3c0f47aa358c03c4"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-center.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-center.png",
+      "sha256": "410cae97a9a1c33676f9de96c04d3ed07f7d2a2c1d321915b44f4e29e9ab4c08"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-after.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-after.json",
+      "sha256": "ccb922ce399f95a0752d5aa014a3922c465c8b5bb46f9fe9062d07ded5360274"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-after.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-after.png",
+      "sha256": "527fd6524b864967ee3ea91bf3909e7cd100311192d43b36bc66d7db0f712749"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-before.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-before.json",
+      "sha256": "c754b797f3dd627500a2c5d691a8c4d029fbeaa3cf07811d2dac8fd5bd9bd700"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-before.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-left-before.png",
+      "sha256": "6798b0787b4ae8dfda6b838b91c01e1dd5cbb55b0ba773d5ddfb51609c2e0f62"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-after.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-after.json",
+      "sha256": "795f87a05269697a2ebd91dbcaefe00de5baddfb8fed5ada187da96ca5eb3037"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-after.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-after.png",
+      "sha256": "0b150fd05501951799b7557a4acc498503d0fc2b9c4b7b39f20343bbea01bf8f"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-before.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-before.json",
+      "sha256": "2c06622d93dc9acdd707c546f5c6c0e2526c3ad568efdb55cb2593662febae60"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-before.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\browser-wall-right-before.png",
+      "sha256": "aef4a2c051139b8b1875be24b5f571df0d41c7f70ddd8df98c594dae45cb9a71"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\developer.tap",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\developer.tap",
+      "sha256": "881d88981e272a262744dd48b22a92b399ee92b317f3cff7aef57e587624a88d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\independent-provenance.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\independent-provenance.json",
+      "sha256": "2999b278395e3d10633c7088b03ed3070afea93a40d439a71861ce7053a3347a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\independent-r1.tap",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\independent-r1.tap",
+      "sha256": "aff13c1b0f838da8c7ee5ff6cd1cf8d073b95dfae53db02b472d3fb8ff1cf655"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\independent-r1.test.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\independent-r1.test.mjs",
+      "sha256": "d05172cde2738e32bd51ea058788800823c702966a5a5056dc4be35fdc58518b"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence-r2\\r1-unchanged.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence-r2\\r1-unchanged.json",
+      "sha256": "809d9c4f1256510d0ace1a47ac9d089c4b1323e5dff9a278b2bf48a6cdfc3a4d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\01-partial.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\01-partial.png",
+      "sha256": "862a3b22025df965e28c9f863952ec32e3401d01105805c27fb60b81631201a7"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\02-final-partial.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\02-final-partial.json",
+      "sha256": "115cb57cca0e8586f793d952ab2d86d25c79bd4060ca7c01f27e897ad03af861"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\02-final-partial.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\02-final-partial.png",
+      "sha256": "3723aebc91c9d925f2a596b62ed410bbb0f89f506359b087337ed6baf2456013"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\03-depleted.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\03-depleted.json",
+      "sha256": "0b34a2336939d1000fba68deab9e027a183ebfeb5e54b0ea6e4d75c6fe3ce60e"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\04-windup.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\04-windup.json",
+      "sha256": "17c7ba8ecd597aff2ea8a2278b85b69a4ba8cad96ee56f9ad6a1419fbd660749"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\04-windup.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\04-windup.png",
+      "sha256": "deda1b1493cb915dc1e9a40d432c55db0030cdca15db418d2e2f2bacaaf09a8e"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\05-windup-refresh.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\05-windup-refresh.json",
+      "sha256": "0405f4e3d58b81e89c8ba27374d774d5f2b576746f96c7bdfb611b7885264105"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\06-first-hit.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\06-first-hit.json",
+      "sha256": "edbb62e8596e8652f81c5d70b3233ba6ceab04a1ff5555bfc18fb8f0f9e4336a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\06-first-hit.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\06-first-hit.png",
+      "sha256": "539e99bb250188e9450ee1233340ffa75c5cc52e26851a53c131ebcc5d3e65fb"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\07-defeated.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\07-defeated.json",
+      "sha256": "c203696987ae0315c21f02d9e5fcd9466e6111855f8d760d7282b341c84cba14"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\07-defeated.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\07-defeated.png",
+      "sha256": "ef6a2b33f0579e34b0a5fcd16a21fc4d94ad37f37337d472b62ce7934c5583db"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\08-rescue-native.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\08-rescue-native.json",
+      "sha256": "61386695cb016259151c1a9adae92b4e1a5890c1ca66a9ce28f3af888e337d78"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\08-rescue.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\08-rescue.json",
+      "sha256": "ec358bb21cebf32d237ce6255d00aa1bc899141832c7a72bc0b7612edf8e1ddb"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\08-rescue.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\08-rescue.png",
+      "sha256": "5b9e5aac2f63998c99f256736b17bbd1f8239c49d0dd9a2faa7f7916b0c30602"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\09-defeated-enemy.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\09-defeated-enemy.json",
+      "sha256": "935149e1979f48f79894a9870ddc575fba9750df2a1a97c1185aa3d64764aec2"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\09-defeated-enemy.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\09-defeated-enemy.png",
+      "sha256": "fa3fb2af0ef15068b44cb931af01dd80bbc46e7232b489b1cb72dd0662e2db82"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\10-full-pack.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\10-full-pack.json",
+      "sha256": "4e7ddd0d4aa7b0756fe633bf53249c8aa8b13c766403ad91e517c6d8d91a3db7"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\10-full-pack.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\10-full-pack.png",
+      "sha256": "28f6bfcaa506eca4be737010b2ecee6ebe0b852109638ecd7b913f0c0129704a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\11-unloaded.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\11-unloaded.json",
+      "sha256": "c6dab32cadafee64364859942ed9cdc4fc16361d5abfe824b1bc996d02cd8a16"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\12-collected.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\12-collected.json",
+      "sha256": "2ac4e56e3649db2906e917e3aa4d12df437c79f03be3d93934e892cde2a74256"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\12-collected.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\12-collected.png",
+      "sha256": "491030db323ab6d003a705f3644537aa58f78393f665bc1250eba5f25854409d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\13-refresh.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\13-refresh.json",
+      "sha256": "e2c156c92b04d8c0afc5a04d15cab5ab7bd0754abd4ac0a1ab87a44aa12f1bc3"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\13-refresh.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\13-refresh.png",
+      "sha256": "f34133456ddfb80330d5c1fda46cb5176af5a800e548bfb584a1f06458b84c01"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\14-wall.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\14-wall.json",
+      "sha256": "03339b2e28229bd77d61e9d7fa6ff5261027af28d9a60da36304b8eafd081919"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\14-wall.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\14-wall.png",
+      "sha256": "16719cd6d55867b7bca222a4a362aee6c60a7b62b931abbef6cac6b3632b6c76"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\15-first-person.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\15-first-person.png",
+      "sha256": "5ecf72eb8a478767238d12f089f2f39333685b967100774147cc7a944c218866"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\16-final-640.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\16-final-640.png",
+      "sha256": "06f66b8f965e19ff6eaf44bb3116900aedd9baf77383b91cfb9deb4a1da0938d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\17-final-768.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\17-final-768.png",
+      "sha256": "c12515c290dfedfe3b9bb7f4227d20aa5b4fcf1e1867f626c07546b9486ba04d"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\18-final-1440.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\18-final-1440.png",
+      "sha256": "d8c569be4899fe4773999f15f276b7c88cfb53775b3a43a5c31fadb695eced1c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\browser-console.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\browser-console.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\node-result.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\node-result.json",
+      "sha256": "c6a0d53d84bbdf4ba1090844305afc496002487341310f275ec594cd4497b42c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\node-tests.tap",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\node-tests.tap",
+      "sha256": "f471a961846ba3248a47dfbf40f0e80268d8bd8c9096e80ecbbcfa53ea83745f"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\run-1789207684365.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\run-1789207684365.json",
+      "sha256": "3953a4f705e57c7db6e1d053af4d0dea0fe759ba95a33126b9e8c2726455fec8"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\evidence\\ui-640-before-I2.png",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\evidence\\ui-640-before-I2.png",
+      "sha256": "b4d82c17ff8df8604a1519734d6e1acdcee9e86d51a88f1f7b6779839e489263"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\index.html",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\index.html",
+      "sha256": "76976ae0cec9aa04156e6bb34cec13fe6cf576e8b76da5be2664e0fdf80a3859"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\model.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\model.mjs",
+      "sha256": "5a3f71eefddd79ad820f409fdd6cafd6da7ed69e53289f10bd3cadaefdd7a757"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\navigation.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\navigation.mjs",
+      "sha256": "11b57c384aab55559c6e52987dadc09df9ec83a7d5e874d434608b7d08ee1d3c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\r2-tools.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\r2-tools.cjs",
+      "sha256": "38635474c9dca986b7c3b70b389555bfb3cd54120c10ab2bf53cf3d09c20ab86"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\runtime-r2.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\runtime-r2.json",
+      "sha256": "d49e4682bddcd1e2da15e9ce1f6d2564e643f6527d6fa5f66bec6407e4a17d78"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\runtime.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\runtime.json",
+      "sha256": "d49e4682bddcd1e2da15e9ce1f6d2564e643f6527d6fa5f66bec6407e4a17d78"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\scene.css",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\scene.css",
+      "sha256": "00020a6156ce3b4811059f4ab54bf4f1307dcc67a997fcfee44753d0bca13a72"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\serve-r2.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\serve-r2.cjs",
+      "sha256": "5e4ceac5f325d74b2bf3405e4acd394dfda6362f6893944caf89dc3192d4aacd"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\serve.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\serve.cjs",
+      "sha256": "b8ff8b7557ac41c9a92042794d45bbd2e33b1cb1628cc8a11ce98a535bff2369"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\start-r2.cmd",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\start-r2.cmd",
+      "sha256": "a458f9b0f17af966cdb59716b55d3c874d12a49d204d88a312bed97d6fa64a59"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\start.cmd",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\start.cmd",
+      "sha256": "bd6e56f97028143300039eb64e93e0b97a5635b37328a494d3ad7b45a0d8fda6"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\verify.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\verify.cjs",
+      "sha256": "35d841cc63d410b1c8710cbdb9bbbb93cc1d7ea1a64a88cf1fc3dfcc6019e05b"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\version.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\version.json",
+      "sha256": "7a12281c3e284986a3ccccbd31fdc06b52f3e6798df83add8b59d5523cb285eb"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-D1-R2\\playable\\src\\d3-scene\\version-r2.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-scene\\version-r2.json",
+      "sha256": "164b845b7a06385bb05641cd87e577a76decab0cc4bd2f1a4248dd397c953dc7"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/bca0/star-abyss-game/docs/development/reports/TEST-D1-R2.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/TEST-D1-R2.md",
+      "sha256": "1f19b33772191c282d1d21a27a1449c214a42853a4f3a06172af229a9cc27e23"
+    }
+  ],
+  "boundary": "Accepted standalone D1 whitebox; not wired to original main game; no crafting, pets or automatic regeneration"
+}

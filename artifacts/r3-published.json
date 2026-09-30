@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "bundleSHA": "2a2c3b3039bbad92555fe4d733e9d30f50faf73ccfcff22d355a06ef584698c5",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\artifacts\\r3-release-backup-1790333985908",
+  "files": [
+    "playable/game.js",
+    "playable/src/dynamic-shadow-scheduler.mjs",
+    "playable/src/dynamic-shadow-scheduler.test.mjs",
+    "playable/src/scene.mjs",
+    "playable/src/main.mjs",
+    "playable/src/progression-quests/scene.mjs",
+    "playable/src/progression-quests/scene.test.mjs",
+    "playable/src/foundation/camp-scene.mjs",
+    "playable/src/render-budget.mjs",
+    "playable/tests/render-budget.test.js",
+    "docs/development/CAMP-SHADOW-R3.md"
+  ],
+  "untouched": 398
+}

@@ -1,0 +1,30 @@
+TAP version 13
+# Subtest: in-flight checkpoint does not block or rewind player; queued pause persists newest pose
+ok 1 - in-flight checkpoint does not block or rewind player; queued pause persists newest pose
+  ---
+  duration_ms: 22.2167
+  ...
+# Subtest: checkpoint failure is visible and keeps previous durable record; next explicit checkpoint recovers
+ok 2 - checkpoint failure is visible and keeps previous durable record; next explicit checkpoint recovers
+  ---
+  duration_ms: 11.3261
+  ...
+# Subtest: worker unavailable or constructor denied returns reliable pre-write fallback
+ok 3 - worker unavailable or constructor denied returns reliable pre-write fallback
+  ---
+  duration_ms: 0.465
+  ...
+# Subtest: worker boot failure closes worker before fallback
+ok 4 - worker boot failure closes worker before fallback
+  ---
+  duration_ms: 0.5292
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 229.7397

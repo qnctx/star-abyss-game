@@ -1,0 +1,663 @@
+[
+	{
+		"far_cache_valid_at_capture": true,
+		"legacy_boundary_projection": [
+			{
+				"pixel": "(103.3998, 62.02233)",
+				"world": "(-3000.0, -6.276783, -3000.0)"
+			},
+			{
+				"pixel": "(371.3882, 61.20827)",
+				"world": "(-1500.0, -1.774505, -3000.0)"
+			},
+			{
+				"pixel": "(640.0, 61.55637)",
+				"world": "(0.0, -3.698627, -3000.0)"
+			},
+			{
+				"pixel": "(909.0727, 60.00486)",
+				"world": "(1500.0, 4.861522, -3000.0)"
+			},
+			{
+				"pixel": "(1177.482, 60.87151)",
+				"world": "(3000.0, 0.084811, -3000.0)"
+			}
+		],
+		"meshes": [
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_px_0_0_0/@MeshInstance3D@2",
+				"position": "(0.0, -30.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_px_0_0_0/SurfaceWater",
+				"position": "(0.0, -30.0, 0.0)",
+				"vertices": 75111
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nx_0_0_0/@MeshInstance3D@3",
+				"position": "(0.0, -243479.8, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nx_0_0_0/SurfaceWater",
+				"position": "(0.0, -243479.8, 0.0)",
+				"vertices": 116028
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_py_0_0_0/@MeshInstance3D@4",
+				"position": "(0.0, -120000.0, -117923.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_py_0_0_0/SurfaceWater",
+				"position": "(0.0, -120000.0, -117923.0)",
+				"vertices": 90420
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_ny_0_0_0/@MeshInstance3D@5",
+				"position": "(0.0, -120000.0, 120699.4)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_ny_0_0_0/SurfaceWater",
+				"position": "(0.0, -120000.0, 120699.4)",
+				"vertices": 112740
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_pz_0_0_0/@MeshInstance3D@6",
+				"position": "(-117355.8, -120000.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_pz_0_0_0/SurfaceWater",
+				"position": "(-117355.8, -120000.0, 0.0)",
+				"vertices": 116877
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nz_0_0_0/@MeshInstance3D@7",
+				"position": "(120622.2, -120000.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nz_0_0_0/SurfaceWater",
+				"position": "(120622.2, -120000.0, 0.0)",
+				"vertices": 117102
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_63/@MeshInstance3D@41",
+				"position": "(937.516, 2.046875, 937.516)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_62/@MeshInstance3D@46",
+				"position": "(-937.5301, 3.851563, 2812.59)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_62/@MeshInstance3D@59",
+				"position": "(937.4308, -8.851563, 2812.292)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_62/@MeshInstance3D@72",
+				"position": "(2812.43, -2.984375, 2812.43)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_63/@MeshInstance3D@83",
+				"position": "(-937.468, -4.09375, 937.468)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_63/@MeshInstance3D@92",
+				"position": "(2812.523, 1.007813, 937.5079)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_64/@MeshInstance3D@99",
+				"position": "(-937.484, -2.046875, -937.484)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_64/@MeshInstance3D@104",
+				"position": "(937.5319, 4.085938, -937.5319)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_64/@MeshInstance3D@105",
+				"position": "(2812.565, 2.765625, -937.5216)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_61/@MeshInstance3D@106",
+				"position": "(-2811.551, -40.49219, 4685.918)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_61/@MeshInstance3D@107",
+				"position": "(-937.3926, -13.75, 4686.962)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_61/@MeshInstance3D@108",
+				"position": "(937.3448, -19.85938, 4686.724)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_61/@MeshInstance3D@109",
+				"position": "(2812.277, -9.507813, 4687.129)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_61/@MeshInstance3D@110",
+				"position": "(4686.805, -17.80469, 4686.805)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_62/@MeshInstance3D@111",
+				"position": "(-2812.468, -1.390625, 2812.468)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_62/@MeshInstance3D@112",
+				"position": "(4688.273, 19.78906, 2812.964)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_63/@MeshInstance3D@113",
+				"position": "(-2812.435, -2.765625, 937.4784)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_63/@MeshInstance3D@114",
+				"position": "(4689.396, 48.54688, 937.8793)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_64/@MeshInstance3D@115",
+				"position": "(-2812.476, -1.015625, -937.4921)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_64/@MeshInstance3D@116",
+				"position": "(4689.426, 49.3125, -937.8853)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_65/@MeshInstance3D@117",
+				"position": "(-2812.569, 2.960938, -2812.569)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_65/@MeshInstance3D@118",
+				"position": "(-937.5688, 8.8125, -2812.706)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_65/@MeshInstance3D@119",
+				"position": "(937.4698, -3.867188, -2812.409)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_65/@MeshInstance3D@120",
+				"position": "(2812.532, 1.375, -2812.532)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_65/@MeshInstance3D@121",
+				"position": "(4688.617, 28.57813, -2813.17)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_60/@MeshInstance3D@122",
+				"position": "(-4683.36, -105.9844, 6556.704)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_60/@MeshInstance3D@123",
+				"position": "(-2810.451, -87.40625, 6557.72)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_60/@MeshInstance3D@124",
+				"position": "(-937.1733, -41.82031, 6560.213)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_60/@MeshInstance3D@125",
+				"position": "(937.5954, 12.21094, 6563.168)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_60/@MeshInstance3D@126",
+				"position": "(2813.862, 58.10938, 6565.678)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_60/@MeshInstance3D@127",
+				"position": "(4686.16, -34.30469, 6560.624)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_60/@MeshInstance3D@128",
+				"position": "(6556.767, -104.8438, 6556.767)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_61/@MeshInstance3D@129",
+				"position": "(-4683.441, -103.8984, 4683.441)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_61/@MeshInstance3D@130",
+				"position": "(6560.909, -29.09375, 4686.363)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_62/@MeshInstance3D@131",
+				"position": "(-4685.647, -47.42969, 2811.388)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_62/@MeshInstance3D@132",
+				"position": "(6564.017, 27.73438, 2813.15)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_63/@MeshInstance3D@133",
+				"position": "(-4686.924, -14.73438, 937.3849)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_63/@MeshInstance3D@134",
+				"position": "(6565.615, 56.95313, 937.9449)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_63/SurfaceWater",
+				"position": "(6565.615, 56.95313, 937.9449)",
+				"vertices": 210
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_64/@MeshInstance3D@135",
+				"position": "(-4686.848, -16.67969, -937.3697)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_64/@MeshInstance3D@136",
+				"position": "(6565.645, 57.50781, -937.9493)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_65/@MeshInstance3D@137",
+				"position": "(-4685.749, -44.82813, -2811.449)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_65/@MeshInstance3D@138",
+				"position": "(6564.737, 40.90625, -2813.459)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_66/@MeshInstance3D@139",
+				"position": "(-4688.02, 13.3125, -4688.02)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_66/@MeshInstance3D@140",
+				"position": "(-2812.225, -11.75, -4687.042)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_66/@MeshInstance3D@141",
+				"position": "(-937.4214, -10.0625, -4687.107)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_66/@MeshInstance3D@142",
+				"position": "(937.3643, -17.375, -4686.821)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_66/@MeshInstance3D@143",
+				"position": "(2811.573, -39.5625, -4685.955)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_66/@MeshInstance3D@144",
+				"position": "(4686.639, -22.03906, -4686.639)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_66/@MeshInstance3D@145",
+				"position": "(6563.927, 26.08594, -4688.519)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_59/@MeshInstance3D@146",
+				"position": "(-6551.794, -195.7578, 8423.736)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_59/@MeshInstance3D@147",
+				"position": "(-4683.569, -100.625, 8430.426)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_59/@MeshInstance3D@148",
+				"position": "(-2811.81, -29.45313, 8435.429)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_59/@MeshInstance3D@149",
+				"position": "(-937.5043, 0.546875, 8437.538)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_59/@MeshInstance3D@150",
+				"position": "(937.5293, 3.75, 8437.764)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_65_59/@MeshInstance3D@151",
+				"position": "(2811.723, -33.16406, 8435.168)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_66_59/@MeshInstance3D@152",
+				"position": "(4683.202, -110.0469, 8429.763)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_67_59/@MeshInstance3D@153",
+				"position": "(6551.108, -208.3125, 8422.854)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_59/@MeshInstance3D@154",
+				"position": "(8413.875, -336.0078, 8413.875)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_60/@MeshInstance3D@155",
+				"position": "(-6556.703, -106.0, 6556.703)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_60/@MeshInstance3D@156",
+				"position": "(8421.754, -223.9453, 6550.253)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_61/@MeshInstance3D@157",
+				"position": "(-6553.029, -173.1797, 4680.735)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_61/@MeshInstance3D@158",
+				"position": "(8426.762, -152.7344, 4681.534)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_62/@MeshInstance3D@159",
+				"position": "(-6555.375, -130.3047, 2809.446)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_62/@MeshInstance3D@160",
+				"position": "(8430.708, -96.60156, 2810.236)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_63/@MeshInstance3D@161",
+				"position": "(-6557.083, -99.04688, 936.7262)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_63/@MeshInstance3D@162",
+				"position": "(8432.755, -67.48438, 936.9728)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_63/SurfaceWater",
+				"position": "(8432.755, -67.48438, 936.9728)",
+				"vertices": 390
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_64/@MeshInstance3D@163",
+				"position": "(-6557.069, -99.3125, -936.7241)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_64/@MeshInstance3D@164",
+				"position": "(8432.828, -66.44531, -936.9809)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_65/@MeshInstance3D@165",
+				"position": "(-6559.829, -48.84375, -2811.355)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_65/@MeshInstance3D@166",
+				"position": "(8432.606, -69.59375, -2810.869)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_66/@MeshInstance3D@167",
+				"position": "(-6561.735, -13.98438, -4686.954)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_68_66/@MeshInstance3D@168",
+				"position": "(8433.147, -61.90625, -4685.082)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_60_67/@MeshInstance3D@169",
+				"position": "(-6557.365, -93.89063, -6557.365)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_61_67/@MeshInstance3D@170",
+				"position": "(-4687.189, -7.960938, -6562.064)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_62_67/@MeshInstance3D@171",
+				"position": "(-2813.593, 46.63281, -6565.051)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_63_67/@MeshInstance3D@172",
+				"position": "(-937.9939, 63.21875, -6565.957)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/RegionalSurface/Planet_px_7_64_67/@MeshInstance3D@173",
+				"position": "(937.9435, 56.76563, -6565.604)",
+				"vertices": 357
+			}
+		],
+		"view": "basin"
+	},
+	{
+		"far_cache_valid_at_capture": true,
+		"legacy_boundary_projection": [
+			{
+				"pixel": "(639.1705, 201.8309)",
+				"world": "(-3000.0, -6.276783, -3000.0)"
+			},
+			{
+				"pixel": "(642.2167, 203.8192)",
+				"world": "(-1500.0, -1.774505, -3000.0)"
+			},
+			{
+				"pixel": "(645.2759, 205.8283)",
+				"world": "(0.0, -3.698627, -3000.0)"
+			},
+			{
+				"pixel": "(648.3488, 207.8262)",
+				"world": "(1500.0, 4.861522, -3000.0)"
+			},
+			{
+				"pixel": "(651.4343, 209.858)",
+				"world": "(3000.0, 0.084811, -3000.0)"
+			}
+		],
+		"meshes": [
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_px_0_0_0/@MeshInstance3D@2",
+				"position": "(0.0, -30.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_px_0_0_0/SurfaceWater",
+				"position": "(0.0, -30.0, 0.0)",
+				"vertices": 75111
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nx_0_0_0/@MeshInstance3D@3",
+				"position": "(0.0, -243479.8, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nx_0_0_0/SurfaceWater",
+				"position": "(0.0, -243479.8, 0.0)",
+				"vertices": 116028
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_py_0_0_0/@MeshInstance3D@4",
+				"position": "(0.0, -120000.0, -117923.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_py_0_0_0/SurfaceWater",
+				"position": "(0.0, -120000.0, -117923.0)",
+				"vertices": 90420
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_ny_0_0_0/@MeshInstance3D@5",
+				"position": "(0.0, -120000.0, 120699.4)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_ny_0_0_0/SurfaceWater",
+				"position": "(0.0, -120000.0, 120699.4)",
+				"vertices": 112740
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_pz_0_0_0/@MeshInstance3D@6",
+				"position": "(-117355.8, -120000.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_pz_0_0_0/SurfaceWater",
+				"position": "(-117355.8, -120000.0, 0.0)",
+				"vertices": 116877
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nz_0_0_0/@MeshInstance3D@7",
+				"position": "(120622.2, -120000.0, 0.0)",
+				"vertices": 37249
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/WholePlanet/Planet_nz_0_0_0/SurfaceWater",
+				"position": "(120622.2, -120000.0, 0.0)",
+				"vertices": 117102
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_310/@MeshInstance3D@174",
+				"position": "(36079.42, -13529.32, 41902.04)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_310/SurfaceWater",
+				"position": "(36079.42, -13529.32, 41902.04)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_311/@MeshInstance3D@176",
+				"position": "(36098.75, -13472.28, 41716.42)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_311/SurfaceWater",
+				"position": "(36098.75, -13472.28, 41716.42)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_310/@MeshInstance3D@178",
+				"position": "(36274.09, -13568.3, 41886.7)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_310/SurfaceWater",
+				"position": "(36274.09, -13568.3, 41886.7)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_311/@MeshInstance3D@180",
+				"position": "(36294.57, -13508.19, 41702.36)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_311/SurfaceWater",
+				"position": "(36294.57, -13508.19, 41702.36)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_311/@MeshInstance3D@182",
+				"position": "(35912.01, -13408.99, 41741.21)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_311/SurfaceWater",
+				"position": "(35912.01, -13408.99, 41741.21)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_310/@MeshInstance3D@184",
+				"position": "(35891.2, -13470.77, 41925.08)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_310/SurfaceWater",
+				"position": "(35891.2, -13470.77, 41925.08)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_309/@MeshInstance3D@186",
+				"position": "(36060.86, -13584.07, 42088.33)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_685_309/SurfaceWater",
+				"position": "(36060.86, -13584.07, 42088.33)",
+				"vertices": 1536
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_309/@MeshInstance3D@188",
+				"position": "(36253.2, -13629.59, 42070.33)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_686_309/SurfaceWater",
+				"position": "(36253.2, -13629.59, 42070.33)",
+				"vertices": 1545
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_309/@MeshInstance3D@190",
+				"position": "(35868.46, -13538.24, 42106.46)",
+				"vertices": 357
+			},
+			{
+				"path": "/root/Main/World/ContinuousPlanet/CollidableSurface/Planet_px_10_684_309/SurfaceWater",
+				"position": "(35868.46, -13538.24, 42106.46)",
+				"vertices": 1536
+			}
+		],
+		"view": "orbit"
+	}
+]

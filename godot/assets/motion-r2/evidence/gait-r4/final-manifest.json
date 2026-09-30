@@ -1,0 +1,45 @@
+{
+  "files": {
+    "godot/assets/motion-r2/c2-motion-r2.glb": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430",
+    "godot/scripts/native_motion_r2.gd": "95d3a7df91e2dfe5128fd0a649c0e8696457f4d8dd07f178374a4018dabb78c6",
+    "godot/scripts/native_player.gd": "917a50bdcdcc418e4b1ac7c84fb900989714ecae5de8414c1bdde3ab2b4530d2",
+    "godot/assets/motion-r2/clips.json": "e19b4cb9fa263faeba42ab05d7a8fe6150aed975d34c1cd333e4056418386934",
+    "godot/assets/motion-r2/gait_r4.py": "69e50887a63697b2ec3e5e185bcaca800d5b16b5b4dd3ad6ac091dca2e74f324",
+    "godot/assets/motion-r2/build_gait_r4.py": "2c918d7406e972b3b7ad0c7506458ed589a49ece9bc5228cf1d8c66d5bde5c07",
+    "godot/assets/motion-r2/gait-r4-preservation.json": "b0ea3783cb6ce389b8800bec887fdded83d2412d802ec126fe37c037c45520b6",
+    "godot/assets/motion-r2/gait-r4-export-check.json": "8a7ee5e2e90796ddf037efcd5f30e579c1652e10fc15bd9afdb7c28e0b03d1ba",
+    "godot/assets/motion-r2/gait-r4-deformation.json": "e4cf8a7d1f9be1a2069d15ae2d78bcedec87bab626867e37c6611cda4e5c4ed8",
+    "godot/assets/motion-r2/GAIT-R4.md": "116eb55560bbfed5633fc78c8ad280522e5ecd108b877bdb2749bd3fecd9b1b7"
+  },
+  "regression": {
+    "frames": 1537,
+    "bone_count": 51,
+    "time_scale": 1.0,
+    "physics_seconds": 25.6166666666665,
+    "wall_seconds": 25.496868,
+    "delta_min": 0.0166666666666667,
+    "delta_max": 0.0166666666666667,
+    "delta_mean": 0.0166666666666667,
+    "cases": [
+      "walk",
+      "jog",
+      "sprint",
+      "stop",
+      "cast_fist:ground",
+      "cast_fist:air",
+      "cast_palm:ground",
+      "cast_palm:air",
+      "cast_sweep:ground",
+      "cast_sweep:air",
+      "cast_cleave:ground",
+      "cast_cleave:air",
+      "cast_skyfall:ground",
+      "cast_skyfall:air"
+    ],
+    "failures": [],
+    "pending": [],
+    "scope": "adapter/rest/socket/gait-to-cast and ground/air release-timing fixture, not Main damage or human input"
+  },
+  "independent_report": "godot/reports/gait-r4-independent/FINAL-REPORT.md",
+  "independent_report_sha256": "b8be7481317ca30320c6817e5dc8a2f2915bba384c45f02fcf52cb7c85a0cc83"
+}

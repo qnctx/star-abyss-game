@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 1,
+  "inventorySnapshot": "EXISTING_ASSETS_20260912_v001.json",
+  "backupStatus": "not_configured",
+  "species": [
+    {
+      "speciesId": "PET01",
+      "name": "青龙",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET02",
+      "name": "朱雀",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET03",
+      "name": "白虎",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET04",
+      "name": "玄武",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET05",
+      "name": "凤凰",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET06",
+      "name": "麒麟",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET07",
+      "name": "应龙",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET08",
+      "name": "烛龙",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET09",
+      "name": "九尾狐",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET10",
+      "name": "白泽",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET11",
+      "name": "貔貅",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET12",
+      "name": "獬豸",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET13",
+      "name": "毕方",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET14",
+      "name": "重明鸟",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET15",
+      "name": "青鸾",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET16",
+      "name": "鲲鹏",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET17",
+      "name": "天马",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET18",
+      "name": "天禄",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET19",
+      "name": "辟邪",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET20",
+      "name": "狻猊",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET21",
+      "name": "睚眦",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET22",
+      "name": "饕餮",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET23",
+      "name": "穷奇",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET24",
+      "name": "梼杌",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET25",
+      "name": "混沌",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET26",
+      "name": "夫诸",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET27",
+      "name": "当康",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET28",
+      "name": "驺吾",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET29",
+      "name": "陆吾",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET30",
+      "name": "开明兽",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET31",
+      "name": "帝江",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET32",
+      "name": "精卫",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    },
+    {
+      "speciesId": "PET33",
+      "name": "乘黄",
+      "status": "planned",
+      "activeVersion": null,
+      "versions": [],
+      "requiredKinds": [
+        "concept-normal",
+        "concept-mini",
+        "concept-costume",
+        "source-blend",
+        "runtime-glb",
+        "video-turntable",
+        "video-interaction",
+        "video-combat"
+      ]
+    }
+  ]
+}

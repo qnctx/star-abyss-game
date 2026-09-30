@@ -1,0 +1,16 @@
+const fs=require('fs'),http=require('http'),path=require('path'),{chromium}=require('@playwright/test');
+const root=path.resolve('playable'),port=4197;
+const baseline=fs.readFileSync('E:/myProject/star-abyss-game/playable/game.js');
+const server=http.createServer((req,res)=>{const url=new URL(req.url,'http://localhost'),p=path.resolve(root,'.'+decodeURIComponent(url.pathname));if(!p.startsWith(root+path.sep)){res.writeHead(403).end();return;}fs.readFile(p,(e,b)=>{if(e){res.writeHead(404).end();return;}res.setHeader('Content-Type',/\.(mjs|js)$/.test(p)?'text/javascript':p.endsWith('.html')?'text/html':p.endsWith('.css')?'text/css':'application/octet-stream');res.end(b);});});
+const stats=a=>{a.sort((x,y)=>x-y);return {count:a.length,p50:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],p99:a[Math.floor(a.length*.99)],max:a.at(-1),over33:a.filter(x=>x>33).length,over50:a.filter(x=>x>50).length};};
+(async()=>{await new Promise(r=>server.listen(port,'127.0.0.1',r));const browser=await chromium.launch({headless:true});const result={baselineSHA:require('crypto').createHash('sha256').update(baseline).digest('hex')};try{
+ for(const mode of ['before','after']){const context=await browser.newContext({viewport:{width:1280,height:720},deviceScaleFactor:1});const page=await context.newPage(),errors=[],workers=[];page.on('pageerror',e=>errors.push(e.message));page.on('worker',w=>workers.push(w.url()));
+ if(mode==='before')await page.route('**/game.js*',route=>route.fulfill({body:baseline,contentType:'text/javascript'}));
+ await page.goto('http://127.0.0.1:'+port+'/star-abyss.html?test=1&expeditionDebug=1',{waitUntil:'domcontentloaded',timeout:120000});await page.waitForFunction(()=>!!window.__STAR_ABYSS_TEST__,{},{timeout:120000});await page.evaluate(()=>window.__STAR_ABYSS_TEST__.start());await page.waitForFunction(()=>{const s=window.__ORIGINAL_EXPEDITION__?.snapshot();return s&&!s.loading&&s.view&&s.screen==='playing';},{},{timeout:120000});
+ await page.waitForTimeout(3000);const start=await page.evaluate(()=>window.__STAR_ABYSS_TEST__.snapshot());
+ await page.evaluate(()=>{window.perfFrames=[];window.perfRun=true;let last=performance.now();function frame(t){window.perfFrames.push(t-last);last=t;if(window.perfRun)requestAnimationFrame(frame);}requestAnimationFrame(frame);});
+ await page.keyboard.down('KeyW');await page.waitForTimeout(12000);await page.keyboard.up('KeyW');await page.keyboard.down('KeyD');await page.waitForTimeout(12000);await page.keyboard.up('KeyD');await page.waitForTimeout(8000);
+ const sampled=await page.evaluate(()=>{window.perfRun=false;return {frames:window.perfFrames,state:window.__STAR_ABYSS_TEST__.snapshot(),expedition:window.__ORIGINAL_EXPEDITION__.snapshot()};});await page.screenshot({path:'reports/performance-r1/game-'+mode+'.png'});
+ result[mode]={raf:stats(sampled.frames),startPlayer:start.player,endPlayer:sampled.state.player,ratio:sampled.state.renderRatio,calls:sampled.state.calls,triangles:sampled.state.triangles,revision:sampled.expedition.root?.revision,errors,workers};console.log(mode,result[mode]);await context.close();fs.writeFileSync('reports/performance-r1/game-browser.json',JSON.stringify(result,null,2));
+ }
+}finally{await browser.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

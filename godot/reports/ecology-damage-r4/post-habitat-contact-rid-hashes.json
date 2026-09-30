@@ -1,0 +1,11 @@
+{
+  "scope": "After three baseline habitat runs and contact_rid-only service filter, before rock fallback",
+  "sha256": {
+    "godot/scripts/native_environment_damage.gd": "c402e20194d820f60627fc4a37737e1f51884dad07b103c2bd464191ee5a7559",
+    "godot/scripts/native_planet_ecology.gd": "777778201b76afa241197d9a9d5c68b711a51f0c618f8f366e50ecd0fa127119",
+    "godot/scripts/native_environment_damage_assets.gd": "c1217046e3d4082a93ca1d2aae2e3340b1fcbbf81549e8708d24921c8d5a4607",
+    "godot/assets/planet-ecology-r4/manifest.json": "a733532e9e40634a24e7f7a676b412ea627cb8749f080dd4a304cd1ca4fe5d6d",
+    "godot/scripts/native_main.gd": "c9a1b3edca8fdc5bf3d9914da76beb2c02262725b7683a992ae19e1af57f8e5f",
+    "godot/scripts/native_martial_skills.gd": "56439c3e3f9ad9ee23e9c97fc2ba2c4c7efb40ef472601d79bd16198fa010250"
+  }
+}

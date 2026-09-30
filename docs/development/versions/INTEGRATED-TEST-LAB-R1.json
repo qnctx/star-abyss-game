@@ -1,0 +1,471 @@
+{
+  "version": "TEST-LAB-R1",
+  "root": "C:\\Users\\HUAWEI\\.codex\\worktrees\\cb21\\star-abyss-game",
+  "target": "E:/myProject/star-abyss-game",
+  "at": "2026-09-16T14:36:13.304Z",
+  "files": [
+    {
+      "file": "playable/src/render-budget.mjs",
+      "sha256": "bf01da579673ea8e4998128a6ddd52191c6d4b5376134be296fda4a7219b28f8",
+      "previousSha256": "9d978f395fe132c371a7a929e2890753cb87402d1337478de7eed22a5aa7409c",
+      "bytes": 1971
+    },
+    {
+      "file": "playable/src/planet/chunks.mjs",
+      "sha256": "0a69872c61b5649e7f305a4d989b269eda83d0402dea53a9186ce9b1a941b3aa",
+      "previousSha256": "87cb1768ecccb0105425083b70e80c99ca3e361d1c73d11f07ea5aef4ba2a36f",
+      "bytes": 7014
+    },
+    {
+      "file": "playable/src/planet/scene-adapter.mjs",
+      "sha256": "4fcd26f42fd4ac49601d4a2ba6ffd651e448c9c45ac80b97900e95d9a69038b6",
+      "previousSha256": "5d0b358b8138edace2a4293c78e2f027fc95b963b9b9ec50a26e86593e2083bf",
+      "bytes": 12288
+    },
+    {
+      "file": "playable/src/expedition-world/creature-rig.mjs",
+      "sha256": "8a82c76d336e578419855668504da057bd1b623abe997f468ba19a8bac931e41",
+      "previousSha256": "ddbbcae6e14c090f958ebf1e7b7f1572a9dd14400037b0806d9d3e7e57798ce7",
+      "bytes": 10962
+    },
+    {
+      "file": "playable/src/performance/checkpoint-client.mjs",
+      "sha256": "4912b26fbba4161033c69a94e5b45ac413671ab56697fc2351e13dca0ba55e25",
+      "previousSha256": null,
+      "bytes": 1477
+    },
+    {
+      "file": "playable/src/performance/checkpoint-worker.mjs",
+      "sha256": "887cc6fdbeafa772beb6c9503f20be0d54a8a08e5acdecdc43ccf2890b345a1a",
+      "previousSha256": null,
+      "bytes": 1024
+    },
+    {
+      "file": "playable/checkpoint-worker.js",
+      "sha256": "a5d4a7dad9cae4543ba4df295de256f15448ac525066c7233b0d4817b1babd7b",
+      "previousSha256": null,
+      "bytes": 50244
+    },
+    {
+      "file": "playable/tests/render-budget.test.js",
+      "sha256": "f170932a78036b0ae510c16ceae418b615eb3ee7881ab361de8075c8877b268e",
+      "previousSha256": "a7ba0c242ad7e866f574f610e0277e253ee9f96cc860a8e60d342dca3adfa640",
+      "bytes": 1679
+    },
+    {
+      "file": "playable/tests/performance-regression.test.mjs",
+      "sha256": "9a82b9aeab60c226f514dc50d538eb84fb3698d537c058f454f2f36afe7416fc",
+      "previousSha256": null,
+      "bytes": 4109
+    },
+    {
+      "file": "playable/tests/checkpoint-scheduling.test.mjs",
+      "sha256": "910a004d7f5c3c5aa222161b65110c07add87c9fbfcb570e7f659f6c78b07529",
+      "previousSha256": null,
+      "bytes": 3196
+    },
+    {
+      "file": "playable/tests/checkpoint-performance.mjs",
+      "sha256": "98fc89515186fed1c277debddd9ee85fcb691f6fb147b7a8c599da1cea058834",
+      "previousSha256": null,
+      "bytes": 4152
+    },
+    {
+      "file": "playable/tests/performance-harness.html",
+      "sha256": "84642dce533a4a21114f4e43c28784d48f7a585c3d5f1da4b37c8906b0eb9866",
+      "previousSha256": null,
+      "bytes": 135
+    },
+    {
+      "file": "tools/integrate-performance.cjs",
+      "sha256": "213541ae60164f02db68e2250c7260f28eec2cf1aa297b52d33e8b76186202c8",
+      "previousSha256": null,
+      "bytes": 2564
+    },
+    {
+      "file": "tools/build-performance-worker.cjs",
+      "sha256": "d140a151be60c06663716c79be05e896d3c7e67a71e1763a7e9bcd5ff136c5a8",
+      "previousSha256": null,
+      "bytes": 193
+    },
+    {
+      "file": "tools/benchmark-performance.mjs",
+      "sha256": "73404da1a9c3e10a3413bcee629e7a814fef4312c1d3d2a74c9489a07d59d66d",
+      "previousSha256": null,
+      "bytes": 1384
+    },
+    {
+      "file": "tools/benchmark-creature.mjs",
+      "sha256": "a5a95bdce148561a34f98d15ed84b454311fc96d12417a989d4c7e338eaead4a",
+      "previousSha256": null,
+      "bytes": 1618
+    },
+    {
+      "file": "tools/browser-performance.cjs",
+      "sha256": "f5c61e02c581401bf54d3daa2d68cf851fac7a5c8f6050cddd76a561f97dab30",
+      "previousSha256": null,
+      "bytes": 1277
+    },
+    {
+      "file": "tools/game-performance.cjs",
+      "sha256": "b28935460ada2d91d0f73e0716be3ea7ddcf284e5c4db2e2f5ecfb0ce917fba0",
+      "previousSha256": null,
+      "bytes": 3324
+    },
+    {
+      "file": "docs/PERFORMANCE-R1.md",
+      "sha256": "afa97456a5a1c0447fcb0892ff6973911b59c0a4561d1a298f536dbf56ceff04",
+      "previousSha256": null,
+      "bytes": 9395
+    },
+    {
+      "file": "reports/performance-r1/before-terrain.json",
+      "sha256": "45cc4bd8b96a877e404298278fab8f65ff8e9485921caa2009647be702505262",
+      "previousSha256": null,
+      "bytes": 198
+    },
+    {
+      "file": "reports/performance-r1/after-terrain.json",
+      "sha256": "a47d35c8a88d5eb5f6641eecacaf0e556092d0061e4a5e4f849892441b6ebb76",
+      "previousSha256": null,
+      "bytes": 206
+    },
+    {
+      "file": "reports/performance-r1/before-creature.json",
+      "sha256": "b221c0c50163aa55cece03f0a9ea4b8c013d84841487d80803911942a7bf8de4",
+      "previousSha256": null,
+      "bytes": 402
+    },
+    {
+      "file": "reports/performance-r1/before-repeat-creature.json",
+      "sha256": "49c96b577b1b94850c083fdcdf90177610cb10e072bebcdfeb658311412acdd4",
+      "previousSha256": null,
+      "bytes": 431
+    },
+    {
+      "file": "reports/performance-r1/after-repeat-creature.json",
+      "sha256": "cdc2fb489c34ec668793ed4bcae355b5def6f952426e51778706148192c909a7",
+      "previousSha256": null,
+      "bytes": 429
+    },
+    {
+      "file": "reports/performance-r1/checkpoint-browser.json",
+      "sha256": "222c9591eb0eb39d3431b14e74bd4091ef1b7e950721ba9196bed18df3531e73",
+      "previousSha256": null,
+      "bytes": 929
+    },
+    {
+      "file": "reports/performance-r1/targeted-tests.txt",
+      "sha256": "e24bc79dcdbfd1f998cff53dd6a6a417a3161fb2b2ec0ee3b73fba572bfdf10b",
+      "previousSha256": null,
+      "bytes": 4059
+    },
+    {
+      "file": "reports/performance-r1/integration-tests.txt",
+      "sha256": "717258cfec5ad378c03c80d68ec0338b421f32bda9bd7f914fadf93410c030c3",
+      "previousSha256": null,
+      "bytes": 4061
+    },
+    {
+      "file": "reports/performance-r1/checkpoint-final-tests.txt",
+      "sha256": "a5383ac1ddbb974ead7bd09c176874b7d32d85e5ce5e138b46a8516ce4213ac2",
+      "previousSha256": null,
+      "bytes": 954
+    },
+    {
+      "file": "reports/performance-r1/game-browser.json",
+      "sha256": "f2419e9a727b5b9d9f0bc56b16845b5469996d1f6f86e47ddb4be8600fad8acc",
+      "previousSha256": null,
+      "bytes": 931
+    },
+    {
+      "file": "playable/src/camera.mjs",
+      "sha256": "eaa1e3eca4078a289f8e658c687f1f5ddcfd809ea32a1676815bf5c682ae4297",
+      "previousSha256": "d64d3d3c924043aaad7b32a2a3b2655629f2db560d21860587ed06d55fbbdfd1",
+      "bytes": 4726
+    },
+    {
+      "file": "playable/src/vehicle-rig.mjs",
+      "sha256": "af0a2470db66b4623da7a7d586b9f71124cd91e8cfbf024a55de5ec7d5e132f6",
+      "previousSha256": null,
+      "bytes": 1797
+    },
+    {
+      "file": "playable/src/vehicle-cockpit.mjs",
+      "sha256": "046212e4dd12da694f0ea3a7b13b6b9dc8fafbe12e4707f299a5db018c00d35a",
+      "previousSha256": "cc4d56c2bf905feddfc7d021f7e341958ee6958be95b32a69678539f0593857b",
+      "bytes": 6423
+    },
+    {
+      "file": "playable/src/vehicle-model.mjs",
+      "sha256": "ac871c538d30640427edf5b39989d7f97a4ac61fc8d8e21f66832bd753c8fe8d",
+      "previousSha256": "c8ba635ef37786e491526764acd248b06e55dbe16a247c514bb5447270975df1",
+      "bytes": 7663
+    },
+    {
+      "file": "playable/src/avatar.mjs",
+      "sha256": "78ecfc1cf37c3c253b3cc7000139bf5bdd52747b81fead4181b4882ebd409d14",
+      "previousSha256": "6978f87a30b0e4a095fff63625909354c88a0ef6c8cb8c76567e18ca5ccbf165",
+      "bytes": 25985
+    },
+    {
+      "file": "playable/src/tactical-pose.mjs",
+      "sha256": "6bdf55c57adc468c9722e04561587dc4224bf8933635e990e75058f21435650b",
+      "previousSha256": "0e04bb2f5be3d190cf653a43ce20b9b19a3098fd2a4bef337dfef208a73a832d",
+      "bytes": 3880
+    },
+    {
+      "file": "playable/src/character-retarget.mjs",
+      "sha256": "1cf93bb992b80eb2d18bc04d4af8f30136bb4a7a07b7df4ac7fac61d33733520",
+      "previousSha256": "151684a00b748ed1af2c9a83dc5c91cd9e97939f3f91ce400975da6ed4a29f3b",
+      "bytes": 7315
+    },
+    {
+      "file": "playable/src/character-asset.mjs",
+      "sha256": "6ef631fd1510cd6460d94de694abe8ba72b1a948847bb83edef65e564db42fe4",
+      "previousSha256": "117bf624a6b52d8413b3ad6e873b9e0691b5de7be84530478d61eba67c1fb17c",
+      "bytes": 5805
+    },
+    {
+      "file": "playable/tests/rider-alignment.test.mjs",
+      "sha256": "299a97ef03fd21a5b81215029bd3bce6706ac6b5fe16f01cbe09444936f421b7",
+      "previousSha256": null,
+      "bytes": 3139
+    },
+    {
+      "file": "playable/tests/vehicle-camera.test.js",
+      "sha256": "95453671a07c6b01650fc4fb35e20177e103239dd6d65db6dddd8bbf22d70b52",
+      "previousSha256": "fb0dbeaab9f2522b8764d726608b55a3ef82053f2ee6fc8cfa9689a1e2addd01",
+      "bytes": 2295
+    },
+    {
+      "file": "playable/tests/vehicle-cockpit.spec.js",
+      "sha256": "8b6b093ec6c0a9c7a9a3ba562bd70e489e9bc31bed6cad0a4192c63c85fd6706",
+      "previousSha256": "0f4499c97cd9a3d7ef894fcd0d56c286e8ecf9abab6efe92810ea1c3ad540684",
+      "bytes": 2773
+    },
+    {
+      "file": "tools/verify-vehicle-cockpit.cjs",
+      "sha256": "c9c45dbca1dca0beb2bc7dd944cfada0964fc21b785a72e98370e913848b28ff",
+      "previousSha256": "ee8d328194482cb0c438ca262a5902914300c76a74c1482adbc5cddb592f4ebf",
+      "bytes": 4865
+    },
+    {
+      "file": "tools/export-skimmer-source.cjs",
+      "sha256": "fde372e6c76a4a4be5e03ae4d1dd9b6253cef894f8f9a4e3e536d285487bff8b",
+      "previousSha256": "b272967d2b3df5a946ff2cf57f0b3b0427966c286324ddd21f9a4673ce69f990",
+      "bytes": 1205
+    },
+    {
+      "file": "tools/rider-browser.cjs",
+      "sha256": "243bc409918e0d5a478967b8b1a72dcc00cb217839d25b3085c94966e85e752f",
+      "previousSha256": null,
+      "bytes": 3738
+    },
+    {
+      "file": "playable/assets/vehicles/source-manifest.json",
+      "sha256": "11a3b9df1bed72e12af431a3c743ef286f4415f381e0ef07b34c1b87ff784bb3",
+      "previousSha256": "8ab566b0a5b453720befac1ef4a0435fdde8ef243abf0ab3007ed85b82145598",
+      "bytes": 418
+    },
+    {
+      "file": "playable/assets/vehicles/survey-skimmer-cockpit-v1.glb",
+      "sha256": "0970a9d51793e8ac826ed5a6e66d57774cbb891fd92296f4bbf03a34cb5e30eb",
+      "previousSha256": "65c6a58049b13f6ebfd84e32cd21290fdc2fcd190298ab74be8c359808b7144d",
+      "bytes": 2426544
+    },
+    {
+      "file": "reports/rider-alignment/scene-integration.patch",
+      "sha256": "554d8d9bba6a413be39b9002d686f22f240a525cbf1da8cc35dd12101c472f97",
+      "previousSha256": null,
+      "bytes": 1360
+    },
+    {
+      "file": "docs/RIDER-ALIGNMENT-R1.md",
+      "sha256": "afb26ffeb2bb59859b3fe16acf4e3827fe0d45e03d22061bd51fcc469f2ab5c5",
+      "previousSha256": null,
+      "bytes": 3080
+    },
+    {
+      "file": "playable/assets/animations/prone-v2/manifest.json",
+      "sha256": "6b8b822cbd5177bfc2811264f6c527a9e252912c0f788c8a41e415917036dea4",
+      "previousSha256": "d04af4f772208ca0ce4e2058a13351386714f4af9822ecebbd24566286ba5f26",
+      "bytes": 826
+    },
+    {
+      "file": "playable/assets/animations/prone-v2/c2-prone-v2.glb",
+      "sha256": "1079b3104d6c9371cc2223ddfe713849b6b8449ff713a4d737898f5585cf1bb1",
+      "previousSha256": "40bf2dc62a07d02e21a5318baaafbb11020fc73abf1c8678f97446f1c037d910",
+      "bytes": 18560620
+    },
+    {
+      "file": "playable/src/test-lab.mjs",
+      "sha256": "4e19300ee435630cc5230d17abfd794b729cefaaa14de04106c4769363d2c247",
+      "previousSha256": null,
+      "bytes": 14161
+    },
+    {
+      "file": "playable/src/test-lab-storage.mjs",
+      "sha256": "09a86a5fb0c54830acba6acc8b7dcd676dd88e845564e9b985d603d9878a3e53",
+      "previousSha256": null,
+      "bytes": 2142
+    },
+    {
+      "file": "playable/css/test-lab.css",
+      "sha256": "f0e90b2c6e03399fc5b678321af0831ae595f3f72882256e429d43168c1e719a",
+      "previousSha256": null,
+      "bytes": 1809
+    },
+    {
+      "file": "playable/test-lab.html",
+      "sha256": "6e51c56908794eed4216a8aa0cee1a0de5b087f2a0bde5e35b147f250d2f1876",
+      "previousSha256": null,
+      "bytes": 351
+    },
+    {
+      "file": "playable/tests/test-lab.test.mjs",
+      "sha256": "cb760191b746f3abb2fa08293a6f16fa08f258d81bfdbb5084944bde8937e6d4",
+      "previousSha256": null,
+      "bytes": 6401
+    },
+    {
+      "file": "tools/test-lab-integrate.cjs",
+      "sha256": "15b2a08380848a36c7a4622a81313792e1f487ce99de297e55fcc8943d23a1a9",
+      "previousSha256": null,
+      "bytes": 4859
+    },
+    {
+      "file": "tools/test-lab-integration-check.cjs",
+      "sha256": "e6d084a56417ed918ed2112bd067e2d3b78c4cf47d1e6e3d7753558290735e93",
+      "previousSha256": null,
+      "bytes": 503
+    },
+    {
+      "file": "tools/test-lab-browser.cjs",
+      "sha256": "b7792721a26b89ba49e04e5b72fd84ad62014e0f8f95884b7c9147e2077ab221",
+      "previousSha256": null,
+      "bytes": 8289
+    },
+    {
+      "file": "tools/test-lab-package.cjs",
+      "sha256": "8e9641c7e29506953c018f832b41da642dd439cdd85b2af31f911bafe328712a",
+      "previousSha256": null,
+      "bytes": 1788
+    },
+    {
+      "file": "docs/test-lab/README.md",
+      "sha256": "038f7ae7560481e3e4ec7ec07d005b01254f082ac0e513274e6bcd29ca5565fe",
+      "previousSha256": null,
+      "bytes": 7651
+    },
+    {
+      "file": "docs/test-lab/main-integration.json",
+      "sha256": "0e40980270685f216532bc43c604288b5d5ed15f2062a1491f3c8226163b0055",
+      "previousSha256": null,
+      "bytes": 4430
+    },
+    {
+      "file": "docs/test-lab/main-integration.patch",
+      "sha256": "5a34bc723aabcf94706a6dd72af8c34a119621eb8a86fe9ebb1ee5ed5660a719",
+      "previousSha256": null,
+      "bytes": 11979
+    },
+    {
+      "file": "docs/test-lab/browser-report.json",
+      "sha256": "4d1df3a3c37a107e1701390a38ed7a23adfc8c00d249f8e7319f982f38a2ad29",
+      "previousSha256": null,
+      "bytes": 1799
+    },
+    {
+      "file": "docs/test-lab/TEST_REPORT.md",
+      "sha256": "347ec0babadb0691d2268e1053f3c8534e0fa363805308c405201ea0bd6bfafc",
+      "previousSha256": null,
+      "bytes": 5018
+    },
+    {
+      "file": "docs/test-lab/camp.png",
+      "sha256": "3f9c76679e10ca7f0269086784b787d7e90ed8ec61c4edb5eaa2421bf063fbda",
+      "previousSha256": null,
+      "bytes": 436683
+    },
+    {
+      "file": "docs/test-lab/panel-1440.png",
+      "sha256": "79424554efc25bb7eae02802788223b040d62925ef39d8e3d20346f2f0d53efb",
+      "previousSha256": null,
+      "bytes": 330692
+    },
+    {
+      "file": "docs/test-lab/panel-1024.png",
+      "sha256": "d8e703663546c22b5f0e5075ac0e0af49b91f9cbb521066a962a98dfb7dd02b6",
+      "previousSha256": null,
+      "bytes": 178581
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "sha256": "dc13df4f624ad27abe35ebb4135b664aea5cb7fd69ab6ae1f882be38b4b5efcb",
+      "previousSha256": "e81f5490537733c03168527dfb62ef5ff861cf1b0a81b9fce41e1fc1762b2353",
+      "bytes": 57063
+    },
+    {
+      "file": "playable/src/scene.mjs",
+      "sha256": "dff11d75d50ab8da6460b7e023d44a2d912cb831230e4eb86684913aeee1af20",
+      "previousSha256": "be2a6748a3bc21efc23bbfac112bfb53d7432640ea65cb1a261c50ca7ed034d0",
+      "bytes": 36673
+    },
+    {
+      "file": "playable/src/planet-runtime.mjs",
+      "sha256": "d3669c95279a6787c71348d84dc67c8b73cb431d0e2f86bfc39932be4255ca5e",
+      "previousSha256": "689271b9bf46b9656b0ac3ae1b90e6c9add71a9cb711a9f22dcedb7b36399cfa",
+      "bytes": 26752
+    },
+    {
+      "file": "playable/src/expedition-runtime/index.mjs",
+      "sha256": "d15b5b723e107c215143ef9bc1f6a01062465b310c5522770a3aae4f1a979ffb",
+      "previousSha256": "eeb2c0f966ac725297f17a7a3c67005f9287c7332e6cc5a9d4079fa92b444595",
+      "bytes": 18609
+    },
+    {
+      "file": "package.json",
+      "sha256": "73719dbb22ab44de8a98a906ed8eb53dc3d673df1de90ec6c4578c9ae9ff5f5f",
+      "previousSha256": "97a1277122176ef0986cb94fd1525990c44c12b54244752ac47739343c074c75",
+      "bytes": 815
+    },
+    {
+      "file": "playable/game.js",
+      "sha256": "30bf987130cde0c864a5a6765696f7702864c8f46c202ed5b113550841f8fa8b",
+      "previousSha256": "710efb5b57120cb081ab90558314799e3ba27bdc1092e65e74b41e661d04b5ac",
+      "bytes": 21705390
+    },
+    {
+      "file": "docs/development/TEST-LAB-INTEGRATION.md",
+      "sha256": "585c1434b849e7c5adf92b86ec3d40109a006332348409b6a2c3c4616568c6c5",
+      "previousSha256": null,
+      "bytes": 1745
+    },
+    {
+      "file": "docs/development/TEST-LAB-R1-RELEASE.md",
+      "sha256": "318cf42e59a429da04dfc75f890f983cfcf034c7f8fff66c239375360856351e",
+      "previousSha256": null,
+      "bytes": 3596
+    },
+    {
+      "file": "PROGRESS.md",
+      "sha256": "b669d93db267891f636dde8a4945e223a8d582b41effaf59527ea88749f248d5",
+      "previousSha256": "36c8810bb1ef04d2df988c1662453371d63421eafffda7c21502567378859eae",
+      "bytes": 130996
+    }
+  ],
+  "conflicts": [],
+  "publishedAt": "2026-09-16T14:36:14.767Z",
+  "backup": "E:/myProject/star-abyss-game/artifacts/backups/test-lab-r1",
+  "checks": [
+    {
+      "file": "artifacts/lab-full-legacy.tap",
+      "sha256": "2647688d44a35d076cdcd25df9c79107667cdcfda91f7c3c444030a84f479fff"
+    },
+    {
+      "file": "artifacts/lab-full-modules.tap",
+      "sha256": "3118b1eab7f16c6a73087edd6e75ceea8e5577f10fce6bc313fa86fabc060b80"
+    }
+  ]
+}

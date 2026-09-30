@@ -1,0 +1,1 @@
+const s=require('./r9-smoke/states.json');console.log(JSON.stringify(s.slice(0,10).map(v=>({player:v.player,opponents:v.combat.aerialMelee.opponents,melee:v.combat.aerialMelee,air:v.airImpulse})),null,2));

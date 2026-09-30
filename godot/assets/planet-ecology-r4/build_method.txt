@@ -1,0 +1,137 @@
+func _build(tile: Dictionary, player_position: Vector3) -> void:
+	var key := NativePlanet._tile_key(tile)
+	if cells.has(key): return
+	var root := Node3D.new()
+	root.name = key.replace("/", "_")
+	var count := 0
+	var tri_count := 0
+	var unready := false
+	var anchor := Vector3.ZERO
+	var supports: Array[Vector3] = []
+	var lod: int = tile.lod
+	var support_lod := lod if not tile.has("distance") else (1 if float(tile.distance)<220.0 else 2)
+	var kinds: Dictionary = {}
+	var groups: Dictionary = {}
+	var records: Array[Dictionary] = []
+	var tree_sites: Array[Dictionary] = []
+	for kind: String in KINDS:
+		if lod==2 and kind in ["reed","pebble"] and float(tile.get("distance",INF))>220.0: continue
+		if kind=="grass" and float(tile.get("distance",0))>130.0: continue
+		var rng := RandomNumberGenerator.new()
+		rng.seed = hash(key+kind)
+		# Site count and all RNG draws stay invariant across LOD changes.
+		var candidate_count := 12 if kind=="tree" else (40 if kind=="grass" else 3)
+		for candidate in range(candidate_count):
+			var u := (float(tile.x)+rng.randf_range(.04,.96))*2.0/COUNT-1.0
+			var v := (float(tile.y)+rng.randf_range(.04,.96))*2.0/COUNT-1.0
+			var direction := NativePlanet._cube_direction(tile.face,u,v)
+			var sample: Dictionary = planet.field.sample(direction)
+			var choice := rng.randf()
+			var scale_value := rng.randf_range(.91,1.09) if kind in ["tree","outcrop"] else rng.randf_range(.8,1.45)
+			var yaw := rng.randf()*TAU
+			if float(sample.legacy_weight)>0.0: rejected.legacy += 1; continue
+			if float(sample.water_depth)>(.55 if kind=="reed" else .04): rejected.water += 1; continue
+			if choice>density(kind,sample,direction): continue
+			var approximate := NativePlanet.canonical_to_scene(direction*(NativePlanet.RADIUS+float(sample.height)))
+			var support: Dictionary = _surface(approximate,support_lod)
+			if not support.get("ready",false): unready = true; rejected.not_ready += 1; continue
+			var up := NativePlanet.radial_up(approximate)
+			var slope := (support.normal as Vector3).dot(up)
+			var asset_key := "%s-%d"%[kind,lod]
+			var asset: Dictionary
+			if kind=="tree":
+				asset_key = tree_asset_key(sample,direction,slope,hash(key+str(candidate)),lod)
+				asset = asset_library.assets[asset_key]
+			elif kind=="outcrop":
+				asset_key = "outcrop-0-%d"%lod
+				asset = asset_library.assets[asset_key]
+			else: asset = meshes[asset_key]
+			if instances+count>=MAX_INSTANCES or triangles+tri_count+int(asset.triangles)>MAX_TRIANGLES or int(band_triangles[lod])+tri_count+int(asset.triangles)>int(BAND_TRIANGLES[lod]): continue
+			var allowed_slope := (.90 if asset.get("species","")=="pine" else .95) if kind=="tree" else (.95 if kind=="reed" else .87)
+			if slope<allowed_slope: rejected.slope += 1; continue
+			var support_axis: Vector3 = up if kind=="tree" else support.normal
+			var basis := Basis(Quaternion(Vector3.UP,support_axis))*Basis(Vector3.UP,yaw)
+			var point: Vector3 = support.point
+			if kind not in ["reed","grass"] and point.distance_to(player_position)<2.0: rejected.clearance += 1; continue
+			var radius := float(asset.footprint)*scale_value if kind in ["tree","outcrop"] else (2.6 if kind=="grass" else (.9 if kind in ["reed","pebble"] else (7.0 if kind=="crystal" else 3.9)))*scale_value
+			# Crown spacing between same-tile candidates; roots never intersect.
+			var crowded := false
+			if kind=="tree":
+				for site in tree_sites:
+					if point.distance_to(site.point)<maxf(radius+float(site.radius),float(asset.crown_radius)*.58): crowded = true; break
+			if crowded: rejected.clearance += 1; continue
+			var supported := true
+			var footprint: Array[Vector3] = [point]
+			for axis: Vector3 in [basis.x,-basis.x,basis.z,-basis.z]:
+				var probe: Vector3 = point+axis*radius
+				var edge_sample: Dictionary = planet.field.sample(NativePlanet.scene_to_canonical(probe))
+				if float(edge_sample.legacy_weight)>0.0 or float(edge_sample.water_depth)>(.55 if kind=="reed" else .04): supported = false; break
+				var edge: Dictionary = _surface(probe,support_lod)
+				var tolerance := (.9 if asset.get("species","")=="pine" else .65) if kind=="tree" else (.055 if kind=="grass" else (.08 if kind=="reed" else .20))
+				if not edge.get("ready",false) or absf(((edge.point as Vector3)-point).dot(support_axis))>tolerance*scale_value: supported = false; break
+				footprint.append(edge.point)
+			if not supported: rejected.footprint += 1; continue
+			anchor = point
+			supports.append_array(footprint)
+			if kind=="tree": tree_sites.append({"point":point,"radius":radius})
+			if kind=="floatrock": point += up*(16.0+9.0*choice)
+			var transform := Transform3D(basis.scaled(Vector3.ONE*scale_value),point)
+			if not groups.has(asset_key): groups[asset_key] = {"asset":asset,"transforms":[],"kind":kind}
+			var index: int = groups[asset_key].transforms.size()
+			groups[asset_key].transforms.append(transform)
+			kinds[kind] = int(kinds.get(kind,0))+1
+			count += 1
+			tri_count += int(asset.triangles)
+			var body: StaticBody3D
+			if support_lod<2 and kind not in ["reed","grass"]:
+				body = StaticBody3D.new()
+				body.collision_layer = 1
+				body.collision_mask = 0
+				body.transform = transform
+				root.add_child(body)
+				if kind=="tree":
+					for segment: Dictionary in asset.segments: asset_library.add_segment(body,segment)
+				else:
+					var collider := CollisionShape3D.new()
+					collider.shape = (asset.mesh as ArrayMesh).create_convex_shape(true,true) if kind=="outcrop" else asset.shape
+					body.add_child(collider)
+			if kind in ["tree","outcrop"]:
+				var id := "ecology-r4.1:"+key+":"+kind+":"+str(candidate)
+				if body!=null: body.set_meta("environment_entity",id)
+				records.append({"id":id,"asset_key":asset_key,"index":index,"cell":key,"kind":kind,"asset":asset,"transform":transform,"body":body,"physical":support_lod<2,"parent":root})
+	if count==0:
+		root.free()
+		if unready: _retry_tiles[key] = {"tile":tile,"after":_tick+45}
+		return
+	for asset_key: String in groups:
+		var group: Dictionary = groups[asset_key]
+		var batch := MultiMesh.new()
+		batch.transform_format = MultiMesh.TRANSFORM_3D
+		batch.mesh = group.asset.mesh
+		batch.instance_count = group.transforms.size()
+		for i in range(batch.instance_count): batch.set_instance_transform(i,group.transforms[i])
+		group["batch"] = batch
+		var visual := MultiMeshInstance3D.new()
+		visual.multimesh = batch
+		visual.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON if lod==0 else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		root.add_child(visual)
+	add_child(root)
+	for record in records:
+		record["batch"] = groups[record.asset_key].batch
+		damage_service.register_entity(record.id,record)
+	instances += count
+	triangles += tri_count
+	band_triangles[lod] += tri_count
+	cells[key] = {"node":root,"count":count,"triangles":tri_count,"kinds":kinds,"lod":lod,"support_lod":support_lod,"anchor":anchor,"supports":supports,"owners":_terrain_owners(supports,support_lod)}
+
+func tree_asset_key(sample: Dictionary, direction: Vector3, slope: float, seed_value: int, lod: int) -> String:
+	var moisture := maxf(float(sample.get("wetland",0)),float(sample.get("river",0)))
+	var p := direction*NativePlanet.RADIUS
+	var cluster := .5+.5*sin(p.x*.021+sin(p.z*.013)*2.0+p.y*.008)
+	var species := "oak"
+	if moisture>.20 and slope>.97: species = "alder"
+	elif slope<.965 or float(sample.get("cold",0))>.16 or cluster<.38: species = "pine"
+	var age_value := absi(seed_value)%100
+	var age := 0 if age_value<28 else (1 if age_value<83 else 2)
+	return "%s-%d-%d"%[species,age,lod]
+

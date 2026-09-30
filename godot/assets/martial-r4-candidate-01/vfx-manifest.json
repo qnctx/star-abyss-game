@@ -1,0 +1,17 @@
+{
+  "charge": {
+    "vertices": 744,
+    "triangles": 726,
+    "reference": "C"
+  },
+  "pressure": {
+    "vertices": 360,
+    "triangles": 350,
+    "reference": "C"
+  },
+  "descent_wake": {
+    "vertices": 240,
+    "triangles": 234,
+    "reference": "impact-reference A3 / A-EX1"
+  }
+}

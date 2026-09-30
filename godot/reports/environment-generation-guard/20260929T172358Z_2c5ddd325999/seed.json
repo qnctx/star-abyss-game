@@ -1,0 +1,159 @@
+{
+	"checks": [
+		{
+			"details": {
+
+			},
+			"label": "private fixture slot and report arguments are explicit",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "fixture generation is intentionally incompatible",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "seed refuses to reuse an existing slot",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main resource loads",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real NativeMain instantiates",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real player/world restoration settles under normal physics",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "fresh current-generation game can save",
+			"ok": true
+		},
+		{
+			"details": {
+				"actual": "ecology-r4.2"
+			},
+			"label": "deployed service generation matches the requested release",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "current service accepts the valid persistence-only marker",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "real Main writes the baseline with a legal inline environment",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+			},
+			"label": "test output flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak"
+			},
+			"label": "test output flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json"
+			},
+			"label": "test output flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak"
+			},
+			"label": "test output flushes",
+			"ok": true
+		},
+		{
+			"details": {
+				"error": 0,
+				"path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json"
+			},
+			"label": "test output flushes",
+			"ok": true
+		},
+		{
+			"details": {
+
+			},
+			"label": "all original fixture bytes exist before the probe process",
+			"ok": true
+		}
+	],
+	"expected_generation": "ecology-r4.2",
+	"failed": [],
+	"files": {
+		"backup": {
+			"path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak",
+			"sha256": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+		},
+		"main": {
+			"path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+			"sha256": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+		},
+		"mirror": {
+			"path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json",
+			"sha256": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+		},
+		"mirror_backup": {
+			"path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak",
+			"sha256": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+		},
+		"valid_current_source": {
+			"path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json",
+			"sha256": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+		}
+	},
+	"limitations": "Generation and storage protection only. The valid unstreamed state marker does not prove physical tree destruction.",
+	"mode": "seed",
+	"old_generation": "ecology-r4.1",
+	"pid": 23868,
+	"progress": {
+		"environment_slot": "1790702640699000-1915709",
+		"fragments": 217,
+		"investigated": [
+			"beacon"
+		],
+		"realm": 6
+	},
+	"samples": [],
+	"slot": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+}

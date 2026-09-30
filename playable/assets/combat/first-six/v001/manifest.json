@@ -1,0 +1,358 @@
+{
+  "skillDefinitionVersion": "d3-first-six-v001",
+  "skeletonVersion": "existing C2 native 19 bones",
+  "status": "concept-derived first-pass action assets; not final-art acceptance",
+  "concept": {
+    "path": "playable/assets/combat/first-six/v001/concept/six-skills.png",
+    "sha256": "413a96e96692d586647f1fe17d23a982ff5805604ab5cad6882f055a9c2fe44d",
+    "generationTool": "imagegen",
+    "generationOutputId": "exec-546f2327-e776-4047-87ef-bf0f4d9e321b"
+  },
+  "sourceCharacter": {
+    "path": "playable/assets/characters/c2-explorer.glb",
+    "sha256": "a0922a57c7f4ea221a0b48ca73963346cb100575a69f92c1bcd2922d3064b97f"
+  },
+  "license": "Existing project-owned C2 asset reused unchanged; new concept and authored action/weapon source included. Original animation-library credits remain in playable/assets/animations/CREDITS.md.",
+  "effectVariant": {
+    "WS01": [
+      {
+        "stage": 1,
+        "shape": "water-crescent",
+        "detail": 1,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "water-crescent",
+        "detail": 2,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "water-crescent",
+        "detail": 3,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "water-crescent",
+        "detail": 4,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "water-crescent",
+        "detail": 5,
+        "damageRadius": 3,
+        "extraHits": 0
+      }
+    ],
+    "WS03": [
+      {
+        "stage": 1,
+        "shape": "star-tip",
+        "detail": 1,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "star-tip",
+        "detail": 2,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "star-tip",
+        "detail": 3,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "star-tip",
+        "detail": 4,
+        "damageRadius": 3,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "star-tip",
+        "detail": 5,
+        "damageRadius": 3,
+        "extraHits": 0
+      }
+    ],
+    "ES05": [
+      {
+        "stage": 1,
+        "shape": "water-spindle",
+        "detail": 1,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "water-spindle",
+        "detail": 2,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "water-spindle",
+        "detail": 3,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "water-spindle",
+        "detail": 4,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "water-spindle",
+        "detail": 5,
+        "damageRadius": 20,
+        "extraHits": 0
+      }
+    ],
+    "ES13": [
+      {
+        "stage": 1,
+        "shape": "thunder-needle",
+        "detail": 1,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "thunder-needle",
+        "detail": 2,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "thunder-needle",
+        "detail": 3,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "thunder-needle",
+        "detail": 4,
+        "damageRadius": 20,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "thunder-needle",
+        "detail": 5,
+        "damageRadius": 20,
+        "extraHits": 0
+      }
+    ],
+    "HS04": [
+      {
+        "stage": 1,
+        "shape": "honeycomb-fan",
+        "detail": 1,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "honeycomb-fan",
+        "detail": 2,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "honeycomb-fan",
+        "detail": 3,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "honeycomb-fan",
+        "detail": 4,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "honeycomb-fan",
+        "detail": 5,
+        "damageRadius": 0,
+        "extraHits": 0
+      }
+    ],
+    "HS06": [
+      {
+        "stage": 1,
+        "shape": "gold-shell",
+        "detail": 1,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 2,
+        "shape": "gold-shell",
+        "detail": 2,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 3,
+        "shape": "gold-shell",
+        "detail": 3,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 4,
+        "shape": "gold-shell",
+        "detail": 4,
+        "damageRadius": 0,
+        "extraHits": 0
+      },
+      {
+        "stage": 5,
+        "shape": "gold-shell",
+        "detail": 5,
+        "damageRadius": 0,
+        "extraHits": 0
+      }
+    ]
+  },
+  "assets": [
+    {
+      "path": "playable/assets/combat/first-six/v001/animations/events.json",
+      "bytes": 802,
+      "sha256": "bbf76bcf8a1c90b6a8cc3a09bde208ef6524351d0ce94e567243ab5d5521915e"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/concept/six-skills.png",
+      "bytes": 2204366,
+      "sha256": "413a96e96692d586647f1fe17d23a982ff5805604ab5cad6882f055a9c2fe44d"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/model/c2-six-skills.glb",
+      "bytes": 18190816,
+      "sha256": "715a38bc749371da29f2c2d881ebdc4589920ddcf897203291ba299822738963"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/model/saber.glb",
+      "bytes": 80436,
+      "sha256": "bf9697e1bd4a7d5c58546adcb369f11157cb5fcab8d7c3b2a7305453033d6270"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/model/sword.glb",
+      "bytes": 71252,
+      "sha256": "ebeabc6c4afa3144ea2594afcb3c78a0feefd45939bff6f961be734c320bf361"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/first-WS01.png",
+      "bytes": 863971,
+      "sha256": "887c7b25b7cd125f1951e7429970267da3c693dd14e932206237c9a450cef13c"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/learning-panel.png",
+      "bytes": 344150,
+      "sha256": "fa714aba3d70c85995a7e95ac5c5d0f8b9978f845a1c08964f0823baf9bb8b6d"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/live-creature-contact.png",
+      "bytes": 888029,
+      "sha256": "0323b7defd839918066c1964aa475d8fea83460e392dfae1e8919544a8742764"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/third-WS01.png",
+      "bytes": 906606,
+      "sha256": "002ea812ed0120454c407ae4ea758cdddc6b51f385925a92521f96504ae2d45c"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/ws01-original-game.webm",
+      "bytes": 18931029,
+      "sha256": "625e5825c8c61d0d0ad54487f4113153a5664886192b367763dbb405e123a187"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/source/c2-six-skills.blend",
+      "bytes": 15789856,
+      "sha256": "46c16d9729573ed0e76a2a48966aa9883e8422c575ea6b666205d219c60b1cee"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/source/definitions.mjs",
+      "bytes": 1714,
+      "sha256": "d7356a7c11813210b04a89945543281925a9755c43c008291aacf3461c639df1"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/source/pose.mjs",
+      "bytes": 2595,
+      "sha256": "ec63be92d2144cfc9baeb70be2153659a36209e95314cb6b1ca17d0d38e08b25"
+    },
+    {
+      "path": "playable/assets/combat/first-six/v001/source/weapons.mjs",
+      "bytes": 2318,
+      "sha256": "268edb498954c711ff4483c5b498ce34789dcdbda58fa957cf1fed3a31692bd3"
+    }
+  ],
+  "acceptanceVideos": [
+    {
+      "path": "playable/assets/combat/first-six/v001/preview/ws01-original-game.webm",
+      "sha256": "625e5825c8c61d0d0ad54487f4113153a5664886192b367763dbb405e123a187"
+    }
+  ],
+  "billableLux3D": {
+    "submitted": false,
+    "creditsSpent": 0
+  },
+  "limitations": [
+    "No final silhouette-to-collision <=0.15m acceptance yet",
+    "ES13/HS06 legitimate advanced acquisition and hostile H5 encounter require content integration",
+    "First-pass VFX are engine line effects, not approved final VFX art"
+  ],
+  "attemptedVideos": [
+    {
+      "path": "reports/combat-skills/browser/page@4a50c83f15a11dfbf2311664e65d6c1f.webm",
+      "sha256": "4a81d5f6f4b0026b239a3cd22c05ddc67b05d8dbc4a41d954616b9a33971712d"
+    },
+    {
+      "path": "reports/combat-skills/browser/page@8683bd50965f57f3f10f1ad539268b0b.webm",
+      "sha256": "625e5825c8c61d0d0ad54487f4113153a5664886192b367763dbb405e123a187"
+    },
+    {
+      "path": "reports/combat-skills/browser/page@a77fac436610451b612bf8d5803796dc.webm",
+      "sha256": "124ed40eafea025bf78ac49cb64e596eb1734c3dc145641b78738f8ae6ed104d"
+    },
+    {
+      "path": "reports/combat-skills/browser/page@f1c7108c3146e17d6969ac2bde39547e.webm",
+      "sha256": "e820788cc2db2ee25638fa3796e014c4f741c7e303f2e38813f2b064e92d4ae9"
+    }
+  ],
+  "validation": {
+    "node": "97/97",
+    "independent": "4/4",
+    "browser": "WS01 original scene only; two 48HP hits, real corpse loot",
+    "browserBeforeFinalPatches": [
+      "inventory weapon binding",
+      "medicine interlock",
+      "sealed container restrictions",
+      "projectile recovery cancellation",
+      "shield intersection height refinement"
+    ],
+    "independentBackup": "No separate-disk backup claimed; source worktree preserved and delivery files hashed"
+  }
+}

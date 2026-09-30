@@ -1,0 +1,19 @@
+{
+  "file": "star_abyss_native_v1.json",
+  "sha256": "e913a49db628357d5baf80a531e79126aa320c4003518ad9f987bc618c152ae8",
+  "keys": [
+    "ascension",
+    "combat",
+    "enemy_r3",
+    "fragments",
+    "investigated",
+    "planet",
+    "player",
+    "riftwing",
+    "skimmer",
+    "version"
+  ],
+  "has_environment_state": false,
+  "mtime": "2026-09-29T16:34:25.258Z",
+  "note": "Changed outside this ecology task; no write or rollback performed"
+}

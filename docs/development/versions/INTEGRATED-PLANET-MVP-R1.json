@@ -1,0 +1,478 @@
+{
+  "version": "PLANET-MVP-R1",
+  "createdAt": "2026-09-16T12:48:45.344Z",
+  "root": "C:\\Users\\HUAWEI\\.codex\\worktrees\\cb21\\star-abyss-game",
+  "target": "E:/myProject/star-abyss-game",
+  "conflicts": [],
+  "files": [
+    {
+      "file": "playable/game.js",
+      "sha256": "c1c0baba42b3ce5e7ccbaf6a97f39ea9b153f542db3961f6b2b1abebcd3557e0",
+      "previousSha256": "19b29a055653cbe0b8732cd73f9eadfa21c2654c01894f95d038f52f6f64737d",
+      "bytes": 21669410
+    },
+    {
+      "file": "playable/star-abyss.html",
+      "sha256": "0a989b580529b785079a966459149fb76ca402cfddbab249a5657f255ff764b3",
+      "previousSha256": "196074a21b29f24f1b2efcfc511fe6c426cfafc139fe1f5efb8de541fee8afa8",
+      "bytes": 16280
+    },
+    {
+      "file": "playable/css/game.css",
+      "sha256": "7257dc798c70a15e67b60b1ad44f6a536a375da5b61aa1e4089213aa76b1b407",
+      "previousSha256": "4125a8d07d4c7d358bacb0e8059b5634d78bc248a030b788d2b49afd792732f1",
+      "bytes": 32547
+    },
+    {
+      "file": "playable/assets/vehicles/source-manifest.json",
+      "sha256": "5112fd296aa98b6c6ce11c85ad8f7a0e10c3b8ad82c1677e1f4b5395447b82ba",
+      "previousSha256": "e447a13cc2332ca163000dce3bd676032f59fe0514804ac2f7223c417d1b645f",
+      "bytes": 314
+    },
+    {
+      "file": "playable/src/avatar.mjs",
+      "sha256": "6978f87a30b0e4a095fff63625909354c88a0ef6c8cb8c76567e18ca5ccbf165",
+      "previousSha256": "d4d2dcdc0f7f16621b8561403a196bbee2ec3a0af5a2a9b7e371a3dc7f5c60c1",
+      "bytes": 25633
+    },
+    {
+      "file": "playable/src/input.mjs",
+      "sha256": "750568e7be05f43f4c8cec5cccfc1218ce30d873c0666d67dc95da26d289184c",
+      "previousSha256": "c375a58b0589f78690a9e53271793718e82288bcb8e1bdc08f3f2ff73b1bc49c",
+      "bytes": 8456
+    },
+    {
+      "file": "playable/src/layout.mjs",
+      "sha256": "6afa1633a86f5c45ba83a9494f2d2197371e0826b97b02cd06d3c13f7afa6836",
+      "previousSha256": "9a2d70e01d14276a87e719f29cf0ec94b0f52a2d15d44c89b9fc8d5f37788dfc",
+      "bytes": 8938
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "sha256": "7af7266c18296d46d7ab311b3ce451a2762f3daf2e33e4b9d23229ee776cb425",
+      "previousSha256": "c5fab690e5c2738f8ab54ba7cda643f985156f67e61d1b555da226f11854665b",
+      "bytes": 52325
+    },
+    {
+      "file": "playable/src/mobility.mjs",
+      "sha256": "6488d04702f0d07f45d89b78cfae03108120ba526fa684ee8f8cc66ed830c9f0",
+      "previousSha256": "8a2efee7e80a118a16d31c50a3e58461260f10dda1d89d1908d0431cb6709441",
+      "bytes": 14494
+    },
+    {
+      "file": "playable/src/planet/chunks.mjs",
+      "sha256": "87cb1768ecccb0105425083b70e80c99ca3e361d1c73d11f07ea5aef4ba2a36f",
+      "previousSha256": null,
+      "bytes": 5838
+    },
+    {
+      "file": "playable/src/planet/coordinates.mjs",
+      "sha256": "0d9c40d6100db68094262c508b2c2742091a2eaa2359187c60f813295eac0bc9",
+      "previousSha256": null,
+      "bytes": 3352
+    },
+    {
+      "file": "playable/src/planet/field.mjs",
+      "sha256": "3fd591951e2913a820976767c8e5ba2a34f157ad19e9d1cf7b283dd83d538985",
+      "previousSha256": null,
+      "bytes": 8562
+    },
+    {
+      "file": "playable/src/planet/index.mjs",
+      "sha256": "9fe2de8b6226e6b62b81d60218795551f3cf5b65da28a3f372c072cda990526a",
+      "previousSha256": null,
+      "bytes": 131
+    },
+    {
+      "file": "playable/src/planet/scene-adapter.mjs",
+      "sha256": "5d0b358b8138edace2a4293c78e2f027fc95b963b9b9ec50a26e86593e2083bf",
+      "previousSha256": null,
+      "bytes": 11799
+    },
+    {
+      "file": "playable/src/planet-art/index.mjs",
+      "sha256": "3bda72e0a29568160bc4e12c00770013790327fb7e097eecdb6d24baf3bfdf23",
+      "previousSha256": null,
+      "bytes": 9756
+    },
+    {
+      "file": "playable/src/planet-art/surface-material.mjs",
+      "sha256": "10c4cc0b7f4b15e0ccf4a3103941de27bc269abd2812ef2ce95291c42a52ed42",
+      "previousSha256": null,
+      "bytes": 4895
+    },
+    {
+      "file": "playable/src/planet-ecology.mjs",
+      "sha256": "680f3b2e55597fe6cb1ec1401da27aeb9c22c2d05e0ff4e65f5904dcb1f27836",
+      "previousSha256": null,
+      "bytes": 7928
+    },
+    {
+      "file": "playable/src/planet-gameplay/flight.mjs",
+      "sha256": "7d19fa8f701a7f341ba85074d0ef09d048f90f46e661d771d4ff811f23d29709",
+      "previousSha256": null,
+      "bytes": 7211
+    },
+    {
+      "file": "playable/src/planet-gameplay/index.mjs",
+      "sha256": "b8bddef7b9d411faf28b519d3f2ddd6af27afd8038a68cf7b9a9f55b157ba4ca",
+      "previousSha256": null,
+      "bytes": 636
+    },
+    {
+      "file": "playable/src/planet-gameplay/progression.mjs",
+      "sha256": "0610f1630257d0e312efae91d1f45b9797f3ba48d06d29fc1483c9d5aeb5b657",
+      "previousSha256": null,
+      "bytes": 2677
+    },
+    {
+      "file": "playable/src/planet-gameplay/runtime-world.mjs",
+      "sha256": "28ebe2e518c9f78378fe0cccc20177c74bd97a84bab0b36c6527cfb59f21a66f",
+      "previousSha256": null,
+      "bytes": 5931
+    },
+    {
+      "file": "playable/src/planet-gameplay/save.mjs",
+      "sha256": "bc78329e6b53bf40b7864a1cfe06cca9eec5b83154705a562dbbe18f0fb6d4ad",
+      "previousSha256": null,
+      "bytes": 4470
+    },
+    {
+      "file": "playable/src/planet-map.mjs",
+      "sha256": "6959064b6cde676c34a37e0c5afd50cba90ce0a0498d002fad5596c0cdf6de24",
+      "previousSha256": null,
+      "bytes": 8059
+    },
+    {
+      "file": "playable/src/planet-parking.mjs",
+      "sha256": "c50809e0abcd3972d0ef1424559957981daab24dc0b819d506919dac2c758d78",
+      "previousSha256": null,
+      "bytes": 1386
+    },
+    {
+      "file": "playable/src/planet-runtime.mjs",
+      "sha256": "5b1e87020897814545ab972e5cde6b7dad8bc4bb3efe3bc4993b89b944212bfa",
+      "previousSha256": null,
+      "bytes": 22068
+    },
+    {
+      "file": "playable/src/scene.mjs",
+      "sha256": "6a3280eb26a559332b3f164f9207797199c918fc87ae0cf580870de0b1a03b11",
+      "previousSha256": "9e20d24313005a77f9b73029c4ef446f4612eb1901d674742783c89a469983e3",
+      "bytes": 35805
+    },
+    {
+      "file": "playable/src/ui.mjs",
+      "sha256": "7269ce7a03b7925edd53de31c7e15c3009347d90282ac9e83813e8098cc0b5f0",
+      "previousSha256": "3f66a851993a13c2736a4ceecbd05b51bac981337d660c0170cd3f9148bbbf37",
+      "bytes": 32998
+    },
+    {
+      "file": "playable/src/vehicle-model.mjs",
+      "sha256": "c090f16eaf62dd356bb804993e743ae8a452b324a67fcbedb188194f3f436204",
+      "previousSha256": "555ccc47c9fbc63f19819817d9079366d45e665aa6469f9cc023043c8471df00",
+      "bytes": 7076
+    },
+    {
+      "file": "docs/art/planet-v1/asset-preview.png",
+      "sha256": "3b35f6f631be4a58e6230e7cbb9c62b4a22dd97581acfda0b3b2a5b3d024491e",
+      "previousSha256": null,
+      "bytes": 215361
+    },
+    {
+      "file": "docs/art/planet-v1/make-manifest.cjs",
+      "sha256": "cf7a56bc36507f1377e169b72a4497fff32da5a5e6f10afdce876e1a0c99c406",
+      "previousSha256": null,
+      "bytes": 774
+    },
+    {
+      "file": "docs/art/planet-v1/manifest.json",
+      "sha256": "22ef2d4e716b596a824ba0cf160fe81adc37fd97d4dab6401c2c5c8bfc4e2644",
+      "previousSha256": null,
+      "bytes": 3841
+    },
+    {
+      "file": "docs/art/planet-v1/planet-ecology-concept.png",
+      "sha256": "4f8ca9f680a2a9d8efba4863f15fb673841f7f3a1883136f92bf6d996afbf62b",
+      "previousSha256": null,
+      "bytes": 2807329
+    },
+    {
+      "file": "docs/art/planet-v1/preview-validation.json",
+      "sha256": "10722a0e96baeb5cc9111cb91fef11fe54c457ed3545bd3f491e1275f9ff19d8",
+      "previousSha256": null,
+      "bytes": 343
+    },
+    {
+      "file": "docs/art/planet-v1/preview.html",
+      "sha256": "4f9e84aa38f673d95a3d2040d723a4d024d92a28ca9c9727335fb1fc74213f6a",
+      "previousSha256": null,
+      "bytes": 2660
+    },
+    {
+      "file": "docs/art/planet-v1/PROMPTS.json",
+      "sha256": "e1de7a08f9f1e300585ce7e17222f7a192e3c05d5266c3e00521b8daed3f8772",
+      "previousSha256": null,
+      "bytes": 4568
+    },
+    {
+      "file": "docs/art/planet-v1/README.md",
+      "sha256": "d94cbfed56fda1b769aa3de9068512d188286076bc0a94ca99e18a04ec3cdda3",
+      "previousSha256": null,
+      "bytes": 6713
+    },
+    {
+      "file": "docs/art/planet-v1/REPORT.md",
+      "sha256": "392e90829c8c7d58afcd46dac50d4d233675eba745b8412ec46cf669489aba30",
+      "previousSha256": null,
+      "bytes": 3434
+    },
+    {
+      "file": "docs/art/planet-v1/run-tests.cjs",
+      "sha256": "87205b6a8c6f9484d697a47974a001781afaed57f8895ea1163ac4946d7fd335",
+      "previousSha256": null,
+      "bytes": 367
+    },
+    {
+      "file": "docs/art/planet-v1/surface-far.png",
+      "sha256": "59621a18dde6f424dd0d7e4214e08fec8a6c961a47d28289937c5da9cc10b7ad",
+      "previousSha256": null,
+      "bytes": 17221
+    },
+    {
+      "file": "docs/art/planet-v1/surface-mask.png",
+      "sha256": "a8e386c808567b341ba237739c22aa6e747fb21f51b49e513d232108fc799a59",
+      "previousSha256": null,
+      "bytes": 22303
+    },
+    {
+      "file": "docs/art/planet-v1/SURFACE-MATERIAL-R1.md",
+      "sha256": "ff634b200e301b67451e965cf767bdf11a70ffb2441ba3699d943dd1c71c078c",
+      "previousSha256": null,
+      "bytes": 2539
+    },
+    {
+      "file": "docs/art/planet-v1/surface-near.png",
+      "sha256": "b97218030f28b4b4955e9f28e228eba93a3c76bda6a941d13fc4192b507f4739",
+      "previousSha256": null,
+      "bytes": 94785
+    },
+    {
+      "file": "docs/art/planet-v1/surface-preview.html",
+      "sha256": "2c41d71b906cc904c703860c76ceeebcbdd9f51996eb1f2776939ac78a925c47",
+      "previousSha256": null,
+      "bytes": 3124
+    },
+    {
+      "file": "docs/art/planet-v1/surface-rebase.png",
+      "sha256": "b97218030f28b4b4955e9f28e228eba93a3c76bda6a941d13fc4192b507f4739",
+      "previousSha256": null,
+      "bytes": 94785
+    },
+    {
+      "file": "docs/art/planet-v1/surface-transition-concept.png",
+      "sha256": "cf152196d583b53ea7eb2ce42ad643d17bc5004228053e432eceffabc196f49d",
+      "previousSha256": null,
+      "bytes": 3354689
+    },
+    {
+      "file": "docs/art/planet-v1/surface-validation.json",
+      "sha256": "7631f785825dbb80201725a08e9c9a6f07e06a5e88697b0750c7d8f6933cc2c0",
+      "previousSha256": null,
+      "bytes": 195
+    },
+    {
+      "file": "docs/art/planet-v1/verify-preview.cjs",
+      "sha256": "d8f1c46e281a09decc56215d7910540dec81012253a85a1347b6e7f713f628c2",
+      "previousSha256": null,
+      "bytes": 2036
+    },
+    {
+      "file": "docs/art/planet-v1/verify-surface.cjs",
+      "sha256": "0752beaad88258127c73c268337242ea6d4bc6995f43355f0287e8475d421dd1",
+      "previousSha256": null,
+      "bytes": 2181
+    },
+    {
+      "file": "playable/tests/planet-architecture.test.mjs",
+      "sha256": "6b6e6357fbdfdf101453a98453024748af7deedce802c361918456fe8ca2f84b",
+      "previousSha256": null,
+      "bytes": 5777
+    },
+    {
+      "file": "playable/tests/planet-art.test.mjs",
+      "sha256": "e4b39074b211e6feda2b980ef9c707c1f4fff7c52553eb89a9972d42008a3bf8",
+      "previousSha256": null,
+      "bytes": 2933
+    },
+    {
+      "file": "playable/tests/planet-ecology.test.mjs",
+      "sha256": "3ecbdef8a86d33acedcf868991a3b8a6ac05bc33f99d13b78b9e5a602bbd7a41",
+      "previousSha256": null,
+      "bytes": 6620
+    },
+    {
+      "file": "playable/tests/planet-gameplay-r2.test.mjs",
+      "sha256": "5c6a97526d9545c9a66b88930fd561f095f7629da28905bf6f50a2ba54bc124a",
+      "previousSha256": null,
+      "bytes": 8271
+    },
+    {
+      "file": "playable/tests/planet-gameplay.test.mjs",
+      "sha256": "fbbb3e8b9e5027159d00ad7b8b2198ebfb880e9158bf7ee89ee76e333822f047",
+      "previousSha256": null,
+      "bytes": 8840
+    },
+    {
+      "file": "playable/tests/planet-global-audit.test.mjs",
+      "sha256": "65b20ce69c4a4e429131612e1f6c6af5af65004046328488dba7813c87388f48",
+      "previousSha256": null,
+      "bytes": 12235
+    },
+    {
+      "file": "playable/tests/planet-integrated-runtime.test.mjs",
+      "sha256": "1074e13cbe208353fb3c2b558c17ffb9b2515930b8b58728a9347bfaf76b692d",
+      "previousSha256": null,
+      "bytes": 2606
+    },
+    {
+      "file": "playable/tests/planet-integration.test.mjs",
+      "sha256": "5efcc533844595a9f1eb52493dbbec2cc16ffba7551ab832dc8d1dbb9ffe3905",
+      "previousSha256": null,
+      "bytes": 5657
+    },
+    {
+      "file": "playable/tests/planet-map.test.mjs",
+      "sha256": "d9b03ed069ba4a79cdafe1c3442b2f905e5110b1c7dc02dfd73555b7143c6f60",
+      "previousSha256": null,
+      "bytes": 4560
+    },
+    {
+      "file": "playable/tests/planet-parking.test.mjs",
+      "sha256": "287d1af8facdbe0973bddd9daff4064e08734af8799767211415a64d09a9b728",
+      "previousSha256": null,
+      "bytes": 1737
+    },
+    {
+      "file": "playable/tests/planet-runtime-world.test.mjs",
+      "sha256": "882d059966c99c2d31e39a1e235fbbb672be2f9c4a8475c584e37e45a51d2077",
+      "previousSha256": null,
+      "bytes": 6943
+    },
+    {
+      "file": "docs/development/PLANET-ARCHITECTURE.md",
+      "sha256": "21c054f6bca2eb7a61c508a8891c6ed6686ad9dcfad0d23cedddd5702ee20b8a",
+      "previousSha256": null,
+      "bytes": 10259
+    },
+    {
+      "file": "docs/development/PLANET-INTEGRATION.md",
+      "sha256": "d54a99c4e6db520c3878c2a0981fe1e1bf9d0009e65207db24d622ee0be0cb5d",
+      "previousSha256": null,
+      "bytes": 9024
+    },
+    {
+      "file": "docs/development/PLANET-MAP.md",
+      "sha256": "f0281b29c53579cfbe3fef0bfeeff14d8b7d0673fd1caf00a616f0b45629759d",
+      "previousSha256": null,
+      "bytes": 3605
+    },
+    {
+      "file": "docs/development/reports/PLANET-GAMEPLAY-R1.md",
+      "sha256": "492e678597e7ac10af45da73fce1675aed0107042ae6fc0eea6051d6eef7376a",
+      "previousSha256": null,
+      "bytes": 8008
+    },
+    {
+      "file": "docs/development/reports/PLANET-GAMEPLAY-R1.tap",
+      "sha256": "51de39631c7df91fb61c3ba98e712c771e3dcfba2bfc5e9ab1bb4a2078d4d083",
+      "previousSha256": null,
+      "bytes": 4679
+    },
+    {
+      "file": "docs/development/reports/PLANET-GAMEPLAY-R2.md",
+      "sha256": "49e661d0ae34d53ae008785c2b0ef25cb8f137907b53e98471117fe073b0c96f",
+      "previousSha256": null,
+      "bytes": 6071
+    },
+    {
+      "file": "docs/development/reports/PLANET-GAMEPLAY-R2.tap",
+      "sha256": "f9420c2c658a017bda27f48cf8ecc93c0873a3102e9e1ca47ada8a67fdc64bdf",
+      "previousSha256": null,
+      "bytes": 6777
+    },
+    {
+      "file": "docs/development/reports/PLANET-INTEGRATION-AUDIT.md",
+      "sha256": "8bb576547678afd3f2089430843d00997266d50deeb993c38bd14860fe0d684a",
+      "previousSha256": null,
+      "bytes": 6830
+    },
+    {
+      "file": "docs/development/reports/TEST-PLANET-GLOBAL-AUDIT.md",
+      "sha256": "a0e6cbc1b6d96a4ba20109e2de880243c4a350619d197a48cde744646cb4ab9d",
+      "previousSha256": null,
+      "bytes": 9256
+    },
+    {
+      "file": "docs/development/reports/TEST-PLANET-INTEGRATION-R2.md",
+      "sha256": "506197579313679a9d57f5d9d7589b36d196010fd76fd70d84fa7c7efa651e75",
+      "previousSha256": null,
+      "bytes": 7092
+    },
+    {
+      "file": "reports/PLANET-ARCHITECTURE-DELIVERY.md",
+      "sha256": "24b4376eb3c13a04e66de786739a7d57da849498f4f79bc2ac3a41f39c6c2d07",
+      "previousSha256": null,
+      "bytes": 1280
+    },
+    {
+      "file": "reports/PLANET-ARCHITECTURE-R2.md",
+      "sha256": "ccb28ce7621a81fe9cc0e4b82eb9a6de069a418ae5ec149327e65d902ee8ec00",
+      "previousSha256": null,
+      "bytes": 1451
+    },
+    {
+      "file": "reports/PLANET-ARCHITECTURE-R3.md",
+      "sha256": "bcf404c34e94023012f4213d4374f61d2b1f699e6abf3918bc3133ced46e3605",
+      "previousSha256": null,
+      "bytes": 1515
+    },
+    {
+      "file": "reports/PLANET-MAP-DELIVERY.md",
+      "sha256": "fb88144a81f7275388c65d60090871afa7fb8fdd0b5c56dd03012ba0928ac162",
+      "previousSha256": null,
+      "bytes": 1115
+    },
+    {
+      "file": "reports/TEST-PLANET-MAP-INTEGRATION.md",
+      "sha256": "24ec117841e4d3ed3b8c15225fa39534d4d55ab79aa5ab1c0dfd5c830e0f27c9",
+      "previousSha256": null,
+      "bytes": 3531
+    }
+  ],
+  "publishedAt": "2026-09-16T12:49:29.082Z",
+  "reports": {
+    "docs/development/reports/TEST-PLANET-GLOBAL-AUDIT.md": "a0e6cbc1b6d96a4ba20109e2de880243c4a350619d197a48cde744646cb4ab9d",
+    "docs/development/reports/TEST-PLANET-INTEGRATION-R2.md": "506197579313679a9d57f5d9d7589b36d196010fd76fd70d84fa7c7efa651e75",
+    "reports/TEST-PLANET-MAP-INTEGRATION.md": "24ec117841e4d3ed3b8c15225fa39534d4d55ab79aa5ab1c0dfd5c830e0f27c9"
+  },
+  "checks": [
+    {
+      "file": "artifacts/planet-release-tests.tap",
+      "sha256": "4bf038ecc82f129e870ae0969c22cda208a0c6e67c7fd528b0393adfd71b28f5"
+    },
+    {
+      "file": "artifacts/planet-release-legacy-tests.tap",
+      "sha256": "9df4d30f64e99f90a3a6cc23b30914f5cc52ef3c1e70be40e2b7a120a2aedcc5"
+    },
+    {
+      "file": "artifacts/planet-global-audit-latest.tap",
+      "sha256": "3c94a315f2a91c2d0d9e122319a8499ff1a9b0531f81633bed2bb41967ef72a6"
+    },
+    {
+      "file": "artifacts/planet-surface-integration-tests.tap",
+      "sha256": "9d1cf08482600d84c768b72337f6a82b4fdf43e65d4b4c5d49c4ee95b3420638"
+    }
+  ],
+  "backup": "E:/myProject/star-abyss-game/artifacts/backups/planet-mvp-r1"
+}

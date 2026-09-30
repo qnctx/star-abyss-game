@@ -1,0 +1,24 @@
+{
+  "exit_code": 1,
+  "production_changed_during_run": [
+    "godot/assets/martial-r4/build.py",
+    "godot/assets/martial-r4/c2-martial-r4.glb",
+    "godot/assets/martial-r4/manifest.json",
+    "godot/assets/martial-r4/prompt.txt",
+    "godot/assets/martial-r4/reference.png",
+    "godot/assets/martial-r4/source/.gdignore",
+    "godot/assets/martial-r4/source/c2-martial-r4.blend",
+    "godot/assets/planet-ecology-r4/build_ecology_r4.py",
+    "godot/assets/planet-ecology-r4/ecology_r4.gdshader",
+    "godot/scripts/native_ai_camp_npc.gd",
+    "godot/scripts/native_ai_decision.gd",
+    "godot/scripts/native_ai_npc.gd",
+    "godot/scripts/native_enemy_r3.gd",
+    "godot/scripts/native_motion_r2.gd",
+    "godot/scripts/native_player.gd"
+  ],
+  "foreground_before": 2755244,
+  "foreground_after": 2755244,
+  "final_acceptance": false,
+  "reason": "Await explicit integration freeze and visual review"
+}

@@ -1,0 +1,9 @@
+{
+  "version": "SUPPORT-TERRITORY-R1",
+  "at": "2026-09-16T13:32:49.789Z",
+  "url": "http://127.0.0.1:4173/",
+  "bundle": "710efb5b57120cb081ab90558314799e3ba27bdc1092e65e74b41e661d04b5ac",
+  "status": "PASS",
+  "legacyTests": 393,
+  "moduleTests": 150
+}

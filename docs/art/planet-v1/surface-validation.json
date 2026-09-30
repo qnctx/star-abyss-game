@@ -1,0 +1,14 @@
+{
+  "ready": true,
+  "maskCalls": 2,
+  "programs": [
+    {
+      "runnable": true
+    },
+    {
+      "runnable": true
+    }
+  ],
+  "key": "test-existing-mask|planet-surface-v1",
+  "errors": []
+}

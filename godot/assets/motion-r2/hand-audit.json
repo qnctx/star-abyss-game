@@ -1,0 +1,58 @@
+{
+  "bone_names": [
+    "pelvis",
+    "hipL",
+    "kneeL",
+    "ankleL",
+    "hipR",
+    "kneeR",
+    "ankleR",
+    "waist",
+    "lumbar",
+    "chest",
+    "clavicleL",
+    "shoulderL",
+    "elbowL",
+    "wristL",
+    "clavicleR",
+    "shoulderR",
+    "elbowR",
+    "wristR",
+    "head"
+  ],
+  "hands": {
+    "L": [
+      {
+        "mesh": "C2_OriginalProportions",
+        "wrist_dominant_vertices": 1388,
+        "local_bounds_min": [
+          -0.42844003438949585,
+          -0.05138401314616203,
+          0.7408877611160278
+        ],
+        "local_bounds_max": [
+          -0.2846188545227051,
+          0.10674221068620682,
+          0.9835910797119141
+        ]
+      }
+    ],
+    "R": [
+      {
+        "mesh": "C2_OriginalProportions",
+        "wrist_dominant_vertices": 1313,
+        "local_bounds_min": [
+          0.28385281562805176,
+          -0.046336740255355835,
+          0.7403842210769653
+        ],
+        "local_bounds_max": [
+          0.42832687497138977,
+          0.10803620517253876,
+          0.9833292961120605
+        ]
+      }
+    ]
+  },
+  "mesh_changed": false
+}

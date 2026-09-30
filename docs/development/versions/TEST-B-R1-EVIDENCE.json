@@ -1,0 +1,33 @@
+{
+  "test": "TEST-B-R1",
+  "source": "C:/Users/HUAWEI/.codex/worktrees/118a/star-abyss-game/artifacts/tests/TEST-B-R1",
+  "target": "E:/myProject/star-abyss-game/artifacts/tests/TEST-B-R1",
+  "archivedAt": "2026-09-12T08:48:43.703Z",
+  "files": [
+    {
+      "path": "developer-tests.tap",
+      "sha256": "99888b9bf2cdaaa3fb04345cea74205289986df77382b7b2cc24c30d52d0afd3",
+      "bytes": 4059
+    },
+    {
+      "path": "hash-verification.json",
+      "sha256": "31d770ad248d21e5f0abb9cd71a605b3395a251e5d87f0dcdacdd3a3cd43983d",
+      "bytes": 1288
+    },
+    {
+      "path": "independent-tests.tap",
+      "sha256": "8ea4821d43f5b3dd74e89ddee5fcc2e187984982ddfda9daf6515a694d01a1e2",
+      "bytes": 3061
+    },
+    {
+      "path": "independent.test.mjs",
+      "sha256": "2c0128fd2aefc0ea3a0acc31d075bd9f2ef3643a0ad34a171eee40c234a7bc6d",
+      "bytes": 13648
+    },
+    {
+      "path": "verify.cjs",
+      "sha256": "d56eae86ba1fc17f4753c2d5794936d20a5f47664f2b1568b746860bd818acee",
+      "bytes": 706
+    }
+  ]
+}

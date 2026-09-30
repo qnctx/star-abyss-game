@@ -1,0 +1,86 @@
+{
+	"baseline_height_difference_m": 0.0,
+	"basin_corner_weights": [
+		1.0,
+		1.0,
+		1.0,
+		1.0
+	],
+	"checks": 8037,
+	"failures": [],
+	"island_land_samples": 312,
+	"island_sea_samples": 622,
+	"landmarks": [
+		{
+			"canonical": "(110177.5, 34809.23, 36104.52)",
+			"direction": "(0.910145, 0.287549, 0.298249)",
+			"id": "cold",
+			"name": "低温裂谷",
+			"position": "(-36104.52, -9822.469, -34809.23)",
+			"reference": "docs/art/planet-review-r3/12-special-regions.png"
+		},
+		{
+			"canonical": "(107531.2, -16149.92, 54172.0)",
+			"direction": "(0.885146, -0.132939, 0.445919)",
+			"id": "volcanic",
+			"name": "赤炉火山矿带",
+			"position": "(-54172.0, -12468.84, 16149.92)",
+			"reference": "docs/art/planet-review-r3/12-special-regions.png"
+		},
+		{
+			"canonical": "(113261.8, -38424.53, 13274.16)",
+			"direction": "(0.941209, -0.319309, 0.110309)",
+			"id": "crystal",
+			"name": "镜晶峡谷",
+			"position": "(-13274.16, -6738.164, 38424.53)",
+			"reference": "docs/art/planet-review-r3/12-special-regions.png"
+		},
+		{
+			"canonical": "(100245.0, 19073.22, 64963.3)",
+			"direction": "(0.828695, 0.157673, 0.537032)",
+			"id": "storm",
+			"name": "天穹风暴高原",
+			"position": "(-64963.3, -19755.03, -19073.22)",
+			"reference": "docs/art/planet-review-r3/12-special-regions.png"
+		}
+	],
+	"legacy_max_error_m": 0.0153145338058103,
+	"plains_max_slope": 0.0264332552750905,
+	"river_min_depth_m": 5.99999999985621,
+	"route_max_slope": 0.0963763089107533,
+	"scene_cameras": [
+		{
+			"far": 30000.0,
+			"fov": 60.0,
+			"id": "cold",
+			"position": "(-34265.68, -7405.707, -35326.82)",
+			"target": "(-36104.52, -9822.469, -34809.23)",
+			"up": "(-0.298249, 0.910145, -0.287549)"
+		},
+		{
+			"far": 30000.0,
+			"fov": 60.0,
+			"id": "volcanic",
+			"position": "(-52741.97, -9750.801, 16389.21)",
+			"target": "(-54172.0, -12468.84, 16149.92)",
+			"up": "(-0.445919, 0.885146, 0.132939)"
+		},
+		{
+			"far": 30000.0,
+			"fov": 60.0,
+			"id": "crystal",
+			"position": "(-10989.71, -4752.983, 38999.28)",
+			"target": "(-13274.16, -6738.164, 38424.53)",
+			"up": "(-0.110309, 0.941209, 0.319309)"
+		},
+		{
+			"far": 30000.0,
+			"fov": 60.0,
+			"id": "storm",
+			"position": "(-63831.97, -16903.79, -19357.03)",
+			"target": "(-64963.3, -19755.03, -19073.22)",
+			"up": "(-0.537032, 0.828695, -0.157673)"
+		}
+	],
+	"sphere_seam_max_m": 0.0687914247928347
+}

@@ -1,0 +1,168 @@
+{
+	"actual_damage_applied": true,
+	"actual_target": "ecology-r4.2:px/12/2480/1991:tree:17",
+	"ages": {
+		"0.0": 55,
+		"1.0": 89,
+		"2.0": 25
+	},
+	"budget_profile": "conservative-320-260k",
+	"failures": [],
+	"field_sample": {
+		"basin": 0.0,
+		"coast": 0.619669452388621,
+		"cold": 0.0,
+		"crystal": 0.0,
+		"forest": 0.814856762299788,
+		"height": 65.7197533996353,
+		"legacy_weight": 0.0,
+		"moisture": 0.885627824554459,
+		"mountains": 0.0709289480785465,
+		"ocean": 0.0,
+		"river": 0.00000000000000000000000000901772,
+		"route_s": 25000.0003669063,
+		"storm": 0.0,
+		"temperature": 0.990332639473338,
+		"uplift": 0.964151806184285,
+		"volcanic": 0.0,
+		"water_depth": 0.0,
+		"water_height": 62.7197533996353,
+		"wetland": 0.885611949436271
+	},
+	"habitat": "wetland",
+	"performance": {
+		"damage_query_us": 125769,
+		"draw_calls": 158.0,
+		"ecology_stream_us": {
+			"max": 248604.0,
+			"p50": 253.0,
+			"p95": 9708.0,
+			"samples": 650
+		},
+		"frame_interval_ms": {
+			"max": 20.717,
+			"p50": 17.453,
+			"p95": 18.417,
+			"samples": 529
+		},
+		"gpu": "Intel(R) UHD Graphics",
+		"rendered_primitives": 641071.0,
+		"sampling": "rendered-frame interval after physics synchronization; isolated scene, not Main",
+		"static_memory_bytes": 64542987.0
+	},
+	"physical_shapes": 2034,
+	"scope": "actual streamed planet ecology, not Main gameplay performance acceptance",
+	"snapshot": {
+		"asset_revision": "r4",
+		"band_triangles": [
+			99802,
+			69884,
+			89908
+		],
+		"cells": 39,
+		"detail_budgets": [
+			100000,
+			70000,
+			90000
+		],
+		"environment_damage": {
+			"dirty": true,
+			"dynamic_fragments": 0,
+			"generation": "ecology-r4.2",
+			"max_dynamic_fragments": 24,
+			"max_persistent_entities": 2048,
+			"modified": 1,
+			"moving_trees": 0,
+			"registered": 185,
+			"save_bound": true,
+			"state_error": ""
+		},
+		"instances": 287,
+		"kinds": {
+			"crystal": 0,
+			"floatrock": 0,
+			"grass": 28,
+			"outcrop": 16,
+			"pebble": 30,
+			"reed": 44,
+			"tree": 169
+		},
+		"max_instances": 320,
+		"max_triangles": 260000,
+		"pending": 491,
+		"range": 900.0,
+		"rejected": {
+			"clearance": 16,
+			"footprint": 0,
+			"legacy": 0,
+			"not_ready": 34,
+			"slope": 0,
+			"water": 0
+		},
+		"triangles": 259594
+	},
+	"species": {
+		"alder": 91,
+		"oak": 13,
+		"pine": 65
+	},
+	"stream_diagnostic": {
+		"after": {
+			"ecology-r4.2:px/12/2480/1991:tree:17": {
+				"broken": [],
+				"fall_pose": [
+					0.616718888282776,
+					-0.787183463573456,
+					0.0,
+					0.787183463573456,
+					0.616718888282776,
+					0.0,
+					0.0,
+					0.0,
+					1.0,
+					-0.75569611787796,
+					0.367949843406677,
+					0.0
+				],
+				"fallen": true,
+				"health": {
+					"trunk": 0.0
+				},
+				"poses": {
+
+				}
+			}
+		},
+		"asset": "pine-0-0",
+		"before": {
+			"ecology-r4.2:px/12/2480/1991:tree:17": {
+				"broken": [],
+				"fall_pose": [
+					0.616718888282776,
+					-0.787183463573456,
+					0.0,
+					0.787183463573456,
+					0.616718888282776,
+					0.0,
+					0.0,
+					0.0,
+					1.0,
+					-0.75569611787796,
+					0.367949843406677,
+					0.0
+				],
+				"fallen": true,
+				"health": {
+					"trunk": 0.0
+				},
+				"poses": {
+
+				}
+			}
+		},
+		"hit_part": "trunk",
+		"same_state": true,
+		"target_registered": true
+	},
+	"supported_cells": 39
+}

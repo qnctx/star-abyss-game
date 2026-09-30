@@ -1,0 +1,78 @@
+{
+  "bundle_sha256": "603e0363771c9c30482bbae6ea9a19fefe2eb2d57b46c21db9fc349379a786ce",
+  "resource_version": "r3-existing-reference",
+  "files": {
+    "scripts/native_vfx_r3.gd": {
+      "sha256": "fb554f9ff173db5eefb0b4aac4aaace7af88ca292fd433774c4546b19b3b6872",
+      "bytes": 13720
+    },
+    "assets/vfx-r3/qi_ribbon.gdshader": {
+      "sha256": "b5f008c3b34c969089e3e68d10ddac4aedae6bdbb40b00677ae1282401b3f7cf",
+      "bytes": 897
+    },
+    "assets/vfx-r3/build.py": {
+      "sha256": "edac0e30b0a0cf957e6e80b55757fde4de875e001c1673854ea62fd013272f18",
+      "bytes": 9292
+    },
+    "assets/vfx-r3/reference-r2.png": {
+      "sha256": "9f3b57c9f2d608a10d8b3a1e53e88826c71423f1467fa1450845cac59f81e8a9",
+      "bytes": 2161102
+    },
+    "assets/vfx-r3/qi-charge-r3.glb": {
+      "sha256": "df4f9f937e748fb16829e24b83bda78949512c5fca035f8e8adf9eedb3d64e5c",
+      "bytes": 9264
+    },
+    "assets/vfx-r3/qi-cleave-r3.glb": {
+      "sha256": "dc7da2b7a37f2fd5c2ff43da17283cf4251790b25a2bf4ccd57deb279643f12b",
+      "bytes": 12952
+    },
+    "assets/vfx-r3/qi-fist-r3.glb": {
+      "sha256": "a9d55f16549d76c392719c3cb0e12dc605a883b4668114dce66ac80e777d5d55",
+      "bytes": 14948
+    },
+    "assets/vfx-r3/qi-impact-r3.glb": {
+      "sha256": "76095158f75735733536b059c4db4d3dc6ddff7ad515e713476682d5dab8c3fe",
+      "bytes": 17004
+    },
+    "assets/vfx-r3/qi-palm-r3.glb": {
+      "sha256": "d0d95d6464eacf63a4a95728666409f42ed3ab74f75e6a146e4ed4077e72b5e8",
+      "bytes": 13004
+    },
+    "assets/vfx-r3/qi-skyfall-r3.glb": {
+      "sha256": "54e45c8fc43efa93b28b592e83ce84701a2e2a43229b744f7638cfc3088bbd04",
+      "bytes": 20552
+    },
+    "assets/vfx-r3/qi-sweep-r3.glb": {
+      "sha256": "3d85952614904adca26b88981006319656c22c5f8cb542015a99688f423f89ed",
+      "bytes": 14760
+    },
+    "assets/vfx-r3/source/qi-charge-r3.blend": {
+      "sha256": "5d65e83c921bf8893357fbc6b2a4b7ecbff835a71edf0daf009f8a1524407f58",
+      "bytes": 2169042
+    },
+    "assets/vfx-r3/source/qi-cleave-r3.blend": {
+      "sha256": "665ab03cdc28aeb10fc8dfe7672fb4a6cd22e452052a7245ea631d1461068ef4",
+      "bytes": 2171080
+    },
+    "assets/vfx-r3/source/qi-fist-r3.blend": {
+      "sha256": "f574574e1ac609920d1fa274d23bf7745ea72a0ee14cbf7f010d8b6a40d03a7f",
+      "bytes": 2172914
+    },
+    "assets/vfx-r3/source/qi-impact-r3.blend": {
+      "sha256": "a47df4722abdf7e191ec22e21f19e38f6dd78fc7bb95e0935bfdae425a822be1",
+      "bytes": 2173165
+    },
+    "assets/vfx-r3/source/qi-palm-r3.blend": {
+      "sha256": "efc4679ae119ca2acc8ee0244bf4ad54cefad373597ae3a2e7620d24038d19f6",
+      "bytes": 2170748
+    },
+    "assets/vfx-r3/source/qi-skyfall-r3.blend": {
+      "sha256": "1abf6e3746708a807aca5d36d6f4b18f25faf618ee9c0bf30747daeb4b4f14a9",
+      "bytes": 2175276
+    },
+    "assets/vfx-r3/source/qi-sweep-r3.blend": {
+      "sha256": "affdf6888addf41fb41c5d6f1f694064dfe6aa587553ca677c1002975ab3e7af",
+      "bytes": 2173012
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "version": 3,
+  "status": "concept_and_diagrams_only",
+  "createdAt": "2026-09-12",
+  "generator": "built-in image_gen for PNG; project Node SVG builder for diagrams",
+  "promptFile": "IMAGE_PROMPTS_v001.json",
+  "backupStatus": "not_configured",
+  "files": [
+    {
+      "path": "diagram-00-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1957,
+      "sha256": "6fbdf24d9a1027e4a41943aa61c17f9f36e2f2dbad6052ce4032a339e7770255"
+    },
+    {
+      "path": "diagram-01-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1942,
+      "sha256": "473e90207cfabcc627bbb43ca15632635e42aff429883e3eb08a77be2d6e72a9"
+    },
+    {
+      "path": "diagram-02-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1904,
+      "sha256": "7a044e9e853265a8283cb5347823a176b396328ae79b5ae353e3784aeda983c9"
+    },
+    {
+      "path": "diagram-03-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1912,
+      "sha256": "825ed670e3376156d1fb9e6ea469662c169cc1c96130c4be1d2859a014900bfa"
+    },
+    {
+      "path": "diagram-04-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1909,
+      "sha256": "fd76ea149443393d5c25c46f7e9356d07949de3bfdf44c6a31633278dea8961a"
+    },
+    {
+      "path": "diagram-05-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1918,
+      "sha256": "3dbc6e251b9b5f783106d756be3ecf1f2421d8a224724fa7e03dfe57e9321e63"
+    },
+    {
+      "path": "diagram-06-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1938,
+      "sha256": "66ddaff8b6389d4d85fe55bf5b8fbe057e2d663975220ee4a865c1f9bfd6cc5e"
+    },
+    {
+      "path": "diagram-07-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1935,
+      "sha256": "be0d2b2b7f410d794ebdd7c980500b1e8335536c55b24073c72e43733812e188"
+    },
+    {
+      "path": "diagram-08-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1902,
+      "sha256": "9fac3e0630d9db9e3405840659b23c09ccb59b07768065696088597141ea8d37"
+    },
+    {
+      "path": "diagram-09-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1926,
+      "sha256": "bed6737a311ed57fbd3ae7ed73a11ff2b7edae209a8c4ee72ff7eb5ad049eaf2"
+    },
+    {
+      "path": "diagram-10-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1914,
+      "sha256": "379d3872d032ba4b2be94d60ea99d1f471825ca6f9122d769a350534ca327b67"
+    },
+    {
+      "path": "diagram-11-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1928,
+      "sha256": "75e79d16d97ce9933b44489c2f5fad749ab1bfa0de15542dcc5c4086f65924b8"
+    },
+    {
+      "path": "diagram-12-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1922,
+      "sha256": "1d7cc4375a29c0d94822a170e41e4a52349ad6ddb8ebfe8b84bfa03354a6eb93"
+    },
+    {
+      "path": "diagram-13-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1921,
+      "sha256": "7417f9de6be9b0de123258a5d82452aa56896f0bfe8d278b600170ac550c71d2"
+    },
+    {
+      "path": "diagram-14-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1922,
+      "sha256": "55770b72e02634753591000c18445bc7a64e5eb5db8a5b47b60c1b891d0c0c74"
+    },
+    {
+      "path": "diagram-15-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1904,
+      "sha256": "0e9ed24d7a15ffd0ce26e791409718aa563189c08605e6cf3df71bf4d575e9fd"
+    },
+    {
+      "path": "diagram-16-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1911,
+      "sha256": "dbcecf216ae2bd598e321670508197c54b673da58951075834a4f6fec75cdcff"
+    },
+    {
+      "path": "diagram-17-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1919,
+      "sha256": "7101a90b0b8c9095380118bc2973ab3623d9fe164690f2bb2b796814c3d7b253"
+    },
+    {
+      "path": "diagram-18-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1900,
+      "sha256": "976f9d721c284be7a0ce895387b490c9457c583faeee7a7a45dd06592c440a4f"
+    },
+    {
+      "path": "diagram-19-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1948,
+      "sha256": "4267deeed8b0c8f162a634e2cc75c89556fd6185a64b35ec5620002e589b13c4"
+    },
+    {
+      "path": "diagram-20-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1965,
+      "sha256": "13af22a4d4a98300d187e5209997130e4a03972350a73c5909812d1568d0e35a"
+    },
+    {
+      "path": "diagram-21-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1926,
+      "sha256": "a970b4835ca0cb87478c7e5a55b22c88d2d2f84af5374a3f0a231cf322769437"
+    },
+    {
+      "path": "diagram-22-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1912,
+      "sha256": "a5f166d7c564957e09eaef51f297441c01cf221763827420030e722281f1cc04"
+    },
+    {
+      "path": "diagram-23-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1919,
+      "sha256": "05e4666ab2d195d2459d75b5600b3cd6b740c08ba3283dc24943abaaa8d156fc"
+    },
+    {
+      "path": "diagram-24-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1930,
+      "sha256": "62b28c5613031c2052e813cc4fb6df9e99d10ba95330303800a3ad64ed67bce9"
+    },
+    {
+      "path": "diagram-25-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1908,
+      "sha256": "f0a695882f35088d57deddcad0f320d33b9deadaba2d0fa79ad4dbc3b6dd2894"
+    },
+    {
+      "path": "diagram-26-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1962,
+      "sha256": "ad2a9a74ddcbfe3e3755cea963b0307a4fe9a50d1ada54a99666f1d5806e505d"
+    },
+    {
+      "path": "diagram-27-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1990,
+      "sha256": "a663708a6a2240f0bf5d7cd051126fc9ccdf6539a4246e1953f16bca4e208152"
+    },
+    {
+      "path": "diagram-28-v001.svg",
+      "kind": "rule_diagram",
+      "bytes": 1955,
+      "sha256": "3c2b293353aa9b6baee05dcec8935da43f6d3ff642a8785eded6806cae764983"
+    },
+    {
+      "path": "mythic-triptych-v001.png",
+      "kind": "concept",
+      "bytes": 3008027,
+      "sha256": "7e51b18c89f69db765179f66409abdf9495b6a9dc7dafa498bf07aaaca3b7843"
+    }
+  ]
+}

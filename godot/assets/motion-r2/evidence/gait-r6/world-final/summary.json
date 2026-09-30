@@ -1,0 +1,12 @@
+{
+  "side": {
+    "frames": 604,
+    "images": 85,
+    "physics_seconds": 10.0666666666667,
+    "wall_seconds": 10.124624,
+    "time_scale": 1.0,
+    "glb_sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "driver_sha256": "9a0dedd259116c87af95c1f2e40b5235417259d74d4819b24aaba5033989a4d0",
+    "metrics": {}
+  }
+}

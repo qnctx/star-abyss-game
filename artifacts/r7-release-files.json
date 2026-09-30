@@ -1,0 +1,15 @@
+[
+ "playable/game.js",
+ "playable/star-abyss.html",
+ "playable/src/innate-takeoff.mjs",
+ "playable/src/main.mjs",
+ "playable/src/tactical-control.mjs",
+ "playable/src/planet-runtime.mjs",
+ "playable/src/ui.mjs",
+ "playable/src/flight-hud.mjs",
+ "playable/src/test-lab.mjs",
+ "playable/tests/innate-takeoff-r6.test.mjs",
+ "playable/tests/input.test.js",
+ "playable/tests/tactical-control.test.js",
+ "docs/development/FLIGHT-CONTROLS-R7.md"
+]

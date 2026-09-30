@@ -1,0 +1,102 @@
+{
+  "version": "DEV-I-R1",
+  "threadId": "01a094d9-4b8a-7890-a238-0effc66ca873",
+  "workspace": "C:\\Users\\HUAWEI\\.codex\\worktrees\\7737\\star-abyss-game",
+  "baseline": "5fdb455d3c46601ebd584e64bcf72a2b5c82baf4",
+  "frozenAt": "2026-09-12T09:14:45.591Z",
+  "nodeVersion": "v22.14.0",
+  "nodeTests": "13/13",
+  "browserTests": "6/6; real IndexedDB, developer verification only",
+  "dependencies": [
+    {
+      "relative": "playable/src/d3-combat/fixed.mjs",
+      "sha256": "434e3ace9d094fd4212b38381981c2394cba0b3ebe234706afcc885fb8424f59"
+    },
+    {
+      "relative": "playable/src/d3-combat/index.mjs",
+      "sha256": "06877a2dd12a0a11a6a7dbf3d2fe4979b8cf28d4f41436255352c806756476d4"
+    },
+    {
+      "relative": "playable/src/d3-inventory/index.mjs",
+      "sha256": "3a63f4cc0278ef1ed9e4e6dd8526a4530bab8fb3fe05796f0dfde49c370dd566"
+    },
+    {
+      "relative": "playable/src/world-director/definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef"
+    },
+    {
+      "relative": "playable/src/world-director/director.mjs",
+      "sha256": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358"
+    },
+    {
+      "relative": "playable/src/world-director/rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02"
+    },
+    {
+      "relative": "playable/src/world-director/verification/replay-r1.cjs",
+      "sha256": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a"
+    }
+  ],
+  "files": [
+    {
+      "relative": "docs/development/reports/DEV-I.md",
+      "bytes": 13041,
+      "sha256": "56f73698d2c4a53d65586e97f8b4536bb0b88f18dad799d7b96055c6e63294b3"
+    },
+    {
+      "relative": "playable/src/d3-session/browser-evidence.json",
+      "bytes": 429937,
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2"
+    },
+    {
+      "relative": "playable/src/d3-session/browser-verifier.mjs",
+      "bytes": 9329,
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c"
+    },
+    {
+      "relative": "playable/src/d3-session/demo-fixture.mjs",
+      "bytes": 3871,
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830"
+    },
+    {
+      "relative": "playable/src/d3-session/finalize.cjs",
+      "bytes": 1862,
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be"
+    },
+    {
+      "relative": "playable/src/d3-session/index.mjs",
+      "bytes": 13971,
+      "sha256": "957137435aa500781190588921975d5a052b84816dc8ba6d1edb2487f4f99f4e"
+    },
+    {
+      "relative": "playable/src/d3-session/indexeddb.mjs",
+      "bytes": 3074,
+      "sha256": "60e180a2e4485b567b99c4cd42d7b65f2fc75b8b6fcbd65007620cf217236309"
+    },
+    {
+      "relative": "playable/src/d3-session/node-tests.tap",
+      "bytes": 2912,
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481"
+    },
+    {
+      "relative": "playable/src/d3-session/serve.cjs",
+      "bytes": 1318,
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51"
+    },
+    {
+      "relative": "playable/src/d3-session/verify-dependencies.cjs",
+      "bytes": 1153,
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f"
+    },
+    {
+      "relative": "playable/src/d3-session/verify.html",
+      "bytes": 1594,
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b"
+    },
+    {
+      "relative": "playable/tests/d3-session.test.js",
+      "bytes": 11390,
+      "sha256": "b88edafbf397bd2d212e05b6d9b40299bc24f65c2100f6d480737c43de830220"
+    }
+  ]
+}

@@ -1,0 +1,2270 @@
+[
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.130698710680008,
+        "ankle_above_support": 0.130698710680008
+      },
+      {
+        "ankle_above_root": 0.132216781377792,
+        "ankle_above_support": 0.132216781377792
+      }
+    ],
+    "frame": 0,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.134201377630234,
+        "ankle_above_support": 0.134201377630234
+      },
+      {
+        "ankle_above_root": 0.135049551725388,
+        "ankle_above_support": 0.135049551725388
+      }
+    ],
+    "frame": 1,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 2,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 3,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 4,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 5,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 6,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 7,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 8,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 9,
+    "root_position": "(40.0, 0.0, 40.0)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.153439402580261,
+        "ankle_above_support": 0.153439402580261
+      },
+      {
+        "ankle_above_root": 0.153439521789551,
+        "ankle_above_support": 0.153439521789551
+      }
+    ],
+    "frame": 10,
+    "root_position": "(40.0, 0.0, 39.94999)",
+    "root_y": 0.0,
+    "speed": 1.5,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 11,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.566666662693024,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 12,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 13,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 14,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 15,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 16,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 17,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 18,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 19,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 20,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 21,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 22,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 23,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.1399986743927,
+        "ankle_above_support": 0.1399986743927
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 24,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.1399986743927,
+        "ankle_above_support": 0.1399986743927
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 25,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 26,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 27,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 28,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 29,
+    "root_position": "(40.0, 0.0, 39.9311)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.1399986743927,
+        "ankle_above_support": 0.1399986743927
+      },
+      {
+        "ankle_above_root": 0.14000004529953,
+        "ankle_above_support": 0.14000004529953
+      }
+    ],
+    "frame": 30,
+    "root_position": "(40.0, 0.0, 39.7311)",
+    "root_y": 0.0,
+    "speed": 6.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139780133962631,
+        "ankle_above_support": 0.139780133962631
+      }
+    ],
+    "frame": 31,
+    "root_position": "(40.0, 0.0, 39.56221)",
+    "root_y": 0.0,
+    "speed": 5.06666660308838,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139780223369598,
+        "ankle_above_support": 0.139780223369598
+      }
+    ],
+    "frame": 32,
+    "root_position": "(40.0, 0.0, 39.42443)",
+    "root_y": 0.0,
+    "speed": 4.13333320617676,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998763799667,
+        "ankle_above_support": 0.139998763799667
+      },
+      {
+        "ankle_above_root": 0.139780074357986,
+        "ankle_above_support": 0.139780074357986
+      }
+    ],
+    "frame": 33,
+    "root_position": "(40.0, 0.0, 39.31777)",
+    "root_y": 0.0,
+    "speed": 3.19999980926514,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994204044342,
+        "ankle_above_support": 0.139994204044342
+      },
+      {
+        "ankle_above_root": 0.139780104160309,
+        "ankle_above_support": 0.139780104160309
+      }
+    ],
+    "frame": 34,
+    "root_position": "(40.0, 0.0, 39.24221)",
+    "root_y": 0.0,
+    "speed": 2.26666641235352,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994233846664,
+        "ankle_above_support": 0.139994233846664
+      },
+      {
+        "ankle_above_root": 0.139780133962631,
+        "ankle_above_support": 0.139780133962631
+      }
+    ],
+    "frame": 35,
+    "root_position": "(40.0, 0.0, 39.19777)",
+    "root_y": 0.0,
+    "speed": 1.33333301544189,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994204044342,
+        "ankle_above_support": 0.139994204044342
+      },
+      {
+        "ankle_above_root": 0.140150099992752,
+        "ankle_above_support": 0.140150099992752
+      }
+    ],
+    "frame": 36,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.399999678134918,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994233846664,
+        "ankle_above_support": 0.139994233846664
+      },
+      {
+        "ankle_above_root": 0.14015007019043,
+        "ankle_above_support": 0.14015007019043
+      }
+    ],
+    "frame": 37,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 38,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994353055954,
+        "ankle_above_support": 0.139994353055954
+      },
+      {
+        "ankle_above_root": 0.140150099992752,
+        "ankle_above_support": 0.140150099992752
+      }
+    ],
+    "frame": 39,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994293451309,
+        "ankle_above_support": 0.139994293451309
+      },
+      {
+        "ankle_above_root": 0.140150099992752,
+        "ankle_above_support": 0.140150099992752
+      }
+    ],
+    "frame": 40,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139994323253632,
+        "ankle_above_support": 0.139994323253632
+      },
+      {
+        "ankle_above_root": 0.140150099992752,
+        "ankle_above_support": 0.140150099992752
+      }
+    ],
+    "frame": 41,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 42,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 43,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 44,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 45,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 46,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 47,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 48,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 49,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 50,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 51,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 52,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 53,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 54,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 55,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 56,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 57,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 58,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.13999417424202,
+        "ankle_above_support": 0.13999417424202
+      },
+      {
+        "ankle_above_root": 0.140150040388107,
+        "ankle_above_support": 0.140150040388107
+      }
+    ],
+    "frame": 59,
+    "root_position": "(40.0, 0.0, 39.18444)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.205859705805779,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998629689217,
+        "ankle_above_support": 0.345858335494995
+      },
+      {
+        "ankle_above_root": 0.140000000596046,
+        "ankle_above_support": 0.345859706401825
+      }
+    ],
+    "frame": 60,
+    "root_position": "(40.0, 0.20586, 38.63606)",
+    "root_y": 0.205859705805779,
+    "speed": 16.4419994354248,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.387158840894699,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140762478113174,
+        "ankle_above_support": 0.527921319007874
+      },
+      {
+        "ankle_above_root": 0.142567902803421,
+        "ankle_above_support": 0.52972674369812
+      }
+    ],
+    "frame": 61,
+    "root_position": "(40.0, 0.387159, 38.11911)",
+    "root_y": 0.387158840894699,
+    "speed": 15.5086660385132,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.544013559818268,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.150833070278168,
+        "ankle_above_support": 0.694846630096436
+      },
+      {
+        "ankle_above_root": 0.173109114170074,
+        "ankle_above_support": 0.717122673988342
+      }
+    ],
+    "frame": 62,
+    "root_position": "(40.0, 0.544014, 37.63326)",
+    "root_y": 0.544013559818268,
+    "speed": 14.5753326416016,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.676423788070679,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.172021448612213,
+        "ankle_above_support": 0.848445236682892
+      },
+      {
+        "ankle_above_root": 0.225016355514526,
+        "ankle_above_support": 0.901440143585205
+      }
+    ],
+    "frame": 63,
+    "root_position": "(40.0, 0.676424, 37.17853)",
+    "root_y": 0.676423788070679,
+    "speed": 13.6419992446899,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.784389555454254,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.200813472270966,
+        "ankle_above_support": 0.98520302772522
+      },
+      {
+        "ankle_above_root": 0.279537379741669,
+        "ankle_above_support": 1.06392693519592
+      }
+    ],
+    "frame": 64,
+    "root_position": "(40.0, 0.78439, 36.75491)",
+    "root_y": 0.784389555454254,
+    "speed": 12.7086658477783,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.867910861968994,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.226187467575073,
+        "ankle_above_support": 1.09409832954407
+      },
+      {
+        "ankle_above_root": 0.315396785736084,
+        "ankle_above_support": 1.18330764770508
+      }
+    ],
+    "frame": 65,
+    "root_position": "(40.0, 0.867911, 36.3624)",
+    "root_y": 0.867910861968994,
+    "speed": 11.7753324508667,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.926987767219543,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.229999899864197,
+        "ankle_above_support": 1.15698766708374
+      },
+      {
+        "ankle_above_root": 0.320130348205566,
+        "ankle_above_support": 1.24711811542511
+      }
+    ],
+    "frame": 66,
+    "root_position": "(40.0, 0.926988, 36.001)",
+    "root_y": 0.926987767219543,
+    "speed": 10.8419990539551,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.961620211601257,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230013012886047,
+        "ankle_above_support": 1.1916332244873
+      },
+      {
+        "ankle_above_root": 0.320014357566834,
+        "ankle_above_support": 1.28163456916809
+      }
+    ],
+    "frame": 67,
+    "root_position": "(40.0, 0.96162, 35.67071)",
+    "root_y": 0.961620211601257,
+    "speed": 9.90866565704346,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.971808195114136,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.229989528656006,
+        "ankle_above_support": 1.20179772377014
+      },
+      {
+        "ankle_above_root": 0.319994449615479,
+        "ankle_above_support": 1.29180264472961
+      }
+    ],
+    "frame": 68,
+    "root_position": "(40.0, 0.971808, 35.37153)",
+    "root_y": 0.971808195114136,
+    "speed": 8.97533226013184,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.957551777362823,
+    "clip": "air_hit",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.229997336864471,
+        "ankle_above_support": 1.18754911422729
+      },
+      {
+        "ankle_above_root": 0.320017755031586,
+        "ankle_above_support": 1.27756953239441
+      }
+    ],
+    "frame": 69,
+    "root_position": "(40.0, 0.957552, 35.10346)",
+    "root_y": 0.957551777362823,
+    "speed": 8.04199886322021,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.918850898742676,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.23003363609314,
+        "ankle_above_support": 1.14888453483582
+      },
+      {
+        "ankle_above_root": 0.320015549659729,
+        "ankle_above_support": 1.2388664484024
+      }
+    ],
+    "frame": 70,
+    "root_position": "(40.0, 0.918851, 34.86651)",
+    "root_y": 0.918850898742676,
+    "speed": 7.10866546630859,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.855705559253693,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230118334293365,
+        "ankle_above_support": 1.08582389354706
+      },
+      {
+        "ankle_above_root": 0.320010960102081,
+        "ankle_above_support": 1.17571651935577
+      }
+    ],
+    "frame": 71,
+    "root_position": "(40.0, 0.855706, 34.66066)",
+    "root_y": 0.855705559253693,
+    "speed": 6.17533206939697,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.768115818500519,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230217158794403,
+        "ankle_above_support": 0.998332977294922
+      },
+      {
+        "ankle_above_root": 0.320005118846893,
+        "ankle_above_support": 1.08812093734741
+      }
+    ],
+    "frame": 72,
+    "root_position": "(40.0, 0.768116, 34.48593)",
+    "root_y": 0.768115818500519,
+    "speed": 5.24199867248535,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.65608161687851,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230295240879059,
+        "ankle_above_support": 0.886376857757568
+      },
+      {
+        "ankle_above_root": 0.320000827312469,
+        "ankle_above_support": 0.976082444190979
+      }
+    ],
+    "frame": 73,
+    "root_position": "(40.0, 0.656082, 34.34231)",
+    "root_y": 0.65608161687851,
+    "speed": 4.30866527557373,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.519602954387665,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230319023132324,
+        "ankle_above_support": 0.749921977519989
+      },
+      {
+        "ankle_above_root": 0.319999635219574,
+        "ankle_above_support": 0.839602589607239
+      }
+    ],
+    "frame": 74,
+    "root_position": "(40.0, 0.519603, 34.2298)",
+    "root_y": 0.519602954387665,
+    "speed": 3.37533187866211,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.358679831027985,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230319023132324,
+        "ankle_above_support": 0.588998854160309
+      },
+      {
+        "ankle_above_root": 0.319999635219574,
+        "ankle_above_support": 0.678679466247559
+      }
+    ],
+    "frame": 75,
+    "root_position": "(40.0, 0.35868, 34.1484)",
+    "root_y": 0.358679831027985,
+    "speed": 2.44199848175049,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.173312291502953,
+    "clip": "air_guard",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.230319038033485,
+        "ankle_above_support": 0.403631329536438
+      },
+      {
+        "ankle_above_root": 0.31999959051609,
+        "ankle_above_support": 0.493311882019043
+      }
+    ],
+    "frame": 76,
+    "root_position": "(40.0, 0.173312, 34.09811)",
+    "root_y": 0.173312291502953,
+    "speed": 1.50866508483887,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "walk",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.195474833250046,
+        "ankle_above_support": 0.195474833250046
+      },
+      {
+        "ankle_above_root": 0.283932238817215,
+        "ankle_above_support": 0.283932238817215
+      }
+    ],
+    "frame": 77,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.575331747531891,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.167279809713364,
+        "ankle_above_support": 0.167279809713364
+      },
+      {
+        "ankle_above_root": 0.237749516963959,
+        "ankle_above_support": 0.237749516963959
+      }
+    ],
+    "frame": 78,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.142300963401794,
+        "ankle_above_support": 0.142300963401794
+      },
+      {
+        "ankle_above_root": 0.162977814674377,
+        "ankle_above_support": 0.162977814674377
+      }
+    ],
+    "frame": 79,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 80,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 81,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 82,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 83,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 84,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 85,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 86,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 87,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 88,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 89,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 90,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 91,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 92,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "combat_ready",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.139998704195023,
+        "ankle_above_support": 0.139998704195023
+      },
+      {
+        "ankle_above_root": 0.139999985694885,
+        "ankle_above_support": 0.139999985694885
+      }
+    ],
+    "frame": 93,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.130970388650894,
+        "ankle_above_support": 0.130970388650894
+      },
+      {
+        "ankle_above_root": 0.132329970598221,
+        "ankle_above_support": 0.132329970598221
+      }
+    ],
+    "frame": 94,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.133892446756363,
+        "ankle_above_support": 0.133892446756363
+      },
+      {
+        "ankle_above_root": 0.134920835494995,
+        "ankle_above_support": 0.134920835494995
+      }
+    ],
+    "frame": 95,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 96,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 97,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 98,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 99,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 100,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 101,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 102,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 103,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 104,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 105,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 106,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  },
+  {
+    "agl": 0.0,
+    "clip": "idle",
+    "engine_in_physics": true,
+    "engine_physics_dt": 0.0333333333333333,
+    "feet": [
+      {
+        "ankle_above_root": 0.140000253915787,
+        "ankle_above_support": 0.140000253915787
+      },
+      {
+        "ankle_above_root": 0.14000016450882,
+        "ankle_above_support": 0.14000016450882
+      }
+    ],
+    "frame": 107,
+    "root_position": "(40.0, 0.0, 34.07893)",
+    "root_y": 0.0,
+    "speed": 0.0,
+    "support_y": 0.0
+  }
+]

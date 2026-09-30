@@ -1,0 +1,12 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/pet-assets');fs.mkdirSync(out,{recursive:true});
+const folders=['playable/assets','docs/ui-concepts','docs/ui-implementation'];
+const extensions=new Set(['.png','.jpg','.jpeg','.webp','.gif','.svg','.mp4','.webm','.mov','.blend','.blend1','.glb','.gltf','.bin','.fbx','.wav','.mp3','.ogg','.mjs']);const files=[];
+function scan(relative){const absolute=path.join(root,relative);if(!fs.existsSync(absolute))return;for(const entry of fs.readdirSync(absolute,{withFileTypes:true})){const rel=relative+'/'+entry.name,abs=path.join(root,rel);if(entry.isDirectory())scan(rel);else if(entry.isFile()&&extensions.has(path.extname(entry.name).toLowerCase())){const stat=fs.statSync(abs);files.push({path:rel,bytes:stat.size,sha256:crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex'),modifiedAt:stat.mtime.toISOString(),reviewStatus:'existing_not_revalidated'});}}}
+folders.forEach(scan);files.sort((a,b)=>a.path.localeCompare(b.path));
+let version=1,name;do{name=`EXISTING_ASSETS_20260912_v${String(version++).padStart(3,'0')}.json`;}while(fs.existsSync(path.join(out,name)));
+const inventory={schemaVersion:1,createdAt:new Date().toISOString(),scope:folders,backupStatus:'not_configured',note:'Read-only inventory of existing files, not an independent backup or quality acceptance.',count:files.length,totalBytes:files.reduce((s,f)=>s+f.bytes,0),files};
+fs.writeFileSync(path.join(out,name),JSON.stringify(inventory,null,2));
+const rows=[...fs.readFileSync(path.join(root,'docs/cultivation/16_PET_BESTIARY_33.md'),'utf8').matchAll(/^\|(PET\d\d) ([^|]+)\|/gm)];
+const registryPath=path.join(out,'PET_ASSET_REGISTRY.json');if(!fs.existsSync(registryPath)){fs.writeFileSync(registryPath,JSON.stringify({schemaVersion:1,inventorySnapshot:name,backupStatus:'not_configured',species:rows.map(m=>({speciesId:m[1],name:m[2],status:'planned',activeVersion:null,versions:[],requiredKinds:['concept-normal','concept-mini','concept-costume','source-blend','runtime-glb','video-turntable','video-interaction','video-combat']}))},null,2));}
+console.log(JSON.stringify({inventory:'docs/pet-assets/'+name,count:inventory.count,totalBytes:inventory.totalBytes,petRegistry:'docs/pet-assets/PET_ASSET_REGISTRY.json',species:rows.length,backupStatus:inventory.backupStatus},null,2));

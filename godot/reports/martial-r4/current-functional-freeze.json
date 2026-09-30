@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-30",
+  "sha256": {
+    "godot/scripts/native_main.gd": "c9a1b3edca8fdc5bf3d9914da76beb2c02262725b7683a992ae19e1af57f8e5f",
+    "godot/scripts/native_martial_skills.gd": "bbee2130f82c5ecb12864e5bd5af97613411ffb5522693a68754d81aa3eadc6d",
+    "godot/scripts/native_environment_damage.gd": "5858ce9af948faa84d6566e85efb8e9a8a78346a26f5562db4bee7125d192dad",
+    "godot/scripts/native_surface_blink.gd": "b0495d4f4cd4b541e4b1fb260de1eb0f1e92fa0c2e98ad5d7c3d273bb1c2c9db"
+  },
+  "production_editing": false,
+  "engine_released": true,
+  "scope": "Functional input/physics/storage verified; martial VFX/poses and production-streamed fragment settling remain outside final visual acceptance."
+}

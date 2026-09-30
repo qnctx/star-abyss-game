@@ -1,0 +1,58 @@
+[
+  {
+    "id": "N01",
+    "path": "playable/assets/progression-quests/N01-concept-v1.png",
+    "sha256": "8104f12cae06bcc7518ee5cf466d09cf89ef0254a1da30e8a6a3904bce7ee3fe",
+    "status": "concept and original GLB verified; local runtime skin integrated",
+    "model": {
+      "path": "playable/assets/progression-quests/N01-original.glb",
+      "sha256": "ed00ca069c1dd777238c2e09eb3730edbd3312d1286fac90c36794c27de2ed82",
+      "taskId": "3544409",
+      "sourceSkin": false,
+      "sourceAnimation": false,
+      "localRig": "playable/src/progression-quests/npc-rig.mjs"
+    }
+  },
+  {
+    "id": "N03",
+    "path": "playable/assets/progression-quests/N03-concept-v1.png",
+    "sha256": "89b1e7a0f717f164e5d9619e0d31eeb0b4f9b48303df20ac8e5fbdfd08928ed6",
+    "status": "concept and original GLB verified; local runtime skin integrated",
+    "model": {
+      "path": "playable/assets/progression-quests/N03-original.glb",
+      "sha256": "12b22193f03d46ea3316d8f0f68da4398e369d78ae168e14808fecce86af13cb",
+      "taskId": "3544411",
+      "sourceSkin": false,
+      "sourceAnimation": false,
+      "localRig": "playable/src/progression-quests/npc-rig.mjs"
+    }
+  },
+  {
+    "id": "N04",
+    "path": "playable/assets/progression-quests/N04-concept-v1.png",
+    "sha256": "5823dbfb129022e986aa81cbf20b36c54b8c35a739e9cc29060ed53db5ef40db",
+    "status": "concept and original GLB verified; local runtime skin integrated",
+    "model": {
+      "path": "playable/assets/progression-quests/N04-original.glb",
+      "sha256": "72e9c72edda59b7ad5661385d077ddc036eb889c4d84453eb4c948feb220b7cf",
+      "taskId": "3544414",
+      "sourceSkin": false,
+      "sourceAnimation": false,
+      "localRig": "playable/src/progression-quests/npc-rig.mjs"
+    }
+  },
+  {
+    "id": "N05",
+    "path": "playable/assets/progression-quests/N05-concept-v1.png",
+    "sha256": "01aefa7d1e1d56e980fa2ceb77e280b371acd0ce5526fa1bfd64f4fe4afef8aa",
+    "status": "concept and original GLB verified; local runtime skin integrated",
+    "model": {
+      "path": "playable/assets/progression-quests/N05-original.glb",
+      "sha256": "d57748012c3b561aebb3df2a3c58bd641be61be0c9b4f96f84f1eb8ec516fe39",
+      "taskId": "3544416",
+      "sourceSkin": false,
+      "sourceAnimation": false,
+      "localRig": "playable/src/progression-quests/npc-rig.mjs"
+    }
+  }
+]

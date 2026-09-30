@@ -1,0 +1,11 @@
+{
+  "version": "PHASE1-R4",
+  "at": "2026-09-16T11:54:53.248Z",
+  "report": "E:/myProject/star-abyss-game/docs/development/reports/TEST-PHASE1-R4.md",
+  "reportSHA": "9965af9ad86d36aa1b2d266dfd3ad6f2fa1d32ad67e020ffa9fb872044557067",
+  "bundleSHA": "19b29a055653cbe0b8732cd73f9eadfa21c2654c01894f95d038f52f6f64737d",
+  "previousBundleSHA": "0875ddec709488787d1abc6aa065e02c5ee2c04df839f29feee88209f8baa0e6",
+  "frozen": "E:/myProject/star-abyss-game/artifacts/deliveries/PHASE1-R4",
+  "manifestSHA": "b76599411f81efb824fcd00d1e86e4ef03ba5996aeae3f1be8dbf9b70b18d1f9",
+  "backup": "artifacts/backups/phase1-20260916"
+}

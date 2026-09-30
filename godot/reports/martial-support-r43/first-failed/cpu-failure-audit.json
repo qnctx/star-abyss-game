@@ -1,0 +1,6012 @@
+{
+  "report_keys": [
+    "checks",
+    "environment_events",
+    "failed",
+    "frame_states",
+    "landing_events",
+    "live_support_samples",
+    "persistence_only",
+    "physics_frames",
+    "scope",
+    "slot",
+    "source_sha256_end",
+    "source_sha256_start",
+    "support_fixtures",
+    "support_waits"
+  ],
+  "failed": [
+    "producer real R fractured rock before crater fragment contact neither floats nor penetrates terrain: stump",
+    "producer post-crater martial-rock fragment contact neither floats nor penetrates terrain: stump",
+    "producer post-crater martial-impact-rock fragment contact neither floats nor penetrates terrain: stump",
+    "producer post-crater martial-impact-rock real first-hit ray matches fragment body/mesh: chunk_4"
+  ],
+  "handoff_complete": false,
+  "parts": {
+    "martial-impact-rock/settled_after_crater/chunk_0": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.999493539333344,
+            -0.0235868878662586,
+            0.021363839507103
+          ],
+          [
+            0.0235016923397779,
+            0.999714851379395,
+            0.00423015048727393
+          ],
+          [
+            -0.0214575231075287,
+            -0.00372592196799815,
+            0.999762833118439
+          ]
+        ],
+        "position": [
+          88.9721527099609,
+          0.397493690252304,
+          166.502380371094
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.999493539333344,
+            -0.0235868878662586,
+            0.021363839507103
+          ],
+          [
+            0.0235016923397779,
+            0.999714851379395,
+            0.00423015048727393
+          ],
+          [
+            -0.0214575231075287,
+            -0.00372592196799815,
+            0.999762833118439
+          ]
+        ],
+        "position": [
+          90.5583572387695,
+          -1.04458749294281,
+          167.031112670898
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.999493539333344,
+                  -0.0235868878662586,
+                  0.021363839507103
+                ],
+                [
+                  0.0235016923397779,
+                  0.999714851379395,
+                  0.00423015048727393
+                ],
+                [
+                  -0.0214575231075287,
+                  -0.00372592196799815,
+                  0.999762833118439
+                ]
+              ],
+              "position": [
+                90.5583572387695,
+                -1.04458749294281,
+                167.031112670898
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            88.9131011962891,
+            0.352915287017822,
+            166.534744262695
+          ],
+          "position": [
+            87.4249114990234,
+            -0.78650963306427,
+            164.164367675781
+          ],
+          "size": [
+            2.97637176513672,
+            2.27884984016418,
+            4.74075317382813
+          ]
+        }
+      },
+      "vertex_count": 58,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000545527553185821,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.314547449350357,
+          0.904595911502838,
+          0.287691175937653
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          88.9345092773438,
+          -0.741252899169922,
+          164.51806640625
+        ],
+        "ray_from": [
+          88.9523010253906,
+          23.2592620849609,
+          164.550979614258
+        ],
+        "ray_hit_distance": 24.0005435943604,
+        "ray_to": [
+          88.9048690795898,
+          -40.7406578063965,
+          164.463241577148
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          88.9345169067383,
+          -0.740707397460938,
+          164.518081665039
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000741124618798494,
+          0.99999874830246,
+          0.00137099076528102
+        ],
+        "vertex_index": 5
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000545527553185821,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.314547449350357,
+          0.904595911502838,
+          0.287691175937653
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          88.9345092773438,
+          -0.741252899169922,
+          164.51806640625
+        ],
+        "ray_from": [
+          88.9523010253906,
+          23.2592620849609,
+          164.550979614258
+        ],
+        "ray_hit_distance": 24.0005435943604,
+        "ray_to": [
+          88.9048690795898,
+          -40.7406578063965,
+          164.463241577148
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          88.9345169067383,
+          -0.740707397460938,
+          164.518081665039
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000741124618798494,
+          0.99999874830246,
+          0.00137099076528102
+        ],
+        "vertex_index": 5
+      },
+      "lowest_clearance": 0.000545527553185821,
+      "highest_clearance": 2.72539234161377,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_0",
+          "collision_layer": 1,
+          "expected_body_rid": 26697516712031,
+          "first_hit_is_part_body": true,
+          "from": [
+            88.9775543212891,
+            7.68778324127197,
+            166.512496948242
+          ],
+          "groups": [],
+          "hit_point": [
+            88.9726715087891,
+            1.08774149417877,
+            166.503341674805
+          ],
+          "name": "Fragment_chunk_0",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26697516712031,
+          "shape": 0,
+          "to": [
+            88.9667510986328,
+            -6.89279556274414,
+            166.492263793945
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_0": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/chunk_1": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.591774582862854,
+            0.00580896763131022,
+            -0.806082606315613
+          ],
+          [
+            -0.00516900699585676,
+            0.999980866909027,
+            0.00341152376495302
+          ],
+          [
+            0.806086957454681,
+            0.00214779330417514,
+            0.591793298721313
+          ]
+        ],
+        "position": [
+          94.3571166992188,
+          -0.143981099128723,
+          165.769134521484
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.591774582862854,
+            0.00580896763131022,
+            -0.806082606315613
+          ],
+          [
+            -0.00516900699585676,
+            0.999980866909027,
+            0.00341152376495302
+          ],
+          [
+            0.806086957454681,
+            0.00214779330417514,
+            0.591793298721313
+          ]
+        ],
+        "position": [
+          93.7624664306641,
+          -1.73924899101257,
+          167.309066772461
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.591774582862854,
+                  0.00580896763131022,
+                  -0.806082606315613
+                ],
+                [
+                  -0.00516900699585676,
+                  0.999980866909027,
+                  0.00341152376495302
+                ],
+                [
+                  0.806086957454681,
+                  0.00214779330417514,
+                  0.591793298721313
+                ]
+              ],
+              "position": [
+                93.7624664306641,
+                -1.73924899101257,
+                167.309066772461
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            94.6179046630859,
+            -0.161633372306824,
+            166.157104492188
+          ],
+          "position": [
+            92.544921875,
+            -1.48476874828339,
+            163.860092163086
+          ],
+          "size": [
+            4.14596557617188,
+            2.64627075195313,
+            4.59402465820313
+          ]
+        }
+      },
+      "vertex_count": 80,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000667571206577122,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.0893253162503242,
+          0.960472583770752,
+          0.26365402340889
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.1107330322266,
+          -1.47807693481445,
+          164.318176269531
+        ],
+        "ray_from": [
+          93.1293563842773,
+          22.5225601196289,
+          164.351043701172
+        ],
+        "ray_hit_distance": 24.0006675720215,
+        "ray_to": [
+          93.0796966552734,
+          -41.4773597717285,
+          164.263397216797
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.1107330322266,
+          -1.47740936279297,
+          164.318176269531
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000775931344833225,
+          0.99999874830246,
+          0.00136933324392885
+        ],
+        "vertex_index": 2
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000667571206577122,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.0893253162503242,
+          0.960472583770752,
+          0.26365402340889
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.1107330322266,
+          -1.47807693481445,
+          164.318176269531
+        ],
+        "ray_from": [
+          93.1293563842773,
+          22.5225601196289,
+          164.351043701172
+        ],
+        "ray_hit_distance": 24.0006675720215,
+        "ray_to": [
+          93.0796966552734,
+          -41.4773597717285,
+          164.263397216797
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.1107330322266,
+          -1.47740936279297,
+          164.318176269531
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000775931344833225,
+          0.99999874830246,
+          0.00136933324392885
+        ],
+        "vertex_index": 2
+      },
+      "lowest_clearance": 0.000667571206577122,
+      "highest_clearance": 2.87168645858765,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+          "collision_layer": 1,
+          "expected_body_rid": 26706106646622,
+          "first_hit_is_part_body": true,
+          "from": [
+            94.3647232055664,
+            9.52882194519043,
+            165.782501220703
+          ],
+          "groups": [],
+          "hit_point": [
+            94.3577041625977,
+            0.611026525497437,
+            165.77018737793
+          ],
+          "name": "Fragment_chunk_1",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26706106646622,
+          "shape": 0,
+          "to": [
+            94.3495101928711,
+            -9.8167839050293,
+            165.755767822266
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/chunk_2": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.875453352928162,
+            -0.248903557658196,
+            -0.414280742406845
+          ],
+          [
+            0.0300294868648052,
+            0.883544564247131,
+            -0.467383474111557
+          ],
+          [
+            0.482368856668472,
+            0.396731793880463,
+            0.780976474285126
+          ]
+        ],
+        "position": [
+          89.6216506958008,
+          -0.496233701705933,
+          169.489501953125
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.875453352928162,
+            -0.248903557658196,
+            -0.414280742406845
+          ],
+          [
+            0.0300294868648052,
+            0.883544564247131,
+            -0.467383474111557
+          ],
+          [
+            0.482368856668472,
+            0.396731793880463,
+            0.780976474285126
+          ]
+        ],
+        "position": [
+          90.0791168212891,
+          -2.90283989906311,
+          169.232818603516
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.875453352928162,
+                  -0.248903557658196,
+                  -0.414280742406845
+                ],
+                [
+                  0.0300294868648052,
+                  0.883544564247131,
+                  -0.467383474111557
+                ],
+                [
+                  0.482368856668472,
+                  0.396731793880463,
+                  0.780976474285126
+                ]
+              ],
+              "position": [
+                90.0791168212891,
+                -2.90283989906311,
+                169.232818603516
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            89.5482940673828,
+            -0.654718995094299,
+            169.480346679688
+          ],
+          "position": [
+            88.0095748901367,
+            -2.02831792831421,
+            167.241241455078
+          ],
+          "size": [
+            3.07743072509766,
+            2.74719786643982,
+            4.47822570800781
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000289916613837704,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.233023717999458,
+          0.972249746322632,
+          -0.0207454469054937
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          90.4433822631836,
+          -2.06897735595703,
+          170.287521362305
+        ],
+        "ray_from": [
+          90.4614715576172,
+          21.931282043457,
+          170.321578979492
+        ],
+        "ray_hit_distance": 24.0002899169922,
+        "ray_to": [
+          90.4132308959961,
+          -42.0686340332031,
+          170.230758666992
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          90.4433822631836,
+          -2.06868743896484,
+          170.287521362305
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000753706903196871,
+          0.999998688697815,
+          0.00141908531077206
+        ],
+        "vertex_index": 34
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000289916613837704,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.233023717999458,
+          0.972249746322632,
+          -0.0207454469054937
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          90.4433822631836,
+          -2.06897735595703,
+          170.287521362305
+        ],
+        "ray_from": [
+          90.4614715576172,
+          21.931282043457,
+          170.321578979492
+        ],
+        "ray_hit_distance": 24.0002899169922,
+        "ray_to": [
+          90.4132308959961,
+          -42.0686340332031,
+          170.230758666992
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          90.4433822631836,
+          -2.06868743896484,
+          170.287521362305
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000753706903196871,
+          0.999998688697815,
+          0.00141908531077206
+        ],
+        "vertex_index": 34
+      },
+      "lowest_clearance": 0.000289916613837704,
+      "highest_clearance": 2.69993162155151,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_2",
+          "collision_layer": 1,
+          "expected_body_rid": 26714696581213,
+          "first_hit_is_part_body": true,
+          "from": [
+            89.6295166015625,
+            10.0509376525879,
+            169.50439453125
+          ],
+          "groups": [],
+          "hit_point": [
+            89.6221771240234,
+            0.215566158294678,
+            169.490509033203
+          ],
+          "name": "Fragment_chunk_2",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26714696581213,
+          "shape": 0,
+          "to": [
+            89.61376953125,
+            -11.0434055328369,
+            169.474609375
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_2": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/chunk_3": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.683938443660736,
+            0.0640016868710518,
+            0.726726889610291
+          ],
+          [
+            0.495687365531921,
+            0.690122961997986,
+            -0.527280151844025
+          ],
+          [
+            -0.535277783870697,
+            0.720856547355652,
+            0.440276831388474
+          ]
+        ],
+        "position": [
+          95.2431259155273,
+          -1.54034733772278,
+          170.021423339844
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.683938443660736,
+            0.0640016868710518,
+            0.726726889610291
+          ],
+          [
+            0.495687365531921,
+            0.690122961997986,
+            -0.527280151844025
+          ],
+          [
+            -0.535277783870697,
+            0.720856547355652,
+            0.440276831388474
+          ]
+        ],
+        "position": [
+          93.7932739257813,
+          -3.82051277160645,
+          169.566543579102
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.683938443660736,
+                  0.0640016868710518,
+                  0.726726889610291
+                ],
+                [
+                  0.495687365531921,
+                  0.690122961997986,
+                  -0.527280151844025
+                ],
+                [
+                  -0.535277783870697,
+                  0.720856547355652,
+                  0.440276831388474
+                ]
+              ],
+              "position": [
+                93.7932739257813,
+                -3.82051277160645,
+                169.566543579102
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            94.815185546875,
+            -1.30286157131195,
+            170.213226318359
+          ],
+          "position": [
+            91.9994049072266,
+            -2.52698135375977,
+            168.431716918945
+          ],
+          "size": [
+            5.63155364990234,
+            2.44823956489563,
+            3.56301879882813
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000396727991756052,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00448595592752099,
+          0.994422197341919,
+          0.105377048254013
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          94.864372253418,
+          -2.58885955810547,
+          168.784301757813
+        ],
+        "ray_from": [
+          94.8833465576172,
+          21.411506652832,
+          168.818054199219
+        ],
+        "ray_hit_distance": 24.0003986358643,
+        "ray_to": [
+          94.8327484130859,
+          -42.5884094238281,
+          168.728042602539
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          94.864372253418,
+          -2.58846282958984,
+          168.784301757813
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000790552468970418,
+          0.999998688697815,
+          0.00140656437724829
+        ],
+        "vertex_index": 51
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000396727991756052,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00448595592752099,
+          0.994422197341919,
+          0.105377048254013
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          94.864372253418,
+          -2.58885955810547,
+          168.784301757813
+        ],
+        "ray_from": [
+          94.8833465576172,
+          21.411506652832,
+          168.818054199219
+        ],
+        "ray_hit_distance": 24.0003986358643,
+        "ray_to": [
+          94.8327484130859,
+          -42.5884094238281,
+          168.728042602539
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          94.864372253418,
+          -2.58846282958984,
+          168.784301757813
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000790552468970418,
+          0.999998688697815,
+          0.00140656437724829
+        ],
+        "vertex_index": 51
+      },
+      "lowest_clearance": 0.000396727991756052,
+      "highest_clearance": 2.55927157402039,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_3",
+          "collision_layer": 1,
+          "expected_body_rid": 26723286515804,
+          "first_hit_is_part_body": true,
+          "from": [
+            95.2526626586914,
+            10.4714260101318,
+            170.038436889648
+          ],
+          "groups": [],
+          "hit_point": [
+            95.2439727783203,
+            -0.472869873046875,
+            170.02294921875
+          ],
+          "name": "Fragment_chunk_3",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26723286515804,
+          "shape": 0,
+          "to": [
+            95.2335891723633,
+            -13.5521202087402,
+            170.004409790039
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_3": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/chunk_4": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.896493494510651,
+            0.0324895605444908,
+            -0.441864103078842
+          ],
+          [
+            -0.0365284122526646,
+            0.999332427978516,
+            -0.000632802199106663
+          ],
+          [
+            0.441548526287079,
+            0.0167078953236341,
+            0.897081732749939
+          ]
+        ],
+        "position": [
+          94.1267700195313,
+          -1.01170039176941,
+          166.432754516602
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.896493494510651,
+            0.0324895605444908,
+            -0.441864103078842
+          ],
+          [
+            -0.0365284122526646,
+            0.999332427978516,
+            -0.000632802199106663
+          ],
+          [
+            0.441548526287079,
+            0.0167078953236341,
+            0.897081732749939
+          ]
+        ],
+        "position": [
+          93.6304626464844,
+          -4.44781303405762,
+          167.129348754883
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.896493494510651,
+                  0.0324895605444908,
+                  -0.441864103078842
+                ],
+                [
+                  -0.0365284122526646,
+                  0.999332427978516,
+                  -0.000632802199106663
+                ],
+                [
+                  0.441548526287079,
+                  0.0167078953236341,
+                  0.897081732749939
+                ]
+              ],
+              "position": [
+                93.6304626464844,
+                -4.44781303405762,
+                167.129348754883
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            93.9552612304688,
+            -1.00436079502106,
+            166.423583984375
+          ],
+          "position": [
+            92.1998672485352,
+            -2.16216492652893,
+            164.592239379883
+          ],
+          "size": [
+            3.51078796386719,
+            2.31560826301575,
+            3.66270446777344
+          ]
+        }
+      },
+      "vertex_count": 81,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.00164031772874296,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.123840518295765,
+          0.969058930873871,
+          0.213514134287834
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.733772277832,
+          -2.20790863037109,
+          166.820327758789
+        ],
+        "ray_from": [
+          93.7525177001953,
+          21.793701171875,
+          166.853698730469
+        ],
+        "ray_hit_distance": 24.0016403198242,
+        "ray_to": [
+          93.7025299072266,
+          -42.2062149047852,
+          166.764724731445
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.733772277832,
+          -2.20626831054688,
+          166.820327758789
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000781128066591918,
+          0.999998688697815,
+          0.00139019312337041
+        ],
+        "vertex_index": 53
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.00164031772874296,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.123840518295765,
+          0.969058930873871,
+          0.213514134287834
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.733772277832,
+          -2.20790863037109,
+          166.820327758789
+        ],
+        "ray_from": [
+          93.7525177001953,
+          21.793701171875,
+          166.853698730469
+        ],
+        "ray_hit_distance": 24.0016403198242,
+        "ray_to": [
+          93.7025299072266,
+          -42.2062149047852,
+          166.764724731445
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.733772277832,
+          -2.20626831054688,
+          166.820327758789
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000781128066591918,
+          0.999998688697815,
+          0.00139019312337041
+        ],
+        "vertex_index": 53
+      },
+      "lowest_clearance": 0.00164031772874296,
+      "highest_clearance": 2.43952059745789,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempts": [
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1332397460938,
+              7.23663806915283,
+              166.444213867188
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1278076171875,
+              0.319351673126221,
+              166.434616088867
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1203002929688,
+              -9.26003932952881,
+              166.421325683594
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              102.375114440918,
+              -1.01817071437836,
+              166.432754516602
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              101.945465087891,
+              -1.0178337097168,
+              166.432754516602
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              85.8784255981445,
+              -1.0052307844162,
+              166.43278503418
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              85.8784255981445,
+              -1.0052307844162,
+              166.43278503418
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              88.1839752197266,
+              -1.00703930854797,
+              166.432769775391
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              102.375114440918,
+              -1.01817071437836,
+              166.432754516602
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_3",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1267700195313,
+              -1.02314078807831,
+              174.681106567383
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1267623901367,
+              -1.0179660320282,
+              170.952239990234
+            ],
+            "name": "Fragment_chunk_3",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26723286515804,
+            "shape": 0,
+            "to": [
+              94.1267700195313,
+              -1.00026071071625,
+              158.184432983398
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1267700195313,
+              -1.00026071071625,
+              158.184432983398
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.1267700195313,
+              -1.00647389888763,
+              162.664215087891
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.1267700195313,
+              -1.02314078807831,
+              174.681106567383
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@512",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              99.9638061523438,
+              4.81618070602417,
+              166.440856933594
+            ],
+            "groups": [],
+            "hit_point": [
+              95.1453399658203,
+              0.00527381896972656,
+              166.434173583984
+            ],
+            "name": "@StaticBody3D@512",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28548647616628,
+            "shape": 0,
+            "to": [
+              88.2897338867188,
+              -6.83958196640015,
+              166.424682617188
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_2",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              88.2988815307617,
+              4.82533025741577,
+              166.440872192383
+            ],
+            "groups": [],
+            "hit_point": [
+              93.0207977294922,
+              0.0960137844085693,
+              166.434310913086
+            ],
+            "name": "SupportFragment_chunk_2",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28681791602802,
+            "shape": 0,
+            "to": [
+              99.9546585083008,
+              -6.84873151779175,
+              166.424667358398
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.13134765625,
+              4.81266593933105,
+              172.273315429688
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1275787353516,
+              0.0195805728435516,
+              167.466918945313
+            ],
+            "name": "@StaticBody3D@388",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26607322398817,
+            "shape": 0,
+            "to": [
+              94.1221923828125,
+              -6.83606719970703,
+              160.592224121094
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.13134765625,
+              4.82884502410889,
+              160.6083984375
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1283950805664,
+              1.06175875663757,
+              164.36506652832
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1221923828125,
+              -6.85224628448486,
+              172.257141113281
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1203002929688,
+              -9.26003932952881,
+              166.421325683594
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.1258697509766,
+              -2.1568021774292,
+              166.431182861328
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.1332397460938,
+              7.23663806915283,
+              166.444213867188
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.133918762207,
+              8.10643863677979,
+              166.445419311523
+            ],
+            "groups": [],
+            "hit_point": [
+              94.127815246582,
+              0.319351196289063,
+              166.434616088867
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.120979309082,
+              -8.39023876190186,
+              166.42253112793
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              102.375793457031,
+              -0.148369967937469,
+              166.433959960938
+            ],
+            "groups": [],
+            "hit_point": [
+              100.307388305664,
+              -0.146748006343842,
+              166.433959960938
+            ],
+            "name": "SupportFragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28664611733619,
+            "shape": 0,
+            "to": [
+              85.8791046142578,
+              -0.135430037975311,
+              166.433990478516
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_0",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              85.8791046142578,
+              -0.135430037975311,
+              166.433990478516
+            ],
+            "groups": [],
+            "hit_point": [
+              87.9829940795898,
+              -0.137080669403076,
+              166.433975219727
+            ],
+            "name": "Fragment_chunk_0",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26697516712031,
+            "shape": 0,
+            "to": [
+              102.375793457031,
+              -0.148369967937469,
+              166.433959960938
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@512",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1274490356445,
+              -0.153340056538582,
+              174.682312011719
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1274490356445,
+              -0.146599262952805,
+              169.822174072266
+            ],
+            "name": "@StaticBody3D@512",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28548647616628,
+            "shape": 0,
+            "to": [
+              94.1274490356445,
+              -0.130459949374199,
+              158.185638427734
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1274490356445,
+              -0.130459949374199,
+              158.185638427734
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.1274490356445,
+              -0.131345435976982,
+              158.824066162109
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.1274490356445,
+              -0.153340056538582,
+              174.682312011719
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              99.964485168457,
+              5.68598127365112,
+              166.44206237793
+            ],
+            "groups": [],
+            "hit_point": [
+              94.4412155151367,
+              0.171374320983887,
+              166.434417724609
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              88.290412902832,
+              -5.96978139877319,
+              166.425888061523
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_2",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              88.299560546875,
+              5.69513082504272,
+              166.442077636719
+            ],
+            "groups": [],
+            "hit_point": [
+              93.791130065918,
+              0.19495701789856,
+              166.434463500977
+            ],
+            "name": "SupportFragment_chunk_2",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28681791602802,
+            "shape": 0,
+            "to": [
+              99.9553375244141,
+              -5.97893095016479,
+              166.425872802734
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1320266723633,
+              5.68246650695801,
+              172.274520874023
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1276779174805,
+              0.153499722480774,
+              166.730209350586
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1228713989258,
+              -5.96626663208008,
+              160.59342956543
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1320266723633,
+              5.69864559173584,
+              160.609603881836
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1282043457031,
+              0.818523406982422,
+              165.476211547852
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1228713989258,
+              -5.98244571685791,
+              172.258346557617
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.120979309082,
+              -8.39023876190186,
+              166.42253112793
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.1258697509766,
+              -2.1568021774292,
+              166.431182861328
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.133918762207,
+              8.10643863677979,
+              166.445419311523
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1325607299805,
+              6.36683750152588,
+              166.443008422852
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1278228759766,
+              0.319345951080322,
+              166.434631347656
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1196212768555,
+              -10.1298398971558,
+              166.420120239258
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              102.374435424805,
+              -1.8879714012146,
+              166.431549072266
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              98.3366546630859,
+              -1.88480412960052,
+              166.431549072266
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              85.8777465820313,
+              -1.87503147125244,
+              166.431579589844
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              85.8777465820313,
+              -1.87503147125244,
+              166.431579589844
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              91.8002548217773,
+              -1.87967705726624,
+              166.431579589844
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              102.374435424805,
+              -1.8879714012146,
+              166.431549072266
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_3",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.126091003418,
+              -1.89294147491455,
+              174.679901123047
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1260833740234,
+              -1.88872122764587,
+              171.639236450195
+            ],
+            "name": "Fragment_chunk_3",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26723286515804,
+            "shape": 0,
+            "to": [
+              94.126091003418,
+              -1.87006139755249,
+              158.183227539063
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.126091003418,
+              -1.87006139755249,
+              158.183227539063
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.126091003418,
+              -1.88004672527313,
+              165.382690429688
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.126091003418,
+              -1.89294147491455,
+              174.679901123047
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_3",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              99.9631271362305,
+              3.94637989997864,
+              166.439651489258
+            ],
+            "groups": [],
+            "hit_point": [
+              96.4566040039063,
+              0.445351362228394,
+              166.434799194336
+            ],
+            "name": "SupportFragment_chunk_3",
+            "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+            "parent_impact_refined": false,
+            "rid": 28698971471985,
+            "shape": 0,
+            "to": [
+              88.2890548706055,
+              -7.70938301086426,
+              166.423477172852
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              88.2982025146484,
+              3.95552945137024,
+              166.439666748047
+            ],
+            "groups": [],
+            "hit_point": [
+              92.2279891967773,
+              0.0195803344249725,
+              166.434204101563
+            ],
+            "name": "@StaticBody3D@388",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26607322398817,
+            "shape": 0,
+            "to": [
+              99.9539794921875,
+              -7.71853256225586,
+              166.423461914063
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1306686401367,
+              3.94286513328552,
+              172.272109985352
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1275863647461,
+              0.0195817649364471,
+              168.337921142578
+            ],
+            "name": "@StaticBody3D@388",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26607322398817,
+            "shape": 0,
+            "to": [
+              94.1215133666992,
+              -7.70586776733398,
+              160.591018676758
+            ]
+          },
+          {
+            "class": "RigidBody3D",
+            "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1",
+            "collision_layer": 1,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1306686401367,
+              3.95904421806335,
+              160.607192993164
+            ],
+            "groups": [],
+            "hit_point": [
+              94.1278915405273,
+              0.416822671890259,
+              164.139617919922
+            ],
+            "name": "Fragment_chunk_1",
+            "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+            "parent_impact_refined": false,
+            "rid": 26706106646622,
+            "shape": 0,
+            "to": [
+              94.1215133666992,
+              -7.72204685211182,
+              172.255935668945
+            ]
+          },
+          {
+            "class": "StaticBody3D",
+            "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+            "collision_layer": 33,
+            "expected_body_rid": 26731876450395,
+            "first_hit_is_part_body": false,
+            "from": [
+              94.1196212768555,
+              -10.1298398971558,
+              166.420120239258
+            ],
+            "groups": [
+              "native_terrain"
+            ],
+            "hit_point": [
+              94.1258697509766,
+              -2.15680313110352,
+              166.431182861328
+            ],
+            "name": "TerrainCollision",
+            "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+            "parent_impact_refined": true,
+            "rid": 27088358735968,
+            "shape": 0,
+            "to": [
+              94.1325607299805,
+              6.36683750152588,
+              166.443008422852
+            ]
+          }
+        ],
+        "hit": false
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_1": 8,
+        "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision": 10,
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_3": 2,
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@512": 2,
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_2": 2,
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388": 3,
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_1": 1,
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_0": 1,
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_3": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/chunk_5": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.971304059028625,
+            0.189126431941986,
+            0.144220903515816
+          ],
+          [
+            -0.23675961792469,
+            0.711083233356476,
+            0.662046551704407
+          ],
+          [
+            0.0226574335247278,
+            -0.677194178104401,
+            0.735455513000488
+          ]
+        ],
+        "position": [
+          90.7633743286133,
+          0.613521337509155,
+          165.125396728516
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.971304059028625,
+            0.189126431941986,
+            0.144220903515816
+          ],
+          [
+            -0.23675961792469,
+            0.711083233356476,
+            0.662046551704407
+          ],
+          [
+            0.0226574335247278,
+            -0.677194178104401,
+            0.735455513000488
+          ]
+        ],
+        "position": [
+          90.8063888549805,
+          -1.88069415092468,
+          164.937316894531
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.971304059028625,
+                  0.189126431941986,
+                  0.144220903515816
+                ],
+                [
+                  -0.23675961792469,
+                  0.711083233356476,
+                  0.662046551704407
+                ],
+                [
+                  0.0226574335247278,
+                  -0.677194178104401,
+                  0.735455513000488
+                ]
+              ],
+              "position": [
+                90.8063888549805,
+                -1.88069415092468,
+                164.937316894531
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            90.6609497070313,
+            0.478665709495544,
+            164.595428466797
+          ],
+          "position": [
+            88.7838973999023,
+            -1.12763655185699,
+            162.898452758789
+          ],
+          "size": [
+            3.75409698486328,
+            3.21260452270508,
+            3.39395141601563
+          ]
+        }
+      },
+      "vertex_count": 84,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000925083819311112,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.163189947605133,
+          0.958661675453186,
+          0.233102664351463
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          90.6411209106445,
+          -1.18010139465332,
+          164.509887695313
+        ],
+        "ray_from": [
+          90.6592483520508,
+          22.8207931518555,
+          164.54280090332
+        ],
+        "ray_hit_distance": 24.0009250640869,
+        "ray_to": [
+          90.6109085083008,
+          -41.179126739502,
+          164.455062866211
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          90.6411209106445,
+          -1.17917633056641,
+          164.509902954102
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000755349174141884,
+          0.99999874830246,
+          0.00137092766817659
+        ],
+        "vertex_index": 33
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000925083819311112,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.163189947605133,
+          0.958661675453186,
+          0.233102664351463
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          90.6411209106445,
+          -1.18010139465332,
+          164.509887695313
+        ],
+        "ray_from": [
+          90.6592483520508,
+          22.8207931518555,
+          164.54280090332
+        ],
+        "ray_hit_distance": 24.0009250640869,
+        "ray_to": [
+          90.6109085083008,
+          -41.179126739502,
+          164.455062866211
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          90.6411209106445,
+          -1.17917633056641,
+          164.509902954102
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000755349174141884,
+          0.99999874830246,
+          0.00137092766817659
+        ],
+        "vertex_index": 33
+      },
+      "lowest_clearance": 0.000925083819311112,
+      "highest_clearance": 3.88030433654785,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_5",
+          "collision_layer": 1,
+          "expected_body_rid": 26740466384999,
+          "first_hit_is_part_body": true,
+          "from": [
+            90.7706604003906,
+            10.2505798339844,
+            165.138656616211
+          ],
+          "groups": [],
+          "hit_point": [
+            90.7643127441406,
+            1.8670380115509,
+            165.12712097168
+          ],
+          "name": "Fragment_chunk_5",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26740466384999,
+          "shape": 0,
+          "to": [
+            90.7560882568359,
+            -9.02353668212891,
+            165.11213684082
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/Fragment_chunk_5": 1
+      }
+    },
+    "martial-impact-rock/settled_after_crater/stump": {
+      "body_class": "StaticBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          92.0,
+          -0.302608281373978,
+          167.5
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          92.0,
+          -0.302608281373978,
+          167.5
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 0,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "position": [
+                92.0,
+                -0.302608281373978,
+                167.5
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            91.9962997436523,
+            -0.265686064958572,
+            167.589691162109
+          ],
+          "position": [
+            88.9534530639648,
+            -0.550952732563019,
+            164.546859741211
+          ],
+          "size": [
+            6.085693359375,
+            0.570533335208893,
+            6.08567810058594
+          ]
+        }
+      },
+      "vertex_count": 28,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.927302181720734,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.190814673900604,
+          0.946609020233154,
+          0.259848415851593
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          91.6049041748047,
+          -1.41523933410645,
+          164.755706787109
+        ],
+        "ray_from": [
+          91.6239318847656,
+          23.5120315551758,
+          164.789932250977
+        ],
+        "ray_hit_distance": 24.9273014068604,
+        "ray_to": [
+          91.575080871582,
+          -40.4878883361816,
+          164.702056884766
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          91.6056137084961,
+          -0.487938284873962,
+          164.756973266602
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000763382238801569,
+          0.99999874830246,
+          0.00137297867331654
+        ],
+        "vertex_index": 0
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.927302181720734,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.190814673900604,
+          0.946609020233154,
+          0.259848415851593
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          91.6049041748047,
+          -1.41523933410645,
+          164.755706787109
+        ],
+        "ray_from": [
+          91.6239318847656,
+          23.5120315551758,
+          164.789932250977
+        ],
+        "ray_hit_distance": 24.9273014068604,
+        "ray_to": [
+          91.575080871582,
+          -40.4878883361816,
+          164.702056884766
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          91.6056137084961,
+          -0.487938284873962,
+          164.756973266602
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000763382238801569,
+          0.99999874830246,
+          0.00137297867331654
+        ],
+        "vertex_index": 0
+      },
+      "lowest_clearance": 0.927302181720734,
+      "highest_clearance": 2.59163308143616,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "StaticBody3D",
+          "collider": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388",
+          "collision_layer": 1,
+          "expected_body_rid": 26607322398817,
+          "first_hit_is_part_body": true,
+          "from": [
+            91.9962921142578,
+            -0.29621234536171,
+            177.019790649414
+          ],
+          "groups": [],
+          "hit_point": [
+            91.9962921142578,
+            -0.287011951208115,
+            170.431121826172
+          ],
+          "name": "@StaticBody3D@388",
+          "parent": "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910",
+          "parent_impact_refined": false,
+          "rid": 26607322398817,
+          "shape": 0,
+          "to": [
+            91.9962921142578,
+            -0.269814223051071,
+            158.115341186523
+          ]
+        },
+        "attempt_count": 4,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-impact-rock/Damage_3829613910/@StaticBody3D@388": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_0": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.996214926242828,
+            -0.0784518644213676,
+            0.0374321490526199
+          ],
+          [
+            0.0817519873380661,
+            0.991942405700684,
+            -0.0967834964394569
+          ],
+          [
+            -0.0295376870781183,
+            0.0994773060083389,
+            0.994601309299469
+          ]
+        ],
+        "position": [
+          91.787712097168,
+          1.17593467235565,
+          163.872055053711
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.996214926242828,
+            -0.0784518644213676,
+            0.0374321490526199
+          ],
+          [
+            0.0817519873380661,
+            0.991942405700684,
+            -0.0967834964394569
+          ],
+          [
+            -0.0295376870781183,
+            0.0994773060083389,
+            0.994601309299469
+          ]
+        ],
+        "position": [
+          93.2828521728516,
+          -0.293121814727783,
+          164.566040039063
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.996214926242828,
+                  -0.0784518644213676,
+                  0.0374321490526199
+                ],
+                [
+                  0.0817519873380661,
+                  0.991942405700684,
+                  -0.0967834964394569
+                ],
+                [
+                  -0.0295376870781183,
+                  0.0994773060083389,
+                  0.994601309299469
+                ]
+              ],
+              "position": [
+                93.2828521728516,
+                -0.293121814727783,
+                164.566040039063
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            91.6867828369141,
+            0.980311751365662,
+            163.978149414063
+          ],
+          "position": [
+            90.1815338134766,
+            -0.218379825353622,
+            161.589294433594
+          ],
+          "size": [
+            3.010498046875,
+            2.39738321304321,
+            4.7777099609375
+          ]
+        }
+      },
+      "vertex_count": 58,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": -7.59958265916794e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00471129082143307,
+          0.999909460544586,
+          0.0126091931015253
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          92.2669067382813,
+          -0.230865478515625,
+          161.711120605469
+        ],
+        "ray_from": [
+          92.2853622436523,
+          23.7690963745117,
+          161.743469238281
+        ],
+        "ray_hit_distance": 23.9999904632568,
+        "ray_to": [
+          92.2361526489258,
+          -40.2308235168457,
+          161.657211303711
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          92.2669067382813,
+          -0.230873078107834,
+          161.711120605469
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000768891419284046,
+          0.99999874830246,
+          0.00134759361390024
+        ],
+        "vertex_index": 3
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": -7.59958265916794e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00471129082143307,
+          0.999909460544586,
+          0.0126091931015253
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          92.2669067382813,
+          -0.230865478515625,
+          161.711120605469
+        ],
+        "ray_from": [
+          92.2853622436523,
+          23.7690963745117,
+          161.743469238281
+        ],
+        "ray_hit_distance": 23.9999904632568,
+        "ray_to": [
+          92.2361526489258,
+          -40.2308235168457,
+          161.657211303711
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          92.2669067382813,
+          -0.230873078107834,
+          161.711120605469
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000768891419284046,
+          0.99999874830246,
+          0.00134759361390024
+        ],
+        "vertex_index": 3
+      },
+      "lowest_clearance": -7.59958265916794e-06,
+      "highest_clearance": 2.50920414924622,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_0",
+          "collision_layer": 1,
+          "expected_body_rid": 11407433138273,
+          "first_hit_is_part_body": true,
+          "from": [
+            91.7936935424805,
+            8.98723411560059,
+            163.882705688477
+          ],
+          "groups": [],
+          "hit_point": [
+            91.7882232666016,
+            1.83222007751465,
+            163.872924804688
+          ],
+          "name": "Fragment_chunk_0",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11407433138273,
+          "shape": 0,
+          "to": [
+            91.7817459106445,
+            -6.6353645324707,
+            163.861373901367
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_0": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_1": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.991526484489441,
+            -0.0024474689271301,
+            0.129881620407104
+          ],
+          [
+            0.00625183526426554,
+            0.999563038349152,
+            -0.0288913920521736
+          ],
+          [
+            -0.129754170775414,
+            0.0294585805386305,
+            0.991108536720276
+          ]
+        ],
+        "position": [
+          97.9702606201172,
+          1.13108658790588,
+          164.424346923828
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.991526484489441,
+            -0.0024474689271301,
+            0.129881620407104
+          ],
+          [
+            0.00625183526426554,
+            0.999563038349152,
+            -0.0288913920521736
+          ],
+          [
+            -0.129754170775414,
+            0.0294585805386305,
+            0.991108536720276
+          ]
+        ],
+        "position": [
+          96.3158340454102,
+          -0.438583254814148,
+          164.686813354492
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.991526484489441,
+                  -0.0024474689271301,
+                  0.129881620407104
+                ],
+                [
+                  0.00625183526426554,
+                  0.999563038349152,
+                  -0.0288913920521736
+                ],
+                [
+                  -0.129754170775414,
+                  0.0294585805386305,
+                  0.991108536720276
+                ]
+              ],
+              "position": [
+                96.3158340454102,
+                -0.438583254814148,
+                164.686813354492
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            97.8065185546875,
+            1.07411360740662,
+            164.574676513672
+          ],
+          "position": [
+            95.8464279174805,
+            -0.260218113660812,
+            162.323623657227
+          ],
+          "size": [
+            3.92017364501953,
+            2.6686635017395,
+            4.50210571289063
+          ]
+        }
+      },
+      "vertex_count": 80,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 7.56978033678024e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          98.0996246337891,
+          -0.276283264160156,
+          162.881378173828
+        ],
+        "ray_from": [
+          98.1192474365234,
+          23.7236938476563,
+          162.913955688477
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          98.0669250488281,
+          -40.2762260437012,
+          162.827087402344
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          98.0996246337891,
+          -0.27627569437027,
+          162.881378173828
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000817497726529837,
+          0.99999874830246,
+          0.00135734619107097
+        ],
+        "vertex_index": 25
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 7.56978033678024e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          98.0996246337891,
+          -0.276283264160156,
+          162.881378173828
+        ],
+        "ray_from": [
+          98.1192474365234,
+          23.7236938476563,
+          162.913955688477
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          98.0669250488281,
+          -40.2762260437012,
+          162.827087402344
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          98.0996246337891,
+          -0.27627569437027,
+          162.881378173828
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000817497726529837,
+          0.99999874830246,
+          0.00135734619107097
+        ],
+        "vertex_index": 25
+      },
+      "lowest_clearance": 7.56978033678024e-06,
+      "highest_clearance": 2.774662733078,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_1",
+          "collision_layer": 1,
+          "expected_body_rid": 11416023072866,
+          "first_hit_is_part_body": true,
+          "from": [
+            97.9769973754883,
+            9.38454723358154,
+            164.435668945313
+          ],
+          "groups": [],
+          "hit_point": [
+            97.9708709716797,
+            1.86919558048248,
+            164.425369262695
+          ],
+          "name": "Fragment_chunk_1",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11416023072866,
+          "shape": 0,
+          "to": [
+            97.9635238647461,
+            -7.12237405776978,
+            164.413055419922
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_1": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_2": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.907011151313782,
+            -0.32613468170166,
+            -0.266396284103394
+          ],
+          [
+            0.196094125509262,
+            0.886942803859711,
+            -0.418186157941818
+          ],
+          [
+            0.372663289308548,
+            0.327060759067535,
+            0.86842006444931
+          ]
+        ],
+        "position": [
+          92.7330322265625,
+          1.35891962051392,
+          166.408462524414
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.907011151313782,
+            -0.32613468170166,
+            -0.266396284103394
+          ],
+          [
+            0.196094125509262,
+            0.886942803859711,
+            -0.418186157941818
+          ],
+          [
+            0.372663289308548,
+            0.327060759067535,
+            0.86842006444931
+          ]
+        ],
+        "position": [
+          92.9970169067383,
+          -1.07475090026855,
+          166.135559082031
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.907011151313782,
+                  -0.32613468170166,
+                  -0.266396284103394
+                ],
+                [
+                  0.196094125509262,
+                  0.886942803859711,
+                  -0.418186157941818
+                ],
+                [
+                  0.372663289308548,
+                  0.327060759067535,
+                  0.86842006444931
+                ]
+              ],
+              "position": [
+                92.9970169067383,
+                -1.07475090026855,
+                166.135559082031
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            92.6986389160156,
+            1.1636278629303,
+            166.441955566406
+          ],
+          "position": [
+            91.1941452026367,
+            -0.257581412792206,
+            164.057907104492
+          ],
+          "size": [
+            3.00897979736328,
+            2.84241843223572,
+            4.76811218261719
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 5.72203862247989e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          93.2474060058594,
+          -0.307271957397461,
+          167.270965576172
+        ],
+        "ray_from": [
+          93.2660522460938,
+          23.6927032470703,
+          167.304412841797
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          93.2163238525391,
+          -40.3072166442871,
+          167.215209960938
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          93.2474060058594,
+          -0.307266235351563,
+          167.270965576172
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.0007770627271384,
+          0.99999874830246,
+          0.0013939265627414
+        ],
+        "vertex_index": 34
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 5.72203862247989e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          93.2474060058594,
+          -0.307271957397461,
+          167.270965576172
+        ],
+        "ray_from": [
+          93.2660522460938,
+          23.6927032470703,
+          167.304412841797
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          93.2163238525391,
+          -40.3072166442871,
+          167.215209960938
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          93.2474060058594,
+          -0.307266235351563,
+          167.270965576172
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.0007770627271384,
+          0.99999874830246,
+          0.0013939265627414
+        ],
+        "vertex_index": 34
+      },
+      "lowest_clearance": 5.72203862247989e-06,
+      "highest_clearance": 2.92013168334961,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_2",
+          "collision_layer": 1,
+          "expected_body_rid": 11424613007459,
+          "first_hit_is_part_body": true,
+          "from": [
+            92.7411193847656,
+            11.8286018371582,
+            166.422988891602
+          ],
+          "groups": [],
+          "hit_point": [
+            92.7335815429688,
+            2.07700490951538,
+            166.409469604492
+          ],
+          "name": "Fragment_chunk_2",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11424613007459,
+          "shape": 0,
+          "to": [
+            92.7249450683594,
+            -9.11076164245605,
+            166.393966674805
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_2": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_3": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.96010035276413,
+            0.137813255190849,
+            0.243340939283371
+          ],
+          [
+            -0.0425518564879894,
+            0.93200409412384,
+            -0.359941333532333
+          ],
+          [
+            -0.276399433612823,
+            0.335225194692612,
+            0.900681674480438
+          ]
+        ],
+        "position": [
+          97.7299041748047,
+          1.4151816368103,
+          166.701477050781
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.96010035276413,
+            0.137813255190849,
+            0.243340939283371
+          ],
+          [
+            -0.0425518564879894,
+            0.93200409412384,
+            -0.359941333532333
+          ],
+          [
+            -0.276399433612823,
+            0.335225194692612,
+            0.900681674480438
+          ]
+        ],
+        "position": [
+          96.7028579711914,
+          -1.05798244476318,
+          166.121154785156
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.96010035276413,
+                  0.137813255190849,
+                  0.243340939283371
+                ],
+                [
+                  -0.0425518564879894,
+                  0.93200409412384,
+                  -0.359941333532333
+                ],
+                [
+                  -0.276399433612823,
+                  0.335225194692612,
+                  0.900681674480438
+                ]
+              ],
+              "position": [
+                96.7028579711914,
+                -1.05798244476318,
+                166.121154785156
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            97.5892715454102,
+            1.37425994873047,
+            166.770935058594
+          ],
+          "position": [
+            95.3626022338867,
+            -0.290055751800537,
+            164.896438598633
+          ],
+          "size": [
+            4.45333862304688,
+            3.32863140106201,
+            3.74897766113281
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.33514231492882e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          96.0592269897461,
+          -0.331212997436523,
+          167.370666503906
+        ],
+        "ray_from": [
+          96.0784378051758,
+          23.6687698364258,
+          167.404144287109
+        ],
+        "ray_hit_distance": 24.0000133514404,
+        "ray_to": [
+          96.0272064208984,
+          -40.3311462402344,
+          167.314880371094
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          96.0592269897461,
+          -0.331199645996094,
+          167.370666503906
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000800494686700404,
+          0.999998688697815,
+          0.0013947575353086
+        ],
+        "vertex_index": 39
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.33514231492882e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          96.0592269897461,
+          -0.331212997436523,
+          167.370666503906
+        ],
+        "ray_from": [
+          96.0784378051758,
+          23.6687698364258,
+          167.404144287109
+        ],
+        "ray_hit_distance": 24.0000133514404,
+        "ray_to": [
+          96.0272064208984,
+          -40.3311462402344,
+          167.314880371094
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          96.0592269897461,
+          -0.331199645996094,
+          167.370666503906
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000800494686700404,
+          0.999998688697815,
+          0.0013947575353086
+        ],
+        "vertex_index": 39
+      },
+      "lowest_clearance": 1.33514231492882e-05,
+      "highest_clearance": 3.4341082572937,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_3",
+          "collision_layer": 1,
+          "expected_body_rid": 11433202942052,
+          "first_hit_is_part_body": true,
+          "from": [
+            97.7384262084961,
+            11.8827495574951,
+            166.716018676758
+          ],
+          "groups": [],
+          "hit_point": [
+            97.7308883666992,
+            2.60443949699402,
+            166.703140258789
+          ],
+          "name": "Fragment_chunk_3",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11433202942052,
+          "shape": 0,
+          "to": [
+            97.7213821411133,
+            -9.05238723754883,
+            166.686935424805
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_3": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_4": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.970943629741669,
+            0.185199528932571,
+            -0.151557192206383
+          ],
+          [
+            -0.148997336626053,
+            0.963424563407898,
+            0.222739428281784
+          ],
+          [
+            0.187265172600746,
+            -0.193685814738274,
+            0.963025212287903
+          ]
+        ],
+        "position": [
+          96.9972534179688,
+          0.989212989807129,
+          163.954864501953
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.970943629741669,
+            0.185199528932571,
+            -0.151557192206383
+          ],
+          [
+            -0.148997336626053,
+            0.963424563407898,
+            0.222739428281784
+          ],
+          [
+            0.187265172600746,
+            -0.193685814738274,
+            0.963025212287903
+          ]
+        ],
+        "position": [
+          96.7322235107422,
+          -2.52952122688293,
+          163.660430908203
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.970943629741669,
+                  0.185199528932571,
+                  -0.151557192206383
+                ],
+                [
+                  -0.148997336626053,
+                  0.963424563407898,
+                  0.222739428281784
+                ],
+                [
+                  0.187265172600746,
+                  -0.193685814738274,
+                  0.963025212287903
+                ]
+              ],
+              "position": [
+                96.7322235107422,
+                -2.52952122688293,
+                163.660430908203
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            96.931510925293,
+            1.02133905887604,
+            163.982147216797
+          ],
+          "position": [
+            95.1837768554688,
+            -0.245571136474609,
+            162.28776550293
+          ],
+          "size": [
+            3.49546813964844,
+            2.53382039070129,
+            3.38877868652344
+          ]
+        }
+      },
+      "vertex_count": 81,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 4.00542703573592e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          96.6558532714844,
+          -0.28135871887207,
+          163.925842285156
+        ],
+        "ray_from": [
+          96.6751861572266,
+          23.7186508178711,
+          163.958633422852
+        ],
+        "ray_hit_distance": 24.0000400543213,
+        "ray_to": [
+          96.6236343383789,
+          -40.2812690734863,
+          163.871200561523
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          96.6558532714844,
+          -0.281318664550781,
+          163.925842285156
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000805466319434345,
+          0.99999874830246,
+          0.00136605021543801
+        ],
+        "vertex_index": 53
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 4.00542703573592e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          96.6558532714844,
+          -0.28135871887207,
+          163.925842285156
+        ],
+        "ray_from": [
+          96.6751861572266,
+          23.7186508178711,
+          163.958633422852
+        ],
+        "ray_hit_distance": 24.0000400543213,
+        "ray_to": [
+          96.6236343383789,
+          -40.2812690734863,
+          163.871200561523
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          96.6558532714844,
+          -0.281318664550781,
+          163.925842285156
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000805466319434345,
+          0.99999874830246,
+          0.00136605021543801
+        ],
+        "vertex_index": 53
+      },
+      "lowest_clearance": 4.00542703573592e-05,
+      "highest_clearance": 2.61047697067261,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_4",
+          "collision_layer": 1,
+          "expected_body_rid": 11441792876645,
+          "first_hit_is_part_body": true,
+          "from": [
+            97.0039520263672,
+            9.28065586090088,
+            163.966186523438
+          ],
+          "groups": [],
+          "hit_point": [
+            96.9982147216797,
+            2.16991400718689,
+            163.956497192383
+          ],
+          "name": "Fragment_chunk_4",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11441792876645,
+          "shape": 0,
+          "to": [
+            96.9905548095703,
+            -7.30223035812378,
+            163.943542480469
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_4": 1
+      }
+    },
+    "martial-rock/before_crater/chunk_5": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.934727609157562,
+            0.188205108046532,
+            -0.301435053348541
+          ],
+          [
+            0.0238176491111517,
+            0.813154280185699,
+            0.581560790538788
+          ],
+          [
+            0.354565918445587,
+            -0.550780475139618,
+            0.755595147609711
+          ]
+        ],
+        "position": [
+          95.5395050048828,
+          1.61938738822937,
+          161.991638183594
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.934727609157562,
+            0.188205108046532,
+            -0.301435053348541
+          ],
+          [
+            0.0238176491111517,
+            0.813154280185699,
+            0.581560790538788
+          ],
+          [
+            0.354565918445587,
+            -0.550780475139618,
+            0.755595147609711
+          ]
+        ],
+        "position": [
+          95.6170120239258,
+          -0.873029947280884,
+          162.192092895508
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.934727609157562,
+                  0.188205108046532,
+                  -0.301435053348541
+                ],
+                [
+                  0.0238176491111517,
+                  0.813154280185699,
+                  0.581560790538788
+                ],
+                [
+                  0.354565918445587,
+                  -0.550780475139618,
+                  0.755595147609711
+                ]
+              ],
+              "position": [
+                95.6170120239258,
+                -0.873029947280884,
+                162.192092895508
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            95.3016128540039,
+            1.50089013576508,
+            161.657745361328
+          ],
+          "position": [
+            93.3171920776367,
+            -0.192174911499023,
+            159.951400756836
+          ],
+          "size": [
+            3.96884155273438,
+            3.3861300945282,
+            3.41268920898438
+          ]
+        }
+      },
+      "vertex_count": 84,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 7.56978033678024e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00471129082143307,
+          0.999909460544586,
+          0.0126091931015253
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          95.2582092285156,
+          -0.245674133300781,
+          161.76806640625
+        ],
+        "ray_from": [
+          95.2772598266602,
+          23.7543029785156,
+          161.800415039063
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          95.2264556884766,
+          -40.2456169128418,
+          161.714141845703
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          95.2582092285156,
+          -0.245666563510895,
+          161.76806640625
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000793819024693221,
+          0.99999874830246,
+          0.00134806823916733
+        ],
+        "vertex_index": 33
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 7.56978033678024e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00471129082143307,
+          0.999909460544586,
+          0.0126091931015253
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          95.2582092285156,
+          -0.245674133300781,
+          161.76806640625
+        ],
+        "ray_from": [
+          95.2772598266602,
+          23.7543029785156,
+          161.800415039063
+        ],
+        "ray_hit_distance": 24.0000057220459,
+        "ray_to": [
+          95.2264556884766,
+          -40.2456169128418,
+          161.714141845703
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          95.2582092285156,
+          -0.245666563510895,
+          161.76806640625
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000793819024693221,
+          0.99999874830246,
+          0.00134806823916733
+        ],
+        "vertex_index": 33
+      },
+      "lowest_clearance": 7.56978033678024e-06,
+      "highest_clearance": 3.46667742729187,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_5",
+          "collision_layer": 1,
+          "expected_body_rid": 11450382811238,
+          "first_hit_is_part_body": true,
+          "from": [
+            95.5474166870117,
+            11.5604763031006,
+            162.00505065918
+          ],
+          "groups": [],
+          "hit_point": [
+            95.5405731201172,
+            2.95633029937744,
+            161.993438720703
+          ],
+          "name": "Fragment_chunk_5",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11450382811238,
+          "shape": 0,
+          "to": [
+            95.5315933227539,
+            -8.32170104980469,
+            161.978225708008
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/Fragment_chunk_5": 1
+      }
+    },
+    "martial-rock/before_crater/stump": {
+      "body_class": "StaticBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          95.0,
+          -0.316915512084961,
+          167.0
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          95.0,
+          -0.316915512084961,
+          167.0
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 0,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "position": [
+                95.0,
+                -0.316915512084961,
+                167.0
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            94.9962997436523,
+            -0.279993295669556,
+            167.089691162109
+          ],
+          "position": [
+            91.9534530639648,
+            -0.56525993347168,
+            164.046859741211
+          ],
+          "size": [
+            6.085693359375,
+            0.570533275604248,
+            6.08567810058594
+          ]
+        }
+      },
+      "vertex_count": 28,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": -0.228255197405815,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00471129082143307,
+          0.999909460544586,
+          0.0126091931015253
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          94.6057891845703,
+          -0.273990631103516,
+          164.257293701172
+        ],
+        "ray_from": [
+          94.6245346069336,
+          23.4977245330811,
+          164.289825439453
+        ],
+        "ray_hit_distance": 23.7717437744141,
+        "ray_to": [
+          94.5740814208984,
+          -40.502197265625,
+          164.202224731445
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          94.6056137084961,
+          -0.502245545387268,
+          164.256973266602
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000788382429163903,
+          0.99999874830246,
+          0.00136881216894835
+        ],
+        "vertex_index": 0
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": -0.0520440451800823,
+        "collider": "/root/Main/World/BasinTerrainChunks/Terrain_19_19/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00794908683747053,
+          0.999842882156372,
+          0.0158464629203081
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/Terrain_19_19",
+        "parent_impact_refined": false,
+        "point": [
+          94.5790100097656,
+          -0.359981536865234,
+          169.92839050293
+        ],
+        "ray_from": [
+          94.5978851318359,
+          23.5879440307617,
+          169.962295532227
+        ],
+        "ray_hit_distance": 23.9479560852051,
+        "ray_to": [
+          94.5474472045898,
+          -40.4119720458984,
+          169.871673583984
+        ],
+        "ready": true,
+        "rid": 1821066133512,
+        "sample": [
+          94.578971862793,
+          -0.412025511264801,
+          169.928314208984
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000788159784860909,
+          0.999998688697815,
+          0.00141607236582786
+        ],
+        "vertex_index": 21
+      },
+      "lowest_clearance": -0.228255197405815,
+      "highest_clearance": 0.286715149879456,
+      "penetrating_vertex_count": 2,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "StaticBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@320",
+          "collision_layer": 1,
+          "expected_body_rid": 11257109282873,
+          "first_hit_is_part_body": true,
+          "from": [
+            104.448516845703,
+            -0.304803252220154,
+            167.06755065918
+          ],
+          "groups": [],
+          "hit_point": [
+            97.8105926513672,
+            -0.299548417329788,
+            167.067565917969
+          ],
+          "name": "@StaticBody3D@320",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 11257109282873,
+          "shape": 0,
+          "to": [
+            85.5440673828125,
+            -0.289837777614594,
+            167.067581176758
+          ]
+        },
+        "attempt_count": 2,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@320": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_0": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.850018501281738,
+            -0.380984544754028,
+            0.363757312297821
+          ],
+          [
+            0.221826300024986,
+            0.885247886180878,
+            0.408814638853073
+          ],
+          [
+            -0.477767407894135,
+            -0.266809046268463,
+            0.836989402770996
+          ]
+        ],
+        "position": [
+          92.6369323730469,
+          0.720523476600647,
+          162.281814575195
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.850018501281738,
+            -0.380984544754028,
+            0.363757312297821
+          ],
+          [
+            0.221826300024986,
+            0.885247886180878,
+            0.408814638853073
+          ],
+          [
+            -0.477767407894135,
+            -0.266809046268463,
+            0.836989402770996
+          ]
+        ],
+        "position": [
+          93.4731750488281,
+          -1.27539503574371,
+          162.72021484375
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.850018501281738,
+                  -0.380984544754028,
+                  0.363757312297821
+                ],
+                [
+                  0.221826300024986,
+                  0.885247886180878,
+                  0.408814638853073
+                ],
+                [
+                  -0.477767407894135,
+                  -0.266809046268463,
+                  0.836989402770996
+                ]
+              ],
+              "position": [
+                93.4731750488281,
+                -1.27539503574371,
+                162.72021484375
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            92.2776947021484,
+            0.311987161636353,
+            161.937942504883
+          ],
+          "position": [
+            90.6620864868164,
+            -1.23582911491394,
+            159.980682373047
+          ],
+          "size": [
+            3.23122406005859,
+            3.09563255310059,
+            3.91452026367188
+          ]
+        }
+      },
+      "vertex_count": 58,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.90734624538891e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.114628463983536,
+          0.928570866584778,
+          0.353010684251785
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.8062744140625,
+          -0.805383682250977,
+          162.145462036133
+        ],
+        "ray_from": [
+          93.8250350952148,
+          23.1945877075195,
+          162.177886962891
+        ],
+        "ray_hit_distance": 24.0000019073486,
+        "ray_to": [
+          93.7750091552734,
+          -40.8053321838379,
+          162.091415405273
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.8062744140625,
+          -0.805381774902344,
+          162.145462036133
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000781723239924759,
+          0.99999874830246,
+          0.00135121960192919
+        ],
+        "vertex_index": 30
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.90734624538891e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.114628463983536,
+          0.928570866584778,
+          0.353010684251785
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.8062744140625,
+          -0.805383682250977,
+          162.145462036133
+        ],
+        "ray_from": [
+          93.8250350952148,
+          23.1945877075195,
+          162.177886962891
+        ],
+        "ray_hit_distance": 24.0000019073486,
+        "ray_to": [
+          93.7750091552734,
+          -40.8053321838379,
+          162.091415405273
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.8062744140625,
+          -0.805381774902344,
+          162.145462036133
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000781723239924759,
+          0.99999874830246,
+          0.00135121960192919
+        ],
+        "vertex_index": 30
+      },
+      "lowest_clearance": 1.90734624538891e-06,
+      "highest_clearance": 2.679527759552,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_0",
+          "collision_layer": 1,
+          "expected_body_rid": 28647431864429,
+          "first_hit_is_part_body": true,
+          "from": [
+            92.6448669433594,
+            10.9992008209229,
+            162.295700073242
+          ],
+          "groups": [],
+          "hit_point": [
+            92.6376342773438,
+            1.63882195949554,
+            162.28303527832
+          ],
+          "name": "SupportFragment_chunk_0",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28647431864429,
+          "shape": 0,
+          "to": [
+            92.6289978027344,
+            -9.55815315246582,
+            162.26789855957
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_0": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_1": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.97598135471344,
+            -0.0887810811400414,
+            0.198943093419075
+          ],
+          [
+            0.117953509092331,
+            0.983110129833221,
+            -0.139933735132217
+          ],
+          [
+            -0.18315951526165,
+            0.160038754343987,
+            0.969969213008881
+          ]
+        ],
+        "position": [
+          99.4163818359375,
+          0.98714292049408,
+          164.812469482422
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.97598135471344,
+            -0.0887810811400414,
+            0.198943093419075
+          ],
+          [
+            0.117953509092331,
+            0.983110129833221,
+            -0.139933735132217
+          ],
+          [
+            -0.18315951526165,
+            0.160038754343987,
+            0.969969213008881
+          ]
+        ],
+        "position": [
+          97.5867156982422,
+          -0.36210823059082,
+          165.131423950195
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.97598135471344,
+                  -0.0887810811400414,
+                  0.198943093419075
+                ],
+                [
+                  0.117953509092331,
+                  0.983110129833221,
+                  -0.139933735132217
+                ],
+                [
+                  -0.18315951526165,
+                  0.160038754343987,
+                  0.969969213008881
+                ]
+              ],
+              "position": [
+                97.5867156982422,
+                -0.36210823059082,
+                165.131423950195
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            99.1187896728516,
+            0.712151050567627,
+            165.123504638672
+          ],
+          "position": [
+            97.0751495361328,
+            -0.634425163269043,
+            162.884689331055
+          ],
+          "size": [
+            4.08727264404297,
+            2.69315242767334,
+            4.47764587402344
+          ]
+        }
+      },
+      "vertex_count": 80,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 3.05175381072331e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.151039227843285,
+          0.918961107730865,
+          0.364276975393295
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          99.5196075439453,
+          -0.64434814453125,
+          162.95573425293
+        ],
+        "ray_from": [
+          99.5395126342773,
+          23.3556518554688,
+          162.988327026367
+        ],
+        "ray_hit_distance": 24.0000286102295,
+        "ray_to": [
+          99.4864349365234,
+          -40.6442642211914,
+          162.901412963867
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          99.5196075439453,
+          -0.644317626953125,
+          162.95573425293
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000829333439469337,
+          0.999998688697815,
+          0.00135796994436532
+        ],
+        "vertex_index": 1
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 3.05175381072331e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.151039227843285,
+          0.918961107730865,
+          0.364276975393295
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          99.5196075439453,
+          -0.64434814453125,
+          162.95573425293
+        ],
+        "ray_from": [
+          99.5395126342773,
+          23.3556518554688,
+          162.988327026367
+        ],
+        "ray_hit_distance": 24.0000286102295,
+        "ray_to": [
+          99.4864349365234,
+          -40.6442642211914,
+          162.901412963867
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          99.5196075439453,
+          -0.644317626953125,
+          162.95573425293
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000829333439469337,
+          0.999998688697815,
+          0.00135796994436532
+        ],
+        "vertex_index": 1
+      },
+      "lowest_clearance": 3.05175381072331e-05,
+      "highest_clearance": 3.04332160949707,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_1",
+          "collision_layer": 1,
+          "expected_body_rid": 28664611733619,
+          "first_hit_is_part_body": true,
+          "from": [
+            108.649719238281,
+            0.97949343919754,
+            164.812454223633
+          ],
+          "groups": [],
+          "hit_point": [
+            101.094039916992,
+            0.985753536224365,
+            164.812469482422
+          ],
+          "name": "SupportFragment_chunk_1",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28664611733619,
+          "shape": 0,
+          "to": [
+            90.1830444335938,
+            0.994792401790619,
+            164.812484741211
+          ]
+        },
+        "attempt_count": 2,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_1": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_2": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.747073948383331,
+            -0.583395302295685,
+            -0.318638384342194
+          ],
+          [
+            0.413760185241699,
+            0.783269822597504,
+            -0.463994562625885
+          ],
+          [
+            0.520272076129913,
+            0.214798375964165,
+            0.826546251773834
+          ]
+        ],
+        "position": [
+          93.4658355712891,
+          -0.689794063568115,
+          167.029022216797
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.747073948383331,
+            -0.583395302295685,
+            -0.318638384342194
+          ],
+          [
+            0.413760185241699,
+            0.783269822597504,
+            -0.463994562625885
+          ],
+          [
+            0.520272076129913,
+            0.214798375964165,
+            0.826546251773834
+          ]
+        ],
+        "position": [
+          92.9812774658203,
+          -3.09645485877991,
+          166.828765869141
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.747073948383331,
+                  -0.583395302295685,
+                  -0.318638384342194
+                ],
+                [
+                  0.413760185241699,
+                  0.783269822597504,
+                  -0.463994562625885
+                ],
+                [
+                  0.520272076129913,
+                  0.214798375964165,
+                  0.826546251773834
+                ]
+              ],
+              "position": [
+                92.9812774658203,
+                -3.09645485877991,
+                166.828765869141
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            93.5668792724609,
+            -1.00201439857483,
+            167.050888061523
+          ],
+          "position": [
+            92.0086441040039,
+            -2.3568115234375,
+            164.704299926758
+          ],
+          "size": [
+            3.11647033691406,
+            2.70959424972534,
+            4.69317626953125
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000886915950104594,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.109423495829105,
+          0.973762452602386,
+          0.199532359838486
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.423225402832,
+          -2.09196662902832,
+          166.466522216797
+        ],
+        "ray_from": [
+          93.4419097900391,
+          21.9088897705078,
+          166.499816894531
+        ],
+        "ray_hit_distance": 24.0008869171143,
+        "ray_to": [
+          93.3920822143555,
+          -42.0910263061523,
+          166.411026000977
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.423225402832,
+          -2.09107971191406,
+          166.466522216797
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000778539455495775,
+          0.999998688697815,
+          0.00138724339194596
+        ],
+        "vertex_index": 54
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000886915950104594,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.109423495829105,
+          0.973762452602386,
+          0.199532359838486
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          93.423225402832,
+          -2.09196662902832,
+          166.466522216797
+        ],
+        "ray_from": [
+          93.4419097900391,
+          21.9088897705078,
+          166.499816894531
+        ],
+        "ray_hit_distance": 24.0008869171143,
+        "ray_to": [
+          93.3920822143555,
+          -42.0910263061523,
+          166.411026000977
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          93.423225402832,
+          -2.09107971191406,
+          166.466522216797
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000778539455495775,
+          0.999998688697815,
+          0.00138724339194596
+        ],
+        "vertex_index": 54
+      },
+      "lowest_clearance": 0.000886915950104594,
+      "highest_clearance": 2.41461968421936,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_2",
+          "collision_layer": 1,
+          "expected_body_rid": 28681791602802,
+          "first_hit_is_part_body": true,
+          "from": [
+            93.4718933105469,
+            7.09977722167969,
+            159.261108398438
+          ],
+          "groups": [],
+          "hit_point": [
+            93.466552734375,
+            0.219852924346924,
+            166.121917724609
+          ],
+          "name": "SupportFragment_chunk_2",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28681791602802,
+          "shape": 0,
+          "to": [
+            93.4597778320313,
+            -8.47936534881592,
+            174.796936035156
+          ]
+        },
+        "attempt_count": 9,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_2": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_3": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.769619703292847,
+            0.574382901191711,
+            0.278872460126877
+          ],
+          [
+            -0.192197531461716,
+            0.62490439414978,
+            -0.756673455238342
+          ],
+          [
+            -0.608888864517212,
+            0.528752088546753,
+            0.59133368730545
+          ]
+        ],
+        "position": [
+          96.9131011962891,
+          -0.472671508789063,
+          166.507415771484
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.769619703292847,
+            0.574382901191711,
+            0.278872460126877
+          ],
+          [
+            -0.192197531461716,
+            0.62490439414978,
+            -0.756673455238342
+          ],
+          [
+            -0.608888864517212,
+            0.528752088546753,
+            0.59133368730545
+          ]
+        ],
+        "position": [
+          96.8278961181641,
+          -3.16313862800598,
+          167.01953125
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.769619703292847,
+                  0.574382901191711,
+                  0.278872460126877
+                ],
+                [
+                  -0.192197531461716,
+                  0.62490439414978,
+                  -0.756673455238342
+                ],
+                [
+                  -0.608888864517212,
+                  0.528752088546753,
+                  0.59133368730545
+                ]
+              ],
+              "position": [
+                96.8278961181641,
+                -3.16313862800598,
+                167.01953125
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            96.7579498291016,
+            -0.75238025188446,
+            166.754455566406
+          ],
+          "position": [
+            94.5048141479492,
+            -2.26367926597595,
+            164.951751708984
+          ],
+          "size": [
+            4.50627899169922,
+            3.02259802818298,
+            3.60542297363281
+          ]
+        }
+      },
+      "vertex_count": 83,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000673293194267899,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.100982874631882,
+          0.959001541137695,
+          0.264799118041992
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          96.6881561279297,
+          -1.9190616607666,
+          165.712554931641
+        ],
+        "ray_from": [
+          96.7074966430664,
+          22.0815811157227,
+          165.745697021484
+        ],
+        "ray_hit_distance": 24.0006732940674,
+        "ray_to": [
+          96.6559295654297,
+          -41.9183349609375,
+          165.657318115234
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          96.6881561279297,
+          -1.91838836669922,
+          165.712554931641
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000805746472906321,
+          0.999998688697815,
+          0.00138095824513584
+        ],
+        "vertex_index": 51
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 0.000673293194267899,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.100982874631882,
+          0.959001541137695,
+          0.264799118041992
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          96.6881561279297,
+          -1.9190616607666,
+          165.712554931641
+        ],
+        "ray_from": [
+          96.7074966430664,
+          22.0815811157227,
+          165.745697021484
+        ],
+        "ray_hit_distance": 24.0006732940674,
+        "ray_to": [
+          96.6559295654297,
+          -41.9183349609375,
+          165.657318115234
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          96.6881561279297,
+          -1.91838836669922,
+          165.712554931641
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000805746472906321,
+          0.999998688697815,
+          0.00138095824513584
+        ],
+        "vertex_index": 51
+      },
+      "lowest_clearance": 0.000673293194267899,
+      "highest_clearance": 2.56964731216431,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_3",
+          "collision_layer": 1,
+          "expected_body_rid": 28698971471985,
+          "first_hit_is_part_body": true,
+          "from": [
+            96.9228897094727,
+            11.6417856216431,
+            166.524230957031
+          ],
+          "groups": [],
+          "hit_point": [
+            96.9138488769531,
+            0.445310354232788,
+            166.508697509766
+          ],
+          "name": "SupportFragment_chunk_3",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28698971471985,
+          "shape": 0,
+          "to": [
+            96.9033279418945,
+            -12.5871286392212,
+            166.490600585938
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_3": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_4": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.975890934467316,
+            0.214331090450287,
+            0.0412198193371296
+          ],
+          [
+            -0.199052795767784,
+            0.951465785503387,
+            -0.234714344143867
+          ],
+          [
+            -0.0895258337259293,
+            0.220850691199303,
+            0.971190094947815
+          ]
+        ],
+        "position": [
+          97.8727264404297,
+          0.0710065960884094,
+          163.252731323242
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.975890934467316,
+            0.214331090450287,
+            0.0412198193371296
+          ],
+          [
+            -0.199052795767784,
+            0.951465785503387,
+            -0.234714344143867
+          ],
+          [
+            -0.0895258337259293,
+            0.220850691199303,
+            0.971190094947815
+          ]
+        ],
+        "position": [
+          97.6780014038086,
+          -3.28765344619751,
+          164.357223510742
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.975890934467316,
+                  0.214331090450287,
+                  0.0412198193371296
+                ],
+                [
+                  -0.199052795767784,
+                  0.951465785503387,
+                  -0.234714344143867
+                ],
+                [
+                  -0.0895258337259293,
+                  0.220850691199303,
+                  0.971190094947815
+                ]
+              ],
+              "position": [
+                97.6780014038086,
+                -3.28765344619751,
+                164.357223510742
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            97.8933258056641,
+            0.147763133049011,
+            163.203094482422
+          ],
+          "position": [
+            96.0793991088867,
+            -1.08584475517273,
+            161.597366333008
+          ],
+          "size": [
+            3.62784576416016,
+            2.46721577644348,
+            3.21144104003906
+          ]
+        }
+      },
+      "vertex_count": 81,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": -5.72203862247989e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.160855516791344,
+          0.920745730400085,
+          0.355461418628693
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          99.5978240966797,
+          -0.321115493774414,
+          162.166595458984
+        ],
+        "ray_from": [
+          99.6177444458008,
+          23.6788482666016,
+          162.199035644531
+        ],
+        "ray_hit_distance": 23.9999942779541,
+        "ray_to": [
+          99.5646209716797,
+          -40.3210678100586,
+          162.112533569336
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          99.5978240966797,
+          -0.321121215820313,
+          162.166595458984
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000829982978757471,
+          0.999998688697815,
+          0.00135139015037566
+        ],
+        "vertex_index": 10
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": -5.72203862247989e-06,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          -0.160855516791344,
+          0.920745730400085,
+          0.355461418628693
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          99.5978240966797,
+          -0.321115493774414,
+          162.166595458984
+        ],
+        "ray_from": [
+          99.6177444458008,
+          23.6788482666016,
+          162.199035644531
+        ],
+        "ray_hit_distance": 23.9999942779541,
+        "ray_to": [
+          99.5646209716797,
+          -40.3210678100586,
+          162.112533569336
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          99.5978240966797,
+          -0.321121215820313,
+          162.166595458984
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000829982978757471,
+          0.999998688697815,
+          0.00135139015037566
+        ],
+        "vertex_index": 10
+      },
+      "lowest_clearance": -5.72203862247989e-06,
+      "highest_clearance": 2.51479148864746,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_4",
+          "collision_layer": 1,
+          "expected_body_rid": 28767690948720,
+          "first_hit_is_part_body": true,
+          "from": [
+            97.8792953491211,
+            8.12259769439697,
+            163.263671875
+          ],
+          "groups": [],
+          "hit_point": [
+            97.8737030029297,
+            1.26781129837036,
+            163.254348754883
+          ],
+          "name": "SupportFragment_chunk_4",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28767690948720,
+          "shape": 0,
+          "to": [
+            97.8661575317383,
+            -7.98058414459229,
+            163.241760253906
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_4": 1
+      }
+    },
+    "martial-rock/settled_after_crater/chunk_5": {
+      "body_class": "RigidBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            0.98279857635498,
+            0.0698701590299606,
+            -0.170953407883644
+          ],
+          [
+            0.0785074532032013,
+            0.679807245731354,
+            0.729176819324493
+          ],
+          [
+            0.167163074016571,
+            -0.730055093765259,
+            0.662628293037415
+          ]
+        ],
+        "position": [
+          95.8545837402344,
+          1.02255582809448,
+          162.377365112305
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            0.98279857635498,
+            0.0698701590299606,
+            -0.170953407883644
+          ],
+          [
+            0.0785074532032013,
+            0.679807245731354,
+            0.729176819324493
+          ],
+          [
+            0.167163074016571,
+            -0.730055093765259,
+            0.662628293037415
+          ]
+        ],
+        "position": [
+          95.5149536132813,
+          -1.43949317932129,
+          162.092224121094
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 1,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  0.98279857635498,
+                  0.0698701590299606,
+                  -0.170953407883644
+                ],
+                [
+                  0.0785074532032013,
+                  0.679807245731354,
+                  0.729176819324493
+                ],
+                [
+                  0.167163074016571,
+                  -0.730055093765259,
+                  0.662628293037415
+                ]
+              ],
+              "position": [
+                95.5149536132813,
+                -1.43949317932129,
+                162.092224121094
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            95.7443695068359,
+            0.923716247081757,
+            162.044067382813
+          ],
+          "position": [
+            93.7261810302734,
+            -0.641898810863495,
+            160.361419677734
+          ],
+          "size": [
+            4.036376953125,
+            3.1312301158905,
+            3.36528015136719
+          ]
+        }
+      },
+      "vertex_count": 84,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": -4.20212236349471e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00138547248207033,
+          0.94209748506546,
+          0.335336357355118
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          95.3144378662109,
+          -0.693309783935547,
+          161.76789855957
+        ],
+        "ray_from": [
+          95.3335037231445,
+          23.3066177368164,
+          161.800247192383
+        ],
+        "ray_hit_distance": 23.9999561309814,
+        "ray_to": [
+          95.2826690673828,
+          -40.693302154541,
+          161.713973999023
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          95.3144378662109,
+          -0.693351805210114,
+          161.76789855957
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000794290623161942,
+          0.99999874830246,
+          0.00134807196445763
+        ],
+        "vertex_index": 33
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": -4.20212236349471e-05,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00138547248207033,
+          0.94209748506546,
+          0.335336357355118
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          95.3144378662109,
+          -0.693309783935547,
+          161.76789855957
+        ],
+        "ray_from": [
+          95.3335037231445,
+          23.3066177368164,
+          161.800247192383
+        ],
+        "ray_hit_distance": 23.9999561309814,
+        "ray_to": [
+          95.2826690673828,
+          -40.693302154541,
+          161.713973999023
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          95.3144378662109,
+          -0.693351805210114,
+          161.76789855957
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000794290623161942,
+          0.99999874830246,
+          0.00134807196445763
+        ],
+        "vertex_index": 33
+      },
+      "lowest_clearance": -4.20212236349471e-05,
+      "highest_clearance": 3.75112152099609,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "RigidBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_5",
+          "collision_layer": 1,
+          "expected_body_rid": 28784870817903,
+          "first_hit_is_part_body": true,
+          "from": [
+            95.8621215820313,
+            10.46129322052,
+            162.390121459961
+          ],
+          "groups": [],
+          "hit_point": [
+            95.8555603027344,
+            2.2642617225647,
+            162.379028320313
+          ],
+          "name": "SupportFragment_chunk_5",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28784870817903,
+          "shape": 0,
+          "to": [
+            95.8470458984375,
+            -8.41618061065674,
+            162.36457824707
+          ]
+        },
+        "attempt_count": 1,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/SupportFragment_chunk_5": 1
+      }
+    },
+    "martial-rock/settled_after_crater/stump": {
+      "body_class": "StaticBody3D",
+      "body_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          95.0,
+          -0.316915512084961,
+          167.0
+        ]
+      },
+      "mesh_world_pose": {
+        "basis": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "position": [
+          95.0,
+          -0.316915512084961,
+          167.0
+        ]
+      },
+      "shapes": {
+        "collision_layer": 1,
+        "collision_mask": 0,
+        "enabled_backend_shapes": 1,
+        "enabled_child_shapes": 1,
+        "hull_vertex_count": 32,
+        "shapes": [
+          {
+            "disabled_property": false,
+            "enabled": true,
+            "shape_type": "ConvexPolygonShape3D",
+            "world_pose": {
+              "basis": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "position": [
+                95.0,
+                -0.316915512084961,
+                167.0
+              ]
+            }
+          }
+        ],
+        "world_hull_bounds": {
+          "center": [
+            94.9962997436523,
+            -0.279993295669556,
+            167.089691162109
+          ],
+          "position": [
+            91.9534530639648,
+            -0.56525993347168,
+            164.046859741211
+          ],
+          "size": [
+            6.085693359375,
+            0.570533275604248,
+            6.08567810058594
+          ]
+        }
+      },
+      "vertex_count": 28,
+      "missing_support_samples": 0,
+      "lowest_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.04759657382965,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00206899945624173,
+          0.959426462650299,
+          0.281951367855072
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          94.6047897338867,
+          -1.54984092712402,
+          164.25553894043
+        ],
+        "ray_from": [
+          94.6245346069336,
+          23.4977245330811,
+          164.289825439453
+        ],
+        "ray_hit_distance": 25.0475959777832,
+        "ray_to": [
+          94.5740814208984,
+          -40.502197265625,
+          164.202224731445
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          94.6056137084961,
+          -0.502245545387268,
+          164.256973266602
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000788382429163903,
+          0.99999874830246,
+          0.00136881216894835
+        ],
+        "vertex_index": 0
+      },
+      "closest_ray_surface_contact": {
+        "class": "StaticBody3D",
+        "clearance": 1.04759657382965,
+        "collider": "/root/Main/World/BasinTerrainChunks/@Node3D@477/TerrainCollision",
+        "collision_layer": 33,
+        "groups": [
+          "native_terrain"
+        ],
+        "mask": 32,
+        "name": "TerrainCollision",
+        "normal": [
+          0.00206899945624173,
+          0.959426462650299,
+          0.281951367855072
+        ],
+        "parent": "/root/Main/World/BasinTerrainChunks/@Node3D@477",
+        "parent_impact_refined": true,
+        "point": [
+          94.6047897338867,
+          -1.54984092712402,
+          164.25553894043
+        ],
+        "ray_from": [
+          94.6245346069336,
+          23.4977245330811,
+          164.289825439453
+        ],
+        "ray_hit_distance": 25.0475959777832,
+        "ray_to": [
+          94.5740814208984,
+          -40.502197265625,
+          164.202224731445
+        ],
+        "ready": true,
+        "rid": 27088358735968,
+        "sample": [
+          94.6056137084961,
+          -0.502245545387268,
+          164.256973266602
+        ],
+        "shape": 0,
+        "terrain_group": "native_terrain",
+        "up": [
+          0.000788382429163903,
+          0.99999874830246,
+          0.00136881216894835
+        ],
+        "vertex_index": 0
+      },
+      "lowest_clearance": 1.04759657382965,
+      "highest_clearance": 2.63791823387146,
+      "penetrating_vertex_count": 0,
+      "first_entity_hit": {
+        "attempt": {
+          "class": "StaticBody3D",
+          "collider": "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@512",
+          "collision_layer": 1,
+          "expected_body_rid": 28548647616628,
+          "first_hit_is_part_body": true,
+          "from": [
+            94.9962921142578,
+            -0.310480207204819,
+            176.519790649414
+          ],
+          "groups": [],
+          "hit_point": [
+            94.9962921142578,
+            -0.301307260990143,
+            169.931121826172
+          ],
+          "name": "@StaticBody3D@512",
+          "parent": "/root/Main/MartialFixture_martial-rock/Damage_1588017707",
+          "parent_impact_refined": false,
+          "rid": 28548647616628,
+          "shape": 0,
+          "to": [
+            94.9962921142578,
+            -0.284160822629929,
+            157.615341186523
+          ]
+        },
+        "attempt_count": 4,
+        "hit": true,
+        "matches_visible_mesh_bounds": true
+      },
+      "first_hit_colliders": {
+        "/root/Main/MartialFixture_martial-rock/Damage_1588017707/@StaticBody3D@512": 1
+      }
+    }
+  }
+}

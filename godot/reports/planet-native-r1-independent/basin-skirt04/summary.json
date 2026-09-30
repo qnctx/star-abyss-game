@@ -1,0 +1,79 @@
+{
+  "utc": "2026-09-29T12:20:32",
+  "hashes": {
+    "assets/terrain/basin_near_surface.gdshader": "185804210f1bec37878bd0399239c1f1ab8fc025e79cb1e820d17330809aa8ef",
+    "assets/terrain/far_basin.gdshader": "7ae9cf61e90e6203755f4242d18eb7096a96e76bbcd381caeff62bbb017aebfd",
+    "assets/terrain/planet_surface.gdshader": "2ec0a7e15c1f1f2b92e6f509f5599ed8df60ee1df18037cf1bcd947cdbf56788",
+    "scenes/main.tscn": "eb2b90748959f38704d9c06320b39b8a6a87bb1bb75183ff63825ec89d976db5",
+    "scripts/native_main.gd": "f9f768f27dbdee4a1bc36b0dff2bb2132952542b1bcc736fb128cde04e093e87",
+    "scripts/native_planet.gd": "92d8e5aac5ed9f1fe0d225cf823bb99bb5eb88639af8f4db82ed8de93cb8d7bb",
+    "scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+    "scripts/native_player.gd": "e97ecedf13333c926ee40d483c90875a0c29dc8449e6bcf4d3b4e40556cf4615",
+    "scripts/native_world.gd": "eb2d135c5ca71f674994ef71c67b5bf467956422dc6020f08d53cbaff3e5cace"
+  },
+  "changed": [],
+  "physics": 480,
+  "wall": 8.12158,
+  "roi_count": 448,
+  "stages": {
+    "warmup": {
+      "agl_min": 0.0,
+      "agl_max": 0.0,
+      "first_position": "(0.0, 0.0, 190.0)",
+      "last_position": "(0.0, 0.0, 190.0)",
+      "unready": 0,
+      "p95_ms": 78.27599999999995,
+      "max_ms": 100.271,
+      "image": "",
+      "roi_count": 0
+    },
+    "ground-tile160": {
+      "agl_min": 0.000934675859753042,
+      "agl_max": 0.000940869387704879,
+      "first_position": "(0.0, 0.000935, 164.8832)",
+      "last_position": "(-0.000005, 0.000937, 148.7962)",
+      "unready": 0,
+      "p95_ms": 17.200000000000102,
+      "max_ms": 22.60799999999996,
+      "image": "0011-ground-tile160.png",
+      "roi_count": 148,
+      "dark_pixels_min_max": [
+        842,
+        1614
+      ],
+      "frame_diff_mean_max": 30.15828231292517
+    },
+    "descend350": {
+      "agl_min": 211.578125,
+      "agl_max": 378.6875,
+      "first_position": "(0.0, 378.6875, 189.9979)",
+      "last_position": "(0.0, 211.5781, 189.7342)",
+      "unready": 0,
+      "p95_ms": 17.15999999999962,
+      "max_ms": 17.46900000000018,
+      "image": "0036-descend350.png",
+      "roi_count": 180,
+      "dark_pixels_min_max": [
+        0,
+        132
+      ],
+      "frame_diff_mean_max": 23.959081632653064
+    },
+    "orbit-fixture": {
+      "agl_min": 125000.0,
+      "agl_max": 125000.0,
+      "first_position": "(0.0, 125000.0, 190.0)",
+      "last_position": "(0.0, 125000.0, 190.0)",
+      "unready": 0,
+      "p95_ms": 17.16899999999999,
+      "max_ms": 17.841999999999913,
+      "image": "0059-orbit-fixture.png",
+      "roi_count": 120,
+      "dark_pixels_min_max": [
+        0,
+        0
+      ],
+      "frame_diff_mean_max": 69.91404761904762
+    }
+  }
+}

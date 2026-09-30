@@ -1,0 +1,234 @@
+{
+	"checks": [
+		{
+			"label": "natural streamed physical outcrop available",
+			"ok": true
+		},
+		{
+			"label": "target belongs to production ecology cell",
+			"ok": true
+		},
+		{
+			"label": "selected natural target remains registered after local stream",
+			"ok": true
+		},
+		{
+			"label": "natural rock damaged through sole authority",
+			"ok": true
+		},
+		{
+			"label": "real production terrain rebuild accepted",
+			"ok": true
+		},
+		{
+			"label": "real collider deformation committed",
+			"ok": false
+		},
+		{
+			"label": "natural commit target registered",
+			"ok": false
+		},
+		{
+			"label": "natural commit real fractured parts present",
+			"ok": false
+		}
+	],
+	"evidence": {
+		"commits": [
+			{
+				"applied": true,
+				"id": "natural-support-test:late-real-world-commit:0",
+				"origin": "(12970.51, -205.5161, -5585.086)",
+				"radius": 12.0,
+				"record": {
+					"center": [
+						0.993123292922974,
+						0.0463016293942928,
+						-0.107528455555439
+					],
+					"depth": 3.0,
+					"id": "natural-support-test:late-real-world-commit:0",
+					"radius": 12.0
+				}
+			}
+		],
+		"postcommit_geometry": {
+			"registered": false
+		},
+		"precommit_geometry": {
+			"dynamic": 0,
+			"parts": {
+				"chunk_0": {
+					"body_id": 156011336103,
+					"frozen": true,
+					"physical_contact": 0.000257615320151672,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": 0.000287923001451418,
+					"world_pose": [
+						-0.894540965557098,
+						0.0291009396314621,
+						-0.446038156747818,
+						-0.0508163198828697,
+						0.984788179397583,
+						0.166164204478264,
+						0.444088399410248,
+						0.171306684613228,
+						-0.879454076290131,
+						12971.96875,
+						-206.112762451172,
+						-5584.21044921875
+					]
+				},
+				"chunk_1": {
+					"body_id": 156095222190,
+					"frozen": true,
+					"physical_contact": 0.000151538813952357,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": 0.000197000452317297,
+					"world_pose": [
+						-0.954313993453979,
+						0.131140917539597,
+						-0.268490761518478,
+						0.063831552863121,
+						0.96727454662323,
+						0.245572492480278,
+						0.291908800601959,
+						0.217215001583099,
+						-0.931454241275787,
+						12968.8173828125,
+						-205.612213134766,
+						-5585.2119140625
+					]
+				},
+				"chunk_2": {
+					"body_id": 156179108274,
+					"frozen": true,
+					"physical_contact": 0.0000151538142745267,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": 0.0000303076285490533,
+					"world_pose": [
+						-0.975307404994965,
+						-0.203786388039589,
+						0.0851275324821472,
+						-0.0929708480834961,
+						0.728478372097015,
+						0.678731083869934,
+						-0.200329691171646,
+						0.654057085514069,
+						-0.729436457157135,
+						12973.013671875,
+						-206.23991394043,
+						-5586.50634765625
+					]
+				},
+				"chunk_3": {
+					"body_id": 156262994358,
+					"frozen": true,
+					"physical_contact": 0.000439461931819096,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": 0.000484923511976376,
+					"world_pose": [
+						-0.782584667205811,
+						0.255275905132294,
+						-0.567798972129822,
+						-0.240144073963165,
+						0.717686593532562,
+						0.653648853302002,
+						0.574362516403198,
+						0.647889137268066,
+						-0.500347554683685,
+						12969.0830078125,
+						-205.794494628906,
+						-5587.896484375
+					]
+				},
+				"chunk_4": {
+					"body_id": 156346880442,
+					"frozen": true,
+					"physical_contact": 0.0000454616456408985,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": 0.000090923291281797,
+					"world_pose": [
+						-0.966618239879608,
+						0.234339758753777,
+						0.103605538606644,
+						0.232987388968468,
+						0.972154796123505,
+						-0.0251398086547852,
+						-0.106611967086792,
+						-0.000161811709403992,
+						-0.994300723075867,
+						12968.41015625,
+						-207.669219970703,
+						-5585.15478515625
+					]
+				},
+				"chunk_5": {
+					"body_id": 156430766526,
+					"frozen": true,
+					"physical_contact": 0.000560693792067468,
+					"role": "free_fragment",
+					"shape_count": 1,
+					"terrain_gap": -0.000515232153702527,
+					"world_pose": [
+						-0.975414335727692,
+						0.211389124393463,
+						0.0623055696487427,
+						0.17727980017662,
+						0.920588135719299,
+						-0.347979247570038,
+						-0.130916833877563,
+						-0.328378438949585,
+						-0.935429573059082,
+						12969.0673828125,
+						-206.511413574219,
+						-5583.37548828125
+					]
+				},
+				"stump": {
+					"body_id": 154132287867,
+					"frozen": true,
+					"physical_contact": 0.0677207633852959,
+					"role": "anchored_base",
+					"shape_count": 1,
+					"terrain_gap": -0.225240379571915,
+					"world_pose": [
+						-1.02758252620697,
+						0.140000820159912,
+						-0.295370787382126,
+						0.066589243710041,
+						1.04363095760345,
+						0.263002455234528,
+						0.320015668869019,
+						0.232387989759445,
+						-1.00317287445068,
+						12970.509765625,
+						-205.51611328125,
+						-5585.08642578125
+					]
+				}
+			},
+			"pending_support": 0,
+			"registered": true,
+			"root_terrain_gap": 0.00110623158980161
+		}
+	},
+	"failed": [
+		"real collider deformation committed",
+		"natural commit target registered",
+		"natural commit real fractured parts present"
+	],
+	"scope": "Natural production Ecology cells with real NativeWorld collider commit, direct service damage; actual R input is a separate martial audit",
+	"source_sha256": {
+		"res://scripts/native_environment_damage.gd": "681d4ff64c310c975f8abe18f5021d92d5373cfe737f3b105a017f140bc778ee",
+		"res://scripts/native_planet_ecology.gd": "73e2c462a670b31cf3d632834a00b65d0d05d9ebf9e664688fca2310f6b99db1",
+		"res://scripts/native_world.gd": "5e68ef62a417a42d15b2e2a8fea32ec0fb0b01a8ed1d6cb2e934b7cfa65e5d38",
+		"res://tests/native_environment_damage_natural_support.gd": "d36497c2e13f8d88a33d260b56c88f44908cf46436bb8db4a5a08a7dfb8d935b"
+	},
+	"target": "ecology-r4.2:px/12/2269/2143:outcrop:2"
+}

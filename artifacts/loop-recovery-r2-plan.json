@@ -1,0 +1,29 @@
+{
+  "scenario": "opening",
+  "url": "http://127.0.0.1:4178/star-abyss.html?questLab=opening&test=1&expeditionDebug=1",
+  "stages": [
+    "wait seven real assets",
+    "shoulder light off once / physician and tabletop bottles screenshots",
+    "eight-direction NPC approach / F and panel exclusivity",
+    "accept Q01",
+    "six natural moon-moss + four iron",
+    "R actual kill + H blood loot",
+    "N02 teach / one kit / craft MED02 / real 30s wait / claim / use",
+    "N01 deliver Q01",
+    "N03 Q02 / refine",
+    "N04 Q03 / refined sale / finite shop purchase",
+    "N05 Q04",
+    "eight-direction trial action gates / three real 8s trials / calibrate",
+    "opening: inspect XP gate; breakthrough fixture: explicit confirmation / reload"
+  ],
+  "allowedHooks": [
+    "place / face to shorten travel only"
+  ],
+  "forbidden": [
+    "root edits",
+    "reward or learning injection",
+    "fake wall time",
+    "direct runtime action calls",
+    "silently use R4 lab"
+  ]
+}

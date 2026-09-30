@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "bundleSHA": "7427160201567fbbc47f53b70dc9b44c93580b73e41c88136a83c2b913e78c0b",
+  "servedFiles": [
+    "playable/ascension-gallery.html",
+    "playable/ascension-gallery.js",
+    "playable/assets/ascension-r8/aerial-crescent.glb",
+    "playable/assets/ascension-r8/blink-aperture.glb",
+    "playable/assets/ascension-r8/dao-gate.glb",
+    "playable/assets/ascension-r8/domain-gate.glb",
+    "playable/assets/ascension-r8/qi-boost.glb",
+    "playable/assets/ascension-r8/void-fracture.glb",
+    "playable/checkpoint-worker.js",
+    "playable/css/ascension.css",
+    "playable/css/flight-hud.css",
+    "playable/star-abyss.html"
+  ],
+  "evidence": [
+    "artifacts/r8-candidate/r8-air-check-R8-strike.png",
+    "artifacts/r8-candidate/r8-air-check-R8-windup.png",
+    "artifacts/r8-candidate/r8-air-check-R9-strike.png",
+    "artifacts/r8-candidate/r8-air-check-R9-windup.png",
+    "artifacts/r8-candidate/r8-air-check-report.json",
+    "artifacts/r8-candidate/r8-gallery-R9-narrow.png",
+    "artifacts/r8-candidate/r8-gallery-R9-wide.png",
+    "artifacts/r8-candidate/r8-gallery-report.json",
+    "artifacts/r8-candidate/r8-loot-R8-landed.png",
+    "artifacts/r8-candidate/r8-loot-R8-loot-near.png",
+    "artifacts/r8-candidate/r8-loot-report.json",
+    "artifacts/r8-candidate/r8-r6-final-R6-long-preview.png",
+    "artifacts/r8-candidate/r8-r6-final-R6-third-person-boost.png",
+    "artifacts/r8-candidate/r8-r6-final-report.json",
+    "artifacts/r8-candidate/report.json"
+  ],
+  "at": "2026-09-26T14:47:04.150Z"
+}

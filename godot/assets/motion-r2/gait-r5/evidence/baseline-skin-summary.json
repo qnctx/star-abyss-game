@@ -1,0 +1,26 @@
+{
+  "source": {
+    "c2-motion-r2.glb": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430",
+    "c2-motion-r2.blend": "dbaaef56bcae00fda16c56dce5948790015a9c7cae462e8f003d1dbf2deb8bfd",
+    "clips.json": "e19b4cb9fa263faeba42ab05d7a8fe6150aed975d34c1cd333e4056418386934",
+    "gait_r4.py": "69e50887a63697b2ec3e5e185bcaca800d5b16b5b4dd3ad6ac091dca2e74f324",
+    "build_gait_r4.py": "2c918d7406e972b3b7ad0c7506458ed589a49ece9bc5228cf1d8c66d5bde5c07",
+    "native_motion_r2.gd": "95d3a7df91e2dfe5128fd0a649c0e8696457f4d8dd07f178374a4018dabb78c6"
+  },
+  "method": "MeshInstance3D.bake_mesh_from_current_skeleton_pose after actual render; all skinned vertices scanned in world coordinates against actor root flat plane. Actual automatic physics, may stall rendering during GPU readback.",
+  "frames": 442,
+  "time_scale": 1.0,
+  "physics_seconds": 7.36666666666665,
+  "wall_seconds": 7.52039,
+  "sample_count": 66,
+  "skinned_vertices_per_sample": [
+    91207
+  ],
+  "stage_min_y": {
+    "idle": -0.000306249537970871,
+    "jog": -0.0126516669988632,
+    "sprint": -0.0185663923621178,
+    "stop": -0.0107261519879103,
+    "walk": -0.0399235971271992
+  }
+}

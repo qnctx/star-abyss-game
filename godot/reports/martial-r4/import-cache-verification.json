@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-09-29T16:13:58.174Z",
+  "imports": [
+    {
+      "path": "res://assets/martial-r4/aperture.glb",
+      "current_md5": "fb79fbd87320687f987b4872955003ca",
+      "cached_source_md5": "fb79fbd87320687f987b4872955003ca",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/c2-martial-r4.glb",
+      "current_md5": "8fdb5d88130e70a2e3b7a870d076a9bd",
+      "cached_source_md5": "8fdb5d88130e70a2e3b7a870d076a9bd",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/charge.glb",
+      "current_md5": "b9faf3cd4487aa274e489e1a1788e98c",
+      "cached_source_md5": "b9faf3cd4487aa274e489e1a1788e98c",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/fist.glb",
+      "current_md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "cached_source_md5": "462bc99ca9bf0ff8f69e3e024b511b4a",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/impact.glb",
+      "current_md5": "015176318d0fac91a580637012189032",
+      "cached_source_md5": "015176318d0fac91a580637012189032",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/pressure.glb",
+      "current_md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "cached_source_md5": "0f42244b8a6417db85c3ceb9b93323b4",
+      "matches": true
+    },
+    {
+      "path": "res://assets/martial-r4/slash.glb",
+      "current_md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "cached_source_md5": "a57f17fcc7c0a9f243759656d9d6b43e",
+      "matches": true
+    }
+  ],
+  "all_current": true
+}

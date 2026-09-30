@@ -1,0 +1,78 @@
+{
+  "version": "DEV-I-R1",
+  "testThreadId": "01a094e7-7175-7362-8dbf-878bcc485e6a",
+  "integratedAt": "2026-09-12T09:29:52.440Z",
+  "files": [
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\docs\\development\\reports\\DEV-I.md",
+      "target": "E:\\myProject\\star-abyss-game\\docs\\development\\reports\\DEV-I.md",
+      "sha256": "56f73698d2c4a53d65586e97f8b4536bb0b88f18dad799d7b96055c6e63294b3"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\browser-evidence.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\browser-evidence.json",
+      "sha256": "2a60183c06d33d0994f8a0631b41d64677e9ad0dc602397e06607498adcde5b2"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\browser-verifier.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\browser-verifier.mjs",
+      "sha256": "ba68ba1d7ff3898321a2fe73c5bb36ac1dc33a6a77ea772115761664d685aa4c"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\demo-fixture.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\demo-fixture.mjs",
+      "sha256": "771b2ddff57dba88f047aa67ce85d996debfaa7c5edabe32efc239eca39fa830"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\finalize.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\finalize.cjs",
+      "sha256": "f6093d1f05f80a982f53584542d7ea6f54d22689718e5c0e716c2aa61d8639be"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\index.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\index.mjs",
+      "sha256": "957137435aa500781190588921975d5a052b84816dc8ba6d1edb2487f4f99f4e"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\indexeddb.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\indexeddb.mjs",
+      "sha256": "60e180a2e4485b567b99c4cd42d7b65f2fc75b8b6fcbd65007620cf217236309"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\node-tests.tap",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\node-tests.tap",
+      "sha256": "2d5897d9963bf2e1e3e0438da016c7b974e9fb21e6683c2bba15e4193f6d3481"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\serve.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\serve.cjs",
+      "sha256": "534dcc03dde3f6b28da720a82e16a8e7f30a0ac1886c28c916bbb0db826bae51"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\verify-dependencies.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\verify-dependencies.cjs",
+      "sha256": "ebfcff9054cefbe695e16ad703b8cf7a26fd3a310df6337e285a66ad2e3d905f"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\verify.html",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\verify.html",
+      "sha256": "c42213da21e9be8b99370b7c073f7e0966ee0e7ff12f017c411eae3b65baf13b"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\tests\\d3-session.test.js",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\tests\\d3-session.test.js",
+      "sha256": "b88edafbf397bd2d212e05b6d9b40299bc24f65c2100f6d480737c43de830220"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-I-R1\\playable\\src\\d3-session\\version.json",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\d3-session\\version.json",
+      "sha256": "6b661c9f6805e803d6bf84b298ce717b27abffdff53f16f955bd7f90288b96d8"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/62b6/star-abyss-game/docs/development/reports/TEST-I-R1.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/TEST-I-R1.md",
+      "sha256": "8c140e994e53329995b33630b611f5a7810cff33b9b5a45e220f42d5ccf0661e"
+    }
+  ],
+  "boundary": "Root transaction and actual IndexedDB verified; no 3D game integration"
+}

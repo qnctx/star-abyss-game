@@ -1,0 +1,29 @@
+{
+  "frames": 1537,
+  "bone_count": 51,
+  "time_scale": 1.0,
+  "physics_seconds": 25.6166666666665,
+  "wall_seconds": 25.496868,
+  "delta_min": 0.0166666666666667,
+  "delta_max": 0.0166666666666667,
+  "delta_mean": 0.0166666666666667,
+  "cases": [
+    "walk",
+    "jog",
+    "sprint",
+    "stop",
+    "cast_fist:ground",
+    "cast_fist:air",
+    "cast_palm:ground",
+    "cast_palm:air",
+    "cast_sweep:ground",
+    "cast_sweep:air",
+    "cast_cleave:ground",
+    "cast_cleave:air",
+    "cast_skyfall:ground",
+    "cast_skyfall:air"
+  ],
+  "failures": [],
+  "pending": [],
+  "scope": "adapter/rest/socket/gait-to-cast and ground/air release-timing fixture, not Main damage or human input"
+}

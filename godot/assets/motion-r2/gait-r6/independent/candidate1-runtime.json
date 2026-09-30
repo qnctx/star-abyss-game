@@ -1,0 +1,165 @@
+{
+  "method": "Independent analysis of actual Godot physics trace supplied by capture probe. Bone positions after runtime IK and raw sampled clip are compared. Steady state excludes first 0.3 s of each gait. Rigid sole proxy values are intentionally not used as full-skin contact evidence. This does not itself establish human visual acceptance.",
+  "trace": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\assets\\motion-r2\\evidence\\gait-r6\\candidate1\\side-trace.json",
+  "view": "side",
+  "glb_sha256": "1aca36aaf92094bee3b2a1f596b0cfdb51a6c2d2c3280c3425737fbf7c13e5b2",
+  "driver_sha256": "1ca4ca14cc0c55260f210182eb31c8ef5d9db89dd9213b8bdb62db63df896c6c",
+  "time_scale": 1,
+  "records": 550,
+  "physics_seconds": 9.150000000000032,
+  "wall_seconds": 9.01392,
+  "physics_to_wall_ratio": 1.0150966505138754,
+  "delta_range": [
+    0.0166666666666667,
+    0.0166666666666667
+  ],
+  "stages": {
+    "walk": {
+      "steady_records": 163,
+      "per_leg": {
+        "L": {
+          "thigh_deg": [
+            -17.96943684912593,
+            35.152535407178995
+          ],
+          "knee_flex_deg": [
+            23.80670038799818,
+            56.773043554781
+          ],
+          "upper_arm_deg": [
+            -27.59775981399641,
+            15.766070705887381
+          ],
+          "same_side_arm_thigh_correlation": -0.9830528069517297,
+          "max_raw_runtime_joint_delta": {
+            "hip": 1.229345794587201e-7,
+            "knee": 0.04947748744692228,
+            "ankle": 0.04058155913145586
+          }
+        },
+        "R": {
+          "thigh_deg": [
+            -16.96984512470223,
+            35.055570660733885
+          ],
+          "knee_flex_deg": [
+            26.32617766602021,
+            59.23707534270585
+          ],
+          "upper_arm_deg": [
+            -27.568247907113285,
+            12.666994045777708
+          ],
+          "same_side_arm_thigh_correlation": -0.9832133511527623,
+          "max_raw_runtime_joint_delta": {
+            "hip": 1.2020218871289175e-7,
+            "knee": 0.05079479834091211,
+            "ankle": 0.045341079905493735
+          }
+        }
+      },
+      "torso_lean_deg": [
+        1.9992339603109344,
+        2.0002057317796185
+      ]
+    },
+    "jog": {
+      "steady_records": 133,
+      "per_leg": {
+        "L": {
+          "thigh_deg": [
+            -31.147980568986483,
+            51.895274262356224
+          ],
+          "knee_flex_deg": [
+            6.821463261338039,
+            106.32808310323558
+          ],
+          "upper_arm_deg": [
+            -45.820178458141015,
+            13.936927804194754
+          ],
+          "same_side_arm_thigh_correlation": -0.9943120462457958,
+          "max_raw_runtime_joint_delta": {
+            "hip": 6.14709279639478e-8,
+            "knee": 0.08409551000784367,
+            "ankle": 0.030039182124191568
+          }
+        },
+        "R": {
+          "thigh_deg": [
+            -22.126812807255448,
+            51.879314870277696
+          ],
+          "knee_flex_deg": [
+            27.3819682145469,
+            105.80080031222768
+          ],
+          "upper_arm_deg": [
+            -45.78163803822679,
+            9.753504551781965
+          ],
+          "same_side_arm_thigh_correlation": -0.9943997463736421,
+          "max_raw_runtime_joint_delta": {
+            "hip": 6.155189755178785e-8,
+            "knee": 0.05733837717622381,
+            "ankle": 0.03277813374913911
+          }
+        }
+      },
+      "torso_lean_deg": [
+        5.997793329783555,
+        6.000052190086055
+      ]
+    },
+    "sprint": {
+      "steady_records": 121,
+      "per_leg": {
+        "L": {
+          "thigh_deg": [
+            -28.812874623168643,
+            52.586493193832275
+          ],
+          "knee_flex_deg": [
+            14.492665998540746,
+            114.7688315719489
+          ],
+          "upper_arm_deg": [
+            -47.90769826655185,
+            13.81070797618588
+          ],
+          "same_side_arm_thigh_correlation": -0.9917764967851711,
+          "max_raw_runtime_joint_delta": {
+            "hip": 1.2035002177030395e-7,
+            "knee": 0.07535580249575279,
+            "ankle": 0.03752926671021843
+          }
+        },
+        "R": {
+          "thigh_deg": [
+            -33.6561906620876,
+            52.45563511713319
+          ],
+          "knee_flex_deg": [
+            5.747806074017549,
+            113.87674708377367
+          ],
+          "upper_arm_deg": [
+            -47.90705290664263,
+            9.566261749781429
+          ],
+          "same_side_arm_thigh_correlation": -0.9933792816193354,
+          "max_raw_runtime_joint_delta": {
+            "hip": 1.1966883492671473e-7,
+            "knee": 0.10188824693442608,
+            "ankle": 0.036702124692901364
+          }
+        }
+      },
+      "torso_lean_deg": [
+        7.997041866894392,
+        8.000219418825719
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "region": "cn",
+  "operation": "image-to-3d",
+  "version": "G1",
+  "faceCount": 100000,
+  "outputFormat": [
+    "zip",
+    "glb"
+  ],
+  "quotedCredits": 20,
+  "committedCredits": 20,
+  "quoteId": "quote_24a62fc20b184b5f8697ed52fab8ec4d",
+  "approval": "User approved this 20-credit batch: \u505a\u5427",
+  "status": "succeeded",
+  "startedAt": "2026-09-13T14:01:06.549230+00:00",
+  "taskId": "3444708",
+  "lastQueryAt": "2026-09-13T14:07:24.183710+00:00",
+  "lastKnownProviderStatus": 3,
+  "downloadedAt": "2026-09-13T14:07:28.368753+00:00",
+  "downloadedFiles": [
+    {
+      "path": "C:\\Users\\HUAWEI\\.codex\\worktrees\\ab11\\star-abyss-game\\docs\\art\\creatures\\rift-prowler-v1\\source\\rift-prowler_zip.zip",
+      "bytes": 9318251
+    },
+    {
+      "path": "C:\\Users\\HUAWEI\\.codex\\worktrees\\ab11\\star-abyss-game\\docs\\art\\creatures\\rift-prowler-v1\\source\\rift-prowler_glb.glb",
+      "bytes": 10338572
+    }
+  ],
+  "sourceInspectedAt": "2026-09-13T14:15:06.393920+00:00",
+  "localCompletedAt": "2026-09-13T14:14:52.644615+00:00"
+}

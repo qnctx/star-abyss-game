@@ -1,0 +1,160 @@
+{
+	"changed": [],
+	"hashes": {
+		"scripts/native_planet.gd": "602c50ff63b0cbe7d683824247ad83232d6e21f42d98da401581f8e4622a2403",
+		"scripts/native_planet_ecology.gd": "08ccd5845b827e221b4f946e5bdd68de097df367748af4e594dc2e3fcef2dae0",
+		"scripts/native_planet_field.gd": "7c664124f05aa6c0fc37b1510fdaa67ce7704d3c19eede2bbd788253a7632864",
+		"scripts/native_world.gd": "d198f48e444e2a41bc0efa8a126de8f5ee9d5cadde9412e6128604b6500a4e96"
+	},
+	"method": "Controlled ecological streaming fixture with real rendered/collidable planet; no player gameplay claim.",
+	"rows": [
+		{
+			"camera_basis": "[X: (0.976609, -0.138611, -0.164381), Y: (0.140659, 0.990058, 0.000827), Z: (0.162633, -0.023929, 0.986396)]",
+			"camera_position": "(16974.3, -1054.878, 488.7062)",
+			"distance": 17000,
+			"field": {
+				"basin": 0.0,
+				"coast": 0.0883470684738133,
+				"forest": 0.542986801216505,
+				"height": 147.983115289879,
+				"legacy_weight": 0.0,
+				"moisture": 0.542986801216505,
+				"mountains": 0.0,
+				"ocean": 0.0,
+				"river": 0.0000357129040390123,
+				"route_s": 16999.9998449217,
+				"temperature": 1.0,
+				"uplift": 1.0,
+				"water_depth": 0.0,
+				"water_height": 144.983400993111,
+				"wetland": 0.427865239507871
+			},
+			"ground": "(16963.95, -1056.634, 488.6932)",
+			"stats": {
+				"cells": 15,
+				"instances": 236,
+				"kinds": {
+					"pebble": 12,
+					"reed": 64,
+					"tree": 160
+				},
+				"max_instances": 320,
+				"max_triangles": 260000,
+				"pending": 3,
+				"triangles": 259934
+			},
+			"surface": {
+				"agl": -0.00704304128885269,
+				"normal": "(0.158691, 0.987323, 0.003252)",
+				"point": "(16963.95, -1056.634, 488.6932)",
+				"ready": true,
+				"spacing": 14.6484375,
+				"water_depth": 0.0
+			}
+		},
+		{
+			"camera_basis": "[X: (0.961573, -0.219873, -0.164417), Y: (0.222577, 0.974913, -0.002024), Z: (0.160737, -0.03465, 0.986389)]",
+			"camera_position": "(26790.69, -2991.2, 147.5604)",
+			"distance": 27000,
+			"field": {
+				"basin": 0.0,
+				"coast": 0.882743424818723,
+				"forest": 0.449282456584253,
+				"height": 33.550026107486,
+				"legacy_weight": 0.0,
+				"moisture": 0.899999999999999,
+				"mountains": 0.496169769592811,
+				"ocean": 0.00462750086912866,
+				"river": 0.000035712810674475,
+				"route_s": 26999.9995424739,
+				"temperature": 1.0,
+				"uplift": 0.710211164321876,
+				"water_depth": 0.0,
+				"water_height": 30.5503118099714,
+				"wetland": 0.865694070864947
+			},
+			"ground": "(26780.23, -2992.088, 147.5564)",
+			"stats": {
+				"cells": 11,
+				"instances": 316,
+				"kinds": {
+					"pebble": 94,
+					"reed": 114,
+					"tree": 108
+				},
+				"max_instances": 320,
+				"max_triangles": 260000,
+				"pending": 9,
+				"triangles": 259916
+			},
+			"surface": {
+				"agl": -0.00567146064713597,
+				"normal": "(0.235038, 0.971986, 0.001128)",
+				"point": "(26780.23, -2992.088, 147.5564)",
+				"ready": true,
+				"spacing": 14.6484375,
+				"water_depth": 0.0
+			}
+		},
+		{
+			"camera_basis": "[X: (0.946982, -0.276032, -0.16441), Y: (0.279035, 0.960268, -0.00501), Z: (0.15926, -0.041132, 0.986379)]",
+			"camera_position": "(33558.14, -4781.757, -211.7828)",
+			"distance": 34000,
+			"field": {
+				"basin": 0.0,
+				"coast": 0.999143679548196,
+				"forest": 0.093254711787857,
+				"height": 2.78057600418333,
+				"legacy_weight": 0.0,
+				"moisture": 0.9,
+				"mountains": 0.458996112718919,
+				"ocean": 0.435039889979744,
+				"river": 0.0000357129674095993,
+				"route_s": 34000.0011732855,
+				"temperature": 0.977844825316393,
+				"uplift": 0.0699784811218972,
+				"water_depth": 0.0,
+				"water_height": 0.0,
+				"wetland": 0.44471831932255
+			},
+			"ground": "(33547.64, -4782.034, -211.7771)",
+			"stats": {
+				"cells": 18,
+				"instances": 320,
+				"kinds": {
+					"pebble": 186,
+					"reed": 106,
+					"tree": 28
+				},
+				"max_instances": 320,
+				"max_triangles": 260000,
+				"pending": 4,
+				"triangles": 113714
+			},
+			"surface": {
+				"agl": -0.00624895468354225,
+				"normal": "(0.281744, 0.959487, -0.002288)",
+				"point": "(33547.64, -4782.034, -211.7771)",
+				"ready": true,
+				"spacing": 14.6484375,
+				"water_depth": 0.0
+			}
+		},
+		{
+			"unload": {
+				"cells": 0,
+				"instances": 0,
+				"kinds": {
+					"pebble": 0,
+					"reed": 0,
+					"tree": 0
+				},
+				"max_instances": 320,
+				"max_triangles": 260000,
+				"pending": 0,
+				"triangles": 0
+			}
+		}
+	],
+	"utc": "2026-09-27T15:31:51"
+}

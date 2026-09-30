@@ -1,0 +1,925 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-12T05:49:54.512Z",
+  "scope": [
+    "playable/assets",
+    "docs/ui-concepts",
+    "docs/ui-implementation"
+  ],
+  "backupStatus": "not_configured",
+  "note": "Read-only inventory of existing files, not an independent backup or quality acceptance.",
+  "count": 130,
+  "totalBytes": 213423363,
+  "files": [
+    {
+      "path": "docs/ui-concepts/01-ground-exploration-hud.png",
+      "bytes": 2359410,
+      "sha256": "e991ebf2148239c024b0d2ebc4d8f240db126f4300e43e2103c640fdbe2f404b",
+      "modifiedAt": "2026-09-04T13:51:41.361Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/02-engineering-build-logistics.png",
+      "bytes": 2967363,
+      "sha256": "027d4eb4f0f8248cce3b9f70acc96ade30eda82647060c4b39ddf15ddbf99c23",
+      "modifiedAt": "2026-09-04T13:52:43.310Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/03-expedition-center-starmap.png",
+      "bytes": 1897769,
+      "sha256": "a2dd21a6243b20678aec5551d22c937f800065e22ca23c4650ef97060eecd376",
+      "modifiedAt": "2026-09-04T13:53:48.136Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/04-deep-space-cockpit.png",
+      "bytes": 2313871,
+      "sha256": "0d446d8d3573c6e570d87f3034acf3ce8bbc21c245f30e925ccbed7450bd779f",
+      "modifiedAt": "2026-09-04T13:54:47.515Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/c2-independent-20260908/keyposes.png",
+      "bytes": 2041686,
+      "sha256": "46da7c0fa2641784dee5dabb0c9a6918b1601550ce99835192ea0f924c6cc124",
+      "modifiedAt": "2026-09-08T14:02:58.402Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/c2-independent-20260908/turnaround.png",
+      "bytes": 2189416,
+      "sha256": "ebab828bf1725638cd0d8107d0bd50b1f1ff22a4bb5687a847bcecc84104971e",
+      "modifiedAt": "2026-09-08T13:55:35.825Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/evolution-paths-20260908-v1.png",
+      "bytes": 2783024,
+      "sha256": "4523c4af454e61fb610e1f145c87848ded9ffb4cc9aa5e1e144945b7a07a59d1",
+      "modifiedAt": "2026-09-08T11:53:41.786Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/evolution-ui-20260908-v1.png",
+      "bytes": 1933311,
+      "sha256": "218dfbb5911efd60ead32f9e1a5cc627e669f68ec812fb404a3ad54e738e78d1",
+      "modifiedAt": "2026-09-08T11:54:07.296Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/explorer-outfits-20260905-v1/01-dust-veil.png",
+      "bytes": 2192349,
+      "sha256": "09356da541cfa431402f4e83a57345ed0c49018afa463aaac98a713d858c16d3",
+      "modifiedAt": "2026-09-05T04:51:58.768Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/explorer-outfits-20260905-v1/02-tidal-membrane.png",
+      "bytes": 2253317,
+      "sha256": "cef24c3aa2b859d777785d91c56c05477d86b4ba2bb1ad767b3555c8748d9373",
+      "modifiedAt": "2026-09-05T04:52:43.179Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/explorer-outfits-20260905-v1/03-mineral-symbiosis.png",
+      "bytes": 2229868,
+      "sha256": "bdc5e4bf50145ac72195df40ed984ce8effe2a0428935cbf06466f9804cfd6be",
+      "modifiedAt": "2026-09-05T04:53:31.576Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/explorer-outfits-20260905-v1/04-foldwing-surveyor.png",
+      "bytes": 2238559,
+      "sha256": "c2c446c2947e494daef27b458a756af6938f50d6b0907567bd46aea859cc9d22",
+      "modifiedAt": "2026-09-05T04:54:20.400Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/human-locomotion-20260905-v2/01-forward.png",
+      "bytes": 2077844,
+      "sha256": "d8bb2db61d3f09a7fc3dbb8597cc2bcfda23378ee4c88b275e33f8f6b50cb204",
+      "modifiedAt": "2026-09-05T10:19:31.624Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/human-locomotion-20260905-v2/02-backward.png",
+      "bytes": 1926573,
+      "sha256": "e174383a46ad9c67ad0a29efe411cf48e42845cb7e48aedcafe0be907413d4f2",
+      "modifiedAt": "2026-09-05T10:06:54.532Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/human-locomotion-20260905-v2/03-left.png",
+      "bytes": 2016243,
+      "sha256": "2b150e41192733d6707e37f5b7aa677d36cd2b26d3d9747e4e29ccfbbabdc1e6",
+      "modifiedAt": "2026-09-05T10:20:20.556Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/human-locomotion-20260905-v2/04-right.png",
+      "bytes": 2007888,
+      "sha256": "8b6f15931855e6e32e1a9daf4f04410b2b075ab9de2aba6ef5747330958f369f",
+      "modifiedAt": "2026-09-05T10:21:10.022Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/scanner-20260912/scanner-equip-stow.png",
+      "bytes": 2483266,
+      "sha256": "c1e71a9b8674c8f8aeccac13d7893be26f3acd3b9ff7039a36f159645d1898d0",
+      "modifiedAt": "2026-09-12T02:23:37.234Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-concepts/vehicle-cockpit-20260912/cockpit-concept.png",
+      "bytes": 2185925,
+      "sha256": "2804b296b2c3a4bc83efa3240e99cda7c1841a4da62aeb9b4fca54b9afd9021a",
+      "modifiedAt": "2026-09-12T03:04:43.794Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/01-ground-exploration-hud-768.png",
+      "bytes": 551816,
+      "sha256": "0d6323127876ee85c7bb7d2ec608114207473af30bf218b7e595ce19cee076c1",
+      "modifiedAt": "2026-09-04T23:52:28.532Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/01-ground-exploration-hud.png",
+      "bytes": 1200037,
+      "sha256": "b6cc721b12463b215e92d25eaa7f5b2cbae194361e6e101b33c9284ba4746ee5",
+      "modifiedAt": "2026-09-04T23:52:24.431Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/02-engineering-build-logistics-768.png",
+      "bytes": 768522,
+      "sha256": "3702d7e453a0608f8aa46c08ce489338131fd60c04439ebd5df0a1066344886e",
+      "modifiedAt": "2026-09-04T23:52:29.358Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/02-engineering-build-logistics.png",
+      "bytes": 1606999,
+      "sha256": "8d251a233cb991b2e006a9f75c2d8c03aedda9977b5f3b13e074569c3cbba486",
+      "modifiedAt": "2026-09-04T23:52:25.566Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/03-expedition-center-starmap-768.png",
+      "bytes": 531199,
+      "sha256": "cd11224544fdb5a9d7fa73c4b100898ec9f3a62f2d1f3f19e19beb03cce41f46",
+      "modifiedAt": "2026-09-04T23:52:30.077Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/03-expedition-center-starmap.png",
+      "bytes": 1111616,
+      "sha256": "e377d3a754ba6342d0e00b9da7a95403e417df076aa7f27c31b4c66acb3d024e",
+      "modifiedAt": "2026-09-04T23:52:26.585Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/04-deep-space-cockpit-768.png",
+      "bytes": 730311,
+      "sha256": "c5c39f334cb2dee4e21eabd1ba579c42c99a7bb06ea3f0cf1ad7f14f2fdc67a2",
+      "modifiedAt": "2026-09-04T23:52:30.783Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/04-deep-space-cockpit.png",
+      "bytes": 1653393,
+      "sha256": "fa04d4d0a1d8e4eac6776580aa7c751f6378b6b0843c4ab05a0a1f6d77763d1f",
+      "modifiedAt": "2026-09-04T23:52:27.568Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/05-movement-idle.png",
+      "bytes": 1201096,
+      "sha256": "11db1ad8e396e06181017ff6ec014c833d77d8a3f871cfc5e1f9661319cce526",
+      "modifiedAt": "2026-09-05T00:34:51.407Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/06-movement-forward.png",
+      "bytes": 1203960,
+      "sha256": "e9a11a4c7fcc366033238e58ef7ee81994a5494df2122bffe3f3e27c81291968",
+      "modifiedAt": "2026-09-05T00:34:54.480Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/07-movement-strafe.png",
+      "bytes": 1204063,
+      "sha256": "eb94072993d3b87dd7eefa8e1bd3ca7b2387a20f9af9ee9e6054041a65ccbdbe",
+      "modifiedAt": "2026-09-05T00:34:57.628Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c-suit-model-review.png",
+      "bytes": 415904,
+      "sha256": "bba2d1cfdb9406c3e12c6ae066fb68d7dcd3c45986458842813b14b1d24e8f5e",
+      "modifiedAt": "2026-09-12T01:47:09.723Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-back-eight-angles.png",
+      "bytes": 617669,
+      "sha256": "b32e92bfa2aedc250a01aff57c8f28255cb3fde927dac841b498530b9866a963",
+      "modifiedAt": "2026-09-12T01:48:42.498Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-idle-eight-angles.png",
+      "bytes": 616132,
+      "sha256": "971b0dd0a5bf6b3f68a2540173128397811b539c8a92d19279a77a0de4f9bdc8",
+      "modifiedAt": "2026-09-12T01:48:19.941Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-independent-game.png",
+      "bytes": 893661,
+      "sha256": "5883cbf49a7d21107f1c8744f5be32ac14c97a4e5832a169a4f2b87af16dea93",
+      "modifiedAt": "2026-09-12T01:47:59.637Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-left-eight-angles.png",
+      "bytes": 586155,
+      "sha256": "09db28e359f1718ebd6d0252a389584a808c550ba7abeef15a5ca1724a78b1fd",
+      "modifiedAt": "2026-09-12T01:48:53.910Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-right-eight-angles.png",
+      "bytes": 610823,
+      "sha256": "689143e8c503399118a13f940e4713b96991473eedcd73195c55ae1aa0126044",
+      "modifiedAt": "2026-09-12T01:49:05.160Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-run-eight-angles.png",
+      "bytes": 587831,
+      "sha256": "76959d615271e54f99abde27f2bc92c2dc4bd35b8ed9f8f41c2014a3af156826",
+      "modifiedAt": "2026-09-12T01:49:16.621Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/c2-walk-eight-angles.png",
+      "bytes": 610393,
+      "sha256": "565aca0995bf6cb8d4dcb16517550bef8be737a733ddc89f2d489d3263b0c917",
+      "modifiedAt": "2026-09-12T01:48:31.297Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/calibration-terminal-1440.png",
+      "bytes": 421521,
+      "sha256": "90732a1d93b794d63c4fa2afea5e5a0dae48d8d8feddd7a4c13c11474491d609",
+      "modifiedAt": "2026-09-08T13:02:35.207Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/calibration-terminal-640.png",
+      "bytes": 200332,
+      "sha256": "275783ab30e33c45fc83250da22fca43d4d05720b847016bdb04fb6019bfcd8a",
+      "modifiedAt": "2026-09-08T13:02:36.455Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/calibration-terminal-768.png",
+      "bytes": 236541,
+      "sha256": "c2e4cbafa4f3c3a04a41e2705ac9d3dc687588e32eb4069137cd14e7426bcc0f",
+      "modifiedAt": "2026-09-08T13:02:35.884Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/dash-entry-detail-640.png",
+      "bytes": 193481,
+      "sha256": "4c3d0edab56772a4020992a95e9b48adfc6dce69ee7efb9e308b3e973e62cc19",
+      "modifiedAt": "2026-09-08T13:03:15.505Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/dash-entry-world.png",
+      "bytes": 1045820,
+      "sha256": "00f7b059ed2f4b176adf501f34ac926dc3b91b58b549400fa43f8bf05306a8f7",
+      "modifiedAt": "2026-09-08T13:02:54.561Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-calibration-inverse.png",
+      "bytes": 467818,
+      "sha256": "ae80d66a0673139ea41e7c3dc579c8781d9eaa70ac5a8dd7544bde12c8172cee",
+      "modifiedAt": "2026-09-08T13:10:32.338Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-calibration-narrow.png",
+      "bytes": 195973,
+      "sha256": "820713b5af6f0c5d70d4f1b7799fd525cc7d274ac9ab9514ea9b46bd13aa1a76",
+      "modifiedAt": "2026-09-08T13:10:23.878Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-core.png",
+      "bytes": 401049,
+      "sha256": "d3f96b49235a935e9ca10c9986a456fe7badddb65a5134280857108ac8606f6b",
+      "modifiedAt": "2026-09-08T13:27:14.135Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-evolution-earned.png",
+      "bytes": 420275,
+      "sha256": "429f741efce9d4e34764be26406636278ba175066aba720a60abe0f6d047acf3",
+      "modifiedAt": "2026-09-08T13:04:04.625Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-evolution-max.png",
+      "bytes": 422502,
+      "sha256": "16e5aa4816e85c59048dec8136bde72d788de856c5774952c9297e123aab0ca8",
+      "modifiedAt": "2026-09-08T13:04:43.775Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-evolution-narrow.png",
+      "bytes": 185483,
+      "sha256": "8e83c7131df90d88d16ef161b91a3d671d1151586e2819e57d96ef142a21cab9",
+      "modifiedAt": "2026-09-08T13:04:07.456Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-hud-narrow.png",
+      "bytes": 428041,
+      "sha256": "c782db3a6cea7cb3dfa0c1b90c83483c9295905be0d73d6bcf8cb468fa79f7f5",
+      "modifiedAt": "2026-09-08T13:08:04.404Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-cautious-backward.png",
+      "bytes": 978555,
+      "sha256": "60e5f2522b55f69098b30015cf662719324bf349e53103b331e56aae20481a65",
+      "modifiedAt": "2026-09-12T02:03:41.992Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-cautious-left.png",
+      "bytes": 901352,
+      "sha256": "82cd07761ed9e91c2755cfc5e5fc93873869abba4a01ce15d654fbd59a0a63c9",
+      "modifiedAt": "2026-09-12T02:04:06.791Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-cautious-right.png",
+      "bytes": 903331,
+      "sha256": "53359bd9c529e3824f9546215e5a7b9931b9ee42c0a3db2e865b4fa29ad15e8d",
+      "modifiedAt": "2026-09-12T02:04:30.081Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-controls-640.png",
+      "bytes": 374145,
+      "sha256": "cfb8e156a0a369b4e0963aa907e794a79c4abd890ae5e83ea581340ba948b2a0",
+      "modifiedAt": "2026-09-12T01:58:45.486Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-controls-900.png",
+      "bytes": 525956,
+      "sha256": "443076eff23aeaf27100daf6fd5057963d4389ffbb0933e3e370d2da7b9e9579",
+      "modifiedAt": "2026-09-12T01:58:31.320Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-default-backward.png",
+      "bytes": 899065,
+      "sha256": "ed12f376e80bda0be863aefff733100eef6a972238e933d7a1c5229ac356e40e",
+      "modifiedAt": "2026-09-12T02:04:55.670Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-default-left.png",
+      "bytes": 898642,
+      "sha256": "fb2ad4881a19b78260a20e79d5cf8cbb4cc9dff9751fc0a77ef891787f3e1f36",
+      "modifiedAt": "2026-09-12T02:05:18.040Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-default-right.png",
+      "bytes": 901445,
+      "sha256": "c9b4a41df1638f5d0b4e7827aab786318d6b59be1cf0eaaddb7a8e395e26a25b",
+      "modifiedAt": "2026-09-12T02:05:40.594Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-jog-backward.png",
+      "bytes": 1051325,
+      "sha256": "7ce697a3fed26b4d5b2459ccc577769c069e0a7af8856b86c701e7cf290fe81a",
+      "modifiedAt": "2026-09-08T13:14:46.396Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-jog-left.png",
+      "bytes": 1059619,
+      "sha256": "4ba35e726da709dccf8e79c8b4c6315466fb8f2a5f5a45a0284636611c419d3b",
+      "modifiedAt": "2026-09-08T13:15:12.613Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-jog-right.png",
+      "bytes": 1053922,
+      "sha256": "de5d10a501486eb564419a5387741dd713518d7e106f342d507b6b928f228b66",
+      "modifiedAt": "2026-09-08T13:15:38.254Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-jog.png",
+      "bytes": 920152,
+      "sha256": "ab16db53575c1b17431f422da2bcb8ea423e25d9d707364ea09ecf494495d7a3",
+      "modifiedAt": "2026-09-12T01:50:46.285Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-run.png",
+      "bytes": 910687,
+      "sha256": "ae19f077443ebe3ba74acb08d1bed59e33943f3e88d61e17766cab3159fa52ed",
+      "modifiedAt": "2026-09-12T01:50:54.526Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-walk-backward.png",
+      "bytes": 1060605,
+      "sha256": "98de8909a146a466ec123af715021d7325d54d78303f1f4c49fc13d1856ce611",
+      "modifiedAt": "2026-09-08T14:22:41.742Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-walk-left.png",
+      "bytes": 1052666,
+      "sha256": "7327fdf04306b7097b262cbfd383599839d3e6ea72196d9aafd12a17bbfd992b",
+      "modifiedAt": "2026-09-08T13:13:51.907Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-walk-right.png",
+      "bytes": 1056487,
+      "sha256": "7b94f9d3df3b4a1c3fa331fd7d7dc7ce97f55403237c3be2dfa3ba5d3e631050",
+      "modifiedAt": "2026-09-08T13:14:16.617Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-human-walk.png",
+      "bytes": 990301,
+      "sha256": "9739896bfe057e87943d99cdb0f0f9dbb87eb024a179adb67d678172d6543380",
+      "modifiedAt": "2026-09-12T01:50:35.390Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-journal-1440.png",
+      "bytes": 314889,
+      "sha256": "1580ed450ca27b48ba9621cfc4473b7eccb996f2d78c679750fcbf0741f80237",
+      "modifiedAt": "2026-09-05T01:25:09.971Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-journal-900.png",
+      "bytes": 242728,
+      "sha256": "9b54c47c750a63869386dc45ebe27d8d98bf79be564ad31329ce247a554b5c40",
+      "modifiedAt": "2026-09-05T01:24:33.275Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-journal.png",
+      "bytes": 226997,
+      "sha256": "2e9fdaa6efbd8e0efe04bbb7d08dc6e69cb6f64f3e46eb8b6f709ab9958a6577",
+      "modifiedAt": "2026-09-08T13:42:11.948Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-map-interior.png",
+      "bytes": 182723,
+      "sha256": "90d3dae5154e6e5cb64cedc757b88e02052cbcb87fbc091bad7bce4382b8bd74",
+      "modifiedAt": "2026-09-08T13:06:27.148Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-map-waypoint.png",
+      "bytes": 300187,
+      "sha256": "5f818a3e50898b575acfff3f6aaf5f37a2e94c5708a15880a1243ef49fbafc4e",
+      "modifiedAt": "2026-09-08T13:06:04.108Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-menu-1440.png",
+      "bytes": 1078023,
+      "sha256": "5842494ced8d6f4567e7f5f75b92161448b3799046b8f5615a6230576f4afa8d",
+      "modifiedAt": "2026-09-05T01:24:53.904Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-menu-900.png",
+      "bytes": 659914,
+      "sha256": "784b3c15a02382f5de7e98b847e9476f4788c6ded4dc3593b23840dddbb50822",
+      "modifiedAt": "2026-09-05T01:24:18.531Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-mobility-hud-narrow.png",
+      "bytes": 427981,
+      "sha256": "eceb688146ae0a2022249ef1ff414905b7c5b9019ff57cbd7b20bbebbf086087",
+      "modifiedAt": "2026-09-08T13:24:10.398Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-phase-terminal-narrow.png",
+      "bytes": 232658,
+      "sha256": "b4d73783b923f17610df2742900104855a058cd1b652ab3eae8aad61e66b8b30",
+      "modifiedAt": "2026-09-08T13:09:36.004Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-phase-terminal.png",
+      "bytes": 466486,
+      "sha256": "5089232147b7555e1da70ef09ce1f69833529ad8a6a4d23263913c3475ddd9ee",
+      "modifiedAt": "2026-09-08T13:09:34.129Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-rift.png",
+      "bytes": 488542,
+      "sha256": "91314e9700b902c68b406eb542566a12193210b16c99cb7dc8a020c81df2b78a",
+      "modifiedAt": "2026-09-08T13:28:36.957Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-rock-contact.png",
+      "bytes": 731064,
+      "sha256": "ddaa2806df37f4eb66743c565dc363a2782f33f80e74172df932327fb36c2191",
+      "modifiedAt": "2026-09-08T13:07:31.456Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-skimmer-driving.png",
+      "bytes": 937849,
+      "sha256": "6e802e0704317f716f24a09ad7a1032d013c2982a41f06fbd50ba95b3aa2f41d",
+      "modifiedAt": "2026-09-08T13:23:28.569Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-skimmer-map.png",
+      "bytes": 291261,
+      "sha256": "cb40301992d5db6b65e51946b106f264ab838bb19fbf1383f4906b5a8402f649",
+      "modifiedAt": "2026-09-08T13:23:44.626Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-skimmer-repaired.png",
+      "bytes": 952567,
+      "sha256": "b533326627854c75e62f12d69e173ac31d61f9ffd2b9ec9d2135b460cb98eb08",
+      "modifiedAt": "2026-09-08T13:23:16.104Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-stamina.png",
+      "bytes": 621716,
+      "sha256": "d40ba010a5fef54ef4b30ffeb3f11551da3127cbc04d427622b4507c884eef14",
+      "modifiedAt": "2026-09-08T13:32:01.638Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-surface.png",
+      "bytes": 624717,
+      "sha256": "07a001437f3b532322892c1b42c5affdcdb511c85c254480ec30a3658d22c310",
+      "modifiedAt": "2026-09-08T13:42:10.661Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-survey-east.png",
+      "bytes": 1042518,
+      "sha256": "3b051e92a22c5f86cb0ae453bfc02f97ace5144984bd3ba7da34918775ee39e0",
+      "modifiedAt": "2026-09-08T13:09:14.658Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-survey-ending.png",
+      "bytes": 383128,
+      "sha256": "426b99e29fba8cab9c7a499750a96ea623cf86ee248d340bc80668ae6465eddc",
+      "modifiedAt": "2026-09-08T13:40:23.208Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-survey-north.png",
+      "bytes": 944999,
+      "sha256": "39b1ffcaa43e7bda80fee334b253c46ae50e6e05ab5ef7ba93f8c5aa4a8ea2b0",
+      "modifiedAt": "2026-09-08T13:09:26.049Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-survey-west-sampled.png",
+      "bytes": 825443,
+      "sha256": "924fda0834fde22ce37b6b66701e048d4e4b3a82325c88c31d321799388b3cdb",
+      "modifiedAt": "2026-09-08T13:39:00.078Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-survey-west.png",
+      "bytes": 957513,
+      "sha256": "e8c7bbccae3538e9fd95162f5b071d2eb9727ce89d144abb96fa00082edf5ae5",
+      "modifiedAt": "2026-09-08T13:09:01.944Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-third-person.png",
+      "bytes": 1069953,
+      "sha256": "e3532acdedc49ade99b0098bb897f2946ff330ebd4ebc029d6ec3d3a68d4058b",
+      "modifiedAt": "2026-09-08T13:06:48.424Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/echo-xuanke-flight.png",
+      "bytes": 1006219,
+      "sha256": "bdf2b20c095020d9454f8b636ab5abbdd8f4f38e048f82e813321e2d53dadf41",
+      "modifiedAt": "2026-09-08T13:22:00.740Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-back.png",
+      "bytes": 596353,
+      "sha256": "f460f95bb33e58fba1e7eea24e64ca8a282cbd2229bae144d4a0d8447fd0c549",
+      "modifiedAt": "2026-09-12T01:49:37.761Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-jog.png",
+      "bytes": 523061,
+      "sha256": "dc799acfe7b43085c9775f8bf5bf9ac371445278e669c38b7cefff7f954cc510",
+      "modifiedAt": "2026-09-12T01:49:37.332Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-live-preview.png",
+      "bytes": 599544,
+      "sha256": "ee512f0aaf577f1b30b8b37540d1bb11fb4def9176357980c9ad6d4ba1e5c590",
+      "modifiedAt": "2026-09-12T01:50:03.007Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-01.png",
+      "bytes": 532936,
+      "sha256": "e29fad6193d17914b2ac63577b89514501c9cf8924f4c9549753708bcc08b3a2",
+      "modifiedAt": "2026-09-12T01:49:41.488Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-02.png",
+      "bytes": 520437,
+      "sha256": "43cf0ca78023756670e86467c148008e89f2b2f868e5c6e863d10c5aaacf9736",
+      "modifiedAt": "2026-09-12T01:49:41.936Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-03.png",
+      "bytes": 523937,
+      "sha256": "6de2a5237a5d5abac2e6caa39f6f31ef399e14d5afcd5d1b807927252b949199",
+      "modifiedAt": "2026-09-12T01:49:42.387Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-04.png",
+      "bytes": 537546,
+      "sha256": "4286dbc56fb607f320e8fca81a9567e07a70206b3c5ca09f43acaec8af8ba679",
+      "modifiedAt": "2026-09-12T01:49:42.852Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-05.png",
+      "bytes": 539334,
+      "sha256": "4d690e140d9bf1352b169162cdad57b7ad283036b03aa2fad094e98cd52e6f7e",
+      "modifiedAt": "2026-09-12T01:49:43.327Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-06.png",
+      "bytes": 532527,
+      "sha256": "a0373817ecf4e53f48c4c53dc6a70a088666f35916d3df70e2c9dd28d7d18785",
+      "modifiedAt": "2026-09-12T01:49:43.783Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-07.png",
+      "bytes": 527134,
+      "sha256": "b0f15922bd46688636e971a6cf488b3ad114690f1897b43dc8b337ec9a9d4674",
+      "modifiedAt": "2026-09-12T01:49:44.259Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-phase-08.png",
+      "bytes": 524511,
+      "sha256": "ccce2acbaee8e61f7e9692075cc2c40d617be57d5a4236a263e525758112cdab",
+      "modifiedAt": "2026-09-12T01:49:44.747Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-side.png",
+      "bytes": 490047,
+      "sha256": "31cb50dd19632de52f130da179efaa7d93b4da828035943da9a1057675377ca2",
+      "modifiedAt": "2026-09-12T01:49:32.527Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-sprint.png",
+      "bytes": 542073,
+      "sha256": "cdcd2a78802ac3879cb1b794a186d85f808c40c0fd253e6c0028a84a3695fb24",
+      "modifiedAt": "2026-09-12T01:49:32.134Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-four-direction-stress.png",
+      "bytes": 387569,
+      "sha256": "0678fbeee98c857bb05a60bf047889a17ff9e3f84fd99c2233b60e5f02d5cc4f",
+      "modifiedAt": "2026-09-12T01:49:29.563Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-gait-sequence.png",
+      "bytes": 653654,
+      "sha256": "81e12df227b15c9869c077a45ea4eca258585df7a0ab4d2371ca04dc3f2541b7",
+      "modifiedAt": "2026-09-12T01:50:09.912Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/human-walk-sequence.png",
+      "bytes": 577704,
+      "sha256": "bf0163dcbf9b777941e85b739924daf1917200e81b5d6b2bafa2711dbb2e0103",
+      "modifiedAt": "2026-09-12T01:50:06.273Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/map-r2.png",
+      "bytes": 297068,
+      "sha256": "d9e9953b9f08b759e92e96e9cf13fcdb6bef4f78240f9404b5a89a239ecf00a2",
+      "modifiedAt": "2026-09-08T13:05:47.079Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/map-r3-narrow.png",
+      "bytes": 150514,
+      "sha256": "55c544705b3f99a5152a589b0e4732f0b96be48c8eef0f1cf7768f3513388db9",
+      "modifiedAt": "2026-09-08T13:21:40.936Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/map-r3.png",
+      "bytes": 299754,
+      "sha256": "cc5038142f5af242173efe647bec732f3d130e53be7d90964491217c73e374fd",
+      "modifiedAt": "2026-09-08T13:21:32.689Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/scan-vfx-world.png",
+      "bytes": 991172,
+      "sha256": "e33d49ca4ee922a0ad7076322f7caf278b4e806f854c34683d29895239337190",
+      "modifiedAt": "2026-09-12T02:55:02.931Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/wreck-r2-front.png",
+      "bytes": 987890,
+      "sha256": "4c4f8f6b23db073e2340312977767a53ad5bba79f7a0f76a69d770d5b1243742",
+      "modifiedAt": "2026-09-08T13:05:16.580Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/wreck-r2-port.png",
+      "bytes": 844399,
+      "sha256": "51784e25e91350bc6756659400ce2638eb6fca7f60e658eec6ba896df3215df2",
+      "modifiedAt": "2026-09-08T13:05:23.793Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "docs/ui-implementation/wreck-r2-rear.png",
+      "bytes": 841056,
+      "sha256": "8afc2cc00f26ae34596f6656d288ac524803969415637c11e0c8bf3806500cee",
+      "modifiedAt": "2026-09-08T13:05:31.544Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/animations/prone-v2/c2-prone-v2.blend",
+      "bytes": 15608845,
+      "sha256": "2100cac3f440ffa780c4b2d4b6beaac4c43e49aed3f1adcdb3c4b25a59bc0a36",
+      "modifiedAt": "2026-09-12T03:44:28.961Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/animations/prone-v2/c2-prone-v2.blend1",
+      "bytes": 15629587,
+      "sha256": "47a5454a9077188562a39ca150d7a028cd837d880df1525c83ef3f88ec9731dd",
+      "modifiedAt": "2026-09-12T03:35:41.103Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/animations/prone-v2/c2-prone-v2.glb",
+      "bytes": 18560592,
+      "sha256": "40bf2dc62a07d02e21a5318baaafbb11020fc73abf1c8678f97446f1c037d910",
+      "modifiedAt": "2026-09-12T03:44:15.521Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/animations/UAL1_Standard.glb",
+      "bytes": 7618436,
+      "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "modifiedAt": "2026-06-16T22:03:44.000Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/backdrops/cockpit-vortex.png",
+      "bytes": 2462876,
+      "sha256": "5cdd096346b804947d89df1e3656dae48fcafbceb9a50c1188130e2203d6eae8",
+      "modifiedAt": "2026-09-04T15:05:25.410Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/backdrops/engineering-pad.png",
+      "bytes": 2500931,
+      "sha256": "4e38bc5a232ebd4ff9c752feef452070f585644e3454516ffe043dcb697855b3",
+      "modifiedAt": "2026-09-04T15:03:16.889Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/backdrops/rift-surface.png",
+      "bytes": 2378713,
+      "sha256": "4ba0c91eabfad36c67689c508078f608f204d9629dfafb44c747b4ef257333b2",
+      "modifiedAt": "2026-09-04T15:40:19.695Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/backdrops/route-nebula.png",
+      "bytes": 1815177,
+      "sha256": "37a3af125ae19f4fdd3681ac0c9705f1610afb79b58747085e6bd860b5fad155",
+      "modifiedAt": "2026-09-04T15:04:12.134Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/characters/c2-explorer-data.mjs",
+      "bytes": 18498185,
+      "sha256": "d39a1ea1636111aa9dc436853af00beac67c98cd57c8769cea961fbfcabd1f4f",
+      "modifiedAt": "2026-09-11T22:48:21.031Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/characters/c2-explorer.glb",
+      "bytes": 13873508,
+      "sha256": "a0922a57c7f4ea221a0b48ca73963346cb100575a69f92c1bcd2922d3064b97f",
+      "modifiedAt": "2026-09-11T22:44:36.606Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/equipment/explorer-scanner-v1.blend",
+      "bytes": 632155,
+      "sha256": "c224c66294c12451cf997cc250ce967553f1f3fbbf45945ee540444962f21866",
+      "modifiedAt": "2026-09-12T02:41:18.122Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/equipment/explorer-scanner-v1.blend1",
+      "bytes": 628465,
+      "sha256": "8b9e660be8ef6ac27b803235bff1d70ad10437c08dbee2c596878a5af0db5b89",
+      "modifiedAt": "2026-09-12T02:32:12.478Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/equipment/explorer-scanner-v1.glb",
+      "bytes": 1090248,
+      "sha256": "3e8c75ecf3bfb4b80ba3d66652aca8ec56a32f224e05caed016431b8e896fb60",
+      "modifiedAt": "2026-09-12T02:41:18.271Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/equipment/scanner-data.mjs",
+      "bytes": 1453846,
+      "sha256": "6f10f089e9a6a5cabe6a3e8c1f9ac0c18fa0dbf911b0b269fd9fd8cd553ced9f",
+      "modifiedAt": "2026-09-12T02:42:18.916Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/vehicles/survey-skimmer-cockpit-v1.blend",
+      "bytes": 988741,
+      "sha256": "ba804ac6e1b91f1f14de713758ee7de416491dba4fd7056c3d1cbf3bafb69923",
+      "modifiedAt": "2026-09-12T03:14:24.857Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/vehicles/survey-skimmer-cockpit-v1.blend1",
+      "bytes": 988742,
+      "sha256": "308e2deab73e80ba3b1c072811a7b414d065ea2d294576307ccfdf2f5a7d8474",
+      "modifiedAt": "2026-09-12T03:13:05.687Z",
+      "reviewStatus": "existing_not_revalidated"
+    },
+    {
+      "path": "playable/assets/vehicles/survey-skimmer-cockpit-v1.glb",
+      "bytes": 3707668,
+      "sha256": "65c6a58049b13f6ebfd84e32cd21290fdc2fcd190298ab74be8c359808b7144d",
+      "modifiedAt": "2026-09-12T03:14:23.735Z",
+      "reviewStatus": "existing_not_revalidated"
+    }
+  ]
+}

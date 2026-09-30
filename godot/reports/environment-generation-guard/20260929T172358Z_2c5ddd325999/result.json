@@ -1,0 +1,627 @@
+{
+  "run_id": "20260929T172358Z_2c5ddd325999",
+  "slot": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+  "project": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot",
+  "output": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999",
+  "failed": [],
+  "post_exit_hashes": {
+    "backup": {
+      "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\星渊 · 原生迁移\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak",
+      "before": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+      "after": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+    },
+    "main": {
+      "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\星渊 · 原生迁移\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+      "before": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+      "after": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+    },
+    "mirror": {
+      "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\星渊 · 原生迁移\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json",
+      "before": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+      "after": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+    },
+    "mirror_backup": {
+      "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\星渊 · 原生迁移\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak",
+      "before": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+      "after": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+    },
+    "valid_current_source": {
+      "path": "C:\\Users\\HUAWEI\\AppData\\Roaming\\Godot\\app_userdata\\星渊 · 原生迁移\\martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json",
+      "before": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6",
+      "after": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+    }
+  },
+  "scope": "Generation protection only; no tree destruction or visual acceptance.",
+  "seed_process": {
+    "command": [
+      "D:\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64_console.exe",
+      "--headless",
+      "--path",
+      "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot",
+      "--script",
+      "res://tests/native_environment_generation_guard.gd",
+      "--",
+      "--guard-mode=seed",
+      "--guard-slot=user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+      "--guard-report=C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\seed.json",
+      "--guard-manifest=C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\seed.json",
+      "--guard-expected-generation=ecology-r4.2",
+      "--guard-old-generation=ecology-r4.1",
+      "--guard-warning=环境未恢复"
+    ],
+    "report": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\seed.json",
+    "log": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\seed.log",
+    "returncode": 0,
+    "timed_out": false
+  },
+  "seed": {
+    "checks": [
+      {
+        "details": {},
+        "label": "private fixture slot and report arguments are explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "fixture generation is intentionally incompatible",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "seed refuses to reuse an existing slot",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real Main resource loads",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real NativeMain instantiates",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real player/world restoration settles under normal physics",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "fresh current-generation game can save",
+        "ok": true
+      },
+      {
+        "details": {
+          "actual": "ecology-r4.2"
+        },
+        "label": "deployed service generation matches the requested release",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "current service accepts the valid persistence-only marker",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real Main writes the baseline with a legal inline environment",
+        "ok": true
+      },
+      {
+        "details": {
+          "error": 0,
+          "path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+        },
+        "label": "test output flushes",
+        "ok": true
+      },
+      {
+        "details": {
+          "error": 0,
+          "path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak"
+        },
+        "label": "test output flushes",
+        "ok": true
+      },
+      {
+        "details": {
+          "error": 0,
+          "path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json"
+        },
+        "label": "test output flushes",
+        "ok": true
+      },
+      {
+        "details": {
+          "error": 0,
+          "path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak"
+        },
+        "label": "test output flushes",
+        "ok": true
+      },
+      {
+        "details": {
+          "error": 0,
+          "path": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json"
+        },
+        "label": "test output flushes",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "all original fixture bytes exist before the probe process",
+        "ok": true
+      }
+    ],
+    "expected_generation": "ecology-r4.2",
+    "failed": [],
+    "files": {
+      "backup": {
+        "path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.bak",
+        "sha256": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+      },
+      "main": {
+        "path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+        "sha256": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9"
+      },
+      "mirror": {
+        "path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json",
+        "sha256": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+      },
+      "mirror_backup": {
+        "path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.environment-r4.json.bak",
+        "sha256": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f"
+      },
+      "valid_current_source": {
+        "path": "C:/Users/HUAWEI/AppData/Roaming/Godot/app_userdata/星渊 · 原生迁移/martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json.valid-current.json",
+        "sha256": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+      }
+    },
+    "limitations": "Generation and storage protection only. The valid unstreamed state marker does not prove physical tree destruction.",
+    "mode": "seed",
+    "old_generation": "ecology-r4.1",
+    "pid": 23868,
+    "progress": {
+      "environment_slot": "1790702640699000-1915709",
+      "fragments": 217,
+      "investigated": [
+        "beacon"
+      ],
+      "realm": 6
+    },
+    "samples": [],
+    "slot": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+  },
+  "before_probe_hashes": {
+    "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+    "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+    "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+    "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+    "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+  },
+  "probe_process": {
+    "command": [
+      "D:\\Godot_v4.6.2-stable_win64.exe\\Godot_v4.6.2-stable_win64_console.exe",
+      "--headless",
+      "--path",
+      "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot",
+      "--script",
+      "res://tests/native_environment_generation_guard.gd",
+      "--",
+      "--guard-mode=probe",
+      "--guard-slot=user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json",
+      "--guard-report=C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\probe.json",
+      "--guard-manifest=C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\seed.json",
+      "--guard-expected-generation=ecology-r4.2",
+      "--guard-old-generation=ecology-r4.1",
+      "--guard-warning=环境未恢复"
+    ],
+    "report": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\probe.json",
+    "log": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\reports\\environment-generation-guard\\20260929T172358Z_2c5ddd325999\\probe.log",
+    "returncode": 0,
+    "timed_out": false
+  },
+  "probe": {
+    "checks": [
+      {
+        "details": {},
+        "label": "private fixture slot and report arguments are explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "fixture generation is intentionally incompatible",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "seed manifest is readable",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real Main resource loads",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real NativeMain instantiates",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real player/world restoration settles under normal physics",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "incompatible fixture loads in a distinct process",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "player/inventory/slot progress still loads despite environment mismatch",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "world investigation progress still loads: beacon",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "probe runs the requested current generation",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: Main stays save-protected",
+        "ok": true
+      },
+      {
+        "details": {
+          "save_protected_reason": "environment_generation_mismatch"
+        },
+        "label": "after_ready: public save_protected_reason remains available",
+        "ok": true
+      },
+      {
+        "details": {
+          "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+        },
+        "label": "after_ready: mismatch reason remains explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: incompatible environment was not restored",
+        "ok": true
+      },
+      {
+        "details": {
+          "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+        },
+        "label": "after_ready: visible persistent HUD explains unrestored environment and save protection",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: original backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: original main bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: original mirror bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: original mirror_backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_ready: original valid_current_source bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {
+          "clock_wraps": 1,
+          "game_seconds": 13.1666666666669,
+          "wall_msec": 13000
+        },
+        "label": "normal physics crosses at least one real 12-second auto-save period",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real auto-save refuses an incompatible environment",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: Main stays save-protected",
+        "ok": true
+      },
+      {
+        "details": {
+          "save_protected_reason": "environment_generation_mismatch"
+        },
+        "label": "after_real_auto_save: public save_protected_reason remains available",
+        "ok": true
+      },
+      {
+        "details": {
+          "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+        },
+        "label": "after_real_auto_save: mismatch reason remains explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: incompatible environment was not restored",
+        "ok": true
+      },
+      {
+        "details": {
+          "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+        },
+        "label": "after_real_auto_save: visible persistent HUD explains unrestored environment and save protection",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: original backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: original main bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: original mirror bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: original mirror_backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_auto_save: original valid_current_source bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "explicit save refuses an incompatible environment",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: Main stays save-protected",
+        "ok": true
+      },
+      {
+        "details": {
+          "save_protected_reason": "environment_generation_mismatch"
+        },
+        "label": "after_explicit_save: public save_protected_reason remains available",
+        "ok": true
+      },
+      {
+        "details": {
+          "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+        },
+        "label": "after_explicit_save: mismatch reason remains explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: incompatible environment was not restored",
+        "ok": true
+      },
+      {
+        "details": {
+          "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+        },
+        "label": "after_explicit_save: visible persistent HUD explains unrestored environment and save protection",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: original backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: original main bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: original mirror bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: original mirror_backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_explicit_save: original valid_current_source bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real F5 never claims save success",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: Main stays save-protected",
+        "ok": true
+      },
+      {
+        "details": {
+          "save_protected_reason": "environment_generation_mismatch"
+        },
+        "label": "after_real_f5: public save_protected_reason remains available",
+        "ok": true
+      },
+      {
+        "details": {
+          "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved"
+        },
+        "label": "after_real_f5: mismatch reason remains explicit",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: incompatible environment was not restored",
+        "ok": true
+      },
+      {
+        "details": {
+          "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+        },
+        "label": "after_real_f5: visible persistent HUD explains unrestored environment and save protection",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: original backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: original main bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: original mirror bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: original mirror_backup bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "after_real_f5: original valid_current_source bytes unchanged",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "Main remains initialized and active immediately before the real close",
+        "ok": true
+      },
+      {
+        "details": {},
+        "label": "real close refuses an incompatible environment",
+        "ok": true
+      }
+    ],
+    "close_handler_returned": true,
+    "close_path": "NativeMain.notification(Node.NOTIFICATION_WM_CLOSE_REQUEST)",
+    "close_requested": true,
+    "close_save_error": 44,
+    "expected_generation": "ecology-r4.2",
+    "failed": [],
+    "limitations": "Generation and storage protection only. The valid unstreamed state marker does not prove physical tree destruction.",
+    "mode": "probe",
+    "old_generation": "ecology-r4.1",
+    "pid": 21688,
+    "samples": [
+      {
+        "hashes": {
+          "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+        },
+        "last_save_error": 0,
+        "main_physics_active": true,
+        "physics_frame": 5,
+        "player_physics_active": true,
+        "protected_reason": "environment_generation_mismatch",
+        "save_clock": 0.05,
+        "stage": "after_ready",
+        "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+        "time": 0.05,
+        "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+      },
+      {
+        "hashes": {
+          "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+        },
+        "last_save_error": 44,
+        "main_physics_active": true,
+        "physics_frame": 795,
+        "player_physics_active": true,
+        "protected_reason": "environment_generation_mismatch",
+        "save_clock": 1.21666666666667,
+        "stage": "after_real_auto_save",
+        "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+        "time": 13.2166666666669,
+        "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+      },
+      {
+        "hashes": {
+          "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+        },
+        "last_save_error": 44,
+        "main_physics_active": true,
+        "physics_frame": 795,
+        "player_physics_active": true,
+        "protected_reason": "environment_generation_mismatch",
+        "save_clock": 1.21666666666667,
+        "stage": "after_explicit_save",
+        "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+        "time": 13.2166666666669,
+        "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+      },
+      {
+        "hashes": {
+          "backup": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "main": "bc8ac9912e32d60c4dc00ecdf55f34042aa088065186bb0b115fe334b35bd1d9",
+          "mirror": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "mirror_backup": "cfc27fc7c5df4fe7e1eafab205c54d35e4ce80788649882eea0774622fc0a17f",
+          "valid_current_source": "60525323452bb1c156a3859ed66522e95e74ae66b8e8da0a169183659941f5a6"
+        },
+        "last_save_error": 44,
+        "main_physics_active": true,
+        "physics_frame": 813,
+        "player_physics_active": true,
+        "protected_reason": "environment_generation_mismatch",
+        "save_clock": 1.53333333333333,
+        "stage": "after_real_f5",
+        "state_error": "environment_generation_mismatch: saved=ecology-r4.1 required=ecology-r4.2; original preserved",
+        "time": 13.5333333333336,
+        "visible_text": "星渊行星 · 半径120km · 境界 R6\n步行 · 0米/秒 · 离地 0.0米\n生命 155520 · 灵息 100% · 羽片 217\n按 G 起飞\n裂翼兽 100% · 裂脊兽 100% · 地标 1/10\n下个地标：失真的求救信号 · 北 519米\n环境未恢复 · 保存受保护\n点击游戏画面恢复控制 · WASD 移动 · Esc 释放鼠标\n"
+      }
+    ],
+    "slot": "user://martial_r4_verify_generation_20260929T172358Z_2c5ddd325999.json"
+  },
+  "passed": true
+}

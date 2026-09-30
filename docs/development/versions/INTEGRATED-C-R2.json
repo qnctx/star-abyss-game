@@ -1,0 +1,43 @@
+{
+  "version": "DEV-C-R2",
+  "testWorktree": "c4d1",
+  "integratedAt": "2026-09-12T08:52:36.328Z",
+  "files": [
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\playable\\src\\world-director\\definitions.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\world-director\\definitions.mjs",
+      "sha256": "3d208976f511b0ec4686d725a502f412950fd08593de4a4f9048f99a9ab060ef"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\playable\\src\\world-director\\director.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\world-director\\director.mjs",
+      "sha256": "26110459c1fe4a24da3331e9d006118dfabb451fa8481a9cb7e485495d0cf358"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\playable\\src\\world-director\\rng.mjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\world-director\\rng.mjs",
+      "sha256": "3460f390a4ea4118542788f5afa7407e5746ea2839a47bf32f4040b0e7f8ed02"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\playable\\src\\world-director\\verification\\replay-r1.cjs",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\src\\world-director\\verification\\replay-r1.cjs",
+      "sha256": "2fc7fd84486c822e019ea3abd489489bf95ae843b1eb8c2df455b6e922d35b6a"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\playable\\tests\\world-director.test.js",
+      "target": "E:\\myProject\\star-abyss-game\\playable\\tests\\world-director.test.js",
+      "sha256": "5e1826b057fd9beedcb2a9dad0ae25358c0d3a4038eb3e64acd721ad0c5fc55e"
+    },
+    {
+      "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\c0e3\\star-abyss-game\\artifacts\\deliveries\\DEV-C-R2\\docs\\development\\reports\\DEV-C.md",
+      "target": "E:\\myProject\\star-abyss-game\\docs\\development\\reports\\DEV-C.md",
+      "sha256": "58db20f6847f4270e93b74a3434ea9c46f19040d6db4f688c9c2107faf1f20b8"
+    },
+    {
+      "source": "C:/Users/HUAWEI/.codex/worktrees/c4d1/star-abyss-game/docs/development/reports/TEST-C-R2.md",
+      "target": "E:/myProject/star-abyss-game/docs/development/reports/TEST-C-R2.md",
+      "sha256": "c80cbb19ed05dd5ad6d757d9ce34a2eb25cc4ec17b9a59c9c20161d89c9da2dd"
+    }
+  ],
+  "boundary": "module only; no scene or root transaction integration"
+}

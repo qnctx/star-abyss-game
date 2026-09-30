@@ -1,5 +1,7 @@
 # 🪐 星渊迷航 (Star Abyss Voyage) — Game Design Document
 
+> 历史 GDD：包含早期塔防/生存与独立版本设想，不作为当前浏览器版开发依据。未来开发入口为 [科技修真 D3](cultivation/README.md)，当前实现见 [HTML5 说明](HTML5_PROTOTYPE.md)。保留本文用于版本追溯，不据此删除独立 Godot 内容。
+
 > **一句话定位：** 深海迷航 × 塔防 × 星空——在毒气星球上，氧气就是生命，塔防保卫基地，探索解开谜团，最终逃离深渊。
 
 ---

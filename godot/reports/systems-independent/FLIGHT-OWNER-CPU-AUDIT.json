@@ -1,0 +1,597 @@
+{
+  "descent-r1/runtime.json": {
+    "report_sha256": "f5242efd0934bf17dd664adca5141310d0a252af6fcc8862e850b07ddbdfb09e",
+    "keys": [
+      "cadence_frames",
+      "checks",
+      "failure_events",
+      "failures",
+      "frames",
+      "landing_events",
+      "max_delta",
+      "min_delta",
+      "sim_s",
+      "source_sha256_end",
+      "source_sha256_start",
+      "states",
+      "wall_s",
+      "warmup_frames"
+    ],
+    "hash_count": 16,
+    "hashes_equal": true,
+    "current_mismatches": [],
+    "summary": {
+      "cadence_frames": 1173,
+      "checks": [
+        {
+          "detail": "{ \"frame\": 287, \"sim_s\": 14.1166666666667, \"agl\": 96.5703125, \"radial_speed\": -65.0000762939453, \"tangent_speed\": 0.00007282041042, \"energy\": 99.580000000002, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.81999999999124, \"c_held\": true, \"shift_held\": false, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/c-100m.png\", \"image_ok\": true }",
+          "name": "c reaches and brakes at 100m",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 329, \"sim_s\": 16.2166666666668, \"agl\": 24.8515625, \"radial_speed\": -12.8125152587891, \"tangent_speed\": 0.00014485919382, \"energy\": 99.5170000000023, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.03680710946166, \"c_held\": true, \"shift_held\": false }",
+          "name": "c slows through 25m",
+          "pass": true
+        },
+        {
+          "detail": "min=0.0 final=0.0",
+          "name": "c lands dry with no penetration",
+          "pass": true
+        },
+        {
+          "detail": "[]",
+          "name": "c ordinary descent never triggers strike",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 703, \"sim_s\": 34.9166666666668, \"agl\": 94.078125, \"radial_speed\": -117.031394958496, \"tangent_speed\": 0.00005778670311, \"energy\": 95.6545000000016, \"flight_active\": true, \"boosting\": true, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.99999987563036, \"c_held\": true, \"shift_held\": true, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/shift-c-100m.png\", \"image_ok\": true }",
+          "name": "shift-c reaches and brakes at 100m",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 727, \"sim_s\": 36.1166666666668, \"agl\": 24.1640625, \"radial_speed\": -20.4687767028809, \"tangent_speed\": 0.00024496015976, \"energy\": 93.8185000000017, \"flight_active\": true, \"boosting\": true, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.99999999990715, \"c_held\": true, \"shift_held\": true }",
+          "name": "shift-c slows through 25m",
+          "pass": true
+        },
+        {
+          "detail": "min=0.0 final=0.0",
+          "name": "shift-c lands dry with no penetration",
+          "pass": true
+        },
+        {
+          "detail": "[]",
+          "name": "shift-c ordinary descent never triggers strike",
+          "pass": true
+        },
+        {
+          "detail": "shift=2.64999999999985 regular=4.35000000000006",
+          "name": "Shift+C reaches 100m sooner",
+          "pass": true
+        },
+        {
+          "detail": "agl=22.0",
+          "name": "dry R6 strike arms at real loaded height",
+          "pass": true
+        },
+        {
+          "detail": "[{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }] []",
+          "name": "strike emits one valid physical dry contact",
+          "pass": true
+        },
+        {
+          "detail": "[{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }]",
+          "name": "contact signal does not repeat",
+          "pass": true
+        },
+        {
+          "detail": "[{ \"id\": 12002, \"reason\": \"test early cancel\", \"frame\": 911 }] [{ \"id\": 12001, \"point\": \"(0.0, 0.0, 190.0004)\", \"normal\": \"(0.0, 1.0, 0.0)\", \"speed\": 18.0, \"frame\": 878 }]",
+          "name": "early cancel emits failure without contact",
+          "pass": true
+        },
+        {
+          "detail": "prepared=true agl=999.998718261719 speed=-999.999938964844",
+          "name": "1km/s incoming descent starts from loaded 1000m pose",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 1021, \"sim_s\": 50.8166666666659, \"agl\": 95.265625, \"radial_speed\": -65.0000762939453, \"tangent_speed\": 0.0002328811388, \"energy\": 99.8590000000007, \"flight_active\": true, \"boosting\": false, \"strike_active\": false, \"pose_mode\": \"dive\", \"pose_weight\": 0.81999999999954, \"c_held\": true, \"shift_held\": false, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/fast-c-100m.png\", \"image_ok\": true }",
+          "name": "1km/s approach brakes before 100m",
+          "pass": true
+        },
+        {
+          "detail": "minimum=0.0 final=0.0",
+          "name": "1km/s approach lands without terrain penetration or strike",
+          "pass": true
+        },
+        {
+          "detail": "",
+          "name": "relevant sources stayed frozen",
+          "pass": true
+        },
+        {
+          "detail": "settled=1173 warmup=7 delta=0.05..0.05",
+          "name": "real 20Hz physics callback and time scale",
+          "pass": true
+        }
+      ],
+      "failure_events": [
+        {
+          "frame": 911,
+          "id": 12002,
+          "reason": "test early cancel"
+        }
+      ],
+      "failures": [],
+      "frames": 1180,
+      "landing_events": [
+        {
+          "frame": 878,
+          "id": 12001,
+          "normal": "(0.0, 1.0, 0.0)",
+          "point": "(0.0, 0.0, 190.0004)",
+          "speed": 18.0
+        }
+      ],
+      "max_delta": 0.05,
+      "min_delta": 0.05,
+      "sim_s": 58.7666666666655,
+      "states": {
+        "c-100m": {
+          "agl": 96.5703125,
+          "boosting": false,
+          "c_held": true,
+          "energy": 99.580000000002,
+          "flight_active": true,
+          "frame": 287,
+          "image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/c-100m.png",
+          "image_ok": true,
+          "pose_mode": "dive",
+          "pose_weight": 0.819999999991243,
+          "radial_speed": -65.0000762939453,
+          "shift_held": false,
+          "sim_s": 14.1166666666667,
+          "strike_active": false,
+          "tangent_speed": 7.28204104234464e-05
+        },
+        "c-25m": {
+          "agl": 24.8515625,
+          "boosting": false,
+          "c_held": true,
+          "energy": 99.5170000000023,
+          "flight_active": true,
+          "frame": 329,
+          "pose_mode": "dive",
+          "pose_weight": 0.0368071094616613,
+          "radial_speed": -12.8125152587891,
+          "shift_held": false,
+          "sim_s": 16.2166666666668,
+          "strike_active": false,
+          "tangent_speed": 0.000144859193824232
+        },
+        "c-landed": {
+          "agl": 0.0,
+          "boosting": false,
+          "c_held": false,
+          "energy": 99.5445000000031,
+          "flight_active": false,
+          "frame": 445,
+          "pose_mode": "ground",
+          "pose_weight": 9.26713533573113e-17,
+          "radial_speed": 0.0,
+          "shift_held": false,
+          "sim_s": 22.0166666666668,
+          "strike_active": false,
+          "tangent_speed": 0.0
+        },
+        "c-start": {
+          "agl": 371.2734375,
+          "boosting": false,
+          "c_held": false,
+          "energy": 99.7105000000014,
+          "flight_active": true,
+          "frame": 200,
+          "pose_mode": "hover",
+          "pose_weight": 7.73733730825435e-06,
+          "radial_speed": 0.0,
+          "shift_held": false,
+          "sim_s": 9.76666666666667,
+          "strike_active": false,
+          "tangent_speed": 0.0
+        },
+        "fast-c-100m": {
+          "agl": 95.265625,
+          "boosting": false,
+          "c_held": true,
+          "energy": 99.8590000000007,
+          "flight_active": true,
+          "frame": 1021,
+          "image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/fast-c-100m.png",
+          "image_ok": true,
+          "pose_mode": "dive",
+          "pose_weight": 0.819999999999536,
+          "radial_speed": -65.0000762939453,
+          "shift_held": false,
+          "sim_s": 50.8166666666659,
+          "strike_active": false,
+          "tangent_speed": 0.000232881138799712
+        },
+        "shift-c-100m": {
+          "agl": 94.078125,
+          "boosting": true,
+          "c_held": true,
+          "energy": 95.6545000000016,
+          "flight_active": true,
+          "frame": 703,
+          "image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/shift-c-100m.png",
+          "image_ok": true,
+          "pose_mode": "dive",
+          "pose_weight": 0.99999987563036,
+          "radial_speed": -117.031394958496,
+          "shift_held": true,
+          "sim_s": 34.9166666666668,
+          "strike_active": false,
+          "tangent_speed": 5.77867031097412e-05
+        },
+        "shift-c-25m": {
+          "agl": 24.1640625,
+          "boosting": true,
+          "c_held": true,
+          "energy": 93.8185000000017,
+          "flight_active": true,
+          "frame": 727,
+          "pose_mode": "dive",
+          "pose_weight": 0.999999999907147,
+          "radial_speed": -20.4687767028809,
+          "shift_held": true,
+          "sim_s": 36.1166666666668,
+          "strike_active": false,
+          "tangent_speed": 0.000244960159761831
+        },
+        "shift-c-landed": {
+          "agl": 0.0,
+          "boosting": false,
+          "c_held": false,
+          "energy": 86.3965000000021,
+          "flight_active": false,
+          "frame": 825,
+          "pose_mode": "ground",
+          "pose_weight": 0.740818220681718,
+          "radial_speed": -2.22885731204769e-07,
+          "shift_held": false,
+          "sim_s": 41.0166666666665,
+          "strike_active": false,
+          "tangent_speed": 0.000140769931022078
+        },
+        "shift-c-start": {
+          "agl": 375.7734375,
+          "boosting": false,
+          "c_held": false,
+          "energy": 99.7090000000014,
+          "flight_active": true,
+          "frame": 650,
+          "pose_mode": "hover",
+          "pose_weight": 7.73733739566515e-06,
+          "radial_speed": 0.0,
+          "shift_held": false,
+          "sim_s": 32.266666666667,
+          "strike_active": false,
+          "tangent_speed": 0.0
+        },
+        "strike-contact": {
+          "agl": 0.0,
+          "boosting": false,
+          "c_held": false,
+          "energy": 99.9355000000003,
+          "flight_active": false,
+          "frame": 879,
+          "image": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/descent-r1/strike-contact.png",
+          "image_ok": true,
+          "pose_mode": "ground",
+          "pose_weight": 0.139208119489581,
+          "radial_speed": 3.22143932862673e-07,
+          "shift_held": false,
+          "sim_s": 43.7166666666663,
+          "strike_active": false,
+          "tangent_speed": 0.00431395089253783
+        }
+      },
+      "wall_s": 62.326,
+      "warmup_frames": 7
+    }
+  },
+  "flight-pose-r1/runtime.json": {
+    "report_sha256": "32e97f038a64a4e031f6c15ddbaead5a7d215e161b2a3a59a9d1d9449430e2a5",
+    "keys": [
+      "checks",
+      "failures",
+      "frames",
+      "max_delta",
+      "min_delta",
+      "sim_s",
+      "snapshots",
+      "source_sha256_end",
+      "source_sha256_start",
+      "wall_s"
+    ],
+    "hash_count": 17,
+    "hashes_equal": true,
+    "current_mismatches": [],
+    "summary": {
+      "checks": [
+        {
+          "detail": "",
+          "name": "normal product scene and player physics",
+          "pass": true
+        },
+        {
+          "detail": "903.0",
+          "name": "G reaches safe low flight altitude",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 979, \"sim_s\": 16.316666666667, \"wall_s\": 18.958, \"agl\": 923.4375, \"energy\": 99.5139999999977, \"tangent_speed\": 0.0, \"radial_speed\": 0.0, \"flight_active\": true, \"boosting\": false, \"w_event_held\": false, \"shift_event_held\": false, \"mode\": \"hover\", \"weight\": 0.00000057104136, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, 0.0, 0.0)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/hover-low.png\", \"image_ok\": true }",
+          "name": "stationary hover may stand",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 1221, \"sim_s\": 20.3500000000001, \"wall_s\": 22.992, \"agl\": 889.315498900193, \"energy\": 99.3929999999971, \"tangent_speed\": 420.005706787109, \"radial_speed\": 0.1969096660614, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": false, \"mode\": \"cruise\", \"weight\": 0.5499999998981, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(-0.0, -0.007165, -0.999974)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-low.png\", \"image_ok\": true }",
+          "name": "ordinary W cruise keeps forward travel pose",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 1228, \"sim_s\": 20.4666666666668, \"wall_s\": 23.134, \"agl\": 921.449316575551, \"energy\": 94.3894999999971, \"tangent_speed\": 419.998352050781, \"radial_speed\": 0.196857213974, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": false, \"mode\": \"cruise\", \"weight\": 0.5499999999494, \"clip\": \"air_cast_martial_fist\", \"cast\": true, \"pitch\": 0.0, \"input\": \"(-0.0, -0.007165, -0.999974)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-low.png\", \"image_ok\": true }",
+          "name": "R cast interrupts flight pose",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 1357, \"sim_s\": 22.6166666666667, \"wall_s\": 25.442, \"agl\": 910.1800246973, \"energy\": 94.3249999999968, \"tangent_speed\": 420.007537841797, \"radial_speed\": -0.02108287811279, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": false, \"mode\": \"cruise\", \"weight\": 0.55, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, -0.014458, -0.999896)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cast-return-low.png\", \"image_ok\": true }",
+          "name": "cast end restores moving flight pose",
+          "pass": true
+        },
+        {
+          "detail": "1919.95031198634",
+          "name": "long boost route starts above terrain relief",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 2408, \"sim_s\": 40.1333333333323, \"wall_s\": 43.51, \"agl\": 1863.75268554688, \"energy\": 89.2744999999958, \"tangent_speed\": 600.000183105469, \"radial_speed\": -0.09273910522461, \"flight_active\": true, \"boosting\": true, \"w_event_held\": true, \"shift_event_held\": true, \"mode\": \"accelerate\", \"weight\": 0.99999999370669, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, -0.030314, -0.99954)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/boost-low.png\", \"image_ok\": true }",
+          "name": "Shift accelerates into authored boost",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 5519, \"sim_s\": 91.9833333333294, \"wall_s\": 132.854, \"agl\": 1525.10559082031, \"energy\": 9.99400000000027, \"tangent_speed\": 586.068908691406, \"radial_speed\": 0.06884765625, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": true, \"mode\": \"cruise\", \"weight\": 0.91842883888509, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.000003, -0.28085, -0.959752)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/energy-boost-cutoff.png\", \"image_ok\": true }",
+          "name": "energy naturally cancels boost while input remains held",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 5566, \"sim_s\": 92.7666666666627, \"wall_s\": 133.64, \"agl\": 1544.17639160156, \"energy\": 9.97050000000024, \"tangent_speed\": 419.890380859375, \"radial_speed\": 0.02089691162109, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": true, \"mode\": \"cruise\", \"weight\": 0.55335096238192, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.000003, -0.283604, -0.958942)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/energy-after-threshold.png\", \"image_ok\": true }",
+          "name": "movement stays pitched after boost energy limit",
+          "pass": true
+        },
+        {
+          "detail": "110.166666666662",
+          "name": "70 second hold used normal physics time",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 7863, \"sim_s\": 131.049999999996, \"wall_s\": 173.039, \"agl\": 10037.30078125, \"energy\": 9.25049999999936, \"tangent_speed\": 0.51021629571915, \"radial_speed\": 2154.54467773438, \"flight_active\": true, \"boosting\": false, \"w_event_held\": false, \"shift_event_held\": false, \"mode\": \"ascend\", \"weight\": 0.42, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(-0.000021, 0.954883, -0.296981)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/ascent-high.png\", \"image_ok\": true }",
+          "name": "G reaches high altitude with radial ascent pose",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 8556, \"sim_s\": 142.600000000006, \"wall_s\": 184.588, \"agl\": 14866.3349609375, \"energy\": 8.90399999999894, \"tangent_speed\": 3359.98071289063, \"radial_speed\": -0.76171875, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": false, \"mode\": \"cruise\", \"weight\": 0.54999999997934, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.000005, -0.368653, -0.929567)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/cruise-high.png\", \"image_ok\": true }",
+          "name": "high altitude W remains in cruise",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 8683, \"sim_s\": 144.716666666674, \"wall_s\": 186.705, \"agl\": 13863.296875, \"energy\": 8.84199999999886, \"tangent_speed\": 2675.6064453125, \"radial_speed\": -978.455627441406, \"flight_active\": true, \"boosting\": false, \"w_event_held\": true, \"shift_event_held\": false, \"mode\": \"dive\", \"weight\": 0.81999830081614, \"clip\": \"boost\", \"cast\": false, \"pitch\": -0.65, \"input\": \"(0.000017, -0.876602, -0.481217)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/mouse-dive-high.png\", \"image_ok\": true }",
+          "name": "viewport pitch produces radial dive pose",
+          "pass": true
+        },
+        {
+          "detail": "{ \"frame\": 8985, \"sim_s\": 149.750000000011, \"wall_s\": 191.736, \"agl\": 13329.916015625, \"energy\": 8.69299999999868, \"tangent_speed\": 0.0, \"radial_speed\": 0.0, \"flight_active\": true, \"boosting\": false, \"w_event_held\": false, \"shift_event_held\": false, \"mode\": \"hover\", \"weight\": 0.00000000015474, \"clip\": \"boost\", \"cast\": false, \"pitch\": 0.0, \"input\": \"(0.0, 0.0, 0.0)\", \"mouse_mode\": 2, \"image\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/flight-pose-r1/dive-release-high.png\", \"image_ok\": true }",
+          "name": "release and level return toward hover",
+          "pass": true
+        },
+        {
+          "detail": "",
+          "name": "sources frozen during product run",
+          "pass": true
+        },
+        {
+          "detail": "0.01666666666667..0.01666666666667",
+          "name": "normal physics delta",
+          "pass": true
+        }
+      ],
+      "failures": [],
+      "frames": 8991,
+      "max_delta": 0.0166666666666667,
+      "min_delta": 0.0166666666666667,
+      "sim_s": 149.850000000011,
+      "wall_s": 191.928
+    }
+  },
+  "flight-pose-r1/product-flight-current.json": {
+    "report_sha256": "bbbe4302fada1a5e59b42e6727d31ca16006d73e575aa3dfae97132d112c98ab",
+    "keys": [
+      "checks",
+      "failures",
+      "milestones",
+      "orbit_capture",
+      "passed",
+      "source_sha256_end",
+      "source_sha256_start",
+      "timing",
+      "total"
+    ],
+    "hash_count": 12,
+    "hashes_equal": true,
+    "current_mismatches": [],
+    "summary": {
+      "checks": [
+        {
+          "detail": "",
+          "name": "normal scene physics remains active",
+          "pass": true
+        },
+        {
+          "detail": "{ \"ready\": true, \"point\": (0.0, 0.0, 190.0), \"normal\": (0.0, 1.0, 0.0), \"agl\": 0.0, \"water_depth\": 0.0, \"spacing\": 10.0 }",
+          "name": "normal spawn has physical ground",
+          "pass": true
+        },
+        {
+          "detail": "active=true agl=1.7109375",
+          "name": "injected G event reaches normal player input",
+          "pass": true
+        },
+        {
+          "detail": "agl=125039.192318507 elapsed=76.2833333333303 energy=97.7114999999891",
+          "name": "normal G flight reaches whole-globe altitude",
+          "pass": true
+        },
+        {
+          "detail": "",
+          "name": "normal scene saves orbital canonical position",
+          "pass": true
+        },
+        {
+          "detail": "far=365039.03125",
+          "name": "normal orbital camera has full-globe far plane",
+          "pass": true
+        },
+        {
+          "detail": "{ \"path\": \"C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/planet-native-player/product-orbit-final.png\", \"saved\": true, \"width\": 1280, \"height\": 720, \"player_pitch\": -1.35, \"mouse_mode\": 2, \"agl\": 125151.193930842, \"wall_s\": 79.088 }",
+          "name": "normal Player orbital viewport screenshot saved",
+          "pass": true
+        },
+        {
+          "detail": "radial=0.0 agl=136439.136808085",
+          "name": "release G brakes climb",
+          "pass": true
+        },
+        {
+          "detail": "agl=0.0 min=0.0",
+          "name": "normal C flight brakes and lands on terrain",
+          "pass": true
+        },
+        {
+          "detail": "unready=0",
+          "name": "normal route retains loaded collision",
+          "pass": true
+        },
+        {
+          "detail": "delta=0.01666666666667..0.01666666666667",
+          "name": "normal engine time scale and physics delta",
+          "pass": true
+        },
+        {
+          "detail": "",
+          "name": "source files unchanged during full run",
+          "pass": true
+        }
+      ],
+      "failures": [],
+      "milestones": {
+        "10km": {
+          "agl": 10006.609375,
+          "c_event_held": false,
+          "energy": 98.751499999994,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 2497,
+          "radial_speed": 2143.5966796875,
+          "sim_s": 41.6166666666656,
+          "unready_frames": 0,
+          "wall_s": 44.289
+        },
+        "2km": {
+          "agl": 2001.2578125,
+          "c_event_held": false,
+          "energy": 99.2244999999963,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 1551,
+          "radial_speed": 90.000114440918,
+          "sim_s": 25.8499999999998,
+          "unready_frames": 0,
+          "wall_s": 28.526
+        },
+        "coast_braked": {
+          "agl": 136439.136808085,
+          "c_event_held": false,
+          "energy": 97.4099999999876,
+          "flight_active": true,
+          "g_event_held": false,
+          "mouse_mode": 2,
+          "physics_frames": 5180,
+          "radial_speed": 0.0,
+          "sim_s": 86.3333333333297,
+          "unready_frames": 0,
+          "wall_s": 88.987
+        },
+        "globe_view": {
+          "agl": 125039.192318507,
+          "c_event_held": false,
+          "energy": 97.7114999999891,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 4577,
+          "radial_speed": 3360.00415039063,
+          "sim_s": 76.2833333333303,
+          "unready_frames": 0,
+          "wall_s": 78.954
+        },
+        "landed": {
+          "agl": 0.0,
+          "c_event_held": false,
+          "energy": 94.4619999999736,
+          "flight_active": false,
+          "g_event_held": false,
+          "mouse_mode": 2,
+          "physics_frames": 11076,
+          "radial_speed": -1.24780171972816e-07,
+          "sim_s": 184.600000000039,
+          "unready_frames": 0,
+          "wall_s": 188.767
+        },
+        "launched": {
+          "agl": 1.7109375,
+          "c_event_held": false,
+          "energy": 99.997,
+          "flight_active": true,
+          "g_event_held": true,
+          "mouse_mode": 2,
+          "physics_frames": 6,
+          "radial_speed": 16.406270980835,
+          "sim_s": 0.1,
+          "unready_frames": 0,
+          "wall_s": 1.419
+        }
+      },
+      "orbit_capture": {
+        "agl": 125151.193930842,
+        "height": 720,
+        "mouse_mode": 2,
+        "path": "C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/godot/reports/planet-native-player/product-orbit-final.png",
+        "player_pitch": -1.35,
+        "saved": true,
+        "wall_s": 79.088,
+        "width": 1280
+      },
+      "passed": 12,
+      "timing": {
+        "elapsed_delta": 184.600000000039,
+        "frames": 11076,
+        "max_delta": 0.0166666666666667,
+        "min_delta": 0.0166666666666667,
+        "time_scale": 1.0,
+        "wall_s": 188.77
+      },
+      "total": 12
+    }
+  }
+}

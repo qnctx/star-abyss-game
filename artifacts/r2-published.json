@@ -1,0 +1,583 @@
+{
+  "at": "2026-09-25T10:33:58.095Z",
+  "source": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game",
+  "destination": "E:/myProject/star-abyss-game",
+  "files": [
+    {
+      "file": "playable/src/avatar.mjs",
+      "sourceSHA": "ec50db0e1c5f2258489bc90b9f56f40f21a7931dd35911cda3aaa7e97b8ab6fa",
+      "destinationSHA": "fb60f80dc98d914f41c188e7b9e9a13d969d7837a8015862a3661ab16b5aedee",
+      "baseline": "fb60f80dc98d914f41c188e7b9e9a13d969d7837a8015862a3661ab16b5aedee",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/camp-v2/activity.mjs",
+      "sourceSHA": "5a4580be1a9a3daff7eda1a157c98ae79ddae4e4a83c171cb6433da8a6c89556",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/camp-v2/layout.mjs",
+      "sourceSHA": "20944636a713a8b0b3e45b6724ac15fc71bd692d7d35a1416554ec6d37d55960",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/camp-v2/scene.mjs",
+      "sourceSHA": "615939ed1dbe444df8529dbc0f9a74888377576d548ec296d3b4d9e294e934f5",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/expedition-runtime/index.mjs",
+      "sourceSHA": "8ec3ac4501bec3178315fd1883ac3df69554603ab3f7f86dc20d70cdcebc38af",
+      "destinationSHA": "bdbf83a92747344eb44b17c693b3d778badf5d1b89e915c84d8c930e5cc3d85b",
+      "baseline": "bdbf83a92747344eb44b17c693b3d778badf5d1b89e915c84d8c930e5cc3d85b",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/flight-hud.mjs",
+      "sourceSHA": "3ab0d109bb4d243d9688edb2c063426fa4067f36783612234e857272d0c1cfab",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/foundation/camp-data.mjs",
+      "sourceSHA": "d312f05d1cd40dc75d4552d303ed4f6f1c813ecf760f176ff87add5ded217bdd",
+      "destinationSHA": "8be84e85e9254b95abe832c7c6c816ad593913115cb445261c0c79da65abc83d",
+      "baseline": "8be84e85e9254b95abe832c7c6c816ad593913115cb445261c0c79da65abc83d",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/foundation/camp-scene.mjs",
+      "sourceSHA": "978ac2b9ef8125c73843a03488a0c7c1b4fa10d8963bb65e55249191b162e983",
+      "destinationSHA": "8181f8a8f94b305105d18b59d996b06a2554a862cae116cf6e1352b530ebe2d5",
+      "baseline": "8181f8a8f94b305105d18b59d996b06a2554a862cae116cf6e1352b530ebe2d5",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/foundation/camp-ui.mjs",
+      "sourceSHA": "88e0eeb38c934e637c0d5ee1c4e6affb8319d7f8c25282e36414086a4d69d461",
+      "destinationSHA": "d29e30f741490bbc6b879c3b20f1f04385c45704524ea4912fad66b7d55ff14b",
+      "baseline": "d29e30f741490bbc6b879c3b20f1f04385c45704524ea4912fad66b7d55ff14b",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/layout.mjs",
+      "sourceSHA": "a1c37a96c14b80d9e533d1526e533c0492cc8e1ad021e2403315b605ab7d19cb",
+      "destinationSHA": "3857d633f600172811e96a9e3c398298fbc17f808cb96cc6d038d7c56d75f49d",
+      "baseline": "3857d633f600172811e96a9e3c398298fbc17f808cb96cc6d038d7c56d75f49d",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/main.mjs",
+      "sourceSHA": "c1c831a5b184a153ce342ac53084f13391790a44dd78695ca667ce4c6ca10a97",
+      "destinationSHA": "9d969bc87636b3d99156388a76c27ebc7ac105bc0064f5aa08e82e2f9646c039",
+      "baseline": "9d969bc87636b3d99156388a76c27ebc7ac105bc0064f5aa08e82e2f9646c039",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/mobility.mjs",
+      "sourceSHA": "717f8ebbf84a25d564b544c86426d6c81176ea36d65220b361bfc0124d71ee33",
+      "destinationSHA": "7364f0e27fda6c540eed9c29cefe7c2c42f17d19dfce49baecdaea31f3a1c535",
+      "baseline": "7364f0e27fda6c540eed9c29cefe7c2c42f17d19dfce49baecdaea31f3a1c535",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/planet/chunks.mjs",
+      "sourceSHA": "83f53b80bbda6052b241fb69731b44ca74a4490c4ee52cf1aaee7f86cd0b74b5",
+      "destinationSHA": "0a69872c61b5649e7f305a4d989b269eda83d0402dea53a9186ce9b1a941b3aa",
+      "baseline": "0a69872c61b5649e7f305a4d989b269eda83d0402dea53a9186ce9b1a941b3aa",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/planet/scene-adapter.mjs",
+      "sourceSHA": "77cd02337547f953bf5abced6be57d702cbce028d1ce44dcd770ef785af3b405",
+      "destinationSHA": "f80339cab71a5387cb81b210c04d0e74dcd19d6cac3970206c957d241d38cf3d",
+      "baseline": "f80339cab71a5387cb81b210c04d0e74dcd19d6cac3970206c957d241d38cf3d",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/planet-art/surface-material.mjs",
+      "sourceSHA": "9ceaf9d61b223131c7df20f877efe0925d696c24d146ede58314294f9876e496",
+      "destinationSHA": "10c4cc0b7f4b15e0ccf4a3103941de27bc269abd2812ef2ce95291c42a52ed42",
+      "baseline": "10c4cc0b7f4b15e0ccf4a3103941de27bc269abd2812ef2ce95291c42a52ed42",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/planet-gameplay/flight.mjs",
+      "sourceSHA": "993d1d64840480b4f812aea6c37875c8f958dc4ea06cd60421506a18afa4dacf",
+      "destinationSHA": "4b234b8b799491847f5e1f855c6f34f455b18ccb6c5f361a129764ef994c1ed0",
+      "baseline": "4b234b8b799491847f5e1f855c6f34f455b18ccb6c5f361a129764ef994c1ed0",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/planet-runtime.mjs",
+      "sourceSHA": "97f685f5285994df839058ad0bf807dab33241d1b41bc70598960e67ba657ebd",
+      "destinationSHA": "561733e63d62cd675a5740240d7e14f60853f52a88c58b0974b031af27644abf",
+      "baseline": "561733e63d62cd675a5740240d7e14f60853f52a88c58b0974b031af27644abf",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/data.mjs",
+      "sourceSHA": "3f9b2155df87b20ebc474828b4a41c5ef211066a10101eca92ad784e107cc97c",
+      "destinationSHA": "19053f2590731c9a094dfdb2e97602d8f7bcb5ba7a3df2e78b5577d7024cfddc",
+      "baseline": "19053f2590731c9a094dfdb2e97602d8f7bcb5ba7a3df2e78b5577d7024cfddc",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/npc-rig.mjs",
+      "sourceSHA": "a6838a55a6900442f8fc60fb32b2928909fcd8d3caa7fcdf299a6997768685cd",
+      "destinationSHA": "9a9a0e76b1e6c378fe9fb6a390d492f02ed8114e2c190d1272eca93f23e9134f",
+      "baseline": "9a9a0e76b1e6c378fe9fb6a390d492f02ed8114e2c190d1272eca93f23e9134f",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/runtime.mjs",
+      "sourceSHA": "98b678b1d97e155ff3562e88b09ab4c286559e54f9cc5402a700d86bd841947a",
+      "destinationSHA": "65c5c1f4d3c80c32d63a351925192e4058c3187d866c83266c9db908d0921f39",
+      "baseline": "65c5c1f4d3c80c32d63a351925192e4058c3187d866c83266c9db908d0921f39",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/scene.mjs",
+      "sourceSHA": "54af4cf6acf2a108be489a81b7ec4b5f0a0f2a7f0214e08dd040f22bfe55461d",
+      "destinationSHA": "3179c64be4250107b6819f4fe1b78e67cfb367bb3e724beaacdf4b77ff52037a",
+      "baseline": "3179c64be4250107b6819f4fe1b78e67cfb367bb3e724beaacdf4b77ff52037a",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/ui.mjs",
+      "sourceSHA": "9f975074df8ea63715d1d3075dc3f665db225f4165824292bcbdc4e025172f56",
+      "destinationSHA": "c18eb33d02240dc97ab158a584836b8fb04af673d03c6ef18b95ad43887430ae",
+      "baseline": "c18eb33d02240dc97ab158a584836b8fb04af673d03c6ef18b95ad43887430ae",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/yuan-ying-flight-pose.mjs",
+      "sourceSHA": "b187ea01d279c136eae4c102caa6015c2d0712f70ceb7fc7d613ea57a4af22c3",
+      "destinationSHA": "90d683a98a9b9e73f7b9cffda7051b1c2d11cc7a8282a2e76594954a39e251b6",
+      "baseline": "90d683a98a9b9e73f7b9cffda7051b1c2d11cc7a8282a2e76594954a39e251b6",
+      "conflict": false
+    },
+    {
+      "file": "playable/src/yuan-ying-flight-vfx.mjs",
+      "sourceSHA": "3a3931dcf2ad67b0bb0f9fb07432bc3abb394bc8682e401e064aee68a57c4a24",
+      "destinationSHA": "bd7cdaaf92257dbd03caf5f2c81e658c8165fcd84545fd309a6bc7a0d38446f8",
+      "baseline": "bd7cdaaf92257dbd03caf5f2c81e658c8165fcd84545fd309a6bc7a0d38446f8",
+      "conflict": false
+    },
+    {
+      "file": "playable/css/flight-hud.css",
+      "sourceSHA": "cbd8f3093208689b6ae3ef2d8d162cbdf2fa5bc48b9ffa85e49efbcff7821f55",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/css/game.css",
+      "sourceSHA": "8ccf25ffd269274801649392ca83fa3ce5fcea4b6d85829e50a437e4e39c9963",
+      "destinationSHA": "b757a42dcdc1955a785037ba9cd7e824e61dcbfa2dd0168f05c20f7d07620621",
+      "baseline": "b757a42dcdc1955a785037ba9cd7e824e61dcbfa2dd0168f05c20f7d07620621",
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/actors/camp-step.mjs",
+      "sourceSHA": "81453dee0f09b10f617737a4b615f828f0a5373d0c1378e0113a5f0e33753396",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/actors/npc-activity-source.blend",
+      "sourceSHA": "09bd45af05d5e19a454d6ab0438e60d8e0eff0dd7edda4f3e981eb2210be3396",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/command.blend",
+      "sourceSHA": "2e2d6d73c4586d75f3d1a661357e22d7c51800086c835d743f0cf0c03afa8279",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/command.glb",
+      "sourceSHA": "285f2baabf252b2b5946fb451ccf6e565f347d9b55139b45f0282904d957475c",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/manifest.json",
+      "sourceSHA": "277de7c19e944591f99f98aea0d24b2337716e2c1966a500d66cc4e9af17c871",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/medical.blend",
+      "sourceSHA": "0e532a3a760d10d967f5c4c21a9927b225a22614884fb2adc90b5cab103d8f20",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/medical.glb",
+      "sourceSHA": "039be2bf53a81f07f0d327c9ecc26200be5588e1439d1e9e3ba9b018cdc179d0",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/workshop.blend",
+      "sourceSHA": "9e4485667d4add59cf43b56d405b486aad87382f2dcb1102c2c351acea2fe12b",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/camp-v2/workshop.glb",
+      "sourceSHA": "8c7b659fed98e0b77e2eb1e46d143156105e1091311ace1dd4897be93c027293",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/flight-r2/flight-clips.json",
+      "sourceSHA": "66fe136671441554d7256a19be830f700a1b601e2ea9054de6ce4811ffbafe4c",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/flight-r2/flight-clips.mjs",
+      "sourceSHA": "e3b9466772b3ca60dee253edeec208da93989400dd33f00a7716f5ef2c17e936",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/assets/flight-r2/flight-r2.blend",
+      "sourceSHA": "94942b9a2ca03da036bdc18ba60e88649c651aed2ae2a852efc8c6e34c0c5a6f",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/camp-v2/actors/cpu-validation.json",
+      "sourceSHA": "0f33902e71655beddbd1999761a9ccf96b7d139fe52b1a306928138cbe0638c5",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/camp-v2/actors/short-step-preview.png",
+      "sourceSHA": "eaed0ea6d4081913f8d20d4b3077eb7b92d8dd1cd4f79d75dcf2ae0840f7b170",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/camp-v2/camp-blender-preview.png",
+      "sourceSHA": "63dde8ee6b38b706c8b308d92b0ce5525b82df1d519aeac170e196d4a2755dd6",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/camp-v2/verification.json",
+      "sourceSHA": "2fa892968886f57d17718518a276a289cb23898c9797ab9e6c127a7115f87d3e",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-blender-bank-right.png",
+      "sourceSHA": "6e63a0d9d2e3300b6adac966199eb9ce081012179e091c24bd107d75fdd53bea",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-blender-cruise.png",
+      "sourceSHA": "9c28b03257d241a4601c04905e28cb67486850a4dd118296475e157d8e43e8e6",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-blender-forward-clearance.png",
+      "sourceSHA": "510ee837a017e400f766f3553fd61f98879e044d5496eb95f356838cfa0a9a68",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-blender-hover.png",
+      "sourceSHA": "fd503b94bf9c1a4b8640774809104f1b0fc1f6b378a3f4c85449ccafe243b131",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-blender-land.png",
+      "sourceSHA": "f97f720ec3e5e1813a6539fafa6a283e4d317c103ff66804f14422be5fe7c178",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/art/flight-r2/flight-reference.png",
+      "sourceSHA": "302fd24789b969e975af0b2c8edf674359401015544dba8a5d62930e4bec81ee",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/camp-v2/actors/build_activity.py",
+      "sourceSHA": "3a136e19da561b8927bea03b209e3020c6f1e4e7aa65e62a23e70ba929d625ba",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/camp-v2/actors/verify_activity.mjs",
+      "sourceSHA": "89df4206cb88b9c9be25e4a615755c7c598a3abf62619ff94555a5dd77321d45",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/camp-v2/build_camp.py",
+      "sourceSHA": "11a42bc69102c8ffae18bef099dbe0c46952fb3639ad11a7a937851b8f15c489",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/camp-v2/render_camp.py",
+      "sourceSHA": "d1b3d8a20c5c8dc8e2dcd9014b2f382e309c61243075f759df260bbe3f795115",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/camp-v2/verify_camp.py",
+      "sourceSHA": "696a744d07ae5f0e1bed7da1fb9351ecc21ded47d32b9da59e7b7ce1c859ed26",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/flight-r2/build_flight.py",
+      "sourceSHA": "c5b50d5c9c97ed5bbd930dbdf34c1baebd7f4f28daf22136728b10e4e4159e84",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/flight-r2/render_flight.py",
+      "sourceSHA": "7958fb9ba0ba1eb98262afb373b0dffb937bc40a295c31eee28c0dd8a5100033",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "tools/art/flight-r2/verify-flight.mjs",
+      "sourceSHA": "358d796cf8238b1074af761424b81d92ad940a629b276da018568ddb57bf2e9b",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/CONTROLLER-TAKEOVER-R2.md",
+      "sourceSHA": "03dfeecf1aff1b0a469ae8412e8060d171915c6d43fb2bf5be04c634d82fd75c",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/USER-PLAYTEST-R2-IMPLEMENTATION.md",
+      "sourceSHA": "487b3f10380338741f85b20b2ecfb0e4da0bf409f22ca6158296abc6ca236716",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/PERFORMANCE-PLAYTEST-R2.md",
+      "sourceSHA": "e7a2f089c0d945c2d07fd66c8a13098ac3d82c48a9d71a1a2ae11513c10809da",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/PLAYABILITY-STATUS.md",
+      "sourceSHA": "0b117bca2ec2dca6db9545b2f30f5f7503050f18bd4d04675d993446eeab685d",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/CAMP-BLENDER-R2.md",
+      "sourceSHA": "42b8323409012c5187b631c51258867a6026e2eb05e13278857927634d8e64e8",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/FLIGHT-R2.md",
+      "sourceSHA": "bbb19f450eadd2c089c29a91319105e1601607069a49f24850625df5250d00fb",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/FLIGHT-ART-R2.md",
+      "sourceSHA": "b82782ac2bce187526305d323842674dbc7819347dda7601bb81d8a2bdd2b48c",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/NPC-DIALOG-R2.md",
+      "sourceSHA": "729505ec6a90c6723baf8d1eb673a9f3b11f5cfbb14079615e1b5e5b9e085909",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/NPC-ACTIVITY-ART-R2.md",
+      "sourceSHA": "3839959469a352eab474b825c60142c9bef458698153fa7b358099205b6be0cf",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/FLIGHT-HUD-R2.md",
+      "sourceSHA": "440b342a4d8b43fe4d80ebee57431b0aa9b504ddea4c27041729067731950395",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/CAMP-V2-R2.md",
+      "sourceSHA": "4ff4e680ec5f5e40832232696fdcd4dd90b64890a0024096abc48f659caacb41",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/game.js",
+      "sourceSHA": "c0a97648c61807ff35f3ea3883a7c0293dd1c581dbee74f3ee148324f6db4b87",
+      "destinationSHA": "ab12ece9e4f90d1846fdf9493d9600be3a98824333e173e8ddd991a1c6fa64e7",
+      "baseline": "ab12ece9e4f90d1846fdf9493d9600be3a98824333e173e8ddd991a1c6fa64e7",
+      "conflict": false
+    },
+    {
+      "file": "playable/checkpoint-worker.js",
+      "sourceSHA": "7339fa7445960efc946aaeb68c3117dfba6ec16d7fab423201ef00a8296087e3",
+      "destinationSHA": "407bf4a845d393e2cb70ea500b271034d4a5211161b2ae78c6763152bc9b7e55",
+      "baseline": "407bf4a845d393e2cb70ea500b271034d4a5211161b2ae78c6763152bc9b7e55",
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/planet-gameplay.test.mjs",
+      "sourceSHA": "c8be3789a85129838f5646cba9bea9a408235a2938fd4e7ddbbec1ac139abdb0",
+      "destinationSHA": "fbbb3e8b9e5027159d00ad7b8b2198ebfb880e9158bf7ee89ee76e333822f047",
+      "baseline": "fbbb3e8b9e5027159d00ad7b8b2198ebfb880e9158bf7ee89ee76e333822f047",
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/planet-gameplay-r2.test.mjs",
+      "sourceSHA": "7cfcbd434628c0c27216b1aef0a84620378a0e979821e97da6731e0e44108476",
+      "destinationSHA": "5c6a97526d9545c9a66b88930fd561f095f7629da28905bf6f50a2ba54bc124a",
+      "baseline": "5c6a97526d9545c9a66b88930fd561f095f7629da28905bf6f50a2ba54bc124a",
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/flight-r2.test.mjs",
+      "sourceSHA": "452b2a5cb1d643e15c3c536b5b8dff8a63ff62d39b8065f2b65601fcf712d20f",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/flight-hud-r2.test.mjs",
+      "sourceSHA": "a9ebe9558162376388961feb50d00b9b854806bcf2c62d3a1a70de7024bb9713",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/quests.test.mjs",
+      "sourceSHA": "8617ddf644848d405cdaccd9e217d5bb8ef2757bf3ebddbaa3d777c1ac428ae3",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/scene.test.mjs",
+      "sourceSHA": "5d740c7e8520b044c8aeb2cfd632f9e17a1b6a4fc2b7d911a4f082f6e917a887",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/progression-quests/dialog-layout.test.mjs",
+      "sourceSHA": "7ebb05e5659a81ff950291e1db592cc70d97687a667324b5329b4386c21f35c1",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/src/camp-v2/integration.test.mjs",
+      "sourceSHA": "ebffa2e25f4135e0c1b1f9b43610175971f89af96ede5407f7981c57eae2cdc5",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/planet-stream-budget-r2.test.mjs",
+      "sourceSHA": "a4363f5a3344a54276c7028d86d2b4511f853f54aec2af5762ec3b88e8153add",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "playable/tests/legacy-outer-grid-cache-r2.test.mjs",
+      "sourceSHA": "fd36e94ae12daecefa7e9a4bb8e2ba0be60da18a658dfcb3c981fafba87ff4eb",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/TERRAIN-STREAM-R2.md",
+      "sourceSHA": "416687c75475abe5a447b03cb9ba990bb7817572b28268cd512f71b92185ab87",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/reports/R2-BROWSER-ACCEPTANCE.md",
+      "sourceSHA": "f53d86410fc1c15ce5779419ec349c0285014ee12b15a7d171e07f7227686d7d",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    },
+    {
+      "file": "docs/development/reports/R2-INDEPENDENT-REVIEW.md",
+      "sourceSHA": "b7046c5beecd5fe2f4922abe2b665e13c96b0f1fda864377a69ca04f054fcc29",
+      "destinationSHA": null,
+      "baseline": null,
+      "conflict": false
+    }
+  ],
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\artifacts\\r2-release-backup-1790332438338",
+  "published": "2026-09-25T10:34:01.921Z"
+}

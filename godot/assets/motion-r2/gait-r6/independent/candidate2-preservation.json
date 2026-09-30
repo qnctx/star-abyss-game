@@ -1,0 +1,40 @@
+{
+  "method": "Independent semantic GLB comparison of raw accessor elements (excluding padding), all mesh attributes/index/morph data, skin joint order/inverse bind matrices, node rest TRS/hierarchy, textures/materials/images, and named animation channel/sampler data.",
+  "before": {
+    "path": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\assets\\motion-r2\\source\\gait-r6-before\\c2-motion-r2.glb",
+    "sha256": "942f372de11641e9c8189f2aef39ed68956e4eed1d54bd14243cb86f022e2430",
+    "counts": {
+      "animations": 29,
+      "meshes": 5,
+      "skins": 1,
+      "nodes": 57
+    }
+  },
+  "after": {
+    "path": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\godot\\assets\\motion-r2\\c2-motion-r2.glb",
+    "sha256": "9e65aa43ef2a925de92771cdba9680039ce24e842e1327cd34718a95f6d1da05",
+    "counts": {
+      "animations": 29,
+      "meshes": 5,
+      "skins": 1,
+      "nodes": 57
+    }
+  },
+  "changed_animations": [
+    "jog",
+    "sprint",
+    "walk"
+  ],
+  "unexpected_animation_changes": [],
+  "preserved": {
+    "meshes": true,
+    "skins": true,
+    "nodes": true,
+    "materials": true,
+    "textures": true,
+    "images": true
+  },
+  "missing_animations": [],
+  "added_animations": [],
+  "passed": true
+}

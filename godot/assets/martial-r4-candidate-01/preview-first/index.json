@@ -1,0 +1,77 @@
+{
+  "scope": "Offline C2 Cycles CPU supplemental pose study; not Godot default-camera or normal-speed acceptance",
+  "images": [
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.18,
+      "view": "back",
+      "path": "preview/cast_martial_break-18-back.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.18,
+      "view": "side",
+      "path": "preview/cast_martial_break-18-side.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.35,
+      "view": "back",
+      "path": "preview/cast_martial_break-35-back.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.35,
+      "view": "side",
+      "path": "preview/cast_martial_break-35-side.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.5,
+      "view": "back",
+      "path": "preview/cast_martial_break-50-back.png"
+    },
+    {
+      "clip": "cast_martial_break",
+      "normalized": 0.5,
+      "view": "side",
+      "path": "preview/cast_martial_break-50-side.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.26,
+      "view": "back",
+      "path": "preview/air_cast_martial_descent-26-back.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.26,
+      "view": "side",
+      "path": "preview/air_cast_martial_descent-26-side.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.5,
+      "view": "back",
+      "path": "preview/air_cast_martial_descent-50-back.png"
+    },
+    {
+      "clip": "air_cast_martial_descent",
+      "normalized": 0.5,
+      "view": "side",
+      "path": "preview/air_cast_martial_descent-50-side.png"
+    },
+    {
+      "clip": "cast_martial_landing",
+      "normalized": 0.18,
+      "view": "back",
+      "path": "preview/cast_martial_landing-18-back.png"
+    },
+    {
+      "clip": "cast_martial_landing",
+      "normalized": 0.18,
+      "view": "side",
+      "path": "preview/cast_martial_landing-18-side.png"
+    }
+  ]
+}

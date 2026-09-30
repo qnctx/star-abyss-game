@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "bundleSHA": "be66ae6085795db8c431c6f066c724e921f026b260f7c86fef15055b2a426c4b",
+  "backup": "C:\\Users\\HUAWEI\\.codex\\worktrees\\3ff0\\star-abyss-game\\artifacts\\r5-release-backup-1790427196437",
+  "files": [
+    "playable/game.js",
+    "playable/src/planet-gameplay/flight.mjs",
+    "playable/src/render-budget.mjs",
+    "playable/tests/render-budget.test.js",
+    "playable/tests/flight-descent-r5.test.mjs",
+    "playable/tests/planet-gameplay-r2.test.mjs",
+    "docs/development/FLIGHT-DESCENT-R5.md"
+  ],
+  "untouched": 414
+}

@@ -1,0 +1,83 @@
+{
+  "events": [
+    {
+      "attack": "left-jab",
+      "frame": 6,
+      "serial": 2,
+      "view": 0
+    },
+    {
+      "attack": "right-cross",
+      "frame": 14,
+      "serial": 3,
+      "view": 0
+    },
+    {
+      "attack": "rising-kick",
+      "frame": 24,
+      "serial": 4,
+      "view": 0
+    },
+    {
+      "attack": "left-jab",
+      "frame": 6,
+      "serial": 5,
+      "view": 1
+    },
+    {
+      "attack": "right-cross",
+      "frame": 14,
+      "serial": 6,
+      "view": 1
+    },
+    {
+      "attack": "rising-kick",
+      "frame": 24,
+      "serial": 7,
+      "view": 1
+    },
+    {
+      "attack": "left-jab",
+      "frame": 6,
+      "serial": 8,
+      "view": 2
+    },
+    {
+      "damage": 16500.0,
+      "frame": 10,
+      "hp": 294540.0,
+      "view": 2,
+      "visual_elapsed": 0.166666666666667,
+      "windup": 0.15
+    },
+    {
+      "attack": "right-cross",
+      "frame": 15,
+      "serial": 9,
+      "view": 2
+    },
+    {
+      "damage": 16500.0,
+      "frame": 21,
+      "hp": 278040.0,
+      "view": 2,
+      "visual_elapsed": 0.2,
+      "windup": 0.19
+    },
+    {
+      "attack": "rising-kick",
+      "frame": 27,
+      "serial": 10,
+      "view": 2
+    },
+    {
+      "damage": 24000.0,
+      "frame": 36,
+      "hp": 254040.0,
+      "view": 2,
+      "visual_elapsed": 0.3,
+      "windup": 0.27
+    }
+  ],
+  "scope": "Real Main attack entry, buffer and timers with frozen world physics; two stationary whiff views then one real Riftwing hit view. Creature AI/physics frozen; no claim of human input or movement acceptance."
+}

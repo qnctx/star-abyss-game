@@ -1,0 +1,187 @@
+ M .gitignore
+ M PROGRESS.md
+ M README.md
+ M docs/GAME_DESIGN_DOC.md
+ M docs/HTML5_PROTOTYPE.md
+ M docs/HTML5_VERIFICATION.md
+ M docs/HTML_GODOT_CONTRACT.md
+ M docs/REVIEW.md
+ M package.json
+ M playable/css/game.css
+ D playable/js/buildings.js
+ D playable/js/combat.js
+ D playable/js/config.js
+ D playable/js/guide.js
+ D playable/js/input.js
+ D playable/js/main.js
+ D playable/js/progression.js
+ D playable/js/renderer.js
+ D playable/js/rules.js
+ D playable/js/save.js
+ D playable/js/state.js
+ D playable/js/world.js
+ M playable/star-abyss.html
+ D playable/tests/logic.test.js
+ M playable/tests/star-abyss.spec.js
+ M src/scripts/game_manager.gd
+ M src/scripts/resource_node.gd
+ M src/test_runner.gd
+ M src/test_standalone.gd
+?? AGENTS.md
+?? artifacts/
+?? docs/3D_VFX_ENGINEERING_SPEC.md
+?? docs/C2_ASSET_PERFORMANCE.md
+?? docs/C2_REFERENCE_ACCEPTANCE.md
+?? docs/DASH_ENTRY_IMPLEMENTATION.md
+?? docs/DEVELOPMENT_MASTER_PLAN.md
+?? docs/DEVELOPMENT_ROADMAP.md
+?? docs/EVOLUTION_DESIGN_V1.md
+?? docs/FIRST_PERSON_EQUIPMENT.md
+?? docs/GAMEPLAY_TESTING.md
+?? docs/M0_3D_AUDIT.md
+?? docs/PERFORMANCE-R1.md
+?? docs/PLANETARY_EXPEDITION_DESIGN_DRAFT.md
+?? docs/PRONE_REDESIGN.md
+?? docs/PUBG_STYLE_CONTROLS.md
+?? docs/RIDER-ALIGNMENT-R1.md
+?? docs/SKILL_PROGRESSION_SPEC.md
+?? docs/VEHICLE_FIRST_PERSON.md
+?? docs/art/
+?? docs/cultivation/
+?? docs/development/
+?? docs/pet-assets/
+?? docs/test-lab/
+?? docs/ui-concepts/
+?? docs/ui-implementation/
+?? godot/
+?? package-lock.json
+?? playable/ascension-gallery.html
+?? playable/ascension-gallery.js
+?? playable/assets/
+?? playable/checkpoint-worker.js
+?? playable/css/ascension.css
+?? playable/css/calibration.css
+?? playable/css/flight-hud.css
+?? playable/css/test-lab.css
+?? playable/game.js
+?? playable/quest-lab.html
+?? playable/src/
+?? playable/test-lab.html
+?? playable/tests/aerial-animation-r9.test.mjs
+?? playable/tests/aerial-combat-r8.test.mjs
+?? playable/tests/aerial-footwork-r9.test.mjs
+?? playable/tests/aerial-melee-r9.test.mjs
+?? playable/tests/air-recoil-r9.test.mjs
+?? playable/tests/ascension-effects-r8.test.mjs
+?? playable/tests/ascension-flight-r8.test.mjs
+?? playable/tests/audio.test.js
+?? playable/tests/authored-motion.test.js
+?? playable/tests/avatar-shapes.test.js
+?? playable/tests/avatar-visual.spec.js
+?? playable/tests/c2-directional.spec.js
+?? playable/tests/c2-preview.mjs
+?? playable/tests/calibration-controls.js
+?? playable/tests/calibration-ui.spec.js
+?? playable/tests/calibration.test.js
+?? playable/tests/character-retarget.test.js
+?? playable/tests/checkpoint-performance.mjs
+?? playable/tests/checkpoint-scheduling.test.mjs
+?? playable/tests/creature-ai.test.mjs
+?? playable/tests/creature-territory.test.mjs
+?? playable/tests/d3-combat.test.js
+?? playable/tests/d3-inventory.test.js
+?? playable/tests/d3-session.test.js
+?? playable/tests/dash-effect.test.js
+?? playable/tests/dash-integration.spec.js
+?? playable/tests/dash.test.js
+?? playable/tests/desktop-controls.spec.js
+?? playable/tests/desktop-posture.spec.js
+?? playable/tests/driving-direction.test.js
+?? playable/tests/equipment-control.test.js
+?? playable/tests/evolution.spec.js
+?? playable/tests/evolution.test.js
+?? playable/tests/exploration-r2.spec.js
+?? playable/tests/exploration.spec.js
+?? playable/tests/feature-runner.test.js
+?? playable/tests/flight-aim-r8.test.mjs
+?? playable/tests/flight-descent-r5.test.mjs
+?? playable/tests/flight-hud-r2.test.mjs
+?? playable/tests/flight-r2.test.mjs
+?? playable/tests/flight-steering-r9.test.mjs
+?? playable/tests/foot-support-independent.test.mjs
+?? playable/tests/foot-support.test.mjs
+?? playable/tests/footing.test.js
+?? playable/tests/gait-benchmark.mjs
+?? playable/tests/gait-performance.test.js
+?? playable/tests/gait-preview.mjs
+?? playable/tests/gait-visual.spec.js
+?? playable/tests/gait.test.js
+?? playable/tests/growth-movement.test.js
+?? playable/tests/idle-stability.test.js
+?? playable/tests/innate-takeoff-r6.test.mjs
+?? playable/tests/input.test.js
+?? playable/tests/investigation-visual.spec.js
+?? playable/tests/investigation.spec.js
+?? playable/tests/legacy-outer-grid-cache-r2.test.mjs
+?? playable/tests/locomotion.spec.js
+?? playable/tests/look-control.test.js
+?? playable/tests/map-r3.spec.js
+?? playable/tests/meteor.test.js
+?? playable/tests/mobility.spec.js
+?? playable/tests/mobility.test.js
+?? playable/tests/movement.test.js
+?? playable/tests/navigation.test.js
+?? playable/tests/performance-harness.html
+?? playable/tests/performance-regression.test.mjs
+?? playable/tests/phase1-geology-webgl.cjs
+?? playable/tests/phase1-outcrops.test.mjs
+?? playable/tests/phase1-terrain.test.mjs
+?? playable/tests/physical-world.test.js
+?? playable/tests/planet-architecture.test.mjs
+?? playable/tests/planet-art.test.mjs
+?? playable/tests/planet-contact-runtime.test.mjs
+?? playable/tests/planet-ecology.test.mjs
+?? playable/tests/planet-gameplay-r2.test.mjs
+?? playable/tests/planet-gameplay.test.mjs
+?? playable/tests/planet-global-audit.test.mjs
+?? playable/tests/planet-integrated-runtime.test.mjs
+?? playable/tests/planet-integration.test.mjs
+?? playable/tests/planet-legacy-chunk-cull-r3.test.mjs
+?? playable/tests/planet-map.test.mjs
+?? playable/tests/planet-parking.test.mjs
+?? playable/tests/planet-runtime-world.test.mjs
+?? playable/tests/planet-stream-budget-r2.test.mjs
+?? playable/tests/prone-redesign.test.js
+?? playable/tests/render-budget.test.js
+?? playable/tests/render-contact-audio.mjs
+?? playable/tests/rider-alignment.test.mjs
+?? playable/tests/riftwing-integration-r11.test.mjs
+?? playable/tests/riftwing-r11.test.mjs
+?? playable/tests/rock-render-chunks.test.js
+?? playable/tests/rules-gate.test.js
+?? playable/tests/runtime-territory-independent.test.mjs
+?? playable/tests/scan-effect.test.js
+?? playable/tests/scan-vfx.spec.js
+?? playable/tests/slope-creature-audit.test.mjs
+?? playable/tests/stamina.test.js
+?? playable/tests/static-server.js
+?? playable/tests/story.test.js
+?? playable/tests/survey.test.js
+?? playable/tests/tactical-control.test.js
+?? playable/tests/terrain-contact.test.mjs
+?? playable/tests/terrain-render-chunks.test.mjs
+?? playable/tests/test-lab.test.mjs
+?? playable/tests/vehicle-camera.test.js
+?? playable/tests/vehicle-cockpit.spec.js
+?? playable/tests/vehicle-route-planner.mjs
+?? playable/tests/vehicle-route-planner.test.js
+?? playable/tests/vehicle-slope-audit.test.mjs
+?? playable/tests/walk-route.js
+?? playable/tests/world-director.test.js
+?? reports/
+?? s.y)
+?? start-test-lab.cmd
+?? tools/
+?? x.label
+?? "\345\220\257\345\212\250Godot\350\257\225\347\216\251.cmd"
+?? "\345\220\257\345\212\250\350\257\225\347\216\251.cmd"

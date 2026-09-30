@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>地表材质独立验证</title><style>body{margin:0;background:#222;color:#eee;font:16px system-ui}header{padding:15px;position:absolute;background:#222d}canvas{display:block}</style><header>左：原顶点色　右：连续砂砾草土细节<br>独立材质验证场景，非游戏截图；中央为边界，非生态设计。</header><script type="module">
+import * as T from '/three/three.module.js';
+import {enhancePlanetSurfaceMaterial} from '/playable/src/planet-art/surface-material.mjs';
+const scene=new T.Scene();scene.background=new T.Color('#646879');
+const camera=new T.PerspectiveCamera(55,innerWidth/innerHeight,.1,10000);camera.position.set(0,3,9);camera.lookAt(0,0,-12);
+const renderer=new T.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(1);document.body.appendChild(renderer.domElement);
+scene.add(new T.HemisphereLight('#d9e2ff','#736455',2));const light=new T.DirectionalLight('#ffe8c7',2.5);light.position.set(3,8,4);scene.add(light);
+let maskCalls=0;const uniforms=[];const meshes=[];
+for(let side=0;side<2;side++){
+ const g=new T.PlaneGeometry(60,180,12,24);g.rotateX(-Math.PI/2);g.translate(side?30:-30,0,-75);
+ const p=g.attributes.position,a=new Float32Array(p.count*3),c=new Float32Array(p.count*3);
+ for(let i=0;i<p.count;i++){a.set([p.getX(i),p.getZ(i),p.getY(i)+120000],i*3);c.set([.14,.22,.15],i*3);}
+ g.setAttribute('planetLegacyXZ',new T.BufferAttribute(a,3));g.setAttribute('color',new T.BufferAttribute(c,3));
+ const m=new T.MeshStandardMaterial({vertexColors:true,roughness:.96});
+ const half={value:0};uniforms.push(half);
+ m.onBeforeCompile=shader=>{maskCalls++;shader.uniforms.planetLegacyHalf=half;shader.vertexShader='attribute vec3 planetLegacyXZ; varying vec3 vLegacy;\n'+shader.vertexShader;shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvLegacy=planetLegacyXZ;');shader.fragmentShader='uniform float planetLegacyHalf; varying vec3 vLegacy;\n'+shader.fragmentShader;shader.fragmentShader=shader.fragmentShader.replace('#include <clipping_planes_fragment>','#include <clipping_planes_fragment>\nif(max(abs(vLegacy.x),abs(vLegacy.y))<planetLegacyHalf)discard;');};
+ m.customProgramCacheKey=()=> 'test-existing-mask';
+ if(side){enhancePlanetSurfaceMaterial(m);const hook=m.onBeforeCompile;enhancePlanetSurfaceMaterial(m);if(hook!==m.onBeforeCompile)throw Error('not idempotent');}
+ const mesh=new T.Mesh(g,m);scene.add(mesh);meshes.push(mesh);
+}
+function render(){renderer.render(scene,camera);}
+render();window.planetArtPreview={ready:true,maskCalls,programs:renderer.info.programs.map(p=>({runnable:p.diagnostics?.runnable??true})),key:meshes[1].material.customProgramCacheKey()};
+window.surfaceTest={far(){meshes.forEach(m=>m.position.x=0);uniforms.forEach(u=>u.value=0);camera.position.set(0,220,360);camera.lookAt(0,0,-75);render();},mask(){uniforms.forEach(u=>u.value=25);render();},rebase(){meshes.forEach(m=>m.position.x-=1024);camera.position.x-=1024;camera.lookAt(-1024,0,-12);render();}};
+</script></html>

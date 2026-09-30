@@ -1,0 +1,29 @@
+# Cross-process persistence, generation guard and CtrlQ — CPU review
+
+2026-09-30. Independent reading of owner reports, separate logs and test sources; no Godot/GPU launched and no independent runtime pass claimed. Machine summaries: `CROSS-PROCESS-OWNER-CPU-AUDIT.json` and `GENERATION-BLINK-CPU-AUDIT.json`.
+
+## Real destruction and OS-process restoration
+
+Producer `environment-runtime.json`: 25 assertions, failed []; consumer `cross-process-reload-verification.json`: 14 assertions, failed []. Separate capture logs have separate Godot/OpenGL startup headers and corresponding result summaries. Producer PID 34596 (recorded with `OS.get_process_id`) differs from consumer PID 15828. Consumer source rejects incomplete handoff and checks the exact producer slot SHA before instantiating Main. Handoff SHA is `437d60c8d0e46823ee30da4ded8bd0fe12d3f89783368e5c78ea8927d3e9d14e`. This supports a genuine distinct-process owner test, unlike the earlier same-SceneTree save-recovery test; this CPU audit did not witness process launches or independently reread the private save file.
+
+Producer uses viewport R/G input and automatic Main/Player physics to destroy authored pine, oak and rock fixtures and execute cancelled then successful descent strike. No direct environment `import_state` substitutes for those destructions in these producer/consumer scripts. Target registration, initial teleport, realm/energy/skill selection and per-case reset are fixtures; reset clears cooldowns between selected cases. The cancellation test explicitly waits for its spent cooldown through normal physics before resetting the next case. Producer disables and relocates combatant AI, so this is not an AI integration run.
+
+Consumer lets Main restore disk state, then registers the same authored pine fixture at its saved location. Report records fallen state, collision layer 0, zero enabled standing shapes and an empty standing-trunk ray. The mesh/replacement-body assertion checks nonempty `part_nodes`; it is not an exhaustive check of every replacement collider. Rock restoration checks saved state equality, not a re-registered rock's full rendered/collision reconstruction. Descent cooldown restores at 13.433333 s; one deformation record and terrain collider depth 2.3533366 m match the producer. Natural forest cell reconstruction remains open.
+
+Both recorded dependency sets contain 1,060 entries, with equal before/after sets and no changes. Producer end equals consumer start; all listed current files matched at this CPU audit. Logs and assertions support owner cross-process functional evidence, **not final art, fragment placement or independent replay**. Known floating rock pieces remain an open issue despite persisted state.
+
+## Generation protection
+
+`environment-generation-guard/20260929T172358Z_2c5ddd325999/result.json`: seed PID 23868 / probe PID 21688, 16 + 56 assertions, failed [], both subprocess return codes 0. Python runner uses synchronous `subprocess.run` and compares hashes after child exit. Five entries preserve recorded bytes: main, backup, mirror, mirror backup and valid-current control. Probe observes natural auto-save clock wrap, explicit save and viewport F5 while Main/Player remain active, with persistent generation-mismatch protection and player/investigation restoration.
+
+Fixture provenance matters: seed first exports a legal r4.2 envelope, imports a valid unstreamed persistence marker and saves through Main, then changes the generation field to r4.1. This isolates generation rejection of an otherwise valid envelope. It is **not a historical r4.1 save with actual old topology/part IDs**, nor proof of migration compatibility. The close case calls `game.notification(Node.NOTIFICATION_WM_CLOSE_REQUEST)` directly and the runner verifies exit; it exercises the production close handler, not an actual OS-window click/message delivery. E6 historical-record coverage remains open.
+
+## High-altitude CtrlQ
+
+Current `surface-blink-runtime/1535947/runtime-verification.json`: 138 assertions / nine cases / no failures, 3,719 automatic physics frames and 61.983333 simulated seconds. Test source injects Ctrl+Q viewport events; initial placements use `restore_canonical` after stream readiness, not G flight. Report covers R8 range rejection, toggle/W cancellation, blocked destination, newly added obstacle and accepted R8/R9 arrivals. Assertions include dry support, capsule clearance, cost/cooldown and save behavior; screenshots still require visual acceptance.
+
+**Timing clarification, verified against unchanged SHA:** R9 125 km case records initial `before.agl` **125002.097951898 m**, actual `outcomes[0].result.distance` **124999.203125 m**, immediate `outcomes[0].state.agl` and `resolution.agl` **0.80001425743103 m**, and later `after.agl` **0.0 m** after settling. Distance is not initial altitude; immediate arrival is not the later settled state. These fields coexist in the same report SHA `fc9c0c44341dc77da28d44205e39773561cff4516c6b74c404dd31587b4c55df`; no artifact replacement or conflicting result is established. The previous wording contrasted before/after with the handoff's distance/immediate-arrival values and is superseded by this field-level clarification. Its built-in selected source hash manifest is distinct from any external 1,060-entry wrapper manifest; do not conflate their counts. No cold-cache performance or flown-distance claim follows.
+
+## Independent follow-up
+
+When scheduled, target final-source high CtrlQ, real R crater plus rock-fragment placement, historical-generation rejection byte protection, sustained dive and flight recovery. Keep natural three-habitat distribution/performance and forest restoration open. Re-freeze sources after the current fragment fix; do not claim these pre-fix reports cover revised behavior. No extra GPU work is requested by this audit.

@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-13T16:19:54.648Z",
+  "checks": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 15908,
+      "sha256": "4e38cb21ea65ff6b5954507691e09d0f75afa736bd5c665ab17cffd74064a625"
+    },
+    {
+      "path": "game.js?v=c2-idle-fix-20260909",
+      "status": 200,
+      "bytes": 21586355,
+      "sha256": "0875ddec709488787d1abc6aa065e02c5ee2c04df839f29feee88209f8baa0e6"
+    },
+    {
+      "path": "assets/creatures/rift-prowler-v1/rift-prowler.glb",
+      "status": 200,
+      "bytes": 9029072,
+      "sha256": "39c6cc6ddafd84f9d269026618dec68f69eb6038bbd7810245a3376f22caf879"
+    },
+    {
+      "path": "assets/creatures/rift-prowler-v1/rig-map.json",
+      "status": 200,
+      "bytes": 29186,
+      "sha256": "8f6e54542099eec8554d56c68c32cea06a8509e8be6ff359aed7e160636b5ff5"
+    }
+  ]
+}

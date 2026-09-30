@@ -1,0 +1,72 @@
+{
+  "fps": 60,
+  "clips": {
+    "idle": 2,
+    "walk": 0.8666666666666667,
+    "jog": 0.5833333333333334,
+    "sprint": 0.4666666666666667,
+    "cruise": 2,
+    "boost": 2,
+    "jab": 0.6,
+    "cross": 0.7,
+    "kick": 0.9,
+    "guard": 1,
+    "hit": 0.5,
+    "cast": 0.8,
+    "cast_fist": 0.86,
+    "cast_palm": 0.82,
+    "cast_sweep": 1.13,
+    "cast_cleave": 2.42,
+    "cast_skyfall": 2.92,
+    "combat_ready": 1,
+    "air_jab": 0.6,
+    "air_cross": 0.7,
+    "air_kick": 0.9,
+    "air_guard": 1,
+    "air_hit": 0.5,
+    "air_cast": 0.8,
+    "air_cast_fist": 0.86,
+    "air_cast_palm": 0.82,
+    "air_cast_sweep": 1.13,
+    "air_cast_cleave": 2.42,
+    "air_cast_skyfall": 2.92
+  },
+  "contact_normalized": {
+    "jab": 0.38,
+    "cross": 0.38,
+    "kick": 0.38,
+    "cast": 0.38,
+    "cast_fist": 0.5,
+    "cast_palm": 0.5,
+    "cast_sweep": 0.5,
+    "cast_cleave": 0.5,
+    "cast_skyfall": 0.5,
+    "air_cast_fist": 0.5,
+    "air_cast_palm": 0.5,
+    "air_cast_sweep": 0.5,
+    "air_cast_cleave": 0.5,
+    "air_cast_skyfall": 0.5
+  },
+  "stride_m": {
+    "walk": 1.4,
+    "jog": 4.0,
+    "sprint": 4.6
+  },
+  "reference_speed_mps": {
+    "walk": 1.6,
+    "jog": 6.8,
+    "sprint": 10.0
+  },
+  "stance_fraction": {
+    "walk": 0.6,
+    "jog": 0.22,
+    "sprint": 0.2
+  },
+  "forward": "-Z",
+  "rest_and_skin": "original 19 body rests preserved; 32 glove joints authored in Blender; no runtime rest rewrite",
+  "reference": "reference.png (existing approved image), no new paid generation",
+  "gait_revision": "R6 approved image direction; full skinned shoes; only walk/jog/sprint replaced",
+  "gait_reference": "gait-review-r6/04-acceleration.png (reviewed main push-off/recovery); rejected phase/arm/high-knee errors corrected",
+  "gait_support_plane_m": 0.002,
+  "gait_authoring_hz": 120
+}

@@ -1,0 +1,171 @@
+TAP version 13
+# Subtest: near-ground limits stay unchanged and orbital layer reaches full speed continuously
+ok 1 - near-ground limits stay unchanged and orbital layer reaches full speed continuously
+  ---
+  duration_ms: 1.0594
+  ...
+# Subtest: ground to 240km and back completes within eight simulated minutes, with bounded acceleration
+ok 2 - ground to 240km and back completes within eight simulated minutes, with bounded acceleration
+  ---
+  duration_ms: 15.6127
+  ...
+# {"upSeconds":219.8,"downSeconds":245.2,"totalSeconds":465,"maxNearDescent":24}
+# Subtest: fast path requires finite declared bound and checks interior chord and strict shell clearance
+ok 3 - fast path requires finite declared bound and checks interior chord and strict shell clearance
+  ---
+  duration_ms: 0.2521
+  ...
+# Subtest: proven high-air sweep skips every terrain ray but still obeys blocking or pending solids
+ok 4 - proven high-air sweep skips every terrain ray but still obeys blocking or pending solids
+  ---
+  duration_ms: 2.6853
+  ...
+# Subtest: legacy field without proved bound cannot skip missing terrain
+ok 5 - legacy field without proved bound cannot skip missing terrain
+  ---
+  duration_ms: 0.6322
+  ...
+# Subtest: declared bound does not bypass low-altitude obstacle or missing path data
+ok 6 - declared bound does not bypass low-altitude obstacle or missing path data
+  ---
+  duration_ms: 9.1835
+  ...
+# Subtest: segment clearance agrees with dense reference chords around the protected shell
+ok 7 - segment clearance agrees with dense reference chords around the protected shell
+  ---
+  duration_ms: 10.5171
+  ...
+# Subtest: orbital braking returns to old low-altitude speed for multiple frame rates and exhausted flight
+ok 8 - orbital braking returns to old low-altitude speed for multiple frame rates and exhausted flight
+  ---
+  duration_ms: 35.0406
+  ...
+# Subtest: one real spherical orbital flight step keeps terrain queries constant and uses solid collision
+ok 9 - one real spherical orbital flight step keeps terrain queries constant and uses solid collision
+  ---
+  duration_ms: 0.8117
+  ...
+# Subtest: new players and old complete-only snapshots do not gain high flight
+ok 10 - new players and old complete-only snapshots do not gain high flight
+  ---
+  duration_ms: 2.1104
+  ...
+# Subtest: route enforces ordered ground samples, vehicle repair and return to service
+ok 11 - route enforces ordered ground samples, vehicle repair and return to service
+  ---
+  duration_ms: 0.3191
+  ...
+# Subtest: sampling refuses airborne, mounted, submerged and unloaded samples
+ok 12 - sampling refuses airborne, mounted, submerged and unloaded samples
+  ---
+  duration_ms: 0.1994
+  ...
+# Subtest: malformed progression cannot turn coast-only into completed route
+ok 13 - malformed progression cannot turn coast-only into completed route
+  ---
+  duration_ms: 0.1172
+  ...
+# Subtest: AGL, not mountain elevation, determines safe speed; camera is continuous
+ok 14 - AGL, not mountain elevation, determines safe speed; camera is continuous
+  ---
+  duration_ms: 5.2237
+  ...
+# Subtest: launch gate, bounded dt, held input and real energy consumption
+ok 15 - launch gate, bounded dt, held input and real energy consumption
+  ---
+  duration_ms: 0.5038
+  ...
+# Subtest: terrain streaming and collision failures stop all movement
+ok 16 - terrain streaming and collision failures stop all movement
+  ---
+  duration_ms: 0.2502
+  ...
+# Subtest: sweep receives complete high-speed motion; no endpoint-only collision test
+ok 17 - sweep receives complete high-speed motion; no endpoint-only collision test
+  ---
+  duration_ms: 0.1629
+  ...
+# Subtest: exhaustion descends, safely lands, and never regains charge in air
+ok 18 - exhaustion descends, safely lands, and never regains charge in air
+  ---
+  duration_ms: 0.7468
+  ...
+# Subtest: ceiling and unsafe ocean endpoint are enforced
+ok 19 - ceiling and unsafe ocean endpoint are enforced
+  ---
+  duration_ms: 0.4042
+  ...
+# Subtest: save preserves every legacy field and round-trips canonical coordinates without held input
+ok 20 - save preserves every legacy field and round-trips canonical coordinates without held input
+  ---
+  duration_ms: 0.5555
+  ...
+# Subtest: unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+ok 21 - unknown schemas/worlds are read-only, unready or unsafe saves never teleport
+  ---
+  duration_ms: 0.3722
+  ...
+# Subtest: runtime adapter requires real stream and solid readiness callbacks
+ok 22 - runtime adapter requires real stream and solid readiness callbacks
+  ---
+  duration_ms: 5.0713
+  ...
+# Subtest: actual field preserves old basin contact and dry ground sample
+ok 23 - actual field preserves old basin contact and dry ground sample
+  ---
+  duration_ms: 3.7461
+  ...
+# Subtest: local tangent east and north remain continuous across longitude seam and near pole
+ok 24 - local tangent east and north remain continuous across longitude seam and near pole
+  ---
+  duration_ms: 32.2351
+  ...
+# Subtest: radial movement does not accumulate tangent-plane altitude error
+ok 25 - radial movement does not accumulate tangent-plane altitude error
+  ---
+  duration_ms: 3.1546
+  ...
+# Subtest: sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+ok 26 - sweep refuses original solids, missing path chunks and terrain ridge between endpoints
+  ---
+  duration_ms: 14.4531
+  ...
+# Subtest: actual spherical field supports takeoff, descent and contact without changing legacy body
+ok 27 - actual spherical field supports takeoff, descent and contact without changing legacy body
+  ---
+  duration_ms: 46.7276
+  ...
+# Subtest: unready destination halts actual flight before crossing chunk boundary
+ok 28 - unready destination halts actual flight before crossing chunk boundary
+  ---
+  duration_ms: 0.8923
+  ...
+# Subtest: spherical canonical save reload survives far origin and architecture envelope
+ok 29 - spherical canonical save reload survives far origin and architecture envelope
+  ---
+  duration_ms: 0.7656
+  ...
+# Subtest: negative legacy basin is dry and supports launch and landing below sea level
+ok 30 - negative legacy basin is dry and supports launch and landing below sea level
+  ---
+  duration_ms: 19.5574
+  ...
+# Subtest: surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+ok 31 - surface vehicle snapshot carries canonical parking position, physical yaw, battery and mounted state
+  ---
+  duration_ms: 1.0628
+  ...
+# Subtest: legacy yaw converts forward/strafe to the actual tangent axes
+ok 32 - legacy yaw converts forward/strafe to the actual tangent axes
+  ---
+  duration_ms: 0.2294
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 223.7178
