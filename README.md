@@ -1,6 +1,16 @@
 # 星渊迷航 (Star Abyss Voyage)
 
-Godot 4.6 原生迁移试玩工程现位于 [godot/README.md](godot/README.md)。Windows 可双击 [启动Godot试玩.cmd](启动Godot试玩.cmd) 直接试玩，也可导入 `godot/project.godot`。这是六公里盆地、角色飞行／空战和部分调查的可玩切片；浏览器完整版、旧 `src/` 工程及其存档继续保留。
+**当前开发主线是 [godot/project.godot](godot/project.godot)**。Windows 双击 [启动试玩.cmd](启动试玩.cmd) 或 [启动Godot试玩.cmd](启动Godot试玩.cmd) 进入同一原生工程，也可在 Godot 4.6.2 编辑器打开该工程后按 F5。
+
+当前操作、功能边界与原生验证命令见 [Godot 试玩说明](godot/README.md)，近期工作见 [进度看板](PROGRESS.md)。主线包含六公里盆地、球体地形、角色走跑／飞行／空战、载具和部分调查；完整剧情、自然成长、动作视觉及性能仍以对应验收记录为准，不能用浏览器 CPU 测试或旧塔防测试数字代替。
+
+`src/` 是历史生存塔防 Godot 工程；`playable/` 是历史浏览器版与迁移参考。它们不再是当前产品入口或双端同步义务。共享资产、制作源文件、设计和验收证据在确认备份与依赖前保留，不按目录名称整批删除。review 纠正、归档范围和静态核对步骤见 [Godot 主线修订](docs/development/GODOT-MAINLINE-REVIEW-20260930.md)。
+
+只检查入口而不运行游戏：`tools\start-godot.cmd --check`。如引擎路径不同，先设置 `GODOT_BIN`。实际首次试玩会导入资产并写入 `.godot`；本轮只执行检查模式。
+
+## 历史资料说明
+
+下方保留既有浏览器／旧塔防的设计与验收记录，仅供历史复现和迁移参考。其中的 npm 测试、浏览器存档、双击网页及早期阶段勾选不代表当前 Godot 主线已完成相应功能。需要打开浏览器历史参考时使用 `启动浏览器历史版.cmd`；`start-test-lab.cmd` 仍专用于历史浏览器测试室。
 
 > 2026-09-09：当前补丁 `C2-IDLE-FIX-20260909` 修正原地待机腿抖。C2 高精度美术替换尚未完成，用户已否决当前近似模型；差异、资产缺口与验收要求见 [C2 重新验收](docs/C2_REFERENCE_ACCEPTANCE.md)。下方 20260908 数据保留为历史切片，不能视为美术达标。
 
@@ -105,8 +115,8 @@ HTML 当前方向以 [静默回声规格](docs/HTML5_PROTOTYPE.md) 为准。以�
 |------|----------|
 | 引擎 | Godot 4.6.2 |
 | 代码 | GDScript |
-| 游戏工程 | `src/` |
-| 浏览器规格原型 | `playable/star-abyss.html`（双击离线运行） |
+| 当前游戏工程 | `godot/`；`src/` 为旧塔防历史工程 |
+| 历史浏览器参考 | `playable/star-abyss.html`（不作为默认游戏入口） |
 | HTML 渲染 / 构建 | Three.js 0.180.0 / esbuild；`npm run build` |
 
 ---

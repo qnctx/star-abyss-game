@@ -1,8 +1,16 @@
 # 🪐 星渊迷航 — 开发进度看板
 
-> 最后更新：2026-09-29
+> 最后更新：2026-09-30
 > 仓库：https://github.com/qnctx/star-abyss-game  
-> 本地：E:/myProject/star-abyss-game/
+> 当前开发工作树：C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/；E:/myProject/star-abyss-game/ 为既有主目录，不能据其旧文件判断当前原生状态。
+
+
+## 2026-09-30：Godot 主线与 review 更正
+
+- 当前主线是 `godot/project.godot`，`src/` 旧塔防及 `playable/` 浏览器版按历史参考处理。统一“启动试玩”和“启动Godot试玩”到原生入口；浏览器单独保留历史启动脚本。AGENTS/README/历史契约已注明不再要求双端持续同步，原生缺失功能与视觉/性能失败边界保持原记录。
+- review 将旧 `src/` 当成当前主线、称 `.godot/build` 未忽略及 `tools/` 全属网页的结论不适用当前工作树；`godot/` 运行资产位于工程内，源码只有两处历史网页路径注释。旧 src 四文件修复已经包含在 GitHub `codex/review-repair-20260930` 的 `d72ff90` 快照中，不再是毫无提交备份的唯一副本。
+- 已有完整本地备份 `E:/star-abyss-backups/review-20260930`。历史源文件、图片、录屏及并行工作未删除；原始证据只在本地备份的部分仍未取得异地备份结论。补充忽略 Python 缓存，不把素材源文件或测试脚本当缓存。
+- 本片仅修入口与文档并做静态检查，不启动 Godot、不写引擎缓存、不运行 GPU 验收。检查步骤：运行 `tools\start-godot.cmd --check`，确认指向本工作树 `godot/project.godot`；核对主场景资源引用与缓存忽略规则。详细结果见 [修订记录](docs/development/GODOT-MAINLINE-REVIEW-20260930.md)。以下旧阶段记录保留历史日期与证据边界，旧测试数字不升级为当前原生验收。
 
 ## 2026-09-30：Scenario skills 只读研究
 
