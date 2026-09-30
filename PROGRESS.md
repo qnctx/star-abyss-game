@@ -2,8 +2,14 @@
 
 > 最后更新：2026-09-30
 > 仓库：https://github.com/qnctx/star-abyss-game  
-> 当前开发工作树：C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/；E:/myProject/star-abyss-game/ 为既有主目录，不能据其旧文件判断当前原生状态。
+> 当前开发工作树：C:/Users/HUAWEI/.codex/worktrees/3ff0/star-abyss-game/；E:/myProject/star-abyss-game/ 已同步 GitHub main 的本轮发布快照，后续并行切片仍按实际工作树验收。
 
+
+
+## 2026-09-30：默认分支与主目录同步
+
+- GitHub main 快进接入 d72ff90 与 dc1c3c9；E 盘主目录补齐 Godot 工程，原生三个入口检查通过。旧 src 四项修复已在快照中保留。
+- 同步前完整备份并建立本地保全分支 codex/primary-before-sync-20260930（8140633）；五项独有文档/证据差异、子工作区与历史额外文件保留。未启动引擎、导入或 GPU；详细命令与边界见 [衔接记录](docs/development/MAINLINE-SYNC-20260930.md)。
 
 ## 2026-09-30：Godot 主线与 review 更正
 
